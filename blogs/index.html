@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚轮控制图片大小</title>
+    <style>
+  
+  #div{
+        width:600px;
+        height:400px;
+    }
+    
+   img{
+    width:100%;
+    height:100%;
+   }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <img src="./img/a.jpg">
+    </div>
+
+    <script>
+        var div=document.getElementById("div")
+        var i=600;
+        var a=400;
+        div.onmousewheel = function(e){
+          if(e.wheelDelta>0){
+           div.style.width=i+"px"
+           div.style.height=a+"px"
+           i=i+10
+           a=a+10
+          }else{
+            div.style.width=i+"px"
+            div.style.height=a+"px" 
+            i=i-10
+            a=a-8
+          }
+        }
+
+    
+    </script>
+</body>
+</html>
