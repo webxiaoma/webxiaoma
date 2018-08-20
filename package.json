@@ -1,0 +1,32 @@
+{
+  "name": "blogs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "docs:dev": "npx vuepress dev docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webxiaoma/blogs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webxiaoma/blogs/issues"
+  },
+  "homepage": "https://github.com/webxiaoma/blogs#readme",
+  "devDependencies": {
+    "babel-plugin-component": "^1.1.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "vuepress": "^0.14.2",
+    "webpack-serve": "^2.0.2"
+  },
+  "dependencies": {
+    "element-ui": "^2.4.6"
+  }
+}
