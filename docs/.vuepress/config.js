@@ -2,7 +2,7 @@ module.exports = {
     title: "马新想个人网站（webxiaoma）", //标题
     description: "马新想的个人网站，专注书写博客，文档分享，网站地址为webxiaoma.com", //描述
     head: [
-        ["link", { rel: "icon", href: `./public/img/icon.ico` }],
+        ["link", { rel: "icon", href: `/img/icon.ico` }],
         ["meta",{rel:'keywords',content:"马新想，webxiaoma, 马新想个人网站"}]
     ], //被注入页面 HTML <head> 额外的标签
     host: "192.168.10.162", //访问路径
