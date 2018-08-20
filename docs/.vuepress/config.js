@@ -5,7 +5,7 @@ module.exports = {
         ["link", { rel: "icon", href: `/img/icon.ico` }],
         ["meta",{rel:'keywords',content:"马新想，webxiaoma, 马新想个人网站"}]
     ], //被注入页面 HTML <head> 额外的标签
-    host: "192.168.10.162", //访问路径
+    host: "localhost", //访问路径
     port: "5555", //端口
     // base:'/', // 部署站点的基础路径
     dest: "./blogs", //输出目录
@@ -17,6 +17,7 @@ module.exports = {
             { text: '博客', items: [
                 {text:'构建工具', items:[
                     {text:"webpack打包",link:'/webpack/'},
+                    {text:"git工具",link:'/git/'},
                 ]},
                 // {text:'JavaScript', link:'/javascript/'},
                 // {text:'Vue', link:'/vue/'},
@@ -29,6 +30,9 @@ module.exports = {
                '',
                'webpack配置篇'
             ],
+            '/git/':[
+                ''
+            ]
         },
 
     }
