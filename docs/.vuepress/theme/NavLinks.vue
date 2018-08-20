@@ -182,6 +182,13 @@ export default {
     height:45px;
     line-height:35px;
     font-size: 16px;
+  
+  }
+  a{
+     display: inline-block;
+      width:100%;
+     
+      
   }
   /deep/.el-menu--horizontal>.el-submenu .el-submenu__title{
      height:45px;
