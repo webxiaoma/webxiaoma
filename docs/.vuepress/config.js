@@ -25,7 +25,10 @@ module.exports = {
             { text: '旧网站', link: 'http://webxiaoma.coding.me/webxiaoma', blank:true},
         ],
         sidebar: {  // 侧边栏
-           '/webpack/':[''],
+           '/webpack/':[
+               '',
+               'webpack配置篇'
+            ],
         },
 
     }

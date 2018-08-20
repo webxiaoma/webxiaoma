@@ -9,7 +9,7 @@ import {
    MenuItem,
 } from 'element-ui'
 
-import  LogsBlog  from './components/LogsBlog.vue'
+import  MyImg  from './components/MyImg.vue'
 
 export default ({
     Vue, // VuePress 正在使用的 Vue 构造函数
@@ -21,5 +21,5 @@ export default ({
    Vue.use(Menu)
    Vue.use(Submenu)
    Vue.use(MenuItem)
-   Vue.component('LogsBlog', LogsBlog)
+   Vue.component('MyImg', MyImg)
 }
