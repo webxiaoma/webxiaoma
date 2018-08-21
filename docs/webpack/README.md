@@ -3,7 +3,7 @@ meta:
   - name: keywords
     content: webpack概念, wepback4, wepback使用
   - name: description
-    content: 本文基于webpack4 来 讲述webpack 的安装和概念基础。
+    content: 本文基于webpack4 来 讲述webpack 的安装和核心概念和一些操作基础。
 ---
 
 # webpack 基础篇
@@ -13,7 +13,7 @@ meta:
 
 [Webpack](https://www.webpackjs.com/concepts/) 是js中的一个打包模块化工具，在webpack的理念就是一切皆模块。也就说 JavaScript、CSS、LESS、SASS、JSON、图片等等包括一些类似vue 的模块在webpack中都是一个模块。正如官网提供的图片也说明了这一点
 
-![webpack](/img/webpack-1.png)
+<MyImg src="/img/webpack-1.png" alt="webpack"/>
 
 webpack 在构建项目时通过我们提供的入口文件来查找每一个相关的文件或资源，并将它们压缩，代码合并然后输出我们想要的最终文件，而这这个过程中我们可以做一些响应的配置，来告诉webpack如何编译文件，又如何打包输出文件。接下来让我们来安装webpack，本文将书写时webpack 版本为 `v4.16.5`。 webpack4+ 更新后相对于webpack3 大致做了以下更新(部分)
 
@@ -78,7 +78,7 @@ npx webpack // 这种情况会提示警告
 
 
 
-1. 以开发模式打包
+2. 以开发模式打包
 
 ```js
 npx webpack --mode development

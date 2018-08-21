@@ -38,11 +38,12 @@ module.exports = {
                'webpack配置篇'
             ],
             '/git/':[
-                ''
+                '',
+                'Git的基本操作',
             ]
         },
-        sidebarDepth: 2 //侧边导航最大的深度
-
+        sidebarDepth:2,// 侧边栏最大层级 最大只能为2
+       // displayAllHeaders:true  // 侧边栏所有链接全展开
     }
 };
 

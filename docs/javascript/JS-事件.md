@@ -1,3 +1,10 @@
+---
+meta:
+  - name: keywords
+    content: js, js 事件, js事件代理，事件冒泡
+  - name: description
+    content: 本文讲述js一些基础知识，事件代理和事件冒泡。
+---
 
 # JS-事件
 
