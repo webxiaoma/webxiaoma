@@ -15,17 +15,24 @@ module.exports = {
         nav: [  // 导航栏 使用了element 导航
             { text: '首页', link: '/'},
             { text: '博客', items: [
+                {text:'JavaScript', link:'/javascript/'},
                 {text:'构建工具', items:[
                     {text:"webpack打包",link:'/webpack/'},
                     {text:"git工具",link:'/git/'},
                 ]},
-                // {text:'JavaScript', link:'/javascript/'},
                 // {text:'Vue', link:'/vue/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
             { text: '旧网站', link: 'http://webxiaoma.coding.me/webxiaoma', blank:true},
         ],
         sidebar: {  // 侧边栏
+            '/javascript/':[
+               '',
+               'JS-DOM操作',
+               'JS-BOM操作',
+               'JS-事件',
+               'js面向对象',
+            ],
            '/webpack/':[
                '',
                'webpack配置篇'
@@ -34,6 +41,7 @@ module.exports = {
                 ''
             ]
         },
+        sidebarDepth: 2 //侧边导航最大的深度
 
     }
 };
