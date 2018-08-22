@@ -7,145 +7,115 @@ meta:
     content: 本文是对git的简单安装使用，并初步了解git，初步知道git的一些基本概念原理的教程
 ---
 
-## Git基础操作
+# Git的基础操作
 
-- 初始化项目
+## 常用基础指令
 
-比如我们有一个本地项目`project`目录，我们将该项目初始化本地仓库,首先我们先进入`project`目录，右击点击 `Git Bush Here`，打开git 命令面板然后输入
+知道了git的大概工作的大概流程我们来实践一下git的基础操作
 
-```
-git init //初始化本地仓库
-```
-之后我们的`project`目录下回有一个`.git` 目录，由于该目录是隐藏目录，可能你的`project`目录看不到该目录，window上你可以这样设置[显示隐藏目录](https://jingyan.baidu.com/article/acf728fd2853fef8e410a37f.html)
+::: tip 本章命令
+-  `git init` 初始化项目
+-  `git add`  添加项目到暂存区
+-  `git commit` 提交项目到版本库 
+-  `git status` 查看当前仓库状态
+-  `git diff` 查看修改仓库内容
+:::
 
+## 初始化项目
 
-`.git` 目录里边记录着我们的项目的版本（提交记录），还有一些其它的git信息
+比如我们本地项目创建一个`project`目录，然后使用`git init`命令将我们的项目初始化为一个`git`仓库
 
+```js
+// 创建project 目录
+mkdir project 
 
+// 进入project目录
+cd project 
 
-
-
-git链接仓库请请访问：
-
-**1.创建仓库以及提交代码** 
-创建一个版本库之前我们要做到就是选好一个位置，然后：
-
-```
-$ mkdir myGit   // 创建myGit文件夹
-$ cd myGit      // 打开myGit文件夹
-$ pwd           // 查看所在文件夹目录
-```
-
-然后我们要初始化该文件成为git仓库，我们执行命令
-
-初始化仓库：
-
-```
-$ git init  
+//初始化本地仓库
+git init 
 ```
 
-如果你细心的话，可以看到我们 myGit 文件夹下回出现一个隐藏的git文件，如果你没有看到，可以设置一下电脑，显示隐藏文件夹（这里不讲这么设置了），或是执行命令 `ls -ah`，另外git文件夹，不要随意乱去设置
+初始化之后我们的`project`目录下回有一个`.git` 目录，由于该目录是隐藏目录，可能你的`project`目录看不到该目录，window上你可以这样设置[显示隐藏目录](https://jingyan.baidu.com/article/acf728fd2853fef8e410a37f.html)
 
-初始化完成后我们继续，我们在该文件夹下(myGit文件下，它的子目录也行，不要方法git文件夹中)新建一个index.html文件,里面写点内容，我写的是
 
+`.git` 这个目录就版本库，里边记录着我们的项目的版本（提交记录），还有暂存区以及一些其它的git信息。需要注意的是这个目录下的文件不要随意去更改，不然可能会影响git的使用。
+
+
+## 添加到暂存区
+
+初始化我们的仓库后，我们在`project`目录下新建一个`test.js`文件。此时我们的工作区就会有一个`test.js` 文件，在这里我们可以使用 `git status`命令来查看本地仓库的状态
+
+```js
+git status
 ```
-var a =1;
-var b = 2;
-```
+这时会出现下面输出
 
-然后执行
+<MyImg src="/img/git-2-4.jpg" alt="git初始化" />
 
-```
-$ git add  index.html  // 告诉git把index.html文件添加到仓库
-$ git commit -m 
- // '新添加的index.html文件' git commit告诉Git，把文件提交到仓库：-m 后面跟的是提交的说明
-```
+图中红色的文字就是指的是我们创建的`test.js`文件, 只要在工作区中新增的文件或修改过的文件没有被添加到缓存区中，当我们查看仓库状态时就会将这些文件以红色标记出来，并提示我们将它们添加到缓存区。
 
-如果我们有好多文件需要添加到仓库，我们可以使用一下命令：
+并且此时我们的工作目录、版本库和缓存区它们的状态就是这样的：
 
-```
-$ git add 文件名1 文件名2 
-```
-或是更简单的，将所有文件添加到仓库（一下两个选其中一个就可以）
+<MyImg src="/img/git-2-1.jpg" alt="git初始化" />
 
-```
-$ git add .
-$ git add -Aa
-```
+工作区中有一个 `test.js` 文件，而暂存区中不存在任何东西，`master`分支中也不存在任何东西，（需要知道的是当我们初始化git仓库时，git会为我们自动生成一个master分支，并将`HEAD`指针指向该分支。在接下来分支管理的文章中我们会详细的讨论）。object对象库此时也是空的
 
-**2.本地仓库与远程仓库建立连接** 
-  这里有两种方法，第一种，直接克隆远程仓库：
-  
+接下来我们使用 `git add`命令将`test.js` 文件添加到我们的暂存区中
 
-```
-$ git clone 远程仓库地址
-```
-github上的远程仓库地址：
-
-
-第二种方法：
-
-``` 
-git remote add origin 远程仓库地址
+```js
+git add test.js
 ```
 
-建立连接后，我们将我们的文件 index.html 推送到github上去;(**git默认是不允许上传空文件夹的**)
+我们也可以使用 `git add .` 将我们工作区内的所有文件添加到暂存区，添加到缓存区后我们在执行`git status` 命令可以看到添加到缓存区的文件会显示绿色，并提示我们将它提交到版本库中
 
+<MyImg src="/img/git-2-5.jpg" alt="git缓存区" />
+
+
+并且此时我们的工作目录、版本库和缓存区它们的状态就是这样的：
+
+<MyImg src="/img/git-2-2.jpg" alt="git缓存区" />
+
+工作区中有一个 `test.js` 文件，执行完`git add test.js`命令后暂存区中会生成（或更新）和工作区对应的目录，每个目录和文件生成对应的id，并且将我们的工作区`test.js`文件写入 `objces` 对象库中，并且该对象的ID对应暂存区的索引中，形成对应关系（有点像书的目录对应某一页书的内容一样）。
+
+
+
+::: warning
+需要注意的是：git在添加项目到缓存区时，会忽略项目中的空文件夹，也就是不会把空文件夹添加到缓存区。
+:::
+
+## 提交项目到版本库
+
+我们将 `test.js` 文件添加到缓存区后，使用`git commit` 命令将它提交到本地版本库，提交时我们需要使用`-m`为我们提交的项目版本加上备注。
+
+```js
+git commit -m '提交练习'
 ```
-$ git push
+提交完成后我们在次执行`git status` 命令，可以看到提示我们`working tree clean` 工作区是干净的，这说明我们已经提交成功。
+
+<MyImg src="/img/git-2-6.jpg" alt="git缓存区" />
+
+
+此时我们的工作目录、版本库和缓存区它们的状态就是这样的：
+
+<MyImg src="/img/git-2-3.jpg" alt="git提交" />
+
+提交后，我们暂存区中的项目目录会存入到 `objces` 对象库中，并且master分支上会更新目录信息，并和 `objces` 对象库对应起来。到此一次项目版本的更新在git仓库中就完成了。
+
+
+## 查看修改内容
+
+当我们修改文件后，git会通过工作区文件和版本库中的对比来发现我们修改了那些文件以及文件中的那些内容。我们将修改后的项目提交到版本库后，我们可以通过 `git diff` 来查看我们的项目做了那些修改，也就是通过该命令获取我们仓库中工作区、暂存区、版本库之间的差异信息。
+
+该操作有一下几种用法：
+
+
+我们来操作一下，我们在`project` 目录下新建一个`new.txt` 文件。
+
+```js
+// 将所有文件添加到缓存区
+git add . 
+
+// 我们我们查看项目提交版本信息
+git diff
 ```
-如果你用的是第二种方法，在第一次上传时我们这样去推送文
-
-```
-git push -u origin master
-```
-以后推送你就可以使用`git push` 了
-
-接下来我们如果想要查看仓库当前的状态可以执行：
-
-```
-$ git status 
-```
-
-如果我们想要查看修改的内容：
-
-```
-$ git diff
-```
-
-
-##  Git 仓库
-
-
-1.首先你有github 账号
-   注册地址：[https://github.com/](https://github.com/)
-   
-2.在github上创建一个仓库
-
-![创建仓库](https://webxiaoma.github.io/git/1.png)
-
-接下来：
-![创建仓库](https://webxiaoma.github.io/git/2.png)
-
-3.创建好仓库后，我们本身是不可以用git链接到仓库的，我们需要配置ssh 公钥，生成公钥：
-
-```
- $ ssh-keygen -t rsa -C "Your Email"
-```
-这里我们连续按三次回车，会出现下列图示
-![生成ssh](https://webxiaoma.github.io/git/3.png)
-
-我这里生成的ssh公钥在 c/Users/Administrator/.ssh 我们需要的文件如下
-![生成ssh](https://webxiaoma.github.io/git/4.png)
-
-4.将我们生成好的公钥放到我们github上，（其他网络仓库操作步骤大致相同）
-![生成ssh](https://webxiaoma.github.io/git/5.png)
-![生成ssh](https://webxiaoma.github.io/git/6.png)
-
-到这里我们就配置好了ssh公钥了。
-
-
-
-
-
-

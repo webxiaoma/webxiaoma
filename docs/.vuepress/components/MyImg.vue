@@ -1,6 +1,6 @@
 <template>
     <div class="logs">
-        <img :src="src" :alt="altImg">
+        <img :src="src" :alt="altImg" :width="width">
     </div>
 </template>
 
@@ -9,12 +9,14 @@
 export default {
     data(){
         return{
-            altImg: ""
+            altImg: "",
+            widthImg:'',
         }
     },
-    props:['src','alt'],
+    props:['src','alt','width'],
     mounted() {
         this.altImg = this.alt || "webxiaoma"
+        this.widthImg = this.width || "100%"
     },
     methods:{
         
@@ -25,8 +27,10 @@ export default {
 <style lang="less" scoped>
 .logs{
     width:100%;
+    display: flex;
+    align-items: center;
     img{
-        width:100%;
+        display: block;
         height:auto;
     }
 }
