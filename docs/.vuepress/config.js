@@ -17,8 +17,8 @@ module.exports = {
             { text: '博客', items: [
                 {text:'JavaScript', link:'/javascript/'},
                 {text:'构建工具', items:[
-                    {text:"webpack打包",link:'/webpack/'},
-                    {text:"git工具",link:'/git/'},
+                    {text:"Webpack打包",link:'/webpack/'},
+                    {text:"Git工具",link:'/git/'},
                 ]},
                 // {text:'Vue', link:'/vue/'},
             ]},

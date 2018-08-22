@@ -19,6 +19,7 @@ meta:
 -  `git commit` 提交项目到版本库 
 -  `git status` 查看当前仓库状态
 -  `git diff` 查看修改仓库内容
+-  `git rev-parse HEAD ` 获取完整commitID
 :::
 
 ## 初始化项目
@@ -109,13 +110,78 @@ git commit -m '提交练习'
 
 该操作有一下几种用法：
 
+::: tip git diff 常见用法
 
-我们来操作一下，我们在`project` 目录下新建一个`new.txt` 文件。
+- `git diff 不加参数` 比较工作区和暂存区的差别（只比较修改文件和删除的，不会比较新增加的）
+
+- `git diff --cached `比较暂存区与最新本地版本库差别
+
+- `git diff HEAD` 比较工作区和最新版本库的差别
+
+- `git diff commit-id` 比较工作区与指定`commitId`版本的差异
+
+- `git diff --cached commit-id` 比较暂存区与指定`commitId`版本的差异
+
+- `git diff commit-id1 commit-id2` 比较两个`commitId`版本之间的差异
+:::
+
+我们来操作一下，我们修改`project` 目录下的`test.js` 文件。
 
 ```js
-// 将所有文件添加到缓存区
-git add . 
+// test.js
 
-// 我们我们查看项目提交版本信息
-git diff
+var a = "test.js 文件被修改"
 ```
+
+然后我们执行 `git diff`，比较工作区和暂存区的差别，我们会看到输出以下结果
+
+```js
+diff --git a/test.js b/test.js
+index e69de29..c6f586a 100644
+--- a/test.js
++++ b/test.js
+@@ -0,0 +1 @@
++var a = "test.js 文件被修改"
+\ No newline at end of file
+```
+我们很清楚的看到，上边信息显示了在工作区中`test.js`文件比缓存区中的`test.js`文件多了一行`var a = "test.js 文件被修改"`代码。
+
+我们在来练习一个 比较工作区与指定`commitId`版本的差异，首先我们要先获取我们的`commitId`。
+
+
+获取当前版本完整id
+
+```js
+git rev-parse HEAD 
+
+// 输出
+c2ef6296d6b1119bfc9d4142fe1407a3bc0d8aed
+```
+获取短的 commit id
+```js
+// 获取当前版本完整id
+git rev-parse --short HEAD 
+
+// 输出
+c2ef629
+```
+
+比较工作区与指定`commitId`版本的差异
+
+
+```js
+git diff c2ef6296d6b1119bfc9d4142fe1407a3bc0d8aed
+```
+我们可以看到输出结果
+
+```js
+diff --git a/test.js b/test.js
+index e69de29..c6f586a 100644
+--- a/test.js
++++ b/test.js
+@@ -0,0 +1 @@
++var a = "test.js 文件被修改"
+\ No newline at end of file
+```
+
+我们看到当前目录和最新版本库中的差异也是`var a = "test.js 文件被修改"`,其它的`git diff`参数使用方法和我们列举的两个都大同小异，这里不在列举，可以自己动手尝试一下。
