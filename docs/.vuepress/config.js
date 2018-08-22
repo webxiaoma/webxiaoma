@@ -44,7 +44,8 @@ module.exports = {
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2
        // displayAllHeaders:true  // 侧边栏所有链接全展开
-    }
+
+    },
 };
 
 

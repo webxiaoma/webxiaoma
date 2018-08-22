@@ -1,5 +1,14 @@
+---
+sidebarDepth: 2
+meta:
+  - name: keywords
+    content: git教程, git使用, git初识，git原理教程
+  - name: description
+    content: 本文是对git的简单安装使用，并初步了解git，初步知道git的一些基本概念原理的教程
+---
 
-# Git基础
+
+# Git 初始
 
 
 
@@ -13,7 +22,7 @@
 >4. GIT没有一个全局的版本号，而SVN有;
 >5. GIT的内容完整性要优于SVN;
 
-
+### adaf
 
 区别的详细介绍[请见这里](http://blog.jobbole.com/31444/)
 
