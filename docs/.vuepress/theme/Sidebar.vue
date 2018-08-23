@@ -119,7 +119,7 @@ function resolveOpenGroupIndex (route, items) {
 .sidebar .sidebar-links{
   >li{
     >a{
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
     }
     
