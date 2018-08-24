@@ -153,11 +153,10 @@ export default {
       var hm2 = document.createElement("script");
       hm2.src= "https://s19.cnzz.com/z_stat.php?id=1274545498&web_id=1274545498";
       hm2.language = "JavaScript"
-
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-      s.parentNode.insertBefore(hm2, s);
-
+      
+      var head = document.head
+      head.appendChild(hm)
+      head.appendChild(hm2)
   },
 
   methods: {
