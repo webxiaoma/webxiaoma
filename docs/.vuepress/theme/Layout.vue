@@ -145,6 +145,19 @@ export default {
     })
 
     this.$on('sw-updated', this.onSWUpdated)
+
+// 百度统计
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e6d78911b44cbc78761226505192b30f";
+// 友盟统计
+      var hm2 = document.createElement("script");
+      hm2.src= "https://s19.cnzz.com/z_stat.php?id=1274545498&web_id=1274545498";
+      hm2.language = "JavaScript"
+
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+      s.parentNode.insertBefore(hm2, s);
+
   },
 
   methods: {
