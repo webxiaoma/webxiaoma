@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>常用基础指令 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文主要讲述git的版本操作，以及使用git操作文件。">
+    <link rel="icon" href="/img/icon.ico">
+  <meta rel="keywords" content="马新想，webxiaoma, 马新想个人网站">
+    <meta name="keywords" content="git版本控制, 版本回退, git，git原理教程">
+    <link rel="preload" href="/assets/css/0.styles.39fbe732.css" as="style"><link rel="preload" href="/assets/js/app.f1443fa4.js" as="script"><link rel="preload" href="/assets/js/8.c8cde0c1.js" as="script"><link rel="prefetch" href="/assets/js/9.327a7aeb.js"><link rel="prefetch" href="/assets/js/2.541ddb8d.js"><link rel="prefetch" href="/assets/js/3.87cb5b5f.js"><link rel="prefetch" href="/assets/js/4.6da4da2d.js"><link rel="prefetch" href="/assets/js/5.4580ed80.js"><link rel="prefetch" href="/assets/js/6.1b5700a4.js"><link rel="prefetch" href="/assets/js/7.b22dc395.js"><link rel="prefetch" href="/assets/js/10.fd37fa40.js"><link rel="prefetch" href="/assets/js/11.5f8c22b3.js"><link rel="prefetch" href="/assets/js/12.96f7638e.js"><link rel="prefetch" href="/assets/js/13.1507adf0.js"><link rel="prefetch" href="/assets/js/14.2d2ec564.js"><link rel="prefetch" href="/assets/js/15.4bc53c38.js"><link rel="prefetch" href="/assets/js/16.acc70397.js"><link rel="prefetch" href="/assets/js/17.72018111.js"><link rel="prefetch" href="/assets/js/18.c2cc6fcc.js"><link rel="prefetch" href="/assets/js/19.16dc8357.js"><link rel="prefetch" href="/assets/js/20.0fc2b8ef.js"><link rel="prefetch" href="/assets/js/21.320de4bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.39fbe732.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-39e1d899><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://webxiaoma.github.io/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>旧网站</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-39e1d899 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://webxiaoma.github.io/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>旧网站</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/git/" class="sidebar-link" data-v-5534fc3a>GIT 初识</a></li><li data-v-5534fc3a><a href="/git/Git的基本操作.html" class="sidebar-link" data-v-5534fc3a>Git的基础操作</a></li><li data-v-5534fc3a><a href="/git/Git的远程操作.html" class="sidebar-link" data-v-5534fc3a>Git的远程操作</a></li><li data-v-5534fc3a><a href="/git/Git的版本控制.html" class="active sidebar-link" data-v-5534fc3a>常用基础指令</a><ul class="sidebar-sub-headers" data-v-5534fc3a data-v-5534fc3a><li class="sidebar-sub-header" data-v-5534fc3a data-v-5534fc3a><a href="/git/Git的版本控制.html#常用基础指令" class="sidebar-link" data-v-5534fc3a>常用基础指令</a></li><li class="sidebar-sub-header" data-v-5534fc3a data-v-5534fc3a><a href="/git/Git的版本控制.html#" class="sidebar-link" data-v-5534fc3a></a></li></ul></li></ul> </div> <div class="page"> <div class="content"><h2 id="常用基础指令"><a href="#常用基础指令" aria-hidden="true" class="header-anchor">#</a> 常用基础指令</h2> <div class="tip custom-block"><p class="custom-block-title">本章命令</p></div> <h2 id><a href="#" aria-hidden="true" class="header-anchor">#</a></h2> <p>我们在开发项目时git是按照一个时间线来控制我们的项目版本的，也就是我们每<code>git commit</code> 一次，git就会记录这次提交时间并创建一个项目版本，生成一个<code>commitId</code>来给我们这个版本一个唯一标记，某一天我们想回到我们的某个版本，只要我们知道这个版本的<code>commitId</code>就可以将我们的项目切换到指定的版本。</p> <h4 id="二、git的版本操作"><a href="#二、git的版本操作" aria-hidden="true" class="header-anchor">#</a> 二、git的版本操作:</h4> <p>操作之前我们在我们的工作区新建一个mygit.txt文件。</p> <p><strong>1.管理修改</strong></p> <p>我们在我们新建的mygit.txt文件中添加一句 &quot;my first git&quot;
+查看文件中的内容我们可以执行命令：</p> <div class="language- extra-class"><pre class="language-text"><code>$ cat mygit.txt
+my first git
+</code></pre></div><p>提交后我们可以使用 <code>git diff HEAD -- mygit.txt</code> 命令查看工作区和版本库里的最新区别</p> <div class="language- extra-class"><pre class="language-text"><code>git diff 
+</code></pre></div><p><strong>2.撤销修改</strong></p> <p>例如上面的mygit.txt文件中我们的内容是  <strong>my first git</strong>,我们不小心将其改成了 <strong>my last git</strong></p> <p>这时必须要及时更改，不改可能会丢工作怎么办,
+第一种方法就是，我们手动把我们写的删掉，如果更改的太多这样做会很麻烦.
+我们还可以使用 <code>git checkout -- file</code></p> <div class="language- extra-class"><pre class="language-text"><code>git checkout -- mygit.txt
+</code></pre></div><p>命令<code>git checkout -- readme.txt</code>意思就是，把<code>mygit.txt</code>文件在工作区的修改全部撤销，这里有两种情况：</p> <p>一种是<code>readme.txt</code>自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；</p> <p>一种是<code>readme.txt</code>已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。</p> <p>总之，就是让这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态。</p> <p>我们可以执行<code>cat mygit.txt</code> 是否发生变化</p> <p><strong>3.版本回退</strong></p> <p>我们在使用git上传我们的文件时，我们有事会碰到，刚上传就发现传错了，但是已经覆盖了我们远程仓库的源文件了。这时候我们是不是很懵逼。不知所措，放心，git给我们留了一手，因为git存在历史记录，我们可以查看历史记录：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git log
+</code></pre></div><p>git log命令显示从最近到最远的提交日志，可能git会为我们打印出很多的记录信息，如果我们想看简洁的历史记录我们可以这样：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git log --pretty=oneline
+3628162fb23d48395383f8f31179f24e0882e1e0 one
+ea34578d54d6d7dd233c827ed32a8cd576c5ee85 two
+cb926e7ea50ad11b8f9e909c05226233bf755030 three
+</code></pre></div><p>上面一大串编码，这是<code>commit id</code>(版本号),电脑生成的,首先，Git必须知道当前版本是哪个版本，在Git中，用HEAD表示当前版本，也就是最新的提交，上一个版本就是<code>HEAD^</code>，上上一个版本就是<code>EAD^^</code>，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100</p> <p>好了，如果我们不小心提交错了，我们可以回退到上个版本，git会根据历史记录回退到上一个版本。</p> <div class="language- extra-class"><pre class="language-text"><code>$ git reset --hard HEAD^
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>$ git log --pretty=oneline
+3628162fb23d48395383f8f31179f24e0882e1e0 one
+ea34578d54d6d7dd233c827ed32a8cd576c5ee85 two
+</code></pre></div><p><strong>4.删除文件</strong></p> <p>有时候我们想通过文件管理器把文件删除：</p> <div class="language- extra-class"><pre class="language-text"><code>$ rm 文件
+</code></pre></div><p>当然如果你想恢复文件可以用：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git checkout --  文件
+</code></pre></div><p>恢复文件其实就是将我们暂存区内的版本替换了我们工作区的版本了。</p> <p>git的版本操作基本就是这些了。</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">8/23/2018, 6:06:55 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/8.c8cde0c1.js" defer></script><script src="/assets/js/app.f1443fa4.js" defer></script>
+  </body>
+</html>
