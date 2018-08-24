@@ -145,7 +145,7 @@ export default {
     })
 
     this.$on('sw-updated', this.onSWUpdated)
-
+    
 // 百度统计
       var hm = document.createElement("script");
       hm.src = "https://hm.baidu.com/hm.js?e6d78911b44cbc78761226505192b30f";
