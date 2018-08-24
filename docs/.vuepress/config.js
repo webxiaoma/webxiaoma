@@ -23,7 +23,7 @@ module.exports = {
                 // {text:'Vue', link:'/vue/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
-            { text: '旧网站', link: 'http://webxiaoma.coding.me/webxiaoma', blank:true},
+            { text: '旧网站', link: 'https://webxiaoma.github.io/webxiaoma', blank:true},
         ],
         sidebar: {  // 侧边栏
             '/javascript/':[
@@ -41,10 +41,13 @@ module.exports = {
                 '',
                 'Git的基本操作',
                 'Git的远程操作',
+                'Git的版本控制',
+                //'Git的分支管理',
+
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2
-       // displayAllHeaders:true  // 侧边栏所有链接全展开
+       // displayAllHeaders:true,  // 侧边栏所有链接全展开
        lastUpdated: '最近更新时间', // 最后更新时间
        serviceWorker: {
         updatePopup: { //刷新内容的弹窗
