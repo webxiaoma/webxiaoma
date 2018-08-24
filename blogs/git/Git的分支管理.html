@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git的分支管理 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文主要讲述git的分支操作以及git的分支管理。">
+    <link rel="icon" href="/img/icon.ico">
+  <meta rel="keywords" content="马新想，webxiaoma, 马新想个人网站">
+    <meta name="keywords" content="git分支, git, git初识，git原理教程">
+    <link rel="preload" href="/assets/css/0.styles.39fbe732.css" as="style"><link rel="preload" href="/assets/js/app.5f692eae.js" as="script"><link rel="preload" href="/assets/js/6.1b5700a4.js" as="script"><link rel="prefetch" href="/assets/js/9.327a7aeb.js"><link rel="prefetch" href="/assets/js/2.541ddb8d.js"><link rel="prefetch" href="/assets/js/3.87cb5b5f.js"><link rel="prefetch" href="/assets/js/4.6da4da2d.js"><link rel="prefetch" href="/assets/js/5.4580ed80.js"><link rel="prefetch" href="/assets/js/7.b22dc395.js"><link rel="prefetch" href="/assets/js/8.c8cde0c1.js"><link rel="prefetch" href="/assets/js/10.fd37fa40.js"><link rel="prefetch" href="/assets/js/11.5f8c22b3.js"><link rel="prefetch" href="/assets/js/12.96f7638e.js"><link rel="prefetch" href="/assets/js/13.1507adf0.js"><link rel="prefetch" href="/assets/js/14.2d2ec564.js"><link rel="prefetch" href="/assets/js/15.4bc53c38.js"><link rel="prefetch" href="/assets/js/16.acc70397.js"><link rel="prefetch" href="/assets/js/17.72018111.js"><link rel="prefetch" href="/assets/js/18.c2cc6fcc.js"><link rel="prefetch" href="/assets/js/19.16dc8357.js"><link rel="prefetch" href="/assets/js/20.0fc2b8ef.js"><link rel="prefetch" href="/assets/js/21.320de4bd.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.39fbe732.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-39e1d899><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://webxiaoma.github.io/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>旧网站</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-39e1d899 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://webxiaoma.github.io/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>旧网站</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/git/" class="sidebar-link" data-v-5534fc3a>GIT 初识</a></li><li data-v-5534fc3a><a href="/git/Git的基本操作.html" class="sidebar-link" data-v-5534fc3a>Git的基础操作</a></li><li data-v-5534fc3a><a href="/git/Git的远程操作.html" class="sidebar-link" data-v-5534fc3a>Git的远程操作</a></li><li data-v-5534fc3a><a href="/git/Git的版本控制.html" class="sidebar-link" data-v-5534fc3a>常用基础指令</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="git的分支管理"><a href="#git的分支管理" aria-hidden="true" class="header-anchor">#</a> Git的分支管理</h1> <h4 id="git分支-创建与合并"><a href="#git分支-创建与合并" aria-hidden="true" class="header-anchor">#</a> git分支(创建与合并)</h4> <p>我们这里讲解git分支主要还是借鉴廖雪峰老师的文章，因为讲的实在是太好了。</p> <p>每次提交，Git都把我们的版本记录串成一条时间线，这条时间线就是一个分支。如果只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。</p> <p>一开始的时候，master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点：</p> <p>每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长：
+<img src="https://webxiaoma.github.io/git/git3-1.png" alt="dev分支"></p> <p>当我们新建一个分支时,例如 分支dev</p> <div class="language- extra-class"><pre class="language-text"><code>$ git checkout -b dev
+</code></pre></div><p>这里git会为我们新建一个dev分支，并切换到dev分支就相当于执行命令：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git branch dev
+$ git checkout dev
+</code></pre></div><p>这里git所做的是，新建一个<code>dev</code>指针指向<code>master</code>相同的提交,在吧<code>HEAD</code>指向<code>dev</code>，表示当前分支在<code>dev</code>上</p> <p><img src="https://webxiaoma.github.io/git/git3-3.png" alt="dev分支"></p> <p>查看所有分支：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git branch
+* dev
+  master
+</code></pre></div><p><code>git branch</code> 会将自己的所用分支全部打印出来，前面有<code>*</code>号的是当前分支，我们也可以从命令版中看出自己所在分支：</p> <p><img src="https://webxiaoma.github.io/git/git3-2.png" alt="所在分支"></p> <p>然后我们在我们的工作区，新建一个<code>new.txt</code>文件，然后我们执行</p> <div class="language- extra-class"><pre class="language-text"><code>$ git add new.txt
+$ git commit -m 'add new'
+</code></pre></div><p>这时我们的dev分支的时间线,要比master分支的时间线长，因为我们在dev分支下提交了<code>new.txt</code>文件。</p> <p><img src="https://webxiaoma.github.io/git/git3-5.png" alt="分支比较"></p> <p>这时我们切换到master分支</p> <div class="language- extra-class"><pre class="language-text"><code>$ git checkout master
+</code></pre></div><p>我们可以看一下我们的工作区，master分支下是没有<code>new.txt</code>文件的。</p> <p>如果我们想将master分支和dev分支进行合并，我们可以将master指向我们当前提交的dev就ok了</p> <div class="language- extra-class"><pre class="language-text"><code>$ git merge dev
+</code></pre></div><p>合并分支后我们会看到命令行中:</p> <p><img src="https://webxiaoma.github.io/git/git3-4.png" alt="分支比较"></p> <p>我们这时在查看一下我们的工作区，以经有了<code>new.txt</code>文件，现在master和dev分支的内容一模一样了。</p> <p>上面显示 <code>Fast-forward</code>Git告诉我们，这次合并是快进模式，也就是直接把master指向dev的当前提交，并不是所有的合并都是 <code>Fast-forward</code>,</p> <p><img src="https://webxiaoma.github.io/git/git3-6.png" alt="分支比较"></p> <p>我们已经说了并不是所有的合并都是 <code>Fast-forward</code>,git在使用这种模式时，删除分支后，会丢掉分支信息。如果我们想要保留着个信息我们可以强制禁用<code>Fast-forward</code> 模式，<code>git</code>会在<code>merge</code>时生成新的<code>commit</code>，这样就可以在分支历史上看出分支的信息。（也就是，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而<code>fast forward</code>合并就看不出来曾经做过合并）</p> <div class="language- extra-class"><pre class="language-text"><code>$ git merge --no-ff -m &quot;off Fast-forward&quot; dev
+</code></pre></div><p>上面的参数<code>--no-ff</code>表示禁用<code>Fast-forward</code> 模式。不使用<code>Fast-forward</code> 模式，git合并就是这样：</p> <p>如果我们想把分支推送到远程仓库，我们可以这样：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git push origin master:dev
+</code></pre></div><p>上边的意思就是将master 分支下的dev分支并推送到远程仓库</p> <p>如果我们想删除远程仓库的dev分支：</p> <div class="language- extra-class"><pre class="language-text"><code>git push origin :dev
+</code></pre></div><p>合并完成后如果没有冲突我们就可以放心的删除我们的文件了。下面我们会将如果有冲突怎么处理。</p> <p><img src="https://webxiaoma.github.io/git/git3-8.png" alt="分支合并"></p> <div class="language- extra-class"><pre class="language-text"><code>$ git branch -d dev
+</code></pre></div><p>这时我们的<code>dev</code>分支就被删除了。</p> <p><img src="https://webxiaoma.github.io/git/git3-7.png" alt="分支删除"></p> <p>这里我想说的是，我们在开发项目是，一般<code>mater</code>分支是比较稳定的，我们尽量不在<code>mater</code>分支上进行开发，我一般我们在<code>dev</code>分支上进行开发，同时，我们每个人也有自己的分支，并时不时的往<code>dev</code>分支上提交就可以了。</p> <h4 id="bug分支"><a href="#bug分支" aria-hidden="true" class="header-anchor">#</a> Bug分支</h4> <p>当我们正在兴高采烈的开发项目时，突然领导说项目有个bug需要修复，这时我们手里的项目还没开发完，也没法提交，因为工作才做到一半。这时我们可以利用git把我们当前的工作现场储藏起来，等bug调完后，在恢复现场继续工作。</p> <div class="language- extra-class"><pre class="language-text"><code>$ git stash
+</code></pre></div><p>现在我们用 <code>git status</code> 查看工作区，会是干净的。</p> <p>接下来，我们来修复bug，我们先确定在哪个分支上修复，比如在<code>master</code>分支上修复bug，我们就在<code>master</code>分支上临时建一个修复bug的分支 <code>issue</code>,修复完成后在切换到master分支然后合并，删除<code>issue</code>分支。</p> <div class="language- extra-class"><pre class="language-text"><code>$ git checkout master
+$ git checkout -b issue
+
+//修复完成后
+$ git add .
+$ git commit -m 'mod bug'
+$ git checkout master
+$ git merged --no-ff -m &quot;mod bug&quot; issue
+$ git branch -d issue
+</code></pre></div><p>修改完成后，我们需要恢复我们原来的工作区,用 <code>git status</code>  查看我们的工作区状态是干净的。我们用 <code>git stash list</code> 命令来看看我们储藏起来的工作区</p> <div class="language- extra-class"><pre class="language-text"><code>$ git stash list
+stash@{0}: WIP on dev: c10ade1 add change
+</code></pre></div><p>恢复储藏区我们有两种方法：</p> <p>1.<code>git stash apply</code> 使用该方法恢复后，stash内容并不删除，你需要用git stash drop来删除；
+2.<code>git stash pop</code> 该方法恢复的同时把stash内容也删了</p> <p>你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：</p> <div class="language- extra-class"><pre class="language-text"><code>$ git stash apply stash@{0}
+</code></pre></div><h4 id="feature分支"><a href="#feature分支" aria-hidden="true" class="header-anchor">#</a> Feature分支</h4> <p>Feature分支 一般说的是我们用来添加新功能的分支，在添加新功能时，我们很少直接在master分支上进行添加的，我们会创建出一个master分支，进行操作，完成后，进行合并，再将该分支删掉。但是如果我们功能添加好了，但是没有进行合并，这时老板说不添加这个功能了，我们肯会删除该分支。</p> <div class="language- extra-class"><pre class="language-text"><code>$ git branch -d feature-vulcan
+</code></pre></div><p>销毁这个分支时，我们会看大销毁失败。Git友情提醒，<code>feature-vulcan</code>分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用命令git branch -D feature-vulcan。</p> <p>那好我们就直接强制删除</p> <div class="language- extra-class"><pre class="language-text"><code>$ git branch -D feature-vulcan
+</code></pre></div><h4 id="分支对比差异"><a href="#分支对比差异" aria-hidden="true" class="header-anchor">#</a> 分支对比差异</h4> <p>查看 dev 有，而 master 中没有的：</p> <div class="language- extra-class"><pre class="language-text"><code>git log dev ^master 
+</code></pre></div><p>查看 dev 中比 master 中多提交了哪些内容</p> <div class="language- extra-class"><pre class="language-text"><code>git log master..dev
+</code></pre></div><p>不知道谁提交的多谁提交的少，单纯想知道有什么不一样</p> <div class="language- extra-class"><pre class="language-text"><code>git log dev...master
+</code></pre></div><p>在上述情况下，再显示出每个提交是在哪个分支上</p> <div class="language- extra-class"><pre class="language-text"><code>git log --left-right dev...master
+</code></pre></div></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">8/23/2018, 6:06:55 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/6.1b5700a4.js" defer></script><script src="/assets/js/app.5f692eae.js" defer></script>
+  </body>
+</html>
