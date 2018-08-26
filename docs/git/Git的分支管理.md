@@ -10,194 +10,322 @@ meta:
 # Git的分支管理
 
 
+## 常用基础指令
 
-#### git分支(创建与合并)
+::: tip 本章命令
 
-我们这里讲解git分支主要还是借鉴廖雪峰老师的文章，因为讲的实在是太好了。
+- `git checkout -b 分支名`   创建新分支
+- `git checkout 分支名`  切换分支
+- `git branch` 查看本地分支 
+- `git branch -r` 查看远程分支 
+- `git reset --hard HEAD/commitId` 切换分支版本
+- `git log [--pretty=oneline]` 查看提交历史记录,可选参数`--pretty=oneline`
+- `git merge [-m '备注' --no-ff] 分支名` 合并分支（默认以`Fast-forwar` 模式合并）
+- `git push -u origin 分支名` 关联远程分支
+- `git push origin --delete 分支名` 删除指定远程分支（或使用`git push origin :分支名`）
+:::
 
-每次提交，Git都把我们的版本记录串成一条时间线，这条时间线就是一个分支。如果只有一条时间线，在Git里，这个分支叫主分支，即master分支。HEAD严格来说不是指向提交，而是指向master，master才是指向提交的，所以，HEAD指向的就是当前分支。
+说到`git`分支，没有接触过的人肯定会问什么是分支。这里我们来大致的说一下，其实分支类似于将你的项目拷贝了一份，我们在拷贝的那一份上进行项目的开发。就好比一开始我们公司有一个项目，公司来了个两个新人小王和小李，他们俩在开发这个项目时，怕把原来的项目搞坏，就没人复制了一分项目，在自己复制的项目上进行开发，这时，这两份项目就相当于两个分支，而公司原来的项目就相当于主分支。当在进来新人小牛时，小牛又在小王那份项目上复制了一份项目进行开发，而这时，复制的项目就相当于小王那个项目的一个分支，最后项目开发完成时我们将我们的项目合并到了一起，就完成了我们项目的开发。
 
-一开始的时候，master分支是一条线，Git用master指向最新的提交，再用HEAD指向master，就能确定当前分支，以及当前分支的提交点：
 
-每次提交，master分支都会向前移动一步，这样，随着你不断提交，master分支的线也越来越长：
-![dev分支](https://webxiaoma.github.io/git/git3-1.png)
 
-当我们新建一个分支时,例如 分支dev
+## Git版本
 
+在git中，我们新创建的项目就会存在一个分支，这个分支就叫主分支 `master 分支`，分支记录着我们每次提交项目的记录，这些提交记录连接起来就是一条时间线（版本线）。我们一般在开发项目时，会创建出另一个分支，在该分支上创建项目。现在我们来熟悉一下操作分支的一些命令，在创建分支前我们来了解一下`git`的版本。
+
+g例如我们初始化一个`git`仓库`project`，新创建的仓库默认是有一个`master`主分支的，并且`HEAD` 指针指向当前分支的当前版本（初始时也就是`master`分支）。我们在项目中新建一个`test.js` 文件,并将它提交。
+
+```js
+// 将test.js 文件添加到缓存区
+git add test.js
+
+// 提交缓存区的内容
+git commit -m '第一个版本'
 ```
-$ git checkout -b dev
+
+这时我们在`master`分支上就有了第一个项目版本，`master`分支应该是这样的:
+
+<MyImg src="/img/git-4-1.png" alt="git分支"/>
+
+当我们在创建一个 `two.js` 文件提交我们的修改后，`master`分支版本应该是这样的:
+
+<MyImg src="/img/git-4-2.png" alt="git分支"/>
+
+
+## 版本回退
+
+通过上面操作我们可以知道，git每提交一次都会有生成一个版本，并且将`HEAD`指针指向当前分支下的最新版本。如果有一天我们想将我们的项目回退到上一个版本改怎么处理呢，这时我们可以使用命令`git reset --hard HEAD^` 或 `git reset --hard commitId`。在使用这个命令之前我们可以先使用`git log`来查看一下我们上面提交的历史记录
+
+```js
+git log
 ```
 
-这里git会为我们新建一个dev分支，并切换到dev分支就相当于执行命令：
+我们可以看到输出结果
 
+```js
+commit fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 (HEAD -> master)
+Author: webxiaoma <webxiaoma@qq.com>
+Date:   Sun Aug 26 20:13:00 2018 +0800
+
+    第二个版本
+
+commit 72a53e7a41f456b3e22645618ebfff1fe3dce243
+Author: webxiaoma <webxiaoma@qq.com>
+Date:   Sun Aug 26 20:12:13 2018 +0800
+
+    第一个版本
 ```
-$ git branch dev
-$ git checkout dev
+我们可以看到我们两次的提交记录，里面包含时间，操作的`git`账号以及每次提交的 `commit id`，最近的一次提交展示在最上边。 另外我们先将这两个 `commit id`记下来，下面我们呢会使用到。此时我们的项目目录有第一个版本中创建的`test.js`和第二个版本时创建的`two.js`。接下来我们将我们的项目回退到第一个版本。
+
+```js
+git reset --hard HEAD^
 ```
-这里git所做的是，新建一个`dev`指针指向`master`相同的提交,在吧`HEAD`指向`dev`，表示当前分支在`dev`上
+此时我们的项目已经会到了第一个版本，我们可以执行`git log` 查看版本记录，因为`git log`输出的内容太多，我们可以简化一下输出内容，我们可以执行`git log --pretty=oneline`，输出结果
 
-![dev分支](https://webxiaoma.github.io/git/git3-3.png)
-
-
-查看所有分支：
-
+```js
+72a53e7a41f456b3e22645618ebfff1fe3dce243 (HEAD -> master) 第一个版本
 ```
-$ git branch
+可以看到只输出了我们一个版本的记录，并且我们可以查看一下我们的项目，现在只有`test.js` 文件，而`two.js` 文件已经不见了。此时我们的`master` 分支又成了第一版本的样子。
+
+<MyImg src="/img/git-4-1.png" alt="git分支"/>
+
+如果我们的项目已经有好几和版本了，我们想回退到上两个版本怎么弄，我们可以执行`git reset --hard HEAD^^`, 如果回退到上三个版本我们可以执行`git reset --hard HEAD^^^`, 我想你已经知道怎么会退到第四个版本了，`HEAD` 后面每加一个`^` 就是向上找一个版本的意思。如果我们还想从第一个版本回到第二个版本怎么弄，我们可以使用命令`git reset --hard commitId`, 这时就用到我们上面记下来的两个 `commitID` 中的第二个版本的`Id`了
+
+```js
+git reset --hard fdc0fb441809ae6aca632e6dbe9f04f9640e21d2
+```
+
+
+
+
+执行完，我们查看版本记录`git log`，可以看到我们当前版本是第二个版本，并且我们的项目中`two.js`文件又显示出来了。
+
+<MyImg src="/img/git-4-2.png" alt="git分支"/>
+
+当然我们可以使用命令`git reset --hard commitId`来跳到我们指定的`commitId`的任何版本，只要我们记住这个ID就可以任意切换。
+
+
+::: tip 小提示
+- 这里因为`commitId` 太长我们可以只要截取一段就可以跳转到指定的版本了，而不用使用完整的`commitId`
+
+- 如果我们想回到我们的原来版本，但是又忘记了原来版本的`commitID`，我们可以执行`git reflog` 来查看每次你使用git操作的版本记录，里面含有简化的`commitID`。
+:::
+
+
+
+
+
+## 创建分支
+
+在给 `git`中我们使用`git checkout -b 分支名` 来创建`git`的分支，并切换到创建的分支。比如我们在上边`master`分支的第二个版本的时候创建一个`dev`分支。
+
+```js
+git checout -b dev
+```
+这时我们就创建了一个和`master`项目一样的`dev`分支，我们可以从`git base` 中可以看到
+
+<MyImg src="/img/git-4-8.png" alt="git分支"/>
+
+这时我们的项目就有一个`master` 分支和 `dev` 分支了，并且`HEAD`指针指向当前的`dev`分支，其版本和`master`最新版本一样为第二个版本,我们可以用图来表示
+
+<MyImg src="/img/git-4-3.png" alt="git分支"/>
+
+
+## 查看所有分支
+
+我们也可以使用`git branch` 来查看所有分支。
+
+```js
+git branch
+
+// 输出结果
 * dev
   master
 ```
-`git branch` 会将自己的所用分支全部打印出来，前面有`*`号的是当前分支，我们也可以从命令版中看出自己所在分支：
 
-![所在分支](https://webxiaoma.github.io/git/git3-2.png)
+结果中带 `*` 号的代表当前所在的分支。我们可以在`dev`分支上创建一个`dev.js` 文件，并将它提交，然后我们查看版本提交记录
 
-然后我们在我们的工作区，新建一个`new.txt`文件，然后我们执行
+```js
+git add .
 
-```
-$ git add new.txt
-$ git commit -m 'add new'
-```
-这时我们的dev分支的时间线,要比master分支的时间线长，因为我们在dev分支下提交了`new.txt`文件。
+git commit -m 'dev的第三个版本'
 
-![分支比较](https://webxiaoma.github.io/git/git3-5.png)
+git log --pretty=oneline
 
-这时我们切换到master分支
 
-```
-$ git checkout master
-```
-我们可以看一下我们的工作区，master分支下是没有`new.txt`文件的。
-
-如果我们想将master分支和dev分支进行合并，我们可以将master指向我们当前提交的dev就ok了
+// 输出结果
+40703dbf308315022cef120c28a90d130ad90a05 (HEAD -> dev) dev的第三个版本
+fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 (master) 第二个版本
+72a53e7a41f456b3e22645618ebfff1fe3dce243 第一个版本
 
 ```
-$ git merge dev
+
+我们可以看到这时`dev`分支就会有三个版本，而此时`master`分支还停留在第二个版本，他们的关系如图：
+
+<MyImg src="/img/git-4-4.png" alt="git分支"/>
+
+
+
+
+## 切换分支
+
+我们可以使用`git checkout 分支名`将我们的项目切换到`master`分支，其实就是将`HEAD` 指针指向`master`分支。
+
+```js
+git checkout master
 ```
-合并分支后我们会看到命令行中:
+此时我们可以看到，我么目录中创建的`dev.js` 消失了，因为这个文件是在我们的`dev`分支上，`master`分支上是不存在的。并且我们可以执行`git branch` 来查看当前所处分支。
 
-![分支比较](https://webxiaoma.github.io/git/git3-4.png)
+```js
+  dev
+* master
+```
 
-我们这时在查看一下我们的工作区，以经有了`new.txt`文件，现在master和dev分支的内容一模一样了。
+可以看到，`*`号在`master`分支上，说明我们当前分支是`master`分支，并且他们的关系图如下：
 
-上面显示 `Fast-forward`Git告诉我们，这次合并是快进模式，也就是直接把master指向dev的当前提交，并不是所有的合并都是 `Fast-forward`,
+<MyImg src="/img/git-4-5.png" alt="git分支"/>
 
-![分支比较](https://webxiaoma.github.io/git/git3-6.png)
 
-我们已经说了并不是所有的合并都是 `Fast-forward`,git在使用这种模式时，删除分支后，会丢掉分支信息。如果我们想要保留着个信息我们可以强制禁用`Fast-forward` 模式，`git`会在`merge`时生成新的`commit`，这样就可以在分支历史上看出分支的信息。（也就是，加上`--no-ff`参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而`fast forward`合并就看不出来曾经做过合并）
+## 合并分支
+
+现在我们在`master` 分支上，并且master分支比`dev` 分支少一个版本，我们可以将`dev` 分支合并到`master` 分支上。这里使用`git merge 要合并进来的分支名` 命令
+
+``` js
+git merge dev
+
+
+// 输出结果
+Updating fdc0fb4..40703db
+Fast-forward
+ dev.js | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 dev.js
+```
+执行完，我们可以看到我们文件夹中出现了`dev.js` 文件，这时我们`master`版本和`dev`分支的最新版本就一样了，此时我们`HEAD`指针就指向了`master`分支的第三个版本上边
+
+
+<MyImg src="/img/git-4-6.png" alt="git分支"/>
+
+另外我们可以看到我们合并后输出的结果中使用的`Fast-forwar` 模式合并，此合并方式不会创造一个新的`commitID`(或commit节点)，而是使用`dev`的`commit`节点。默认情况下，`git merge`采用`fast-forward`模式。我们来看一下的提交版本记录:
+
+```js
+git log --pretty=oneline
+
+
+// 结果
+40703dbf308315022cef120c28a90d130ad90a05 (HEAD -> dev, master) dev的第三个版本
+fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 第二个版本
+72a53e7a41f456b3e22645618ebfff1fe3dce243 第一个版本
+```
+我们可以发现合并后的提交版本记录的信息和上面我们为合并时输出的提交版本记录的信息是一模一样的。那我们有没有办法合并分支时不使用`Fast-forwar` 模式，当然有，我么在合并分支时可以添加`--no-ff` 参数这里的`ff`就是`Fast-forwar` 模式的缩写，并且我们还可以添加`master`的提交备注, 结果命令就是这样`git merge -m '备注' --no-ff 分支名`
+
+```js
+// 首先我们将master分支回退到第二个版本
+git reset --hard HEAD^
+
+// 不使用`Fast-forwar` 模式合并dev到master分支
+git merge -m 'master 的第三个版本' --no-ff dev
+
+
+// 输出结果
+3363f4dcf86b311f7843f5c7191a202b8e17dc5f (HEAD -> master) master 的第三个版本
+40703dbf308315022cef120c28a90d130ad90a05 (dev) dev的第三个版本
+fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 第二个版本
+72a53e7a41f456b3e22645618ebfff1fe3dce243 第一个版本
+```
+
+我们可以看到这次提交记录结果多出了一条，这条记录就是`master`分支合并时的提交记录，并且还有自己的备注。
+
+## 删除分支
+
+我们可以使用命令`git branch -D 分支名` 来删除我们自定的分支，
+
+```js
+git branch -D dev
+```
+
+::: warning 注意
+删除某个分支前，当前`HEAD`指针不要再该分支上，要切换到其它分支才可以删除。
+:::
+
+## 远程分支操作
+
+如果我们本地新建了一个`dev` 分支怎么将该分支推送到远程呢，并且如果远程有一个`dev` 分支我们又该如何将该分支拉去下来呢。首先我们在以上边的的项目为例，我们要在远程有一个仓库
+
+### 1. 将本地分支推送到远程
+
+```js
+// 将dev分支推送到远程
+git push origin dev
+```
+这时我们远程仓库就会出现一个`dev` 分支
+
+<MyImg src="/img/git-4-9.png" alt="git分支"/>
+
+这时我们只是将本地`dev` 分支推送到了远程，还用有将本地`dev` 分支和远程分支关联起来，如果这时我们修改dev分支上的文件，提交后，在执行`git push` 就会提示我们 `git push --set-upstream origin dev`, 我们可以执行该命令将本地的`dev` 分支和远程`dev`分支关联起来
+
+```js
+git push --set-upstream origin dev
+或
+git push -u origin dev
+```
+
+其实当前我们执行完上面其中一个代码时，就是在我们`.git` 目录下的`config` 文件下添加了一个远程分支记录
 
 ```
-$ git merge --no-ff -m "off Fast-forward" dev
+[remote "origin"]
+	url = git@github.com:webxiaoma/project.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[branch "dev"]
+	remote = origin
+	merge = refs/heads/dev
 ```
-上面的参数`--no-ff`表示禁用`Fast-forward` 模式。不使用`Fast-forward` 模式，git合并就是这样：
 
+### 2. 将远程分支下载到本地
 
-如果我们想把分支推送到远程仓库，我们可以这样：
+将远程分支下载我们本地我们可以将我们本地仓库删除来重新操作。
 
+```js
+$ git clone git@github.com:webxiaoma/project.git
 ```
-$ git push origin master:dev
-```
-上边的意思就是将master 分支下的dev分支并推送到远程仓库
+克隆下来的项目，默认只会克隆`master`分支，我们需要在将`dev` 分支克隆下来，使用命令`git checout -b 本地分支名 origin/远程分支名`
 
-如果我们想删除远程仓库的dev分支：
-
+```js
+git chekcout -b dev origin/dev
 ```
+这时我们就创建了一个和远程关联的本地的`dev`分支，并且`.git` 目录下的`config` 文件中也生成了`dev`的分支记录，我们可以使用`git branch` 来查看分支。
+
+
+
+### 3. 克隆远程的指定分支
+
+如果我们想克隆指定的分支我们可以使用这个命令`git clone -b 分支名 仓库地址`
+
+```js
+git cloen -b dev  git@github.com:webxiaoma/project.git
+```
+这时克隆的只是我们远程仓库的`dev`分支。
+
+### 4. 查看远程分支
+
+我们可以执行命令`git branch -r` 来查看远程分支
+
+```js
+git branch -r
+```
+
+### 5. 删除远程分支
+
+如果我们想删除远程的某个分支我们可以使用`git push origin --delete 分支名` 或 `git push origin :分支名称`
+
+```js
+git push origin --delete dev
+或
 git push origin :dev
 ```
+这时我们在看远程仓库，`dev`分支就已经被删除了
 
-合并完成后如果没有冲突我们就可以放心的删除我们的文件了。下面我们会将如果有冲突怎么处理。
-
-![分支合并](https://webxiaoma.github.io/git/git3-8.png)
-
-```
-$ git branch -d dev
-```
-这时我们的`dev`分支就被删除了。
-
-![分支删除](https://webxiaoma.github.io/git/git3-7.png)
-
-
-这里我想说的是，我们在开发项目是，一般`mater`分支是比较稳定的，我们尽量不在`mater`分支上进行开发，我一般我们在`dev`分支上进行开发，同时，我们每个人也有自己的分支，并时不时的往`dev`分支上提交就可以了。
-
-
-
-#### Bug分支
-
-当我们正在兴高采烈的开发项目时，突然领导说项目有个bug需要修复，这时我们手里的项目还没开发完，也没法提交，因为工作才做到一半。这时我们可以利用git把我们当前的工作现场储藏起来，等bug调完后，在恢复现场继续工作。
-
-```
-$ git stash
-```
-现在我们用 `git status` 查看工作区，会是干净的。
-
-接下来，我们来修复bug，我们先确定在哪个分支上修复，比如在`master`分支上修复bug，我们就在`master`分支上临时建一个修复bug的分支 `issue`,修复完成后在切换到master分支然后合并，删除`issue`分支。
-
-```
-$ git checkout master
-$ git checkout -b issue
-
-//修复完成后
-$ git add .
-$ git commit -m 'mod bug'
-$ git checkout master
-$ git merged --no-ff -m "mod bug" issue
-$ git branch -d issue
-```
-修改完成后，我们需要恢复我们原来的工作区,用 `git status`  查看我们的工作区状态是干净的。我们用 `git stash list` 命令来看看我们储藏起来的工作区
-
-```
-$ git stash list
-stash@{0}: WIP on dev: c10ade1 add change
-```
-恢复储藏区我们有两种方法：
-
-1.`git stash apply` 使用该方法恢复后，stash内容并不删除，你需要用git stash drop来删除；
-2.`git stash pop` 该方法恢复的同时把stash内容也删了
-
-
-你可以多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash，用命令：
-
-```
-$ git stash apply stash@{0}
-```
-
-
-#### Feature分支
-
-Feature分支 一般说的是我们用来添加新功能的分支，在添加新功能时，我们很少直接在master分支上进行添加的，我们会创建出一个master分支，进行操作，完成后，进行合并，再将该分支删掉。但是如果我们功能添加好了，但是没有进行合并，这时老板说不添加这个功能了，我们肯会删除该分支。
-
-```
-$ git branch -d feature-vulcan
-```
-
-销毁这个分支时，我们会看大销毁失败。Git友情提醒，`feature-vulcan`分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用命令git branch -D feature-vulcan。
-
-那好我们就直接强制删除
-
-```
-$ git branch -D feature-vulcan
-```
-
-
-#### 分支对比差异
-
-查看 dev 有，而 master 中没有的：
-
-```
-git log dev ^master 
-```
-
-查看 dev 中比 master 中多提交了哪些内容
-```
-git log master..dev
-```
-
-不知道谁提交的多谁提交的少，单纯想知道有什么不一样
-
-```
-git log dev...master
-```
-
-在上述情况下，再显示出每个提交是在哪个分支上
-```
-git log --left-right dev...master
-```
-
+分支操作目前先讲的这里。

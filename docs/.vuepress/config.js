@@ -41,9 +41,7 @@ module.exports = {
                 '',
                 'Git的基本操作',
                 'Git的远程操作',
-                'Git的版本控制',
-                //'Git的分支管理',
-
+                'Git的分支管理',
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2
