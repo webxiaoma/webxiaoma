@@ -20,6 +20,7 @@ meta:
 - `git branch -r` 查看远程分支 
 - `git reset --hard HEAD/commitId` 切换分支版本
 - `git log [--pretty=oneline]` 查看提交历史记录,可选参数`--pretty=oneline`
+- `git log --graph --pretty=oneline --abbrev-commit` 以时间轴形式展示简洁提交记录信息
 - `git merge [-m '备注' --no-ff] 分支名` 合并分支（默认以`Fast-forwar` 模式合并）
 - `git push -u origin 分支名` 关联远程分支
 - `git push origin --delete 分支名` 删除指定远程分支（或使用`git push origin :分支名`）
@@ -75,7 +76,7 @@ Date:   Sun Aug 26 20:12:13 2018 +0800
 
     第一个版本
 ```
-我们可以看到我们两次的提交记录，里面包含时间，操作的`git`账号以及每次提交的 `commit id`，最近的一次提交展示在最上边。 另外我们先将这两个 `commit id`记下来，下面我们呢会使用到。此时我们的项目目录有第一个版本中创建的`test.js`和第二个版本时创建的`two.js`。接下来我们将我们的项目回退到第一个版本。
+我们可以看到我们两次的提交记录，里面包含时间，操作的`git`账号以及每次提交的 `commit id`，最近的一次提交展示在最上边。 另外我们先将这两个 `commit id`记下来，下面我们呢会使用到。**使用`git log`后如果我们想退出可以按 `q` 键** 此时我们的项目目录有第一个版本中创建的`test.js`和第二个版本时创建的`two.js`。接下来我们将我们的项目回退到第一个版本。
 
 ```js
 git reset --hard HEAD^
@@ -166,7 +167,6 @@ fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 (master) 第二个版本
 
 
 
-
 ## 切换分支
 
 我们可以使用`git checkout 分支名`将我们的项目切换到`master`分支，其实就是将`HEAD` 指针指向`master`分支。
@@ -188,7 +188,7 @@ git checkout master
 
 ## 合并分支
 
-现在我们在`master` 分支上，并且master分支比`dev` 分支少一个版本，我们可以将`dev` 分支合并到`master` 分支上。这里使用`git merge 要合并进来的分支名` 命令
+现在我们在`master` 分支上，并且master分支比`dev` 分支少一个版本，我们可以将`dev` 分支合并到`master` 分支上。这里使用`git merge 要合并进来的分支名` 命令，这个命令默认是使用的`Fast-forward` 快速合并模式
 
 ``` js
 git merge dev
@@ -206,7 +206,7 @@ Fast-forward
 
 <MyImg src="/img/git-4-6.png" alt="git分支"/>
 
-另外我们可以看到我们合并后输出的结果中使用的`Fast-forwar` 模式合并，此合并方式不会创造一个新的`commitID`(或commit节点)，而是使用`dev`的`commit`节点。默认情况下，`git merge`采用`fast-forward`模式。我们来看一下的提交版本记录:
+另外我们可以看到我们合并后输出的结果中使用的`Fast-forwar` 模式合并，此合并方式不会创造一个新的`commitID`(或commit节点)，而是使用`dev`的`commit`节点。也就如图所示，将`master`分支指针直接移动到了`dev`分支所在的位置。默认情况下，`git merge`采用`fast-forward`模式。我们来看一下的提交版本记录:
 
 ```js
 git log --pretty=oneline
@@ -217,7 +217,7 @@ git log --pretty=oneline
 fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 第二个版本
 72a53e7a41f456b3e22645618ebfff1fe3dce243 第一个版本
 ```
-我们可以发现合并后的提交版本记录的信息和上面我们为合并时输出的提交版本记录的信息是一模一样的。那我们有没有办法合并分支时不使用`Fast-forwar` 模式，当然有，我么在合并分支时可以添加`--no-ff` 参数这里的`ff`就是`Fast-forwar` 模式的缩写，并且我们还可以添加`master`的提交备注, 结果命令就是这样`git merge -m '备注' --no-ff 分支名`
+我们可以发现合并后的提交版本记录的信息和上面我们为合并时输出的提交版本记录的信息是一模一样的。那我们有没有办法合并分支时不使用`Fast-forwar` 模式，当然有，我么在合并分支时可以添加`--no-ff` 参数这里的`ff`就是`Fast-forwar` 模式的缩写，并且我们还可以添加`master`的提交备注, 命令就是这样`git merge -m '备注' --no-ff 分支名`
 
 ```js
 // 首先我们将master分支回退到第二个版本
@@ -227,6 +227,9 @@ git reset --hard HEAD^
 git merge -m 'master 的第三个版本' --no-ff dev
 
 
+// 我们来查看一下版本记录
+
+git log --pretty=oneline
 // 输出结果
 3363f4dcf86b311f7843f5c7191a202b8e17dc5f (HEAD -> master) master 的第三个版本
 40703dbf308315022cef120c28a90d130ad90a05 (dev) dev的第三个版本
@@ -234,7 +237,147 @@ fdc0fb441809ae6aca632e6dbe9f04f9640e21d2 第二个版本
 72a53e7a41f456b3e22645618ebfff1fe3dce243 第一个版本
 ```
 
-我们可以看到这次提交记录结果多出了一条，这条记录就是`master`分支合并时的提交记录，并且还有自己的备注。
+我们可以看到这次提交记录结果多出了一条，这条记录就是`master`分支合并时的提交记录，并且还有自己的备注，也就是说在禁用`Fast-forwar` 模式合并后，`master`分支就不是单纯的将指针移动到`dev`分支了，**而是`git`会讲两个分支中不同的修改合并起来，在提交一次（commit一次），我们可以看到不使用`Fast-forwar` 模式时会多出一个commitId** 这时`dev`分支就合并到了`master`分支上。这时我们的分支版本关系图是这样的
+
+<MyImg src="/img/git-4-13.png" alt="git分支"/>
+
+也就会出现四次提交记录，最后一次是当我们merge时git给我们执行的commit。上面我们所提到的在我们合并代码时都是没有冲突的，接下来我们来看看我们合并代码时出现了冲突该如何解决
+
+## 解决冲突
+
+
+### 1. git merge 解决冲突
+
+在实际开发项目时，我们多个人使用git，在项目进行合并时有时并不会很一帆风顺成功，有时会出现代码冲突。
+
+我们这里还使用我们上一个项目的例子，比如我们有一个`project`项目的git仓库，它有一个`master`分支,并且在`master`分支上已经有两个版本，第一个版本中我们创建了`test.js`文件，第二个版本中我们创建了`two.js`文件，我们这master分支上使用`git checkout -b dev`创建出一个新的`dev`分支，这时我们的分支结构如下：
+
+
+<MyImg src="/img/git-4-10.png" alt="git版本控制"/>
+
+我们可以看到`master` 分支和`dev`分支上的版本是一样的，并且`HEAD`指针指向`dev`分支的第二个版本，现在我们打开`two.js`文件，在`two.js`文件第一行写一个段`console.log('我是dev分支上的two.js')`，然后我们将我们的修改提交，现在我们的分支结构如下：
+
+
+<MyImg src="/img/git-4-11.png" alt="git版本控制"/>
+
+
+
+我们可以看到`master` 分支处于第二个版本，而`dev`分支处于第三个版本了。我们可以使用 `git log` 查看版本信息, 接下来我们将`HEAD`指针指向`master`分支
+
+```js
+git checkout master
+```
+
+然后我们打开master分支上的`two.js`文件，并在第一行写入`console.log('我是master分支上的two.js')`，然后我们将我们修改再次提交，这次我们分支的结构如下:
+
+<MyImg src="/img/git-4-12.png" alt="git版本控制"/>
+
+
+我们可以看到，`master`分支和`dev`分支都存在各自的第三个版本，并且它们的第三个版本修改内容是不一样的。这时候我们使用`git merge`将dev分支合并到master分支上时，`git`旧无法使用`Fast-forwar` 模式来合并我们的代码了，因为我们的代码就会出现冲突。这时 **git会将两个分支代码不同的地方取出放到当前冲突的文件中，让我们进行手动修改，我们修改完成提交后，然后把master指针指向这个新的commit**， 我们来执行`git merge dev`，我们可以看到我们目录中`two.js` 文件有一个黄色感叹号。
+
+<MyImg src="/img/git-4-13.jpg" alt="git版本控制"/>
+
+这表示该文件内容出现了冲突，我么打开该文件可以看到：
+
+```js
+<<<<<<< HEAD
+console.log('我是master分支上的two.js');
+=======
+console.log('我是dev分支上的two.js');
+>>>>>>> dev
+```
+
+
+我们可以看到两个分支上的修改都给我们展示出来了，从`<<<<<<< HEAD` 到 `=======` 的代码是我们当前分支的修改的代码，而从`=======` 到`>>>>>>> dev` 的代码是我们要合并的代码，这时git不知道，到底是保留master分支上的修改，还是保留dev分支上的修改，所以我们需要手动去解决这些冲突的代码，到哪那些使我们想要保留的。如果现在我们保留当前的修改，则我们将`dev`分支上的修改删掉，把`<<<<<<< HEAD` 、 `=======` 和`>>>>>>> dev` 也删掉。然后我们在重新提交
+
+```js
+git add .
+
+git commit -m 'merge 修改冲突'
+```
+
+现在我们就解决了我们代码之间的冲突了，这时我们的分支关系如下：
+
+<MyImg src="/img/git-4-14.png" alt="git版本控制"/>
+
+这时我们知道了 **git是使用非`Fast-forwar` 模式** 来进行冲突代码的合并的。 ，并且我们使用`git log --pretty=oneline` 来查看提交记录
+
+```js
+897254deeaef5485e2c6296a2fecd2fd53df02f3 (HEAD -> master) merge 修改冲突
+1df8f658cd5b997fd5a678288918f336ac92f9ad master第三个版本
+a41e42b2d60479d45266cf98c41ad352af1c6c42 (dev) dev 第三个版本
+844056e1f2f585cd4b0c86277acea39bcf8a0ecf 第二个版本
+2e57178f27461d47617aaf1cc165d7ba8e94b942 第一个版本
+```
+
+我们可以发现合并后的`master`分支含有`dev` 分支的提交记录以及我们最终解决冲突后的一次提交记录。我们从上面的图中可以看到，我们使用`git merge` 将`dev`分支合并到`master`分支后，我们的`master` 分支上还是会有两条时间轴线，我们也可以使用`git log --graph --pretty=oneline --abbrev-commit` 来查看版本记录的图形界面，我们可以很清晰的看到两条时间轴线。
+
+```js
+*   3265690 (HEAD -> master) merge 修改冲突
+|\
+| * 0841970 (dev) dev第三个版本
+* | fc5af12 master的第三个版版本
+|/
+* 1807910 第二个版本
+* 02f24ee 第一个版本
+```
+
+我们能不能将`master`分支上的版本记录变成一条时间轴线呢，答案是可行的，下面我们来实现这个
+
+
+### 2. git rebase 解决冲突
+
+使用`git rebase`命令网上人们翻译成 **变基**，现在我们使用这种方法来来合并我们的代码，并解决项目冲突，我们将我们的项目中`master`分支回退到合并前，怎么回退，自己看上边版本回退，回退完成后我们的分支是这种状态
+
+<MyImg src="/img/git-4-12.png" alt="git版本控制"/>
+
+使用`git log --graph --pretty=oneline --abbrev-commit` 查看`master`分支版本记录是这样的
+
+```js
+* fc5af12 (HEAD -> master) master的第三个版版本
+* 1807910 第二个版本
+* 02f24ee 第一个版本
+```
+
+现在我们使用`git rebase`来合并分支
+
+```js
+git rebase
+```
+结果会输出的一些信息我们不管，我们可以看到`two.js`文件又出现感叹号了，说明这个文件有冲突了，该文件中内容变成了这样
+
+```js
+<<<<<<< HEAD
+console.log('我是dev分支上的two.js')
+=======
+console.log('我是master分支上的two.js')
+>>>>>>> master的第三个版版本
+```
+我们可以和上面使用`git merge`合并时的冲突对比发现，这次`<<<<<<< HEAD` 到 `=======` 内容是合并进来的分支内容，而 `=======` 到`>>>>>>>` 之间是当前`master`分支的内容正好与`git merge`合并时相反了。这是因为使用`git rebase` 进行合并时，先将`dev`分支的内容合并到这两个分支相同版本的后边，然后将当前分支在进行合并，这时出现冲突，将出现冲突的代码全部展示到`master`分支中的冲突文件中，让我们来进行手动修改，修改完成后我们在进行提交。以这种合并方式进行合并的`master`分支版本如下：
+
+
+<MyImg src="/img/git-4-15.png" alt="git版本控制"/>
+
+这是`master` 分支上就只存在一个记录版本的时间的轴线，我们使用`git log --graph --pretty=oneline --abbrev-commit` 也可以看到
+
+```js
+git log --graph --pretty=oneline --abbrev-commit
+
+
+// 结果
+* 1e68002 (HEAD) merge 合并分支
+* 0841970 (dev) dev第三个版本
+* 1807910 第二个版本
+* 02f24ee 第一个版本
+```
+我们可以看到`master` 分支上就只存在一个记录版本的时间的轴线。
+
+
+
+::: tip 出现冲突的几种情况
+1. 不同分支修改了同一文件，并且都做了提交，这时合并分支时会出现冲突。
+2. 同一分支，不同开发人员在各自的本地修改了相同文件时，当其中一个人员上传到远程仓库后，另一个成员拉取时一般会出现代码冲突。
+:::
 
 ## 删除分支
 
