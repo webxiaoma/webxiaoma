@@ -16,7 +16,7 @@ meta:
 ::: tip 本章命令
 -  `git init` 初始化项目
 -  `git add`  添加项目到暂存区
--  `git commit` 提交项目到版本库 
+-  `git commit -m '备注'` 提交项目到版本库（必须写上备注）
 -  `git status` 查看当前仓库状态
 -  `git diff` 查看修改仓库内容
 -  `git rev-parse HEAD ` 获取完整commitID
@@ -92,6 +92,9 @@ git add test.js
 ```js
 git commit -m '提交练习'
 ```
+::: warning 注意
+使用 `git commit` 提交时需要加上备注 `git commit -m '备注'` ，否则你可能提交不成功
+:::
 提交完成后我们在次执行`git status` 命令，可以看到提示我们`working tree clean` 工作区是干净的，这说明我们已经提交成功。
 
 <MyImg src="/img/git-2-6.jpg" alt="git缓存区" />
@@ -185,3 +188,4 @@ index e69de29..c6f586a 100644
 ```
 
 我们看到当前目录和最新版本库中的差异也是`var a = "test.js 文件被修改"`,其它的`git diff`参数使用方法和我们列举的两个都大同小异，这里不在列举，可以自己动手尝试一下。
+

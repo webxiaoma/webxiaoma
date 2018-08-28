@@ -1,9 +1,7 @@
 module.exports = {
-    title: "马新想个人网站（webxiaoma）", //标题
-    description: "马新想的个人网站，专注书写博客，文档分享，网站地址为webxiaoma.com", //描述
+    title:'马新想个人网站',
     head: [
         ["link", { rel: "icon", href: `/img/icon.ico` }],
-        ["meta",{rel:'keywords',content:"马新想，webxiaoma, 马新想个人网站"}]
     ], //被注入页面 HTML <head> 额外的标签
     host: "localhost", //访问路径
     port: "5555", //端口
@@ -23,7 +21,7 @@ module.exports = {
                 // {text:'Vue', link:'/vue/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
-            { text: '旧网站', link: 'http://webxiaoma.coding.me/webxiaoma', blank:true},
+            { text: '旧网站', link: 'https://webxiaoma.github.io/webxiaoma', blank:true},
         ],
         sidebar: {  // 侧边栏
             '/javascript/':[
@@ -42,7 +40,8 @@ module.exports = {
                 'Git的基本操作',
                 'Git的远程操作',
                 'Git的分支管理',
-
+                'Git团队协作',
+                'Git多账户管理'
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2

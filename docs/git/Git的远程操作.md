@@ -15,6 +15,7 @@ meta:
 ::: tip 本章指令
 - `git clone 远程地址` 克隆远程项目
 - `git pull` 拉取远程项目
+- `git fetch` 拉取远程项目（但不会和本地合并）
 - `git push` 推送远程项目
 :::
 
