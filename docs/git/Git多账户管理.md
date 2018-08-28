@@ -41,6 +41,8 @@ meta:
 
 ## Git中添加账号
 
+### **1. 第一步**
+
 如果我们之前我们电脑上已经存在了`ssh`, 我们找到该文件，会发现里面有`id_rsa` 和 `id_rsa.pub` 两个文件，其中`id_rsa`为我们的私钥，`id_rsa.pub`为我们的公钥。因为我们要使用多个git账户来连接不同的远程仓库，所以我们需要多个`ssh key`。现在我们在生成另一个`ssh key`。
 
 ```js
@@ -54,7 +56,91 @@ Enter file in which to save the key (/c/Users/ljh/.ssh/id_rsa):
 ```
 这时是让我们输入公钥和私钥的名称，如果你不输入就会生成`id_rsa` 和 `id_rsa.pub` 两默认名为`id_rsa`的两个文件，这里我们输入`test_rsa`，回车之后会让我们输入`ssh` 密码，我们这里不输入，回车后还会再次让我们确认密码，我们直接回车。这时你可能想起你第一次配置`ssh key`时，直接按了三次回车键。现在我们可以去生成的ssh目录查看一下，会多出`test_rsa`私钥文件和`test_rsa.pub`公钥文件。我们将`test_rsa.pub`公钥文件放到我们自己的远程仓库中[查看放置方法](/git/Git的远程操作.html#_3-本地关联github)
 
-放置好后我们
+### **2. 第二步**
+
+放置好后我们需要让`ssh`识别新生成的私钥
+
+```js
+// 启动 ssh-agent.exe 进程
+eval $(ssh-agent -s)
+
+// 添加新ssh keys
+ssh-add ~/.ssh/ test_rsa
+```
+
+::: warning 注意
+
+一定要注意的是，这里我们虽然让`ssh`识别了新生成的私钥，但这种做法只是在当前`git bash`窗口中有效，如果我们关闭后，必须在指向以上代码才可以否则我们依然不能推送我们的代码到远程仓库
+:::
+
+针对以上问题我们的解决版本是：我们将以上命令放入到git根目录下的`bash.bashrc` 文件中的末尾。该文件在git打开时会自动执行我们的命令
+```js
+
+// 省略代码
+
+# Fixup git-bash in non login env
+shopt -q login_shell || . /etc/profile.d/git-prompt.sh
+
+# Fixup git-bash in non login env
+shopt -q login_shell || . /etc/profile.d/git-prompt.sh
 
 
-[https://www.jianshu.com/p/89cb26e5c3e8](https://www.jianshu.com/p/89cb26e5c3e8)
+#启动 ssh-agent.exe 进程
+eval $(ssh-agent -s)
+
+#添加新ssh keys
+ssh-add ~/.ssh/test_rsa
+```
+
+放置好后，当我们重新打开`git bash`时,会自动执行这两个代码，并输出 (pid 和我的不一定一样)
+
+```js
+Agent pid 40396
+Identity added: /c/Users/ljh/.ssh/test_rsa (/c/Users/ljh/.ssh/test_rsa)
+```
+
+
+### **3. 第三步**
+
+在`.ssh`目录下配置多个账户的 `config` 文件，如果没有 `config` 文件自己新建一个。
+
+```js
+# 配置github.com
+Host giathub.com                 
+  HostName github.com
+  IdentityFile C:\\Users\\ljh\\.ssh\\id_rsa
+  PreferredAuthentications publickey
+  User webxiaoma
+
+# 配置git.oschina.net 
+Host git.test.net  
+  HostName git.oschina.net
+  IdentityFile C:\\Users\\ljh\\.ssh\\test_rsa
+  PreferredAuthentications publickey
+  User webtest
+```
+
+
+::: tip 说明
+
+每个账号需要单独配置一个Host，每个Host要取一个别名
+
+1. `Host` 指自定义的host简称,名字可以自己起， 连接就可以使用 ssh host名，比如上边`ssh github.com`。需要注意的是`Host`下边的书写需要有 **缩进**。
+2. `HostName` 主机名可以ip或者是域名
+3. `IdentityFile` 私钥文件路径（如：~/.ssh/id_rsa）
+4. `PreferredAuthentications`  配置登录时用什么权限认证（可设为 publickey, password publickey, keyboard-interactive等）
+5. `User` 登录用户名
+:::
+
+### **4. 第三步**
+
+现在我们就可以使用将我们的远程仓库下载下来了，下载下来之后，我们需要在我们的仓库中局部配置我们的用户名和邮箱
+
+```js
+git config user.name '用户名'
+git config user.email '邮箱'
+```
+
+配置完成后我们就可以正常的使用了，如果我们在克隆一个仓库，还是要进行局部配置的。我们可以把常用的git账户设置成全局配置。
+
+
