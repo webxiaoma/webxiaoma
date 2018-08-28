@@ -67,15 +67,14 @@ eval $(ssh-agent -s)
 // 添加新ssh keys
 ssh-add ~/.ssh/ test_rsa
 ```
-
 ::: warning 注意
 
 一定要注意的是，这里我们虽然让`ssh`识别了新生成的私钥，但这种做法只是在当前`git bash`窗口中有效，如果我们关闭后，必须在指向以上代码才可以否则我们依然不能推送我们的代码到远程仓库
 :::
 
-针对以上问题我们的解决版本是：我们将以上命令放入到git根目录下的`bash.bashrc` 文件中的末尾。该文件在git打开时会自动执行我们的命令
-```js
+针对以上问题我们的解决版本是：我们将以上命令放入到git根目录下的`bash.bashrc` 文件中的末尾。该文件在git打开时会自动执行我们的命令, **另外还有把我们原来的私钥也放进去，不然我们原来的仓库就会无法提交到远程仓库中**。
 
+```js
 // 省略代码
 
 # Fixup git-bash in non login env
@@ -88,8 +87,10 @@ shopt -q login_shell || . /etc/profile.d/git-prompt.sh
 #启动 ssh-agent.exe 进程
 eval $(ssh-agent -s)
 
-#添加新ssh keys
+#添加新私钥
 ssh-add ~/.ssh/test_rsa
+#添加原来的私钥
+ssh-add ~/.ssh/id_rsa 
 ```
 
 放置好后，当我们重新打开`git bash`时,会自动执行这两个代码，并输出 (pid 和我的不一定一样)
