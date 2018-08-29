@@ -116,7 +116,7 @@ d = diff
 commitid = rev-parse --short HEAD
 lg = git log --graph --pretty=oneline --abbrev-commit
 r = reset --hard
-m = merge --no-ff -m
+m = merge --no-ff
 ch = checkout
 ```
 <!-- 
