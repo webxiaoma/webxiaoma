@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Git的相关配置 | 马新想个人网站</title>
+    <meta name="description" content="本文主要讲解git的配置文件，了解配置文件的作用以及如何自定义git常用命令，来方便我们使用git管理项目">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="git配置文件, git, git配置，自定义git命令，git config">
+    <link rel="preload" href="/assets/css/0.styles.5ce267f4.css" as="style"><link rel="preload" href="/assets/js/app.89b0a73b.js" as="script"><link rel="preload" href="/assets/js/12.d784d9c3.js" as="script"><link rel="prefetch" href="/assets/js/11.e49c9abc.js"><link rel="prefetch" href="/assets/js/2.eea0509a.js"><link rel="prefetch" href="/assets/js/3.42e4fdd9.js"><link rel="prefetch" href="/assets/js/4.0d943f4e.js"><link rel="prefetch" href="/assets/js/5.4f433c51.js"><link rel="prefetch" href="/assets/js/6.9d7bb77e.js"><link rel="prefetch" href="/assets/js/7.1b3b3736.js"><link rel="prefetch" href="/assets/js/8.3855d0d9.js"><link rel="prefetch" href="/assets/js/9.9e85b059.js"><link rel="prefetch" href="/assets/js/10.b0931966.js"><link rel="prefetch" href="/assets/js/13.57b39f5d.js"><link rel="prefetch" href="/assets/js/14.7fa930f2.js"><link rel="prefetch" href="/assets/js/15.4621a26e.js"><link rel="prefetch" href="/assets/js/16.4b118620.js"><link rel="prefetch" href="/assets/js/17.60d8da61.js"><link rel="prefetch" href="/assets/js/18.adbd1d91.js"><link rel="prefetch" href="/assets/js/19.d72e69ab.js"><link rel="prefetch" href="/assets/js/20.9c52346c.js"><link rel="prefetch" href="/assets/js/21.213ebdb7.js"><link rel="prefetch" href="/assets/js/22.6b891363.js"><link rel="prefetch" href="/assets/js/23.78f8ecfd.js"><link rel="prefetch" href="/assets/js/24.c850ad67.js"><link rel="prefetch" href="/assets/js/25.64aa69ec.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.5ce267f4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-39e1d899><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://webxiaoma.github.io/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>旧网站</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-39e1d899 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://webxiaoma.github.io/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>旧网站</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/git/" class="sidebar-link" data-v-5534fc3a>GIT 初识</a></li><li data-v-5534fc3a><a href="/git/Git的基本操作.html" class="sidebar-link" data-v-5534fc3a>Git的基础操作</a></li><li data-v-5534fc3a><a href="/git/Git的远程操作.html" class="sidebar-link" data-v-5534fc3a>Git的远程操作</a></li><li data-v-5534fc3a><a href="/git/Git的分支管理.html" class="sidebar-link" data-v-5534fc3a>Git的分支管理</a></li><li data-v-5534fc3a><a href="/git/Git标签操作.html" class="sidebar-link" data-v-5534fc3a>Git标签操作</a></li><li data-v-5534fc3a><a href="/git/Git团队协作.html" class="sidebar-link" data-v-5534fc3a>Git团队协作</a></li><li data-v-5534fc3a><a href="/git/Git多账户管理.html" class="sidebar-link" data-v-5534fc3a>Git 多账户管理</a></li><li data-v-5534fc3a><a href="/git/Git的相关配置.html" class="active sidebar-link" data-v-5534fc3a>Git的相关配置</a><ul class="sidebar-sub-headers" data-v-5534fc3a data-v-5534fc3a><li class="sidebar-sub-header" data-v-5534fc3a data-v-5534fc3a><a href="/git/Git的相关配置.html#配置文件" class="sidebar-link" data-v-5534fc3a>配置文件</a></li><li class="sidebar-sub-header" data-v-5534fc3a data-v-5534fc3a><a href="/git/Git的相关配置.html#配置操作" class="sidebar-link" data-v-5534fc3a>配置操作</a></li><li class="sidebar-sub-header" data-v-5534fc3a data-v-5534fc3a><a href="/git/Git的相关配置.html#配置git命令别名" class="sidebar-link" data-v-5534fc3a>配置Git命令别名</a></li><li class="sidebar-sub-header" data-v-5534fc3a data-v-5534fc3a><a href="/git/Git的相关配置.html#配置忽略文件" class="sidebar-link" data-v-5534fc3a>配置忽略文件</a></li></ul></li><li data-v-5534fc3a><a href="/git/Git的子模块.html" class="sidebar-link" data-v-5534fc3a>Git的子模块</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="git的相关配置"><a href="#git的相关配置" aria-hidden="true" class="header-anchor">#</a> Git的相关配置</h1> <h2 id="配置文件"><a href="#配置文件" aria-hidden="true" class="header-anchor">#</a> 配置文件</h2> <p><code>git</code> 的配置文件一般有三类，第一类是系统级的配置文件，第二类是全局的配置文件，第三类是局部针对单个仓库的配置文件</p> <ul><li><p>系统级配置文件<code>gitconfig</code></p> <p>在我们git安装目录下的<code>gitconfig</code>文件中，如果没有可以搜索该目录下的<code>gitconfig</code>文件</p></li> <li><p>全局配置文件<code>.gitconfig</code></p> <p>在<code>window</code>下一般位于<code>C:\Users\Administrator\.gitconfig</code>，如果没有可以在<code>Users</code>下搜索一下; 在 linux 中一般位于<code>/root/.gitconfig</code> 中</p></li> <li><p>局部配置文件<code>config</code></p> <p>我们每个仓库中都有<code>.git</code>隐藏目录，这时版本库。局部配置文件<code>config</code>就在我们版本库里。</p></li></ul> <div class="tip custom-block"><p class="custom-block-title">小提示</p> <p>配置文件是有优先级的， 系统配置文件优先级 &gt; 局部配置文件优先级 &gt; 全局配置文件优先级</p></div> <h2 id="配置操作"><a href="#配置操作" aria-hidden="true" class="header-anchor">#</a> 配置操作</h2> <p>git中使用 <code>git config</code> 命令来对git配置进行一系列操作，比如我们查看git的所有配置可以执行<code>git config -l</code>，当然我们也可以打开响应的配置文件来进行查看。</p> <ul><li>如果我们想修改系统级别的配置可以使用</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>git config <span class="token operator">--</span>system 修改配置项
+</code></pre></div><p>比如我们在系统配置中添加用户</p> <div class="language-js extra-class"><pre class="language-js"><code>git config <span class="token operator">--</span>system user<span class="token punctuation">.</span>name <span class="token string">'system'</span>
+</code></pre></div><ul><li>如果我们想修改全局的配置可以使用</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>git config <span class="token operator">--</span>global 修改配置项
+</code></pre></div><p>比如我们在系统配置中添加用户</p> <div class="language-js extra-class"><pre class="language-js"><code>git config <span class="token operator">--</span>global user<span class="token punctuation">.</span>name <span class="token string">'global'</span>
+</code></pre></div><ul><li>如果我们想修改局部的配置可以使用</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>git config  修改配置项
+</code></pre></div><p>比如我们在系统配置中添加用户</p> <div class="language-js extra-class"><pre class="language-js"><code>git config  user<span class="token punctuation">.</span>name <span class="token string">'system'</span>
+</code></pre></div><p>除了使用命令来修改相应的配置外，我们还以直接修改相对应的配置文件。我们既然可以设置<code>git</code>响应配置，我们也可以删除<code>git</code>的响应配置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 删除系统配置</span>
+git config <span class="token operator">--</span>system <span class="token operator">--</span>unset user<span class="token punctuation">.</span>name
+
+<span class="token comment">// 删除全局配置</span>
+git config <span class="token operator">--</span>global <span class="token operator">--</span>unset user<span class="token punctuation">.</span>name
+
+<span class="token comment">// 删除局部配置</span>
+git config  <span class="token operator">--</span>unset user<span class="token punctuation">.</span>name
+</code></pre></div><h2 id="配置git命令别名"><a href="#配置git命令别名" aria-hidden="true" class="header-anchor">#</a> 配置Git命令别名</h2> <p>git的命令非常的多，光记这些命令就够我们头疼的了，为了提高上手速率，快速使用git的命令，git提供了配置命令别名的方法。我们可以将git的任何命令配置成我们容易记忆的，比如我们将<code>git log --graph --pretty=oneline --abbrev-commit</code>命令配置成<code>git lg</code>后我们就可以执行<code>git lg</code>来达到同样的效果。</p> <p>配置git别名我们其实就是操作配置文件中的 <code>alias</code>字段，我们可以尝试通过命令行来配置，我们将<code>git log --graph --pretty=oneline --abbrev-commit</code> 配置成<code>git lg</code>，这里是局部配置</p> <div class="language-js extra-class"><pre class="language-js"><code>git config alias<span class="token punctuation">.</span>lg <span class="token string">'git log --graph --pretty=oneline --abbrev-commit'</span>
+</code></pre></div><p>执行完我们可以看看版本库中的<code>config</code>文件，我们可以发现会多出下面内容（也可以通过 <code>git config --list</code> 命令查看）</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">[</span>alias<span class="token punctuation">]</span>
+	lg <span class="token operator">=</span> log <span class="token operator">--</span>graph <span class="token operator">--</span>pretty<span class="token operator">=</span>oneline <span class="token operator">--</span>abbrev<span class="token operator">-</span>commit
+
+</code></pre></div><p>这时我们的命令已经生效了，我们可以执行<code>git lg</code> 命令来以图形形式来查看我们的版本记录了。当然我们也可以配置其他命令的别名</p> <div class="language-js extra-class"><pre class="language-js"><code>git config alias<span class="token punctuation">.</span>c commit
+</code></pre></div><p><strong>这里有提供一份常用的<code>git</code>别名配置,当然你可以根据自己的需求去修改或添加</strong></p> <div class="language-js extra-class"><pre class="language-js"><code>cg <span class="token operator">=</span> config <span class="token operator">--</span>global
+cl <span class="token operator">=</span> config <span class="token operator">--</span>list
+a <span class="token operator">=</span> add <span class="token punctuation">.</span>
+c <span class="token operator">=</span> commit <span class="token operator">-</span>m
+s <span class="token operator">=</span> status
+d <span class="token operator">=</span> diff
+commitid <span class="token operator">=</span> rev<span class="token operator">-</span>parse <span class="token operator">--</span>short <span class="token constant">HEAD</span>
+lg <span class="token operator">=</span> git log <span class="token operator">--</span>graph <span class="token operator">--</span>pretty<span class="token operator">=</span>oneline <span class="token operator">--</span>abbrev<span class="token operator">-</span>commit
+r <span class="token operator">=</span> reset <span class="token operator">--</span>hard
+m <span class="token operator">=</span> merge <span class="token operator">--</span>no<span class="token operator">-</span>ff
+ch <span class="token operator">=</span> checkout
+</code></pre></div> <h2 id="配置忽略文件"><a href="#配置忽略文件" aria-hidden="true" class="header-anchor">#</a> 配置忽略文件</h2> <p>我们在上传东西时，有时候想忽略一些文件，不想该文件被提交或推送到远程仓库，我们可以这样操作</p> <p>在<code>git</code>工作区的根目录下建一个 <code>.gitignore</code> 文件,<strong>说明一下，在<code>window</code>下面创建该文件会提示必须输入文件名，我们可以在起文件名时，前后都加一个点 <code>.gitignore.</code>就可以了,或使用编辑器去创建该文件</strong></p> <p>我们可以在该文件下写要忽略的文件</p> <p>忽略chang.txt 文件</p> <div class="language- extra-class"><pre class="language-text"><code>chang.txt
+</code></pre></div><p>如果忽略所有js文件</p> <div class="language- extra-class"><pre class="language-text"><code>*.js
+</code></pre></div><p>当然我们可以使用# 号加备注</p> <div class="language- extra-class"><pre class="language-text"><code># lose sight of js:
+*.js
+</code></pre></div><p>有时候你想添加一个文件，但是该文件被忽略了，我们可以这样操作：</p> <div class="language- extra-class"><pre class="language-text"><code>git check-ignore -v chang.txt
+</code></pre></div><p>这样<code>git</code> 会告诉我们 <code>.gitignore</code> 中哪一行设置了该文件的忽略,或者我们可以强制添加到git</p> <div class="language- extra-class"><pre class="language-text"><code>$ git add -f chang.txt
+</code></pre></div><p>这里有一份<code>vue-cli</code>脚手架中<code>.gitignore</code>的配置</p> <div class="language- extra-class"><pre class="language-text"><code>.DS_Store
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/unit/coverage/
+/test/e2e/reports/
+selenium-debug.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+</code></pre></div></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">8/29/2018, 6:12:20 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/12.d784d9c3.js" defer></script><script src="/assets/js/app.89b0a73b.js" defer></script>
+  </body>
+</html>
