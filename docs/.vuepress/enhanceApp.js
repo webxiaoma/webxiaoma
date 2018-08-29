@@ -10,6 +10,7 @@ import {
 } from 'element-ui'
 
 import  MyImg  from './components/MyImg.vue'
+import  Badge  from './components/Badge.vue'
 
 export default ({
     Vue, // VuePress 正在使用的 Vue 构造函数
@@ -22,4 +23,5 @@ export default ({
    Vue.use(Submenu)
    Vue.use(MenuItem)
    Vue.component('MyImg', MyImg)
+   Vue.component('Badge', Badge)
 }
