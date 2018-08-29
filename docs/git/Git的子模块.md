@@ -102,11 +102,6 @@ git clone --recursive git@github.com:webxiaoma/test.git
 git submodule update --remote project
 ```
 
-::: warning 注意
-使用第二种方法，
-:::
-
-
 ### 5. 删除子模块
 
 删除子模块我们可以使用
