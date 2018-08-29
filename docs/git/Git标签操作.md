@@ -7,10 +7,21 @@ meta:
     content: 本文主要记录git版本控制中该如何使用tag标签，以及一些tag标签的操作。
 ---
 
+# Git标签操作
+
+
 ## 常用基础指令
 
 ::: tip 本章命令
-
+- `git tag <tagName> `创建轻量标签
+- `git tag -a <tagName> -m '备注'` 创建附注标签
+- `git tag `查看所有标签
+- `git show <tagName>` 查看带说明的某个标签
+- `git checkout <tagName>` 切换到某个标签分支
+- `git tag -d <tagName> ` 删除本地某个标签
+- `git push origin  <tagName>` 推送单个标签到远程
+- `git push origin --tags` 推送所有标签到远程
+- `git push origin --delete tag <tagName>` 删除远程某个标签（v1.7.0版本后）
 :::
 
 
@@ -56,7 +67,7 @@ $ git log --pretty=oneline --abbrev-commit
 然后我们执行
 
 ```js
-$ git tag v2.0 1ed73cb
+$ git tag v2.0.0  1ed73cb
 ```
 这样我们就给制定的`commitId `打上了标签，打上标签后我们当然还需要查看我们的标签了。
 
@@ -75,27 +86,30 @@ $ git show v1.0.0
 ```
 ### 4.切换标签
 
-我们可以像切换分支一样来切换我们的标签`git checkout <tagName>`
+因为带标签tag其实也是一个分支，我们可以像切换分支一样来切换我们的标签`git checkout <tagName>`
 
 ```js
 git chekcout v1.0.0
 ```
+之后我们会切换到`v1.0.0`，我们使用 `git branch` 来查看一下：
+
+```js
+* (HEAD detached at v1.0.0)
+  dev
+  master
+```
+我们会发现`HEAD`指针指向的是`V1.0.0`,也就是我们当前所在的分支就是`V1.0.0`。
+
 
 ### 5.刪除标签
 
 ```js
-$ git tag -d v0.1.0
+$ git tag -d v1.0.0
 ```
 
 ## Git标签的远程操作
 
-### 1.刪除远程标签 
-
-```js
-// 先从本地删除,然后 
-$ git tag -d v0.1
-```
-### 2.推送标签
+### 1.推送标签
 
 推送单个：
 
@@ -104,6 +118,19 @@ $ git push origin v1.0
 ```
 推送所用标签：
 
-```
+```js
 $ git push origin --tags
+```
+
+### 2.刪除远程标签 
+
+
+在 `git v1.7.0`版本后可以使用 <Badge>v1.7.0+</Badge>
+
+```js
+git push origin --delete tag v1.0.0
+```
+在 `git v1.7.0` 版本之前我们使用(推送一个空的tag到远程)
+```js
+git push origin :refs/tags/v1.0.0
 ```

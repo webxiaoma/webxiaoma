@@ -40,19 +40,22 @@ module.exports = {
                 'Git的基本操作',
                 'Git的远程操作',
                 'Git的分支管理',
+                'Git标签操作',
                 'Git团队协作',
-                'Git多账户管理'
+                'Git多账户管理',
+                'Git的相关配置',
+                'Git的子模块'
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2
        // displayAllHeaders:true,  // 侧边栏所有链接全展开
        lastUpdated: '最近更新时间', // 最后更新时间
        serviceWorker: {
-        updatePopup: { //刷新内容的弹窗
-            message: "这篇文章已经更新", 
-            buttonText: "立即刷新" 
-        }
-      }
+            updatePopup: { //刷新内容的弹窗
+                message: "这篇文章已经更新", 
+                buttonText: "立即刷新" 
+            }
+        },
 
     },
 };
