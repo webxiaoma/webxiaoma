@@ -14,6 +14,7 @@ module.exports = {
             { text: '首页', link: '/'},
             { text: '博客', items: [
                 {text:'JavaScript', link:'/javascript/'},
+                {text:'移动端', link:'/phone/'},
                 {text:'构建工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git工具",link:'/git/'},
@@ -25,11 +26,33 @@ module.exports = {
         ],
         sidebar: {  // 侧边栏
             '/javascript/':[
-               '',
-               'JS-DOM操作',
-               'JS-BOM操作',
-               'JS-事件',
-               'js面向对象',
+                {
+                    title: '基础篇',
+                    collapsable: false, // 是否可折叠
+                    children: [
+                        '',
+                        'JS-DOM操作',
+                        'JS-BOM操作',
+                        'JS-事件',
+                        'js面向对象',
+                    ]
+               },
+            //    {
+            //         title: '进阶篇',
+            //         collapsable: false,
+            //         children: [
+            //         ]
+            //    },{
+            //         title: 'ES6篇',
+            //         collapsable: false,
+            //         children: [
+            //         ]
+            //     },{
+            //         title: '总结篇',
+            //         collapsable: false,
+            //         children: [
+            //         ]
+            //    }
             ],
            '/webpack/':[
                '',
@@ -45,6 +68,27 @@ module.exports = {
                 'Git多账户管理',
                 'Git的相关配置',
                 'Git的子模块'
+            ],
+            '/phone/':[
+                {
+                    title: '移动端开发',
+                    collapsable: false, // 是否可折叠
+                    children: [
+                      '',
+                      '移动端的布局',
+                    ]
+                },{
+                    title: '常见CSS问题',
+                    collapsable: false, // 是否可折叠
+                    children: [
+                    ]
+                },{
+                    title: '常见JS问题',
+                    collapsable: false, // 是否可折叠
+                    children: [
+                    ]
+                }
+               
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2

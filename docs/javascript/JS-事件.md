@@ -231,3 +231,4 @@ document.body.oncontextmenu = function(event){
 ```
 
 
+## JS事件委托
