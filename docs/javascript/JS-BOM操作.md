@@ -204,7 +204,66 @@ window.resizeTo(screen.availWidth, screen.availHeight);  //填充用户的屏幕
 ```
 
 
-## 浏览器的缓存和储存
+## 定时器
 
-- localStorage 浏览器的储存
-- sessionStorage 浏览器的缓存
+**1. setTimeout()**
+
+`setTimeout()`应该都很熟悉，它是当页面代码执行完毕后立即开始定时的，而且只定时一次，并返回一个定时器的`id`，可以使用` clearTimeout()`来取消这次定时器
+
+
+```js
+// 100毫秒后执行一次
+let timeID = setTimeout(function(){
+　　 console.log(1111)
+},100)
+```
+
+
+**2. setInterval()**
+
+`setTimeout()`应该也不陌生，它是当页面代码执行完毕后立即开始定时的，而且根据设定的时间来循环执行，并返回一个定时器的id，可以使用` clearTimeout()  `来取消这次定时器
+
+```js
+// 每一100毫秒执行一次
+let timeID = setInerval(function(){
+　　 console.log(1111)
+},100)
+```
+::: warning
+可以使用`setTimeout`来完成`setInterval`的工作，这样做的好处是，`setTimeout保证了每次执行完当前函数中的操作再进行下一次定时任务，而`setInterval`不会保证上一次任务执行完毕再添加下一次任务。
+:::
+
+
+**3. requestAnimationFrame()**　[查看兼容性](https://caniuse.com/#search=requestAnimationFrame)
+
+requestAnimationFrame() 定时器是根据显示器的帧来定时的，也就是显示屏每刷新一帧，它就执行一次。和上边两个定时器一样，它也会返回一个句柄，并使用`cancelAnimationFrame()`来清楚它。　它使用方法如下：
+
+```js     
+function animate() {
+  Aframe = requestAnimationFrame(animate);
+  // Do something animate
+}
+
+Aframe = requestAnimationFrame(animate);
+
+// 如果清除使用　cancelAnimationFrame(Aframe)
+```
+
+`equestAnimationFrame`的优势，在于充分利用显示器的刷新机制，比较节省系统资源。显示器有固定的刷新频率（60Hz或75Hz），也就是说，每秒最多只能重绘60次或75次，`requestAnimationFrame`的基本思想就是与这个刷新频率保持同步，利用这个刷新频率进行页面重绘。此外，使用这个API，一旦页面不处于浏览器的当前标签，就会自动停止刷新。这就节省了CPU、GPU和电力。
+
+不过有一点需要注意，`requestAnimationFrame`是在主线程上完成。这意味着，如果主线程非常繁忙，`requestAnimationFrame`的动画效果会大打折扣。
+
+
+::: tip 处理兼容
+
+```js
+window.requestAnimationFrame = (function(){
+  return  window.requestAnimationFrame       ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame    ||
+          function( callback ){
+            window.setTimeout(callback, 1000 / 60);
+          };
+})();
+```
+:::
