@@ -72,15 +72,17 @@ module.exports = {
             '/phone/':[
                 {
                     title: '移动端开发',
-                    collapsable: false, // 是否可折叠
+                    collapsable: true, // 是否可折叠
                     children: [
                       '',
-                      '移动端的布局',
+                      '移动端的适配',
+                      '移动端的事件处理',
                     ]
                 },{
                     title: '常见CSS问题',
-                    collapsable: false, // 是否可折叠
+                    collapsable: true, // 是否可折叠
                     children: [
+                        'css常见问题'
                     ]
                 },{
                     title: '常见JS问题',
