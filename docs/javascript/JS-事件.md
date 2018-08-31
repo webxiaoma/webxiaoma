@@ -231,3 +231,70 @@ document.body.oncontextmenu = function(event){
 ```
 
 
+## JS事件委托
+
+那什么叫事件委托呢？它还有一个名字叫事件代理，JavaScript高级程序设计上讲：事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。下面我们来列举一个简单的例子来引出JS事件委托。
+
+现在我们有这样段代码
+
+```html       
+<input type="button" id="btn" value="添加li标签"/>
+<ul id="ul">
+  <li>第一个</li>
+  <li>第二个</li>
+  <li>第三个</li>
+</ul>
+
+``` 
+我们来给每个li标签添加一个点击事件，并弹出对应标签的内容
+
+```js
+var ul = document.getElementById("ul");
+var AllLi = ul.getElementsByTagName("li");
+var oBtn = document.getElementById("btn");
+var iNow = ３;
+for(var i=0; i<AllLi.length; i++){
+    AllLi[i].click = function(){
+        alert(this.innerText)
+    }
+}
+
+oBtn.onclick = function(){
+   iNow ++;
+   var oLi = document.createElement("li");
+   oLi.innerHTML =　"第"+iNow+"个";
+   ul.appendChild(oLi);
+}
+
+
+``` 
+现在我们点击页面上的每个li标签都会弹出对应的内容，接下来我们点击按钮，新添加几个lｉ标签，然后我们点击新添加的li标签会发现没有任何反应。为什么没有反应呢，这是因为我们上面的方法只能够给页面中已经存在的元素添加事件，使用js后生成的元素时用这种方法是添加不上的。这时我们就要事件委托来处理这种情况了，当然我们还有其它方法，这里只是为了讲解事件委托。
+
+::: tip 原理
+事件委托是利用事件的冒泡原理来实现的，何为事件冒泡呢？就是事件从最深的节点开始，然后逐步向上传播事件，举个例子：页面上有这么一个节点树，div>ul>li>a;比如给最里面的a加一个click点击事件，那么这个事件就会一层一层的往外执行，执行顺序a>li>ul>div，有这样一个机制，那么我们给最外面的div加点击事件，那么里面的ul，li，a做点击事件的时候，都会冒泡到最外层的div上，所以都会触发，这就是事件委托，委托它们父级代为执行事件。    
+:::
+
+接下来我们使用事件委托来重写js代码
+
+```js
+var oUl = document.getElementById("ul");
+var aLi = oUl.getElementsByTagName("li");
+var oBtn = document.getElementById("btn");
+var iNow = 4;
+ 
+oUl.onclick = function(ev){
+    var ev = ev || window.event;
+    var target = ev.target || ev.srcElement;
+    if(target.nodeName.toLowerCase() == "li"){
+      alert(target.innerText)
+    }
+}
+
+oBtn.onclick = function(){
+    iNow ++;
+    var oLi = document.createElement("li");
+    oLi.innerHTML = "第"+iNow+"个";
+    oUl.appendChild(oLi);
+}
+
+```
