@@ -55,8 +55,22 @@ module.exports = {
             //    }
             ],
            '/webpack/':[
-               '',
-               'webpack配置篇'
+               {
+                title: 'webpack基础篇',
+                collapsable: true, // 是否可折叠
+                children: [
+                    '',
+                ]
+               },{
+                    title: 'webpack配置篇',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'mode',
+                        'entry',
+                        'output',
+                        'module',
+                    ]
+               }
             ],
             '/git/':[
                 '',
