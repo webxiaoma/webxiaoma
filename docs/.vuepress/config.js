@@ -69,6 +69,16 @@ module.exports = {
                         'entry',
                         'output',
                         'module',
+                        'plugins',
+                        'resolve',
+                        'devtool',
+                        'devserver'
+                    ]
+               },{
+                    title: 'webpack练习篇',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'css处理'
                     ]
                }
             ],
@@ -105,6 +115,9 @@ module.exports = {
                     ]
                 }
                
+            ],
+            '/knowledge/':[
+                ''
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2

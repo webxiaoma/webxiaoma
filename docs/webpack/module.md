@@ -1,5 +1,15 @@
+---
+sidebarDepth: 2
+meta:
+  - name: keywords
+    content: webpack, module, loader配置，webpcak配置，webpack-loader
+  - name: description
+    content: 本文主要讲述webpack的模块处理，以及怎么使用webpack按照loader规则解析编译文件。
+---
 
 # module 模块
+
+---
 
 [module 模块](https://www.webpackjs.com/configuration/module/)选项决定了如何处理项目中的不同类型的模块。
 
@@ -21,11 +31,11 @@ module: {
   rules: [
       {
         // 匹配less文件
-        test: /\.less$/,
+        test: /\.css$/,
         // 匹配多个文件
         test:[
           /\.less$/,
-          /\.sass$/
+          /\.css$/
         ],
         // 不会编译 node_modules 目录下的文件
         exclude: path.resolve(__dirname, 'node_modules'),
@@ -38,7 +48,8 @@ module: {
         // ?cacheDirectory 表示传给 babel-loader 的参数，
         // 用于缓存 babel 编译结果加快重新编译速度
         use: ['babel-loader?cacheDirectory'],
-        // 这种方法同上面的方法
+        // 这种方法同上面的方法，当loader需要传入很多参数时
+        // 可以使用options对象
         user:[
             {
                 loader:'babel-loader', 
@@ -81,7 +92,7 @@ module: {
 
 ## rules.parser
 
-`rules.parser`解析器(parser)可以告诉webpack那些模块语法要解析那些不需要解析，大多数默认插件，会如下解释值：
+`rules.parser`解析器(parser)可以告诉`webpack`那些模块语法要解析那些不需要解析，大多数默认插件，会如下解释值：
 
 - 将选项设置为 `false`，将禁用解析器。
 - 将选项设置为 `true`，或不修改将其保留为 `undefined`，可以启用解析器。
@@ -112,18 +123,18 @@ module: {
 ```
 
 
-### rules.noParse
+## rules.noParse
 
-防止 `webpack` 解析那些任何与给定正则表达式相匹配的文件。**忽略的文件中不应该含有 `import`, `require`, `define` 的调用，或任何其他导入机制**, 不然编译出来的文件会存在问题。
+防止 `webpack` 解析那些任何与给定正则表达式相匹配的文件。**忽略的文件中不应该含有 `import`, `require`, `define` 的调用，或任何其他导入机制**, 不然编译出来的文件会存在问题，其实这里就是让`webpack`不去处理那些没有使用模块化标准的库（例如：jquery,jquerUl,EchartJS,lodsh等等）
 
 ```js
 module: {
   rules: [
       {
         test:/\*.js$/,
-        // 以字符串形式
+        // 以字符串形式，忽略掉jquery和lodash
         noParse: /jquery|lodash/,
-        // 是函数形式查询
+        // 使用函数形式
         noParse:(content)=> /jquery|lodash/.test(content)
       }
   ]

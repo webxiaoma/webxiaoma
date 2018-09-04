@@ -31,11 +31,11 @@
     <div  class="features">
       <div class="feature">
         <h2>关于网站</h2>
-        <p>目前本网站以个人博客，文档分享为主。</p>
+        <p>目前本网站以个人博客，文档分享为主，主要是用于记录学习与分享使用。</p>
       </div>
-      <div class="feature">
-        <h2>信仰鸡汤</h2>
-        <p>一个有梦想的咸鱼，一只早起的虫子。</p>
+       <div class="feature">
+        <h2>本站声明</h2>
+        <p>本站的文章部分参考网上的博文内容，并加入个人理解，如若侵权请联系本人立马删除。</p>
       </div>
       <div class="feature">
         <h2>联系方式</h2>

@@ -1,3 +1,13 @@
+---
+sidebarDepth: 2
+meta:
+  - name: keywords
+    content: webpack, webpack入口, entry，入口配置，
+  - name: description
+    content: 本文主要讲述webpack的入口字段entry的配置。
+---
+
+
 # Enter 入口
 
 
@@ -6,15 +16,17 @@
 
 ## 执行上下文
 
-执行上下文`context`是webpack的基础目录，webpack在查找相对路径时默认使用当前目录，我们可以配置`context`来修改webpack的查找基目录。需要注意的是设置的目录必须是一个绝对路径，我们可以使用`nodejs`中的`path`模块
+执行上下文`context`是webpack的基础目录，webpack在查找相对路径时默认使用当前目录，我们可以配置`context`来修改`webpack`的查找基目录。需要注意的是设置的目录必须是一个绝对路径，我们可以使用`nodejs`中的`path`模块
 
 ```js
 // webpack.config.js 中
 module.exports = {
-    context: path.resolve(__dirname,'prject')
+    context: path.resolve(__dirname,'./project')
     entry:'./home',
 }
 ```
+上面设置，当我们打包时，打包后的项目就会被打包到当前目录下边的`project`目录中。
+
 
 ## 配置方法
 

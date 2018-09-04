@@ -1,5 +1,15 @@
-# mode 模式
+---
+sidebarDepth: 2
+meta:
+  - name: keywords
+    content: webpack, webpack开发模式, webpack生成模式，development，production
+  - name: description
+    content: 本文主要讲述webpack两种模式，production生产模式、development开发模式以及比不使用任何模式下的区别和表现形式。
+---
 
+# Mode 模式
+
+---
 
 [mode 配置选项](https://www.webpackjs.com/concepts/mode/)，告知 webpack 使用相应模式来进行打包并是使用相应的内置优化。[Gihub练习]()
 
