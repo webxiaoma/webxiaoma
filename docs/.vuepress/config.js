@@ -78,7 +78,8 @@ module.exports = {
                     title: 'webpack练习篇',
                     collapsable: true, // 是否可折叠
                     children: [
-                        'css处理'
+                        '处理es6',
+                        '处理css'
                     ]
                }
             ],

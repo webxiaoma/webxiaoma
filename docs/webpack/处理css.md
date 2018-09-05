@@ -7,7 +7,7 @@ meta:
     content: 本文主要讲述webpack中处理css。
 ---
 
-# CSS处理
+# 处理CSS
 
 --- 
 
