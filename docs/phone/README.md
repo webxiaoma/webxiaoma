@@ -192,6 +192,14 @@ css样式的应用可以根据媒体特征来判断：
 @media all and (orientation: landscape ) { ... }
 ```
 
+- **设备像素比查询**
+
+```css
+// 设备像素比为2时应用样式
+@media(-webkit-min-device-pixel-ratio: 2),(min-device-device-pixel-ratio: 2){
+
+}
+```
 
 ## 屏幕常见宽度
 
