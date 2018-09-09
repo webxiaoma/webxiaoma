@@ -19,10 +19,9 @@ module.exports = {
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git工具",link:'/git/'},
                 ]},
-                // {text:'Vue', link:'/vue/'},
+                {text:'Vue', link:'/vue/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
-            { text: '旧网站', link: 'https://webxiaoma.github.io/webxiaoma', blank:true},
         ],
         sidebar: {  // 侧边栏
             '/javascript/':[
@@ -91,6 +90,31 @@ module.exports = {
                     ]
                 }
                
+            ],
+            '/vue/':[
+                '',
+                '学习须知',
+                {
+                    title: 'vue',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                     
+                    ]
+                }
+            ],
+            '/knowledge/':[
+                {
+                    title: '常用网站',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                      '',
+                    ]
+                }, {
+                    title: '常用见面试题',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                    ] 
+                },
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2

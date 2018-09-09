@@ -1,5 +1,28 @@
+---
+sidebarDepth: 2
+meta:
+  - name: keywordsv
+    content: vue vue常见文章
+  - name: description
+    content: 本文章主要记录vue的一些常见网站以及博客。
+---
+
+# vue 常见文章
 
 
-<center> <strong>构建工具知识图</strong></center>
+## Vue 网站
 
+### 教程网站
+
+- [Vue 官网](https://cn.vuejs.org/v2/guide/installation.html)
+- [Vue Router 路由官网](https://router.vuejs.org/zh/)
+- [Vuex 状态管理官网](https://vuex.vuejs.org/zh/)
+
+
+### 组件网站
+
+- [Element-Ui pc端](http://element.eleme.io/#/zh-CN/component/installation)（饿了么）
+- [Mint-Ui 移动端](https://mint-ui.github.io/#!/zh-cn)（饿了么）
+
+- [Vant 移动端](https://youzan.github.io/vant/#/zh-CN/tabbar)（有赞）
 

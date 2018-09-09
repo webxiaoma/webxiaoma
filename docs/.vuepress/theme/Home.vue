@@ -20,7 +20,13 @@
           微博
         </el-button>
        </a>
-       <a href="https://webxiaoma.github.io/webxiaoma/knowledge/index.html" target="_banlk">
+      <a href="/git/" target="_banlk">
+        <el-button type="primary">
+          <i class="el-icon-search el-icon--right"></i>
+          Git教程
+        </el-button>
+       </a>
+       <a href="/knowledge/" target="_banlk">
         <el-button type="primary">
           <i class="el-icon-search el-icon--right"></i>
           知识
