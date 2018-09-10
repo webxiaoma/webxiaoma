@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plugins 插件 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文主要讲述webpack的插件介绍以及简单的配置。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="webpack, webpack插件, plugins，plugins配置">
+    <link rel="preload" href="/assets/css/0.styles.170bbf63.css" as="style"><link rel="preload" href="/assets/js/app.2ec093cb.js" as="script"><link rel="preload" href="/assets/js/37.f2dbaa42.js" as="script"><link rel="prefetch" href="/assets/js/19.91be79e2.js"><link rel="prefetch" href="/assets/js/2.eea0509a.js"><link rel="prefetch" href="/assets/js/3.41efc463.js"><link rel="prefetch" href="/assets/js/4.27c1375f.js"><link rel="prefetch" href="/assets/js/5.7c667622.js"><link rel="prefetch" href="/assets/js/6.7b60b6e3.js"><link rel="prefetch" href="/assets/js/7.cb5f0402.js"><link rel="prefetch" href="/assets/js/8.4aa9fcd6.js"><link rel="prefetch" href="/assets/js/9.868686db.js"><link rel="prefetch" href="/assets/js/10.468a59c3.js"><link rel="prefetch" href="/assets/js/11.9aada7d6.js"><link rel="prefetch" href="/assets/js/12.8f632de1.js"><link rel="prefetch" href="/assets/js/13.68f3d99c.js"><link rel="prefetch" href="/assets/js/14.ddd8abe2.js"><link rel="prefetch" href="/assets/js/15.f957f94a.js"><link rel="prefetch" href="/assets/js/16.02a60e65.js"><link rel="prefetch" href="/assets/js/17.3d91be94.js"><link rel="prefetch" href="/assets/js/18.5e008278.js"><link rel="prefetch" href="/assets/js/20.8fda5e91.js"><link rel="prefetch" href="/assets/js/21.28adb1fe.js"><link rel="prefetch" href="/assets/js/22.76fceec2.js"><link rel="prefetch" href="/assets/js/23.1f5e364e.js"><link rel="prefetch" href="/assets/js/24.37a890c7.js"><link rel="prefetch" href="/assets/js/25.e91f3f40.js"><link rel="prefetch" href="/assets/js/26.34e28a1d.js"><link rel="prefetch" href="/assets/js/27.2d717514.js"><link rel="prefetch" href="/assets/js/28.5db00832.js"><link rel="prefetch" href="/assets/js/29.e280c999.js"><link rel="prefetch" href="/assets/js/30.0087254b.js"><link rel="prefetch" href="/assets/js/31.ef19a6ac.js"><link rel="prefetch" href="/assets/js/32.54fdcb53.js"><link rel="prefetch" href="/assets/js/33.5f4dce79.js"><link rel="prefetch" href="/assets/js/34.cec955b7.js"><link rel="prefetch" href="/assets/js/35.813e4989.js"><link rel="prefetch" href="/assets/js/36.c5218466.js"><link rel="prefetch" href="/assets/js/38.2de90263.js"><link rel="prefetch" href="/assets/js/39.3c60db3d.js"><link rel="prefetch" href="/assets/js/40.fdf54729.js"><link rel="prefetch" href="/assets/js/41.6586d275.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.170bbf63.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-39e1d899><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        移动端
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        Vue
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-39e1d899 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-39e1d899><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        移动端
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-39e1d899><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-39e1d899>
+        Vue
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-39e1d899>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-39e1d899>GitHub</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><div class="sidebar-group first collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack基础篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading open"><span>webpack配置篇</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/webpack/mode.html" class="sidebar-link">Mode 模式</a></li><li><a href="/webpack/entry.html" class="sidebar-link">Enter 入口</a></li><li><a href="/webpack/output.html" class="sidebar-link">Output 出口</a></li><li><a href="/webpack/module.html" class="sidebar-link">module 模块</a></li><li><a href="/webpack/plugins.html" class="active sidebar-link">Plugins 插件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/webpack/plugins.html#插件的使用方法" class="sidebar-link">插件的使用方法</a></li></ul></li><li><a href="/webpack/resolve.html" class="sidebar-link">Resolve 配置</a></li><li><a href="/webpack/devtool.html" class="sidebar-link">Devtool 配置</a></li><li><a href="/webpack/devserver.html" class="sidebar-link">Devserver 服务器</a></li></ul></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack练习篇</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="plugins-插件"><a href="#plugins-插件" aria-hidden="true" class="header-anchor">#</a> Plugins 插件</h1> <hr> <p><a href="https://www.webpackjs.com/configuration/plugins/#plugins" target="_blank" rel="noopener noreferrer">Plugins插件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>是 <code>webpack</code> 的支柱功能。<code>webpack</code> 自身也是构建于，你在 <code>webpack</code> 配置中用到的相同的插件系统之上！</p> <p>插件目的在于解决 <code>loader</code> 无法实现的其他事。</p> <h2 id="插件的使用方法"><a href="#插件的使用方法" aria-hidden="true" class="header-anchor">#</a> 插件的使用方法</h2> <p>webpack中插件的使用方法很简单，我们只需要在<code>plugins</code>字段中写入插件即可，<code>plugins</code>字段是一个数组，例如下面</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 导入非 webpack 自带默认插件</span>
+<span class="token keyword">var</span> ExtractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> DashboardPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-dashboard/plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 在配置中添加插件</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 构建优化插件</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>optimize<span class="token punctuation">.</span>CommonsChunkPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token punctuation">:</span> <span class="token string">'vendor'</span><span class="token punctuation">,</span>
+        filename<span class="token punctuation">:</span> <span class="token string">'vendor-[hash].min.js'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>optimize<span class="token punctuation">.</span>UglifyJsPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        compress<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        warnings<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        drop_console<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        filename<span class="token punctuation">:</span> <span class="token string">'build.min.css'</span><span class="token punctuation">,</span>
+        allChunks<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>IgnorePlugin</span><span class="token punctuation">(</span><span class="token regex">/^\.\/locale$/</span><span class="token punctuation">,</span> <span class="token regex">/moment$/</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// 编译时(compile time)插件</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>DefinePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token string">'process.env.NODE_ENV'</span><span class="token punctuation">:</span> <span class="token string">'&quot;production&quot;'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// webpack-dev-server 强化插件</span>
+    <span class="token keyword">new</span> <span class="token class-name">DashboardPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">webpack<span class="token punctuation">.</span>HotModuleReplacementPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们可以看到，我们可以是有webpack自带的一些插件，也可以使用外部的一些插件，在使用时我们将插件的构造函数写入<code>plugins</code>数组中即可，对于插件来说，配置插件并不是很难，我们主要是需要知道各个插件的使用方法。</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">9/4/2018, 6:10:08 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/webpack/module.html" class="prev">
+          module 模块
+        </a></span> <span class="next"><a href="/webpack/resolve.html">
+          Resolve 配置
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/37.f2dbaa42.js" defer></script><script src="/assets/js/app.2ec093cb.js" defer></script>
+  </body>
+</html>
