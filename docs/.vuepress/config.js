@@ -1,5 +1,5 @@
 module.exports = {
-    title:'马新想个人网站',
+    title:'马新想个人网站（webxiaoma）',
     head: [
         ["link", { rel: "icon", href: `/img/icon.ico` }],
     ], //被注入页面 HTML <head> 额外的标签
@@ -127,6 +127,21 @@ module.exports = {
                      
                     ]
                 }
+            ],
+            '/node/':[
+                '',
+                {
+                    title: 'node基础',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                    ]
+                },{
+                    title: '常用工具',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                      'npm.md',
+                    ]
+                },
             ],
             '/knowledge/':[
                 {
