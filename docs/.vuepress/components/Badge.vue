@@ -1,6 +1,9 @@
 <template>
     <span :class="className">
-        <slot></slot>
+        <a  v-if="href" :href="href" target="_blank" rel="noopener noreferrer">
+          <slot></slot>
+        </a>
+        <slot v-else></slot>
     </span>
 </template>
 
@@ -11,7 +14,7 @@ export default {
            className:''
         }
     },
-    props:['type'],
+    props:['type','href'],
     created(){
         this.className = `badge ` + (this.type || 'tip')
     }
@@ -28,6 +31,9 @@ export default {
     padding: 0 6px;
     color: #fff;
     margin-right: 5px;
+    a>{
+        color: #fff;
+    }
 }
 .tip{
     background-color: #42b983;

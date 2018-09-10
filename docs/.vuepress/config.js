@@ -54,8 +54,33 @@ module.exports = {
             //    }
             ],
            '/webpack/':[
-               '',
-               'webpack配置篇'
+               {
+                title: 'webpack基础篇',
+                collapsable: true, // 是否可折叠
+                children: [
+                    '',
+                ]
+               },{
+                    title: 'webpack配置篇',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'mode',
+                        'entry',
+                        'output',
+                        'module',
+                        'plugins',
+                        'resolve',
+                        'devtool',
+                        'devserver'
+                    ]
+               },{
+                    title: 'webpack练习篇',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        '处理es6',
+                        '处理css'
+                    ]
+               }
             ],
             '/git/':[
                 '',
@@ -69,11 +94,12 @@ module.exports = {
                 'Git的子模块'
             ],
             '/phone/':[
+                '',
                 {
                     title: '移动端开发',
                     collapsable: true, // 是否可折叠
                     children: [
-                      '',
+                      '移动端的一些概念',
                       '移动端的适配',
                       '移动端的事件处理',
                     ]
