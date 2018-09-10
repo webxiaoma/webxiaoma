@@ -1,5 +1,5 @@
 module.exports = {
-    title:'马新想个人网站',
+    title:'马新想个人网站（webxiaoma）',
     head: [
         ["link", { rel: "icon", href: `/img/icon.ico` }],
     ], //被注入页面 HTML <head> 额外的标签
