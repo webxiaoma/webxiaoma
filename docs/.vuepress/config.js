@@ -20,21 +20,28 @@ module.exports = {
                     {text:"Git工具",link:'/git/'},
                 ]},
                 {text:'Vue', link:'/vue/'},
+                {text:'NodeJs', link:'/node/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
         ],
         sidebar: {  // 侧边栏
             '/javascript/':[
+                '',
                 {
                     title: '基础篇',
                     collapsable: false, // 是否可折叠
                     children: [
-                        '',
                         'JS-DOM操作',
                         'JS-BOM操作',
                         'JS-事件',
                         'js面向对象',
                     ]
+               },{
+                title: 'ES6篇',
+                collapsable: false,
+                children: [
+                    'babel'
+                ]
                },
             //    {
             //         title: '进阶篇',
@@ -42,11 +49,6 @@ module.exports = {
             //         children: [
             //         ]
             //    },{
-            //         title: 'ES6篇',
-            //         collapsable: false,
-            //         children: [
-            //         ]
-            //     },{
             //         title: '总结篇',
             //         collapsable: false,
             //         children: [
@@ -134,6 +136,7 @@ module.exports = {
                     title: 'node基础',
                     collapsable: true, // 是否可折叠
                     children: [
+                        'Node常见问题'
                     ]
                 },{
                     title: '常用工具',
