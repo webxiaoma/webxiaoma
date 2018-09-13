@@ -80,7 +80,9 @@ module.exports = {
                     collapsable: true, // 是否可折叠
                     children: [
                         '处理es6',
-                        '处理css'
+                        '处理css',
+                        '处理静态资源',
+                        '处理目录文件'
                     ]
                }
             ],
