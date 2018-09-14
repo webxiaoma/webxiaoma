@@ -13,7 +13,7 @@
           {{item.text}}
         </template>
         
-        <el-submenu v-for="list in item.items"  index="''"  :key="list.text" v-if="list.items&&list.items.length">
+        <el-submenu v-for="list in item.items"  :index="list.text"  :key="list.text" v-if="list.items&&list.items.length">
           <template slot="title">
             {{list.text}}
           </template>
