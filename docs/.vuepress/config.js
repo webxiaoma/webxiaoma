@@ -85,7 +85,14 @@ module.exports = {
                         '处理静态资源',
                         '处理目录文件',
                         'devserver',
-                        '构建vue',
+                        '使用vue',
+                        '懒加载'
+                    ]
+               },{
+                    title: 'webpack进阶篇',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        '编译plugins'
                     ]
                }
             ],

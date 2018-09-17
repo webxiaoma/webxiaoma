@@ -199,6 +199,8 @@ latest：安装最新版本。
 
 ```JavaScript
 npm install --save vue
+或
+npm install -S vue
 ```
 如果想安装到项目开发所需要的模块`devDependencies` 中可以执行
 

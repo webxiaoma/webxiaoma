@@ -17,6 +17,7 @@ meta:
 - [Vue 官网](https://cn.vuejs.org/v2/guide/installation.html)
 - [Vue Router 路由官网](https://router.vuejs.org/zh/)
 - [Vuex 状态管理官网](https://vuex.vuejs.org/zh/)
+- [Vue-loader 官网](https://vue-loader-v14.vuejs.org/zh-cn/)
 
 
 ### 组件网站
