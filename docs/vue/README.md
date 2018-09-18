@@ -18,7 +18,7 @@ meta:
 - [Vue Router 路由官网](https://router.vuejs.org/zh/)
 - [Vuex 状态管理官网](https://vuex.vuejs.org/zh/)
 - [Vue-loader 官网](https://vue-loader-v14.vuejs.org/zh-cn/)
-
+- [Vue-Cli 官网](https://cli.vuejs.org/zh/guide/)
 
 ### 组件网站
 
