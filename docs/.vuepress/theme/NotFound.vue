@@ -1,26 +1,38 @@
 <template>
+import { setInterval } from 'timers';
   <div class="theme-container">
     <div class="content">
       <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
+      <blockquote>您访问的页面似乎消失了</blockquote>
+      <router-link to="/">访问首页</router-link>
+      <p>{{time}}s后自动跳转</p>
     </div>
   </div>
 </template>
 
 <script>
-const msgs = [
-  `There's nothing here.`,
-  `How did we get here?`,
-  `That's a Four-Oh-Four.`,
-  `Looks like we've got some broken links.`
-]
+
 
 export default {
-  methods: {
-    getMsg () {
-      return msgs[Math.floor(Math.random() * msgs.length)]
+  data(){
+    return {
+       time:5,
+       timeId:null,
     }
+  },
+  created(){
+   
+  },
+  methods: {
+     setTime(){
+        this.timeId = setInterval(()=>{
+          if(this.time < 1){
+             this.$router.push("/")
+          }else{
+             this.time -= 1
+          }
+        },1000)
+     }
   }
 }
 </script>

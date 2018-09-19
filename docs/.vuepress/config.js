@@ -86,8 +86,10 @@ module.exports = {
                         '处理目录文件',
                         'devserver',
                         '使用vue',
+                        '使用react',
                         '懒加载',
-                        '提取公共模块'
+                        '提取公共模块',
+                        'Dllplugin'
                     ]
                },{
                     title: 'webpack进阶篇',
