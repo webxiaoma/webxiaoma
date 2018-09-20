@@ -16,44 +16,50 @@ meta:
 插件目的在于解决 `loader` 无法实现的其他事。
 
 
-## 插件的使用方法
 
-webpack中插件的使用方法很简单，我们只需要在`plugins`字段中写入插件即可，`plugins`字段是一个数组，例如下面
+## 插件(plugins) 的使用
 
-```js
-var webpack = require('webpack');
-// 导入非 webpack 自带默认插件
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var DashboardPlugin = require('webpack-dashboard/plugin');
+我们使用`wepback`  的插件官方提供了两种方法
+
+1. 在 `webpack.config.js` 中配置使用  
+
+在`webpack.config.js `中我们可以在`plugins` 字段数组中镜进行配置，这个方法也是官网比较推荐的方法，如：
+
+```JavaScript
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //通过 npm 安装
+const webpack = require('webpack'); //访问内置的插件
+const path = require('path');
 
 module.exports = {
-    // 在配置中添加插件
-    plugins: [
-    // 构建优化插件
-    new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
-        filename: 'vendor-[hash].min.js',
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-        compress: {
-        warnings: false,
-        drop_console: false,
-        }
-    }),
-    new ExtractTextPlugin({
-        filename: 'build.min.css',
-        allChunks: true,
-    }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    // 编译时(compile time)插件
-    new webpack.DefinePlugin({
-        'process.env.NODE_ENV': '"production"',
-    }),
-    // webpack-dev-server 强化插件
-    new DashboardPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+  entry: './path/to/my/entry/file.js',
+  output: {
+    filename: 'test.js',
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
+      }
     ]
-}
+  },
+  plugins: [ //  配置插件
+     new HtmlWebpackPlugin({template: './src/index.html'})，
+  ]
+};
+
 ```
 
-我们可以看到，我们可以是有webpack自带的一些插件，也可以使用外部的一些插件，在使用时我们将插件的构造函数写入`plugins`数组中即可，对于插件来说，配置插件并不是很难，我们主要是需要知道各个插件的使用方法。
+2. 通过`Node API` 调用
+
+```JavaScript
+const webpack = require('webpack'); //访问 webpack 运行时(runtime)
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //通过 npm 安装
+
+let compiler = webpack(configuration);
+compiler.apply(new HtmlWebpackPlugin());
+```
+
+
+可以看出插件的使用非常简单，另外webpack上边已经自带了很多插件，可以访问[webpack plugins](https://webpack.docschina.org/plugins/aggressive-splitting-plugin/)

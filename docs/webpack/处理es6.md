@@ -10,6 +10,7 @@ meta:
 # 处理ES6
 
 [GitHub 仓库练习](https://github.com/webxiaoma/webpack-demos/tree/master/webpack4/es6%E5%A4%84%E7%90%86)
+
 ---
 
 `webpack`处理 `ES6`需要用到[babel转码器](/javascript/babel.html)，这里我们主要讲webpack如何处理`ES6`。
