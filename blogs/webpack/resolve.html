@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Resolve 配置 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文主要讲述webpack的插件介绍以及简单的配置。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="webpack, resolve, webpack配置">
+    <link rel="preload" href="/assets/css/0.styles.a0d3d981.css" as="style"><link rel="preload" href="/assets/js/app.95ad3f6f.js" as="script"><link rel="preload" href="/assets/js/44.490e64bc.js" as="script"><link rel="prefetch" href="/assets/js/26.4e5d997f.js"><link rel="prefetch" href="/assets/js/2.eea0509a.js"><link rel="prefetch" href="/assets/js/3.f7d39392.js"><link rel="prefetch" href="/assets/js/4.9317fc17.js"><link rel="prefetch" href="/assets/js/5.2fa853b3.js"><link rel="prefetch" href="/assets/js/6.6521f8af.js"><link rel="prefetch" href="/assets/js/7.af59e088.js"><link rel="prefetch" href="/assets/js/8.175d831c.js"><link rel="prefetch" href="/assets/js/9.5548f3a2.js"><link rel="prefetch" href="/assets/js/10.7339a134.js"><link rel="prefetch" href="/assets/js/11.3d99c758.js"><link rel="prefetch" href="/assets/js/12.9cc81a93.js"><link rel="prefetch" href="/assets/js/13.d7ce8da2.js"><link rel="prefetch" href="/assets/js/14.b4e8d034.js"><link rel="prefetch" href="/assets/js/15.0bcec06f.js"><link rel="prefetch" href="/assets/js/16.79ec653e.js"><link rel="prefetch" href="/assets/js/17.6345247b.js"><link rel="prefetch" href="/assets/js/18.6d4aefd1.js"><link rel="prefetch" href="/assets/js/19.551e9ada.js"><link rel="prefetch" href="/assets/js/20.febb8c46.js"><link rel="prefetch" href="/assets/js/21.44b4f179.js"><link rel="prefetch" href="/assets/js/22.24cbf4af.js"><link rel="prefetch" href="/assets/js/23.1eae90cc.js"><link rel="prefetch" href="/assets/js/24.c50f2bdc.js"><link rel="prefetch" href="/assets/js/25.da5db516.js"><link rel="prefetch" href="/assets/js/27.54d3c1b9.js"><link rel="prefetch" href="/assets/js/28.8abaa992.js"><link rel="prefetch" href="/assets/js/29.327c73c0.js"><link rel="prefetch" href="/assets/js/30.887d62e8.js"><link rel="prefetch" href="/assets/js/31.ad6eab72.js"><link rel="prefetch" href="/assets/js/32.6daee7c6.js"><link rel="prefetch" href="/assets/js/33.afa41644.js"><link rel="prefetch" href="/assets/js/34.067e3d27.js"><link rel="prefetch" href="/assets/js/35.224a38a7.js"><link rel="prefetch" href="/assets/js/36.22801cdc.js"><link rel="prefetch" href="/assets/js/37.4b50599d.js"><link rel="prefetch" href="/assets/js/38.b343759b.js"><link rel="prefetch" href="/assets/js/39.8f24c760.js"><link rel="prefetch" href="/assets/js/40.5a0290ee.js"><link rel="prefetch" href="/assets/js/41.6ef4acfd.js"><link rel="prefetch" href="/assets/js/42.5e7d4776.js"><link rel="prefetch" href="/assets/js/43.4c5ea42b.js"><link rel="prefetch" href="/assets/js/45.763a195c.js"><link rel="prefetch" href="/assets/js/46.53af7aee.js"><link rel="prefetch" href="/assets/js/47.63a05603.js"><link rel="prefetch" href="/assets/js/48.966ca9c7.js"><link rel="prefetch" href="/assets/js/49.30b33a5d.js"><link rel="prefetch" href="/assets/js/50.d39bed86.js"><link rel="prefetch" href="/assets/js/51.5963bbb3.js"><link rel="prefetch" href="/assets/js/52.5c7a9ff0.js"><link rel="prefetch" href="/assets/js/53.9e602020.js"><link rel="prefetch" href="/assets/js/54.3875289e.js"><link rel="prefetch" href="/assets/js/55.91d61802.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a0d3d981.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-b0e23420><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-b0e23420><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        移动端
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        NodeJS
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma/webxiaoma/issues" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>提出疑问</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-b0e23420 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-b0e23420><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        移动端
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        NodeJS
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma/webxiaoma/issues" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>提出疑问</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><div class="sidebar-group first collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack基础篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading open"><span>webpack配置篇</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/webpack/mode.html" class="sidebar-link">Mode 模式</a></li><li><a href="/webpack/entry.html" class="sidebar-link">Enter 入口</a></li><li><a href="/webpack/output.html" class="sidebar-link">Output 出口</a></li><li><a href="/webpack/module.html" class="sidebar-link">module 模块</a></li><li><a href="/webpack/plugins.html" class="sidebar-link">Plugins 插件</a></li><li><a href="/webpack/resolve.html" class="active sidebar-link">Resolve 配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/webpack/resolve.html#resolve-alias" class="sidebar-link">resolve.alias</a></li><li class="sidebar-sub-header"><a href="/webpack/resolve.html#resolve-modules" class="sidebar-link">resolve.modules</a></li><li class="sidebar-sub-header"><a href="/webpack/resolve.html#resolve-extensions" class="sidebar-link">resolve.extensions</a></li></ul></li><li><a href="/webpack/devtool.html" class="sidebar-link">Devtool 配置</a></li></ul></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack练习篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack进阶篇</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="resolve-配置"><a href="#resolve-配置" aria-hidden="true" class="header-anchor">#</a> Resolve 配置</h1> <hr> <p><a href="https://www.webpackjs.com/configuration/resolve/" target="_blank" rel="noopener noreferrer">Resolve 配置<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>的作用是告诉<code>webpack</code>如何查找模块所对应的文件。</p> <h2 id="resolve-alias"><a href="#resolve-alias" aria-hidden="true" class="header-anchor">#</a> resolve.alias</h2> <p><code>resolve.alias</code> 可以通过别名来替换路径，例如：</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    resolve<span class="token punctuation">:</span><span class="token punctuation">{</span>
+        alias<span class="token punctuation">:</span><span class="token punctuation">{</span>
+            <span class="token string">'@'</span><span class="token punctuation">:</span><span class="token string">'./src/components'</span><span class="token punctuation">,</span>
+            <span class="token comment">// 精准匹配</span>
+            <span class="token string">'vue$'</span> <span class="token string">'./src/vue'</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上边当我们使用 <code>import Input form @/input</code>时，webpack会将其解析为<code>import Input form ./src/components/input</code>。</p> <p>而$vue只会替换导入语句结尾是vue的路径,例如当我们使用<code>import Input form 'vue'</code>时，将被解析为<code>import Input form './src/vue'</code>，但是webpack并不是解析<code>import Input form 'vue/test'</code>这样的路径。</p> <h2 id="resolve-modules"><a href="#resolve-modules" aria-hidden="true" class="header-anchor">#</a> resolve.modules</h2> <p><code>resolve.modules</code>可以配置webpack在那些目录下查找第三方模块，webpack模式是查找<code>node_modules</code> 目录下的模块。</p> <p>当我们在使用项目中经常需要使用<code>../../../public/</code> 导入<code>public</code>下的某个模块时，我们可以这样做：</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    resolve<span class="token punctuation">:</span><span class="token punctuation">{</span>
+       modules<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'../../../public'</span><span class="token punctuation">,</span><span class="token string">'node_module'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这时我们可以直接使用 <code>import test.vue</code>，这时webpack会从<code>../../../public</code>、<code>node_modules</code> 中去查找。</p> <h2 id="resolve-extensions"><a href="#resolve-extensions" aria-hidden="true" class="header-anchor">#</a> resolve.extensions</h2> <p><code>resolve.extensions</code>配置webpack自动解析的扩展文件，webpack默认会查找<code>.js</code> 和 <code>.json</code> 文件。</p> <div class="language-js extra-class"><pre class="language-js"><code>extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;.js&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.json&quot;</span><span class="token punctuation">]</span>
+</code></pre></div><p>也就是当我们直接引入js文件或json文件时可以不带扩展名：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> test <span class="token keyword">from</span> <span class="token string">'../../public/test'</span>
+</code></pre></div><p>这时webpack会自动先查找<code>test.js</code> 文件，如果没有找到，就会在查找<code>test.json</code> 文件。我们可以扩展<code>vue</code>文件</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    resolve<span class="token punctuation">:</span><span class="token punctuation">{</span>
+       extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;.js&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;.json&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;.vue&quot;</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/webxiaoma/webxiaoma/edit/dev/docs/webpack/resolve.md" target="_blank" rel="noopener noreferrer">文章有问题，欢迎提出！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">9/4/2018, 6:10:08 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/webpack/plugins.html" class="prev">
+          Plugins 插件
+        </a></span> <span class="next"><a href="/webpack/devtool.html">
+          Devtool 配置
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/44.490e64bc.js" defer></script><script src="/assets/js/app.95ad3f6f.js" defer></script>
+  </body>
+</html>
