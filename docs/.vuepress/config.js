@@ -95,7 +95,8 @@ module.exports = {
                     title: 'webpack进阶篇',
                     collapsable: true, // 是否可折叠
                     children: [
-                        '编译plugins'
+                        '编译plugins',
+                        '编写loader'
                     ]
                }
             ],

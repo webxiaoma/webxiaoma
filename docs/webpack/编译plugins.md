@@ -2,9 +2,9 @@
 sidebarDepth: 1
 meta:
   - name: keywords
-    content: webpack, webpack处理图像, url-loader，图片处理，压缩图片，image-webpack-loader，file-loader
+    content: webpack, plugins, 编写plugins，webpack处理plugin，webpack编写插件，插件plugins
   - name: description
-    content: 本文主要讲述webpack中使用url-loader处理资源路径问题，使用image-webpack-loader处理图片的压缩问题。
+    content: 本文主要讲述使用webpack编写plugins插件，认识编写plugins的整体思路与过程。
 ---
 
 # 编写 Plugins
