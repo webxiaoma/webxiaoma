@@ -22,6 +22,7 @@ module.exports = {
                 ]},
                 {text:'Vue', link:'/vue/'},
                 {text:'NodeJS', link:'/node/'},
+                {text:'网络知识', link:'/network/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
             { text: '提出疑问', link: 'https://github.com/webxiaoma/webxiaoma/issues', blank:true},
@@ -58,11 +59,12 @@ module.exports = {
             //    }
             ],
            '/webpack/':[
+               '',
                {
                 title: 'webpack基础篇',
                 collapsable: true, // 是否可折叠
                 children: [
-                    '',
+                    '基础篇',
                 ]
                },{
                     title: 'webpack配置篇',
@@ -161,6 +163,24 @@ module.exports = {
                       'npm.md',
                     ]
                 },
+            ],
+            '/network/':[
+                '',
+                {
+                    title: '互联网知识',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        '编码处理'
+                    ]
+                },
+                {
+                    title: '计算机',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        '交换机和路由区别'
+                    ]
+                }
+                
             ],
             '/knowledge/':[
                 {

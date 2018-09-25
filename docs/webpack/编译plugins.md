@@ -124,7 +124,7 @@ class HelloWorldPlugin {
 ```
 
 :::tip 小提示
-`compiler`和`compilation` 都继承自[Tapable](https://webpack.docschina.org/api/tapable/)，监听事件的出发我们还可以使用`complier.plugin('事件名'，回调函数)`，另外我们还可以通过`complier.apply('自定义事件名',参数)`自定义广播事件
+`compiler`和`compilation` 都继承自[Tapable](https://webpack.docschina.org/api/tapable/)，在`webpack3.0+`中监听事件的出发我们还可以使用`complier.plugin('事件名'，回调函数)`，另外我们还可以通过`complier.apply('自定义事件名',参数)`自定义广播事件
 :::
 
 
@@ -152,7 +152,6 @@ function MyPlugin() {}
 
 MyPlugin.prototype.apply = function(compiler) {
   compiler.plugin('emit', function(compilation, callback) {
-
     // 检索每个（构建输出的）chunk：
     compilation.chunks.forEach(function(chunk) {
       // chunk是一个代码块
@@ -189,19 +188,21 @@ MyPlugin.prototype.apply = function(compiler) {
 
 ```
 
-- `watching.compiler.watchFileSystem.watcher.mtimes` 获取发生变化的文件列表
+- `watch.compiler.watchFileSystem.watcher.mtimes` 获取发生变化的文件列表
 
 ```js
 // 监听文件变化事件
 compiler.plugin('watch-run',(watch,callback)=>{
     // 获取发生变化的文件列表（数组）
-   let  filesChange = watching.compiler.watchFileSystem.watcher.mtimes;
+   let  filesChange = watch.compiler.watchFileSystem.watcher.mtimes;
    callback();
 })
 
 compiler.plugin('after-compile', (compilation, callback) => {
     // 把要观察的文件路径filePath 添加到webpack观察数组中
-    compilation.fileDependencies.push(filePath);
+    let filesAry = [...compilation.fileDependencies]
+    filesAry.push(filePath);
+    compilation.fileDependencies = filesAry;
     callback();
 });
 ```
