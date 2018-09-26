@@ -22,6 +22,7 @@ module.exports = {
                 ]},
                 {text:'Vue', link:'/vue/'},
                 {text:'NodeJS', link:'/node/'},
+                {text:'Linux', link:'/linux/'},
                 {text:'网络知识', link:'/network/'},
             ]},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
@@ -154,7 +155,7 @@ module.exports = {
                     title: 'node基础',
                     collapsable: true, // 是否可折叠
                     children: [
-                        'Node常见问题'
+                        'NodeJS的安装'
                     ]
                 },{
                     title: '常用工具',
@@ -163,6 +164,16 @@ module.exports = {
                       'npm.md',
                     ]
                 },
+            ],
+            '/linux/':[
+                '',
+                {
+                    title: 'Linux基础',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'linux-init'
+                    ]
+                }
             ],
             '/network/':[
                 '',
