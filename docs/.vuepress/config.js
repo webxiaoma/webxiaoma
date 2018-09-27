@@ -33,7 +33,7 @@ module.exports = {
                 '',
                 {
                     title: '基础篇',
-                    collapsable: false, // 是否可折叠
+                    collapsable: true, // 是否可折叠
                     children: [
                         'JS-DOM操作',
                         'JS-BOM操作',
@@ -42,7 +42,7 @@ module.exports = {
                     ]
                },{
                 title: 'ES6篇',
-                collapsable: false,
+                collapsable: true,
                 children: [
                     'babel'
                 ]
@@ -57,7 +57,14 @@ module.exports = {
             //         collapsable: false,
             //         children: [
             //         ]
-            //    }
+            //    },
+                {
+                    title: '音频视频处理',
+                    collapsable: true,
+                    children: [
+                       'audio'
+                    ] 
+                }
             ],
            '/webpack/':[
                '',

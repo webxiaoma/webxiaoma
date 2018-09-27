@@ -1,5 +1,4 @@
 <template>
-import { setInterval } from 'timers';
   <div class="theme-container">
     <div class="content">
       <h1>404</h1>
@@ -11,7 +10,6 @@ import { setInterval } from 'timers';
 </template>
 
 <script>
-
 
 export default {
   data(){

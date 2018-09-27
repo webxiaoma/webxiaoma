@@ -20,3 +20,5 @@ meta:
 ### 相关文章
 
 - [package.json文件 阮一峰](http://javascript.ruanyifeng.com/nodejs/packagejson.html)
+- [进程和线程](http://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html)
+- [Node.js的线程和进程详解](https://github.com/DoubleSpout/threadAndPackage/blob/master/chapter.7.thread_and_process.md)

@@ -1,4 +1,5 @@
 ---
+sidebarDepth: 1
 meta:
   - name: keywords
     content: js, js BOM, BOM操作，浏览器缓存，浏览器存储
