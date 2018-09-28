@@ -138,7 +138,21 @@ tail [-n number] 只看尾巴几行
     -n ：后面接数字，代表显示几行的意思
     -f ：表示持续侦测后面所接的档名，要等到按下[ctrl]-c才会结束tail的侦测
 ```
+在linux中使用命令复制可以用`xclip`或`xsel`命令，首先使用要安装这两命令，比如使用`xsel`
+```js
+//安装xsel
+sudo apt-get install xsel
 
+//复制 new.txt内容
+cat nex.txt | xsel 
+cat nex.txt | xsel -b //上边不能用使用这个
+
+// 将new.txt文本剪切
+xsel < new.txt
+
+// 清空剪切、粘贴板
+xsel -c
+```
 
 ## 常用操作
 

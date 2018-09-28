@@ -36,6 +36,14 @@ node -v
 
 npm -v
 ```
+如果你想使用[淘宝镜像](https://npm.taobao.org/)
+```js
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+//查检不到cnpm的版本号,需要运行以下命令
+echo -e "export PATH=$(npm prefix -g)/bin:$PATH" >> ~/.zshrc && source ~/.zshrc
+cnpm -v # =>4.3.2
+```
 
 ## NodeJS升级问题
 
