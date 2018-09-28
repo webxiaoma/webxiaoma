@@ -64,6 +64,15 @@ module.exports = {
                     children: [
                        'audio'
                     ] 
+                },{
+                    title: '文件与二进制处理',
+                    collapsable: true,
+                    children: [
+                       'ArrayBuffer处理二进制',
+                       'Blob处理类文件对象',
+                       'FileReader和FormData对象',
+                       'base64处理',
+                    ] 
                 }
             ],
            '/webpack/':[

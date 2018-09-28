@@ -22,6 +22,6 @@ meta:
 - [Babel 用户手册](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md)
 ## JS 网站
 
-### 教程网站
+- [js Web API 接口 MDN](https://developer.mozilla.org/zh-CN/docs/Web/API)
 
 ### 相关文章

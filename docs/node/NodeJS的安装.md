@@ -45,7 +45,7 @@ echo -e "export PATH=$(npm prefix -g)/bin:$PATH" >> ~/.zshrc && source ~/.zshrc
 cnpm -v # =>4.3.2
 ```
 
-## NodeJS升级问题
+## NodeJS升级问题 
 
 ### 一、windows上的升级
 
