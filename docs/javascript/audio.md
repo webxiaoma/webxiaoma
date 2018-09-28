@@ -101,7 +101,7 @@ audio.play() // 开始播放
 
 ### 实例练习
 
-下面我们来看看使用`audio`的一些小练习
+下面我们来看看使用`audio`的一些小练习[GitHub仓库练习](https://github.com/webxiaoma/JavaScript-demos/blob/master/HTML5/audio/audio.html)
 
 <iframe width="700" height="500" border="none" style="border:0;" src="https://webxiaoma.github.io/JavaScript-demos/HTML5/audio/audio.html">
 </iframe>
