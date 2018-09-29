@@ -77,7 +77,7 @@ npx webpack-dev-server
 npm start
 ```
 
-当使用`webapck-dev-server`启动时，它自动启动`webpack`，并且`webpack`的监听模式会被开启，当webpack监听到文件变化后，会通知`webapck-dev-server`模块，`webapck-dev-server`模块会去刷新浏览器。`webapck-dev-server`启动时默认会在`8080`端口上[http://localhost:8080](http://localhost:8080)，此外我们还可以在`webpack.config.js`中根据`devtool`字段来来配置`webapck-dev-server`
+当使用`webapck-dev-server`启动时，它自动启动`webpack`，并且`webpack`的监听模式会被开启，当webpack监听到文件变化后，会通知`webapck-dev-server`模块，`webapck-dev-server`模块会去刷新浏览器。`webapck-dev-server`启动时默认会在`8080`端口上[http://localhost:8080](http://localhost:8080)，此外我们还可以在`webpack.config.js`中根据`devServer`字段来来配置`webapck-dev-server`
 
 ```js
 module.exports = {
@@ -89,7 +89,7 @@ module.exports = {
     watchContentBase: true,
     //一切服务都启用 gzip 压缩
     compress: true,
-    // 刷新模式，false时启用iiframe模式
+    // 刷新模式，false时启用iframe模式
     inline:false,
     //默认是 localhost。如果你希望服务器外部可访问设置'0.0.0.0'
     host: 'localhost',
