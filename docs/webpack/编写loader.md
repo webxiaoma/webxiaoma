@@ -193,7 +193,7 @@ function  dispose(content,option){
 
 module.exports = function (source) {
     let option = utils.getOptions(this)
-    let content = dispose(source,option) || {name:'暂无姓名',age:0}
+    let content = dispose(source,option || {name:'暂无姓名',age:0})
     this.callback(null,content)
  };
 ```
