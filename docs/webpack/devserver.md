@@ -11,17 +11,13 @@ meta:
 
 - [webpack-dev-server GitHub 仓库练习](https://github.com/webxiaoma/webpack-demos/tree/master/webpack4/webpack-dev-server)
 - [webpack-serve GitHub 仓库练习](https://github.com/webxiaoma/webpack-demos/tree/master/webpack4/webpack-serve)
-
 ---
 
-`Webpack v4.0+` 中提供了几个大模块，一个是核心模块 `webpack`, 命令模块 `webpack-cli` 以及 服务器模块 [webpack-dev-server](https://github.com/webpack/webpack-dev-server)(**目前`Webpack v4.0+` 中也可以使用[webpack-serve](https://github.com/webpack-contrib/webpack-serve)**，该模块推荐使用)。实现浏览器的自动刷新和模块热替换我们可以使用服务器模块 `webpack-dev-server`或`webpack-serve`。
-
-:::warning 注意
-- <Badge>webpack3.0+</Badge> 中使用的是 webpack-dev-server 来实现自动刷新和热模块替换的
-- <Badge>webpack4.0+</Badge> 可以使用 webpack-dev-server 来实现自动刷新和热模块替换，同时也可以使用官方提供的另一个模块webpack-serve，需要注意的是webpack-serve 模块以后很可能会替代 webpack-dev-server模块。所以建议学习webpack-serve，同时我们也讲一下webpack-dev-server模块的使用。
-
+::: danger 注意
+`webpack-serve` 该[仓库](https://github.com/webpack-contrib/webpack-serve)目前为只读状态，已经被废弃推荐使用`webpack-dev-server`
 :::
 
+`Webpack v4.0+`注意该中提供了几个大模块，一个是核心模块 `webpack`, 命令模块 `webpack-cli` 以及 服务器模块 [webpack-dev-server](https://github.com/webpack/webpack-dev-server)。实现浏览器的自动刷新和模块热替换我们可以使用服务器模块 `webpack-dev-server`。
 
 ## 实现自动刷新
 
@@ -153,7 +149,7 @@ module.exports = {
 :::
 
 
-## webpack-serve
+## webpack-serve 已废弃
 
 上面我们说的是`webpack3.0+`中经常使用的服务器模块，`webpack4.0+`后，官方又出来一个[webpack-serve](https://github.com/webpack-contrib/webpack-serve)，而且将来会有要取代`webpack-dev-server 模块`的趋势。[webpack-dev-server issues](https://github.com/webpack/webpack-dev-server/issues/1493)，使用该模块需要知道的是：
 

@@ -185,7 +185,7 @@ div.innerHTML = a + c
 
 ```js
 const utils = require('loader-utils')
-function  dispose(content,option){
+function  dispose(content,option = {name:'暂无姓名',age:0}){
     console.log(option)
    
     return content.replace(/\{\{name\}\}/g,option.name).replace(/\{\{age\}\}/g,option.age);
@@ -193,7 +193,7 @@ function  dispose(content,option){
 
 module.exports = function (source) {
     let option = utils.getOptions(this)
-    let content = dispose(source,option) || {name:'暂无姓名',age:0}
+    let content = dispose(source,option)
     this.callback(null,content)
  };
 ```

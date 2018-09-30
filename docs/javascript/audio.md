@@ -163,7 +163,7 @@ var audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
 ### 处理音效
 
-处理音效我们需要创建一个音频振荡器`createOscillator()`，它返回一个`OscillatorNode`模块对象接口，这个模块会对一个指定频率将创建的给定波产生影响, 一个恒定的音调。具体用法[可以看这里](https://developer.mozilla.org/zh-CN/docs/Web/API/OscillatorNode)
+处理音效我们需要创建一个音频振荡器`createOscillator()`，它返回一个`OscillatorNode`模块对象接口(音调控制对象)，这个模块会对一个指定频率将创建的给定波产生影响, 一个恒定的音调。具体用法[可以看这里](https://developer.mozilla.org/zh-CN/docs/Web/API/OscillatorNode)
 
 **属性：**
 
@@ -261,9 +261,19 @@ oscillator.stop(audioCtx.currentTime + 10);
 - `AnalyserNode.getFloatTimeDomainData()`将当前波形或时域数据复制到传入其中的`Float32Array`数组中。
 - `AnalyserNode.getByteTimeDomainData()` 将当前波形或时域数据复制到`Uint8Array`传递给它的（无符号字节数组）中。
 
+:::tip 提示
+在获取音频音量信息时，我们需要先将音频`AnalyserNode`对象链接到音频对象上，然后在将音量节点链接到`AnalyserNode`对象
+- `musicSource.connect(analyser)` 将;
+- `analyser.connect(gainNode)`;
+:::
 ```js
 var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 var analyser = audioCtx.createAnalyser();
+var oscillator = audioCtx.createOscillator() //常见音频节点
+var gainNode = audioCtx.createGain(); // 创建音量节点
+
+oscillator.connect(analyser)
+analyser.connect(gainNode)
 
 analyser.fftSize = 2048;
 var bufferLength = analyser.frequencyBinCount;
