@@ -266,6 +266,7 @@ oscillator.stop(audioCtx.currentTime + 10);
 - `musicSource.connect(analyser)` 将;
 - `analyser.connect(gainNode)`;
 :::
+
 ```js
 var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 var analyser = audioCtx.createAnalyser();
@@ -295,3 +296,9 @@ analyser.getByteTimeDomainData(dataArray);
 
 
 
+
+下面我们来是使用`Audio Web API`制作可视化音乐的练习[GitHub仓库练习](https://github.com/webxiaoma/JavaScript-demos/blob/master/HTML5/audio/audio-aip-two.html)
+
+
+<iframe width="810" height="660" style="border:0;" src="https://webxiaoma.github.io/JavaScript-demos/HTML5/audio/audio-api-two.html">
+</iframe>
