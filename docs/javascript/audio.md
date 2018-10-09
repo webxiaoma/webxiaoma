@@ -242,9 +242,6 @@ oscillator.start(audioCtx.currentTime);
 oscillator.stop(audioCtx.currentTime + 10);
 ```
 
-### 处理音乐文件
-
-
 ### 获取频率信息
 
 我们可以通过`AudioContext.createAnalyser()`方法来创建一个[AnalyserNode](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode)获取音频时间和频率上的一些信息，知道这些信息后我们就可以做一些类似音乐可视化的需求。[createAnalyser API](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createAnalyser)
@@ -281,10 +278,6 @@ var bufferLength = analyser.frequencyBinCount;
 var dataArray = new Uint8Array(bufferLength);
 analyser.getByteTimeDomainData(dataArray);
 ```
-
-
-
-
 
 
 ### 实例练习
