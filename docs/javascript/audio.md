@@ -29,7 +29,7 @@ meta:
     您的浏览器不支持 audio 元素。
 </audio>
 ```
-当浏览器不支持`audio`时，页面会像是`audio`内的文字。目前audio支持扇子音频格式`ogg vorbis` 、`MP3`以及`wav`。这三种格式浏览器的兼容性可以[查看这里](http://www.w3school.com.cn/html5/html_5_audio.asp)
+当浏览器不支持`audio`时，页面会像是`audio`内的文字。目前audio支持的音频格式`ogg vorbis` 、`MP3`以及`wav`。这三种格式浏览器的兼容性可以[查看这里](http://www.w3school.com.cn/html5/html_5_audio.asp)
 
 
 ### audio标签内属性

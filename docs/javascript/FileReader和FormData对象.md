@@ -47,7 +47,7 @@ FileReader 的实例拥有 4 个方法，其中 3 个用以读取文件，另一
 
 ### 3. `FileReader` 的用法
 
-当文件读取时，会触发响应的事件，我们可以从事件对象中获取文件流的一些信息，并且文件读取的结果会储存在result这个属性中。需要注意的是，读取文件的方法不能同时进行。
+当文件读取时，会触发响应的事件，我们可以从事件对象中获取文件流的一些信息，并且文件读取的结果会储存在`result`这个属性中。需要注意的是，读取文件的方法不能同时进行。
 
 ```js
 
@@ -63,12 +63,13 @@ inp.onchange = function(e){
 //    fileReader.readAsDataURL(file)
 //    fileReader.readAsArrayBuffer(file)
 
-   fileReader.onload = function(reesult){
-       console.log(e)
+   fileReader.onload = function(res){
+       // 获取的文件流存储在res.target.result 中
+       console.log(res.target.result)
    }
 
    fileReader.onprogress = function(e){
-       console.log(e)
+       console.log(res)
    }
 }
 

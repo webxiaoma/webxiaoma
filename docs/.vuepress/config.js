@@ -62,7 +62,8 @@ module.exports = {
                     title: '音频视频处理',
                     collapsable: true,
                     children: [
-                       'audio'
+                       'audio',
+                       'video'
                     ] 
                 },{
                     title: '文件与二进制处理',
