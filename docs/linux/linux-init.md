@@ -80,7 +80,7 @@ mv [-fiu] 要移动的文件 移动到的目录：移动文件或目录
 
 ### 文件属性
 
-![linux 文件属性](http://www.runoob.com/wp-content/uploads/2014/06/363003_1227493859FdXT.png)
+![linux 文件属性](http://webxiaoma.com/img/linux-2.png)
 
 1. 第一组 表示文件类型
     - [ d ]则是目录
