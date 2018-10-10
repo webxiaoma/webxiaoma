@@ -74,3 +74,44 @@ meta:
 
 <iframe width="700" height="700" allowfullscreen style="border:0;" src="https://webxiaoma.github.io/JavaScript-demos/HTML5/video/video.html">
 </iframe>
+
+
+
+## MediaSource API
+
+[MediaSource API]() 扩展了视频的处理，使js生成流媒体成为了可能。下面我们来简单的使用一下`MediaSource API`
+
+
+
+
+
+
+
+## 推荐文章
+
+- [构建一个简单的MPEG-DASH流媒体播放器](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/dn551368(v=vs.85)#feeding-the-buffer)
+
+
+
+1，RTMP协议直播源
+香港卫视：rtmp://live.hkstv.hk.lxdns.com/live/hks
+
+2，RTSP协议直播源
+珠海过澳门大厅摄像头监控：rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp
+大熊兔（点播）：rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov
+
+3，HTTP协议直播源
+香港卫视：http://live.hkstv.hk.lxdns.com/live/hks/playlist.m3u8
+CCTV1高清：http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8
+CCTV3高清：http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8
+CCTV5高清：http://ivi.bupt.edu.cn/hls/cctv5hd.m3u8
+CCTV5+高清：http://ivi.bupt.edu.cn/hls/cctv5phd.m3u8
+CCTV6高清：http://ivi.bupt.edu.cn/hls/cctv6hd.m3u8
+苹果提供的测试源（点播）：http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8
+
+原文地址：https://blog.csdn.net/robinson_911/article/details/78805200
+
+作者：幻想无极
+链接：https://www.jianshu.com/p/14f8145763e4
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
