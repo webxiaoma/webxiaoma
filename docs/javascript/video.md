@@ -81,11 +81,62 @@ meta:
 
 [MediaSource API]() 扩展了视频的处理，使js生成流媒体成为了可能。下面我们来简单的使用一下`MediaSource API`
 
+使用`MediaSource API`来实现媒体播放器的大致步骤如下：
 
+1. 在页面的`HTML`部分中定义`HTML5` 视频元素。
+2. 在`JavaScript`中创建`MediaSource`对象。
+3. 使用`createObjectURL`创建虚拟`URL` ，并将`MediaSource`对象作为源。
+4. 将虚拟`URL`分配给`video`元素的`src`属性。
+5. 使用`addSourceBuffer`创建一个`SourceBuffer`，使用您要添加的视频的`mime`类型。
+6. 从媒体获取文件中的视频初始化段网上，并将其添加到`SourceBuffer`与`appendBuffer`。
+7. 获取视频数据的段从媒体文件，将它们添加到`SourceBuffer`与`appendBuffer`。
+8. 在视频元素上调用`play`方法。
 
+实现的代码如下：
 
+```HTML
+<video id="video" controls="controls">
+    抱歉您的浏览器不支持H5视频
+</video>
+<script>
+    let video = document.querySelector('#video')
 
+    //创建 media source (使用`createObjectURL`创建虚拟`URL` ，并将`MediaSource`对象作为源。)
+    let mediaSource = new MediaSource()
+    video.src = URL.createObjectURL(mediaSource)
+    // 设置 媒体的编码类型
+    let mimeCodec = 'video/webm; codecs="vorbis, vp8"';
+    // let isItSupported = MediaSource.isTypeSupported(mimeCodec);
+     // 返回值为 Boolean, isItSupported 可以判断浏览器是否支持某个视频类型
 
+    mediaSource.addEventListener('sourceopen', sourceOpen);
+    function sourceOpen(e){
+      //清除`createObjectURL`创建的对象并释放系统资源
+        URL.revokeObjectURL(video.src);
+        var sourceBuffer = this.addSourceBuffer(mimeCodec);
+        // 请求视频资源
+        fetch("./bhsj.webm").then(function(file){
+                return file.arrayBuffer()
+        }).then(function(aryBuf){
+            console.log(aryBuf)
+            sourceBuffer.appendBuffer(aryBuf);
+        })
+        sourceBuffer.addEventListener('updateend', function () {
+            if(!sourceBuffer.updating && mediaSource.readyState === 'open'){
+                mediaSource.endOfStream();
+                video.play();
+            }
+        });
+    }
+
+</script>
+
+```
+
+通过代码我们可以看出，使用使用`createObjectURL`创建虚拟`URL`，将其赋值给`video.src`后这时`video`和`mediaSource`就已经连接起来了, 此时`createObjectURL`创建的对象也就没有用了，我们可以使用`URL.revokeObjectURL()` 来清除`createObjectURL`创建的对象并释放系统资源。
+
+现在虽然`vidoe`元素与`Media Source`媒体对象已经连接了，但是还没有媒体资源，所以这里还是不能播放
+[https://juejin.im/entry/5a90f40bf265da4e9d224879](https://juejin.im/entry/5a90f40bf265da4e9d224879)
 
 ## 推荐文章
 
