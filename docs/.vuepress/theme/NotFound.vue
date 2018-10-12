@@ -19,7 +19,7 @@ export default {
     }
   },
   created(){
-   
+    this.setTime()
   },
   methods: {
      setTime(){
