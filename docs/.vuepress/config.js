@@ -25,6 +25,7 @@ module.exports = {
                 {text:'Linux', link:'/linux/'},
                 {text:'网络知识', link:'/network/'},
             ]},
+            { text: 'English', link: '/english/'},
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
             { text: '提出疑问', link: 'https://github.com/webxiaoma/webxiaoma/issues', blank:true},
         ],
@@ -223,6 +224,15 @@ module.exports = {
                     children: [
                     ] 
                 },
+            ],
+            '/english/':[
+                {
+                    title: 'English常用网站',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                      '',
+                    ]
+                }
             ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2
