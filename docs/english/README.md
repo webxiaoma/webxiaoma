@@ -13,7 +13,7 @@ meta:
 ## 网站
 
 [两小无猜网](http://www.lxwc.com.cn/)**推荐** (上边好多英语资料)
-
+[Youglish](https://youglish.com/search)
 
 ## Hooked on Phonics系列 
 
@@ -58,3 +58,5 @@ meta:
 
 ## 其它文章
 
+- [常用单词](https://www.ef.com/english-resources/english-vocabulary/)
+- [文法俱乐部](https://webxiaoma.github.io/english/Second_Grade_Level2/e_mo_nai_ba/wen_fa_ju_le_bu.pdf)
