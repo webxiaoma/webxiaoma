@@ -40,6 +40,11 @@ meta:
 - [Second_Grade_Level2](https://webxiaoma.github.io/english/Second_Grade_Level2/class.pdf)
 
 
+### 恶魔的奶爸作品
+
+- [文法俱乐部](https://webxiaoma.github.io/english/Second_Grade_Level2/e_mo_nai_ba/wen_fa_ju_le_bu.pdf)
+- [把你的英语用起来](https://webxiaoma.github.io/english/Second_Grade_Level2/e_mo_nai_ba/use_your_english.pdf)
+
 
 ## 电影
 
@@ -59,4 +64,6 @@ meta:
 ## 其它文章
 
 - [常用单词](https://www.ef.com/english-resources/english-vocabulary/)
-- [文法俱乐部](https://webxiaoma.github.io/english/Second_Grade_Level2/e_mo_nai_ba/wen_fa_ju_le_bu.pdf)
+
+
+
