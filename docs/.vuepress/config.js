@@ -173,7 +173,8 @@ module.exports = {
                     title: 'node基础',
                     collapsable: true, // 是否可折叠
                     children: [
-                        'NodeJS的安装'
+                        'NodeJS的安装',
+                        'nodejs常用API'
                     ]
                 },{
                     title: '常用工具',

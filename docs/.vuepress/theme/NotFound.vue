@@ -21,6 +21,9 @@ export default {
   created(){
     this.setTime()
   },
+  destroyed(){
+     if(this.timeId) clearInterval(this.timeId);
+  },
   methods: {
      setTime(){
         this.timeId = setInterval(()=>{
