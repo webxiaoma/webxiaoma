@@ -150,57 +150,12 @@ Buffer.from(new String('this is a test'));
 - `buf.equals(otherBuffer)`如果`buf`与`otherBuffer`具有完全相同的字节，则返回`true`，否则返回`false`。
 - `buf.fill(value[, offset[, end]][, encoding])`如果未指定`offset`和`end`，则填充整个`buf`
 
-## Http
-
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
 
 ## module 模块
 
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
+- `__dirname`  该变量并不是全局变量，它在模块`module`中，存储着当前模块的绝对路径
+- `__filename` 该变量并不是全局变量，它在模块`module`中，存储着当前模块的文件名称
+- `module.id` 模块的标识符。 通常是完全解析后的文件名。
+- `module.paths` 模块的搜索路径。
+- `module.parent` 最先引用该模块的模块。
 
-
-## global 全局变量
-
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
-
-## process 进程
-
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
-
-## child_process 子进程
-
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
-
-## os 操作系统
-
-- ``
-- ``
-- ``
-- ``
-- ``
-- ``
