@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue-cli3.0 的基本使用 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文章主要讲述vue-cli3.0 版本的基本使用。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywordsv" content="vue-cli3.0  vue-cli vue脚手架 vue">
+    <link rel="preload" href="/assets/css/0.styles.74caf1e0.css" as="style"><link rel="preload" href="/assets/js/app.b2ae7260.js" as="script"><link rel="preload" href="/assets/js/48.d2912253.js" as="script"><link rel="prefetch" href="/assets/js/34.a34f4846.js"><link rel="prefetch" href="/assets/js/2.eea0509a.js"><link rel="prefetch" href="/assets/js/3.43396bde.js"><link rel="prefetch" href="/assets/js/4.a34de17b.js"><link rel="prefetch" href="/assets/js/5.28645c17.js"><link rel="prefetch" href="/assets/js/6.633ae4c3.js"><link rel="prefetch" href="/assets/js/7.f798916b.js"><link rel="prefetch" href="/assets/js/8.9132a3ef.js"><link rel="prefetch" href="/assets/js/9.a97a34b1.js"><link rel="prefetch" href="/assets/js/10.b005ef09.js"><link rel="prefetch" href="/assets/js/11.f232969e.js"><link rel="prefetch" href="/assets/js/12.78fd53ea.js"><link rel="prefetch" href="/assets/js/13.fa0077cc.js"><link rel="prefetch" href="/assets/js/14.c2196c77.js"><link rel="prefetch" href="/assets/js/15.26163df1.js"><link rel="prefetch" href="/assets/js/16.6b374e2b.js"><link rel="prefetch" href="/assets/js/17.18388c61.js"><link rel="prefetch" href="/assets/js/18.dac3728d.js"><link rel="prefetch" href="/assets/js/19.f6bd8cb6.js"><link rel="prefetch" href="/assets/js/20.c62c4279.js"><link rel="prefetch" href="/assets/js/21.6153d8ab.js"><link rel="prefetch" href="/assets/js/22.2722270f.js"><link rel="prefetch" href="/assets/js/23.78008308.js"><link rel="prefetch" href="/assets/js/24.ac44d253.js"><link rel="prefetch" href="/assets/js/25.86e3b021.js"><link rel="prefetch" href="/assets/js/26.90a481bb.js"><link rel="prefetch" href="/assets/js/27.ff7b9672.js"><link rel="prefetch" href="/assets/js/28.c4d19f09.js"><link rel="prefetch" href="/assets/js/29.b76a45c7.js"><link rel="prefetch" href="/assets/js/30.864c2461.js"><link rel="prefetch" href="/assets/js/31.851ad36b.js"><link rel="prefetch" href="/assets/js/32.a9f71aef.js"><link rel="prefetch" href="/assets/js/33.5bf3f159.js"><link rel="prefetch" href="/assets/js/35.b3be92bb.js"><link rel="prefetch" href="/assets/js/36.9a9ff3c7.js"><link rel="prefetch" href="/assets/js/37.f1c1aace.js"><link rel="prefetch" href="/assets/js/38.420f9576.js"><link rel="prefetch" href="/assets/js/39.ac95da6f.js"><link rel="prefetch" href="/assets/js/40.c6dc367b.js"><link rel="prefetch" href="/assets/js/41.5b334acc.js"><link rel="prefetch" href="/assets/js/42.69458751.js"><link rel="prefetch" href="/assets/js/43.7c02e93f.js"><link rel="prefetch" href="/assets/js/44.84b5d06e.js"><link rel="prefetch" href="/assets/js/45.813e4b4d.js"><link rel="prefetch" href="/assets/js/46.c6156030.js"><link rel="prefetch" href="/assets/js/47.550c3ae9.js"><link rel="prefetch" href="/assets/js/49.84805ca5.js"><link rel="prefetch" href="/assets/js/50.4876a744.js"><link rel="prefetch" href="/assets/js/51.3c7d99dc.js"><link rel="prefetch" href="/assets/js/52.266e8c65.js"><link rel="prefetch" href="/assets/js/53.b34c3aa8.js"><link rel="prefetch" href="/assets/js/54.43f4a598.js"><link rel="prefetch" href="/assets/js/55.dd48397d.js"><link rel="prefetch" href="/assets/js/56.36a3fb4c.js"><link rel="prefetch" href="/assets/js/57.93807266.js"><link rel="prefetch" href="/assets/js/58.0249c302.js"><link rel="prefetch" href="/assets/js/59.a1f26f85.js"><link rel="prefetch" href="/assets/js/60.6c346822.js"><link rel="prefetch" href="/assets/js/61.7d44ac72.js"><link rel="prefetch" href="/assets/js/62.154d5364.js"><link rel="prefetch" href="/assets/js/63.06792006.js"><link rel="prefetch" href="/assets/js/64.186b4a2d.js"><link rel="prefetch" href="/assets/js/65.05fed278.js"><link rel="prefetch" href="/assets/js/66.74f2b2b7.js"><link rel="prefetch" href="/assets/js/67.7f614d29.js"><link rel="prefetch" href="/assets/js/68.83a62e25.js"><link rel="prefetch" href="/assets/js/69.0727e735.js"><link rel="prefetch" href="/assets/js/70.dd08164d.js"><link rel="prefetch" href="/assets/js/71.9156d593.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.74caf1e0.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-b0e23420><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-b0e23420><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        移动端
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        English
+        <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma/webxiaoma/issues" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>提出疑问</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-b0e23420 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-b0e23420><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        博客
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        移动端
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-b0e23420><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          构建工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-b0e23420>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        English
+        <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-b0e23420>
+        
+        <a href="https://github.com/webxiaoma/webxiaoma/issues" target="_blank" style="padding-bottom:5px;" data-v-b0e23420>提出疑问</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/vue/" class="sidebar-link" data-v-5534fc3a>vue 常见文章</a></li><li data-v-5534fc3a><a href="/vue/学习须知.html" class="sidebar-link" data-v-5534fc3a>Vue 学习须知</a></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading open"><span>vue基础</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/vue/vue-cli-3.html" class="active sidebar-link">vue-cli3.0 的基本使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue/vue-cli-3.html#创建项目" class="sidebar-link">创建项目</a></li><li class="sidebar-sub-header"><a href="/vue/vue-cli-3.html#配置项目" class="sidebar-link">配置项目</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/vue/vue-cli-3.html#完整默认配置" class="sidebar-link">完整默认配置</a></li><li class="sidebar-sub-header"><a href="/vue/vue-cli-3.html#构建多页面应用" class="sidebar-link">构建多页面应用</a></li><li class="sidebar-sub-header"><a href="/vue/vue-cli-3.html#webpack配置" class="sidebar-link">webpack配置</a></li><li class="sidebar-sub-header"><a href="/vue/vue-cli-3.html#全局变量设置" class="sidebar-link">全局变量设置</a></li></ul></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="vue-cli3-0-的基本使用"><a href="#vue-cli3-0-的基本使用" aria-hidden="true" class="header-anchor">#</a> vue-cli3.0 的基本使用</h1> <hr> <p>一些基础操作查看<a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener noreferrer">Vue-CLI3.0 官网<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="创建项目"><a href="#创建项目" aria-hidden="true" class="header-anchor">#</a> 创建项目</h2> <ul><li>安装 vue-cli3.0 (Vue CLI 需要 Node.js 8.9 或更高版本,推荐 8.11.0+)</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span>g @vue<span class="token operator">/</span>cli
+</code></pre></div><ul><li>创建项目</li></ul> <div class="language-js extra-class"><pre class="language-js"><code>vue create project
+</code></pre></div><p><strong>1. 创建项目后会询问你设置一些基本配置</strong> <img src="https://cli.vuejs.org/cli-new-project.png" alt="配置"></p> <p><code>deafult</code> 默认配置，包括 babel, eslint</p> <p><code>mmanually select features</code> 手动选择一些配置,手动选择的一些配置如下，（按空格键选择或不选，按a键全选或不选，按回车键选择完成进行下一步操作）</p> <p><img src="https://cli.vuejs.org/cli-select-features.png" alt="配置"></p> <p><strong>2. 配置ESlint,选择一个<code>Linter / Formatter</code>规范类型</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">?</span> Pick a linter <span class="token operator">/</span> formatter config<span class="token punctuation">:</span> <span class="token punctuation">(</span>Use arrow keys<span class="token punctuation">)</span>
+<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> ESLint <span class="token keyword">with</span> error prevention <span class="token function">only</span>
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> ESLint <span class="token operator">+</span> Airbnb <span class="token function">config</span>
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> ESLint <span class="token operator">+</span> Standard <span class="token function">config</span>
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> ESLint <span class="token operator">+</span> Prettier
+</code></pre></div><p><strong>3. 配置ESlint,选择lint方式，保存时检查/提交时检查</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">?</span> Pick additional lint features<span class="token punctuation">:</span> <span class="token punctuation">(</span>Press <span class="token operator">&lt;</span>space<span class="token operator">&gt;</span> to select<span class="token punctuation">,</span> <span class="token operator">&lt;</span>a<span class="token operator">&gt;</span> to toggle all<span class="token punctuation">,</span> <span class="token operator">&lt;</span>i<span class="token operator">&gt;</span> to invert selection<span class="token punctuation">)</span>
+<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> Lint on <span class="token function">save</span>
+ <span class="token punctuation">(</span> <span class="token punctuation">)</span> Lint and fix on commit
+</code></pre></div><p><strong>4. 选择 Babel, PostCSS, ESLint 等自定义配置的存放位置</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">?</span> Where <span class="token keyword">do</span> you prefer placing config <span class="token keyword">for</span> Babel<span class="token punctuation">,</span> PostCSS<span class="token punctuation">,</span> ESLint<span class="token punctuation">,</span> etc<span class="token punctuation">.</span><span class="token operator">?</span> <span class="token punctuation">(</span>Use arrow keys<span class="token punctuation">)</span>
+<span class="token operator">&gt;</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span>In dedicated config <span class="token function">files</span>
+  <span class="token punctuation">(</span> <span class="token punctuation">)</span>In <span class="token keyword">package</span><span class="token punctuation">.</span>json
+</code></pre></div><p><strong>5. 是否保存你的配置在下次创建项目时使用</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">?</span> Save <span class="token keyword">this</span> <span class="token keyword">as</span> a preset <span class="token keyword">for</span> future projects<span class="token operator">?</span> <span class="token punctuation">(</span>y<span class="token operator">/</span><span class="token constant">N</span><span class="token punctuation">)</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">提示</p> <p>当你输入<code>y</code>后，还让你为这个配置起一个名字，以便在下次使用,这个配置存储在了用户的 <code>home</code> 目录下一个名为 <code>.vuerc</code> 文件里</p> <p><strong>当然你也可以使用官方提供的可视化方式来创建项目 <code>vue ui</code></strong></p></div> <h2 id="配置项目"><a href="#配置项目" aria-hidden="true" class="header-anchor">#</a> 配置项目</h2> <h3 id="完整默认配置"><a href="#完整默认配置" aria-hidden="true" class="header-anchor">#</a> 完整默认配置</h3> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+ <span class="token comment">// 基本路径</span>
+ baseUrl<span class="token punctuation">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+ <span class="token comment">// 输出文件目录</span>
+ outputDir<span class="token punctuation">:</span> <span class="token string">'dist'</span><span class="token punctuation">,</span>
+ <span class="token comment">// eslint-loader 是否在保存的时候检查</span>
+ lintOnSave<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+ <span class="token comment">// use the full build with in-browser compiler?</span>
+ <span class="token comment">// https://vuejs.org/v2/guide/installation.html#Runtime-Compiler-vs-Runtime-only</span>
+ compiler<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+ <span class="token comment">// webpack配置</span>
+ <span class="token comment">// see https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md</span>
+ chainWebpack<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+ configureWebpack<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">// vue-loader 配置项</span>
+ <span class="token comment">// https://vue-loader.vuejs.org/en/options.html</span>
+ vueLoader<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">// 生产环境是否生成 sourceMap 文件</span>
+ productionSourceMap<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+ <span class="token comment">// css相关配置</span>
+ css<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 是否使用css分离插件 ExtractTextPlugin</span>
+  extract<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token comment">// 开启 CSS source maps?</span>
+  sourceMap<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token comment">// css预设器配置项</span>
+  loaderOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// 启用 CSS modules for all css / pre-processor files.</span>
+  modules<span class="token punctuation">:</span> <span class="token boolean">false</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">// use thread-loader for babel &amp; TS in production build</span>
+ <span class="token comment">// enabled by default if the machine has more than 1 cores</span>
+ parallel<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'os'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">cpus</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span>
+ <span class="token comment">// 是否启用dll</span>
+ <span class="token comment">// See https://github.com/vuejs/vue-cli/blob/dev/docs/cli-service.md#dll-mode</span>
+ dll<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+ <span class="token comment">// PWA 插件相关配置</span>
+ <span class="token comment">// see https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa</span>
+ pwa<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">// webpack-dev-server 相关配置</span>
+ devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  open<span class="token punctuation">:</span> process<span class="token punctuation">.</span>platform <span class="token operator">===</span> <span class="token string">'darwin'</span><span class="token punctuation">,</span>
+  host<span class="token punctuation">:</span> <span class="token string">'0.0.0.0'</span><span class="token punctuation">,</span>
+  port<span class="token punctuation">:</span> <span class="token number">8080</span><span class="token punctuation">,</span>
+  https<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  hotOnly<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  proxy<span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// 设置代理</span>
+  before<span class="token punctuation">:</span> app <span class="token operator">=&gt;</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+ <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token comment">// 第三方插件配置</span>
+ pluginOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="构建多页面应用"><a href="#构建多页面应用" aria-hidden="true" class="header-anchor">#</a> 构建多页面应用</h3> <p>当我们想构建多页面应用时可以使用<a href="https://cli.vuejs.org/zh/config/#pages" target="_blank" rel="noopener noreferrer">page 字段<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  pages<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    index<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// page 的入口</span>
+      entry<span class="token punctuation">:</span> <span class="token string">'src/index/main.js'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 模板来源</span>
+      template<span class="token punctuation">:</span> <span class="token string">'public/index.html'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 在 dist/index.html 的输出</span>
+      filename<span class="token punctuation">:</span> <span class="token string">'index.html'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 当使用 title 选项时，</span>
+      <span class="token comment">// template 中的 title 标签需要是 &lt;title&gt;&lt;%= htmlWebpackPlugin.options.title %&gt;&lt;/title&gt;</span>
+      title<span class="token punctuation">:</span> <span class="token string">'Index Page'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 在这个页面中包含的块，默认情况下会包含</span>
+      <span class="token comment">// 提取出来的通用 chunk 和 vendor chunk。</span>
+      chunks<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'chunk-vendors'</span><span class="token punctuation">,</span> <span class="token string">'chunk-common'</span><span class="token punctuation">,</span> <span class="token string">'index'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 当使用只有入口的字符串格式时，</span>
+    <span class="token comment">// 模板会被推导为 `public/subpage.html`</span>
+    <span class="token comment">// 并且如果找不到的话，就回退到 `public/index.html`。</span>
+    <span class="token comment">// 输出文件名会被推导为 `subpage.html`。</span>
+    subpage<span class="token punctuation">:</span> <span class="token string">'src/subpage/main.js'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="webpack配置"><a href="#webpack配置" aria-hidden="true" class="header-anchor">#</a> webpack配置</h3> <p><a href="https://cli.vuejs.org/zh/guide/webpack.html#webpack-%E7%9B%B8%E5%85%B3" target="_blank" rel="noopener noreferrer">配置webpack<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>,可以在<code>vue.config.js</code>中的<code>configureWebpack</code>对象中进行配置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vue.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  configureWebpack<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token keyword">new</span> <span class="token class-name">MyAwesomeWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当然也可以换成函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vue.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  configureWebpack<span class="token punctuation">:</span> config <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 为生产环境修改配置...</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 为开发环境修改配置...</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>另外也可以通过链式操作来配置<code>webpack</code>, 官网也提到了该方法是通过<a href="https://github.com/neutrinojs/webpack-chain" target="_blank" rel="noopener noreferrer">webpack-chain<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>来维护的</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// vue.config.js</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  chainWebpack<span class="token punctuation">:</span> config <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 添加loader</span>
+    config<span class="token punctuation">.</span>module
+      <span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'vue'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'vue-loader'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">loader</span><span class="token punctuation">(</span><span class="token string">'vue-loader'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">tap</span><span class="token punctuation">(</span>options <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 修改它的选项...</span>
+          <span class="token keyword">return</span> options
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+   <span class="token punctuation">}</span>
+
+    <span class="token comment">// 修改loader</span>
+    <span class="token keyword">const</span> svgRule <span class="token operator">=</span> config<span class="token punctuation">.</span>module<span class="token punctuation">.</span><span class="token function">rule</span><span class="token punctuation">(</span><span class="token string">'svg'</span><span class="token punctuation">)</span>
+    <span class="token comment">// 清除已有的所有 loader。</span>
+    <span class="token comment">// 如果你不这样做，接下来的 loader 会附加在该规则现有的 loader 之后。</span>
+    svgRule<span class="token punctuation">.</span>uses<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token comment">// 添加要替换的 loader</span>
+    svgRule
+      <span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'vue-svg-loader'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">loader</span><span class="token punctuation">(</span><span class="token string">'vue-svg-loader'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="全局变量设置"><a href="#全局变量设置" aria-hidden="true" class="header-anchor">#</a> 全局变量设置</h3> <p>要<a href="https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F" target="_blank" rel="noopener noreferrer">设置全局变量<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>我们需要在项目的根目录中创建存储变量的文件，不同文件有不同作用，不同的文件具有以下特点</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token punctuation">.</span>env                # 在所有的环境中被载入
+<span class="token punctuation">.</span>env<span class="token punctuation">.</span>local          # 在所有的环境中被载入，但会被 git 忽略
+<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token punctuation">[</span>mode<span class="token punctuation">]</span>         # 只在指定的模式中被载入
+<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token punctuation">[</span>mode<span class="token punctuation">]</span><span class="token punctuation">.</span>local   # 只在指定的模式中被载入，但会被 git 忽略
+<span class="token punctuation">.</span>env<span class="token punctuation">.</span>development    # 只在生产环境执行
+<span class="token punctuation">.</span>env<span class="token punctuation">.</span>production     # 只在开发环境执行
+</code></pre></div><p>在文件中以<code>键=值</code>的方式来存储变量</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token constant">FOO</span><span class="token operator">=</span>bar
+<span class="token constant">VUE_APP_SECRET</span><span class="token operator">=</span>secret
+</code></pre></div><p>在项目中通过 <code>process.env</code> 对象来进行访问</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VUE_APP_SECRET</span><span class="token punctuation">)</span>
+</code></pre></div><p>参考文章：</p> <ul><li><a href="http://www.php.cn/js-tutorial-394518.html" target="_blank" rel="noopener noreferrer">vue-cli3.0配置详解<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/webxiaoma/webxiaoma/edit/dev/docs/vue/vue-cli-3.md" target="_blank" rel="noopener noreferrer">文章有问题，欢迎提出！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/vue/学习须知.html" class="prev">
+          Vue 学习须知
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/48.d2912253.js" defer></script><script src="/assets/js/app.b2ae7260.js" defer></script>
+  </body>
+</html>
