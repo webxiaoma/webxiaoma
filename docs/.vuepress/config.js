@@ -13,16 +13,21 @@ module.exports = {
         searchMaxSuggestions: 15, // 搜索设置数量
         nav: [  // 导航栏 使用了element 导航
             { text: '首页', link: '/'},
-            { text: '博客', items: [
+            { text: '前端', items: [
                 {text:'JavaScript', link:'/javascript/'},
-                {text:'移动端', link:'/phone/'},
+                {text:'移动端', items:[
+                    {text:"H5页面开发",link:'/phone/'},
+                    {text:"微信小程序",link:'/phone/'},
+                ]},
                 {text:'构建工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git工具",link:'/git/'},
                 ]},
                 {text:'Vue', link:'/vue/'},
-                {text:'NodeJS', link:'/node/'},
+            ]},
+            { text: '后端', items: [
                 {text:'Linux', link:'/linux/'},
+                {text:'NodeJS', link:'/node/'},
                 {text:'网络知识', link:'/network/'},
             ]},
             { text: 'English', link: '/english/'},
@@ -153,17 +158,24 @@ module.exports = {
                     collapsable: false, // 是否可折叠
                     children: [
                     ]
+                },{
+                    title: '微信小程序',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        ''
+                    ]
                 }
                
             ],
+            
             '/vue/':[
                 '',
                 '学习须知',
                 {
-                    title: 'vue',
+                    title: 'vue基础',
                     collapsable: true, // 是否可折叠
                     children: [
-                     
+                      'vue-cli-3'
                     ]
                 }
             ],

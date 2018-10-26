@@ -12,6 +12,11 @@ meta:
 
 
 
+## PWA技术（Progressive Web App)
+
+- [PWA 官网](https://developers.google.com/web/progressive-web-apps/)(需要翻墙)
+
+
 ## 移动端相关博客
 
 - [使用Flexible实现手淘H5页面的终端适配 ](https://github.com/amfe/article/issues/17)

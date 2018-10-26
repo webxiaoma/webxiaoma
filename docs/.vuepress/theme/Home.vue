@@ -26,12 +26,12 @@
           Git教程
         </el-button>
        </a>
-       <a href="/knowledge/" target="_banlk">
+       <!-- <a href="/knowledge/" target="_banlk">
         <el-button type="primary">
           <i class="el-icon-search el-icon--right"></i>
           知识
         </el-button>
-       </a>
+       </a> -->
     </div>
 
     <div  class="features">

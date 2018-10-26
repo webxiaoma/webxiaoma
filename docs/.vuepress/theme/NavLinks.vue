@@ -8,27 +8,26 @@
       :router="true" 
       class="el-menu-demo" 
       :mode="menuType" >
-      <el-submenu v-for="item in userLinks" :key="item.text"  :index="''" v-if="item.items&&item.items.length">
-        <template slot="title">
+      <el-submenu v-for="item in userLinks" :key="item.text"  :index="`${Math.random()}`" v-if="item.items&&item.items.length">
+        <template slot="title" >
           {{item.text}}
         </template>
-        
         <el-submenu v-for="list in item.items"  :index="list.text"  :key="list.text" v-if="list.items&&list.items.length">
           <template slot="title">
             {{list.text}}
           </template>
-          <el-menu-item  v-for="child in list.items" :index="child.blank?'':child.link" :key="child.link">
+          <el-menu-item  v-for="child in list.items" :index="child.blank?'':child.link" :key="child.text">
             {{child.blank?"":child.text}}
              <a v-if="child.blank" :href="child.link" style="padding-bottom:5px;" target="_blank">{{child.text}}</a>
           </el-menu-item>
         </el-submenu>
-        <el-menu-item  :index="list.blank?'':list.link" :key="list.link" v-else>
+        <el-menu-item  :index="list.blank?'':list.link" :key="list.text" v-else>
           {{list.blank?"":list.text}}
            <a v-if="list.blank" :href="list.link" style="padding-bottom:5px;" target="_blank">{{list.text}}</a>
         </el-menu-item>
 
       </el-submenu>
-      <el-menu-item :index="item.blank?'':item.link" :key="item.link" v-else>
+      <el-menu-item :index="item.blank?'':item.link" :key="item.text" v-else>
           {{item.blank?"":item.text}}
           <a v-if="item.blank" :href="item.link" style="padding-bottom:5px;" target="_blank">{{item.text}}</a>
       </el-menu-item>
