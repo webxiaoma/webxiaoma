@@ -35,3 +35,8 @@ meta:
 - [使用 MediaSource 搭建流式播放器](https://zhuanlan.zhihu.com/p/26374202)
 - [Building a simple MPEG-DASH streaming player](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/dn551368(v=vs.85))
 - [MediaSource - Web APIs | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Using_Web_Audio_API) （该网站访问不是很稳定）
+
+
+## 其他 WEB API
+
+- [Service Worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)

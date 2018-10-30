@@ -18,6 +18,7 @@ module.exports = {
                 {text:'移动端', items:[
                     {text:"H5页面开发",link:'/phone/'},
                     {text:"微信小程序",link:'/phone/'},
+                    {text:"PWA应用",link:'/phone/pwa.html'},
                 ]},
                 {text:'构建工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
@@ -79,6 +80,12 @@ module.exports = {
                        'Blob处理类文件对象',
                        'FileReader和FormData对象',
                        'base64处理',
+                    ] 
+                },{
+                    title: '其他 WEB API',
+                    collapsable: true,
+                    children: [
+                       'service-worker',
                     ] 
                 }
             ],
@@ -152,6 +159,12 @@ module.exports = {
                     title: '微信小程序',
                     collapsable: true, // 是否可折叠
                     children: [
+                    ]
+                },{
+                    title: 'PWA 应用',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'pwa'
                     ]
                 }
                
