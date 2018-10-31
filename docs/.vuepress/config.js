@@ -82,9 +82,10 @@ module.exports = {
                        'base64处理',
                     ] 
                 },{
-                    title: '其他 WEB API',
+                    title: '离线与缓存',
                     collapsable: true,
                     children: [
+                       'cache-api',
                        'service-worker',
                     ] 
                 }

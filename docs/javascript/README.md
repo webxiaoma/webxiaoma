@@ -37,6 +37,7 @@ meta:
 - [MediaSource - Web APIs | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API/Using_Web_Audio_API) （该网站访问不是很稳定）
 
 
-## 其他 WEB API
+## 离线与缓存
 
 - [Service Worker](https://lavas.baidu.com/pwa/offline-and-cache-loading/service-worker/service-worker-introduction)
+- [MDN Service Worker API](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API)
