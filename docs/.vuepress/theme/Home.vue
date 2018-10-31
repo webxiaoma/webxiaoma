@@ -68,7 +68,8 @@ export default {
     actionLink () {
       return {
       }
-    }
+    },
+    
   }
 }
 </script>
