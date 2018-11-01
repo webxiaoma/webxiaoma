@@ -82,12 +82,13 @@ module.exports = {
                        'base64处理',
                     ] 
                 },{
-                    title: '离线与缓存',
+                    title: '离线-缓存-存储',
                     collapsable: true,
                     children: [
                        'cache-api',
                        'web-worker',
                        'service-worker',
+                       'indexedDB'
                     ] 
                 }
             ],
