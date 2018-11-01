@@ -2,16 +2,16 @@
 sidebarDepth: 2
 meta:
   - name: keywords
-    content: Service Worker  Service-Worker离线缓存 wpa 
+    content: cache  js缓存api cache-api 缓存cache
   - name: description
-    content: 本文章主要总结Service Worker API 在离线缓存中如何使用。
+    content: 本文章主要总结cache 缓存API在javasctrip中的使用方法。
 ---
 
 # 缓存对象Cache API
 
 ---
 
-`cache api` 可以用来缓存对象，它的使用方法也很简单，网络上也有大量的博客在介绍它，下面我们来详细了解一下它的使用方法。
+`cache api` 可以用来缓存对象，它的使用方法也很简单，它兼容性可以[查看这里](https://caniuse.com/#search=cache)网络上也有大量的博客在介绍它，下面我们来详细了解一下它的使用方法。
 
 ## 创建缓存对象
 
