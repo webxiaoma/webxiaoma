@@ -18,7 +18,7 @@ module.exports = {
                 {text:'移动端', items:[
                     {text:"H5页面开发",link:'/phone/'},
                     // {text:"微信小程序",link:'/phone/'},
-                    // {text:"PWA应用",link:'/phone/pwa.html'},
+                    {text:"PWA应用",link:'/phone/pwa.html'},
                 ]},
                 {text:'构建工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},

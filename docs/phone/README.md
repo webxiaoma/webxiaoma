@@ -15,7 +15,8 @@ meta:
 ## PWA技术（Progressive Web App)
 
 - [PWA 官网](https://developers.google.com/web/progressive-web-apps/)(需要翻墙)
-
+- [PWA 文档教程](https://lavas.baidu.com/pwa/README)
+- [面向下一代的Progressive Web APP](https://github.com/SangKa/PWA-Book-CN)
 
 ## H5页面开发相关博客
 
