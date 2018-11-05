@@ -417,15 +417,45 @@ if ('serviceWorker' in navigator) {
 ```js
 // 监听通知点击事件
 self.addEventListener('notificationclick', event => {
-
+   // 获取点击对象
+    let clickedNotification = event.notification;
     //关闭通知
     event.notification.close();
 
     //获取点击的按钮id（确定按钮或取消按钮等）
     let id = event.action
 
-    //可以通过 clients.openWindow() 跳转页面
+   // 点击后关闭消息通知
+    clickedNotification.close(); 
+
+     // 打开新窗口
+    let examplePage = 'https://webxiaoma.com';
+    let promiseChain = clients.openWindow(examplePage);
+    event.waitUntil(promiseChain); // 存在异步操作时要调用
    
+
+   // 激活新窗口
+    let urlToOpen = 'https://webxiaoma.com' // 必须同域下的地址
+    let promiseChain = clients.matchAll({ // 获取所有激活窗口
+        type: 'window', //表示我们需要寻找打开的窗口和标签，不包括 web workers
+        includeUncontrolled: true //表示不被 service worker 控制的但是属于自己域下的标签和窗口也都纳入搜索范围
+    }).then(windowClients => {
+        let matchingClient = null;
+         console.log(windowClients)
+        for (let i = 0, max = windowClients.length; i < max; i++) {
+            let windowClient = windowClients[i];
+            if (windowClient.url === urlToOpen) {
+                matchingClient = windowClient;
+                break;
+            }
+        }
+    
+        return matchingClient
+            ? matchingClient.focus() // 激活窗口
+            : clients.openWindow(urlToOpen);
+    });
+    event.waitUntil(promiseChain); // 存在异步操作时要调用
+
 });
 ```
 
@@ -439,7 +469,7 @@ self.addEventListener('notificationclose', event => {
 });
 ```
 
-更多关于消息通知的使用以及介绍可以[访问这里](https://lavas.baidu.com/pwa/engage-retain-users/notification/notification-introduction)
+更多关于消息通知的使用以及介绍可以[访问这里](https://lavas.baidu.com/pwa/engage-retain-users/notification/notification-pattern)
 
 
 ## 开发调试
