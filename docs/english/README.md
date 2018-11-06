@@ -13,7 +13,7 @@ meta:
 ## 网站
 
 [两小无猜网](http://www.lxwc.com.cn/)**推荐** (上边好多英语资料)
-
+[Youglish](https://youglish.com/search)
 
 ## Hooked on Phonics系列 
 
@@ -40,6 +40,11 @@ meta:
 - [Second_Grade_Level2](https://webxiaoma.github.io/english/Second_Grade_Level2/class.pdf)
 
 
+### 恶魔的奶爸作品
+
+- [文法俱乐部](https://webxiaoma.github.io/english/Second_Grade_Level2/e_mo_nai_ba/wen_fa_ju_le_bu.pdf)
+- [把你的英语用起来](https://webxiaoma.github.io/english/Second_Grade_Level2/e_mo_nai_ba/use_your_english.pdf)
+
 
 ## 电影
 
@@ -54,3 +59,7 @@ meta:
 ## 动画片
 
 - [小猪佩奇英文版](https://pan.baidu.com/s/16_EqO6ZPpu64Iuy1gKgK6w)(不解释)
+
+## 其它文章
+
+- [常用单词](https://www.ef.com/english-resources/english-vocabulary/)

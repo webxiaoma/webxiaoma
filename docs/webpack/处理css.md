@@ -193,7 +193,7 @@ module.exports = {
 
 在使用PostCss时我们需要先把css文件交给`PostCss-loader`处理，然后在交给`css-loader`处理，如果你使用`less`或`sass`,需要先交给`less-loader`或`sass-loader`处理。另外PostCss提供了很多插件来处理css，比如`postcss-preset-env`插件允许使用未来的css特性，比如`autoprefixer`插件可以自动补全浏览器前缀（关于[PostCss 的更多插件](https://github.com/postcss/postcss/blob/master/README-cn.md)）。
 
-这些插件我们需要下载，并在项目的根目录下新建一个`postcss.config.js` 文件(或`.postcssrc.js`文件)，在该文件中进行插件的配置，当`postcss`编译时会自动读取该文件下的配置。现在我们来实现使用`postcss-preset-env`插件允许和`autoprefixer`插件。首先安装
+这些插件我们需要下载，并在项目的根目录下新建一个`postcss.config.js` 文件(或`.postcssrc.js`文件)，在该文件中进行插件的配置，当`postcss`编译时会自动读取该文件下的配置。现在我们来实现使用`postcss-preset-env`插件和`autoprefixer`插件。首先安装
 
 ```js
 // 安装 postcss-loader

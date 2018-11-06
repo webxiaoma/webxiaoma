@@ -13,16 +13,22 @@ module.exports = {
         searchMaxSuggestions: 15, // 搜索设置数量
         nav: [  // 导航栏 使用了element 导航
             { text: '首页', link: '/'},
-            { text: '博客', items: [
+            { text: '前端', items: [
                 {text:'JavaScript', link:'/javascript/'},
-                {text:'移动端', link:'/phone/'},
+                {text:'移动端', items:[
+                    {text:"H5页面开发",link:'/phone/'},
+                    {text:"微信小程序",link:'/phone/'},
+                    {text:"PWA应用",link:'/phone/pwa.html'},
+                ]},
                 {text:'构建工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git工具",link:'/git/'},
                 ]},
                 {text:'Vue', link:'/vue/'},
-                {text:'NodeJS', link:'/node/'},
+            ]},
+            { text: '后端', items: [
                 {text:'Linux', link:'/linux/'},
+                {text:'NodeJS', link:'/node/'},
                 {text:'网络知识', link:'/network/'},
             ]},
             { text: 'English', link: '/english/'},
@@ -74,6 +80,13 @@ module.exports = {
                        'Blob处理类文件对象',
                        'FileReader和FormData对象',
                        'base64处理',
+                    ] 
+                },{
+                    title: '离线与缓存',
+                    collapsable: true,
+                    children: [
+                       'cache-api',
+                       'service-worker',
                     ] 
                 }
             ],
@@ -135,35 +148,37 @@ module.exports = {
             '/phone/':[
                 '',
                 {
-                    title: '移动端开发',
+                    title: 'H5页面开发',
                     collapsable: true, // 是否可折叠
                     children: [
                       '移动端的一些概念',
                       '移动端的适配',
                       '移动端的事件处理',
+                      'css常见问题'
                     ]
                 },{
-                    title: '常见CSS问题',
+                    title: '微信小程序',
                     collapsable: true, // 是否可折叠
                     children: [
-                        'css常见问题'
                     ]
                 },{
-                    title: '常见JS问题',
-                    collapsable: false, // 是否可折叠
+                    title: 'PWA 应用',
+                    collapsable: true, // 是否可折叠
                     children: [
+                        'pwa'
                     ]
                 }
                
             ],
+            
             '/vue/':[
                 '',
                 '学习须知',
                 {
-                    title: 'vue',
+                    title: 'vue基础',
                     collapsable: true, // 是否可折叠
                     children: [
-                     
+                      'vue-cli-3'
                     ]
                 }
             ],
@@ -173,7 +188,8 @@ module.exports = {
                     title: 'node基础',
                     collapsable: true, // 是否可折叠
                     children: [
-                        'NodeJS的安装'
+                        'NodeJS的安装',
+                        'nodejs常用API'
                     ]
                 },{
                     title: '常用工具',
@@ -231,6 +247,13 @@ module.exports = {
                     collapsable: true, // 是否可折叠
                     children: [
                       '',
+                    ]
+                },
+                {
+                    title: 'English Learn',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                      '英语语法.md',
                     ]
                 }
             ]
