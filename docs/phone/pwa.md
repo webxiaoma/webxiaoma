@@ -9,6 +9,7 @@ meta:
 
 # PWA 应用初识
 
+- [GitHub 仓库地址](https://github.com/webxiaoma/phone-demo/tree/master/pwa)
 
 ---
 
@@ -24,7 +25,7 @@ meta:
 
 
 
-## 开发PWA的前期准备
+## 开发PWA的前期必会
 
 开发`PWA`之前你需要先了解一些知识：
 
@@ -92,9 +93,14 @@ meta:
 
 ## 实例
 
+现在我们可以看一下使用`PWA`编写的页面：
 
+- [GitHub 仓库地址](https://github.com/webxiaoma/phone-demo/tree/master/pwa)
+- [PC 浏览地址——建议使用chorme57+](https://webxiaoma.github.io/phone-demo/pwa/) 
 
+您也可以手机端查看（**建议使用chorme57+**查看效果）
 
+![pwa](/img/pwa.png)
 
 
   

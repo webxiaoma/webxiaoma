@@ -39,13 +39,14 @@ module.exports = {
             '/javascript/':[
                 '',
                 {
-                    title: '基础篇',
+                    title: 'JS常见知识',
                     collapsable: true, // 是否可折叠
                     children: [
                         'JS-DOM操作',
                         'JS-BOM操作',
                         'JS-事件',
                         'js面向对象',
+                        'function'
                     ]
                },{
                 title: 'ES6篇',
@@ -53,19 +54,7 @@ module.exports = {
                 children: [
                     'babel'
                 ]
-               },
-            //    {
-            //         title: '进阶篇',
-            //         collapsable: false,
-            //         children: [
-            //         ]
-            //    },{
-            //         title: '总结篇',
-            //         collapsable: false,
-            //         children: [
-            //         ]
-            //    },
-                {
+               },{
                     title: '音频视频处理',
                     collapsable: true,
                     children: [
@@ -88,7 +77,7 @@ module.exports = {
                        'cache-api',
                        'web-worker',
                        'service-worker',
-                       'indexedDB'
+                    //    'indexedDB'
                     ] 
                 }
             ],

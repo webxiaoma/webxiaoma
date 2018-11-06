@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 2
+sidebarDepth: 0
 meta:
   - name: keywords
     content: js, js网站, es，es学习网站，

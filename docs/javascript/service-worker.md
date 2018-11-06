@@ -408,11 +408,36 @@ if ('serviceWorker' in navigator) {
 "timestamp": Date.parse('01 Jan 2000 00:00:00') //定时发布
 ```
 
+另外我们在发送通知前可能需要事先询问用户是否订阅该消息，只有用户订阅该消息后，我们才可以推送消息。
+
+```js
+addEventListener('load',function(){
+    if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('servcie-worker.js', {scope: './'})
+            .then(function (reg) {
+                // 注册成功
+                console.log("ServiceWorker 注册成功");
+
+                // 询问用户是否接收通知消息
+                Notification.requestPermission(function(result) {
+                    //status默认值'default'等同于拒绝 'denied' 意味着用户不想要通知 'granted' 意味着用户同意启用通知   
+                    
+                });
+            })
+            .catch(function (err) {
+                // 注册失败
+                console.log('ServiceWorker 注册失败: ', err);
+            });
+    }
+
+})
+```
+
 知道了消息通知的配置后我们还需要知道下面一些东西：
 
 **1. 监听点击通知**
 
-我们可以在`service-worker.js`文件中监听通知的点击事件，来获取一些点击信息
+我们可以在`service-worker.js`文件中监听通知的点击事件，来获取一些点击信息，比如用户点击后的信息，用户点击按钮的id，点击后关闭信息的操作，打开新窗口或关闭新窗口的操作，已经合并消息的操作，这些详细的操作可以[访问这里](https://lavas.baidu.com/pwa/engage-retain-users/notification/notification-pattern)
 
 ```js
 // 监听通知点击事件
@@ -468,8 +493,6 @@ self.addEventListener('notificationclose', event => {
     event.waitUntil(promiseChain);
 });
 ```
-
-更多关于消息通知的使用以及介绍可以[访问这里](https://lavas.baidu.com/pwa/engage-retain-users/notification/notification-pattern)
 
 
 ## 开发调试
