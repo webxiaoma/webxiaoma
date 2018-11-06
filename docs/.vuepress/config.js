@@ -17,7 +17,7 @@ module.exports = {
                 {text:'JavaScript', link:'/javascript/'},
                 {text:'移动端', items:[
                     {text:"H5页面开发",link:'/phone/'},
-                    {text:"微信小程序",link:'/phone/'},
+                    // {text:"微信小程序",link:'/phone/'},
                     {text:"PWA应用",link:'/phone/pwa.html'},
                 ]},
                 {text:'构建工具', items:[
@@ -39,13 +39,14 @@ module.exports = {
             '/javascript/':[
                 '',
                 {
-                    title: '基础篇',
+                    title: 'JS常见知识',
                     collapsable: true, // 是否可折叠
                     children: [
                         'JS-DOM操作',
                         'JS-BOM操作',
                         'JS-事件',
                         'js面向对象',
+                        'function'
                     ]
                },{
                 title: 'ES6篇',
@@ -53,19 +54,7 @@ module.exports = {
                 children: [
                     'babel'
                 ]
-               },
-            //    {
-            //         title: '进阶篇',
-            //         collapsable: false,
-            //         children: [
-            //         ]
-            //    },{
-            //         title: '总结篇',
-            //         collapsable: false,
-            //         children: [
-            //         ]
-            //    },
-                {
+               },{
                     title: '音频视频处理',
                     collapsable: true,
                     children: [
@@ -82,11 +71,13 @@ module.exports = {
                        'base64处理',
                     ] 
                 },{
-                    title: '离线与缓存',
+                    title: '离线-缓存-存储',
                     collapsable: true,
                     children: [
                        'cache-api',
+                       'web-worker',
                        'service-worker',
+                    //    'indexedDB'
                     ] 
                 }
             ],

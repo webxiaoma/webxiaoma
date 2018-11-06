@@ -321,6 +321,179 @@ self.addEventListener('message',event=>{
 })
 ```
 
+## 消息通知
+
+`service worker api`有一个功能`notification`可以实现消息通知，它允许服务器向用户提示一些信息，并根据用户不同的行为进行一些简单的处理。
+
+通知比较常见的使用情景包括电商网站提醒用户一些关注商品的价格变化，或是在线聊天网站提醒用户收到了新消息等等。
+
+使用消息通知也很简单。
+
+```js
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./service-worker.js', {scope: './'})
+            .then(function (registration) {
+                // 发送通知
+                 registration.showNotification('webxiaoma',{
+                     // 视觉相关
+                    "body": "发送消息了",
+                    "icon": './img/mxx48.jpg',
+                    "badge": './img/mxx.ico',
+                    "image": './img/mxx188.jpg',
+                    "actions": [
+                        {
+                            action: 'coffee-action',
+                            title: '确定',
+                            icon: './img/mxx.ico'
+                        },
+                        {
+                            action: 'doughnut-action',
+                            title: '取消',
+                            icon: './img/mxx.ico'
+                        }
+                    ],
+                });
+                // 注册成功
+                console.log("ServiceWorker 注册成功");
+               
+            })
+            .catch(function (err) {
+                // 注册失败:(
+                console.log('ServiceWorker 注册失败: ', err);
+            });
+    });
+}
+```
+`registration.showNotification(title ,options)` 方法接收两个参数：
+
+- `title`: 必填 字符串类型 表示通知的标题
+- `options`: 选填 对象类型 集合众多配置项，可用项如下
+
+```json
+// 视觉相关
+"body": "消息主题", // 消息主体
+"icon": "<URL String>", //消息图标
+"image": "<URL String>", //图片(image)在通知的展现尺寸要大不少，可以给用户展现一些预览图片。
+"badge": "<URL String>", //手机上展现通知缩略信息时使用的小图标
+"vibrate": [500, 110, 500, 110, 450, 110], // 震动(部分设备支持)
+"sound": "path/to/sound.mp3", //声音,目前没有浏览器支持
+"dir": "<String of 'auto' | 'ltr' | 'rtl'>", // 文字方向
+
+// 行为相关
+"tag": "<String>", //标签 通知归类时会用到
+"data": {  // 从主程序向service worker 传递数据
+    "message":"主程序消息"
+},
+"requireInteraction": "<boolean>", //是否一直显示通知
+//在使用 tag 的同时，设置 renotify 为 true 可以让浏览器在替换通知时提示声音或者震动
+"renotify": "<Boolean>", //重新通知和 tag 一同使用
+"silent": "<Boolean>", //静默通知
+
+// 视觉行为均会影响
+"actions": [ // 消息按钮
+     {
+        "action": "coffee-action", // 按钮id
+        "title": "确定", // 按钮文本
+        "icon": "./img/mxx.ico" // 按钮图片
+    },
+    {
+        "action": "doughnut-action", 
+        "title": "取消",
+        "icon": "./img/mxx.ico"
+    }
+],
+
+// 定时发送时间戳
+"timestamp": Date.parse('01 Jan 2000 00:00:00') //定时发布
+```
+
+另外我们在发送通知前可能需要事先询问用户是否订阅该消息，只有用户订阅该消息后，我们才可以推送消息。
+
+```js
+addEventListener('load',function(){
+    if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('servcie-worker.js', {scope: './'})
+            .then(function (reg) {
+                // 注册成功
+                console.log("ServiceWorker 注册成功");
+
+                // 询问用户是否接收通知消息
+                Notification.requestPermission(function(result) {
+                    //status默认值'default'等同于拒绝 'denied' 意味着用户不想要通知 'granted' 意味着用户同意启用通知   
+                    
+                });
+            })
+            .catch(function (err) {
+                // 注册失败
+                console.log('ServiceWorker 注册失败: ', err);
+            });
+    }
+
+})
+```
+
+知道了消息通知的配置后我们还需要知道下面一些东西：
+
+**1. 监听点击通知**
+
+我们可以在`service-worker.js`文件中监听通知的点击事件，来获取一些点击信息，比如用户点击后的信息，用户点击按钮的id，点击后关闭信息的操作，打开新窗口或关闭新窗口的操作，已经合并消息的操作，这些详细的操作可以[访问这里](https://lavas.baidu.com/pwa/engage-retain-users/notification/notification-pattern)
+
+```js
+// 监听通知点击事件
+self.addEventListener('notificationclick', event => {
+   // 获取点击对象
+    let clickedNotification = event.notification;
+    //关闭通知
+    event.notification.close();
+
+    //获取点击的按钮id（确定按钮或取消按钮等）
+    let id = event.action
+
+   // 点击后关闭消息通知
+    clickedNotification.close(); 
+
+     // 打开新窗口
+    let examplePage = 'https://webxiaoma.com';
+    let promiseChain = clients.openWindow(examplePage);
+    event.waitUntil(promiseChain); // 存在异步操作时要调用
+   
+
+   // 激活新窗口
+    let urlToOpen = 'https://webxiaoma.com' // 必须同域下的地址
+    let promiseChain = clients.matchAll({ // 获取所有激活窗口
+        type: 'window', //表示我们需要寻找打开的窗口和标签，不包括 web workers
+        includeUncontrolled: true //表示不被 service worker 控制的但是属于自己域下的标签和窗口也都纳入搜索范围
+    }).then(windowClients => {
+        let matchingClient = null;
+         console.log(windowClients)
+        for (let i = 0, max = windowClients.length; i < max; i++) {
+            let windowClient = windowClients[i];
+            if (windowClient.url === urlToOpen) {
+                matchingClient = windowClient;
+                break;
+            }
+        }
+    
+        return matchingClient
+            ? matchingClient.focus() // 激活窗口
+            : clients.openWindow(urlToOpen);
+    });
+    event.waitUntil(promiseChain); // 存在异步操作时要调用
+
+});
+```
+
+**2. 监听通知关闭事件**
+
+```js
+self.addEventListener('notificationclose', event => {
+    let dismissedNotification = event.notification;
+    let promiseChain = notificationCloseAnalytics();
+    event.waitUntil(promiseChain);
+});
+```
+
 
 ## 开发调试
 
