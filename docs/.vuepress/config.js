@@ -25,6 +25,7 @@ module.exports = {
                     {text:"Git工具",link:'/git/'},
                 ]},
                 {text:'Vue', link:'/vue/'},
+                {text:'React', link:'/react/'},
             ]},
             { text: '后端', items: [
                 {text:'Linux', link:'/linux/'},
@@ -170,6 +171,15 @@ module.exports = {
                     collapsable: true, // 是否可折叠
                     children: [
                       'vue-cli-3'
+                    ]
+                }
+            ],
+            '/react/':[
+                '',
+                {
+                    title: 'React技术栈',
+                    collapsable: true, // 是否可折叠
+                    children: [
                     ]
                 }
             ],
