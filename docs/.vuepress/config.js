@@ -20,7 +20,7 @@ module.exports = {
                     // {text:"微信小程序",link:'/phone/'},
                     {text:"PWA应用",link:'/phone/pwa.html'},
                 ]},
-                {text:'构建工具', items:[
+                {text:'前端工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git工具",link:'/git/'},
                 ]},
