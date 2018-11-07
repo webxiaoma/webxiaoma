@@ -27,3 +27,4 @@ meta:
 
 - [Vant 移动端](https://youzan.github.io/vant/#/zh-CN/tabbar)（有赞）
 
+- [Ant Design of Vue](https://vuecomponent.github.io/ant-design-vue/docs/vue/introduce-cn/)(蚂蚁金服)
