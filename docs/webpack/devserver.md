@@ -115,7 +115,7 @@ module.exports = {
 2. 往要开发的网页中注入代理客户端代码，通过代理客户端去刷新整个页面。
 3. 把要开发的网页装进一个 `iframe` 中，通过刷新 `iframe` 去看到最新效果。
 
-在`webpack`中`DevServer`支持后两种方法，第二种是DevServer默认采用的。如果想要了解具体原理查看[深入浅出webpack —— 使用自动刷新](http://webpack.wuhaolin.cn/4%E4%BC%98%E5%8C%96/4-5%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0.html)
+在`webpack`中`DevServer`支持后两种方法，第二种是DevServer默认采用的。如果想要了解具体原理查看[深入浅出webpack —— 使用自动刷新](http://www.xbhub.com/wiki/webpack//4%E4%BC%98%E5%8C%96/4-5%E4%BD%BF%E7%94%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0.html)
 
 
 ## 实现模块热替换
@@ -145,7 +145,7 @@ module.exports = {
 模块热替换并不会刷新浏览器，他只时在检测我们代码有变化时，将变化的模块进行编译，然后在变化后的新模块替换浏览器中对应的旧模块。
 
 :::tip 提示
-需要知道的是当设置`hot`为`true`时，也会启动浏览器自动刷新，所以有时候你会看到当模块修改后，我使用的是模块热替换但是浏览器会是会刷新，具体原因可以看看这篇文章[深入浅出webpack —— 开启模块热替换](http://webpack.wuhaolin.cn/4%E4%BC%98%E5%8C%96/4-6%E5%BC%80%E5%90%AF%E6%A8%A1%E5%9D%97%E7%83%AD%E6%9B%BF%E6%8D%A2.html), 当我们设置 `hotOnly`为`true`时，这时就只会开启模块热替换功能
+需要知道的是当设置`hot`为`true`时，也会启动浏览器自动刷新，所以有时候你会看到当模块修改后，我使用的是模块热替换但是浏览器会是会刷新，具体原因可以看看这篇文章[深入浅出webpack —— 开启模块热替换](http://www.xbhub.com/wiki/webpack//4%E4%BC%98%E5%8C%96/4-6%E5%BC%80%E5%90%AF%E6%A8%A1%E5%9D%97%E7%83%AD%E6%9B%BF%E6%8D%A2.html), 当我们设置 `hotOnly`为`true`时，这时就只会开启模块热替换功能
 :::
 
 
@@ -187,4 +187,4 @@ module.exports = {
 
 ### 本文参考文献
 
-[深入浅出webpack —— 吴浩麟](http://webpack.wuhaolin.cn)
+[深入浅出webpack —— 吴浩麟](http://www.xbhub.com/wiki/webpack/)

@@ -100,7 +100,7 @@ module.exports = {
 因为上面的`css`是嵌在`html`中的，我们可以使用`MiniCssExtractPlugin`插件将`css`与`html`分离。首先安装`MiniCssExtractPlugin` 插件
 
 ```js
-npm install -D MiniCssExtractPlugin
+npm install -D mini-css-extract-plugin
 ```
 在`webpack.config.js`中加入`MiniCssExtractPlugin`插件
 
