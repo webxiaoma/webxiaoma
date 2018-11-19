@@ -44,7 +44,7 @@ module.exports = {
 ```js
 module.exports = {
     resolve:{
-       modules:['../../../public','node_module']
+       modules:['../../../public','node_modules']
     }
 }
 ```

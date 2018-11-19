@@ -13,21 +13,21 @@ meta:
 ## 移动端常见CSS
 
 
-### 1.清除a标签的高亮颜色
+### 清除a标签的高亮颜色
 手机端我们用a 标签包裹的内容，默认点击时有高亮颜色
 
 ```css
 -webkit-tap-highlight-color:颜色
 ```
 
-### 2.消除按钮圆角
+### 消除按钮圆角
 清除手机端按钮默认的圆角。清除后还是有些圆角样式，我们可以在加`border-radious:0;` 可以彻底清除
 
 ```css
 -webkit-appearance：none;
 ```
 
-### 3.选中文字设置
+### 选中文字设置
 
 去除掉长按文字时选中文字的样式,(部分手机上有效果，安卓手机似乎有问题) 
 
@@ -35,11 +35,16 @@ meta:
 -webkit-user-select：none;
 ```
 
-### 4.禁止文字缩放
+### 禁止文字缩放
 
 在手机横竖屏时，用于禁止文字缩放。
 ```css
 -webkit-text-size-adjust：100%；
+```
+### 在手机端滑动更顺畅
+
+```css
+-webkit-overflow-scrolling: touch;
 ```
 
 
