@@ -81,15 +81,17 @@ npm install -D babel-preset-env
 ```JavaScript
 {
     "presets": [
-        "env",
-        {
-            "targets":{
-                "browsers": ["last 2 versions", "ie >=8 "]  // 指定支持主流浏览器最新的两个版本以及IE 7+:
-            },
-            "plugins":["transform-vue-jsx"], // 使用编译扩展插件，这里使用的vue扩展插件
-            "node": true,   // 针对当前node版本进行编译
-            "modules": "amd" // 启用将ES6模块语法转换为另一种模块类型
-        }
+        [
+          "env",
+          {
+              "targets":{
+                  "browsers": ["last 2 versions", "ie >=8 "]  // 指定支持主流浏览器最新的两个版本以及IE 7+:
+              },
+              "plugins":["transform-vue-jsx"], // 使用编译扩展插件，这里使用的vue扩展插件
+              "node": true,   // 针对当前node版本进行编译
+              "modules": "amd" // 启用将ES6模块语法转换为另一种模块类型
+          }
+        ]
     ]
 
 }
@@ -209,7 +211,14 @@ babel.transformFileSync("filename.js", options, function(err, result) {
 
 ## Babel插件
 
-上面的`babel`虽然可以编译所有时新的 `JavaScript` 语法，但是，但对于 `APIs` 来说却没有能力，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如`Object.assign`）都不会转码。这时候我们就要用到`babel`的一些插件了。
+上面的`babel`虽然可以编译所有时新的 `JavaScript` 语法，但是，但对于新增 `APIs` 来说却没有能力，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如`Object.assign`）都不会转码。这时候我们就要用到`babel`的一些插件了。配置`babel`插件我们可以在`plugins`字段中配置
+
+```json
+{
+  "presets": [],
+  "plugins":[]
+}
+```
 
 另外babel经常和我们的构建工具一起使用，比如通过[webpack使用](/webpack/处理es6.html)，通过`glup`使用。更多使用方法见[官网配置](https://babel.docschina.org/en/setup)
 
@@ -223,7 +232,47 @@ babel.transformFileSync("filename.js", options, function(err, result) {
 
 ### babel-polyfill
 
+`babel-polyfill` 使用`es5`或`es3`实现一些新的`api`，并注入全。使用时我们先要安装：
+
+```js
+npm i -S babel-polyfill
+```
+
+安装完成后我们需要在入口页面中引入（尽量放到最上边）
+
+```js
+import "babel-polyfill"
+```
+
+或在webpack中的入口文件中引入
+
+```js
+module.exports = {
+  entry:{
+          'polyfill':'babel-polyfill',
+          'index':'./src/index.js'
+  },
+ ...
+}
+```
+
 ### babel-runtime
+
+`babel-runtime` 插件和`babel-polyfill` 不同的是，它并不会在全局注入一些新`api`，而是将我们写的新语法转换成浏览器识别的代码。`babel-runtime`通常和`babel-plugin-transform-runtime` 配合使用
+
+```js
+npm i -S babel-runtime babel-plugin-transform-runtime
+```
+
+然后在`.babelrc`配置文件中配置
+
+```json
+{
+  "plugins": [
+    "transform-runtime"
+  ]
+}
+```
 
 
 **参考文章**

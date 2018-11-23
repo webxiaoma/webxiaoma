@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "directories": {
-    "docs:dev": "npx vuepress dev docs"
+    "start": "npx vuepress dev docs"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -48,7 +48,8 @@ module.exports = {
                         'JS-BOM操作',
                         'JS-事件',
                         'js面向对象',
-                        'function'
+                        'function',
+                        'this'
                     ]
                },{
                 title: 'ES6篇',
@@ -84,7 +85,8 @@ module.exports = {
                 }
             ],
             '/design-mode/':[
-                 ''
+                 '',
+                 '工厂模式'
             ],
            '/webpack/':[
                '',
@@ -150,7 +152,7 @@ module.exports = {
                       '移动端的一些概念',
                       '移动端的适配',
                       '移动端的事件处理',
-                      'css常见问题'
+                      '移动端其它常见问题'
                     ]
                 },{
                     title: '微信小程序',
