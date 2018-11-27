@@ -15,7 +15,7 @@ module.exports = {
             { text: '首页', link: '/'},
             { text: '前端', items: [
                 {text:'JavaScript', link:'/javascript/'},
-                // {text:'设计模式', link:'/design-mode/'},
+                {text:'设计模式', link:'/design-mode/'},
                 {text:'移动端', items:[
                     {text:"H5页面开发",link:'/phone/'},
                     // {text:"微信小程序",link:'/phone/'},
