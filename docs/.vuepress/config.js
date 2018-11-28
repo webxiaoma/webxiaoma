@@ -31,6 +31,7 @@ module.exports = {
             { text: '后端', items: [
                 {text:'Linux', link:'/linux/'},
                 {text:'NodeJS', link:'/node/'},
+                {text:'Java', link:'/java/'},
                 {text:'网络知识', link:'/network/'},
             ]},
             { text: 'English', link: '/english/'},
@@ -205,6 +206,23 @@ module.exports = {
                       'npm.md',
                     ]
                 },
+            ],
+            '/java/':[
+                '',
+                {
+                    title: 'Java工具的使用',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                       'vscode-java'
+                    ]
+                },
+                {
+                    title: 'Java基础',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                       'java-start'
+                    ]
+                }
             ],
             '/linux/':[
                 '',
