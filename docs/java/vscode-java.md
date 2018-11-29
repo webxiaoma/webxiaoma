@@ -115,24 +115,43 @@ meta:
 
 1. 使用 `Ctrl + Shift + P`调出命令窗口，输入`spring`, 然后创建`Maven`项目
 
+![java-vscode](/img/java1.png)
 
+2. 然后我们选择`java`项目
 
+![java-vscode](/img/java2.png)
 
+3. 之后我们输入项目的名称，我这里叫`project`
 
+![java-vscode](/img/java3.png)
 
+4. 接下来选择`spring Boot` 版本号
 
+![java-vscode](/img/java4.png)
 
+5. 开发web项目引入需要的包，这里引入了四个包（如果还有其他需求也可以引入），引入完成后回车。
+- `DevTools`（代码修改热更新，无需重启）
+- `Web`（集成tomcat、SpringMVC）
+- `Lombok`（智能生成`setter、getter、toString`等接口，无需手动生成，代码更简介）
+- `Thymeleaf` （模板引擎）。
 
+![java-vscode](/img/java5.png)
 
+6. 接下来右下角会提示, 我们点击`open` 打开改项目即可
 
+![java-vscode](/img/java6.png)
 
+7. 接下来我们来创建项目，在`DemoApplication.java`的同级目录下，创建一个文件`file`,在文件中我们创建一个`IndexDemo.java`文件, 并写入一下内容
 
+![java-vscode](/img/java8.png)
 
+8. 然后我们就可以开发调试了，在启动项目之前，我们需要配置项目的运行环境，选择添加配置,`vscode`会生成一个`launch.json`配置文件, 该文件我们可以不做任何修改。
 
+![java-vscode](/img/java7.png)
 
+9. 然后启动项目，项目默认会在`8080`端口打开 我们可以通过[htttp://localhost:8080](htttp://localhost:8080)
 
-
-
+![java-vscode](/img/java9.png)
 
 
 
