@@ -2,16 +2,16 @@
 sidebarDepth: 2
 meta:
   - name: keywords
-    content: function, es6箭头函数, 函数，js函数，js 马新想
+    content: prototype, js原型, js原型链，原型链，__proto__
   - name: description
-    content: 本文讲述js中的函数已经es6中的箭头函数。
+    content: 本文讲述js中的原型与原型链，已经js中是如何通过原型和原型链实现继承的。
 ---
+
 
 # JavaScript中的原型与原型链
-
 ---
 
-当你在使用`JavaScript`中使用`"hello".replace("h","a")`时，你有没有考虑过字符串的`replace`方法是哪里来的，你并没有给字符串设置该方法，这里其实就用到了`JavaScript`的继承。
+在`JavaScript` 函数都有一个`prototype`对象（除ES6箭头函数），大部分对象都有一个`__proto__`原型链指针（原型链最末端的对象不存在）。
 
 ## 继承
 
@@ -38,8 +38,7 @@ xiaoMing.age //  24
 // xiaoMing同时也具有`eating` 方法了
 xiaoMing.eating("屎")
 ```
-我们通过例子可以看到，创建出来的`xiaoMing`对象继承了`People`的原型上的`eating`方法。下面我们来看看原型和原型链。
-
+我们可以看到通过构造函数创建出来的`xiaoMing`对象继承了`People`的原型上的`eating`方法。下面我们来看看原型和原型链。
 
 ## 原型
 
@@ -115,19 +114,93 @@ var xiaoMing = new People("小明",24);
 console.log(xiaoMing) 
 ```
 
-我们打印出来`xiaoMing`这个对象之后，会发现这个对象包含`name`属性、`age`属性、还有`__proto__`。但是我们也同样可以在`xiaoMing`这个对象上使用`eating()`方法。
+我们打印出来`xiaoMing`这个对象之后，会发现这个对象包含`name`属性、`age`属性、还有`__proto__`，但是并没有原型`prototype`, 但是我们也同样可以在`xiaoMing`这个对象上使用`eating()`方法。
 
 ```js
 xiaoMing.eating("屎");
 ```
-这里就是`__proto__`原型链起到了作用，`__proto__`指向了构造函数的原型，我们从下面判断中可以得知
+
+这里就是`__proto__`原型链起到了作用，`__proto__`指向了构造函数的原型，使得创建出来的`xiaoMing`这个对象继承了构造函数的原型。我们从下面判断中可以得知
 
 ```js
-xiaoMing.__proto__ === People.prototype  // true
+// true
+xiaoMing.__proto__ === People.prototype  
+```
+
+所以在`js`中有了原型链，我们很好的实现了继承。我们可以用下面这个图来表示，构造函数函数（`People`）、构造函数的原型(`People.prototype`)，对象(`xiaoMing`)、 原型链(`__proto__`):
+
+![js prototype](/img/prototype1.png)
+
+我们很清楚的看到`js`的中的继承, 正是因为`js`的继承关系，当我们在访问`xiaoMing.eating()`方法时，在`xiaoMing`对象上没有找到，`js`会通过原型链`__proto__`去查找，直到找到原型链的最末端`Object.prototype`对象上为止，如果还没有找到该方法，就会返回`undefined`。上面例子中`xiaoMing.__proto__`指向的是构造函数的原型`People.prototype`, 那么构造函数上也存在`__proto__`, 并指向最终的对象`Object.prototype`，在该对象(`Object.prototype`)上就不再有`__proto__`了，因为该`对象`已经是原型链的最末端对象了，`js`中几乎所有的函数和对象都继承自该对象。
+
+
+另外`js`中还提供了一些很有用的的方法：
+
+1. `hasOwnProperty` 该方法可以判断属性是自己本身属性还是由原型链继承来的属性。（该方法位于`Object.prototype`对象上）
+```js
+// 还以上面的方法为例
+
+xiaoMing.hasOwnProperty("name") // true
+xiaoMing.hasOwnProperty("eacting") // false
+
+```
+2. `isPrototypeOf` 检测一个对象是否是另一个对象的原型
+
+```js
+Object.prototype.isPrototypeOf(xiaoMing) // true
+People.prototype.isPrototypeOf(xiaoMing) // true
+```
+3. `instanceof` 运算符左操作数是一个对象，右操作数标识对象的类。如果左侧对象是右侧类的实例，则表达式返回为`true`，否则返回`false`。
+
+```js
+// 对象xiaoMing 是People的实例
+xiaoMing instanceof People  // ture
 ```
 
 
+## 修改原型链
 
+我们在创建对象时，可以使用`Object.create()`来创建对象，并设置原型链的指针`__proto__`指向。
 
+```js
+var Obj = {
+    name:"King",
+    age:100
+}
+var createObj = Object.create(Obj)
+
+createObj.__proto__ === Obj // true
+```
 
 ## ES6继承
+
+`ES6`中可以通过`class`来声明类了。
+
+```js
+class fun{
+}
+```
+并且通过`class`声明的类就是一个函数，它是构造函数的一个语法糖，并且通过class声明的类中既包含`prototype`属性也包含`__proto__`
+
+```js
+typeof fun // function
+```
+在`ES6`中实现继承可以使用`extends`关键字。因为类既包含`prototype`属性也包含`__proto__`所以它有两条继承链
+
+1. 子类的`__proto__`属性，表示构造函数的继承，总是指向父类。
+
+2. 子类`prototype`属性的`__proto__`属性，表示方法的继承，总是指向父类的`prototype`属性。
+
+```js
+class Fun{
+}
+
+class NewFun extends Fun{
+}
+
+NewFun.__proto__ === Fun  // true
+NewFun.prototype.__proto__  === Fun.prototype // true
+NewFun.prototype.constructor === NewFun // true
+```
+
+关于更多`ES6 class`类的知识可以查看[阮一峰 calss](http://es6.ruanyifeng.com/#docs/class)
