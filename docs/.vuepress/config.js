@@ -49,8 +49,10 @@ module.exports = {
                         'JS-BOM操作',
                         'JS-事件',
                         'js面向对象',
-                        'prototype-proto',
                         'function',
+                        'prototype-proto',
+                        'scope-chain',
+                        'execution-contexts',
                         'this'
                     ]
                },{

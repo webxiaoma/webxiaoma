@@ -156,6 +156,7 @@ export default {
       var head = document.head
       head.appendChild(hm)
       head.appendChild(hm2)
+    
   },
 
   methods: {

@@ -8,7 +8,7 @@ meta:
 ---
 
 
-# JavaScript中的原型与原型链
+# JavaScript之原型与原型链
 ---
 
 在`JavaScript` 函数都有一个`prototype`对象（除ES6箭头函数），大部分对象都有一个`__proto__`原型链指针（原型链最末端的对象不存在）。

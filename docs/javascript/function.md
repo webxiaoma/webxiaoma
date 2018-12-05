@@ -8,7 +8,7 @@ meta:
 ---
 
 
-# JavaScript中的函数
+# JavaScript之函数
 
 ---
 

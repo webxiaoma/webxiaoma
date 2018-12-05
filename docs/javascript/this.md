@@ -7,7 +7,7 @@ meta:
     content: 本文讲述js中的this使用。
 ---
 
-# JavaScript中的This
+# JavaScript之This
 
 ---
 
