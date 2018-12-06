@@ -51,8 +51,9 @@ module.exports = {
                         'js面向对象',
                         'function',
                         'prototype-proto',
-                        'scope-chain',
                         'execution-contexts',
+                        'variable-object',
+                        'scope-chain',
                         'this'
                     ]
                },{
