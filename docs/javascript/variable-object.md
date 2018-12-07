@@ -11,7 +11,7 @@ meta:
 
 ---
 
-我们在[JavaScript之执行上下文](/javascript/execution-contexts.html)中已经讨论过`执行上下文`，并且提到在执行代码执行中，`执行上下文`会初始化三个很重要的对象，这里我们讲解其中的一个变量对象。
+我们在[JavaScript之执行上下文](/javascript/execution-contexts.html)中已经讨论过`执行上下文`，并且提到在执行代码执行中，`执行上下文`会初始化三个很重要的对象(`变量对象`、`作用域链`、`this`)，这里我们讲解其中的一个变量对象。
 
 
 ## 变量对象
