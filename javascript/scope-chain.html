@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript之作用域和作用域链 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文讲述使用js中的作用域和作用域概念。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="js作用域  js作用域链 作用域 作用域链">
+    <link rel="preload" href="/assets/css/0.styles.a93f8533.css" as="style"><link rel="preload" href="/assets/js/app.ebb8886b.js" as="script"><link rel="preload" href="/assets/js/39.812f3d98.js" as="script"><link rel="prefetch" href="/assets/js/10.2731467e.js"><link rel="prefetch" href="/assets/js/11.88b6ad70.js"><link rel="prefetch" href="/assets/js/12.7a781366.js"><link rel="prefetch" href="/assets/js/13.06b58f16.js"><link rel="prefetch" href="/assets/js/14.03ac1a39.js"><link rel="prefetch" href="/assets/js/15.a2b5f0b7.js"><link rel="prefetch" href="/assets/js/16.cc20a644.js"><link rel="prefetch" href="/assets/js/17.4f56d041.js"><link rel="prefetch" href="/assets/js/18.09f4404b.js"><link rel="prefetch" href="/assets/js/19.61f28671.js"><link rel="prefetch" href="/assets/js/2.9e54a388.js"><link rel="prefetch" href="/assets/js/20.5c37e56e.js"><link rel="prefetch" href="/assets/js/21.a5c2d748.js"><link rel="prefetch" href="/assets/js/22.2cd6528d.js"><link rel="prefetch" href="/assets/js/23.39e401aa.js"><link rel="prefetch" href="/assets/js/24.7f9dc38f.js"><link rel="prefetch" href="/assets/js/25.2354248f.js"><link rel="prefetch" href="/assets/js/26.61ef215e.js"><link rel="prefetch" href="/assets/js/27.cf326dc5.js"><link rel="prefetch" href="/assets/js/28.65f27cbf.js"><link rel="prefetch" href="/assets/js/29.5042a84c.js"><link rel="prefetch" href="/assets/js/3.d24b7d12.js"><link rel="prefetch" href="/assets/js/30.239b1a66.js"><link rel="prefetch" href="/assets/js/31.62bee65e.js"><link rel="prefetch" href="/assets/js/32.395dc37f.js"><link rel="prefetch" href="/assets/js/33.76b14f8a.js"><link rel="prefetch" href="/assets/js/34.82f7d6e9.js"><link rel="prefetch" href="/assets/js/35.dfe48b60.js"><link rel="prefetch" href="/assets/js/36.e30f509c.js"><link rel="prefetch" href="/assets/js/37.b738320a.js"><link rel="prefetch" href="/assets/js/38.679f995f.js"><link rel="prefetch" href="/assets/js/4.53eb8746.js"><link rel="prefetch" href="/assets/js/40.768fc725.js"><link rel="prefetch" href="/assets/js/41.f209cbc5.js"><link rel="prefetch" href="/assets/js/42.e62f3e23.js"><link rel="prefetch" href="/assets/js/43.37d88222.js"><link rel="prefetch" href="/assets/js/44.73e686f8.js"><link rel="prefetch" href="/assets/js/45.41fc0e32.js"><link rel="prefetch" href="/assets/js/46.c5b481e2.js"><link rel="prefetch" href="/assets/js/47.fd403ebc.js"><link rel="prefetch" href="/assets/js/48.88d6f05b.js"><link rel="prefetch" href="/assets/js/49.2a7379eb.js"><link rel="prefetch" href="/assets/js/5.0f07010c.js"><link rel="prefetch" href="/assets/js/50.7b09abc4.js"><link rel="prefetch" href="/assets/js/51.ec5291c2.js"><link rel="prefetch" href="/assets/js/52.6584a5cb.js"><link rel="prefetch" href="/assets/js/53.17180ab7.js"><link rel="prefetch" href="/assets/js/54.0f559968.js"><link rel="prefetch" href="/assets/js/55.35fde69e.js"><link rel="prefetch" href="/assets/js/56.bf2df1df.js"><link rel="prefetch" href="/assets/js/57.b6da579a.js"><link rel="prefetch" href="/assets/js/58.8ea27b00.js"><link rel="prefetch" href="/assets/js/59.86c7dde9.js"><link rel="prefetch" href="/assets/js/6.6b694a13.js"><link rel="prefetch" href="/assets/js/60.ba426e33.js"><link rel="prefetch" href="/assets/js/61.49cd260a.js"><link rel="prefetch" href="/assets/js/62.c1d7054f.js"><link rel="prefetch" href="/assets/js/63.506e8f79.js"><link rel="prefetch" href="/assets/js/64.5dc4939c.js"><link rel="prefetch" href="/assets/js/65.24b02711.js"><link rel="prefetch" href="/assets/js/66.ea6093ea.js"><link rel="prefetch" href="/assets/js/67.9a6c768a.js"><link rel="prefetch" href="/assets/js/68.2a54cfc6.js"><link rel="prefetch" href="/assets/js/69.6bc562c6.js"><link rel="prefetch" href="/assets/js/7.69cc5895.js"><link rel="prefetch" href="/assets/js/70.eb5cdc9a.js"><link rel="prefetch" href="/assets/js/71.118deb4f.js"><link rel="prefetch" href="/assets/js/72.27ecd486.js"><link rel="prefetch" href="/assets/js/73.0b6f1ee5.js"><link rel="prefetch" href="/assets/js/74.cdeb2653.js"><link rel="prefetch" href="/assets/js/75.07d88cd9.js"><link rel="prefetch" href="/assets/js/76.5bf686f2.js"><link rel="prefetch" href="/assets/js/77.fbafebdc.js"><link rel="prefetch" href="/assets/js/78.213c622f.js"><link rel="prefetch" href="/assets/js/79.43fd04df.js"><link rel="prefetch" href="/assets/js/8.33d09d12.js"><link rel="prefetch" href="/assets/js/80.ca2095d7.js"><link rel="prefetch" href="/assets/js/81.fa3924db.js"><link rel="prefetch" href="/assets/js/82.68b9e3a9.js"><link rel="prefetch" href="/assets/js/83.b37f9c30.js"><link rel="prefetch" href="/assets/js/84.d9d06e24.js"><link rel="prefetch" href="/assets/js/85.4900da85.js"><link rel="prefetch" href="/assets/js/86.025b16fe.js"><link rel="prefetch" href="/assets/js/87.9d68c8f0.js"><link rel="prefetch" href="/assets/js/88.54e2afe2.js"><link rel="prefetch" href="/assets/js/89.1c370c20.js"><link rel="prefetch" href="/assets/js/9.3d0919c7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a93f8533.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-2b50ec5c><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-2b50ec5c><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        React
+         <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        Java
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        English
+        <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-2b50ec5c>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        
+        <a href="https://github.com/webxiaoma/webxiaoma/issues" target="_blank" style="padding-bottom:5px;" data-v-2b50ec5c>提出疑问</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-2b50ec5c data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-2b50ec5c><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+          Git工具
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        React
+         <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-2b50ec5c><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        Java
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-2b50ec5c>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        English
+        <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="padding-bottom:5px;" data-v-2b50ec5c>GitHub</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-2b50ec5c>
+        
+        <a href="https://github.com/webxiaoma/webxiaoma/issues" target="_blank" style="padding-bottom:5px;" data-v-2b50ec5c>提出疑问</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/javascript/" class="sidebar-link" data-v-5534fc3a>网站</a></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading open"><span>JS常见知识</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/javascript/JS-DOM操作.html" class="sidebar-link">JS DOM操作</a></li><li><a href="/javascript/JS-BOM操作.html" class="sidebar-link">JS BOM操作</a></li><li><a href="/javascript/JS-事件.html" class="sidebar-link">JS-事件</a></li><li><a href="/javascript/js面向对象.html" class="sidebar-link">JS 面向对象</a></li><li><a href="/javascript/function.html" class="sidebar-link">JavaScript之函数</a></li><li><a href="/javascript/prototype-proto.html" class="sidebar-link">JavaScript之原型与原型链</a></li><li><a href="/javascript/execution-contexts.html" class="sidebar-link">JavaScript之执行上下文</a></li><li><a href="/javascript/variable-object.html" class="sidebar-link">JavaScript之变量对象</a></li><li><a href="/javascript/scope-chain.html" class="active sidebar-link">JavaScript之作用域和作用域链</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/javascript/scope-chain.html#词法作用域和动态作用域" class="sidebar-link">词法作用域和动态作用域</a></li><li class="sidebar-sub-header"><a href="/javascript/scope-chain.html#作用域链" class="sidebar-link">作用域链</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/javascript/scope-chain.html#函数的生命周期" class="sidebar-link">函数的生命周期</a></li></ul></li><li class="sidebar-sub-header"><a href="/javascript/scope-chain.html#影响作用域的代码" class="sidebar-link">影响作用域的代码</a></li></ul></li><li><a href="/javascript/this.html" class="sidebar-link">JavaScript之This</a></li></ul></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>ES6篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>音频视频处理</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>文件与二进制处理</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>离线-缓存-存储</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="javascript之作用域和作用域链"><a href="#javascript之作用域和作用域链" aria-hidden="true" class="header-anchor">#</a> JavaScript之作用域和作用域链</h1> <hr> <p>我们在<a href="/javascript/execution-contexts.html">JavaScript之执行上下文</a>中已经讨论过<code>执行上下文</code>，并且提到在执行代码执行中，<code>执行上下文</code>会初始化三个很重要的对象(<code>变量对象</code>、<code>作用域链</code>、<code>this</code>)，这里我们讲解其中<code>作用域链</code>。</p> <h2 id="词法作用域和动态作用域"><a href="#词法作用域和动态作用域" aria-hidden="true" class="header-anchor">#</a> 词法作用域和动态作用域</h2> <p>在这里我们首先需要很确定的指明的是：</p> <div class="tip custom-block"><p class="custom-block-title">重要</p> <p><code>JavaScript</code>中的语法采用的是词法作用域（lexical scoping），也被称为静态作用域。词法作用域和动态作用域的概念并不是<code>JavaScript</code>所特有的。</p></div> <p>下面我们来了解一下词法作用域和动态作用域：</p> <ul><li><p><code>词法作用域</code>：词法作用域是在词法分析阶段就确定了，之后不会改变。比如在js中，函数在书写时就应经确定好了作用域。</p></li> <li><p><code>动态作用域</code>：动态作用域是在运行时根据程序的流程信息来动态确定的，而不是在写代码时进行静态确定的。比如在函数执行时才会确定好作用域。</p></li></ul> <p>我们来看看下面的代码：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;King&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;Waring&quot;</span><span class="token punctuation">;</span>
+  <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>上面<code>console.log(name)</code> 打印的结果是<code>King</code>,而不是<code>Waring</code>,这很说明了在<code>JavaScript</code>中使用的是<code>词法作用域</code>。函数<code>fun</code>在创建时就应经确定了作用域，运行时不会再改变。</p> <p>而假如JavaScript使用的动态作用域，那么上面<code>console.log(name)</code> 打印的结果是<code>Waring</code>。</p> <p>我们再来看一个例子:</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">&quot;fun scope&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">&quot;fun scope&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> f
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>上面结果都会是<code>fun scope</code>, 这也是因为<code>JavaScript</code>使用的词法作用域的结果。我们可以打印一个函数，会看到它有一个<code>[[Scope]]</code>属性，该属存储着这个函数的父级的变量对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>fun<span class="token punctuation">)</span>
+</code></pre></div><p>打印结果如下图：</p> <p><img src="/img/scoep1.png" alt="scope"></p> <h2 id="作用域链"><a href="#作用域链" aria-hidden="true" class="header-anchor">#</a> 作用域链</h2> <p>我们知道了<code>JavaScript</code>中是使用的词法作用域来确定的作用域。在<code>JavaScript</code>中一个函数是可以访问到他父函数的作用域内的变量的。而这种访问机制就是通过作用域链来完成的。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">&quot;fun scope&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 可以访问fun函数内的变量</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>上面例子，当函数<code>f</code>中在查找变量<code>a</code>时，会先从函数<code>f</code>的活动对象中去查找，如果没有找到会向父级函数<code>fun</code>的活动对象中去查找<code>a</code>。如果还没有找到将会继续向上查找，查找全局对象中是否有变量<code>a</code>。这种层级的变量对象查找就形成了一条链就是作用域链。</p> <h3 id="函数的生命周期"><a href="#函数的生命周期" aria-hidden="true" class="header-anchor">#</a> 函数的生命周期</h3> <p>函数分为两个声明周期：创建和激活。</p> <p>我们来看下面简单的例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">&quot;Hello&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">&quot;world&quot;</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str1 <span class="token operator">+</span> str2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面的例子我们在全局声明了变量<code>str1</code>，并创建了函数<code>fun</code>，在程序初始化时他们都将成为全局对象的属性（全局变量对象的属性，全局变量对象等于全局对象）</p> <p>函数<code>fun</code>在被创建时，就创建了作用域，也就是拥有了<code>[[Scope]]</code>属性，该属是父级的层级链，并存储了父级上下文中的变量对象</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 伪代码</span>
+
+<span class="token constant">VO</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 其他属性，对象，函数</span>
+  str1<span class="token punctuation">:</span>undefined<span class="token punctuation">,</span>
+  fun<span class="token punctuation">:</span><span class="token operator">&lt;</span>fun<span class="token operator">&gt;</span>
+<span class="token punctuation">}</span>
+
+fun<span class="token punctuation">[</span><span class="token punctuation">[</span>Scope<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token number">0</span><span class="token punctuation">:</span> <span class="token constant">VO</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>
+</code></pre></div><p>在函数<code>fun</code>激活时(执行时)，函数<code>fun</code>的活动对象会被创建</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 伪代码</span>
+
+<span class="token constant">AO</span><span class="token punctuation">(</span>funContext<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  arguments<span class="token punctuation">:</span>Arguments<span class="token punctuation">,</span>
+  str2<span class="token punctuation">:</span>undefined<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>此时fun的作用域链就会被创建好：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">scope</span><span class="token punctuation">(</span>fun<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token constant">AO</span><span class="token punctuation">(</span>funContext<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>Scopes<span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+<span class="token comment">// fun函数的作用域链将会变成下面这样</span>
+funContext<span class="token punctuation">.</span>scope <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token constant">AO</span><span class="token punctuation">(</span>funContext<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token constant">VO</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+</code></pre></div><p>此时<code>fun</code>的活动对象将会放到作用域的最前端。这时函数<code>fun</code>中的代码开始执行，当代码执行到<code>str1 + str2</code> 时，从<code>scope</code>中的最前端开始查找变量<code>str1</code> 和 变量<code>str2</code>，如果找到将会拿到某个变量的值并停止查找，如果未找到，将通过作用域链继续向后去查找。</p> <h2 id="影响作用域的代码"><a href="#影响作用域的代码" aria-hidden="true" class="header-anchor">#</a> 影响作用域的代码</h2> <p>当使用<code>with</code>或<code>catch</code>时，会修改作用域链。他们会被添加到作用域链的最前端：</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  a<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">with</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 1</span>
+  <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token comment">// 2</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>此时作用域链就是这样：</p> <div class="language-js extra-class"><pre class="language-js"><code>Scope <span class="token operator">=</span> <span class="token constant">AO</span><span class="token punctuation">(</span>withContext<span class="token punctuation">)</span> <span class="token operator">+</span>  obj <span class="token operator">+</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>Scope<span class="token punctuation">]</span><span class="token punctuation">]</span>
+</code></pre></div><p>关于作用域链的知识，就先汇总到这里。</p></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/webxiaoma/webxiaoma/edit/dev/docs/javascript/scope-chain.md" target="_blank" rel="noopener noreferrer">文章有问题，欢迎提出！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">12/7/2018, 8:24:41 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/javascript/variable-object.html" class="prev">
+          JavaScript之变量对象
+        </a></span> <span class="next"><a href="/javascript/this.html">
+          JavaScript之This
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/39.812f3d98.js" defer></script><script src="/assets/js/app.ebb8886b.js" defer></script>
+  </body>
+</html>
