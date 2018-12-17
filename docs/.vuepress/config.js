@@ -181,7 +181,8 @@ module.exports = {
                     title: 'vue基础',
                     collapsable: true, // 是否可折叠
                     children: [
-                      'vue-cli-3'
+                      'vue-cli-3',
+                      'vue-problem'
                     ]
                 }
             ],

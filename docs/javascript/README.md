@@ -16,7 +16,8 @@ meta:
 
 - [ES6 入门教程 阮一峰](http://es6.ruanyifeng.com/)
 - [ES6编译器 Babel 中文网](https://www.babeljs.cn/)
-- [ECMAScript 5.1 规范](http://yanhaijing.com/es5/#book)
+- [ECMAScript 5.1 规范](http://yanhaijing.com/es5/#about)
+
 ### 相关文章
 
 - [Babel 用户手册](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/user-handbook.md)
