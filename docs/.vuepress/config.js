@@ -24,8 +24,8 @@ module.exports = {
                 {text:'前端工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git版本工具",link:'/git/'},
-                    {text:"编辑器的使用",link:'/tool/vscode.html'},
-                    {text:"调试工具",link:'/tool/chorme.html'},
+                    // {text:"编辑器的使用",link:'/tool/vscode.html'},
+                    // {text:"调试工具",link:'/tool/chorme.html'},
                 ]},
                 {text:'Vue', link:'/vue/'},
                 {text:'React', link:'/react/'},
