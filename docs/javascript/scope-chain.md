@@ -156,7 +156,6 @@ funContext.scope = [
   AO(funContext),
   VO(globalContext),
 ]
-
 ```
 此时`fun`的活动对象将会放到作用域的最前端。这时函数`fun`中的代码开始执行，当代码执行到`str1 + str2` 时，从`scope`中的最前端开始查找变量`str1` 和 变量`str2`，如果找到将会拿到某个变量的值并停止查找，如果未找到，将通过作用域链继续向后去查找。
 

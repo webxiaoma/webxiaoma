@@ -23,7 +23,9 @@ module.exports = {
                 ]},
                 {text:'前端工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
-                    {text:"Git工具",link:'/git/'},
+                    {text:"Git版本工具",link:'/git/'},
+                    {text:"编辑器的使用",link:'/tool/vscode.html'},
+                    {text:"调试工具",link:'/tool/chorme.html'},
                 ]},
                 {text:'Vue', link:'/vue/'},
                 {text:'React', link:'/react/'},
@@ -54,7 +56,8 @@ module.exports = {
                         'execution-contexts',
                         'variable-object',
                         'scope-chain',
-                        'this'
+                        'this',
+                        'closure'
                     ]
                },{
                 title: 'ES6篇',
@@ -147,6 +150,21 @@ module.exports = {
                 'Git多账户管理',
                 'Git的相关配置',
                 'Git的子模块'
+            ],
+            '/tool/':[
+                 {
+                    title: '编辑器使用',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                      'vscode',
+                    ]
+                },{
+                    title: '调试工具',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'chorme'
+                    ]
+                },
             ],
             '/phone/':[
                 '',

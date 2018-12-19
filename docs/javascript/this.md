@@ -207,11 +207,103 @@ fun() // 例子6
 
 
 
+## 构造函数中的This
 
-## 全局中的This
+在构造函数中`this`还是很好确定的，在构造函数中`this`永远指向通过构造函数创建的对象。
+
+```js
+function people(){
+  this.name = "king";
+  this.age = 52
+}
+
+var one = new People()
+var two = new People()
+```
+上面在构造函数中的`this`会指向通过`new`创建出来的对象。第一种情况下`people`中的`this`指向 `one`对象，第二种情况下`people`中的`this`指向 `two`对象
+
+:::tip tom大叔
+针对上面的构造函数`new`运算符调用`people`函数的内部的`[[Construct]]` 方法，接着，在对象创建后，调用内部的`[[Call]]` 方法。 所有相同的函数`people`都将`this`的值设置为新创建的对象。
+:::
 
 
 
-## 函数中的This
+## 改变This指向的方式
+
+在`js`我们可以使用`call`、`apply`、`bind`、方法可以来改变`this`的指向的。下面我们来看看着几个方法的使用。
+
+### call 方法
+
+`call`方法可以执行一个函数，并改变一个函数中`this`的指向,`call`方法中有多个参数，第一个参数是`this`指向对象，后面的参数就是调用函数时传入的参数。
+
+```js
+var obj = {
+  name: "King",
+  age:23
+}
+
+var name = "global";
+
+function fun(age,sum){
+  console.log(this.name)
+  console.log(age,sum)
+}
+
+fun.call(obj,50,30) //King; 50 30
+```
+
+我们会发现通过`call`调用函数`fun`后，`fun`函数内部的`this`指向了对象`obj`,并且传入了两个参数`50 30`。
+
+### apply 方法
+
+`apply`方法也是可以执行一个函数，并改变一个函数中`this`的指向，和`call`方法不同的是，`apply`方法的第二个参数传入的是一个数组。
+
+```js
+var obj = {
+  name: "King",
+  age:23
+}
+
+var name = "global";
+function fun(age,sum){
+  console.log(this.name)
+  console.log(age,sum)
+}
+
+fun.call(obj,[50,30]) //King; 50 30
+```
+
+### bind 方法
+
+`js`中`bind`方法可以给函数中`this`绑定一个固定的对象，并返回一个新函数
+
+```js
+var obj = {
+    name: "King",
+    age:23
+}
+
+var name = "global";
+
+function fun(age,sum,a){
+   console.log(this.name)
+}
+
+var newFun = fun.bind(obj)
+newFun() //King
+setTimeout(newFun,2000) // King
+```
+
+通过例子我们可以看到，通过`bind`方法处理后，返回的新函数中的`this`永远都会指向同一个对象，而不会随着函数的调用方式不同而改变。
 
 
+
+
+## DOM事件中This
+
+
+`DOM`事件中绑定的函数中的`this`指向触发该事件的`DOM`元素，这点毋庸置疑。
+
+::: danger DOM事件中This
+关于`DOM`事件中`This` 虽然知道指向触发该事件的`DOM`元素，但是在`ECMAScript`规范中是如何实现的，我目前不太确定，希望知道的同学可以提供一下帮助。
+:::
