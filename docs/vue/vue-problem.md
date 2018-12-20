@@ -29,12 +29,11 @@ meta:
 
 ##  vue-router 问题
 
-1. 去掉`vue`项目路径中的 `#`
+1. 去掉`vue`项目路径中的 `#`，但是需要后台配合
 
 主要用到`router` 的 `history`模式。官网说的很详细，以及注意点：[vue-router官网 HTML5 History模式][1]
 
 2. 当我们通过`router` 中的query从一A页面想给B页面传递一个`Object` 对象形式的数据时，第一次`B`页面可以拿到数据，但是刷新`B`页面后，数据会消失。这里有一下解决方法：
-
  
 
  - 将A页面的数据通过 `JSON.stringify()` 变成字符串，传递
@@ -68,7 +67,6 @@ module.exports = {
 另外为页面做`Meta SEO`优化 可以使用 `vue-meta-info` [GitHub地址](https://github.com/monkeyWangs/vue-meta-info)
 
 [vue-meta-info的相关文章](https://zhuanlan.zhihu.com/p/29148760)
-
 
 
 ##  数据响应失效
@@ -121,7 +119,6 @@ const state = {
 }
 ```
 
-
 ## axios 交互问题
 
 1. `vue`中创建`excel` 的下载，解决`excel`下载乱码问题
@@ -162,6 +159,20 @@ var qs = require('qs');
 axios.post('/url', qs.stringify({ 'name': "king","age":23 });
 ```
 
+## 兼容性问题
+
+**1. 使用`vue`兼容`IE9+`**
+
+`Vue` 官方对于 `ie` 浏览器版本兼容情况的描述是 `ie9+`
+
+使用`babel-polyfill` 插件，它可以将 `es6` 的代码翻译成低版本浏览器可以识别的 `es5` 代码
+
+```js
+npm i babel-polyfill -S
+```
+安装后在`main.js`中引入`import 'babel-polyfill'`, 或在`webpack`打包的入口处引入
+
+[更详细的解决方案](https://www.jb51.net/article/142232.htm)
 
 ## 其它注意事项
 

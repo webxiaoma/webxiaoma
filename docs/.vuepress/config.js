@@ -57,7 +57,9 @@ module.exports = {
                         'variable-object',
                         'scope-chain',
                         'this',
-                        'closure'
+                        'closure',
+                        'trash-recycling',
+                        'data-type'
                     ]
                },{
                 title: 'ES6篇',
