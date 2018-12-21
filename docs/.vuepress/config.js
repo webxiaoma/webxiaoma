@@ -34,6 +34,9 @@ module.exports = {
                 {text:'Linux', link:'/linux/'},
                 {text:'NodeJS', link:'/node/'},
                 {text:'Java', link:'/java/'},
+                {text:'数据库', items:[
+                    {text:"MongoDB",link:'/database/MongoDB.html'},
+                ]},
                 {text:'网络知识', link:'/network/'},
             ]},
             { text: 'English', link: '/english/'},
@@ -222,7 +225,8 @@ module.exports = {
                     collapsable: true, // 是否可折叠
                     children: [
                         'NodeJS的安装',
-                        'nodejs常用API'
+                        'nodejs常用API',
+                        'nodejs-server'
                     ]
                 },{
                     title: '常用工具',
@@ -248,6 +252,16 @@ module.exports = {
                        'java-start'
                     ]
                 }
+            ],
+            '/database/':[
+                '',
+                {
+                    title: 'MongoDB数据库',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        'MongoDB'
+                    ]
+                },
             ],
             '/linux/':[
                 '',
