@@ -19,7 +19,7 @@ meta:
 - [Vuex 状态管理官网](https://vuex.vuejs.org/zh/)
 - [Vue-loader 官网](https://vue-loader-v14.vuejs.org/zh-cn/)
 - [Vue-Cli3.0 官网](https://cli.vuejs.org/zh/guide/)
-
+- [flyJs http交互插件](https://github.com/wendux/fly)(类似axios)
 ### 组件网站
 
 - [Element-Ui pc端](http://element.eleme.io/#/zh-CN/component/installation)（饿了么）
