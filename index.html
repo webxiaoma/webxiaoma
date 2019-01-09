@@ -11,12 +11,6 @@
            padding:0;
            margin:0;
        }
-       .div{
-           width:100vw;
-           height:600px;
-           font-size:32px;
-           background:red;
-       }
     </style>
 </head>
 <body>
@@ -25,17 +19,34 @@
     </div>
 
     <script>
-    //   var div = document.querySelector('.div');
-    //   var width = screen.width;
-    //   var html = document.documentElement;
+       function simulateNew(){
+           var obj = {}; 
+           var Fun = [].shift.call(arguments) // 截取并拿到第一个参数
+           
+           var resultFun = Fun.apply(obj,arguments)
+           obj.__proto__ = Fun.prototype
+           
 
-    //   html.style.fontSize = width/10 + 'px';
+           return typeof resultFun == 'object'?resultFun:obj
+           
+       }
 
-    //   var device = window.devicePixelRatio;
 
-    //     console.log(width)
-    
-    
+       function Person (name,age){
+            this.name = name
+            this.age = age
+
+            // return {
+            //     name:'小红',
+            //     age:20
+            // }
+        }
+        Person.prototype.getAge = function(){
+            console.log(this.age)
+        }
+
+       var a = simulateNew(Person,"小明",25)
+       console.log(a.__proto__  === Person.prototype )
     </script>
 </body>
 </html>

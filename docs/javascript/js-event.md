@@ -6,7 +6,7 @@ meta:
     content: 本文讲述js一些基础知识，事件代理和事件冒泡。
 ---
 
-# JS-事件
+# JavaScript之事件
 
 ## 什么是js事件
 
