@@ -14,7 +14,10 @@ module.exports = {
         nav: [  // 导航栏 使用了element 导航
             { text: '首页', link: '/'},
             { text: '前端', items: [
-                {text:'JavaScript', link:'/javascript/'},
+                {text:'JavaScript', items:[
+                    {text:"JavaScript",link:'/javascript/js-bom.html'},
+                    {text:"ECMAScript6",link:'/javascript/babel.html'},
+                ]},
                 {text:'设计模式', link:'/design-mode/'},
                 {text:'移动端', items:[
                     {text:"H5页面开发",link:'/phone/'},
@@ -50,8 +53,8 @@ module.exports = {
                     title: 'JS常见知识',
                     collapsable: true, // 是否可折叠
                     children: [
-                        'JS-DOM操作',
-                        'JS-BOM操作',
+                        'js-bom',
+                        'js-dom',
                         'js-event',
                         'js-object',
                         'function',
@@ -63,13 +66,14 @@ module.exports = {
                         'closure',
                         'trash-recycling',
                         'data-type',
-                        'new'
+                        'new',
                     ]
                },{
                 title: 'ES6篇',
                 collapsable: true,
                 children: [
-                    'babel'
+                    'babel',
+                    'es6-let-const'
                 ]
                },{
                     title: '音频视频处理',
@@ -333,23 +337,23 @@ module.exports = {
             }
         },
         
-    // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
-    repo: 'vuejs/vuepress',
-    // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
-    // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
-    repoLabel: '查看源码',
-    // 以下为可选的编辑链接选项
+        // 假定是 GitHub. 同时也可以是一个完整的 GitLab URL
+        repo: 'vuejs/vuepress',
+        // 自定义仓库链接文字。默认从 `themeConfig.repo` 中自动推断为
+        // "GitHub"/"GitLab"/"Bitbucket" 其中之一，或是 "Source"。
+        repoLabel: '查看源码',
+        // 以下为可选的编辑链接选项
 
-    // 假如你的文档仓库和项目本身不在一个仓库：
-    docsRepo: 'webxiaoma/webxiaoma',
-    // 假如文档不是放在仓库的根目录下：
-    docsDir: 'docs',
-    // 假如文档放在一个特定的分支下：
-    docsBranch: 'dev',
-    // 默认是 false, 设置为 true 来启用
-    editLinks: true,
-    // 默认为 "Edit this page"
-    editLinkText: '文章有问题，欢迎提出！'
+        // 假如你的文档仓库和项目本身不在一个仓库：
+        docsRepo: 'webxiaoma/webxiaoma',
+        // 假如文档不是放在仓库的根目录下：
+        docsDir: 'docs',
+        // 假如文档放在一个特定的分支下：
+        docsBranch: 'dev',
+        // 默认是 false, 设置为 true 来启用
+        editLinks: true,
+        // 默认为 "Edit this page"
+        editLinkText: '文章有问题，欢迎提出！'
        
     },
 };

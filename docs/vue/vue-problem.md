@@ -118,6 +118,27 @@ const state = {
    max-width:99.9%
 }
 ```
+3. 使用`ElementUl`的下拉框组件实现多级联动时，当第一个下拉框数据变动后，想清空第二个下拉框之前的选择，直接清除无法实现。
+
+解决方法使用`watch`监听
+
+```js
+dataModified: {
+    form1:'',
+    form2:'',
+}, 
+watch: {
+    'dataModified.form1': function (newValue, oldValue) {
+        this.dataModified = JSON.parse(JSON.stringify(this.dataModified))
+    }
+},
+
+// 之后就可以使用
+this.dataModified.form2 = ""
+```
+
+
+[解决方法](https://segmentfault.com/q/1010000014751971)
 
 ## axios 交互问题
 
@@ -158,6 +179,12 @@ axios.interceptors.response.use(res => {
 var qs = require('qs');
 axios.post('/url', qs.stringify({ 'name': "king","age":23 });
 ```
+
+
+3. 使用`axios`做`get`请求时无法设置头部信息
+
+目前解决方案是不在使用`axios`, 可以使用[Fly.js](https://github.com/wendux/fly) 来做底层交互。
+
 
 ## 兼容性问题
 

@@ -12,6 +12,67 @@ import {
 import  MyImg  from './components/MyImg.vue'
 import  Badge  from './components/Badge.vue'
 
+
+
+// 评论系统
+function integrateGitment(router) {
+    const linkGitment = document.createElement('link')
+    linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
+    linkGitment.rel = 'stylesheet'
+    const scriptGitment = document.createElement('script')
+    document.body.appendChild(linkGitment)
+    scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
+    document.body.appendChild(scriptGitment)
+  
+    router.afterEach((to) => {
+      // 已被初始化则根据页面重新渲染 评论区
+      if (scriptGitment.onload) {
+        renderGitment(to.fullPath)
+      } else {
+        scriptGitment.onload = () => {
+          const commentsContainer = document.createElement('div')
+          commentsContainer.id = 'comments-container'
+          commentsContainer.classList.add('content')
+          const $page = document.querySelector('.page')
+          if ($page) {
+            $page.appendChild(commentsContainer)
+            renderGitment(to.fullPath)
+          }
+        }
+      }
+    })
+  
+    function renderGitment(fullPath) {
+      const gitment = new Gitment({
+        id: fullPath,
+        owner: 'xxx', // 必须是你自己的github账号
+        repo: 'xxx', // 上一个准备的github仓库
+        oauth: {
+          client_id: 'xxx', // 第一步注册 OAuth application 后获取到的 Client ID
+          client_secret: 'xxx', // 第一步注册 OAuth application 后获取到的 Clien Secret
+        },
+      })
+      gitment.render('comments-container')
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default ({
     Vue, // VuePress 正在使用的 Vue 构造函数
     options, // 附加到根实例的一些选项
