@@ -45,32 +45,16 @@ function integrateGitment(router) {
     function renderGitment(fullPath) {
       const gitment = new Gitment({
         id: fullPath,
-        owner: 'xxx', // 必须是你自己的github账号
-        repo: 'xxx', // 上一个准备的github仓库
+        owner: 'webxiaoma', // 必须是你自己的github账号
+        repo: 'webxiaoma', // 上一个准备的github仓库
         oauth: {
-          client_id: 'xxx', // 第一步注册 OAuth application 后获取到的 Client ID
-          client_secret: 'xxx', // 第一步注册 OAuth application 后获取到的 Clien Secret
+          client_id: '98409e84120df5d36992', // 第一步注册 OAuth application 后获取到的 Client ID
+          client_secret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // 第一步注册 OAuth application 后获取到的 Clien Secret
         },
       })
       gitment.render('comments-container')
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default ({
@@ -85,4 +69,12 @@ export default ({
    Vue.use(MenuItem)
    Vue.component('MyImg', MyImg)
    Vue.component('Badge', Badge)
+
+   // 评论
+   try {
+    // 生成静态页时在node中执行，没有document对象
+    document && integrateGitment(router)
+  } catch (e) {
+    console.error(e.message)
+  }
 }
