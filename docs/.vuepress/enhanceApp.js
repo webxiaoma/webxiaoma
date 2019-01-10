@@ -46,7 +46,7 @@ function integrateGitment(router) {
       const gitment = new Gitment({
         id: fullPath,
         owner: 'webxiaoma', // 必须是你自己的github账号
-        repo: 'webxiaoma', // 上一个准备的github仓库
+        repo: 'webxiaoma.github.io', // 上一个准备的github仓库
         oauth: {
           client_id: '98409e84120df5d36992', // 第一步注册 OAuth application 后获取到的 Client ID
           client_secret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // 第一步注册 OAuth application 后获取到的 Clien Secret
