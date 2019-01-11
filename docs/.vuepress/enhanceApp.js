@@ -15,6 +15,62 @@ import  Badge  from './components/Badge.vue'
 
 
 // 评论系统
+
+function integrateGitalk(router) {
+  const linkGitalk = document.createElement('link');
+  linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css';
+  linkGitalk.rel = 'stylesheet';
+  document.body.appendChild(linkGitalk);
+  const scriptGitalk = document.createElement('script');
+  scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js';
+  document.body.appendChild(scriptGitalk);
+
+  router.afterEach((to) => {
+    if (scriptGitalk.onload) {
+      loadGitalk(to);
+    } else {
+      scriptGitalk.onload = () => {
+        loadGitalk(to);
+      }
+    }
+  });
+
+  function loadGitalk(to) {
+    console.log(to)
+
+    let commentsContainer = document.getElementById('gitalk-container');
+    if (!commentsContainer) {
+      commentsContainer = document.createElement('div');
+      commentsContainer.id = 'gitalk-container';
+      commentsContainer.classList.add('content');
+    }
+    const $page = document.querySelector('.theme-container .page');
+    if ($page) {
+      $page.appendChild(commentsContainer);
+      if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
+        renderGitalk(to.path);
+      }
+    }
+  }
+  function renderGitalk(path) {
+    const gitalk = new Gitalk({
+      clientID: '98409e84120df5d36992',
+      clientSecret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // come from github development
+      repo: 'webxiaoma',
+      owner: 'webxiaoma',
+      admin: ['iofu728'],
+      id: path,
+      distractionFreeMode: false,
+      language: 'zh-CN',
+      title:"欢迎评论",
+    });
+    gitalk.render('gitalk-container');
+  }
+}
+
+
+
+
 function integrateGitment(router) {
     const linkGitment = document.createElement('link')
     linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
@@ -46,7 +102,7 @@ function integrateGitment(router) {
       const gitment = new Gitment({
         id: fullPath,
         owner: 'webxiaoma', // 必须是你自己的github账号
-        repo: 'webxiaoma.github.io', // 上一个准备的github仓库
+        repo: 'webxiaoma', // 上一个准备的github仓库
         oauth: {
           client_id: '98409e84120df5d36992', // 第一步注册 OAuth application 后获取到的 Client ID
           client_secret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // 第一步注册 OAuth application 后获取到的 Clien Secret
@@ -73,7 +129,7 @@ export default ({
    // 评论
    try {
     // 生成静态页时在node中执行，没有document对象
-    document && integrateGitment(router)
+    document && integrateGitalk(router)
   } catch (e) {
     console.error(e.message)
   }
