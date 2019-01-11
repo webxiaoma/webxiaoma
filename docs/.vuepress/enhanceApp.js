@@ -12,7 +12,7 @@ import {
 import  MyImg  from './components/MyImg.vue'
 import  Badge  from './components/Badge.vue'
 
-
+const md5 = require('js-md5');
 
 // 评论系统
 
@@ -36,7 +36,7 @@ function integrateGitalk(router) {
   });
 
   function loadGitalk(to) {
-    console.log(to)
+    console.log(md5)
 
     let commentsContainer = document.getElementById('gitalk-container');
     if (!commentsContainer) {

@@ -27,6 +27,7 @@
     "webpack-serve": "^2.0.2"
   },
   "dependencies": {
-    "element-ui": "^2.4.6"
+    "element-ui": "^2.4.6",
+    "js-md5": "^0.7.3"
   }
 }
