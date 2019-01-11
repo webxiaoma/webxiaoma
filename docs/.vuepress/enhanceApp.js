@@ -56,9 +56,9 @@ function integrateGitalk(router) {
     const gitalk = new Gitalk({
       clientID: '98409e84120df5d36992',
       clientSecret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // come from github development
-      repo: 'webxiaoma',
+      repo: 'webxiaoma.github.io',
       owner: 'webxiaoma',
-      admin: ['iofu728'],
+      admin: ['webxiaoma'],
       id: path,
       distractionFreeMode: false,
       language: 'zh-CN',
@@ -69,48 +69,6 @@ function integrateGitalk(router) {
 }
 
 
-
-
-function integrateGitment(router) {
-    const linkGitment = document.createElement('link')
-    linkGitment.href = 'https://imsun.github.io/gitment/style/default.css'
-    linkGitment.rel = 'stylesheet'
-    const scriptGitment = document.createElement('script')
-    document.body.appendChild(linkGitment)
-    scriptGitment.src = 'https://imsun.github.io/gitment/dist/gitment.browser.js'
-    document.body.appendChild(scriptGitment)
-  
-    router.afterEach((to) => {
-      // 已被初始化则根据页面重新渲染 评论区
-      if (scriptGitment.onload) {
-        renderGitment(to.fullPath)
-      } else {
-        scriptGitment.onload = () => {
-          const commentsContainer = document.createElement('div')
-          commentsContainer.id = 'comments-container'
-          commentsContainer.classList.add('content')
-          const $page = document.querySelector('.page')
-          if ($page) {
-            $page.appendChild(commentsContainer)
-            renderGitment(to.fullPath)
-          }
-        }
-      }
-    })
-  
-    function renderGitment(fullPath) {
-      const gitment = new Gitment({
-        id: fullPath,
-        owner: 'webxiaoma', // 必须是你自己的github账号
-        repo: 'webxiaoma', // 上一个准备的github仓库
-        oauth: {
-          client_id: '98409e84120df5d36992', // 第一步注册 OAuth application 后获取到的 Client ID
-          client_secret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // 第一步注册 OAuth application 后获取到的 Clien Secret
-        },
-      })
-      gitment.render('comments-container')
-    }
-  }
 
 
 export default ({

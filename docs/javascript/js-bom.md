@@ -37,7 +37,7 @@ BOM 的核心对象是 window ，它表示浏览器的一个实例。在浏览�
 
 BOM 和 DOM 的关系可以用下图表示
 
-![BOM图谱](http://www.itxueyuan.org/uploads/allimg/121112/1-121112154254459.png)0
+![BOM图谱](http://www.itxueyuan.org/uploads/allimg/121112/1-121112154254459.png)
 
 
 ## BOM操作API
