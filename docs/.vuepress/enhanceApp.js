@@ -48,18 +48,19 @@ function integrateGitalk(router) {
     if ($page) {
       $page.appendChild(commentsContainer);
       if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
-        renderGitalk(to.path);
+        renderGitalk(to.fullPath);
       }
     }
   }
-  function renderGitalk(path) {
+  function renderGitalk(fullPath) {
+    console.log(decodeURI(fullPath))
     const gitalk = new Gitalk({
       clientID: '98409e84120df5d36992',
       clientSecret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // come from github development
-      repo: 'webxiaoma.github.io',
+      repo: 'webxiaoma',
       owner: 'webxiaoma',
       admin: ['webxiaoma'],
-      id: path,
+      id: fullPath,
       distractionFreeMode: false,
       language: 'zh-CN',
       title:"欢迎评论",
