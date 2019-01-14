@@ -24,7 +24,12 @@ function integrateGitalk(router) {
   scriptGitalk.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js';
   document.body.appendChild(scriptGitalk);
 
-  router.afterEach((to) => {
+  router.afterEach((to,form) => {
+    // 确保路径不同时请求
+    if(to.name === form.name){
+       return 
+    }
+
     if (scriptGitalk.onload) {
       loadGitalk(to);
     } else {
