@@ -15,7 +15,6 @@ import  Badge  from './components/Badge.vue'
 const md5 = require('js-md5');
 
 // 评论系统
-
 function integrateGitalk(router) {
   const linkGitalk = document.createElement('link');
   linkGitalk.href = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css';
@@ -36,8 +35,6 @@ function integrateGitalk(router) {
   });
 
   function loadGitalk(to) {
-    console.log(md5)
-
     let commentsContainer = document.getElementById('gitalk-container');
     if (!commentsContainer) {
       commentsContainer = document.createElement('div');
@@ -45,25 +42,25 @@ function integrateGitalk(router) {
       commentsContainer.classList.add('content');
     }
     const $page = document.querySelector('.theme-container .page');
+
     if ($page) {
       $page.appendChild(commentsContainer);
       if (typeof Gitalk !== 'undefined' && Gitalk instanceof Function) {
-        renderGitalk(to.fullPath);
+        renderGitalk(to.path);
       }
     }
+
   }
-  function renderGitalk(fullPath) {
-    console.log(decodeURI(fullPath))
+  function renderGitalk(path) {
     const gitalk = new Gitalk({
       clientID: '98409e84120df5d36992',
       clientSecret: '0a66e103fe72e431e627305d33bd2b7c3e92db53', // come from github development
       repo: 'webxiaoma',
       owner: 'webxiaoma',
       admin: ['webxiaoma'],
-      id: fullPath,
-      distractionFreeMode: false,
-      language: 'zh-CN',
-      title:"欢迎评论",
+      id: md5(path),
+      labels:['bug','docs','help wanted','Gitalk','question'],
+      distractionFreeMode: true,
     });
     gitalk.render('gitalk-container');
   }
