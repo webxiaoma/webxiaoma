@@ -73,7 +73,8 @@ module.exports = {
                 collapsable: true,
                 children: [
                     'babel',
-                    'es6-let-const'
+                    'es6-let-const',
+                    'es6-promise'
                 ]
                },{
                     title: '音频视频处理',
