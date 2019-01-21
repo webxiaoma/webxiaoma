@@ -7,9 +7,10 @@ meta:
     content: 本文讲述js中的this使用。
 ---
 
-# JavaScript之This
+# JavaScript之This（二）
 
 ---
+在[上一篇文章](/javascript/this-1.html)中我们从`this`指向的多种情况来认识了一下`this`， 这篇文章中我们从`ECMAScritp` 规范来看看`this` 是如何确定的。
 
 在`JavaScript`中，`this`是一直讨论的东西，并且在每个上下文创建时，`this`就被创建了，另外还有三个重要的属性也会被创建:[变量对象](/javascript/variable-object.html)、[作用域链](/javascript/scope-chain.html)。最近抽出了部分时间将`JavaScript`中`this`的知识汇总了一下。
 
@@ -307,3 +308,10 @@ setTimeout(newFun,2000) // King
 ::: danger DOM事件中This
 关于`DOM`事件中`This` 虽然知道指向触发该事件的`DOM`元素，但是在`ECMAScript`规范中是如何实现的，我目前不太确定，希望知道的同学可以提供一下帮助。
 :::
+
+
+
+参考链接：
+
+
+-[JavaScript深入之从ECMAScript规范解读this](https://github.com/mqyqingfeng/Blog/issues/7)

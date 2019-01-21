@@ -62,6 +62,7 @@ module.exports = {
                         'execution-contexts',
                         'variable-object',
                         'scope-chain',
+                        'this-1',
                         'this',
                         'closure',
                         'trash-recycling',
