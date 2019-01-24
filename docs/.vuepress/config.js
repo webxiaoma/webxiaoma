@@ -43,8 +43,7 @@ module.exports = {
                 {text:'网络知识', link:'/network/'},
             ]},
             { text: 'English', link: '/english/'},
-            { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true},
-            { text: '提出疑问', link: 'https://github.com/webxiaoma/webxiaoma/issues', blank:true},
+            { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true}
         ],
         sidebar: {  // 侧边栏
             '/javascript/':[

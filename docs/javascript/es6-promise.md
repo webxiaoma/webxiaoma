@@ -42,160 +42,105 @@ $.ajax({
 
 ## Promise 的简单实现
 
+### 实现then方法
 
-### 初步实现
-
-我们知道`promise`中具有`then`方法，我们对`then`的基本用法实现以下：
-
-```js
- function Promise(fun){
-  this.thenCallback = null; // 存储then的回调函
-  this.catchCallback = null; // 存储catch的回调函
-
-  var _that = this;
-  
-  // resolve 函数
-  function resolve(res){
-      if(_that.thenCallback){
-          _that.thenCallback(res);
-      }
-  }
-  // reject 函数
-  function reject(err){
-    if(_that.catchCallback){
-      _that.catchCallback(err)
-    }
-  }
-
-  fun(resolve,reject) 
-}
-
-Promise.prototype.then = function(){
-    var arg1 = arguments[0]
-    var arg2 = arguments[1]
-
-    this.thenCallback = arg1;
-    this.catchCallback = arg2;
-}
-```
-
-现在我们简单的实现了一下`promise`的`then`方法，我们可以测试一下：
+我们封装`promise`的`then`,让其具有下面这样的效果：
 
 ```js
-var pro = function(){
-  return new Promise(function(resolve,reject){
+var p = function(){
+   return new Promise(function(resolve){
       setTimeout(function(){
-        var sum = Math.floor(Math.random()*10);
-        if(sum>5){
-          resolve("success")
-        }else{
-          reject("error")
-        }
-      },2000)
-  })
+        resolve("方法一")
+      },1000)
+   })
 }
-
-pro().then(function(res){
+// 可以链式调用
+p().then(function(res){
   console.log(res)
-},function(err){
-  console.log(err)
-})
-```
-
-## 实现链式操作
-
-上面我们实现了`then`的简单效果，下面我们来实现`then`的链式操作，如下效果:
-
-```js
-request()
-  .then(function(res){
-    return res
-  })
-  .then(function(res){
-    return res
-  })
-  .then(function(res){
-    return res
-  })
-```
-下面我们来实现`then`的链式调用
-
-```js
- function Promise(fun){
-  this.thenCallback = []; // 存储then中的回调函数
-
-  var _that = this;
-  
-  function resolve(res){
-      var value = res
-      // 循环执行 存储then中的回调函数
-      _that.thenCallback.forEach(function(f){
-          value = f(value)
-      })
-  }
-  fun(resolve,reject) 
-
-  return this
-}
-Promise.prototype.then = function(){
-    var arg1 = arguments[0]
-
-    this.thenCallback.push(arg1);
-    return this
-}
-```
-
-现在我们来测试一下：
-
-```js
-var pro = function(){
-    return new Promise(function(resolve,reject){
-        setTimeout(function(){
-          resolve("success")
-        },2000)
-    })
-}
-
-pro().then(function(res){
-    console.log(res)
-    return 1111
+  return "第一次then的结果"
 }).then(function(res){
-   console.log(res)
+  console.log("第二个then中拿到的第一个then的返回值："+ res)
+  return new Promise(function(resolve){
+    resolve("第二个的then值")
+  })
+}).then(function(res){
+  console.log("第三个then中拿到的第二个then的值："+ res)
 })
 ```
 
-现在我们还有一点问题就是，我们在使用`then`时,`then`中的回调函数不仅可以返回普通数据，还可以返回`promise`对象。
+
+我们想要上面的代码执行，首先要封装出`then`方法
 
 ```js
-var pro1 = function
+function Promise(fn){
+    this.state = 'pending';
+    this.doneLists = []; // 存储对象
+    this.value = null; // 存储resolve中的参数
+    var _that = this;
+    function resolve(newValue) {
+        // 判断传入的是否是promise,如果是
+        // 则或者它的then方法，执行并将this执行当前promise, 将resolve 存入done中
+        if (newValue && (newValue instanceof Promise)) {
+            var then = newValue.then;
+            then.call(newValue, resolve);
+            return;
+        }
+        
+        _that.state = 'fulfilled';
+        _that.value = newValue;
+        setTimeout(function () {
+            _that.doneLists.forEach(function (deferred) {
+                _that.handle(deferred);
+            });
+        }, 0);
+    }
+  
+    fn(resolve);
+}
 
-req()
-  .then(function(res){
-     console.log(res)
-  })
-  .then(function(res){
-      console.log(res)
-      // 返回一个promise
-      return new Promise(function(resolve,reject){
-          setTimeout(function(){
-            resolve('success')
-          },2000)
-      })
-  })
-  .then(function(res){
-    console.log(res)
-  })
+//  封装then方法，每次then执行后返回一个新的promise
+Promise.prototype.then = function(done){
+    var _that = this
+    return new Promise(function(resolve){
+        _that.handle({
+             // 执行then方法时，将then中的回调函数存储在done中
+            done: done || null,
+            // 将返回的promise中的resolve存储在对象中，以供调用后面的then方法。
+            resolve: resolve
+        });
+    });
+}
 
+// 封装一个handle方法，将then中的回调函数和
+// then中返回的promise中的resolve存储起来
+Promise.prototype.handle = function(deferred){ 
+    // 如果是 pending状态，将对象deferred存入当前对象的doneLists中
+    if (this.state  === 'pending') {
+        this.doneLists.push(deferred);
+        return;
+    }
+    // 如果不是`pending`状态，执行done,拿到回调函数的返回值，执行后面的resolve方法
+    // 传入到下个then的回调函数中
+    var ret = deferred.done(this.value);
+    deferred.resolve(ret);
+}
 ```
 
+上面的代码运行过程可以用下图表示（[原谅盗图](https://github.com/panyifei/Front-end-learning/blob/master/%E6%A1%86%E6%9E%B6%E4%BB%A5%E5%8F%8A%E8%A7%84%E8%8C%83/pics/m-then.png)）
+
+![运行过程](/img/promise-1.png)
+ 
+上面的代码执行过程可以用下图表示（[原谅盗图](https://github.com/panyifei/Front-end-learning/blob/master/%E6%A1%86%E6%9E%B6%E4%BB%A5%E5%8F%8A%E8%A7%84%E8%8C%83/pics/m-resolve.png)）
+
+![执行过程](/img/promise-2.png)
 
 
-## 实现catch 方法
 
 
 
 
-## 加入状态机制
+
+
 
 
 
@@ -205,4 +150,5 @@ req()
 
 **参考文章**
 
-[Promise简单实现（正常思路版）](https://www.cnblogs.com/liuzhenwei/p/5235473.html)
+- [Promise简单实现（正常思路版）](https://www.cnblogs.com/liuzhenwei/p/5235473.html)
+- [Promise规范以及写一个Promise](https://github.com/panyifei/Front-end-learning/blob/master/%E6%A1%86%E6%9E%B6%E4%BB%A5%E5%8F%8A%E8%A7%84%E8%8C%83/Promise.md)

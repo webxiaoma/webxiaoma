@@ -8,139 +8,82 @@
 </head>
 <body>
   <script>
-     
-      // function P(fun){
-      //     this.status = 'pending'
-      //     this.result = undefined;
-      //     this.error = undefined;
-      //     this.successAry = [];
-      //     this.errorAry = [];
-
-      //     var value = null;
-  
-      //     var resolve =  function(res){
-      //       console.log(this.successAry)
-      //         this.result = res
-      //         this.successAry.forEach(f => {
-               
-      //            if(value === null){
-      //               value =  f(res)
-      //               return
-      //            }
-                 
-      //            if(value !== null&&value !== undefined){
-      //              f(value)
-      //            }
-                
-      //         });
+     function Promise(fn){
+        this.state = 'pending';
+        this.doneLists = [];
+        this.value = null;
+        var _that = this;
+       
+        function resolve(newValue) {
+ 
+            // 判断传入的是否是promise
+            if (newValue && (newValue instanceof Promise)) {
              
-      //     }.bind(this)
+                var then = newValue.then;
+                if (typeof then === 'function') {
+                    then.call(newValue, resolve);
+                    return;
+                }
+            }
 
-      //     var reject = function(err){
-      //         this.result = err
-      //         this.errorAry.forEach(f => {
-      //            f(err)
-      //         });
-
-      //     }.bind(this)
-
-
-      //     fun(resolve,reject)
-          
-      //     return this
-         
-      // }
-
-      // P.prototype.then = function(callback){
-    
-      //     this.successAry.push(callback) 
-
-      //     return this
-      // }
-
-      // P.prototype.catch = function(callback){
-      //     this.errorAry.push(callback) 
-
-
-      //     return this
-      // }
-
-      // var test = function(){
-      //   return new P(function(resolve,reject){
-      //       setTimeout(function(){
-      //          var sum = Math.random()*10
-      //          if(true){
-      //            resolve(sum)
-      //          }else{
-      //            reject(sum)
-      //          }
-      //       },2000)
-      //   })
-      // }
-
-      // console.dir(test())
-      // test().then(function(arg){
-      //    console.log(arg)
-      //    return new Error("出错了")
-      // }).then(function(arg){
-      //    console.log(arg)
-      // })
-
-
-
-
-      function Promise(fun){
-          this.thenCallback = [];
-          this.catchCallback = [];
-
-          var _that = this;
-          
-          function resolve(res){
-              var value = res
-              _that.thenCallback.forEach(function(f){
-                  value = f(value)
-              })
-          }
-
-          function reject(err){
-            // if(_that.catchCallback){
-            //   _that.catchCallback(err)
-            // }
-          }
-
-          fun(resolve,reject) 
-
-          return this
+            _that.state = 'fulfilled';
+            _that.value = newValue;
+            setTimeout(function () {
+                _that.doneLists.forEach(function (deferred) {
+                   _that.handle(deferred);
+                });
+            }, 0);
         }
 
-        Promise.prototype.then = function(){
-            var arg1 = arguments[0]
-            var arg2 = arguments[1]
+        fn(resolve);
+    }
 
-            this.thenCallback.push(arg1);
-            this.catchCallback.push(arg2);
+    Promise.prototype.then = function(done){
+        var _that = this
+        return new Promise(function(resolve){
+            _that.handle({
+                done: done || null,
+                resolve: resolve
+            });
+        });
+    }
 
-            return this
-        }
-        var pro = function(){
-            return new Promise(function(resolve,reject){
-                setTimeout(function(){
-                  var sum = Math.floor(Math.random()*10);
-                  if(sum>5){
-                    resolve("success")
-                  }else{
-                    reject("error")
-                  }
-                },2000)
-            })
-        }
+    Promise.prototype.handle = function(deferred){
+            if (this.state  === 'pending') {
+                this.doneLists.push(deferred);
+                return;
+            }
+            var ret = deferred.done(this.value);
+            deferred.resolve(ret);
+    }
 
-        pro().then(function(res){
-            console.log(res)
-            return 1111
-        }).then(function(res){
-          console.log(res)
-        })
+    // 测试
+    var p = function (){
+        return new Promise(function(resolve){
+            setTimeout(function(){
+              resolve("11111111");
+            }, 1000);
+        });
+    }
+    p()
+    .then(function(res){
+      console.log(res)
+      return "第一次then的结果"
+    }).then(function(res){
+        debugger
+      console.log("第二个then中拿到的第一个then的返回值："+ res)
+      return new Promise(function(resolve){
+        setTimeout(function(){
+          resolve("第二个的then值")
+        },1000)
+        
+      })
+    }).then(function(res){
+      console.log("第三个then中拿到的第二个then的值："+ res)
+      return "第三个then的返回值"
+    }).then(function(res){
+      console.log(res)
+    })
   </script>
 </body>
 </html>
