@@ -86,9 +86,11 @@ function Promise(fn){
             return;
         }
         
+        // 如果不是promise 将状态改为fulfilled
         _that.state = 'fulfilled';
-        _that.value = newValue;
+        _that.value = newValue; // 存储resolve传入的值
         setTimeout(function () {
+            // 循环执行存储的then中的回调和后面promise的resolve
             _that.doneLists.forEach(function (deferred) {
                 _that.handle(deferred);
             });
@@ -136,10 +138,9 @@ Promise.prototype.handle = function(deferred){
 
 
 
+### 实现catch方法   
 
-
-
-
+上面我们简单的实现了`promise`的`then`方法,下面我们来实现`catch`方法
 
 
 

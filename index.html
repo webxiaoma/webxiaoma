@@ -8,6 +8,11 @@
 </head>
 <body>
   <script>
+
+      console.log("1".split(","))
+      console.log([].join(","))
+
+
      function Promise(fn){
         this.state = 'pending';
         this.doneLists = [];
@@ -48,6 +53,12 @@
         });
     }
 
+    Promise.prototype.catch = function(done){
+        return new Promise(function(resolve){
+              
+        })
+    }
+
     Promise.prototype.handle = function(deferred){
             if (this.state  === 'pending') {
                 this.doneLists.push(deferred);
@@ -70,13 +81,11 @@
       console.log(res)
       return "第一次then的结果"
     }).then(function(res){
-        debugger
       console.log("第二个then中拿到的第一个then的返回值："+ res)
       return new Promise(function(resolve){
         setTimeout(function(){
           resolve("第二个的then值")
         },1000)
-        
       })
     }).then(function(res){
       console.log("第三个then中拿到的第二个then的值："+ res)
