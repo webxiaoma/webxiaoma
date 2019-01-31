@@ -9,10 +9,6 @@
 <body>
   <script>
 
-      console.log("1".split(","))
-      console.log([].join(","))
-
-
      function Promise(fn){
         this.state = 'pending';
         this.doneLists = [];
@@ -64,8 +60,13 @@
                 this.doneLists.push(deferred);
                 return;
             }
-            var ret = deferred.done(this.value);
-            deferred.resolve(ret);
+            try{
+                var ret = deferred.done(this.value);
+                deferred.resolve(ret);
+            }catch(err){
+
+            }
+          
     }
 
     // 测试
@@ -92,6 +93,8 @@
       return "第三个then的返回值"
     }).then(function(res){
       console.log(res)
+    }).catch(function(res){
+        console.log(111)
     })
   </script>
 </body>
