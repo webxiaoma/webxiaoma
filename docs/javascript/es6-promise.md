@@ -37,8 +37,26 @@ $.ajax({
   }
 })
 ```
-`promise`出现后好了很多，那么`promise`就没有缺点了么
+`promise`出现后好了很多，我们可以使用链式的调用来处理异步操作:
 
+```js
+request()
+.then(function(res){
+
+})
+.then(function(res){
+
+})
+.catch(function(err){
+    
+})
+```
+
+当然`promise`也是有缺陷的：
+
+1. `Promise`在执行时是无法取消的。
+2. `Promise`内部抛出的错误，只能通过`catch`捕获，否则不会反应到外部。
+3. `Promise`对象代表一个异步操作，有三种状态：`pending`（进行中）、`fulfilled`（已成功）和 `rejected`（已失败）, 在`promise`执行时我们无法得知进行到哪一步了。
 
 ## Promise 的简单实现
 
@@ -135,17 +153,6 @@ Promise.prototype.handle = function(deferred){
 上面的代码执行过程可以用下图表示（[原谅盗图](https://github.com/panyifei/Front-end-learning/blob/master/%E6%A1%86%E6%9E%B6%E4%BB%A5%E5%8F%8A%E8%A7%84%E8%8C%83/pics/m-resolve.png)）
 
 ![执行过程](/img/promise-2.png)
-
-
-
-### 实现catch方法   
-
-上面我们简单的实现了`promise`的`then`方法,下面我们来实现`catch`方法
-
-
-
-
-
 
 
 
