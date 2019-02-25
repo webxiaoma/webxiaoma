@@ -20,11 +20,14 @@ meta:
 - [Vue-loader 官网](https://vue-loader-v14.vuejs.org/zh-cn/)
 - [Vue-Cli3.0 官网](https://cli.vuejs.org/zh/guide/)
 - [flyJs http交互插件](https://github.com/wendux/fly)(类似axios)
+
+
 ### 组件网站
 
 - [Element-Ui pc端](http://element.eleme.io/#/zh-CN/component/installation)（饿了么）
+
 - [Mint-Ui 移动端](https://mint-ui.github.io/#!/zh-cn)（饿了么）
 
 - [Vant 移动端](https://youzan.github.io/vant/#/zh-CN/tabbar)（有赞）
 
-- [Ant Design of Vue](https://vuecomponent.github.io/ant-design-vue/docs/vue/introduce-cn/)(蚂蚁金服)
+- [Ant Design of Vue](https://vue.ant.design/docs/vue/introduce-cn/)(蚂蚁金服)

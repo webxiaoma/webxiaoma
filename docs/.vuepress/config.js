@@ -32,6 +32,9 @@ module.exports = {
                 ]},
                 {text:'Vue', link:'/vue/'},
                 {text:'React', link:'/react/'},
+                {text:'前端插件', items:[
+                    {text:"日历插件（js）",link:'/web-plugin/calendar.html'},
+                ]},
             ]},
             { text: '后端', items: [
                 {text:'Linux', link:'/linux/'},
@@ -223,6 +226,9 @@ module.exports = {
                     children: [
                     ]
                 }
+            ],
+            '/web-plugin/':[
+                "calendar"
             ],
             '/node/':[
                 '',
