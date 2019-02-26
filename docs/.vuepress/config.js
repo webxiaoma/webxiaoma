@@ -228,7 +228,13 @@ module.exports = {
                 }
             ],
             '/web-plugin/':[
-                "calendar"
+                {
+                    title: 'JavaScript版本',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                        "calendar"
+                    ]
+                }
             ],
             '/node/':[
                 '',
