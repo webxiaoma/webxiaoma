@@ -1,5 +1,5 @@
 ---
-sidebarDepth: 1
+sidebarDepth: 2
 meta:
   - name: keywords
     content: node nodejs js es6
@@ -66,6 +66,7 @@ npm adduser  用户登录
 npm publish 发布模块
 npm access 在发布的包上设置访问级别
 npm package.json的语法
+npm unpublish 包名 --force  // 撤销发布的包 不建议这么做
 ```
 
 **注意事项：** 国内使用npm会很慢，我们可以使用淘宝镜像。
@@ -125,6 +126,8 @@ npm init
 		"url": "https://path/to/url"
 	},
 	"license":"MIT",
+	"homepage":"https://github.com/webxiaoma/vue-subgrade#readme",
+	"contributors":"Jhone",
 	"engines": {"node": "0.10.x"},
 	"bugs":{"url":"http://path/to/bug","email":"bug@example.com"},
 	"contributors":[{"name":"李四","email":"lisi@example.com"}],
@@ -160,7 +163,9 @@ npm init
 - `keywords`：关键字，有助于在人们使用 npm search 搜索时发现你的项目
 - `main`: 入口文件，一般都是 index.js
 - `scripts`：支持的脚本，默认是一个空的 test
-- `license`：默认是 MIT
+- `license`：项目许可证，让使用者知道是如何被允许使用此项目，默认是 MIT
+- `homepage`:包的官网地址
+- `contributors`:包的其他贡献者
 - `engines`：字段指明了该模块运行的平台，比如 Node 的某个版本或者浏览器。
 - `bugs`：当前项目的一些错误信息，如果有的话
 - `dependencies`：在生产环境中需要用到的依赖
@@ -330,7 +335,6 @@ npm install  --save-dev myself-test-package
 
 1. [跟踪Github项目的持续集成状态](https://harttle.land/2016/04/30/github-ci.html)
 2. [使用travis-ci集成一个vue.js项目](https://yimogit.github.io/2017/07/24/%E4%BD%BF%E7%94%A8travis-ci%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2github%E4%B8%8A%E7%9A%84%E9%A1%B9%E7%9B%AE/)
-
 
 
 
