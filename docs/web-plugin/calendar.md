@@ -12,8 +12,11 @@ meta:
 
 ## 版本
 
-[web-calendar-js](https://github.com/webxiaoma/web-calendar-js)日历插件，版本为 <Badge>v0.1.1-bate</Badge>
+[web-calendar-js](https://github.com/webxiaoma/web-calendar-js)日历插件，版本为 <Badge>v1.0.1</Badge>
 
+## 兼容
+
+兼容 `IE9+`
 
 ## 安装
 
@@ -21,13 +24,13 @@ meta:
 
 - 引入`js`
 
-```
+```HTML
 <script src="https://webxiaoma.github.io/web-calendar-js/lib/js/calendar.min.js"></script>
 ```
 
 - 引入`css`
 
-```
+```HTML
 <link rel="stylesheet" href="https://webxiaoma.github.io/web-calendar-js/lib/static/css/calendar.min.css">
 ```
 ::: tip 提示
