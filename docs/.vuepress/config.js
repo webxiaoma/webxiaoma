@@ -224,6 +224,7 @@ module.exports = {
                     title: 'React技术栈',
                     collapsable: true, // 是否可折叠
                     children: [
+                        'redux'
                     ]
                 }
             ],

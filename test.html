@@ -6,14 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-       .test_wrap{
-           
+       .detialTable{
+          border:1px solid #d1d1d1;
+       }
+
+       .detialTable th{
+           border:1px solid #d1d1d1;
+           width:150px;
+           padding:5px;
+           font-size:14px;
+           color:#333;
+       }
+
+       .detialTable td{
+           padding:5px 0;
+           border:1px solid #d1d1d1;
+           font-size:12px;
+           color:#333;
+           text-align: center;
        }
       
     </style>
 </head>
 <body>
-    <div></div>
+    <div>
+
+        <table class="detialTable" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <t>测试人员</th>
+                    <th>授权测试类型</th>
+                    <th>授权时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>评估测评类</td>
+                    <td>评估测评类</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
 
     <script>
         var  ary = [];

@@ -14,9 +14,10 @@ meta:
 
 [web-calendar-js](https://github.com/webxiaoma/web-calendar-js)日历插件，版本为 <Badge>v1.0.1</Badge>
 
-## 兼容
+## 注意事项
 
-兼容 `IE9+`
+- 兼容 `IE8+` (不包括IE8)
+- 本日历插件年份范围在`1900年`—— `2100年`
 
 ## 安装
 

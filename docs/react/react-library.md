@@ -28,11 +28,9 @@ meta:
 
 ## React 网站
 
-
-
 - [react中文文档](https://react.docschina.org/)
 
-- [redux 中文文档](http://cn.redux.js.org/index.html)
+- [redux 中文文档](https://www.redux.org.cn/)
 
 - [redux-thunk中间件](https://github.com/reduxjs/redux-thunk)
 
