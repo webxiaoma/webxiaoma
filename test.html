@@ -30,7 +30,6 @@
 </head>
 <body>
     <div>
-
         <table class="detialTable" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
@@ -49,29 +48,15 @@
         </table>
 
     </div>
-
+    <input type="text" onChange="fun()">
     <script>
-        var  ary = [];
-        var  cont = 0;
-        function fun(n,s,sum){
-            // function creat(a,b){
-            //     ++cont;
-            //     ary.push(a)
-            //     if(cont < sum){
-            //         creat(b,a+b)
-            //     }
-            // }
-            // creat(n,s)
-
-            for(var i = 0;i<sum;i++){
-               var newSum =  n + s
-            }
-        }
-        fun(0,1,5)
-        console.log(ary)
-
-
-    
+       
+         
+       function fun(){
+         var  input = document.querySelector("input")
+         var test = input.value
+         console.log(/\./g.test(test))
+       }
     </script>
 </body>
 </html>

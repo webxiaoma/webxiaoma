@@ -105,7 +105,7 @@ function reducer(state={test:111},action){
    }
 }
 ```
-当我们发起当我们发起如下`action`时，`reducer`会接收到,匹配到`action`中的`type`为`ONE`,就会返回`Objcet.assign({},state,action.payload)`一个更新后的`state`对象
+当我们发起如下`action`时，`reducer`会接收到,匹配到`action`中的`type`为`ONE`,就会返回`Objcet.assign({},state,action.payload)`一个更新后的`state`对象
 ```js
 function action(type,obj){
     return {
@@ -176,28 +176,180 @@ let store = createStore(allReducers)
 发起`action`时，所有的`reducer`回接收到`action`，然后去进行匹配，当匹配成功后`reducer`将会更新`state`,更新完成后`Store`会触发`subscribe()`监听函数
  
 ```
-      
-页面 ----> 触发dispath(action) ----> Store(reducer) ----> 触发所有`subscribe()`监听函数
+页面 ----> 触发dispath(action) ----> Store(reducer) ----> 触发所有subscribe()监听函数
 ```
-
-![]()
-
-
 ## 结合React
 
+`redux`并不是为`react`所开发，`Redux` 支持 `React`、`Angular`、`jQuery` 甚至纯 `JavaScript`。在react中为了更好的使用`redux`，社区提供了一个`react`绑定库[react-redux](https://github.com/reduxjs/react-redux)
 
 
-## 异步处理
+`react-redux`是基于容器组件和展示组件来关联`redux`和`react`的, 所谓的容器组件，就是我们指展示页面，没有处理数据的组件；而容器组件直接链接了`redux`,来渲染处理数据。[容器组件和展示组件的对比](https://www.redux.org.cn/docs/basics/UsageWithReact.html)
+
+| | 展示组件 | 容器组件 |
+|---|---|---|
+|作用 | 描述如何展现（骨架、样式） | 描述如何运行（数据获取、状态更新） |
+|直接使用 Redux | 否	 | 是 |
+|数据来源 | props | 监听 Redux state |
+|数据修改 | 从 props 调用回调函数 | 向 Redux 派发 actions |
+|调用方式 | 手动| 通常由 React Redux 生成  |
+
+
+`react-redux` 为我们提供了一些便利的方法和组件例如：
+
+- `<Provider></Provider>`组件,我们可以将`store`传入该组件，该组件会将数据分发到每个被 `connect()` 包装的组件中（俗称容器组件）
+- `connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])`方法链接了`react`和`redux` 的`store`
+
+这两个API的具体使用[可以看这里](http://cn.redux.js.org/docs/react-redux/api.html)
 
 
 
+## 中间件与异步处理
+
+在同步中，`redux`通过`dispatch`发出`action`后，`reducer`会立即处理`state`;而在异步中`dispatch`发出`action`后，我们想要的是等待请求完成拿到数据后，`reducer`在去处理`state`，这时我们就需要用到中间件。
+
+### 中间件
+
+为了解决上面的问题，我们可以对`store.dispatch()`进行改造，在`dispatch`发送`action`之后，到`reducer`之前我们可以搞一些事情，比如我们做一个在发送`action`之前，打印一下日志，在发送之后，也打印一下日志的功能，我们可以对`store.dispaatch()`进行如下改造
+
+1. 方法一： 封装`dispatch`
+
+```js
+function packDispatch(store,action){
+    console.log("action发送之前")
+    store.dispatch(action)
+    console.log("action发送之后")
+}
+```
+下来我们可以使用`packDispatch()`来替代`dispatch`,这是最简单的改造，但是我们一般不会这么去做。
+
+2. 方法二： 先存储`store.dispatch`,然后在直接修改`store`的`dispatch`，我们把它放到一个函数里
+
+```js
+function logger(store,action){
+    let preDispatch = store.dispatch;
+    store.dispatch = function (action) {
+        console.log('action发送之前');
+        preDispatch(action);
+        console.log('action发送之后');
+    }
+}
+```
+
+上面这种方式就是中间的雏形，另外在`redux`中，提供了一个`applyMiddleware`方法，该方法让我们可以向`redux`中添加很多中间件，然后组织中间件依次执行,它的用法如下
+
+```js
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'logger';
+
+const store = createStore(
+  reducer,
+  applyMiddleware(logger,中间件二,中间件三,...)
+);
+```
+
+使用这个方法后，我们可以这样编写我们的中间件（使用柯里化函数），
+
+```js
+const logger = store => preDispatch => action =>{
+    console.log('action发送之前')
+    preDispatch(action)
+    console.log('action发送之后')
+}
+```
+上面的写法等同于下面`ES5`的写法：
+
+```js
+function logger(store){
+   return function(preDispatch){
+        return function(action){ 
+            console.log('action发送之前')
+            let result = preDispatch(action)
+            console.log('action发送之后')
+
+            return result;
+        }
+   }
+}
+```
+
+像这些传参，赋值的事情就统一交给了`applyMiddleware`去做，`applyMiddleware`就类似于下面的代码，去处理我们的中间件：
+
+```js
+// 伪代码，并不是applyMiddleware的源码，这里只是为了说明applyMiddleware是如何处理我们的中间件的
+function applyMiddleware(store,middlewares){
+    var dispatch = store.dispatch; // 存储上一个dispatch
+    
+    middlewares.forEach(middleware =>
+       dispatch = middleware(store)(dispatch) // 改写dispatch
+    )
+    return Object.assign({}, store, { dispatch:preDispatch })
+}
+```
+我们可以发现将中间件传入`applyMiddleware()`中后，`applyMiddleware`会为我们注入`store`,还有注入`dispatch`，这样我们可以链式的包装原来的`dispatch`了。
+
+关于`applyMiddleware`的源码，我们在这里不做主要分析；
 
 
 
-## 实践
+### 异步处理
+
+`redux`在处理同步操作时，发出一种`action`即可，在处理异步时，需要发出三种`action`:
+
+:::tip 异步三种action
+- 一种通知 reducer 请求开始的 action。
+ 
+- 一种通知 reducer 请求成功的 action。
+
+- 一种通知 reducer 请求失败的 action。
+:::
+
+例如下面发出三种`action`
+
+为了方便，我们如何在请求前，发出一种action通知请求后，如何在操作结束时，自动送出其他 `Action` 呢,这时候我们就想到，如果将上面发送请求方法放到一个函数中，然后`dispatch()`可以派发一个函数多好。就像下面这样
+
+```js
+function jsonReq(url){
+   return dispatch => {
+        dispatch({type:"START"})
+        fetch(url).then(res=>{
+            dispatch({type:"SUCCESS",payload:res.data})
+        }).catch(err=>{
+            dispatch({type:"ERROR",payload:res.data})
+        })
+   }
+}
+
+dispatch(jsonReq("/url/api"))
+```
+
+以前`dispatch()`是只能传入`action`或`action`创建函数的，`action`创建函数现在返回的也是一个对象，现在我们返回的是一个函数，为了实现让`dispatch`接收一个返回函数，我们就需要用到中间件了，使用中间件`redux-thunk`就解决了我们的问题；使用`redux-thunk`后，`dispatch`就可以接收一个返回函数，`redux-thunk`的使用方式如下：
+
+```js
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import reducer from './reducers';
+
+const store = createStore(
+  reducer,
+  applyMiddleware(thunk)
+);
+```
+
+既然我们可以通过中间件，让`dispatch`接收一个返回函数，那么我们也可以让`dispatch`接收其他类型的函数或对象，如接收`promise`，这是就要用到[redux-promise](https://github.com/redux-utilities/redux-promise)中间件
 
 
+**除了上面提到的中间件，还有更多的中间件：**
 
 
+- [redux-promise-middleware](https://github.com/pburtchaell/redux-promise-middleware)
 
-- [Redux中文网](https://www.redux.org.cn)
+- [redux-observable](https://github.com/redux-observable/redux-observable)
+
+- [redux-saga](https://github.com/redux-saga/redux-saga)
+
+- [redux-pack](https://github.com/lelandrichardson/redux-pack)
+
+- [redux-promise](https://github.com/redux-utilities/redux-promise)
+
+- [redux-thunk](https://github.com/reduxjs/redux-thunk)
+
