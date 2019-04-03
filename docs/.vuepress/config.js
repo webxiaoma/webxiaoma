@@ -208,13 +208,20 @@ module.exports = {
             
             '/vue/':[
                 '',
-                '学习须知',
                 {
                     title: 'vue基础',
                     collapsable: true, // 是否可折叠
                     children: [
                       'vue-cli-3',
-                      'vue-problem'
+                      'vue-problem',
+                      'vue-plugins'
+                    ]
+                },
+                {
+                    title: 'vue进阶',
+                    collapsable: true, // 是否可折叠
+                    children: [
+                       'vue-reactive'
                     ]
                 }
             ],
