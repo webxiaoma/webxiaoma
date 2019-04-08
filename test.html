@@ -29,34 +29,21 @@
     </style>
 </head>
 <body>
-    <div>
-        <table class="detialTable" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <t>测试人员</th>
-                    <th>授权测试类型</th>
-                    <th>授权时间</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>张三</td>
-                    <td>评估测评类</td>
-                    <td>评估测评类</td>
-                </tr>
-            </tbody>
-        </table>
-
+    <div class="multi-con-list-li multi-con-list-li-group" data-msgnum="{{msgNum}}" data-wxid="{{wxId}}" data-robotid="{{robotId}}" data-wxname="{{peopleName}}" data-time="{{peopleTime}}">
+        <div class="multi-con-list-info">
+            <img src="{{wxImg}}" alt="">
+            <div class="multi-con-list-info-text">
+                <p>
+                    <span class="multi-left">{{peopleName}}</span>
+                    <span class="multi-right">{{peopleTime}}</span>
+                </p>
+                <p class="wxRemark {{isWxR}}">{{wxRemark}}</p>
+                <p class="p-ellipsis">{{peopleMsg}} {{groupNum}}</p>
+            </div>
+        </div>
+        <div class="multi-cin-list-robot">{{peopleId}}</div>
+        <%--计数红点--%>
+        <p class="promptNum  {{isNumShow}}">{{msgNum}}</p>
     </div>
-    <input type="text" onChange="fun()">
-    <script>
-       
-         
-       function fun(){
-         var  input = document.querySelector("input")
-         var test = input.value
-         console.log(/\./g.test(test))
-       }
-    </script>
 </body>
 </html>

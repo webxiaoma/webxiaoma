@@ -34,7 +34,7 @@ meta:
 
 `Dep` 消息订阅器的作用是存储所有订阅者，同时接受`Observer` 监听器发出的消息，接受到消息后并对订阅者做一些处理（是添加订阅者还是批量通知订阅者）
 
-**3. 实现 Watcher 订阅者**
+**3. 实现 Watcher 订阅者：**
 
 `Watcher` 订阅者是作为`Observer`和`Compile`之间通信的桥梁，它主要的做的一些事是:
 
@@ -56,9 +56,18 @@ meta:
 ### Observer 监听器的实现
 
 ```js
+function observe(data){
+  if(!data || typeof data !== "object"){ // 判断传入的data是否为对象
+      return
+  }
+  Object.keys(data).forEach(key=>{ // 遍历data对象中一级属性
+    defineReactive(data,key,data[key])
+  }) 
+}
+
 function defineReactive(data,key,val){
     observe(val) // 递归遍历对象
-    let dep = new Dep() // 创建Dep 实例
+
     Object.defineProperty(data,key,{
        enumerable:true,
        configurable:true,
@@ -70,7 +79,7 @@ function defineReactive(data,key,val){
             dep.notify(); // 通知Dep 发布消息
        },
        get(){
-           if(dep.target){ // 判断观察者Watcher 是否存在
+           if(Dep.target){ // 判断观察者Watcher 是否存在
                dep.addSub(Dep.target) // 添加观察者
            }
            return val 
@@ -78,18 +87,7 @@ function defineReactive(data,key,val){
     })
    
 }
-
-function observe(data){
-  if(!data || typeof data !== "object"){ // 判断传入的data是否为对象
-      return
-  }
-  Object.keys(data).forEach(key=>{ // 遍历data对象中一级属性
-    defineReactive(data,key,data[key])
-  }) 
-}
-
 ```
-
 
 ### Dep 消息订阅器的实现
 

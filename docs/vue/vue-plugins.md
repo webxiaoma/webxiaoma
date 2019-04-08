@@ -7,9 +7,11 @@ meta:
     content: 本文章主要讲述如何编写vue插件。
 ---
 
-# Vue 编写插件(2.x)
+# Vue 编写插件
 
 ---
+
+<Badge type="tip">vue 版本2.x</Badge>
 
 ## 组件和插件
 
