@@ -16,27 +16,80 @@
     <div></div>
 
     <script>
-        var  ary = [];
-        var  cont = 0;
-        function fun(n,s,sum){
-            // function creat(a,b){
-            //     ++cont;
-            //     ary.push(a)
-            //     if(cont < sum){
-            //         creat(b,a+b)
-            //     }
-            // }
-            // creat(n,s)
-
-            for(var i = 0;i<sum;i++){
-               var newSum =  n + s
+       function Promise(fn){
+            this.state = 'pending';
+            this.doneLists = []; // 存储对象
+            this.value = null; // 存储resolve中的参数
+            var _that = this;
+            function resolve(newValue) {
+                // 判断传入的是否是promise,如果是
+                // 则或者它的then方法，执行并将this执行当前promise, 将resolve 存入done中
+                if (newValue && (newValue instanceof Promise)) {
+                    var then = newValue.then;
+                    then.call(newValue, resolve);
+                    return;
+                }
+                
+                // 如果不是promise 将状态改为fulfilled
+                _that.state = 'fulfilled';
+                _that.value = newValue; // 存储resolve传入的值
+                setTimeout(function () {
+                    // 循环执行存储的then中的回调和后面promise的resolve
+                    _that.doneLists.forEach(function (deferred) {
+                        _that.handle(deferred);
+                    });
+                }, 0);
             }
-        }
-        fun(0,1,5)
-        console.log(ary)
+            
+            fn(resolve);
+    }
 
-
+    //  封装then方法，每次then执行后返回一个新的promise
+    Promise.prototype.then = function(done){
+       
+        var _that = this
     
+        return new Promise(function(resolve){
+            _that.handle({
+                // 执行then方法时，将then中的回调函数存储在done中
+                done: done || null,
+                // 将返回的promise中的resolve存储在对象中，以供调用后面的then方法。
+                resolve: resolve
+            });
+        });
+    }
+
+    // 封装一个handle方法，将then中的回调函数和
+    // then中返回的promise中的resolve存储起来
+    Promise.prototype.handle = function(deferred){ 
+        // 如果是 pending状态，将对象deferred存入当前对象的doneLists中
+        if (this.state  === 'pending') {
+            this.doneLists.push(deferred);
+            return;
+        }
+        // 如果不是`pending`状态，执行done,拿到回调函数的返回值，执行后面的resolve方法
+        // 传入到下个then的回调函数中
+        var ret = deferred.done(this.value);
+        deferred.resolve(ret);
+    }
+
+
+
+    function f(){
+        return new Promise((resolve,reject)=>{
+            resolve("第一个")
+        })
+    }
+
+    f().then((res)=>{
+        console.log(res)
+        var pro = new Promise((resolve,reject)=>{
+           resolve("hah")
+        })
+        return pro
+    }).then(res=>{
+        console.log(res)
+    })
     </script>
 </body>
 </html>
