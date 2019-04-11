@@ -12,20 +12,31 @@ meta:
 
 ## 版本
 
-日历插件，版本为 <Badge>v0.1.1-bate</Badge>
+[web-calendar-js](https://github.com/webxiaoma/web-calendar-js)日历插件，版本为 <Badge>v1.0.1</Badge>
 
+## 注意事项
+
+- 兼容 `IE8+` (不包括IE8)
+- 本日历插件年份范围在`1900年`—— `2100年`
 
 ## 安装
 
 **1. 第一种方式，直接引入**
 
-
-
 - 引入`js`
 
+```HTML
+<script src="https://webxiaoma.github.io/web-calendar-js/lib/js/calendar.min.js"></script>
 ```
 
+- 引入`css`
+
+```HTML
+<link rel="stylesheet" href="https://webxiaoma.github.io/web-calendar-js/lib/static/css/calendar.min.css">
 ```
+::: tip 提示
+推荐下载到本地使用，在 [web-calendar-js] 中 的 `lib`目录中引入相应的`js`以及`css`
+:::
 
 **2. 第二种方式**
 
@@ -69,11 +80,9 @@ var cal = new Calendar(el,options)
 
 | 事件 | 说明 | 回调参数 |
 | ------ | ------ | ------ |
-| click | 选择日期时触发 | 返回日期对象day，日期对象中含有日期信息dayMsg |
+| click | 选择日期时触发 | 返回日期对象day，日期对象中含有日期信息[dayMsg对象](/web-plugin/calendar.html#daymsg对象) |
 | change | 日期更改时触发 | 返回包含年月日等信息的对象 | 
 | rightHandClick | 右击日期时触发 | 返回日期对象day |
-
-
 
 
 ## `Options` 方法
@@ -82,7 +91,6 @@ var cal = new Calendar(el,options)
 | ------ | ------ | ------ |
 | beforeCreateDay | 日期天数创建前钩子函数 | 返回日期对象day |
 | afterCreateDay | 日期天数创建后钩子函数 | 返回日期对象day | 
-
 
 
 ## 其它对象说明
@@ -115,6 +123,7 @@ var cal = new Calendar(el,options)
 
 ## 例子
 
+在线地址：[https://webxiaoma.github.io/web-calendar-js/test/index.html](https://webxiaoma.github.io/web-calendar-js/test/index.html)
 
- 
-## 更新日志
+<iframe width="800" height="600" allowfullscreen style="border:0;" src="https://webxiaoma.github.io/web-calendar-js/test/index.html">
+</iframe>
