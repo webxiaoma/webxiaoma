@@ -67,7 +67,7 @@ function observe(data){
 
 function defineReactive(data,key,val){
     observe(val) // 递归遍历对象
-
+    var dep = new Dep()
     Object.defineProperty(data,key,{
        enumerable:true,
        configurable:true,
@@ -111,7 +111,7 @@ Dep.prototype = {
 ### Watcher 订阅者的实现
 
 ```js
-unction Watcher(vm,key,callback){
+function Watcher(vm,key,callback){
     this.callback = callback;  // 存储观察者的回调函数
     this.vm = vm;  // 存储入口函数的实例this
     this.key = key; 
@@ -129,7 +129,7 @@ Watcher.prototype = {
             this.callback(value) // 调用回调函数并传入变化后的值更新视图
         }
     },
-    get(){  // 该方法可以在初始化时，将Watcher 观察者初始化并添加到订阅其中
+    get(){  // 该方法可以在初始化时，将Watcher 观察者初始化并添加到订阅器中
         Dep.target = this; 
 
         // 获取初始值时（这是实际是获取的vue实例中data中的初始值），会触发Observer监听器中的get方法
@@ -182,7 +182,7 @@ Compile.prototype = {
       
     },
     compileText(node,exp){ // 将数据初始化，并生成订阅器实例（订阅者），并更新视图
-        this.updateView(node,this.vm[exp])
+        this.updateView(node,this.vm.data[exp])
         new Watcher(this.vm,exp,(value)=>{ // 当数据变化时将会执行回调函数，并更新视图
             this.updateView(node,value)
         })
