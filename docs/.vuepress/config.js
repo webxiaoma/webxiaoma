@@ -27,6 +27,7 @@ module.exports = {
                 {text:'前端工具', items:[
                     {text:"Webpack打包",link:'/webpack/'},
                     {text:"Git版本工具",link:'/git/'},
+                    {text:"ESLint代码检测",link:'/eslint/'},
                     // {text:"编辑器的使用",link:'/tool/vscode.html'},
                     // {text:"调试工具",link:'/tool/chorme.html'},
                 ]},
@@ -164,6 +165,10 @@ module.exports = {
                 'Git多账户管理',
                 'Git的相关配置',
                 'Git的子模块'
+            ],
+            'eslint':[
+                '',
+                'eslint'
             ],
             '/tool/':[
                  {
