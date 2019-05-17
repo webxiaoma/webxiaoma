@@ -15,3 +15,5 @@ meta:
 - [ESLint 中文网](https://cn.eslint.org/)
 
 ## 文章
+
+- [前端工具考 - ESLint 篇 ESlint发展史](https://zhuanlan.zhihu.com/p/32297243)
