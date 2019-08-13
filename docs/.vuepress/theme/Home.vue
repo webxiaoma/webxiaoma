@@ -14,16 +14,14 @@
           其他相关账户
       </h3>
 
-       <a href="https://weibo.com/u/5544336237?is_all=1" target="_banlk">
+       <a href="https://webxiaoma.github.io/project-cli/docs/blogs/" target="_banlk">
         <el-button type="primary">
-          <i class="el-icon-search el-icon--right"></i>
-          微博
+            Project-Cli 项目工具
         </el-button>
        </a>
-      <a href="/git/" target="_banlk">
+      <a href="https://webxiaoma.github.io/web-plugins/docs/blogs/" target="_banlk">
         <el-button type="primary">
-          <i class="el-icon-search el-icon--right"></i>
-          Git教程
+            前端库插件
         </el-button>
        </a>
        <!-- <a href="/knowledge/" target="_banlk">

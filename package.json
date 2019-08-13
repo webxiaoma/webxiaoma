@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "directories": {
-    "start": "npx vuepress dev docs",
-    "build": "npx vuepress build docs"
+   
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx vuepress dev docs",
+    "build": "npx vuepress build docs"
   },
   "repository": {
     "type": "git",
