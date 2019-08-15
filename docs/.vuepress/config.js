@@ -12,7 +12,7 @@ module.exports = {
         logo:'/img/manong.jpg',
         searchMaxSuggestions: 15, // 搜索设置数量
         nav: [  // 导航栏 使用了element 导航
-            { text: '首页', link: '/'},
+            { text: '首页', link: '/' },
             { text: '前端', items: [
                 {text:'JavaScript', items:[
                     {text:"JavaScript",link:'/javascript/js-bom.html'},
@@ -46,7 +46,7 @@ module.exports = {
                 ]},
                 {text:'网络知识', link:'/network/'},
             ]},
-            { text: 'English', link: '/english/'},
+            { text: '微信', link: 'https://webwangjia.github.io/wechat-demo/docs/blogs/', blank: true },
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true}
         ],
         sidebar: {  // 侧边栏
@@ -338,22 +338,6 @@ module.exports = {
                     ] 
                 },
             ],
-            '/english/':[
-                {
-                    title: 'English常用网站',
-                    collapsable: true, // 是否可折叠
-                    children: [
-                      '',
-                    ]
-                },
-                {
-                    title: 'English Learn',
-                    collapsable: true, // 是否可折叠
-                    children: [
-                      '英语语法.md',
-                    ]
-                }
-            ]
         },
         sidebarDepth:2,// 侧边栏最大层级 最大只能为2
        // displayAllHeaders:true,  // 侧边栏所有链接全展开

@@ -13,16 +13,20 @@
       <h3 class="description">
           其他相关账户
       </h3>
-
        <a href="https://webxiaoma.github.io/project-cli/docs/blogs/" target="_banlk">
         <el-button type="primary">
-            Project-Cli 项目工具
+            Project-Cli 项目工具 →
         </el-button>
        </a>
-      <a href="https://webxiaoma.github.io/web-plugins/docs/blogs/" target="_banlk">
+       <a href="https://webxiaoma.github.io/web-plugins/docs/blogs/" target="_banlk">
         <el-button type="primary">
-            前端库插件
+            前端库插件 →
         </el-button>
+       </a>
+       <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_banlk">
+          <el-button type="primary">
+              WeChat微信 →
+          </el-button>
        </a>
        <!-- <a href="/knowledge/" target="_banlk">
         <el-button type="primary">
