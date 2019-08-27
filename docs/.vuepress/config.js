@@ -42,10 +42,12 @@ module.exports = {
                 {text:'NodeJS', link:'/node/'},
                 {text:'Java', link:'/java/'},
                 {text:'数据库', items:[
-                    {text:"MongoDB",link:'/database/MongoDB.html'},
+                    {text: "MongoDB", link: '/database/MongoDB.html' },
+                    { text: "MySQL", link: 'https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html', blank: true},
                 ]},
                 {text:'网络知识', link:'/network/'},
             ]},
+            { text: '工具', link: 'https://webxiaoma.github.io/tools-docs/docs/blogs/index.html', blank: true },
             { text: '微信', link: 'https://webwangjia.github.io/wechat-demo/docs/blogs/', blank: true },
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true}
         ],
