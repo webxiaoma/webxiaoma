@@ -73,8 +73,9 @@ meta:
 `Vant` 是由有赞发布的，轻量的`vue UI` 组件库。
 
 - 类型：`移动端`
-- [GitHub仓库](https://github.com/jdf2e/nutui)
-- [官方网站](https://nutui.jd.com/#/index)
+- [GitHub仓库](https://github.com/youzan/vant)
+- [官方网站](https://youzan.github.io/vant/#/zh-CN/intro)
+
 
 
 ### NutUI 组件库
@@ -82,8 +83,8 @@ meta:
 一套京东风格的轻量级移动端`Vue`组件库
 
 - 类型：`移动端`
-- [GitHub仓库](https://github.com/youzan/vant)
-- [官方网站](https://youzan.github.io/vant/#/zh-CN/intro)
+- [GitHub仓库](https://github.com/jdf2e/nutui)
+- [官方网站](https://nutui.jd.com/#/index)
 
 
 
