@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript之基础类型和引用类型 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文讲述JavaScript中的数据类型，包括基础数据类型以及引用数据类型。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="基础数据类型, 引用数据类型, es6，js引用数据类型  马新想">
+    <link rel="preload" href="/assets/css/0.styles.0271ea14.css" as="style"><link rel="preload" href="/assets/js/app.510e21bd.js" as="script"><link rel="preload" href="/assets/js/35.028c8e2f.js" as="script"><link rel="prefetch" href="/assets/js/10.d348b77c.js"><link rel="prefetch" href="/assets/js/100.f35c2052.js"><link rel="prefetch" href="/assets/js/101.fe9e66aa.js"><link rel="prefetch" href="/assets/js/102.8cfeeff8.js"><link rel="prefetch" href="/assets/js/103.2f6c7f62.js"><link rel="prefetch" href="/assets/js/104.f5b1856d.js"><link rel="prefetch" href="/assets/js/105.1004bf66.js"><link rel="prefetch" href="/assets/js/106.91495825.js"><link rel="prefetch" href="/assets/js/107.a49bc073.js"><link rel="prefetch" href="/assets/js/108.34b9a477.js"><link rel="prefetch" href="/assets/js/109.135311f6.js"><link rel="prefetch" href="/assets/js/11.ce2789b5.js"><link rel="prefetch" href="/assets/js/110.2966033f.js"><link rel="prefetch" href="/assets/js/111.77ba9d12.js"><link rel="prefetch" href="/assets/js/112.cfeb1254.js"><link rel="prefetch" href="/assets/js/12.a4c8b8d5.js"><link rel="prefetch" href="/assets/js/13.7dc1ef16.js"><link rel="prefetch" href="/assets/js/14.32b45c9c.js"><link rel="prefetch" href="/assets/js/15.eba85e75.js"><link rel="prefetch" href="/assets/js/16.b3cab72d.js"><link rel="prefetch" href="/assets/js/17.0133b025.js"><link rel="prefetch" href="/assets/js/18.052c6017.js"><link rel="prefetch" href="/assets/js/19.3ea29de4.js"><link rel="prefetch" href="/assets/js/2.72e3aa26.js"><link rel="prefetch" href="/assets/js/20.877e7e74.js"><link rel="prefetch" href="/assets/js/21.057a8e9b.js"><link rel="prefetch" href="/assets/js/22.e609402e.js"><link rel="prefetch" href="/assets/js/23.7d6bd9cc.js"><link rel="prefetch" href="/assets/js/24.c047402f.js"><link rel="prefetch" href="/assets/js/25.bfea2377.js"><link rel="prefetch" href="/assets/js/26.29581cac.js"><link rel="prefetch" href="/assets/js/27.2bf0ec6d.js"><link rel="prefetch" href="/assets/js/28.c8683e65.js"><link rel="prefetch" href="/assets/js/29.606e25cf.js"><link rel="prefetch" href="/assets/js/3.421284ec.js"><link rel="prefetch" href="/assets/js/30.8284967a.js"><link rel="prefetch" href="/assets/js/31.8b0705f1.js"><link rel="prefetch" href="/assets/js/32.71f0a3c5.js"><link rel="prefetch" href="/assets/js/33.c1d9eef1.js"><link rel="prefetch" href="/assets/js/34.fee12a8e.js"><link rel="prefetch" href="/assets/js/36.3b44e0d1.js"><link rel="prefetch" href="/assets/js/37.097f8033.js"><link rel="prefetch" href="/assets/js/38.49614d55.js"><link rel="prefetch" href="/assets/js/39.206b130f.js"><link rel="prefetch" href="/assets/js/4.43e18de0.js"><link rel="prefetch" href="/assets/js/40.bb43f100.js"><link rel="prefetch" href="/assets/js/41.3f53f8e5.js"><link rel="prefetch" href="/assets/js/42.5d225f43.js"><link rel="prefetch" href="/assets/js/43.20a74701.js"><link rel="prefetch" href="/assets/js/44.f4fbf593.js"><link rel="prefetch" href="/assets/js/45.2f50bc46.js"><link rel="prefetch" href="/assets/js/46.00b72f89.js"><link rel="prefetch" href="/assets/js/47.b88e668e.js"><link rel="prefetch" href="/assets/js/48.1837c170.js"><link rel="prefetch" href="/assets/js/49.a5d85971.js"><link rel="prefetch" href="/assets/js/5.d203a18f.js"><link rel="prefetch" href="/assets/js/50.2ac7a780.js"><link rel="prefetch" href="/assets/js/51.c692a9da.js"><link rel="prefetch" href="/assets/js/52.977a56aa.js"><link rel="prefetch" href="/assets/js/53.25ad8d3a.js"><link rel="prefetch" href="/assets/js/54.6087cb6e.js"><link rel="prefetch" href="/assets/js/55.68656fb3.js"><link rel="prefetch" href="/assets/js/56.8752deb1.js"><link rel="prefetch" href="/assets/js/57.30a6b0df.js"><link rel="prefetch" href="/assets/js/58.4fc909f1.js"><link rel="prefetch" href="/assets/js/59.01668d88.js"><link rel="prefetch" href="/assets/js/6.ec2984d9.js"><link rel="prefetch" href="/assets/js/60.28d4f301.js"><link rel="prefetch" href="/assets/js/61.1be7f4ec.js"><link rel="prefetch" href="/assets/js/62.d0729839.js"><link rel="prefetch" href="/assets/js/63.a56d0e70.js"><link rel="prefetch" href="/assets/js/64.5e5e9cbf.js"><link rel="prefetch" href="/assets/js/65.149b398c.js"><link rel="prefetch" href="/assets/js/66.c8583191.js"><link rel="prefetch" href="/assets/js/67.f771facf.js"><link rel="prefetch" href="/assets/js/68.5df39cc4.js"><link rel="prefetch" href="/assets/js/69.5d736afe.js"><link rel="prefetch" href="/assets/js/7.faf3ccb9.js"><link rel="prefetch" href="/assets/js/70.cb2f6a7d.js"><link rel="prefetch" href="/assets/js/71.9acae64c.js"><link rel="prefetch" href="/assets/js/72.0f82f0df.js"><link rel="prefetch" href="/assets/js/73.983b0786.js"><link rel="prefetch" href="/assets/js/74.c8293f86.js"><link rel="prefetch" href="/assets/js/75.ff130f9e.js"><link rel="prefetch" href="/assets/js/76.e019807d.js"><link rel="prefetch" href="/assets/js/77.e2fa9bf9.js"><link rel="prefetch" href="/assets/js/78.ec829f90.js"><link rel="prefetch" href="/assets/js/79.87394c2d.js"><link rel="prefetch" href="/assets/js/8.93bb7c70.js"><link rel="prefetch" href="/assets/js/80.466a48f0.js"><link rel="prefetch" href="/assets/js/81.d8f53b90.js"><link rel="prefetch" href="/assets/js/82.0bf14c52.js"><link rel="prefetch" href="/assets/js/83.e2ec4965.js"><link rel="prefetch" href="/assets/js/84.7e5d8bf9.js"><link rel="prefetch" href="/assets/js/85.385ef904.js"><link rel="prefetch" href="/assets/js/86.4b78cc8f.js"><link rel="prefetch" href="/assets/js/87.bc578742.js"><link rel="prefetch" href="/assets/js/88.9c8c551e.js"><link rel="prefetch" href="/assets/js/89.8ced3858.js"><link rel="prefetch" href="/assets/js/9.6d63fe50.js"><link rel="prefetch" href="/assets/js/90.ff1f0bbd.js"><link rel="prefetch" href="/assets/js/91.39a6503b.js"><link rel="prefetch" href="/assets/js/92.4b7aa848.js"><link rel="prefetch" href="/assets/js/93.a7603772.js"><link rel="prefetch" href="/assets/js/94.f0e00673.js"><link rel="prefetch" href="/assets/js/95.07f63650.js"><link rel="prefetch" href="/assets/js/96.a0c87ed4.js"><link rel="prefetch" href="/assets/js/97.3140684f.js"><link rel="prefetch" href="/assets/js/98.6f041861.js"><link rel="prefetch" href="/assets/js/99.328e773b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0271ea14.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-70265b54><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-70265b54><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          JavaScript
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          JavaScript
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ECMAScript6
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Git版本工具
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ESLint代码检测
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        React
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端插件
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          日历插件
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        
+         <a href="http://localhost:8080/java-demos/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>Java</a></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          数据库
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          MongoDB
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          
+           <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>MySQL</a></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/index.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>工具</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>微信</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>GitHub</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-70265b54 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-70265b54><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          JavaScript
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          JavaScript
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ECMAScript6
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Git版本工具
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ESLint代码检测
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        React
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端插件
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          日历插件
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        
+         <a href="http://localhost:8080/java-demos/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>Java</a></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          数据库
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          MongoDB
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          
+           <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>MySQL</a></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/index.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>工具</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>微信</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>GitHub</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/javascript/" class="sidebar-link" data-v-5534fc3a>网站</a></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading open"><span>JS常见知识</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/javascript/js-bom.html" class="sidebar-link">JS BOM操作</a></li><li><a href="/javascript/js-dom.html" class="sidebar-link">JS DOM操作</a></li><li><a href="/javascript/js-event.html" class="sidebar-link">JavaScript之事件</a></li><li><a href="/javascript/js-object.html" class="sidebar-link">JavaScript之面向对象</a></li><li><a href="/javascript/function.html" class="sidebar-link">JavaScript之函数</a></li><li><a href="/javascript/prototype-proto.html" class="sidebar-link">JavaScript之原型与原型链</a></li><li><a href="/javascript/execution-contexts.html" class="sidebar-link">JavaScript之执行上下文</a></li><li><a href="/javascript/variable-object.html" class="sidebar-link">JavaScript之变量对象</a></li><li><a href="/javascript/scope-chain.html" class="sidebar-link">JavaScript之作用域和作用域链</a></li><li><a href="/javascript/this-1.html" class="sidebar-link">JavaScript之This（一）</a></li><li><a href="/javascript/this.html" class="sidebar-link">JavaScript之This（二）</a></li><li><a href="/javascript/closure.html" class="sidebar-link">JavaScript之闭包</a></li><li><a href="/javascript/trash-recycling.html" class="sidebar-link">JavaScript之垃圾回收机制</a></li><li><a href="/javascript/data-type.html" class="active sidebar-link">JavaScript之基础类型和引用类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/javascript/data-type.html#基础数据类型" class="sidebar-link">基础数据类型</a></li><li class="sidebar-sub-header"><a href="/javascript/data-type.html#引用数据类型" class="sidebar-link">引用数据类型</a></li></ul></li><li><a href="/javascript/new.html" class="sidebar-link">JavaScript之new操作符</a></li></ul></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>ES6篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>音频视频处理</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>文件与二进制处理</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>离线-缓存-存储</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="javascript之基础类型和引用类型"><a href="#javascript之基础类型和引用类型" class="header-anchor">#</a> JavaScript之基础类型和引用类型</h1> <p>我们都知道在<code>JavaScript</code>中有六种数据类型<code>Number</code>、<code>Blooean</code>、<code>String</code>、<code>Undefined</code>、<code>Null</code>，还有一种复杂的数据类型<code>Object</code>（<code>Array</code>是一种特殊的<code>Object</code>），另外在<code>ES6</code>中新增加一种<code>Symbol</code>数据类型，表示独一无二的值。此外我们还可以将它们分为基础类型和引用类型，这是从它们存储数据的方式来区分的。</p> <hr> <h2 id="基础数据类型"><a href="#基础数据类型" class="header-anchor">#</a> 基础数据类型</h2> <p>基础数据类型的值是不可以改变的，我们常见的数据类型中,如 <code>String</code>、<code>Number</code>、<code>undefined</code>、<code>null</code>、<code>Symbol</code>，都是基本数据类型，基本数据类型的变量是存放在栈区的（栈区指内存里的栈内存），一经设置就不会被修改。此外基本数据类型的比较时，比较的是数据类型，我们来看下面例子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;world&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;老王&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token comment">// &quot;hello world&quot;  str字符串并未被改变</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span> <span class="token comment">//&quot;hello 老王&quot;  返回了一个新字符串</span>
+
+<span class="token comment">// 基本数据类型的比较</span>
+<span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">&quot;one&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">&quot;two&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str2<span class="token punctuation">)</span> <span class="token comment">// true 比较的是数据类型</span>
+</code></pre></div><p>字符串<code>str</code> 和 <code>newStr</code> 用内存图展示如下：</p> <p><img src="/img/this-1.png" alt="基本数据类型"></p> <p>上面的例子，通过<code>replace</code>方法替换<code>world</code>后，并没有修改<code>str</code>本身，因为我们打印<code>str</code>时，输出还是<code>&quot;hello world&quot;</code>, 通过<code>replace</code>方法替换<code>world</code>后而是返回了一个新的字符串。</p> <h2 id="引用数据类型"><a href="#引用数据类型" class="header-anchor">#</a> 引用数据类型</h2> <p>在<code>JavaScript</code>中常见的引用数据类型就是对象了（包括数组）。引用类型的值是同时保存在栈内存和堆内存(数据保存在堆内存中)中的对象，并且引用类型的值在比较时，比较的是内存地址是否相同。我们来看下面的例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 第一种情况</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token punctuation">:</span><span class="token string">'King'</span><span class="token punctuation">,</span>
+  age<span class="token punctuation">:</span><span class="token number">23</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> newObj <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+newObj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 50 obj 中的age被改变了</span>
+
+<span class="token comment">// 基本数据类型的比较</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1 <span class="token operator">==</span> obj2<span class="token punctuation">)</span> <span class="token comment">// false 比较的是内存地址</span>
+</code></pre></div><p>对象<code>obj</code> 和 <code>newObj</code> 用内存图展示如下：</p> <p><img src="/img/this2.png" alt="引用数据类型"></p> <p>上面提到的将<code>obj</code>赋值给<code>newObj</code>对象后，<code>obj</code>和<code>newObj</code>都是引用数据类型，他们的内存地址指向同一个对象，当<code>obj</code>和<code>newObj</code>对象中某一个属性发生变化时，都会影响对应的对象。</p> <p>关于<code>JavaScript</code>中基础类型和引用类型的知识就先汇总到这里</p></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/webxiaoma/webxiaoma/edit/dev/docs/javascript/data-type.md" target="_blank" rel="noopener noreferrer">文章有问题，欢迎提出！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">12/20/2018, 10:17:24 PM</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/javascript/trash-recycling.html" class="prev">
+          JavaScript之垃圾回收机制
+        </a></span> <span class="next"><a href="/javascript/new.html">
+          JavaScript之new操作符
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.510e21bd.js" defer></script><script src="/assets/js/35.028c8e2f.js" defer></script>
+  </body>
+</html>

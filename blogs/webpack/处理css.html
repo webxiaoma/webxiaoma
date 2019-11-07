@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>处理CSS | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文主要讲述webpack中处理css。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="webpack, webpack处理less, webpack处理css">
+    <link rel="preload" href="/assets/css/0.styles.0271ea14.css" as="style"><link rel="preload" href="/assets/js/app.510e21bd.js" as="script"><link rel="preload" href="/assets/js/104.f5b1856d.js" as="script"><link rel="prefetch" href="/assets/js/10.d348b77c.js"><link rel="prefetch" href="/assets/js/100.f35c2052.js"><link rel="prefetch" href="/assets/js/101.fe9e66aa.js"><link rel="prefetch" href="/assets/js/102.8cfeeff8.js"><link rel="prefetch" href="/assets/js/103.2f6c7f62.js"><link rel="prefetch" href="/assets/js/105.1004bf66.js"><link rel="prefetch" href="/assets/js/106.91495825.js"><link rel="prefetch" href="/assets/js/107.a49bc073.js"><link rel="prefetch" href="/assets/js/108.34b9a477.js"><link rel="prefetch" href="/assets/js/109.135311f6.js"><link rel="prefetch" href="/assets/js/11.ce2789b5.js"><link rel="prefetch" href="/assets/js/110.2966033f.js"><link rel="prefetch" href="/assets/js/111.77ba9d12.js"><link rel="prefetch" href="/assets/js/112.cfeb1254.js"><link rel="prefetch" href="/assets/js/12.a4c8b8d5.js"><link rel="prefetch" href="/assets/js/13.7dc1ef16.js"><link rel="prefetch" href="/assets/js/14.32b45c9c.js"><link rel="prefetch" href="/assets/js/15.eba85e75.js"><link rel="prefetch" href="/assets/js/16.b3cab72d.js"><link rel="prefetch" href="/assets/js/17.0133b025.js"><link rel="prefetch" href="/assets/js/18.052c6017.js"><link rel="prefetch" href="/assets/js/19.3ea29de4.js"><link rel="prefetch" href="/assets/js/2.72e3aa26.js"><link rel="prefetch" href="/assets/js/20.877e7e74.js"><link rel="prefetch" href="/assets/js/21.057a8e9b.js"><link rel="prefetch" href="/assets/js/22.e609402e.js"><link rel="prefetch" href="/assets/js/23.7d6bd9cc.js"><link rel="prefetch" href="/assets/js/24.c047402f.js"><link rel="prefetch" href="/assets/js/25.bfea2377.js"><link rel="prefetch" href="/assets/js/26.29581cac.js"><link rel="prefetch" href="/assets/js/27.2bf0ec6d.js"><link rel="prefetch" href="/assets/js/28.c8683e65.js"><link rel="prefetch" href="/assets/js/29.606e25cf.js"><link rel="prefetch" href="/assets/js/3.421284ec.js"><link rel="prefetch" href="/assets/js/30.8284967a.js"><link rel="prefetch" href="/assets/js/31.8b0705f1.js"><link rel="prefetch" href="/assets/js/32.71f0a3c5.js"><link rel="prefetch" href="/assets/js/33.c1d9eef1.js"><link rel="prefetch" href="/assets/js/34.fee12a8e.js"><link rel="prefetch" href="/assets/js/35.028c8e2f.js"><link rel="prefetch" href="/assets/js/36.3b44e0d1.js"><link rel="prefetch" href="/assets/js/37.097f8033.js"><link rel="prefetch" href="/assets/js/38.49614d55.js"><link rel="prefetch" href="/assets/js/39.206b130f.js"><link rel="prefetch" href="/assets/js/4.43e18de0.js"><link rel="prefetch" href="/assets/js/40.bb43f100.js"><link rel="prefetch" href="/assets/js/41.3f53f8e5.js"><link rel="prefetch" href="/assets/js/42.5d225f43.js"><link rel="prefetch" href="/assets/js/43.20a74701.js"><link rel="prefetch" href="/assets/js/44.f4fbf593.js"><link rel="prefetch" href="/assets/js/45.2f50bc46.js"><link rel="prefetch" href="/assets/js/46.00b72f89.js"><link rel="prefetch" href="/assets/js/47.b88e668e.js"><link rel="prefetch" href="/assets/js/48.1837c170.js"><link rel="prefetch" href="/assets/js/49.a5d85971.js"><link rel="prefetch" href="/assets/js/5.d203a18f.js"><link rel="prefetch" href="/assets/js/50.2ac7a780.js"><link rel="prefetch" href="/assets/js/51.c692a9da.js"><link rel="prefetch" href="/assets/js/52.977a56aa.js"><link rel="prefetch" href="/assets/js/53.25ad8d3a.js"><link rel="prefetch" href="/assets/js/54.6087cb6e.js"><link rel="prefetch" href="/assets/js/55.68656fb3.js"><link rel="prefetch" href="/assets/js/56.8752deb1.js"><link rel="prefetch" href="/assets/js/57.30a6b0df.js"><link rel="prefetch" href="/assets/js/58.4fc909f1.js"><link rel="prefetch" href="/assets/js/59.01668d88.js"><link rel="prefetch" href="/assets/js/6.ec2984d9.js"><link rel="prefetch" href="/assets/js/60.28d4f301.js"><link rel="prefetch" href="/assets/js/61.1be7f4ec.js"><link rel="prefetch" href="/assets/js/62.d0729839.js"><link rel="prefetch" href="/assets/js/63.a56d0e70.js"><link rel="prefetch" href="/assets/js/64.5e5e9cbf.js"><link rel="prefetch" href="/assets/js/65.149b398c.js"><link rel="prefetch" href="/assets/js/66.c8583191.js"><link rel="prefetch" href="/assets/js/67.f771facf.js"><link rel="prefetch" href="/assets/js/68.5df39cc4.js"><link rel="prefetch" href="/assets/js/69.5d736afe.js"><link rel="prefetch" href="/assets/js/7.faf3ccb9.js"><link rel="prefetch" href="/assets/js/70.cb2f6a7d.js"><link rel="prefetch" href="/assets/js/71.9acae64c.js"><link rel="prefetch" href="/assets/js/72.0f82f0df.js"><link rel="prefetch" href="/assets/js/73.983b0786.js"><link rel="prefetch" href="/assets/js/74.c8293f86.js"><link rel="prefetch" href="/assets/js/75.ff130f9e.js"><link rel="prefetch" href="/assets/js/76.e019807d.js"><link rel="prefetch" href="/assets/js/77.e2fa9bf9.js"><link rel="prefetch" href="/assets/js/78.ec829f90.js"><link rel="prefetch" href="/assets/js/79.87394c2d.js"><link rel="prefetch" href="/assets/js/8.93bb7c70.js"><link rel="prefetch" href="/assets/js/80.466a48f0.js"><link rel="prefetch" href="/assets/js/81.d8f53b90.js"><link rel="prefetch" href="/assets/js/82.0bf14c52.js"><link rel="prefetch" href="/assets/js/83.e2ec4965.js"><link rel="prefetch" href="/assets/js/84.7e5d8bf9.js"><link rel="prefetch" href="/assets/js/85.385ef904.js"><link rel="prefetch" href="/assets/js/86.4b78cc8f.js"><link rel="prefetch" href="/assets/js/87.bc578742.js"><link rel="prefetch" href="/assets/js/88.9c8c551e.js"><link rel="prefetch" href="/assets/js/89.8ced3858.js"><link rel="prefetch" href="/assets/js/9.6d63fe50.js"><link rel="prefetch" href="/assets/js/90.ff1f0bbd.js"><link rel="prefetch" href="/assets/js/91.39a6503b.js"><link rel="prefetch" href="/assets/js/92.4b7aa848.js"><link rel="prefetch" href="/assets/js/93.a7603772.js"><link rel="prefetch" href="/assets/js/94.f0e00673.js"><link rel="prefetch" href="/assets/js/95.07f63650.js"><link rel="prefetch" href="/assets/js/96.a0c87ed4.js"><link rel="prefetch" href="/assets/js/97.3140684f.js"><link rel="prefetch" href="/assets/js/98.6f041861.js"><link rel="prefetch" href="/assets/js/99.328e773b.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.0271ea14.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-70265b54><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-70265b54><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          JavaScript
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          JavaScript
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ECMAScript6
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Git版本工具
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ESLint代码检测
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        React
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端插件
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          日历插件
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        
+         <a href="http://localhost:8080/java-demos/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>Java</a></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          数据库
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          MongoDB
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          
+           <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>MySQL</a></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/index.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>工具</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>微信</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>GitHub</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-5534fc3a><nav class="nav-links" data-v-70265b54 data-v-5534fc3a><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-70265b54><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          JavaScript
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          JavaScript
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ECMAScript6
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          Git版本工具
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          ESLint代码检测
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        React
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端插件
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          日历插件
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        
+         <a href="http://localhost:8080/java-demos/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>Java</a></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-70265b54><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          数据库
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          MongoDB
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+          
+           <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>MySQL</a></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-70265b54>
+        网络知识
+         <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/index.html" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>工具</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>微信</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-70265b54>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="display:block;line-height:35px;" data-v-70265b54>GitHub</a></li></ul></nav>  <ul class="sidebar-links" data-v-5534fc3a><li data-v-5534fc3a><a href="/webpack/" class="sidebar-link" data-v-5534fc3a>相关文章</a></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack基础篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack配置篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading open"><span>webpack练习篇</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/webpack/处理es6.html" class="sidebar-link">处理ES6</a></li><li><a href="/webpack/处理css.html" class="active sidebar-link">处理CSS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/webpack/处理css.html#编译css" class="sidebar-link">编译CSS</a></li><li class="sidebar-sub-header"><a href="/webpack/处理css.html#分离css" class="sidebar-link">分离CSS</a></li><li class="sidebar-sub-header"><a href="/webpack/处理css.html#使用less" class="sidebar-link">使用Less</a></li><li class="sidebar-sub-header"><a href="/webpack/处理css.html#使用postcss" class="sidebar-link">使用Postcss</a></li></ul></li><li><a href="/webpack/处理静态资源.html" class="sidebar-link">处理静态资源</a></li><li><a href="/webpack/处理目录文件.html" class="sidebar-link">处理目录文件</a></li><li><a href="/webpack/devserver.html" class="sidebar-link">使用 DevServer</a></li><li><a href="/webpack/使用vue.html" class="sidebar-link">使用 Vue</a></li><li><a href="/webpack/使用react.html" class="sidebar-link">使用 React</a></li><li><a href="/webpack/懒加载.html" class="sidebar-link">懒加载</a></li><li><a href="/webpack/提取公共模块.html" class="sidebar-link">提取公共模块</a></li><li><a href="/webpack/Dllplugin.html" class="sidebar-link">使用 Dllplugin</a></li></ul></div></li><li data-v-5534fc3a><div class="sidebar-group collapsable" data-v-5534fc3a><p class="sidebar-heading"><span>webpack进阶篇</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="处理css"><a href="#处理css" class="header-anchor">#</a> 处理CSS</h1> <p><a href="https://github.com/webxiaoma/webpack-demos/tree/master/webpack4/css%E5%A4%84%E7%90%86" target="_blank" rel="noopener noreferrer">GitHub 仓库练习<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <hr> <p>目录结构：</p> <div class="language- extra-class"><pre class="language-text"><code>| --- node_modules
+| --- css
+    | -- index.css
+| --- src
+    |--- index.js
+| --- package.json
+| --- index.html
+| --- webpack.config.js
+</code></pre></div><p>我们在<code>index.css</code>文件中写入</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token selector">div</span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>300px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在<code>index.js</code>中写入</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token string">'./src/index.css'</span>
+</code></pre></div><p>在<code>index.html</code> 中写入</p> <div class="language-html extra-class"><pre class="language-html"><code>
+<span class="token comment">&lt;!--body部分--&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>webpack练习<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- 引入打包后的js --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>./dist/build.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="编译css"><a href="#编译css" class="header-anchor">#</a> 编译CSS</h2> <p>在js中导入<code>css</code>文件，我们需要使用<code>style-loader</code> 和 <code>css-loader</code></p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev style<span class="token operator">-</span>loader css<span class="token operator">-</span>loader
+</code></pre></div><p>在<code>webpack.config.js</code>中写入</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    mode<span class="token punctuation">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+    output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        filename<span class="token punctuation">:</span> <span class="token string">'build.js'</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./dist'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+               test<span class="token punctuation">:</span> <span class="token regex">/\.css/</span><span class="token punctuation">,</span>
+               use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'style-loader'</span><span class="token punctuation">,</span><span class="token string">'css-loader'</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><div class="tip custom-block"><p class="custom-block-title">TIP</p> <ul><li><code>css-loader</code> 会找出 <code>CSS</code> 代码中的 <code>@import</code> 和 <code>url()</code> 这样的导入语句，告诉 <code>Webpack</code> 依赖这些资源。同时还支持 <code>CSS Modules</code>、<code>压缩 CSS</code> 等功能。处理完后再把结果交给 <code>style-loader</code> 去处理。</li> <li><code>style-loade</code>r 会把 <code>CSS</code> 代码转换成字符串后，注入到 <code>JavaScript</code> 代码中去，通过 <code>JavaScript</code> 去给<code>DOM</code> 增加样式。如果你想把 <code>CSS</code> 代码提取到一个单独的文件而不是和 <code>JavaScript</code> 混在一起，可以使用 <code>MiniCssExtractPlugin</code>, 下面我们会有介绍</li></ul></div> <p>我们执行<code>npx webpack</code>，打开<code>index.html</code>可以看到效果，并且<code>css</code>样式是直接嵌在<code>html</code>中的。</p> <h2 id="分离css"><a href="#分离css" class="header-anchor">#</a> 分离CSS</h2> <div class="warning custom-block"><p class="custom-block-title">注意</p> <ul><li><span class="badge tip" data-v-589dba97>webpack v3.0+</span> 使用 ExtractTextPlugin  
+</li></ul> <p><a href="https://github.com/webpack-contrib/extract-text-webpack-plugin" target="_blank" rel="noopener noreferrer">Github地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://www.npmjs.com/package/extract-text-webpack-plugin" target="_blank" rel="noopener noreferrer">Npm地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <ul><li><span class="badge tip" data-v-589dba97>webpack v4.0+</span> 使用 MiniCssExtractPlugin 
+</li></ul> <p><a href="https://github.com/webpack-contrib/mini-css-extract-plugin" target="_blank" rel="noopener noreferrer">Github地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> <a href="https://www.npmjs.com/package/mini-css-extract-plugin" target="_blank" rel="noopener noreferrer">Npm地址<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <p>因为上面的<code>css</code>是嵌在<code>html</code>中的，我们可以使用<code>MiniCssExtractPlugin</code>插件将<code>css</code>与<code>html</code>分离。首先安装<code>MiniCssExtractPlugin</code> 插件</p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> mini<span class="token operator">-</span>css<span class="token operator">-</span>extract<span class="token operator">-</span>plugin
+</code></pre></div><p>在<code>webpack.config.js</code>中加入<code>MiniCssExtractPlugin</code>插件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> MiniCssExtractPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mini-css-extract-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    context<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">,</span>
+    mode<span class="token punctuation">:</span> <span class="token string">'none'</span><span class="token punctuation">,</span>
+    output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        filename<span class="token punctuation">:</span> <span class="token string">'build.js'</span><span class="token punctuation">,</span>
+        path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./dist'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+               test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+               use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                 <span class="token comment">// 使用 MiniCssExtractPlugin 插件后就不做需要style-loader了</span>
+                     MiniCssExtractPlugin<span class="token punctuation">.</span>loader<span class="token punctuation">,</span>
+                    <span class="token string">'css-loader'</span>
+               <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token keyword">new</span> <span class="token class-name">MiniCssExtractPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            filename<span class="token punctuation">:</span> <span class="token string">'[name].css'</span><span class="token punctuation">,</span>
+            chunkFilename<span class="token punctuation">:</span> <span class="token string">'[id].css'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>执行<code>npx webpack</code> 后我们会看到<code>dist</code>文件中生成了一份<code>css</code>文件，并且<code>html</code>中不存在内嵌的<code>css</code>代码了，需要手动使用<code>link</code>引入<code>css</code>代码</p> <div class="tip custom-block"><p class="custom-block-title">TIP</p> <p><code>MiniCssExtractPlugin</code> 插件适合用在生产模式下，我们在开发模式下就不要在使用。这时我们可以这样做：</p> <div class="language-js extra-class"><pre class="language-js"><code> use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">!==</span> <span class="token string">'production'</span><span class="token operator">?</span><span class="token string">'style-loader'</span><span class="token punctuation">:</span>MiniCssExtractPlugin<span class="token punctuation">.</span>loader<span class="token punctuation">,</span>
+    <span class="token string">'css-loader'</span>
+ <span class="token punctuation">]</span>
+</code></pre></div></div> <h2 id="使用less"><a href="#使用less" class="header-anchor">#</a> 使用Less</h2> <p>实际开发项目中我们经常会用到css预处理器如 <code>less</code>、<code>sass</code>、 <code>stylus</code> 等，这里我们以使用<code>less</code>为例，安装<code>less</code> 和<code>less-loader</code></p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span><span class="token constant">D</span> less less<span class="token operator">-</span>loader
+</code></pre></div><p>在css文件夹中新建一个test.less文件，并写入：</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@color<span class="token punctuation">:</span></span> blue<span class="token punctuation">;</span>
+<span class="token selector">div</span><span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span><span class="token variable">@color</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在<code>src/index.js</code> 中引入<code>import '../css/test.less'</code>。修改<code>webpack.config.js</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...省略</span>
+    module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+               test<span class="token punctuation">:</span> <span class="token regex">/\.less$/</span><span class="token punctuation">,</span>
+               use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                    <span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+                    <span class="token string">'less-loader'</span>
+               <span class="token punctuation">]</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// ...省略</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>我们执行<code>npx webpack</code> 后可以看到，<code>test.less</code>文件被编译了。</p> <h2 id="使用postcss"><a href="#使用postcss" class="header-anchor">#</a> 使用Postcss</h2> <p><code>PostCSS</code>是一个用JS插件转换CSS的工具。它可以使css支持变量和mixin，使用未来的CSS语法，内联图片等等。</p> <p>在使用PostCss时我们需要先把css文件交给<code>PostCss-loader</code>处理，然后在交给<code>css-loader</code>处理，如果你使用<code>less</code>或<code>sass</code>,需要先交给<code>less-loader</code>或<code>sass-loader</code>处理。另外PostCss提供了很多插件来处理css，比如<code>postcss-preset-env</code>插件允许使用未来的css特性，比如<code>autoprefixer</code>插件可以自动补全浏览器前缀（关于<a href="https://github.com/postcss/postcss/blob/master/README-cn.md" target="_blank" rel="noopener noreferrer">PostCss 的更多插件<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>）。</p> <p>这些插件我们需要下载，并在项目的根目录下新建一个<code>postcss.config.js</code> 文件(或<code>.postcssrc.js</code>文件)，在该文件中进行插件的配置，当<code>postcss</code>编译时会自动读取该文件下的配置。现在我们来实现使用<code>postcss-preset-env</code>插件和<code>autoprefixer</code>插件。首先安装</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 安装 postcss-loader</span>
+npm install <span class="token operator">-</span><span class="token constant">D</span> postcss<span class="token operator">-</span>loader
+<span class="token comment">// 安装postcss插件</span>
+npm install <span class="token operator">-</span><span class="token constant">D</span> postcss<span class="token operator">-</span>preset<span class="token operator">-</span>env  autoprefixer
+</code></pre></div><p>我们在根目录下新建<code>postcss.config.js</code> 文件(或<code>.postcssrc.js</code>文件)，并使用上面下载的两个插件</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//允许你使用未来的 CSS 特性。</span>
+<span class="token keyword">const</span> postcssPresetEnv <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'postcss-preset-env'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 自动添加浏览器前缀</span>
+<span class="token keyword">const</span> autoprefixer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'autoprefixer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      postcssPresetEnv<span class="token punctuation">,</span>
+      <span class="token function">autoprefixer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 配置要兼容的浏览器版本</span>
+      <span class="token comment">// 也可以在package.json中的browserslist字段中添加浏览器版本</span>
+        <span class="token string">&quot;browsers&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;defaults&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;not ie &lt; 11&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;last 100 versions&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;&gt; 1%&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;iOS 7&quot;</span><span class="token punctuation">,</span>
+          <span class="token string">&quot;last 3 iOS versions&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>现在我们在我们<code>test.less</code> 文件中写点</p> <div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@color2<span class="token punctuation">:</span></span>blue<span class="token punctuation">;</span>
+<span class="token selector">div</span><span class="token punctuation">{</span>
+    <span class="token comment">// 添加兼容性前缀</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> 
+    <span class="token property">color</span><span class="token punctuation">:</span><span class="token variable">@color2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 新语法</span>
+<span class="token selector">:root</span> <span class="token punctuation">{</span>
+  <span class="token property">--mainColor</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>18<span class="token punctuation">,</span> 52<span class="token punctuation">,</span> 86<span class="token punctuation">,</span> 0.47059<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">html</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">var</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token operator">-</span>mainColor<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">font-family</span><span class="token punctuation">:</span> system<span class="token operator">-</span>ui<span class="token punctuation">,</span> <span class="token operator">-</span>apple<span class="token operator">-</span>system<span class="token punctuation">;</span>
+    <span class="token property">word-wrap</span><span class="token punctuation">:</span> break<span class="token operator">-</span>word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后我们来修改<code>webpack.config.js</code></p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            test<span class="token punctuation">:</span> <span class="token regex">/\.less$/</span><span class="token punctuation">,</span>
+            use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+                 MiniCssExtractPlugin<span class="token punctuation">.</span>loader<span class="token punctuation">,</span>
+                <span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+                <span class="token string">'postcss-loader'</span><span class="token punctuation">,</span>
+                <span class="token string">'less-loader'</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>执行<code>npx webpack</code>后我们可以看到我们最终的结果。</p> <div class="warning custom-block"><p class="custom-block-title">提示</p> <ol><li><p>首先css要先经过<code>postcss-loader</code>处理交给<code>css-loader</code>，如果使用<code>less</code>或类似的css预处理器，要先交给<code>less-loader</code>处理在交给<code>postcss-loader</code>处理，最后交给<code>css-loader</code></p></li> <li><p>在使用<code>autoprefixer</code>做兼容性前缀时，我们要指定浏览器版本来确定在指定版本中添加兼容性前缀。可以像上面的方式指定，也可以在<code>package.json</code>中的<code>browserslist</code> 字段中指定。</p></li></ol></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/webxiaoma/webxiaoma/edit/dev/docs/webpack/处理css.md" target="_blank" rel="noopener noreferrer">文章有问题，欢迎提出！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">最近更新时间: </span> <span class="time">11/15/2018, 10:38:57 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/app.510e21bd.js" defer></script><script src="/assets/js/104.f5b1856d.js" defer></script>
+  </body>
+</html>
