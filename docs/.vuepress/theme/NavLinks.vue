@@ -18,18 +18,18 @@
           </template>
           <el-menu-item  v-for="child in list.items" :index="child.blank?'':child.link" :key="child.text">
             {{child.blank?"":child.text}}
-             <a v-if="child.blank" :href="child.link" style="padding-bottom:5px;" target="_blank">{{child.text}}</a>
+             <a v-if="child.blank" :href="child.link" style="display:block;line-height: 35px;" target="_blank">{{child.text}}</a>
           </el-menu-item>
         </el-submenu>
         <el-menu-item  :index="list.blank?'':list.link" :key="list.text" v-else>
           {{list.blank?"":list.text}}
-           <a v-if="list.blank" :href="list.link" style="padding-bottom:5px;" target="_blank">{{list.text}}</a>
+           <a v-if="list.blank" :href="list.link" style="display:block;line-height: 35px;" target="_blank">{{list.text}}</a>
         </el-menu-item>
 
       </el-submenu>
       <el-menu-item :index="item.blank?'':item.link" :key="item.text" v-else>
           {{item.blank?"":item.text}}
-          <a v-if="item.blank" :href="item.link" style="padding-bottom:5px;" target="_blank">{{item.text}}</a>
+          <a v-if="item.blank" :href="item.link" style="display:block;line-height: 35px;" target="_blank">{{item.text}}</a>
       </el-menu-item>
     </el-menu>
 
