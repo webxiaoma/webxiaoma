@@ -40,7 +40,7 @@ module.exports = {
             { text: '后端', items: [
                 {text:'Linux', link:'/linux/'},
                 {text:'NodeJS', link:'/node/'},
-                {text:'Java', link:'http://localhost:8080/java-demos/docs/blogs/', blank: true},
+                {text:'Java', link:'https://webxiaoma.github.io/java-demos/docs/blogs/', blank: true},
                 {text:'数据库', items:[
                     {text: "MongoDB", link: '/database/MongoDB.html' },
                     { text: "MySQL", link: 'https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html', blank: true},
