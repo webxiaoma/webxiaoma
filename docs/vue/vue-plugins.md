@@ -252,7 +252,6 @@ export default {
             toast.cancelCallback = obj.cancel;
             toast.show = true;
         }
-       
     }
 }
 ```
