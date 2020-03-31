@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="divWrap">
+        <div class="content">
+            adafd
+        </div>
+    </div>
+
+    <script>
+        console.log(this)
+        
+        function a(){
+            console.log(this)
+        }
+        a()
+        var obj = {
+            a:1,
+            f:function(){
+                console.log(this)
+            },
+            fun(){
+                console.log(this)
+            },
+            b:()=>{
+                console.log(this)
+            }
+        }
+
+        obj.f()
+        obj.fun()
+        obj.b()
+
+        var c = obj.f
+
+        c()
+
+       
+        // document.querySelector("divWrap").onClick = function(){
+        //     console.log(this)
+        // }
+
+
+       function func(){
+           this.name = "1111"
+       }
+
+       func.prototype = {
+           constructor:func,
+           name:"2222222",
+           fun:function(){
+               console.log(this.name)
+           }
+       }
+
+       var newFunc = new func()
+       
+       newFunc.fun()
+       func.prototype.fun()
+
+      console.dir(newFunc)
+    
+
+      
+    //   newFunc.fun()
+     
+      
+      var objs = {
+          fun:function(){
+              "use strict"
+              console.log(this); 
+
+              (fu  nction(){
+                  console.log(this)
+              })()
+          }
+      }
+
+      objs.fun()
+
+
+    </script>
+</body>
+</html>
