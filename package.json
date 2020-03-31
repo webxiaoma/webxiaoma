@@ -7,8 +7,8 @@
    
   },
   "scripts": {
-    "start": "npx vuepress dev docs",
-    "build": "npx vuepress build docs"
+    "start": "npx vuepress dev blogs",
+    "build": "npx vuepress build blogs"
   },
   "repository": {
     "type": "git",
