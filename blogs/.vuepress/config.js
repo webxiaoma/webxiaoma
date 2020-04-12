@@ -14,10 +14,8 @@ module.exports = {
         nav: [  // 导航栏 使用了element 导航
             { text: '首页', link: '/' },
             { text: '前端', items: [
-                {text:'JavaScript', items:[
-                    {text:"JavaScript",link:'/javascript/js-bom.html'},
-                    {text:"ECMAScript6",link:'/javascript/babel.html'},
-                ]},
+                {text:"JavaScript",link:'/javascript/js-bom.html'},
+                {text:"ECMAScript6",link:'/javascript/babel.html'},
                 {text:'设计模式', link:'/design-mode/'},
                 {text:'移动端', items:[
                     {text:"H5页面开发",link:'/phone/'},
@@ -38,7 +36,7 @@ module.exports = {
                 ]},
             ]},
             { text: '后端', items: [
-                {text:'Linux', link:'/linux/'},
+                {text:'Linux', link:'/linux/'}, 
                 {text:'NodeJS', link:'/node/'},
                 {text:'Java', link:'https://webxiaoma.github.io/java-demos/docs/blogs/', blank: true},
                 {text:'数据库', items:[
@@ -55,7 +53,7 @@ module.exports = {
             '/javascript/':[
                 '',
                 {
-                    title: 'JS常见知识',
+                    title: 'JS基础知识',
                     collapsable: true, // 是否可折叠
                     children: [
                         'js-bom',
@@ -73,6 +71,7 @@ module.exports = {
                         'trash-recycling',
                         'data-type',
                         'new',
+                        'callAndApply'
                     ]
                },{
                 title: 'ES6篇',
@@ -269,23 +268,6 @@ module.exports = {
                       'npm.md',
                     ]
                 },
-            ],
-            '/java/':[
-                '',
-                {
-                    title: 'Java工具的使用',
-                    collapsable: true, // 是否可折叠
-                    children: [
-                       'vscode-java'
-                    ]
-                },
-                {
-                    title: 'Java基础',
-                    collapsable: true, // 是否可折叠
-                    children: [
-                       'java-start'
-                    ]
-                }
             ],
             '/database/':[
                 '',

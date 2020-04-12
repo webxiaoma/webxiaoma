@@ -17,75 +17,67 @@
     </div>
 
     <script>
-        console.log(this)
-        
-        function a(){
-            console.log(this)
-        }
-        a()
-        var obj = {
-            a:1,
-            f:function(){
-                console.log(this)
-            },
-            fun(){
-                console.log(this)
-            },
-            b:()=>{
-                console.log(this)
-            }
-        }
+          Function.prototype.$call = function(){
+              var obj = arguments[0] || window;
 
-        obj.f()
-        obj.fun()
-        obj.b()
+              var args = [];
+              for(var i=1,len=arguments.length;i<len;i++){
+                args.push("arguments["+i+"]")
+              }
+              console.log(args)
 
-        var c = obj.f
-
-        c()
-
-       
-        // document.querySelector("divWrap").onClick = function(){
-        //     console.log(this)
-        // }
-
-
-       function func(){
-           this.name = "1111"
-       }
-
-       func.prototype = {
-           constructor:func,
-           name:"2222222",
-           fun:function(){
-               console.log(this.name)
-           }
-       }
-
-       var newFunc = new func()
-       
-       newFunc.fun()
-       func.prototype.fun()
-
-      console.dir(newFunc)
-    
-
-      
-    //   newFunc.fun()
-     
-      
-      var objs = {
-          fun:function(){
-              "use strict"
-              console.log(this); 
-
-              (fu  nction(){
-                  console.log(this)
-              })()
+              obj.$fun = this;
+              eval("obj.$fun(" + args +")")
+              
+              delete obj.$fun;
           }
-      }
 
-      objs.fun()
+          Function.prototype.$apply = function(){
+                var obj = arguments[0] || window;
+                var argAry =  arguments[1] || [];
+                var args = [];
+                for(var i=0,len=argAry.length;i<len;i++){
+                   args.push("argAry["+i+"]")
+                }
+
+                obj.$fun = this;
+                eval("obj.$fun(" + args +")")
+
+                delete obj.$fun;
+          }
+
+          Function.prototype.$bind = function(){
+                var self = this;
+            
+                var args = Array.prototype.slice.call(arguments); 
+                var obj = args[0];
+
+                if(obj === null || obj === undefined){
+                    obj =  window;
+                }else{
+                    obj =  Object(obj);
+                }
+                args.splice(0,1)
+
+                return function(s){
+                args.push(s)
+                console.log(args)
+                self.apply(obj,args);
+                }
+          }
+
+
+          var obj = {
+              name:"121212"
+          };
+
+          function test(a,b,c,d){
+              console.log(this);
+              console.log(a);
+              console.log(b);
+          }
+
+          var fun = test.$bind(obj,1)
 
 
     </script>
