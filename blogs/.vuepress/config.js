@@ -43,8 +43,10 @@ module.exports = {
                     {text: "MongoDB", link: '/database/MongoDB.html' },
                     { text: "MySQL", link: 'https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html', blank: true},
                 ]},
-                {text:'网络知识', link:'/network/'},
             ]},
+
+            // {text:'网络知识', link:'/network/'},
+            { text: '知识点', link: '/knowledge/' },
             { text: '工具', link: 'https://webxiaoma.github.io/tools-docs/docs/blogs/index.html', blank: true },
             { text: '微信', link: 'https://webwangjia.github.io/wechat-demo/docs/blogs/', blank: true },
             { text: 'GitHub', link: 'https://github.com/webxiaoma', blank:true}
@@ -60,18 +62,19 @@ module.exports = {
                         'js-dom',
                         'js-event',
                         'js-object',
-                        'function',
-                        'prototype-proto',
-                        'execution-contexts',
-                        'variable-object',
-                        'scope-chain',
-                        'this-1',
-                        'this',
-                        'closure',
-                        'trash-recycling',
-                        'data-type',
-                        'new',
-                        'callAndApply'
+                        'js-function',
+                        'js-prototype-proto',
+                        'js-execution-contexts',
+                        'js-variable-object',
+                        'js-scope-chain',
+                        'js-this-1',
+                        'js-this',
+                        'js-closure',
+                        'js-trash-recycling',
+                        'js-data-type',
+                        'js-new',
+                        'js-callAndApply',
+                        'js-throttle-and-shake'
                     ]
                },{
                 title: 'ES6篇',
@@ -310,13 +313,13 @@ module.exports = {
             ],
             '/knowledge/':[
                 {
-                    title: '常用网站',
+                    title: '前端知识点',
                     collapsable: true, // 是否可折叠
                     children: [
-                      '',
+                      'web-js',
                     ]
                 }, {
-                    title: '常用见面试题',
+                    title: 'Java知识点',
                     collapsable: true, // 是否可折叠
                     children: [
                     ] 

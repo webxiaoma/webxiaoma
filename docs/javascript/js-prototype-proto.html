@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JavaScript之原型与原型链 | 马新想个人网站（webxiaoma）</title>
+    <meta name="description" content="本文讲述js中的原型与原型链，已经js中是如何通过原型和原型链实现继承的。">
+    <link rel="icon" href="/img/icon.ico">
+    <meta name="keywords" content="prototype, js原型, js原型链，原型链，__proto__">
+    <link rel="preload" href="/assets/css/0.styles.97566d20.css" as="style"><link rel="preload" href="/assets/js/app.b5bf64aa.js" as="script"><link rel="preload" href="/assets/js/48.2f9e0c4d.js" as="script"><link rel="prefetch" href="/assets/js/10.a43becf7.js"><link rel="prefetch" href="/assets/js/100.79790541.js"><link rel="prefetch" href="/assets/js/101.ba402091.js"><link rel="prefetch" href="/assets/js/102.7f37dd35.js"><link rel="prefetch" href="/assets/js/103.0b589f8a.js"><link rel="prefetch" href="/assets/js/104.36d4a297.js"><link rel="prefetch" href="/assets/js/105.01ddbf3f.js"><link rel="prefetch" href="/assets/js/106.15d08253.js"><link rel="prefetch" href="/assets/js/107.ed9bffe7.js"><link rel="prefetch" href="/assets/js/108.2aedfbfa.js"><link rel="prefetch" href="/assets/js/109.36b63c81.js"><link rel="prefetch" href="/assets/js/11.dd3bc02b.js"><link rel="prefetch" href="/assets/js/110.7867e882.js"><link rel="prefetch" href="/assets/js/111.99dc1a91.js"><link rel="prefetch" href="/assets/js/112.3e2abe50.js"><link rel="prefetch" href="/assets/js/113.5ed0daee.js"><link rel="prefetch" href="/assets/js/114.5c430289.js"><link rel="prefetch" href="/assets/js/115.a09d91b3.js"><link rel="prefetch" href="/assets/js/116.760bf6ac.js"><link rel="prefetch" href="/assets/js/117.c162fa1d.js"><link rel="prefetch" href="/assets/js/118.3832af96.js"><link rel="prefetch" href="/assets/js/12.6626c043.js"><link rel="prefetch" href="/assets/js/13.2e7e151a.js"><link rel="prefetch" href="/assets/js/14.8ebc7a8b.js"><link rel="prefetch" href="/assets/js/15.3de2318d.js"><link rel="prefetch" href="/assets/js/16.da762ddc.js"><link rel="prefetch" href="/assets/js/17.5f4e64b0.js"><link rel="prefetch" href="/assets/js/18.41ee63c7.js"><link rel="prefetch" href="/assets/js/19.953c7613.js"><link rel="prefetch" href="/assets/js/2.ad99329b.js"><link rel="prefetch" href="/assets/js/20.0c814b68.js"><link rel="prefetch" href="/assets/js/21.7e558d1f.js"><link rel="prefetch" href="/assets/js/22.df62add3.js"><link rel="prefetch" href="/assets/js/23.3269893b.js"><link rel="prefetch" href="/assets/js/24.d0b7ac11.js"><link rel="prefetch" href="/assets/js/25.ea6099b3.js"><link rel="prefetch" href="/assets/js/26.ac17a213.js"><link rel="prefetch" href="/assets/js/27.2e943546.js"><link rel="prefetch" href="/assets/js/28.be76bfa4.js"><link rel="prefetch" href="/assets/js/29.6dcf3fa1.js"><link rel="prefetch" href="/assets/js/3.4e7942c3.js"><link rel="prefetch" href="/assets/js/30.aa229fb1.js"><link rel="prefetch" href="/assets/js/31.d3eda695.js"><link rel="prefetch" href="/assets/js/32.757d8f72.js"><link rel="prefetch" href="/assets/js/33.dba8491e.js"><link rel="prefetch" href="/assets/js/34.6c0d0a74.js"><link rel="prefetch" href="/assets/js/35.2223dd93.js"><link rel="prefetch" href="/assets/js/36.2b0f7b44.js"><link rel="prefetch" href="/assets/js/37.f57e4cdd.js"><link rel="prefetch" href="/assets/js/38.746d20b3.js"><link rel="prefetch" href="/assets/js/39.8eb99886.js"><link rel="prefetch" href="/assets/js/4.f6ae4cfc.js"><link rel="prefetch" href="/assets/js/40.4897882e.js"><link rel="prefetch" href="/assets/js/41.2ee37165.js"><link rel="prefetch" href="/assets/js/42.81f23906.js"><link rel="prefetch" href="/assets/js/43.9f997de2.js"><link rel="prefetch" href="/assets/js/44.6fceee93.js"><link rel="prefetch" href="/assets/js/45.4d746b25.js"><link rel="prefetch" href="/assets/js/46.4ef520a1.js"><link rel="prefetch" href="/assets/js/47.1be4b762.js"><link rel="prefetch" href="/assets/js/49.2d917d0d.js"><link rel="prefetch" href="/assets/js/5.9d0b63f3.js"><link rel="prefetch" href="/assets/js/50.81c9e321.js"><link rel="prefetch" href="/assets/js/51.a34c1bc0.js"><link rel="prefetch" href="/assets/js/52.256c21f3.js"><link rel="prefetch" href="/assets/js/53.2b559954.js"><link rel="prefetch" href="/assets/js/54.5f0a7878.js"><link rel="prefetch" href="/assets/js/55.d4e44aa7.js"><link rel="prefetch" href="/assets/js/56.d2246bfc.js"><link rel="prefetch" href="/assets/js/57.4692aa4f.js"><link rel="prefetch" href="/assets/js/58.1e0e42bc.js"><link rel="prefetch" href="/assets/js/59.709d9e20.js"><link rel="prefetch" href="/assets/js/6.ad473cbf.js"><link rel="prefetch" href="/assets/js/60.aec59b1e.js"><link rel="prefetch" href="/assets/js/61.d8e8fd82.js"><link rel="prefetch" href="/assets/js/62.21cbbea1.js"><link rel="prefetch" href="/assets/js/63.3fe98e61.js"><link rel="prefetch" href="/assets/js/64.e84698a3.js"><link rel="prefetch" href="/assets/js/65.0ec1cb00.js"><link rel="prefetch" href="/assets/js/66.bd26bd1f.js"><link rel="prefetch" href="/assets/js/67.fe7a883d.js"><link rel="prefetch" href="/assets/js/68.15b3afdc.js"><link rel="prefetch" href="/assets/js/69.5b19cfc0.js"><link rel="prefetch" href="/assets/js/7.17adf896.js"><link rel="prefetch" href="/assets/js/70.325600ba.js"><link rel="prefetch" href="/assets/js/71.ce699b17.js"><link rel="prefetch" href="/assets/js/72.920f860c.js"><link rel="prefetch" href="/assets/js/73.136b80a7.js"><link rel="prefetch" href="/assets/js/74.03fa0c74.js"><link rel="prefetch" href="/assets/js/75.2bcfd749.js"><link rel="prefetch" href="/assets/js/76.4019ddf1.js"><link rel="prefetch" href="/assets/js/77.4a1d2e0c.js"><link rel="prefetch" href="/assets/js/78.eb1ccde9.js"><link rel="prefetch" href="/assets/js/79.bc0b47e3.js"><link rel="prefetch" href="/assets/js/8.44914b79.js"><link rel="prefetch" href="/assets/js/80.7769467a.js"><link rel="prefetch" href="/assets/js/81.4701db5b.js"><link rel="prefetch" href="/assets/js/82.571ab4e7.js"><link rel="prefetch" href="/assets/js/83.350f1c93.js"><link rel="prefetch" href="/assets/js/84.721b9cc7.js"><link rel="prefetch" href="/assets/js/85.6c3f1089.js"><link rel="prefetch" href="/assets/js/86.20bedcd1.js"><link rel="prefetch" href="/assets/js/87.2ad8134f.js"><link rel="prefetch" href="/assets/js/88.39fca244.js"><link rel="prefetch" href="/assets/js/89.d1eb119c.js"><link rel="prefetch" href="/assets/js/9.d127dfc2.js"><link rel="prefetch" href="/assets/js/90.82aabff6.js"><link rel="prefetch" href="/assets/js/91.ac048abf.js"><link rel="prefetch" href="/assets/js/92.41b58ef6.js"><link rel="prefetch" href="/assets/js/93.91b0bf78.js"><link rel="prefetch" href="/assets/js/94.acee6d9b.js"><link rel="prefetch" href="/assets/js/95.c7db73df.js"><link rel="prefetch" href="/assets/js/96.0d3efce6.js"><link rel="prefetch" href="/assets/js/97.a4282f32.js"><link rel="prefetch" href="/assets/js/98.44e15af2.js"><link rel="prefetch" href="/assets/js/99.ae36764d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.97566d20.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="马新想" class="logo"> <span class="site-name can-hide">马新想个人网站</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide" data-v-e7df0cd8><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-e7df0cd8><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        ECMAScript6
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           Git版本工具
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           ESLint代码检测
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        React
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端插件
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           日历插件
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        
+         <a href="https://webxiaoma.github.io/java-demos/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>Java</a></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          数据库
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           MongoDB
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           
+           <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>MySQL</a></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        知识点
+        <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        
+        <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/index.html" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>工具</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        
+        <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>微信</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>GitHub</a></li></ul></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar" data-v-6135aa50><nav class="nav-links" data-v-e7df0cd8 data-v-6135aa50><ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu" style="background-color:;" data-v-e7df0cd8><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        首页
+        <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        前端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        JavaScript
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        ECMAScript6
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        设计模式
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          移动端
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           H5页面开发
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           PWA应用
+           <!----></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端工具
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           Webpack打包
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           Git版本工具
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           ESLint代码检测
+           <!----></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        Vue
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        React
+         <!----></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          前端插件
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           日历插件
+           <!----></li></ul></div></li></ul></div></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+        后端
+      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        Linux
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        NodeJS
+         <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+        
+         <a href="https://webxiaoma.github.io/java-demos/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>Java</a></li><li role="menuitem" aria-haspopup="true" class="el-submenu" data-v-e7df0cd8><div class="el-submenu__title" style="border-bottom-color:transparent;color:;background-color:;">
+          数据库
+        <i class="el-submenu__icon-arrow el-icon-arrow-right"></i></div><div class="el-menu--horizontal" style="display:none;"><ul role="menu" class="el-menu el-menu--popup el-menu--popup-" style="background-color:;"> <li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           MongoDB
+           <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;background-color:;" data-v-e7df0cd8>
+           
+           <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/database/mysql-install.html" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>MySQL</a></li></ul></div></li></ul></div></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        知识点
+        <!----></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        
+        <a href="https://webxiaoma.github.io/tools-docs/docs/blogs/index.html" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>工具</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        
+        <a href="https://webwangjia.github.io/wechat-demo/docs/blogs/" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>微信</a></li><li role="menuitem" tabindex="-1" class="el-menu-item" style="color:;border-bottom-color:transparent;background-color:;" data-v-e7df0cd8>
+        
+        <a href="https://github.com/webxiaoma" target="_blank" style="display:block;line-height:35px;" data-v-e7df0cd8>GitHub</a></li></ul></nav>  <ul class="sidebar-links" data-v-6135aa50><li data-v-6135aa50><a href="/javascript/" class="sidebar-link" data-v-6135aa50>网站</a></li><li data-v-6135aa50><div class="sidebar-group collapsable" data-v-6135aa50><p class="sidebar-heading open"><span>JS基础知识</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/javascript/js-bom.html" class="sidebar-link">JS BOM操作</a></li><li><a href="/javascript/js-dom.html" class="sidebar-link">JS DOM操作</a></li><li><a href="/javascript/js-event.html" class="sidebar-link">JavaScript之事件</a></li><li><a href="/javascript/js-object.html" class="sidebar-link">JavaScript之面向对象</a></li><li><a href="/javascript/js-function.html" class="sidebar-link">JavaScript之函数</a></li><li><a href="/javascript/js-prototype-proto.html" class="active sidebar-link">JavaScript之原型与原型链</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/javascript/js-prototype-proto.html#继承" class="sidebar-link">继承</a></li><li class="sidebar-sub-header"><a href="/javascript/js-prototype-proto.html#原型" class="sidebar-link">原型</a></li><li class="sidebar-sub-header"><a href="/javascript/js-prototype-proto.html#原型链" class="sidebar-link">原型链</a></li><li class="sidebar-sub-header"><a href="/javascript/js-prototype-proto.html#修改原型链" class="sidebar-link">修改原型链</a></li><li class="sidebar-sub-header"><a href="/javascript/js-prototype-proto.html#es6继承" class="sidebar-link">ES6继承</a></li></ul></li><li><a href="/javascript/js-execution-contexts.html" class="sidebar-link">JavaScript之执行上下文</a></li><li><a href="/javascript/js-variable-object.html" class="sidebar-link">JavaScript之变量对象</a></li><li><a href="/javascript/js-scope-chain.html" class="sidebar-link">JavaScript之作用域和作用域链</a></li><li><a href="/javascript/js-this-1.html" class="sidebar-link">JavaScript之This（一）</a></li><li><a href="/javascript/js-this.html" class="sidebar-link">JavaScript之This（二）</a></li><li><a href="/javascript/js-closure.html" class="sidebar-link">JavaScript之闭包</a></li><li><a href="/javascript/js-trash-recycling.html" class="sidebar-link">JavaScript之垃圾回收机制</a></li><li><a href="/javascript/js-data-type.html" class="sidebar-link">JavaScript之基础类型和引用类型</a></li><li><a href="/javascript/js-new.html" class="sidebar-link">JavaScript之new操作符</a></li><li><a href="/javascript/js-callAndApply.html" class="sidebar-link">JavaScript之Call、Apply和bind</a></li><li><a href="/javascript/js-throttle-and-shake.html" class="sidebar-link">JavaScript之防抖和节流</a></li></ul></div></li><li data-v-6135aa50><div class="sidebar-group collapsable" data-v-6135aa50><p class="sidebar-heading"><span>ES6篇</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-6135aa50><div class="sidebar-group collapsable" data-v-6135aa50><p class="sidebar-heading"><span>音频视频处理</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-6135aa50><div class="sidebar-group collapsable" data-v-6135aa50><p class="sidebar-heading"><span>文件与二进制处理</span> <span class="arrow right"></span></p> <!----></div></li><li data-v-6135aa50><div class="sidebar-group collapsable" data-v-6135aa50><p class="sidebar-heading"><span>离线-缓存-存储</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="javascript之原型与原型链"><a href="#javascript之原型与原型链" class="header-anchor">#</a> JavaScript之原型与原型链</h1> <hr> <p>在<code>JavaScript</code> 函数都有一个<code>prototype</code>对象（除ES6箭头函数），大部分对象都有一个<code>__proto__</code>原型链指针（原型链最末端的对象不存在）。</p> <h2 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h2> <p><code>JavaScript</code>中的继承和<code>Java</code>的继承实现是不一样的，在<code>JavaScript</code>中是通过原型和原型链来实现继承的。我们来看下面的例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">People</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+
+<span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">eating</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">foods</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> foods <span class="token operator">=</span> foods <span class="token operator">||</span> <span class="token string">&quot;没有食物&quot;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>foods<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 使用new创建一个对象</span>
+<span class="token keyword">var</span> xiaoMing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 现在 xiaoMing这个对象就有下面属性了</span>
+xiaoMing<span class="token punctuation">.</span>name <span class="token comment">// 小明</span>
+xiaoMing<span class="token punctuation">.</span>age <span class="token comment">//  24</span>
+
+<span class="token comment">// xiaoMing同时也具有`eating` 方法了</span>
+xiaoMing<span class="token punctuation">.</span><span class="token function">eating</span><span class="token punctuation">(</span><span class="token string">&quot;屎&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>我们可以看到通过构造函数创建出来的<code>xiaoMing</code>对象继承了<code>People</code>的原型上的<code>eating</code>方法。下面我们来看看原型和原型链。</p> <h2 id="原型"><a href="#原型" class="header-anchor">#</a> 原型</h2> <p>在<code>JavaScript</code>中每一个函数都有一个属性<code>prototype</code>(<code>ES6</code>中的箭头函数没有原型属性)，这个属性就是我们经常提及的原型。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 函数声明形式</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>fun<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// Object</span>
+
+<span class="token comment">// 函数表达式形式</span>
+<span class="token keyword">var</span> <span class="token function-variable function">f</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>fun<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// Object</span>
+
+<span class="token comment">// 箭头函数</span>
+<span class="token keyword">let</span> <span class="token function-variable function">a</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
+</code></pre></div><p>既然原型是一个对象，那我们是可以在原型上添加方法和属性的。比如上面第一个例子中我们就在构造函数<code>People</code>的原型上添加了<code>eating</code>方法。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">eating</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">foods</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> foods <span class="token operator">=</span> foods <span class="token operator">||</span> <span class="token string">&quot;没有食物&quot;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>foods<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>我们可以打印出构造函数<code>People</code>的原型来看看</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">People</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+<span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">eating</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">foods</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> foods <span class="token operator">=</span> foods <span class="token operator">||</span> <span class="token string">&quot;没有食物&quot;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>foods<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span><span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span>
+
+<span class="token comment">/**
+ * 结果如下：
+ {
+    eating: ƒ (foods)
+    constructor: ƒ People(name,age)
+    __proto__: Object
+  
+  }  
+*/</span>
+</code></pre></div><p>我们从原型<code>prototype</code>上可以看到我们定义的<code>eating</code>方法，也会看到一个<code>constructor</code>方法，这个方法指向的是我们构造函数本身</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> People  <span class="token comment">// true  </span>
+</code></pre></div><p>我们从原型<code>prototype</code>对象上还看到了一个属性<code>__proto__</code>(前后各两个下划线)，这个属性指向另一个对象的原型，下面我们来看看这个属性。</p> <h2 id="原型链"><a href="#原型链" class="header-anchor">#</a> 原型链</h2> <p>我们知道了属性<code>__proto__</code>可以指向另一个对象的原型，从而继承另一个对象原型上的方法或属性。我们接着来看我们第一个例子。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">People</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+<span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">eating</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">foods</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> foods <span class="token operator">=</span> foods <span class="token operator">||</span> <span class="token string">&quot;没有食物&quot;</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span>foods<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> xiaoMing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">24</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>xiaoMing<span class="token punctuation">)</span> 
+</code></pre></div><p>我们打印出来<code>xiaoMing</code>这个对象之后，会发现这个对象包含<code>name</code>属性、<code>age</code>属性、还有<code>__proto__</code>，但是并没有原型<code>prototype</code>, 但是我们也同样可以在<code>xiaoMing</code>这个对象上使用<code>eating()</code>方法。</p> <div class="language-js extra-class"><pre class="language-js"><code>xiaoMing<span class="token punctuation">.</span><span class="token function">eating</span><span class="token punctuation">(</span><span class="token string">&quot;屎&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p>这里就是<code>__proto__</code>原型链起到了作用，<code>__proto__</code>指向了构造函数的原型，使得创建出来的<code>xiaoMing</code>这个对象继承了构造函数的原型。我们从下面判断中可以得知</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// true</span>
+xiaoMing<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> <span class="token class-name">People</span><span class="token punctuation">.</span>prototype  
+</code></pre></div><p>所以在<code>js</code>中有了原型链，我们很好的实现了继承。我们可以用下面这个图来表示，构造函数函数（<code>People</code>）、构造函数的原型(<code>People.prototype</code>)，对象(<code>xiaoMing</code>)、 原型链(<code>__proto__</code>):</p> <p><img src="/img/prototype1.png" alt="js prototype"></p> <p>我们很清楚的看到<code>js</code>的中的继承, 正是因为<code>js</code>的继承关系，当我们在访问<code>xiaoMing.eating()</code>方法时，在<code>xiaoMing</code>对象上没有找到，<code>js</code>会通过原型链<code>__proto__</code>去查找，直到找到原型链的最末端<code>Object.prototype</code>对象上为止，如果还没有找到该方法，就会返回<code>undefined</code>。上面例子中<code>xiaoMing.__proto__</code>指向的是构造函数的原型<code>People.prototype</code>, 那么构造函数上也存在<code>__proto__</code>, 并指向最终的对象<code>Object.prototype</code>，在该对象(<code>Object.prototype</code>)上就不再有<code>__proto__</code>了，因为该<code>对象</code>已经是原型链的最末端对象了，<code>js</code>中几乎所有的函数和对象都继承自该对象。</p> <p>另外<code>js</code>中还提供了一些很有用的的方法：</p> <ol><li><code>hasOwnProperty</code> 该方法可以判断属性是自己本身属性还是由原型链继承来的属性。（该方法位于<code>Object.prototype</code>对象上）</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 还以上面的方法为例</span>
+
+xiaoMing<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">&quot;name&quot;</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+xiaoMing<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span><span class="token string">&quot;eacting&quot;</span><span class="token punctuation">)</span> <span class="token comment">// false</span>
+
+</code></pre></div><ol start="2"><li><code>isPrototypeOf</code> 检测一个对象是否是另一个对象的原型</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>xiaoMing<span class="token punctuation">)</span> <span class="token comment">// true</span>
+<span class="token class-name">People</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>xiaoMing<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><ol start="3"><li><code>instanceof</code> 运算符左操作数是一个对象，右操作数标识对象的类。如果左侧对象是右侧类的实例，则表达式返回为<code>true</code>，否则返回<code>false</code>。</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 对象xiaoMing 是People的实例</span>
+xiaoMing <span class="token keyword">instanceof</span> <span class="token class-name">People</span>  <span class="token comment">// ture</span>
+</code></pre></div><h2 id="修改原型链"><a href="#修改原型链" class="header-anchor">#</a> 修改原型链</h2> <p>我们在创建对象时，可以使用<code>Object.create()</code>来创建对象，并设置原型链的指针<code>__proto__</code>指向。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> Obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token string">&quot;King&quot;</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span><span class="token number">100</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> createObj <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>Obj<span class="token punctuation">)</span>
+
+createObj<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Obj <span class="token comment">// true</span>
+</code></pre></div><h2 id="es6继承"><a href="#es6继承" class="header-anchor">#</a> ES6继承</h2> <p><code>ES6</code>中可以通过<code>class</code>来声明类了。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">fun</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>并且通过<code>class</code>声明的类就是一个函数，它是构造函数的一个语法糖，并且通过class声明的类中既包含<code>prototype</code>属性也包含<code>__proto__</code></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">typeof</span> fun <span class="token comment">// function</span>
+</code></pre></div><p>在<code>ES6</code>中实现继承可以使用<code>extends</code>关键字。因为类既包含<code>prototype</code>属性也包含<code>__proto__</code>所以它有两条继承链</p> <ol><li><p>子类的<code>__proto__</code>属性，表示构造函数的继承，总是指向父类。</p></li> <li><p>子类<code>prototype</code>属性的<code>__proto__</code>属性，表示方法的继承，总是指向父类的<code>prototype</code>属性。</p></li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">class</span> <span class="token class-name">Fun</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NewFun</span> <span class="token keyword">extends</span> <span class="token class-name">Fun</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+
+NewFun<span class="token punctuation">.</span>__proto__ <span class="token operator">===</span> Fun  <span class="token comment">// true</span>
+<span class="token class-name">NewFun</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>__proto__  <span class="token operator">===</span> <span class="token class-name">Fun</span><span class="token punctuation">.</span>prototype <span class="token comment">// true</span>
+<span class="token class-name">NewFun</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">===</span> NewFun <span class="token comment">// true</span>
+</code></pre></div><p>关于更多<code>ES6 class</code>类的知识可以查看<a href="http://es6.ruanyifeng.com/#docs/class" target="_blank" rel="noopener noreferrer">阮一峰 calss<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/webxiaoma/webxiaoma/edit/dev/docs/javascript/js-prototype-proto.md" target="_blank" rel="noopener noreferrer">文章有问题，欢迎提出！</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/javascript/js-function.html" class="prev">
+          JavaScript之函数
+        </a></span> <span class="next"><a href="/javascript/js-execution-contexts.html">
+          JavaScript之执行上下文
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.b5bf64aa.js" defer></script><script src="/assets/js/48.2f9e0c4d.js" defer></script>
+  </body>
+</html>
