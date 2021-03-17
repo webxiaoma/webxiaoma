@@ -17,7 +17,7 @@ module.exports = {
           { text: '导航', link: '/nav/' },
       ],
       sidebar: "auto",
-      sidebarDepth:2,// 侧边栏最大层级 最大只能为2
+      sidebarDepth: 3,// 侧边栏最大层级 最大只能为2
      // displayAllHeaders:true,  // 侧边栏所有链接全展开
       lastUpdated: '最近更新时间', // 最后更新时间
       serviceWorker: {
