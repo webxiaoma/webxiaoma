@@ -11,8 +11,12 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
+    "babel-plugin-component": "^1.1.1",
     "less": "^4.1.1",
     "less-loader": "^8.0.0",
     "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.1"
   }
 }

@@ -52,7 +52,6 @@ import { resolveSidebarItems } from '../util'
 
 export default {
   name: 'Layout',
-
   components: {
     Home,
     Page,
@@ -149,3 +148,15 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+ 
+
+@media (min-width: 719px)
+  .theme-container
+    .sidebar 
+      width 16rem
+    .page
+      padding-left 16rem
+
+</style>

@@ -14,9 +14,18 @@ module.exports = {
       searchMaxSuggestions: 15, // 搜索设置数量
       nav: [  //
           { text: '首页', link: '/' },
-          { text: '导航', link: '/nav/' },
+          { text: '导航', items:[
+              {text:"前端站点", link:"/nav/"},
+              {text:"后端站点", link:"/nav/afterEnd"},
+          ] },
       ],
-      sidebar: "auto",
+      sidebar: {
+          "/nav/":[
+              "",
+              "web",
+              "afterEnd",
+          ]
+      },
       sidebarDepth: 3,// 侧边栏最大层级 最大只能为2
      // displayAllHeaders:true,  // 侧边栏所有链接全展开
       lastUpdated: '最近更新时间', // 最后更新时间
