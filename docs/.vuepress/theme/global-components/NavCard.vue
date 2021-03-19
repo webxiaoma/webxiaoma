@@ -90,11 +90,12 @@ export default {
       display flex
       justify-content space-between
       align-items center
-      height 46px
+      height 44px
+      padding 0 8px
       .cardLogo
         height 100%
         .img 
-          height 46px
+          height 44px
           width auto
       .cardTitle
         color #3eaf7c
