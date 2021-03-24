@@ -8,7 +8,7 @@ module.exports = {
   ], //被注入页面 HTML <head> 额外的标签
   host: "localhost", //访问路径
   port: "5555", //端口
-  base:'https://webxiaoma.github.io/webxiaoma/', // 部署站点的基础路径
+  base:'/webxiaoma/', // 部署站点的基础路径
   dest: "./docs", //输出目录
   serviceWorker: true, //缓存那些已访问过的页面的内容
   themeConfig: {  // 导航
