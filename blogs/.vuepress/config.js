@@ -1,14 +1,14 @@
 const Sidebar = require("./sildbar");
-
+const baseUrl = "/webxiaoma/";
 module.exports = {
   title:'小马学习网站',
   description:"小马学习网站",
   head: [
-      ["link", { rel: "icon", href: `/img/manong.jpg` }],
+      ["link", { rel: "icon", href: `${baseUrl}img/manong.jpg` }],
   ], //被注入页面 HTML <head> 额外的标签
   host: "localhost", //访问路径
   port: "5555", //端口
-  base:'/webxiaoma', // 部署站点的基础路径
+  base:baseUrl, // 部署站点的基础路径
   dest: "./docs", //输出目录
   serviceWorker: true, //缓存那些已访问过的页面的内容
   themeConfig: {  // 导航

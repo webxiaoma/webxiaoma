@@ -45,7 +45,7 @@ export default {
   data () {
     return {
        logoUrl:"",
-       baseImgUrl:`${base}/img/website/`,
+       baseImgUrl:`${base}img/website/`,
     };
   },
 
