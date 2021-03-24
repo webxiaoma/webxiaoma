@@ -9,7 +9,7 @@ module.exports = {
   host: "localhost", //访问路径
   port: "5555", //端口
   base:'/', // 部署站点的基础路径
-  dest: "./blogs", //输出目录
+  dest: "./docs", //输出目录
   serviceWorker: true, //缓存那些已访问过的页面的内容
   themeConfig: {  // 导航
       logo:'/img/manong.jpg', 

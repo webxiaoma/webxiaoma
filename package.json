@@ -7,8 +7,8 @@
   "author": "webxiaoma <webxiaoma@qq.com>",
   "license": "MIT",
   "scripts": {
-    "start": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "start": "vuepress dev blogs",
+    "build": "vuepress build blogs"
   },
   "devDependencies": {
     "babel-plugin-component": "^1.1.1",
