@@ -56,7 +56,6 @@ export default {
        this.logoUrl = `${this.baseImgUrl}${this.logo}`;
     }    
 
-    console.log(this.jumpUrl)
   },
   methods: {
     
