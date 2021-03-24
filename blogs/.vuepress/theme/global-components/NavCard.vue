@@ -18,6 +18,7 @@
 </template>
 
 <script>
+const {base} = require("../../config");
 export default {
   name: 'NavCard',
   components: {},
@@ -44,7 +45,7 @@ export default {
   data () {
     return {
        logoUrl:"",
-       baseImgUrl:"/img/website/",
+       baseImgUrl:`${base}/img/website/`,
     };
   },
 
