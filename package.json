@@ -11,6 +11,7 @@
     "build": "vuepress build blogs"
   },
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.8.2",
     "babel-plugin-component": "^1.1.1",
     "core-js": "2.x",
     "less": "^4.1.1",
@@ -18,6 +19,7 @@
     "vuepress": "^1.8.2"
   },
   "dependencies": {
-    "element-ui": "^2.15.1"
+    "element-ui": "^2.15.1",
+    "vuepress-plugin-code-copy": "^1.0.6"
   }
 }

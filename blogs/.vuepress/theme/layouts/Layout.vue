@@ -28,8 +28,7 @@
     </Sidebar>
 
     <Home v-if="$page.frontmatter.home" />
-
-    <Page
+   <Page
       v-else
       :sidebar-items="sidebarItems"
     >
@@ -39,7 +38,8 @@
       <template #bottom>
         <slot name="page-bottom" />
       </template>
-    </Page>
+   </Page>
+
   </div>
 </template>
 
@@ -158,5 +158,7 @@ export default {
       width 16rem
     .page
       padding-left 16rem
+      .pageCenter
+        padding: 2rem 2.5rem;
 
 </style>

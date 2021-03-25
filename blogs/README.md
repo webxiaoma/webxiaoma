@@ -1,4 +1,5 @@
 ---
+layout: LayoutSp
 pageClass: home-class
 
 home: true

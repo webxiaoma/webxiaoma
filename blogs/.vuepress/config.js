@@ -22,12 +22,12 @@ module.exports = {
               {text:"后端站点", link:"/nav/afterEnd"},
           ]},
           { text: '前端系列',items: [
-            {text:"常见面试题", link:"/web/question/vue"},
+            {text:"常见面试题", link:"/web/question/"},
           ]},
           { text: 'Java系列', link: '/java/' },
       ],
       sidebar: Sidebar,
-      sidebarDepth: 3,// 侧边栏最大层级 最大只能为2
+      sidebarDepth: false,// 侧边栏最大层级 最大只能为2
      // displayAllHeaders:true,  // 侧边栏所有链接全展开
       lastUpdated: '最近更新时间', // 最后更新时间
       serviceWorker: {
@@ -40,6 +40,21 @@ module.exports = {
   },
   extraWatchFiles: [ // 指定额外的需要被监听的文件
     '.vuepress/config.js', // 使用相对路径
+  ],
+
+  /**
+   * @markdown 配置
+   */
+  markdown: {
+    extractHeaders: [ 'h2', 'h3' ]
+  },
+
+  /**
+   * @插件安装
+   */
+  plugins: [
+    '@vuepress/back-to-top', // 
+    ['vuepress-plugin-code-copy', true], // 代码块复制
   ]
 };
 
