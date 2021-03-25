@@ -18,9 +18,21 @@ export default {
     };
   },
   created(){
-     this.nav = this.$page.headers;
+    this.updataNav();
+  },
+  mounted () {
+    this.$router.afterEach(() => {
+      this.updataNav();
+    })
   },
   methods: {
+    updataNav(){
+      if(this.$page.headers){
+           this.nav = [...this.$page.headers]
+      }else{
+         this.nav = []
+      }
+    }
   },
 }
 
