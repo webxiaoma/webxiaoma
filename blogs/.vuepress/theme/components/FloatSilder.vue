@@ -3,7 +3,7 @@
   <div class='floatSilderWrapper'>
      <ul class="nav">
        <li  v-for="(item,index) in nav" :class="item.level === 2?'title':'subTitle'" :key="index">
-           <a :href="`#${item.title}`">{{item.title}}</a>
+           <a :href="`#${item.slug}`">{{item.title}}</a>
        </li>
      </ul>
  </div>

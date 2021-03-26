@@ -8,7 +8,7 @@
          <PageNav v-bind="{ sidebarItems }" />
       </div>
       <div v-if="isShowFloatSilder" class="floatSilder hidden-sm-and-down">
-          <FloatSilder  v-if="isShowFloatSilder" />
+          <FloatSilder  v-show="isShowFloatSilder" />
       </div>
     </div>
     <slot name="bottom" />
@@ -38,9 +38,9 @@ export default {
   },
   methods:{
     checkFolatSilder(){
-       const {floatSilder} = this.$page.frontmatter;
+        const {floatSilder} = this.$page.frontmatter;
         if(floatSilder === undefined){
-           this.isShowFloatSilder = true;
+          this.isShowFloatSilder = true;
         }else{
           this.isShowFloatSilder = floatSilder?true:false;
         }
