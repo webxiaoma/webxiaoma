@@ -51,16 +51,130 @@ meta:
 
 ## CSS3新增伪类
 
+- `:active`
+- `:root` 选择文档的根元素，等同于 html 元素
+- `:empty` 选择没有子元素的元素
+- `:checked` 选择被选中的表单元素
+- `:nth-of-type(odd)` 选择某个奇数的元素，`even`为偶数 `3n`为三的倍数
+- `:last-of-type` 选择最后一个元素
 
+## CSS3中的伪元素
 
-## CSS3中的位元素
-
+- `::after` 在选中元素中创建一个后置的子节点
+- `::before` 在选中元素中创建一个前置的子节点
+- `:first-line` 选择元素中的第一行
+- `::first-letter`选取文字块首行首个字符
+- `::selection` 选取字段的占位符文本(提示信息)
 
 ## 清楚浮动
 
+- **方法一:** 给父元素 一个固定高度
+```html
+<div style="height:200px;">
+   <div style="height:200px;float:left"></div>
+   <div style="height:200px;float:left"></div>
+</div>
+<div> 该div不受影响</div>
+```
 
-## CSS上下居中
+- **方法二:** 使用带clear属性的空元素
+```html
+<div>
+   <div style="height:200px;float:left"></div>
+   <div style="height:200px;float:left"></div>
+   <div style="clear:both"></div>
+</div>
+<div> 该div不受影响</div>
+```
 
+- **方法三:** 使用`::after`为元素
+```html
+<div class="clearfix">
+   <div style="height:200px;float:left"></div>
+   <div style="height:200px;float:left"></div>
+</div>
+<div> 该div不受影响</div>
+```
+```css
+.clearfix::after{
+  content: ""; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;  
+}
+```
+
+- **方法四:** 使用`overflow`为元素
+```html
+<div style="overflow:hidden;">
+   <div style="height:200px;float:left"></div>
+   <div style="height:200px;float:left"></div>
+</div>
+<div> 该div不受影响</div>
+```
+
+
+## CSS上下左右居中
+
+```html
+<div class="parentDiv" style="height:100vh;">
+   <div class="content" style="width:200px;height:200px;">需要居中的元素</div>
+</div>
+```
+
+- **方法一：** 使用`flex`布局
+```css
+.parentDiv{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+- **方法二：** 使用`flex`布局
+```css
+.parentDiv{
+  position:relative;
+}
+.content{
+  position:relative;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+}
+```
+
+- **方法三：** 使用`dispaly:table`, 这个方法需要修改一下`html` 结构
+
+```html
+<div class="warpper">
+  <div class="parentDiv">
+    <div class="content">需要居中的元素</div>
+  </div>
+</div>
+```
+```css
+.wrapper{
+  width:100%;
+  height:100vh;
+  display: table; 
+  background-color: aqua;
+}
+.parentDiv{
+  width:100%;
+  height:100vh;
+  display: table-cell;vertical-align: middle;
+  background-color: rgb(18, 48, 48);
+}
+.content{
+  width:200px;
+  height:200px;
+  margin:0 auto;
+  background-color: blueviolet;
+}
+```
 
 ## CSS 盒模型
 
@@ -71,6 +185,7 @@ meta:
 
 ![asd](/img/web/question/question2.webp)
 ![asd](/img/web/question/question1.webp)
+
 
 ## CSS中的BFC
 

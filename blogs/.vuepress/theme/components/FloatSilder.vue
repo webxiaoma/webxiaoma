@@ -1,11 +1,15 @@
 <!-- 浮动导航 -->
 <template>
   <div class='floatSilderWrapper'>
-     <ul class="nav">
-       <li  v-for="(item,index) in nav" :class="item.level === 2?'title':'subTitle'" :key="index">
-           <a :href="`#${item.slug}`">{{item.title}}</a>
-       </li>
-     </ul>
+    <div class="topTitle">{{title}}</div>
+    <div class="contentNav">
+      <ul class="nav">
+        <li  v-for="(item,index) in nav" :class="item.level === 2?'title':'subTitle'" :key="index">
+            <a :href="`#${item.slug}`">{{item.title}}</a>
+        </li>
+      </ul>
+    </div>
+     
  </div>
 </template>
 
@@ -15,6 +19,7 @@ export default {
   data () {
     return {
        nav:[],
+       title:"",
     };
   },
   created(){
@@ -27,6 +32,8 @@ export default {
   },
   methods: {
     updataNav(){
+      console.log(this.$page)
+      this.title = this.$page.title;
       if(this.$page.headers){
            this.nav = [...this.$page.headers]
       }else{
@@ -45,9 +52,7 @@ export default {
    max-height 70%
    position fixed
    top 65px
-   padding 6px 10px 6px 12px
    border-radius 0 0 4px 4px
-   border-top 8px solid #3eaf7c
    box-shadow 0 0  4px 2px #eee
    background #fff
    overflow-y auto 
@@ -62,7 +67,14 @@ export default {
    &::-webkit-scrollbar-thumb  //滚动条中能上下移动的小块
     border-radius: 2px;  
     background-color:rgba(76,175,80,0.3);
-    
+   .topTitle
+     background #3eaf7c
+     padding 4px
+     color #ffffff
+     text-align center
+     font-size 14px
+   .contentNav
+     padding 4px 10px 6px 12px
    .nav
      margin 0
      a

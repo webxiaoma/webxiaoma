@@ -54,7 +54,11 @@ module.exports = {
    */
   plugins: [
     '@vuepress/back-to-top', // 
-    ['vuepress-plugin-code-copy', true], // 代码块复制
+    ['vuepress-plugin-code-copy', {
+      selector: "pre[class*='language-']",
+      backgroundColor:"#3eaf7c",
+      successText: "复制成功"
+      }], // 代码块复制
   ]
 };
 
