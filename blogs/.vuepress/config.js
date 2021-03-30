@@ -21,9 +21,20 @@ module.exports = {
               {text:"前端站点", link:"/nav/web"},
               {text:"后端站点", link:"/nav/afterEnd"},
           ]},
-          { text: '前端系列',items: [
-            {text:"常见面试题", link:"/web/question/"},
-          ]},
+          { 
+            text: '前端系列',
+            items: [
+              {text:"CSS+HTML系列", items:[
+                {text:"CSS的BFC", link:"/web/csshtml/css-bfc"},
+              ]},
+              {text:"JS系列", items:[
+                {text:"defineProperty对象", link:"/web/js/defineProperty"},
+              ]},
+              {text:"常见面试题", items:[
+                {text:"CSS面试题", link:"/web/question/css"},
+              ]},
+            ]
+          },
           { text: 'Java系列', link: '/java/' },
       ],
       sidebar: Sidebar,

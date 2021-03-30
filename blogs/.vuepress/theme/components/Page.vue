@@ -73,4 +73,6 @@ export default {
   .page
     .main
       background #fff
+      .content
+         width 100%
 </style>

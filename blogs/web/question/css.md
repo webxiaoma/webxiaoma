@@ -182,9 +182,12 @@ meta:
 - `低版本IE盒模型 = 内容(content+ padding + border)  + margin`
 
 类似下面的图
-
+<!-- 
 ![asd](/img/web/question/question2.webp)
-![asd](/img/web/question/question1.webp)
+![asd](/img/web/question/question1.webp) -->
+
+<Images src="/web/question/question2.webp"/>
+<Images src="/web/question/question1.webp"/>
 
 
 ## CSS中的BFC
@@ -193,28 +196,54 @@ meta:
 
 ## 为什么要初始化CSS
 
+- 因为浏览器的兼容问题，每个浏览器之间的默认初始样式是不一样的，为了统一`css`的初始样式，我们需要初始化`CSS`
 
-## display 属性
+- 提高`css`代码质量，避免写大量重复的`css`样式。有利于维护页面样式
+
+
+## display 属性有那些
+
+[查看更多属性](https://www.w3school.com.cn/cssref/pr_class_display.asp)
+
+- `block` 此元素将显示为块级元素
+- `inline-block` 行内块元素
+- `inline` 此元素会被显示为内联元素
+- `none` 此元素不会被显示
+- `flex` 该元素内以`flex`布局
+- `table` 此元素会作为块级表格来显示（类似 `<table>`），表格前后带有换行符。
+- `table-cell` 此元素会作为一个表格单元格显示（类似 `<td>` 和 `<th>`）
+- `inherit` 规定应该从父元素继承 `display` 属性的值。
 
 
 ## position 属性
 
+- `relative` 相对定位
+- `absolute` 绝对定位
+- `fixed` 浮动定位
+- `static` 默认值
+- `inherit` 从父元素继承`position`定位
 
 ## img图片出现空白
 
 
+**解决方法**
+
+- 给`img`变成块元素`img{display:block}`
+- 给`img`添加 `img{ vertical-align:middle }`
+- 给`img`父元素添加 `div{ font-size:0; }`
+- 给`img`父元素添加 `div{ line-height:0; }`
+
 
 ## rem em px 单位区别
 
-
+- `rem` 是CSS3新增的一个相对单位,相对于根元素`HTNL`
+- `em` 是相对长度单位, 相对于父元素的字体尺寸
+- `px` 是相对于显示器平米分辨率而言的。
+- `vh vw` 相对于视框的宽度,视框宽度高度默认`100vh 100vw`
 
 ## style标签写在body后与body前有什么区别？
 
+写在head标签中利于浏览器逐步渲染（`resources downloading->CSSOM+DOM->RenderTree(composite)->Layout->paint`）。
 
+写在`body`标签后由于浏览器以逐行方式对`html`文档进行解析，当解析到写在尾部的样式表（外联或写在`style`标签）会导致浏览器停止之前的渲染，等待加载且解析样式表完成之后重新渲染，在`windows`的IE下可能会出现`FOUC`现象（即样式失效导致的页面闪烁问题）
 
-
-## flex 弹性布局
-
-
-
-## CSS 预处理器
