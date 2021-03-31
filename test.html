@@ -11,25 +11,49 @@
         height: 100vh;
         margin:0;
         padding:0;
+        color: #fff;
     }
     .main{
         width:100%;
         height:100vh;
         background-color: black;
         padding:30px;
+        box-sizing: border-box;
     }
-    .imgWrapper{
+    .top{
         background-color:blue;
-        font-size:0;
+        border:4px solid green;
+        display: inline-block;
+    }
+    .one{
+        width:120px;
+        height:60px;
+        background-color: red;
+        float:left;
+    }
+    .two{
+        width:220px;
+        height:100px;
+        word-break: break-all;
+        background-color: pink;
+        overflow: auto;
     }
     img{
-        
+        vertical-align: top;
+    }
+    .bottom{
+        height:20px;
+        background-color: rgb(8, 99, 119);
     }
 </style>
 <body>
     <div class="main">
-      <div class="imgWrapper">
-          <img src="https://webxiaoma.gitee.io/webxiaoma/img/manong.jpg" alt="">
+      <div class="top">
+          <div class="one"> One</div>
+          <div class="two">
+              <img src="https://dss2.bdstatic.com/6Ot1bjeh1BF3odCf/it/u=3656333922,3901830753&fm=218&app=92&f=JPG?w=121&h=75&s=B9A88A1A0C01CC4F5CAAC7C2030020BD" alt="">
+              adsadadssssssss
+            </div>
       </div>
     </div>
 </body>

@@ -14,6 +14,7 @@ module.exports = {
       title: 'CSS+HTML系列',
       collapsable: true,
       children: [
+          "csshtml/css-formatContent",
           "csshtml/css-bfc",
       ]
     },
@@ -21,7 +22,8 @@ module.exports = {
       title: 'JS系列',
       collapsable: true,
       children: [
-          "js/defineProperty",
+          "js/js-bom",
+          "js/js-defineProperty",
       ]
     },
     {

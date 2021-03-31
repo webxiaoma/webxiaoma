@@ -7,7 +7,7 @@
 
      <div class="imgModel" v-show="showMdel" @click="showImgModel(false)">
          <p>asd</p>
-         <img :src="imgUrl">
+         <img :src="imgUrl" class="scaleImg">
      </div>
  </div>
 </template>
@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       imgUrl:"",
-      baseImgUrl:`${base}img/`,
+      baseImgUrl:`${base}img`,
       scaleImgUrl:"",
       showMdel:false,
     };
@@ -82,6 +82,8 @@ export default {
     background rgba(1,1,1,0.7)
     text-align center 
     padding-top 30px
+    .scaleImg 
+      width 70%
 
 
 .block
@@ -95,6 +97,6 @@ export default {
        img
         width 100%
     .imgModel
-      img 
+      .scaleImg 
         width 90%
 </style>

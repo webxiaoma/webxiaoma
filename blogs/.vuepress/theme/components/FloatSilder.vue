@@ -32,7 +32,6 @@ export default {
   },
   methods: {
     updataNav(){
-      console.log(this.$page)
       this.title = this.$page.title;
       if(this.$page.headers){
            this.nav = [...this.$page.headers]
