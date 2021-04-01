@@ -110,7 +110,7 @@ export default {
       color #999
       text-align justify
       font-size 14px
-      line-height 26px
+      line-height 22px
 
 
 @media (max-width: $MQMobile)

@@ -94,8 +94,7 @@ export default {
     width 100%
     .image
        width 100%
-       img
-        width 100%
+       text-align center 
     .imgModel
       .scaleImg 
         width 90%

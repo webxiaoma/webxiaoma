@@ -12,7 +12,6 @@ meta:
 
 :horse: 
 
-
 ## 什么是BOM
 
 
@@ -46,10 +45,10 @@ BOM 和 DOM 的关系可以用下图表示
 ## BOM操作API
 
 
-
 ### window对象
 
-```JavaScript
+
+```js
 window.close();  //关闭窗口  
 
 window.alert("message");  //弹出一个具有OK按钮的系统消息框，显示指定的文本 
@@ -78,7 +77,7 @@ window.history.forward();  //访问浏览器窗口的历史，负数为后退，
 
 window.history.length  //可以查看历史中的页面数   
 
-```
+``` 
 
 
 ### document 对象
@@ -233,7 +232,7 @@ let timeID = setInerval(function(){
 　　 console.log(1111)
 },100)
 ```
-::: warning
+::: warning 注意
 可以使用`setTimeout`来完成`setInterval`的工作，这样做的好处是，`setTimeout保证了每次执行完当前函数中的操作再进行下一次定时任务，而`setInterval`不会保证上一次任务执行完毕再添加下一次任务。
 :::
 
@@ -260,7 +259,7 @@ Aframe = requestAnimationFrame(animate);
 不过有一点需要注意，`requestAnimationFrame`是在主线程上完成。这意味着，如果主线程非常繁忙，`requestAnimationFrame`的动画效果会大打折扣。
 
 
-::: tip 处理兼容
+**处理兼容**
 
 ```js
 window.requestAnimationFrame = (function(){
@@ -272,4 +271,3 @@ window.requestAnimationFrame = (function(){
           };
 })();
 ```
-:::

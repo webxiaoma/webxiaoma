@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS-This（一） | 小马学习网站</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/webxiaoma/img/manong.jpg">
+    <meta name="description" content="本文讲述js中的this使用。">
+    <meta name="keywords" content="this, js this, es6 this 马新想">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.ea2ea394.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.74a7561a.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.b623ccb5.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/26.4819c947.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.5f14fed2.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.c30948e3.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.6cf54eae.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.46ccc868.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.c47bca01.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.026925f9.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.cf946938.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.56d9700e.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.bd4b332c.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.46568f8c.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.79b8411c.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.14a152a0.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.4cbe096d.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.b4696701.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.2263213c.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.873362f5.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.50b9845c.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.837f695f.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.ffd85e0d.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.81d9eb31.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.aff94c2c.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.d96ba64c.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.db0c876e.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.f7b1cb6c.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.4e9b74f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.c45bcafd.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.b2a30eb6.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.51c0d42b.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.0769f44f.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.ea2ea394.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马学习网站" class="logo"> <span class="site-name can-hide">小马学习网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端系列" class="dropdown-title"><span class="title">前端系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端系列" class="mobile-dropdown-title"><span class="title">前端系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端系列" class="dropdown-title"><span class="title">前端系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端系列" class="mobile-dropdown-title"><span class="title">前端系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS+HTML系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS系列</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/web/js/js-bom.html" class="sidebar-link">JS-BOM操作</a></li><li><a href="/webxiaoma/web/js/js-dom.html" class="sidebar-link">JS-DOM操作</a></li><li><a href="/webxiaoma/web/js/js-event.html" class="sidebar-link">JS-事件</a></li><li><a href="/webxiaoma/web/js/js-function.html" class="sidebar-link">JS-函数</a></li><li><a href="/webxiaoma/web/js/js-prototype.html" class="sidebar-link">JS-原型与原型链</a></li><li><a href="/webxiaoma/web/js/js-context.html" class="sidebar-link">JS-执行上下文</a></li><li><a href="/webxiaoma/web/js/js-variable.html" class="sidebar-link">JS-变量对象</a></li><li><a href="/webxiaoma/web/js/js-scope-chain.html" class="sidebar-link">JS-作用域和作用域链</a></li><li><a href="/webxiaoma/web/js/js-this1.html" aria-current="page" class="active sidebar-link">JS-This（一）</a></li><li><a href="/webxiaoma/web/js/js-this2.html" class="sidebar-link">JS-This (二)</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常见面试题</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="js-this-一"><a href="#js-this-一" class="header-anchor">#</a> JS-This（一）</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#全局中的this">全局中的this</a></li><li><a href="#函数中的this">函数中的this</a></li><li><a href="#定时器中的this">定时器中的this</a></li><li><a href="#dom事件中的this">DOM事件中的this</a></li><li><a href="#es6-中的this">ES6 中的this</a></li><li><a href="#构造函数中的this">构造函数中的this</a></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>今天来写一写<code>JavaScript</code>中的<code>this</code>，虽然<code>this</code>已经被讨论烂了，但是我们这里还是从两个角度去探索一下，这篇文章我们从多种情况来总结出<code>this</code>的指向，<a href="/web/js/js-this2">下一篇关于this的文章</a>中我们从另一个角度来探讨一下<code>this</code>的指向问题。这篇文章只是总结了常见的<code>this</code>指向的问题，并没有从根源说起，如果想了解更多，可以看<a href="/web/js/js-this2">第二篇关于<code>this</code>的文章</a>。</p> <p><code>this</code>其实就是执行上下文的一个属性，在<code>javaScript</code>中<code>this</code>时在进入上下文时确定的，并且在上下文运行期间一直不会发生变化。下面我们来看看<code>this</code>指向的多种情况。</p> <h2 id="全局中的this"><a href="#全局中的this" class="header-anchor">#</a> 全局中的this</h2> <p>全局中的<code>this</code>对于我们来说应该还是很好理解的，全局中的<code>this</code>, 指向的就是 <code>window</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  <span class="token comment">// 指向window</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span> <span class="token comment">// 10  this执行window</span>
+</code></pre></div><h2 id="函数中的this"><a href="#函数中的this" class="header-anchor">#</a> 函数中的this</h2> <p>函数中的<code>this</code>相对于全局中的<code>this</code>来说比较难搞，我们需要考虑函数的执行上下文，因为<code>this</code>是在函数调用时来确定的，也就是说调用函数的方式不同会影响<code>this</code>的指向，下面我们来看看函数中的<code>this</code>,</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 全局中执行fun函数</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> 
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// this 指向window</span>
+
+<span class="token comment">// 以原型的构造函数方式调用</span>
+fun<span class="token punctuation">.</span>propotype<span class="token punctuation">.</span><span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// this 指向fun.propotype对象</span>
+
+<span class="token comment">//对象中调用fun</span>
+
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">fun</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// this 指向 obj对象</span>
+<span class="token keyword">var</span> f <span class="token operator">=</span> obj<span class="token punctuation">.</span>fun<span class="token punctuation">;</span>
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// this 指向 window对象</span>
+</code></pre></div><p>我们可以发现，函数作为对象的方法调用时，会指向调用该函数的对象（这么说不是很严谨，我们讨论的只是<code>this</code>的指向情况）, 如果将对象的方法赋值给全局变量，那么在函数执行时，<code>this</code>会指向<code>window</code></p> <p>另外我们看看下面这种情况：</p> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">bar</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">fun</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">(</span>obj<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this 指向obj</span>
+<span class="token punctuation">(</span><span class="token boolean">true</span><span class="token operator">&amp;&amp;</span>obj<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this 指向window</span>
+<span class="token punctuation">(</span>obj<span class="token punctuation">.</span>bar <span class="token operator">=</span> obj<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// this 指向window</span>
+obj<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// this 指向window</span>
+</code></pre></div><p>为了方便记忆我们可以这样确定<code>this</code>，首先括号<code>()</code>是组运算对<code>this</code>的确定没有影响，但是其他的赋值运算会对<code>this</code>造成影响，比如<code>=</code>、<code>&amp;&amp;</code>、<code>||</code>, 此时会将<code>this</code>值会是<code>undefined</code>，并最终指向<code>window</code>。所以针对上面的例子我们就可以得出</p> <ol><li><code>(obj.bar)()</code> 结果为<code>this</code> 指向<code>obj</code>, 因为组运算对<code>this</code>的确定没有影响；</li> <li><code>(true&amp;&amp;obj.bar)()</code> 和 <code>(obj.bar = obj.bar)()</code>的结果为<code>this</code>指向<code>window</code>，因为赋值运算会改变<code>this</code>指向；</li> <li><code>obj.fun()</code>结果为<code>this</code>指向<code>window</code>，这种情况下，我们可以记住，函数执行后，内部函数执行时<code>this</code>的值会是<code>undefined</code>，并最终将会指向<code>window</code>，（虽然这么去理解是不正确的，但是为了更快的记住<code>this</code>的指向，只能这么干了。）</li></ol> <h2 id="定时器中的this"><a href="#定时器中的this" class="header-anchor">#</a> 定时器中的this</h2> <p><code>setTimeout</code>方法和<code>setInterval</code>方法是全局对象<code>window</code>的两个方法，在这两个方法触发的函数(不包含ES6箭头函数)中的<code>this</code>指向<code>window</code></p> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">bar</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">fun</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+foo<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// this 指向 window</span>
+foo<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// this 指向 window</span>
+</code></pre></div><h2 id="dom事件中的this"><a href="#dom事件中的this" class="header-anchor">#</a> DOM事件中的this</h2> <p><code>DOM</code>事件中绑定的函数中的<code>this</code>指向触发该事件的<code>DOM</code>元素。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>test<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   aaaaaaaaaaaaaae
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&quot;#test&quot;</span><span class="token punctuation">)</span>
+  div<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  <span class="token comment">// 指向id为test的元素</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h2 id="es6-中的this"><a href="#es6-中的this" class="header-anchor">#</a> ES6 中的this</h2> <p>在<code>es6</code>中讨论<code>this</code> 我们这里就不得不提箭头函数了, 和<code>es5</code>中，函数在执行时确定<code>this</code>不同，<code>es6</code>的箭头函数中根本没有自己的<code>this</code>,箭头函数中是继承自上级上下文中的<code>this</code>。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">bar</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">fun</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+foo<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// this 指向 window</span>
+foo<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">// this 指向 foo</span>
+<span class="token keyword">var</span> newF <span class="token operator">=</span> foo<span class="token punctuation">.</span>fun<span class="token punctuation">;</span>
+<span class="token function">newF</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// this 指向 window</span>
+</code></pre></div><p>通过上面例子我们可以看到，定时器<code>setTimeout</code>触发函数中的<code>this</code>应该是指向<code>window</code>的，但是当在<code>setTimeout</code>中使用箭头函数时，因为箭头函数没有<code>this</code>，它的<code>this</code>是继承上级的上下文中的<code>this</code>的。</p> <p>第二种情况我们可以看出，在执行<code>foo.fun()</code>时箭头函数中的<code>this</code>就是继承自<code>foo.fun</code>中的<code>this</code>, 当通过<code>foo.fun()</code>调用函数时，<code>foo.fun</code>中的<code>this</code>指向<code>foo</code>,所以箭头函数中的<code>this</code>指向<code>foo</code>对象</p> <p>第三种情况通过<code>newF()</code>调用函数时，<code>foo.fun</code>中的<code>this</code>指向<code>undefined</code>,最终指向<code>window</code>上面我们也分析过，所以箭头函数中的<code>this</code>指向<code>window</code></p> <p>所以在确定箭头函数中的<code>this</code>时，我们只需要确定它上级的上下文中的<code>this</code>即可。</p> <p>我们在来看看下面在<code>DOM</code>事件中箭头函数内的<code>this</code></p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>test<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+   aaaaaaaaaaaaaae
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">&quot;#test&quot;</span><span class="token punctuation">)</span>
+  div<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>  <span class="token comment">// 指向 window</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p><code>DOM</code>事件中箭头函数内的<code>this</code>也不再指向触发事件的元素了，而是指向它的上级上下文中的<code>this</code>即<code>window</code>。</p> <h2 id="构造函数中的this"><a href="#构造函数中的this" class="header-anchor">#</a> 构造函数中的this</h2> <p>在构造函数中<code>this</code>还是很好确定的，在构造函数中<code>this</code>永远指向通过构造函数创建的对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">people</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;king&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">52</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> one <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> two <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>上面在构造函数中的<code>this</code>会指向通过<code>new</code>创建出来的对象。第一种情况下<code>people</code>中的<code>this</code>指向 <code>one</code>对象，第二种情况下<code>people</code>中的<code>this</code>指向 <code>two</code>对象</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/web/js/js-scope-chain.html" class="prev">
+        JS-作用域和作用域链
+      </a></span> <span class="next"><a href="/webxiaoma/web/js/js-this2.html">
+        JS-This (二)
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>JS-This（一）</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#全局中的this" data-v-4100c7a9>全局中的this</a></li><li class="title" data-v-4100c7a9><a href="#函数中的this" data-v-4100c7a9>函数中的this</a></li><li class="title" data-v-4100c7a9><a href="#定时器中的this" data-v-4100c7a9>定时器中的this</a></li><li class="title" data-v-4100c7a9><a href="#dom事件中的this" data-v-4100c7a9>DOM事件中的this</a></li><li class="title" data-v-4100c7a9><a href="#es6-中的this" data-v-4100c7a9>ES6 中的this</a></li><li class="title" data-v-4100c7a9><a href="#构造函数中的this" data-v-4100c7a9>构造函数中的this</a></li></ul></div></div></div></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.74a7561a.js" defer></script><script src="/webxiaoma/assets/js/2.b623ccb5.js" defer></script><script src="/webxiaoma/assets/js/26.4819c947.js" defer></script>
+  </body>
+</html>

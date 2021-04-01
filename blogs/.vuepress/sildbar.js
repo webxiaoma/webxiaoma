@@ -9,7 +9,6 @@ module.exports = {
 
   /**************前端*************/ 
   "/web/":[
-    "",
     {
       title: 'CSS+HTML系列',
       collapsable: true,
@@ -23,7 +22,15 @@ module.exports = {
       collapsable: true,
       children: [
           "js/js-bom",
-          "js/js-defineProperty",
+          "js/js-dom",
+          "js/js-event",
+          "js/js-function",
+          "js/js-prototype",
+          "js/js-context",
+          "js/js-variable",
+          "js/js-scope-chain",
+          "js/js-this1",
+          "js/js-this2",
       ]
     },
     {
@@ -32,7 +39,7 @@ module.exports = {
       children: [
           "question/",
           'question/css',
-          'question/vue',
+          // 'question/vue',
       ]
      },
   ]

@@ -10,7 +10,7 @@ sidebarDepth: 2
 ---
 # 前端导航
 
-<!-- ------------------------------------------------- -->
+:horse: 
 ## CSS导航
 
 <NavItem title="官方导航">
@@ -24,6 +24,7 @@ sidebarDepth: 2
 
 <NavItem  title="基础学习">
   <NavCard title="ES6" jumpUrl="https://es6.ruanyifeng.com/" logo="es6.png" des="ES6是JavaScript 语言的一代版本，该网站为阮一峰老师的 《ECMAScript 6 入门教程》" />
+  <NavCard title="Babel" jumpUrl="https://babel.docschina.org/docs/en/babel-core/" logo="https://babel.docschina.org/img/favicon.png" des="Babel 是一个工具链，主要用于在旧的浏览器或环境中将 ECMAScript 2015+ 代码转换为向后兼容版本的 JavaScript 代码" />
 </NavItem>
 
 <NavItem  title="优秀插件">

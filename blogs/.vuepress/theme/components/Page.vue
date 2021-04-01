@@ -3,9 +3,9 @@
     <slot name="top" />
     <div class="main">
       <div class="content">
-         <Content class="theme-default-content" />
-         <PageEdit />
-         <PageNav v-bind="{ sidebarItems }" />
+          <Content class="theme-default-content" />
+          <PageEdit />
+          <PageNav v-bind="{ sidebarItems }" />
       </div>
       <div v-if="isShowFloatSilder" class="floatSilder hidden-sm-and-down">
           <FloatSilder  v-show="isShowFloatSilder" />
@@ -57,16 +57,20 @@ export default {
   padding-bottom 0
   display block
   .main
+    width 100%
     display flex
     background #eaecef
     min-height 100vh
     .content
       flex 1
+      width 0
       margin 0 10px
       padding-bottom 2rem
       background #fff
+      position relative
+
     .floatSilder
-      width 260px
+      width 290px
 
 
 @media (max-width: $MQMobile)

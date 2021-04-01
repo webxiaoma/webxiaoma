@@ -47,7 +47,7 @@ export default {
 <style scoped  lang="stylus">
 .floatSilderWrapper
    box-sizing border-box
-   width 250px
+   width 280px
    max-height 70%
    position fixed
    top 65px
@@ -68,10 +68,11 @@ export default {
     background-color:rgba(76,175,80,0.3);
    .topTitle
      background #3eaf7c
-     padding 4px
+     padding 6px
      color #ffffff
      text-align center
-     font-size 14px
+     font-size 16px
+     font-weight bold
    .contentNav
      padding 4px 10px 6px 12px
    .nav
@@ -81,13 +82,13 @@ export default {
       &:hover
        color #3eaf7c
    .title
-     font-size 13px
+     font-size 14px
      margin 1px  0
      a
       color #666
       font-weight bold
    .subTitle
-      font-size 12px
+      font-size 13px
       margin 0 0 0 16px
       list-style-type circle
       a

@@ -29,14 +29,15 @@ module.exports = {
                 {text:"CSS的BFC", link:"/web/csshtml/css-bfc"},
               ]},
               {text:"JS系列", items:[
-                {text:"defineProperty对象", link:"/web/js/js-defineProperty"},
+                {text:"JS-原型与原型链", link:"/web/js/js-prototype"},
+                {text:"JS-执行上下文", link:"/web/js/js-context"},
               ]},
               {text:"常见面试题", items:[
                 {text:"CSS面试题", link:"/web/question/css"},
               ]},
             ]
           },
-          { text: 'Java系列', link: '/java/' },
+          // { text: 'Java系列', link: '/java/' },
       ],
       sidebar: Sidebar,
       sidebarDepth: false,// 侧边栏最大层级 最大只能为2

@@ -3,10 +3,12 @@
 // 修改全局样式
 *{
   box-sizing: border-box;
-
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  font-family:"微软雅黑", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .theme-default-content:not(.custom){
-  max-width: 95%;
+  max-width: 90%;
 }
 
 .sidebar{
@@ -26,3 +28,12 @@ a.sidebar-link.active{
 .theme-default-content code 
   background-color rgba(219,240,229,.5)
   color #3eaf7c
+
+
+
+@media (max-width: 419px)
+    .theme-default-content div[class*="language-"]
+      margin-right -16px
+    .theme-default-content:not(.custom){
+      max-width: none;
+}
