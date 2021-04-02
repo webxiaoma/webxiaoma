@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS-基础类型和引用类型 | 小马学习网站</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <meta name="description" content="本文讲述JavaScript中的数据类型，包括基础数据类型以及引用数据类型。">
+    <meta name="keywords" content="基础数据类型, 引用数据类型, es6，js引用数据类型  马新想">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.d9e6268f.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.433b1742.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.22047073.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/21.3f8e74bc.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/3.f7ac1597.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.5f14fed2.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.15ac9c80.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.e3dec060.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.71e75ce1.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.97a4ccea.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.f290f301.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.57df5130.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.ae654cfa.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.8d3ff55e.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.acadd7a2.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.9b993302.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.671d382d.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.7f6c5c06.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.07818385.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.c0686d1a.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.f1ca5bc9.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.2ca4a8f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.e2ffdbab.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.872e6928.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.ba4b67a0.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.d60ed709.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.5a361090.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.6a6b5433.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.7b4053ab.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.acbed454.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.8e1f0216.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.750036fd.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.45e5162b.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.c45bcafd.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.c0b7d8bf.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.30d48cf4.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.0769f44f.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.d9e6268f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马学习网站" class="logo"> <span class="site-name can-hide">小马学习网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端系列" class="dropdown-title"><span class="title">前端系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端系列" class="mobile-dropdown-title"><span class="title">前端系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端系列" class="dropdown-title"><span class="title">前端系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端系列" class="mobile-dropdown-title"><span class="title">前端系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS+HTML系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS系列</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/web/js/js-bom.html" class="sidebar-link">JS-BOM操作</a></li><li><a href="/webxiaoma/web/js/js-dom.html" class="sidebar-link">JS-DOM操作</a></li><li><a href="/webxiaoma/web/js/js-event.html" class="sidebar-link">JS-事件</a></li><li><a href="/webxiaoma/web/js/js-function.html" class="sidebar-link">JS-函数</a></li><li><a href="/webxiaoma/web/js/js-prototype.html" class="sidebar-link">JS-原型与原型链</a></li><li><a href="/webxiaoma/web/js/js-context.html" class="sidebar-link">JS-执行上下文</a></li><li><a href="/webxiaoma/web/js/js-variable.html" class="sidebar-link">JS-变量对象</a></li><li><a href="/webxiaoma/web/js/js-scope-chain.html" class="sidebar-link">JS-作用域和作用域链</a></li><li><a href="/webxiaoma/web/js/js-this1.html" class="sidebar-link">JS-This（一）</a></li><li><a href="/webxiaoma/web/js/js-this2.html" class="sidebar-link">JS-This (二)</a></li><li><a href="/webxiaoma/web/js/js-closure.html" class="sidebar-link">JS-闭包</a></li><li><a href="/webxiaoma/web/js/js-data-type.html" aria-current="page" class="active sidebar-link">JS-基础类型和引用类型</a></li><li><a href="/webxiaoma/web/js/js-new.html" class="sidebar-link">JS-new操作符</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常见面试题</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="js-基础类型和引用类型"><a href="#js-基础类型和引用类型" class="header-anchor">#</a> JS-基础类型和引用类型</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#基础数据类型">基础数据类型</a></li><li><a href="#引用数据类型">引用数据类型</a></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>我们都知道在<code>JavaScript</code>中有六种数据类型<code>Number</code>、<code>Blooean</code>、<code>String</code>、<code>Undefined</code>、<code>Null</code>，还有一种复杂的数据类型<code>Object</code>（<code>Array</code>是一种特殊的<code>Object</code>），另外在<code>ES6</code>中新增加一种<code>Symbol</code>数据类型，表示独一无二的值。此外我们还可以将它们分为基础类型和引用类型，这是从它们存储数据的方式来区分的。</p> <h2 id="基础数据类型"><a href="#基础数据类型" class="header-anchor">#</a> 基础数据类型</h2> <p>基础数据类型的值是不可以改变的，我们常见的数据类型中,如 <code>String</code>、<code>Number</code>、<code>undefined</code>、<code>null</code>、<code>Symbol</code>，都是基本数据类型，基本数据类型的变量是存放在栈区的（栈区指内存里的栈内存），一经设置就不会被修改。此外基本数据类型的比较时，比较的是数据类型，我们来看下面例子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">&quot;hello world&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">&quot;world&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;老王&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token comment">// &quot;hello world&quot;  str字符串并未被改变</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span> <span class="token comment">//&quot;hello 老王&quot;  返回了一个新字符串</span>
+
+<span class="token comment">// 基本数据类型的比较</span>
+<span class="token keyword">var</span> str1 <span class="token operator">=</span> <span class="token string">&quot;one&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> str2 <span class="token operator">=</span> <span class="token string">&quot;two&quot;</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str1 <span class="token operator">==</span> str2<span class="token punctuation">)</span> <span class="token comment">// true 比较的是数据类型</span>
+</code></pre></div><p>字符串<code>str</code> 和 <code>newStr</code> 用内存图展示如下：</p> <div class="imageWrapper" data-v-4390c8c3><div class="image" data-v-4390c8c3><img src="/webxiaoma/img/web/js/this-1.png" alt width="500" data-v-4390c8c3></div> <div class="imgModel" style="display:none;" data-v-4390c8c3><p data-v-4390c8c3>asd</p> <img src="/webxiaoma/img/web/js/this-1.png" class="scaleImg" data-v-4390c8c3></div></div> <p>上面的例子，通过<code>replace</code>方法替换<code>world</code>后，并没有修改<code>str</code>本身，因为我们打印<code>str</code>时，输出还是<code>&quot;hello world&quot;</code>, 通过<code>replace</code>方法替换<code>world</code>后而是返回了一个新的字符串。</p> <h2 id="引用数据类型"><a href="#引用数据类型" class="header-anchor">#</a> 引用数据类型</h2> <p>在<code>JavaScript</code>中常见的引用数据类型就是对象了（包括数组）。引用类型的值是同时保存在栈内存和堆内存(数据保存在堆内存中)中的对象，并且引用类型的值在比较时，比较的是内存地址是否相同。我们来看下面的例子：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 第一种情况</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span><span class="token string">'King'</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span><span class="token number">23</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> newObj <span class="token operator">=</span> obj<span class="token punctuation">;</span>
+newObj<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">50</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 50 obj 中的age被改变了</span>
+
+<span class="token comment">// 基本数据类型的比较</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj1 <span class="token operator">==</span> obj2<span class="token punctuation">)</span> <span class="token comment">// false 比较的是内存地址</span>
+</code></pre></div><p>对象<code>obj</code> 和 <code>newObj</code> 用内存图展示如下：</p> <div class="imageWrapper" data-v-4390c8c3><div class="image" data-v-4390c8c3><img src="/webxiaoma/img/web/js/this2.png" alt width="500" data-v-4390c8c3></div> <div class="imgModel" style="display:none;" data-v-4390c8c3><p data-v-4390c8c3>asd</p> <img src="/webxiaoma/img/web/js/this2.png" class="scaleImg" data-v-4390c8c3></div></div> <p>上面提到的将<code>obj</code>赋值给<code>newObj</code>对象后，<code>obj</code>和<code>newObj</code>都是引用数据类型，他们的内存地址指向同一个对象，当<code>obj</code>和<code>newObj</code>对象中某一个属性发生变化时，都会影响对应的对象。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/web/js/js-closure.html" class="prev">
+        JS-闭包
+      </a></span> <span class="next"><a href="/webxiaoma/web/js/js-new.html">
+        JS-new操作符
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>JS-基础类型和引用类型</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#基础数据类型" data-v-4100c7a9>基础数据类型</a></li><li class="title" data-v-4100c7a9><a href="#引用数据类型" data-v-4100c7a9>引用数据类型</a></li></ul></div></div></div></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.433b1742.js" defer></script><script src="/webxiaoma/assets/js/2.22047073.js" defer></script><script src="/webxiaoma/assets/js/21.3f8e74bc.js" defer></script><script src="/webxiaoma/assets/js/3.f7ac1597.js" defer></script>
+  </body>
+</html>

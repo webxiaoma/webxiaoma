@@ -4,7 +4,8 @@ module.exports = {
   title:'小马学习网站',
   description:"小马学习网站",
   head: [
-      ["link", { rel: "icon", href: `${baseUrl}img/manong.jpg` }],
+      ["link", { rel: "icon", href: `/img/manong.jpg` }],
+      ["meta", { content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport" }],
   ], //被注入页面 HTML <head> 额外的标签
   host: "localhost", //访问路径
   port: "5555", //端口

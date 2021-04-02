@@ -13,8 +13,8 @@ module.exports = {
       title: 'CSS+HTML系列',
       collapsable: true,
       children: [
-          "csshtml/css-formatContent",
-          "csshtml/css-bfc",
+        "csshtml/css-formatContent",
+        "csshtml/css-bfc",
       ]
     },
     {
@@ -31,6 +31,9 @@ module.exports = {
           "js/js-scope-chain",
           "js/js-this1",
           "js/js-this2",
+          "js/js-closure",
+          "js/js-data-type",
+          "js/js-new",
       ]
     },
     {

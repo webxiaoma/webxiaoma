@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS-new操作符 | 小马学习网站</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <meta name="description" content="本文讲述使用new创建对象的一些内部操作，以及对new操作的一些认识。">
+    <meta name="keywords" content="new, new操作符, js new，new创建对象">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.d9e6268f.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.433b1742.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.22047073.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/25.c0686d1a.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.5f14fed2.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.15ac9c80.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.e3dec060.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.71e75ce1.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.97a4ccea.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.f290f301.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.57df5130.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.ae654cfa.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.8d3ff55e.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.acadd7a2.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.9b993302.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.3f8e74bc.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.671d382d.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.7f6c5c06.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.07818385.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.f1ca5bc9.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.2ca4a8f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.e2ffdbab.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.872e6928.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.f7ac1597.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.ba4b67a0.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.d60ed709.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.5a361090.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.6a6b5433.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.7b4053ab.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.acbed454.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.8e1f0216.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.750036fd.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.45e5162b.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.c45bcafd.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.c0b7d8bf.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.30d48cf4.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.0769f44f.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.d9e6268f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马学习网站" class="logo"> <span class="site-name can-hide">小马学习网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端系列" class="dropdown-title"><span class="title">前端系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端系列" class="mobile-dropdown-title"><span class="title">前端系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端系列" class="dropdown-title"><span class="title">前端系列</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端系列" class="mobile-dropdown-title"><span class="title">前端系列</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS+HTML系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS系列</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/web/js/js-bom.html" class="sidebar-link">JS-BOM操作</a></li><li><a href="/webxiaoma/web/js/js-dom.html" class="sidebar-link">JS-DOM操作</a></li><li><a href="/webxiaoma/web/js/js-event.html" class="sidebar-link">JS-事件</a></li><li><a href="/webxiaoma/web/js/js-function.html" class="sidebar-link">JS-函数</a></li><li><a href="/webxiaoma/web/js/js-prototype.html" class="sidebar-link">JS-原型与原型链</a></li><li><a href="/webxiaoma/web/js/js-context.html" class="sidebar-link">JS-执行上下文</a></li><li><a href="/webxiaoma/web/js/js-variable.html" class="sidebar-link">JS-变量对象</a></li><li><a href="/webxiaoma/web/js/js-scope-chain.html" class="sidebar-link">JS-作用域和作用域链</a></li><li><a href="/webxiaoma/web/js/js-this1.html" class="sidebar-link">JS-This（一）</a></li><li><a href="/webxiaoma/web/js/js-this2.html" class="sidebar-link">JS-This (二)</a></li><li><a href="/webxiaoma/web/js/js-closure.html" class="sidebar-link">JS-闭包</a></li><li><a href="/webxiaoma/web/js/js-data-type.html" class="sidebar-link">JS-基础类型和引用类型</a></li><li><a href="/webxiaoma/web/js/js-new.html" aria-current="page" class="active sidebar-link">JS-new操作符</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常见面试题</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="js-new操作符"><a href="#js-new操作符" class="header-anchor">#</a> JS-new操作符</h1> <p></p><div class="table-of-contents"><ul><li><a href="#new操作符的使用">new操作符的使用</a><ul><li><a href="#第一种使用方式">第一种使用方式</a></li><li><a href="#第二种使用方式">第二种使用方式</a></li><li><a href="#第三种使用方式">第三种使用方式</a></li></ul></li><li><a href="#new操作符的内部实现">new操作符的内部实现</a></li></ul></div><p></p> <p>🐴</p> <h2 id="new操作符的使用"><a href="#new操作符的使用" class="header-anchor">#</a> new操作符的使用</h2> <p>在<code>JavaScript</code>中我们在创建一个新的实例对象时会使用<code>new</code>操作符去创建，我们来看看使用new操作符创建实例的几个例子：</p> <h3 id="第一种使用方式"><a href="#第一种使用方式" class="header-anchor">#</a> 第一种使用方式</h3> <p><strong>1.构造函数中没有返回值的实例对象情况</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> XiaoMing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>XiaoMing<span class="token punctuation">)</span>
+</code></pre></div><p>上面创建<code>XiaoMing</code>实例，我们可以知道下面几个：</p> <ul><li>构造函数<code>Person</code>中的<code>this</code>指向了实例化后的对象<code>XiaoMing</code>;</li> <li>实例化后的对象<code>XiaoMing</code>没有原型<code>prototype</code>，但是有原型链<code>__proto__</code>，原型链指向构造函数<code>Person</code>的原型<code>Person.prototype</code></li> <li>并且<code>Person</code>的原型<code>Person.prototype</code>的方法内<code>this</code>指向也实例化后的对象<code>XiaoMing</code>;</li></ul> <h3 id="第二种使用方式"><a href="#第二种使用方式" class="header-anchor">#</a> 第二种使用方式</h3> <p><strong>2.构造函数中有返回值，但返回值是基本数据类型的情况</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+    <span class="token keyword">return</span> <span class="token string">&quot;hello world!&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> XiaoMing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>XiaoMing<span class="token punctuation">)</span>
+</code></pre></div><p>这种情况下，虽然构造函数中返回了字符串，但是创建的实例不会有任何变化，它的特点同第一种没有区别。</p> <h3 id="第三种使用方式"><a href="#第三种使用方式" class="header-anchor">#</a> 第三种使用方式</h3> <p><strong>3. 构造函数中有返回值，但返回值是对象的情况</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        name<span class="token operator">:</span><span class="token string">'小红'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span><span class="token number">20</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> XiaoMing <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>XiaoMing<span class="token punctuation">)</span>
+</code></pre></div><p>上面创建<code>XiaoMing</code>实例，我们可以知道下面几个：</p> <ul><li>实例化后的对象<code>XiaoMing</code> 就是返回的对象；</li> <li>实例化后的原型链指向返回对象的原型；</li></ul> <h2 id="new操作符的内部实现"><a href="#new操作符的内部实现" class="header-anchor">#</a> new操作符的内部实现</h2> <p>通过上面<code>new</code>操作符的使用特点：我们现在模拟一下使用<code>new</code>实例化构造函数的过程。</p> <p>我们创建一个<code>simulateNew</code>函数, 该函数接收的第一个参数是构造函数，后面的参数，就是要传入构造函数的参数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">simulateNew</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> Fun <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token comment">// 截取并拿到第一个参数</span>
+    
+     <span class="token comment">// 执行构造函数，并将this指向obj并传入参数</span>
+    <span class="token keyword">var</span> resultFun <span class="token operator">=</span> <span class="token function">Fun</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span>arguments<span class="token punctuation">)</span>
+    obj<span class="token punctuation">.</span>__proto__ <span class="token operator">=</span> <span class="token class-name">Fun</span><span class="token punctuation">.</span>prototype  <span class="token comment">//设置obj原型链</span>
+
+    <span class="token comment">// 返回结果如果是对象就直接返回该对象，否则返回obj对象</span>
+    <span class="token keyword">return</span> <span class="token keyword">typeof</span> resultFun <span class="token operator">==</span> <span class="token string">'object'</span><span class="token operator">?</span>resultFun<span class="token operator">:</span>obj
+<span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">提示</p> <p>上面我们封装的整个思路是这样的：</p> <ol><li>创建一个空对象<code>obj</code>;</li> <li>使用<code>[].shift.call</code>截取封装函数的第一个参数，第一个参数为接收的构造函数</li> <li>使用<code>apply</code>执行构造函数，并将<code>this</code>指针执行<code>obj</code>, 将剩余的参数传入进入，此时会将构造函数中的属性绑定到<code>obj</code>对象上</li> <li>将<code>obj</code>的原型链指向构造函数的原型</li> <li>判断构造函数的返回值是否为对象，如果是则实例化结果为该返回对象，如果不是则为我们创建的<code>obj</code>对象</li></ol></div> <p>我们来看看如何使用上面我们封装的仿<code>new</code>操作符的函数：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">}</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 调用我们封装的仿`new`操作符函数</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">simulateNew</span><span class="token punctuation">(</span>Person<span class="token punctuation">,</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span>
+
+result<span class="token punctuation">.</span>name <span class="token comment">// 小明</span>
+result<span class="token punctuation">.</span>getAge <span class="token comment">// 函数</span>
+result<span class="token punctuation">.</span>__proto__  <span class="token operator">===</span> <span class="token class-name">Person</span><span class="token punctuation">.</span>prototype  <span class="token comment">// true</span>
+</code></pre></div><p>当构造函数中有返回值时，并且返回值是对象时：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">Person</span> <span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span>age</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            name<span class="token operator">:</span><span class="token string">'小红'</span><span class="token punctuation">,</span>
+            age<span class="token operator">:</span><span class="token number">20</span>
+       <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">getAge</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 调用我们封装的仿`new`操作符函数</span>
+<span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">simulateNew</span><span class="token punctuation">(</span>Person<span class="token punctuation">,</span><span class="token string">&quot;小明&quot;</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span>
+
+result<span class="token punctuation">.</span>name <span class="token comment">// 小红</span>
+result<span class="token punctuation">.</span>age <span class="token comment">// 20</span>
+result<span class="token punctuation">.</span>getAge <span class="token comment">// undefined</span>
+</code></pre></div><p>现在我们完成了模拟<code>new</code>操作符在执行时内部的一些操作。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/web/js/js-data-type.html" class="prev">
+        JS-基础类型和引用类型
+      </a></span> <span class="next"><a href="/webxiaoma/web/question/">
+        面试题前言
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>JS-new操作符</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#new操作符的使用" data-v-4100c7a9>new操作符的使用</a></li><li class="subTitle" data-v-4100c7a9><a href="#第一种使用方式" data-v-4100c7a9>第一种使用方式</a></li><li class="subTitle" data-v-4100c7a9><a href="#第二种使用方式" data-v-4100c7a9>第二种使用方式</a></li><li class="subTitle" data-v-4100c7a9><a href="#第三种使用方式" data-v-4100c7a9>第三种使用方式</a></li><li class="title" data-v-4100c7a9><a href="#new操作符的内部实现" data-v-4100c7a9>new操作符的内部实现</a></li></ul></div></div></div></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.433b1742.js" defer></script><script src="/webxiaoma/assets/js/2.22047073.js" defer></script><script src="/webxiaoma/assets/js/25.c0686d1a.js" defer></script>
+  </body>
+</html>

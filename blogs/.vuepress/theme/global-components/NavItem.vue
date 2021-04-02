@@ -6,7 +6,7 @@
       <p class="text">{{title}}</p>
       <p class='line'></p>
     </div>
-    <el-row :gutter="30">
+    <el-row :gutter="10">
       <slot></slot>
     </el-row>
  </div>
@@ -55,4 +55,10 @@ export default {
       font-weight bold
       text-align center
       color #777
+
+@media (max-width: $MQMobile)
+  .navItem
+    .navLine
+      .text
+        min-width 130px
 </style>

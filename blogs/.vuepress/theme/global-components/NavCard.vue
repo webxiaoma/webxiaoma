@@ -117,9 +117,11 @@ export default {
   .cardWrapper
     .card
       .cardTop
+        padding 0 2px
         .cardLogo
           .img 
             height 42px
         .cardTitle
           font-size 16px
+        
 </style>

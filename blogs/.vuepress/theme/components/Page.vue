@@ -68,7 +68,6 @@ export default {
       padding-bottom 2rem
       background #fff
       position relative
-
     .floatSilder
       width 290px
 
@@ -79,4 +78,6 @@ export default {
       background #fff
       .content
          width 100%
+         margin 0
+         padding 0 8px
 </style>

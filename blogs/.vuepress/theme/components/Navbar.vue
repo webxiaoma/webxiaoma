@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" @touchstart="dbclickTop">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <RouterLink
@@ -81,6 +81,11 @@ export default {
     }
     handleLinksWrapWidth()
     window.addEventListener('resize', handleLinksWrapWidth, false)
+  },
+  methods:{
+    dbclickTop(){
+      console.log(111111111)
+    }
   }
 }
 
