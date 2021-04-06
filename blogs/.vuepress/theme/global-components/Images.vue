@@ -6,7 +6,6 @@
      </div>
 
      <div class="imgModel" v-show="showMdel" @click="showImgModel(false)">
-         <p>asd</p>
          <img :src="imgUrl" class="scaleImg">
      </div>
  </div>
@@ -82,6 +81,7 @@ export default {
     background rgba(1,1,1,0.7)
     text-align center 
     padding-top 30px
+    overflow auto
     .scaleImg 
       width 70%
 

@@ -3,11 +3,11 @@
 		<web-view
 		   :style="{marginTop}"
 	     	class="webView"
-			src="https://webxiaoma.gitee.io/webxiaoma/"
+			src="http://localhost:5555/webxiaoma/"
 		></web-view>
 	</view>
 </template>
-
+<!-- src="https://webxiaoma.gitee.io/webxiaoma/" -->
 <script>
 	export default {
 		data() {
@@ -28,6 +28,7 @@
 					success: function(res) {
 						res.statusBarHeight; //这就是状态栏的高度
 						this.marginTop = res.statusBarHeight +"px";
+						console.log(1111,this.marginTop)
 					},
 				});
 			},

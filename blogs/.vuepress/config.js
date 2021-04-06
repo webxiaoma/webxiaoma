@@ -38,7 +38,13 @@ module.exports = {
               ]},
             ]
           },
-          // { text: 'Java系列', link: '/java/' },
+          { text: 'Java系列', items: [
+            {text:"基础系列", items:[
+              {text:"Java初识", link:"/java/basics/know"},
+              {text:"Java数字", link:"/java/basics/number"},
+              {text:"Java字符串", link:"/java/basics/strings"},
+            ]},
+          ]},
       ],
       sidebar: Sidebar,
       sidebarDepth: false,// 侧边栏最大层级 最大只能为2

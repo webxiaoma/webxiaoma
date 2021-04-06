@@ -7,7 +7,7 @@ module.exports = {
     "afterEnd",
   ],
 
-  /**************前端*************/ 
+
   "/web/":[
     {
       title: 'CSS+HTML系列',
@@ -42,9 +42,23 @@ module.exports = {
       children: [
           "question/",
           'question/css',
-          // 'question/vue',
+          'question/vue',
       ]
      },
-  ]
+  ],
+
+  /**************Java*************/ 
+  "/java/":[
+    {
+      title: '基础系列',
+      collapsable: true,
+      children: [
+        "basics/know",
+        "basics/number",
+        "basics/string",
+        "basics/array",
+      ]
+    },
+  ],
 
 }
