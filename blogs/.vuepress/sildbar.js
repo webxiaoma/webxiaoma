@@ -61,4 +61,16 @@ module.exports = {
     },
   ],
 
+  /************** 数据库 database*************/ 
+  "/database/":[
+    {
+      title: 'MySQL系列',
+      collapsable: true,
+      children: [
+        "mysql/init",
+        "mysql/data-type",
+      ]
+    },
+  ],
+
 }

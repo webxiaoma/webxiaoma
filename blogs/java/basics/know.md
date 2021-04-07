@@ -44,7 +44,6 @@ meta:
 `java`相比于其他编程语言，有一个跨平台的优点，在这里发挥作用的就是`jre`，它为用`Java`写的程序提供了一个虚拟的环境（采用了`JVM`技术），任何`java`程序只在这个环境内运行，而与操作系统无关。`jdk`是`java`的开发平台
 
 
-
 ## Maven
 
 [Maven](http://maven.apache.org/download.cgi)是一个项目构建和管理的工具，提供了帮助管理 构建、文档、报告、依赖、scms、发布、分发的方法。可以方便的编译代码、进行依赖管理、管理二进制库等等。[也可以看这篇文章](https://www.cnblogs.com/whgk/p/7112560.html)

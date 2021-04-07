@@ -42,7 +42,13 @@ module.exports = {
             {text:"基础系列", items:[
               {text:"Java初识", link:"/java/basics/know"},
               {text:"Java数字", link:"/java/basics/number"},
-              {text:"Java字符串", link:"/java/basics/strings"},
+              {text:"Java字符串", link:"/java/basics/string"},
+            ]},
+          ]},
+          { text: '数据库', items: [
+            {text:"MySQL系列", items:[
+              {text:"常用语法", link:"/database/mysql/init"},
+              {text:"数据类型", link:"/database/mysql/data-type"},
             ]},
           ]},
       ],
