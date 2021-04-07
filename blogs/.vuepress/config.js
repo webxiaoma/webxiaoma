@@ -6,8 +6,9 @@ module.exports = {
   head: [
       ["link", { rel: "icon", href: `/img/manong.jpg` }],
       ["meta", { content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport" }],
+      ["script", {src:"https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"}]
   ], //被注入页面 HTML <head> 额外的标签
-  host: "localhost", //访问路径
+  host: "172.20.10.4", //访问路径
   port: "5555", //端口
   base:baseUrl, // 部署站点的基础路径
   dest: "./docs", //输出目录

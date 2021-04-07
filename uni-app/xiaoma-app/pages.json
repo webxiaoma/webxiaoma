@@ -3,10 +3,10 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"topWindow": false,// 当前页面不显示 topWindow
+				"topWindow": true,// 当前页面不显示 topWindow
 				"navigationBarTitleText": "小马",
 				"app-plus":{
-					"titleNView":false
+					"titleNView":true
 				}
 			}
 		},

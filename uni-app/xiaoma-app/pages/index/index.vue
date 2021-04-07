@@ -1,10 +1,12 @@
 <template>
 	<view class="content">
-		<web-view
-		   :style="{marginTop}"
-	     	class="webView"
-			src="http://localhost:5555/webxiaoma/"
-		></web-view>
+		<view class="webWrapper" >
+			<web-view
+				class="webView"
+				src="https://webxiaoma.gitee.io/webxiaoma/"
+				@message="pushMessage"
+			></web-view>
+		</view>
 	</view>
 </template>
 <!-- src="https://webxiaoma.gitee.io/webxiaoma/" -->
@@ -12,32 +14,33 @@
 	export default {
 		data() {
 			return {
-				marginTop:"10px"
+				webviewH5:null
 			}
 		},
 		onLoad() {
-           this.getStatusBarHeight()
 		},
 		onBackPress(e){
-			
+			this.sendH5Msg();  
 		},
 		methods: {
-			getStatusBarHeight() {
-				let that = this;
-				wx.getSystemInfo({
-					success: function(res) {
-						res.statusBarHeight; //这就是状态栏的高度
-						this.marginTop = res.statusBarHeight +"px";
-						console.log(1111,this.marginTop)
-					},
-				});
+			sendH5Msg(){
+				var currentWebview = this.$mp.page.$getAppWebview() //此对象相当于html5plus里的plus.webview.currentWebview()。在uni-app里vue页面直接使用plus.webview.currentWebview()无效，非v3编译模式使用this.$mp.page.$getAppWebview()
+				this.webviewH5 = currentWebview.children()[0]
+				this.webviewH5.evalJS("$getBack()")
 			},
+			pushMessage(obj){ // 消息推送
+				
+			}
+
 		}
 	}
 </script>
 
 <style lang="less">
 .content {
-	
+	background-color: #fff;
+	.webWrapper{
+		
+	}
 }
 </style>
