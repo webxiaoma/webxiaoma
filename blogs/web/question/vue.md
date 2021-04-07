@@ -276,12 +276,12 @@ this.$nextTick(()=>{
      }
    }
  }
-<script>
+</script>
 ```
 
 另外组件内部还可以修改接收的数据`value`，和自定义事件`input`的名字
 
-```js
+```vue
 model: {
   prop: 'checked',
   event: 'change'
