@@ -179,7 +179,7 @@ meta:
 ```
 
 ## CSS 盒模型
-
+images
 - `标准的盒模型 =  内容(content) + padding + border + margin`
 - `低版本IE盒模型 = 内容(content+ padding + border)  + margin`
 

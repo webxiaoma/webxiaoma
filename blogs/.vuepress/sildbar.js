@@ -59,6 +59,13 @@ module.exports = {
         "basics/array",
       ]
     },
+    {
+      title: 'JDBC',
+      collapsable: true,
+      children: [
+        "jdbc/mysql-connect",
+      ]
+    },
   ],
 
   /************** 数据库 database*************/ 
@@ -73,4 +80,9 @@ module.exports = {
     },
   ],
 
+
+  /************** 算法 *************/ 
+  "/algorithm/":[
+    "bubble-sort", //冒泡排序
+  ]
 }

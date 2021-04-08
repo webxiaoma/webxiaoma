@@ -1,12 +1,10 @@
 <template>
 	<view class="content">
-		<view class="webWrapper" >
-			<web-view
-				class="webView"
-				src="https://webxiaoma.gitee.io/webxiaoma/"
-				@message="pushMessage"
-			></web-view>
-		</view>
+		<web-view
+			class="webView"
+			src="https://webxiaoma.gitee.io/webxiaoma/"
+			@message="pushMessage"
+		></web-view>
 	</view>
 </template>
 <!-- src="https://webxiaoma.gitee.io/webxiaoma/" -->
@@ -39,8 +37,5 @@
 <style lang="less">
 .content {
 	background-color: #fff;
-	.webWrapper{
-		
-	}
 }
 </style>

@@ -291,12 +291,24 @@ props: {
 },
 ```
 
-## computed和watch的使用
+## computed和watch的区别与应用
+
+`watch`和`computed`都是以`Vue`的依赖追踪机制为基础的，它们都试图处理这样一件事情：当某一个数据（称它为依赖数据）发生变化的时候，所有依赖这个数据的“相关”数据“自动”发生变化，也就是自动调用相关的函数去实现数据的变动。
+
+- `computed`计算属性，该属性的结果会被缓存，只有当被计算的值发生改变时才会触发
+- `watch` 没有缓存功能，其触发方式类似于监听机制 + 事件机制
+
+**应用方面**
+
+- `computed`擅长处理的场景：一个数据受多个数据影响
+- `watch`擅长处理的场景：一个数据影响多个数据
+
+## 简单说一下vue中双向数据绑定
+
+`vue`中的双向绑定主要使用了`Object.defineProperty()` 来劫持`data`中的数据，为其添加`getter`和`setter`方法。并在数据（对象）发生变动时触发响应的`setter`方法，然后通知订阅者`Dep`，触发相应的监听回调`Updater`。
 
 
-## vue中双向数据绑定是如何实现的
-
-
+<Images src="/web/question/vue.png" width="100%" block/>
 
 ## $router和$route的区别
 
@@ -349,12 +361,29 @@ this.$route.params;
 this.$route.query;
 ```
 
-
 ## vue-router导航钩子函数
 
+**全局钩子函数**
 
+- `beforeEach` 进入路由前的钩子函数
+- `afterEach` 进入路由后的钩子函数
+
+**组件内钩子函数**
+
+- `beforeRouteEnter` 进入组件前,改函数中不能获取组件实例`this`
+- `beforeRouteUpdate` 在当前路由改变，但是该组件被复用时调用,如`/foo/:id`，在 `/foo/1` 和 `/foo/2` 之间跳转的时候
+
+- `beforeRouteLeave` 导航离开该组件的对应路由时调用可以访问`this`
 ## 在vue中多页面如何共享数据
 
+`vue`中页面之间共享数据常用的几个方法
 
+- 通过缓存（`SessionStorage`）进行数据共享
+- 通过路参传进行数据共享
+- 通过`vuex`进行数据共享
+- 以一个公共的`vue`实例作为桥梁，通过`$on`,`$emit`进行数据共享
+- 通过服务器进行数据共享
 
 ## vuex是什么，什么时候使用
+
+`Vuex` 是一个专为 `Vue.js` 应用程序开发的状态管理模式。当我们开发中大型项目，各组件间需要共享很多数据的时候经常会用到`vuex`。

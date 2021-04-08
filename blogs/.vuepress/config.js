@@ -8,7 +8,7 @@ module.exports = {
       ["meta", { content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport" }],
       ["script", {src:"https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"}]
   ], //被注入页面 HTML <head> 额外的标签
-  host: "172.20.10.4", //访问路径
+  host: "localhost", //访问路径
   port: "5555", //端口
   base:baseUrl, // 部署站点的基础路径
   dest: "./docs", //输出目录
@@ -36,6 +36,7 @@ module.exports = {
               ]},
               {text:"常见面试题", items:[
                 {text:"CSS面试题", link:"/web/question/css"},
+                {text:"Vue2.x面试题", link:"/web/question/vue"},
               ]},
             ]
           },
@@ -45,6 +46,9 @@ module.exports = {
               {text:"Java数字", link:"/java/basics/number"},
               {text:"Java字符串", link:"/java/basics/string"},
             ]},
+            {text:"JDBC操作", items:[
+              {text:"MySQL操作", link:"/java/jdbc/mysql-connect"},
+            ]},
           ]},
           { text: '数据库', items: [
             {text:"MySQL系列", items:[
@@ -52,17 +56,16 @@ module.exports = {
               {text:"数据类型", link:"/database/mysql/data-type"},
             ]},
           ]},
+          { text: '算法', items: [
+            {text:"常见算法", items:[
+              {text:"冒泡排序", link:"/algorithm/bubble-sort"},
+            ]},
+          ]},
       ],
       sidebar: Sidebar,
       sidebarDepth: false,// 侧边栏最大层级 最大只能为2
-     // displayAllHeaders:true,  // 侧边栏所有链接全展开
-      lastUpdated: '最近更新时间', // 最后更新时间
-      serviceWorker: {
-          updatePopup: { //刷新内容的弹窗
-              message: "这篇文章已经更新", 
-              buttonText: "立即刷新" 
-          }
-      },
+      // displayAllHeaders:true,  // 侧边栏所有链接全展开
+      lastUpdated: '最近更新时间', // 最后更新时间 #ededed
       smoothScroll: true
   },
   extraWatchFiles: [ // 指定额外的需要被监听的文件
@@ -86,7 +89,14 @@ module.exports = {
       backgroundColor:"#3eaf7c",
       successText: "复制成功"
       }], // 代码块复制
-  ]
+    ],
+    '@vuepress/pwa': { // pwa
+      serviceWorker: true,
+      updatePopup: { //刷新内容的弹窗
+        message: "这篇文章已经更新", 
+        buttonText: "立即刷新" 
+      }
+    }
 };
 
 
