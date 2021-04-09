@@ -118,6 +118,9 @@ export default {
 
       return 'Source'
     }
+  },
+  created(){
+      console.log(this.userLinks)
   }
 }
 </script>

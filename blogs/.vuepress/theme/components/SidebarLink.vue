@@ -107,6 +107,7 @@ function renderExternal (h, to, text) {
   font-size 0.95em
 
 a.sidebar-link
+  -webkit-app-region no-drag
   font-size 1em
   font-weight 400
   display inline-block

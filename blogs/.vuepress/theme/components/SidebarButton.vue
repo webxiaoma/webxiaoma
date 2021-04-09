@@ -21,6 +21,7 @@
 
 <style lang="stylus">
 .sidebar-button
+  -webkit-app-region drag
   cursor pointer
   display none
   width 1.25rem

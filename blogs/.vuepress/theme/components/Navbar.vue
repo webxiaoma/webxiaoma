@@ -104,6 +104,7 @@ $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
+  -webkit-app-region drag
   a, span, img
     display inline-block
   .logo
@@ -116,7 +117,10 @@ $navbar-horizontal-padding = 1.5rem
     font-weight 600
     color $textColor
     position relative
+  .home-link
+    -webkit-app-region no-drag
   .links
+    -webkit-app-region no-drag
     padding-left 1.5rem
     box-sizing border-box
     background-color white
@@ -126,6 +130,7 @@ $navbar-horizontal-padding = 1.5rem
     right $navbar-horizontal-padding
     top $navbar-vertical-padding
     display flex
+    padding-bottom 10px
     .search-box
       flex: 0 0 auto
       vertical-align top

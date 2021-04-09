@@ -5,6 +5,7 @@
   >
     <header class="hero">
       <img
+        class="logo"
         v-if="data.heroImage"
         :src="$withBase(data.heroImage)"
         :alt="data.heroAlt || 'hero'"
@@ -92,8 +93,7 @@ export default {
   .hero
     text-align center
     img
-      max-width: 100%
-      max-height 280px
+      width 320px
       display block
       margin 3rem auto 1.5rem
     h1

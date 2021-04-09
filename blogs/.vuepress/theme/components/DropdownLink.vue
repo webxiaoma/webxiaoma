@@ -134,6 +134,7 @@ export default {
 
 <style lang="stylus">
 .dropdown-wrapper
+  -webkit-app-region no-drag
   cursor pointer
   .dropdown-title
     display block

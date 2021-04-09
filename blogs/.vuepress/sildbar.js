@@ -50,7 +50,7 @@ module.exports = {
   /**************Java*************/ 
   "/java/":[
     {
-      title: '基础系列',
+      title: 'Java 基础系列',
       collapsable: true,
       children: [
         "basics/know",
@@ -60,10 +60,17 @@ module.exports = {
       ]
     },
     {
-      title: 'JDBC',
+      title: 'Java JDBC',
       collapsable: true,
       children: [
         "jdbc/mysql-connect",
+      ]
+    },
+    {
+      title: 'Java 网络编程',
+      collapsable: true,
+      children: [
+        "network/ip",
       ]
     },
   ],

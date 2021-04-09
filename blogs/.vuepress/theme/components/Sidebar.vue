@@ -27,6 +27,7 @@ export default {
 
 <style lang="stylus">
 .sidebar
+  -webkit-app-region drag
   ul
     padding 0
     margin 0

@@ -7,7 +7,8 @@ export const uniappBack = (router)=>{
         document.addEventListener('UniAppJSBridgeReady',  ()=> {
             window.$getBack = ()=> {
                 if (window.plus) {
-                    window.history.go(-1);
+                    // window.history.go(-1);
+                    router.go(-1)
                 }
             };
         });

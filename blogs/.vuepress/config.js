@@ -1,12 +1,23 @@
 const Sidebar = require("./sildbar");
 const baseUrl = "/webxiaoma/";
+
 module.exports = {
   title:'小马学习网站',
   description:"小马学习网站",
   head: [
       ["link", { rel: "icon", href: `/img/manong.jpg` }],
       ["meta", { content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport" }],
-      ["script", {src:"https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"}]
+      ["script", {src:"https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"}],
+
+      // 兼容pwa
+      ['meta', { name: 'theme-color', content: '#ededed' }],
+      ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+      ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+      ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+      ['meta', { name: 'msapplication-TileImage', content: '/img/mxx-144.png' }],
+      ['link', { rel: 'manifest', href: '/manifest.json' }],
+      ['link', { rel: 'apple-touch-icon', href: '/img/mxx-152-152.png' }],
+
   ], //被注入页面 HTML <head> 额外的标签
   host: "localhost", //访问路径
   port: "5555", //端口
@@ -16,7 +27,7 @@ module.exports = {
   themeConfig: {  // 导航
       logo:'/img/manong.jpg', 
       searchMaxSuggestions: 15, // 搜索设置数量
-      nav: [  //
+      nav: [  // 这里修改了，增加了isLogin 是否登录
           { text: '首页', link: '/' },
           { text: '导航', items:[
               {text:"常用站点", link:"/nav/nav"},
@@ -56,11 +67,11 @@ module.exports = {
               {text:"数据类型", link:"/database/mysql/data-type"},
             ]},
           ]},
-          { text: '算法', items: [
-            {text:"常见算法", items:[
-              {text:"冒泡排序", link:"/algorithm/bubble-sort"},
-            ]},
-          ]},
+          // { text: '算法', items: [
+          //   {text:"常见算法", items:[
+          //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},
+          //   ]},
+          // ]},
       ],
       sidebar: Sidebar,
       sidebarDepth: false,// 侧边栏最大层级 最大只能为2
@@ -71,7 +82,6 @@ module.exports = {
   extraWatchFiles: [ // 指定额外的需要被监听的文件
     '.vuepress/config.js', // 使用相对路径
   ],
-
   /**
    * @markdown 配置
    */
@@ -98,8 +108,4 @@ module.exports = {
       }
     }
 };
-
-
-
-
 
