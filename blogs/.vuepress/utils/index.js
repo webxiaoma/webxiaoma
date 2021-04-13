@@ -16,3 +16,18 @@ export const uniappBack = (router)=>{
         console.log(e)
     }
 } 
+
+
+
+/**
+ * @msg electron 初始化
+ */
+
+export const electronInit = (Vue)=>{
+     // electron 配置
+  try{
+    Vue.prototype.$ele = window.$electron;
+  }catch(e){
+     console.log("window none")
+  }
+}

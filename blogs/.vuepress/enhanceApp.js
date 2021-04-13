@@ -1,7 +1,6 @@
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
 import { Row,Col } from 'element-ui';
-import {uniappBack} from './utils';
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -10,9 +9,16 @@ export default ({
   Vue.use(Row)
   Vue.use(Col)
 
+  import("./utils/index.js").then(utils=>{
+     utils.uniappBack();
+     utils.electronInit();
+  })
   // electron 配置
-  console.log(window)
-  Vue.prototype.$ele = window.$electron;
+  // try{
+  //   Vue.prototype.$ele = window.$electron;
+  // }catch(e){
+  //    console.log("window none")
+  // }
 
   // uniapp返回控制
   uniappBack(router)

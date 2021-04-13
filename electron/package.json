@@ -29,7 +29,7 @@
       "output": "./dist/MXX-WIN-build"
     },
     "win": {
-      "icon": "./public/icons/mxx_256.ico",
+      "icon": "./public/icons/mxx_64.ico",
       "target": [
         "nsis"
       ]
@@ -40,10 +40,10 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "龙文教育IM-beta",
+      "shortcutName": "小马学习",
       "installerIcon": "./public/icons/mxx_32.ico",
       "uninstallerIcon": "./public/icons/mxx_32.ico",
-      "installerHeaderIcon": "./build/icons/mxx_32.ico"
+      "installerHeaderIcon": "./public/icons/mxx_32.ico"
     }
   }
 }
