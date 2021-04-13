@@ -54,7 +54,10 @@ sidebarDepth: 2
  <NavCard title="GitHub" jumpUrl="https://github.com/" logo="https://github.githubassets.com/favicons/favicon.png" des="GitHub是世界上最大的代码托管平台,超5千万开发者正在使用。" />
  <NavCard title="Git" jumpUrl="https://git-scm.com/" logo="git.png" des="Git是一款免费、开源的分布式版本控制系统,用于敏捷高效地处理任何或小或大的项目。" />
  <NavCard title="VuePress" jumpUrl="https://vuepress.vuejs.org/zh/" logo="https://vuepress.vuejs.org/hero.png" des="Vue 驱动的静态网站生成器。" />
+ <NavCard title="阮一峰日志" jumpUrl="http://www.ruanyifeng.com/blog/algorithm/" logo="http://www.ruanyifeng.com/blog/images/person2_s.jpg" des="阮一峰个人博客日志" />
 </NavItem>
+
+
 
 ## 图片类导航 
 

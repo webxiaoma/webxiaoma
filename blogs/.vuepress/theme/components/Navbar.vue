@@ -83,9 +83,7 @@ export default {
     window.addEventListener('resize', handleLinksWrapWidth, false)
   },
   methods:{
-    dbclickTop(){
-      console.log(111111111)
-    }
+    dbclickTop(){}
   }
 }
 

@@ -1,46 +1,67 @@
 <template>
-  <div
-    class="theme-container"
-    :class="pageClasses"
-    @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <Navbar
-      v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    />
+   <div :class="$ele?'layout-wrapper ele-class':'layout-wrapper'">
+      <div class="electron-wrapper" v-if="$ele">
+         <div class="ele-center">
+            <ul class="ele-setting">
+              <li @click="openConsole">
+                 <i class="el-icon-monitor"></i>
+              </li>
+              <li @click="screenChange">
+                 <i class="el-icon-full-screen"></i>
+              </li>
+              <li @click="hiddenScreen">
+                 <i class="el-icon-minus"></i>
+              </li>
+              <li @click="exit">
+                 <i class="el-icon-close"></i>
+              </li>
+            </ul>
+         </div>
+      </div>
+      <div
+        class="theme-container"
+        :class="pageClasses"
+        @touchstart="onTouchStart"
+        @touchend="onTouchEnd"
+      >
+        <Navbar
+          class="ele-navbar"
+          v-if="shouldShowNavbar"
+          @toggle-sidebar="toggleSidebar"
+        />
 
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    />
+        <div
+          class="sidebar-mask"
+          @click="toggleSidebar(false)"
+        />
 
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
-    >
-      <template #top>
-        <slot name="sidebar-top" />
-      </template>
-      <template #bottom>
-        <slot name="sidebar-bottom" />
-      </template>
-    </Sidebar>
+        <Sidebar
+          :items="sidebarItems"
+          @toggle-sidebar="toggleSidebar"
+        >
+          <template #top>
+            <slot name="sidebar-top" />
+          </template>
+          <template #bottom>
+            <slot name="sidebar-bottom" />
+          </template>
+        </Sidebar>
 
-    <Home v-if="$page.frontmatter.home" />
-   <Page
-      v-else
-      :sidebar-items="sidebarItems"
-    >
-      <template #top>
-        <slot name="page-top" />
-      </template>
-      <template #bottom>
-        <slot name="page-bottom" />
-      </template>
-   </Page>
+        <Home v-if="$page.frontmatter.home" />
+      <Page
+          v-else
+          :sidebar-items="sidebarItems"
+        >
+          <template #top>
+            <slot name="page-top" />
+          </template>
+          <template #bottom>
+            <slot name="page-bottom" />
+          </template>
+      </Page>
 
-  </div>
+      </div>
+   </div>
 </template>
 
 <script>
@@ -49,6 +70,8 @@ import Navbar from '@theme/components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import { resolveSidebarItems } from '../util'
+import {openConsole,hiddenScreen,screenChange,exit,urlJump} from '@theme/util/electron';
+
 
 export default {
   name: 'Layout',
@@ -61,8 +84,12 @@ export default {
 
   data () {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
+      isFullscreen:false,
     }
+  },
+  created(){
+   
   },
 
   computed: {
@@ -118,9 +145,47 @@ export default {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
+
+    this.aLinkJump();
+    
   },
 
   methods: {
+    // electron 控制
+    openConsole(){
+      openConsole()
+    },
+    hiddenScreen(){
+      hiddenScreen();
+    },
+    screenChange(){
+       if(this.isFullscreen){
+           screenChange(false);
+           this.isFullscreen = false;
+       }else{
+          screenChange(true);
+          this.isFullscreen = true;
+       }
+       
+    },
+    exit(){
+      exit()
+    },
+    aLinkJump(){
+        const reg = /^(http|https):/;
+        document.body.addEventListener("click",(ev)=>{
+           const target =  ev.target || ev.srcElement;
+           if(target.nodeName.toLowerCase() === "a"){
+               const href = target.href || "";
+               if(reg.test(href)){
+                //  ev.preventDefault();
+                //  urlJump(href)
+               }
+              console.log(href)
+            }
+
+        })
+    },
     toggleSidebar (to) {
       this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
       this.$emit('toggle-sidebar', this.isSidebarOpen)
@@ -150,7 +215,41 @@ export default {
 </script>
 
 <style lang="stylus">
- 
+.ele-class
+  .electron-wrapper
+    height 24px
+    width 100%
+    position fixed
+    top 0
+    z-index 999
+    background #fff
+    -webkit-app-region drag
+    .ele-center{
+      width 100%
+      height 100%
+      padding 0 10px
+      display flex
+      justify-content flex-end
+    }
+    .ele-setting
+      margin 0
+      padding 0
+      list-style none
+      height 100%
+      display flex
+      li
+        width 24px
+        height 100%
+        display flex
+        justify-content center  
+        align-items center
+        cursor pointer
+        -webkit-app-region no-drag
+  .ele-navbar
+    top 24px
+  .sidebar 
+    top: 3.8rem;
+
 
 @media (min-width: 719px)
   .theme-container
@@ -160,5 +259,9 @@ export default {
       padding-left 16rem
       .pageCenter
         padding: 2rem 2.5rem;
+      
+
+ 
+    
 
 </style>

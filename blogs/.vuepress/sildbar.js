@@ -57,6 +57,7 @@ module.exports = {
         "basics/number",
         "basics/string",
         "basics/array",
+        "basics/error",
       ]
     },
     {

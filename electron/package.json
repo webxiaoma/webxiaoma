@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "package:win": "electron-packager . 小马学习 --win --out ./dist/MXX-win --arch=x64 --app-version=1.0.0 --electron-version=10.1.5 --icon=./public/icons/mxx_64.ico",
-    "build:win":"electron-builder --win --x64"
+    "build:win": "electron-builder --win --x64"
   },
   "keywords": [],
   "author": "webxiaoma",
@@ -23,8 +23,8 @@
   },
   "build": {
     "appId": "MXX",
-    "copyright":"webxiaoma版权所有",
-    "productName":"小马学习",
+    "copyright": "webxiaoma版权所有",
+    "productName": "小马学习",
     "directories": {
       "output": "./dist/MXX-WIN-build"
     },
