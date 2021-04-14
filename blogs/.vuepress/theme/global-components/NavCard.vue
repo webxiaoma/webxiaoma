@@ -70,7 +70,7 @@ export default {
           }
        }else{
          try{
-           window.open(url, "blank");
+           window.open(url).location;
          }catch(err){
            console.log("slef------:",err)
          }

@@ -72,6 +72,7 @@ module.exports = {
       collapsable: true,
       children: [
         "network/ip",
+        "network/socket",
       ]
     },
   ],

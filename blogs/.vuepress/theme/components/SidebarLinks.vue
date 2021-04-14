@@ -104,3 +104,8 @@ function descendantIsActive (route, item) {
   return false
 }
 </script>
+
+<style lang="stylus">
+.sidebar-links
+  -webkit-app-region no-drag
+</style>
