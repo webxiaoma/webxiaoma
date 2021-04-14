@@ -247,7 +247,12 @@ export default {
   .ele-navbar
     top 24px
   .sidebar 
-    top: 3.8rem;
+    top: 3.9rem;
+  .page
+    padding-top 24px
+    .floatSilderWrapper
+      top 90px
+
 
 
 @media (min-width: 719px)

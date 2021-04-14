@@ -21,7 +21,6 @@
 
 <style lang="stylus">
 .sidebar-button
-  -webkit-app-region drag
   cursor pointer
   display none
   width 1.25rem
@@ -34,8 +33,10 @@
     display block
     width 1.25rem
     height 1.25rem
+    -webkit-app-region no-drag
 
 @media (max-width: $MQMobile)
   .sidebar-button
     display block
+    -webkit-app-region no-drag
 </style>

@@ -22,14 +22,14 @@
     "electron-reloader": "^1.0.1"
   },
   "build": {
-    "appId": "MXX",
+    "appId": "MXX-LESSON",
     "copyright": "webxiaoma版权所有",
-    "productName": "小马学习",
+    "productName": "MXX-LESSON",
     "directories": {
       "output": "./dist/MXX-WIN-build"
     },
     "win": {
-      "icon": "./public/icons/mxx_64.ico",
+      "icon": "./public/icons/mxx_256.ico",
       "target": [
         "nsis"
       ]

@@ -24,7 +24,7 @@ app.on('ready', ()=>{
   // 创建浏览器窗口。
   global.$mainWin =  mainWin = new BrowserWindow({
     title:"小马学习",
-    width: 1100,
+    width: 1200,
     height: 850,
     minHeight:700,
     minWidth:500,

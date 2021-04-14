@@ -13,21 +13,19 @@ export const uniappBack = (router)=>{
             };
         });
     }catch(e){
-        console.log(e)
+        console.log("slef-----:",e)
     }
 } 
-
 
 
 /**
  * @msg electron 初始化
  */
-
 export const electronInit = (Vue)=>{
      // electron 配置
   try{
     Vue.prototype.$ele = window.$electron;
   }catch(e){
-     console.log("window none")
+     console.log("slef-----:",e)
   }
 }

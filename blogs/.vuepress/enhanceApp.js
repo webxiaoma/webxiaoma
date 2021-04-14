@@ -9,15 +9,12 @@ export default ({
   Vue.use(Row)
   Vue.use(Col)
 
-
-  Vue.mixin({
-
-    // 使用 window dom 防止打包时报错
-    mounted() {
-      import("./utils/index.js").then(utils=>{
-          utils.uniappBack(router);
-          utils.electronInit();
-      })
-    },
-  })
+  try{
+    import("./utils/index.js").then(utils=>{
+        utils.uniappBack(router);
+        utils.electronInit(Vue);
+    })
+  }catch(err){
+    console.log("slef-----:",err)
+  }
 }

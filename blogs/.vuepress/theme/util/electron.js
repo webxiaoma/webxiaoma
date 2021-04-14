@@ -8,9 +8,11 @@ try{
    $mainWin = window.$electron?window.$electron.remote.getGlobal('$mainWin'):{};
    $app = window.$electron?window.$electron.remote.getGlobal('$app'):{};
    shell = window.$electron.shell;
-}catch{
-   console.error("node 环境打包无 window")
+}catch(e){
+   console.log("slef-----:",e)
 }
+
+
 /**
  * @msg 打开控制台
  */
