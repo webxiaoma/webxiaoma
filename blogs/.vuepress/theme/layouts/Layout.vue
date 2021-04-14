@@ -181,7 +181,6 @@ export default {
                 //  ev.preventDefault();
                 //  urlJump(href)
                }
-              console.log(href)
             }
 
         })

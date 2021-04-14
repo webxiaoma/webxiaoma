@@ -1,6 +1,16 @@
-const $mainWin = window.$electron?window.$electron.remote.getGlobal('$mainWin'):{};
-const $app = window.$electron?window.$electron.remote.getGlobal('$app'):{};
-const {shell} = window.$electron;
+// const $mainWin = window.$electron?window.$electron.remote.getGlobal('$mainWin'):{};
+// const $app = window.$electron?window.$electron.remote.getGlobal('$app'):{};
+// const {shell} = window.$electron;
+let $mainWin 
+let $app
+let shell
+try{
+   $mainWin = window.$electron?window.$electron.remote.getGlobal('$mainWin'):{};
+   $app = window.$electron?window.$electron.remote.getGlobal('$app'):{};
+   shell = window.$electron.shell;
+}catch{
+   console.error("node 环境打包无 window")
+}
 /**
  * @msg 打开控制台
  */

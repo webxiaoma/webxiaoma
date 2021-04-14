@@ -9,17 +9,15 @@ export default ({
   Vue.use(Row)
   Vue.use(Col)
 
-  import("./utils/index.js").then(utils=>{
-     utils.uniappBack();
-     utils.electronInit();
-  })
-  // electron 配置
-  // try{
-  //   Vue.prototype.$ele = window.$electron;
-  // }catch(e){
-  //    console.log("window none")
-  // }
 
-  // uniapp返回控制
-  uniappBack(router)
+  Vue.mixin({
+
+    // 使用 window dom 防止打包时报错
+    mounted() {
+      import("./utils/index.js").then(utils=>{
+          utils.uniappBack(router);
+          utils.electronInit();
+      })
+    },
+  })
 }
