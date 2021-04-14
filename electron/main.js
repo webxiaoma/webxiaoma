@@ -48,8 +48,8 @@ app.on('ready', ()=>{
   //   mainWin.loadFile('index.html')
 
   // 加载远程
-  // mainWin.loadURL('http://localhost:5555/webxiaoma/');
-  mainWin.loadURL('https://webxiaoma.gitee.io/webxiaoma/');
+  mainWin.loadURL('http://localhost:5555/webxiaoma/');
+  // mainWin.loadURL('https://webxiaoma.gitee.io/webxiaoma/');
 
   mainWin.on('ready-to-show',  ()=> {
     mainWin.show() // 初始化后再显示
