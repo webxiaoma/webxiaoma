@@ -1,5 +1,5 @@
 <template>
-   <div :class="$ele?'layout-wrapper ele-class':'layout-wrapper'">
+   <div :class="$root.$ele?'layout-wrapper ele-class':'layout-wrapper'">
       <div class="electron-wrapper" v-if="$ele">
          <div class="ele-center">
             <ul class="ele-setting">
@@ -147,7 +147,6 @@ export default {
     })
 
     this.aLinkJump();
-    
   },
 
   methods: {
@@ -172,18 +171,31 @@ export default {
       exit()
     },
     aLinkJump(){
-        const reg = /^(http|https):/;
-        document.body.addEventListener("click",(ev)=>{
-           const target =  ev.target || ev.srcElement;
-           if(target.nodeName.toLowerCase() === "a"){
-               const href = target.href || "";
-               if(reg.test(href)){
-                //  ev.preventDefault();
-                //  urlJump(href)
-               }
-            }
 
-        })
+       if(this.$root.$ele){
+           ///
+       }
+        // const reg = /^(http|https):\/\/webxiaoma/;
+        // const reg = /^(http|https):\/\/localhost/;
+      
+        // document.body.addEventListener("click",(ev)=>{
+           
+        //    const aHtml = document.querySelectorAll("a");
+
+        //    console.log(aHtml)
+            
+        //    const target =  ev.target || ev.srcElement;
+        //    if(target.nodeName.toLowerCase() === "a"){
+        //      console.log(href)
+        //      console.log(reg.test(href))
+        //        const href = target.href || "";
+        //        if(!reg.test(href)){
+        //          ev.preventDefault();
+        //          urlJump(href)
+        //        }
+        //     }
+
+        // })
     },
     toggleSidebar (to) {
       this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen

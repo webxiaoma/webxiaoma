@@ -2,7 +2,7 @@
 <template>
   <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="4">
       <div class='cardWrapper'>
-        <a :href="jumpUrl" target="_blank" class="aFlag">
+        <a  target="_blank" class="aFlag" @click="jump(jumpUrl)">
           <div class="card" :title="des">
               <div class="cardTop">
                 <div class="cardLogo">
@@ -19,6 +19,9 @@
 
 <script>
 const {base} = require("../../config");
+import {urlJump} from '@theme/util/electron';
+
+
 export default {
   name: 'NavCard',
   components: {},
@@ -59,7 +62,20 @@ export default {
 
   },
   methods: {
-    
+    jump(url){
+       const reg = /^(http|https):\/\/webxiaoma/;
+       if(this.$root.$ele){
+          if(!reg.test(url)){
+            urlJump(url)
+          }
+       }else{
+         try{
+           window.open(url, "blank");
+         }catch(err){
+           console.log("slef------:",err)
+         }
+       }
+    }
   },
 }
 
