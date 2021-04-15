@@ -61,7 +61,16 @@ module.exports = {
       ]
     },
     {
-      title: 'Java JDBC',
+      title: 'Java 集合',
+      collapsable: true,
+      children: [
+        "collection/collection",
+        "collection/list",
+        "collection/set",
+      ]
+    },
+    {
+      title: 'Java 数据库',
       collapsable: true,
       children: [
         "jdbc/mysql-connect",

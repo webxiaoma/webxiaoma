@@ -102,7 +102,7 @@ public class JDBC{
 
 ## 执行SQL语句
 
-执行`SQL`需要先建立执行对象，该执行对象有两种，一种时通过`Statement`创建的对象，另一种就是使用`PreparedStatement`创建的对象。他们有又几个常用的方法如下表：
+执行`SQL`需要先建立执行对象，我们这里讲两种，一种时通过`Statement`创建的对象，另一种就是使用`PreparedStatement`创建的对象。他们有又几个常用的方法如下表：
 
 
 |方法|描述|
