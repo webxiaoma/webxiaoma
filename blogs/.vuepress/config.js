@@ -74,6 +74,9 @@ module.exports = {
               {text:"数据类型", link:"/database/mysql/data-type"},
             ]},
           ]},
+          { text: '设计模式', items: [
+            {text:"观察者模式", link:"/designMode/observer"},
+          ]},
           { text: 'English', items: [
             {text:"单词用语", items:[
               {text:"电话", link:"/english/word/call"},
