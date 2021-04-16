@@ -25,6 +25,7 @@ sidebarDepth: 2
 
 <NavItem>
  <NavCard title="知乎" jumpUrl="https://www.zhihu.com/" logo="zhihu.png" des="中文互联网高质量的问答社区和创作者聚集的原创内容平台" />
+ <NavCard title="Quora" jumpUrl="https://www.quora.com/" logo="quora.webp" des="国外一个问答网站，类似于知乎" />
  <NavCard title="今日热榜" jumpUrl="https://tophub.today/" logo="https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png" des="今日热榜提供各站热榜聚合：微信、今日头条、百度、知乎、V2EX、微博、贴吧、豆瓣、天涯、虎扑、Github、抖音...追踪全网热点、简单高效阅读。" />
  <NavCard title="掘金" jumpUrl="https://juejin.cn/" logo="https://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" des="掘金是一个帮助开发者成长的社区,是给开发者用的 Hacker News,给设计师用的 Designer News,和给产品经理用的 Medium。" />
  <NavCard title="印象中文" jumpUrl="https://docschina.org/" logo="https://docschina.org/favicon.ico" des="印记中文 - 深入挖掘国外前端新领域，为中国 Web 前端开发人员提供优质文档！" />
@@ -45,6 +46,7 @@ sidebarDepth: 2
 
 <NavItem>
  <NavCard title="Panda" jumpUrl="https://www.pantavv.xyz/" logo="https://www.pantavv.xyz/favicon.ico" des="一个稳定的网络加速器。" />
+ <NavCard title="Gmail" jumpUrl="https://mail.google.com/" logo="/gmail.ico" des="Google邮箱网页版。" />
 </NavItem>
 
 ## 代码类导航
@@ -75,6 +77,7 @@ sidebarDepth: 2
 <NavItem>
  <NavCard title="腾讯视频" jumpUrl="https://v.qq.com/" logo="https://v.qq.com/favicon.ico" des="一个中国领先的在线视频媒体平台,海量高清视频在线观看" />
  <NavCard title="哔哩哔哩" jumpUrl="https://www.bilibili.com/" logo="https://static.hdslb.com/mobile/img/512.png" des="bilibili是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。大家可以在这里找到许多欢乐。" />
+ <NavCard title="YouTube" jumpUrl="https://www.youtube.com/" logo="/youtube.ico" des="一个世界范围的视频上传下载网站。" />
 
 </NavItem>
 

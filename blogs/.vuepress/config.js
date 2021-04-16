@@ -35,7 +35,7 @@ module.exports = {
               {text:"后端站点", link:"/nav/afterEnd"},
           ]},
           { 
-            text: '前端系列',
+            text: '前端',
             items: [
               {text:"CSS+HTML系列", items:[
                 {text:"CSS格式化上下文", link:"/web/csshtml/css-formatContent"},
@@ -51,7 +51,7 @@ module.exports = {
               ]},
             ]
           },
-          { text: 'Java系列', items: [
+          { text: 'Java', items: [
             {text:"基础系列", items:[
               {text:"Java初识", link:"/java/basics/know"},
               {text:"Java数字", link:"/java/basics/number"},
@@ -74,7 +74,16 @@ module.exports = {
               {text:"数据类型", link:"/database/mysql/data-type"},
             ]},
           ]},
-          
+          { text: 'English', items: [
+            {text:"单词用语", items:[
+              {text:"电话", link:"/english/word/call"},
+              {text:"日常生活", link:"/english/word/daily-life"},
+              {text:"动物", link:"/english/word/animal"},
+            ]},
+            {text:"英语语法", items:[
+              {text:"句子成分", link:"/english/grammar/sentence"},
+            ]},
+          ]},
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
           //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},

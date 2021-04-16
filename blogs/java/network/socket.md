@@ -224,41 +224,56 @@ try{
 ```
 
 ### 传输对象数据
-<!-- 
+
 传输对象数据，这里我们用到了`ObjectInputStream`流对象和`ObjectOutputStream`流对象，以及需要使用`Serializable`序列化
 
 比如我们需要传输的对象数据：
 
 ```java
+import java.io.Serializable;
+
 // 需要传输的对象数据User
 public class User implements Serializable{
     private String name;
+    public User(){}
+    public User(String name){
+      this.name = name;
+    }
     public void setName(String name){
         this.name = name;
     }
+    public String getName(){
+        return  name;
+    }
 }
 ```
-
-客户端传输对象数据
+服务端接收对象数据
 
 ```java
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
+
 public static void main(String[] args){
   try{
-      Socket s = new Socket("127.0.0.1",8888);
+      ServerSocket sSocket = new ServerSocket(8888);
+      Socket acp = sSocket.accept(); // 建立连接
+
+      System.out.println("有连接过来" + acp);
 
       // 创建 ObjectInputStream 对象输入流
-      ObjectInputStream  objInpS = new ObjectInputStream(s.getInputStream());
-      // 创建 DataOutputStream 对象输出流
-      ObjectOutputStream objOutS = new ObjectOutputStream(s.getOutputStream());
+      ObjectInputStream  objInpS = new ObjectInputStream(acp.getInputStream());
 
       //读取一个对象
       Object obj = objInpS.readObject();
 
       User user = (User)obj; // 将对象转换为User 类型
 
-      objOutS.writeObject(user);
+      System.out.println("客户端发过来的数据" + user.getName());
 
-      s.close();
+      sSocket.close();
+      acp.close();
+      objInpS.close();
 
   }catch (IOException | ClassNotFoundException e){
       e.printStackTrace();
@@ -266,4 +281,34 @@ public static void main(String[] args){
 }
 ```
 
- -->
+
+客户端传输对象数据
+
+```java
+import java.io.*;
+import java.net.Socket;
+
+
+public static void main(String[] args){
+   try{
+      Socket s = new Socket("127.0.0.1",8888);
+
+       // 创建 ObjectInputStream 对象输出流
+      ObjectOutputStream os=new ObjectOutputStream(s.getOutputStream());
+      User user = new User();
+
+      System.out.println(user);
+
+      // 写入对象数据
+      os.writeObject(user);
+      os.flush();
+
+      s.close();
+      os.close();
+  }catch (IOException e){
+      e.printStackTrace();
+  }
+
+}
+```
+

@@ -102,5 +102,39 @@ module.exports = {
   /************** 算法 *************/ 
   "/algorithm/":[
     "bubble-sort", //冒泡排序
+  ],
+
+
+
+
+  /************** 英语 *************/ 
+  "/english/":[
+    {
+      title: '单词系列',
+      collapsable: true,
+      children: [
+        "word/call",
+        "word/greet",
+        "word/daily-life",
+        "word/eat",
+        "word/animal",
+        "word/fruit",
+        "word/time",
+        "word/data",
+        "word/traffic-tool",
+        "word/clothing",
+        "word/country",
+      ]
+    },
+    {
+      title: '英语语法',
+      collapsable: true,
+      children: [
+        "grammar/sentence",
+        "grammar/sentence-pattren",
+        "grammar/imperative",
+        "grammar/exclamatory",
+      ]
+    },
   ]
 }
