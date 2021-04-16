@@ -140,7 +140,6 @@ public static void main(String[] args){
 - `LinkedList` 插入，删除数据比较快，但是定位（非头尾数据）慢
 
 
-
 ### 顺序结构
 
 顺序结构（顺序表）是按顺序排列，类似于电影院的座位，有固定顺序：

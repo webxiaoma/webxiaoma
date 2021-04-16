@@ -44,7 +44,7 @@ sidebarDepth: 2
 ## 工具类导航
 
 <NavItem>
- <NavCard title="Panda" jumpUrl="https://www.pantavv.xyz/" logo="https://www.pantavv.xyz/favicon.ico" des="一个文稳定的网络加速器。" />
+ <NavCard title="Panda" jumpUrl="https://www.pantavv.xyz/" logo="https://www.pantavv.xyz/favicon.ico" des="一个稳定的网络加速器。" />
 </NavItem>
 
 ## 代码类导航

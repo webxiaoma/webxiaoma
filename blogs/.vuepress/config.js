@@ -57,6 +57,13 @@ module.exports = {
               {text:"Java数字", link:"/java/basics/number"},
               {text:"Java字符串", link:"/java/basics/string"},
             ]},
+            {text:"集合", items:[
+              {text:"Collection集合", link:"/java/collection/collection"},
+              {text:"List集合", link:"/java/collection/list"},
+            ]},
+            {text:"网络编程", items:[
+              {text:"IP操作", link:"/java/network/ip"},
+            ]},
             {text:"JDBC操作", items:[
               {text:"MySQL操作", link:"/java/jdbc/mysql-connect"},
             ]},
@@ -67,6 +74,7 @@ module.exports = {
               {text:"数据类型", link:"/database/mysql/data-type"},
             ]},
           ]},
+          
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
           //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},
