@@ -77,6 +77,11 @@ module.exports = {
           { text: '设计模式', items: [
             {text:"观察者模式", link:"/designMode/observer"},
           ]},
+          { text: '运维/工具', items: [
+            {text:"Tomcat", items:[
+              {text:"Tomcat初识", link:"/tools/tomcat/"},
+            ]},
+          ]},
           { text: 'English', items: [
             {text:"单词用语", items:[
               {text:"电话", link:"/english/word/call"},

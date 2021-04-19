@@ -6,7 +6,8 @@
           <div class="card" :title="des">
               <div class="cardTop">
                 <div class="cardLogo">
-                  <img :src="logoUrl" class="img">
+                  <div :class="['logoFont',className]"  v-if="!logoUrl">廖</div>
+                  <img :src="logoUrl" class="img" v-if="logoUrl">
                 </div>
                 <div class="cardTitle">{{title}}</div>
               </div>
@@ -33,7 +34,7 @@ export default {
     },
     logo:{
       type: String,
-      default: "web.png"
+      default: ""
     },
     des:{
       type: String,
@@ -49,16 +50,24 @@ export default {
     return {
        logoUrl:"",
        baseImgUrl:`${base}img/website/`,
+       className:"bgColor1"
     };
   },
 
   created(){
     const reg = /^(http|https):/;
-    if(reg.test(this.logo)){
-       this.logoUrl = this.logo;
+
+    if(this.logo){
+      if(reg.test(this.logo)){
+          this.logoUrl = this.logo;
+      }else{
+          this.logoUrl = `${this.baseImgUrl}${this.logo}`;
+      }    
     }else{
-       this.logoUrl = `${this.baseImgUrl}${this.logo}`;
-    }    
+       var index = Math.ceil(Math.random() * 5);
+
+       this.className = `bgColor${index}`;
+    }
 
   },
   methods: {
@@ -108,6 +117,27 @@ export default {
       align-items center
       height 44px
       padding 0 8px
+      .logoFont
+        width 40px
+        height 100%
+        border-radius 4px
+        margin-right 4px
+        color #fff
+        display flex
+        justify-content center
+        align-items center
+        font-size 20px
+        font-weight bold
+      .bgColor1
+        background #0d87ec
+      .bgColor2
+        background #19bc9c
+      .bgColor3
+        background #38579a
+      .bgColor4
+        background #d31c1f
+      .bgColor5
+        background #9b59b6
       .cardLogo
         height 100%
         .img 
@@ -117,6 +147,7 @@ export default {
         color #3eaf7c
         font-size 20px
         font-weight bolder
+        overflow hidden
     .cardDescription
       margin 5px
       display -webkit-box

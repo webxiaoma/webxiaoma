@@ -28,7 +28,7 @@ meta:
 
 <images src="/java/collection.gif" width="580"/>
 
-结构图中, 实线边框的是实现类，如`ArrayList`，`LinkedList`，`HashMap`等，折线边框的是抽象类，比如`AbstractCollection`，`AbstractList`，`AbstractMap`等，而点线边框的是接口，比如`Collection`，`Iterator`，`List`等
+结构图中, **实线**边框的是实现类，如`ArrayList`，`LinkedList`，`HashMap`等，**折线**边框的是抽象类，比如`AbstractCollection`，`AbstractList`，`AbstractMap`等，而**点线**边框的是接口，比如`Collection`，`Iterator`，`List`等
 
 ## Collection接口 
 

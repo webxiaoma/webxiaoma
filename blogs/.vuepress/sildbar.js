@@ -67,6 +67,8 @@ module.exports = {
         "collection/collection",
         "collection/list",
         "collection/set",
+        "collection/map",
+        "collection/queue",
       ]
     },
     {
@@ -110,7 +112,16 @@ module.exports = {
   ],
 
 
-
+  /************** 运维/工具 *************/ 
+  "/tools/":[
+    {
+      title: 'Tomcat系列',
+      collapsable: true,
+      children: [
+        "tomcat/",
+      ]
+    },
+  ],
 
   /************** 英语 *************/ 
   "/english/":[

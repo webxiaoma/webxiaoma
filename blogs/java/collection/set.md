@@ -19,7 +19,7 @@ meta:
 
 - `HashSet` 一个不允许有重复元素的无序集合
 - `TreeSet` 一个不允许有重复元素的自然排序集合
-- `LinkedHashSet` 一个不允许有重复元素的安插入顺序排序的集合
+- `LinkedHashSet` 一个不允许有重复元素的按照插入顺序排序的集合
 
 
 ## HashSet
