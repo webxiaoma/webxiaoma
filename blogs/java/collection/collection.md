@@ -24,7 +24,7 @@ meta:
 
 ## 集合结构
 
-`java`集合主要分为 `Collection` 和 `Map`, 其它的实现类基本都是这俩接口的子类，下边为来自[菜鸟教程的](https://www.runoob.com/java/java-collections.html)的`java`的结构图
+`java`集合主要分为 `Collection` 和 `Map`, 其它的实现类基本都是这俩接口的子类，下边为来自[菜鸟教程的](https://www.runoob.com/java/java-collections.html)的结构图
 
 <images src="/java/collection.gif" width="580"/>
 

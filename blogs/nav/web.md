@@ -86,7 +86,7 @@ sidebarDepth: 2
 
 <!-- ------------------------------------------------- -->
 
-## 小程序导航
+## 微信导航
 
 <NavItem>
   <NavCard title="小程序文档" jumpUrl="https://developers.weixin.qq.com/miniprogram/dev/framework/" logo="https://res.wx.qq.com/a/wx_fed/assets/res/NTI4MWU5.ico" des="小程序官方文档" />

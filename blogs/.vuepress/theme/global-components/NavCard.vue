@@ -6,7 +6,7 @@
           <div class="card" :title="des">
               <div class="cardTop">
                 <div class="cardLogo">
-                  <div :class="['logoFont',className]"  v-if="!logoUrl">廖</div>
+                  <div :class="['logoFont',className]"  v-if="!logoUrl">{{logoWord}}</div>
                   <img :src="logoUrl" class="img" v-if="logoUrl">
                 </div>
                 <div class="cardTitle">{{title}}</div>
@@ -50,7 +50,8 @@ export default {
     return {
        logoUrl:"",
        baseImgUrl:`${base}img/website/`,
-       className:"bgColor1"
+       className:"bgColor1",
+       logoWord:""
     };
   },
 
@@ -65,8 +66,8 @@ export default {
       }    
     }else{
        var index = Math.ceil(Math.random() * 5);
-
        this.className = `bgColor${index}`;
+       this.logoWord = this.title[0];
     }
 
   },

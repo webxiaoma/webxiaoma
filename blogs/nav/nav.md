@@ -17,6 +17,7 @@ sidebarDepth: 2
 <NavItem>
  <NavCard title="百度" jumpUrl="https://www.baidu.com/" logo="baidu.png" des="百度 - 全球最大的中文搜索引擎 " />
  <NavCard title="Google" jumpUrl="https://www.google.com/" logo="google.png" des="谷歌是被公认为全球最大的搜索引擎公司，是一家位于美国的跨国科技企业" />
+ <NavCard title="必应" jumpUrl="https://cn.bing.com/" logo="https://cn.bing.com/sa/simg/favicon-2x.ico" des="一个微软旗下的搜索引擎" />
 
 </NavItem>
 
@@ -40,13 +41,13 @@ sidebarDepth: 2
 
 <NavItem>
  <NavCard title="腾讯文档" jumpUrl="https://docs.qq.com/" logo="https://docs.idqqimg.com/tim/docs/desktop/favicon.ico" des="腾讯文档,在线编辑,办公文档,协同编辑,多人协作" />
+ <NavCard title="Gmail" jumpUrl="https://mail.google.com/" logo="/gmail.ico" des="Google邮箱网页版。" />
 </NavItem>
 
 ## 工具类导航
 
 <NavItem>
  <NavCard title="Panda" jumpUrl="https://www.pantavv.xyz/" logo="https://www.pantavv.xyz/favicon.ico" des="一个稳定的网络加速器。" />
- <NavCard title="Gmail" jumpUrl="https://mail.google.com/" logo="/gmail.ico" des="Google邮箱网页版。" />
 </NavItem>
 
 ## 代码类导航
@@ -60,8 +61,7 @@ sidebarDepth: 2
 </NavItem>
 
 
-
-## 图片类导航 
+## 设计类导航 
 
 <NavItem>
  <NavCard title="蓝湖" jumpUrl="https://lanhuapp.com/" logo="https://lhcdn.lanhuapp.com/web/static/favicon.ico" des="蓝湖是一款产品文档和设计图的共享平台,帮助互联网团队更好地管理文档和设计图。" />
@@ -76,10 +76,14 @@ sidebarDepth: 2
 
 <NavItem>
  <NavCard title="腾讯视频" jumpUrl="https://v.qq.com/" logo="https://v.qq.com/favicon.ico" des="一个中国领先的在线视频媒体平台,海量高清视频在线观看" />
+ <NavCard title="爱奇艺" jumpUrl="https://www.iqiyi.com/" logo="https://www.iqiyipic.com/common/fix/128-128-logo.png" des="爱奇艺（iQIYI.COM）是拥有海量、优质、高清的网络视频的大型视频网站，专业的网络视频播放平台。" />
  <NavCard title="哔哩哔哩" jumpUrl="https://www.bilibili.com/" logo="https://static.hdslb.com/mobile/img/512.png" des="bilibili是国内知名的视频弹幕网站，这里有及时的动漫新番，活跃的ACG氛围，有创意的Up主。大家可以在这里找到许多欢乐。" />
  <NavCard title="YouTube" jumpUrl="https://www.youtube.com/" logo="/youtube.ico" des="一个世界范围的视频上传下载网站。" />
+ <NavCard title="Y2mate" jumpUrl="https://www.y2mate.com/en68/" logo="https://www.y2mate.com/themes/images/logo.png" des="一个油管视频下载网站，支持多语言。" />
+ <NavCard title="SaveFrom" jumpUrl="https://zh.savefrom.net/7/" logo="https://zh.savefrom.net/favicon.ico" des="一个油管视频下载网站，支持Google插件。" />
 
 </NavItem>
+
 
 ## 金融导航
 

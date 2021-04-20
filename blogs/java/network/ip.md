@@ -49,8 +49,8 @@ public class network {
         System.out.println(InetAddress.getLocalHost()); // 获取本机主机
         System.out.println(Arrays.toString(ia.getAddress())); // 原始 IP 地址
 
-    }catch (UnknownHostException ia){
-        ia.printStackTrace();
+    }catch (UnknownHostException e){
+        e.printStackTrace();
     }
   }
 }
