@@ -1,7 +1,9 @@
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
 import { Row,Col } from 'element-ui';
-// import * as utils from "./utils";
+
+// 测试代码
+require("./code")();
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数

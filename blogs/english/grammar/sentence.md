@@ -17,7 +17,7 @@ meta:
 
 `（定语）主语（状语）谓语（定语）宾语（状语）`
 
-`(The tail) boy (often) goes (to the big) zoo (on Suhnday)`
+`(The tail) boy (often) goes (to the big) zoo (on Sunday)`
 
 英语句子成分主要包括：主语、 谓语、 宾语（直接宾语和间接宾语）、 宾语补足语、 表语 、定语、 状语。
 
