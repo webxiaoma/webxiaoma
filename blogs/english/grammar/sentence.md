@@ -64,7 +64,7 @@ It is no use + 动名词短语
 
 名称性从句有三种 `that 从句`、`whether从句`、`疑问词引导的从句`
 
-- 任何一个主语起首的句子前面冠以thst，即成that从句
+- 任何一个主语起首的句子前面冠以that，即成that从句
 
 ```js
 He doesn't believe me words 他不相信我说的话
