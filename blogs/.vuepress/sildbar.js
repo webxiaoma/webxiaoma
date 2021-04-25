@@ -77,6 +77,7 @@ module.exports = {
       children: [
         "io/",
         "io/file",
+        "io/inputStream",
       ]
     },
     {
