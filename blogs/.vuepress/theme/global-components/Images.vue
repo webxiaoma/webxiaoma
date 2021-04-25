@@ -4,6 +4,7 @@
      <div class="image" @click="showImgModel(true)">
        <img :src="imgUrl" alt="" :width="width">
      </div>
+     <div class="title" v-if="title">{{title}}</div>
 
      <div class="imgModel" v-show="showMdel" @click="showImgModel(false)">
          <img :src="imgUrl" class="scaleImg">
@@ -35,6 +36,10 @@ export default {
     width:{
        type: String | Number,
        default: 500
+    },
+    title:{
+      type: String,
+      default:""
     },
     height:{
        type: String | Number,
@@ -71,6 +76,11 @@ export default {
   padding 4px
   margin 4px
   overflow-x auto
+  .title
+    padding 4px 0;
+    text-align center
+    font-weight bold
+    font-size 16px
   .imgModel
     position fixed
     top 0

@@ -110,120 +110,160 @@ Bao.notify("苹果到了")
 Bao.remove(LaoWang);
 Bao.notify("手机到了")
 ```
-
-
 ## 关于发布订阅者
 
 发布订阅者和观察者模式很相似，很文章也经常说发布订阅者其实就是观察者模式，当然也有文章说两者完全不一样。我们这里不讨论他们的对与错。
 
-`发布订阅者` 和 `观察者模式` 还是有些区别。我们来通过它们的结构来探究一下区别：
-
-**观察者模式**
-
-<images src="/designMode/observe1.png" />
+`观察者模式` 和  `发布订阅者`还是有些区别。我们来通过它们的结构来探究一下区别：
 
 
-**发布订阅者**
+<images src="/designMode/observe1.png" width="400" title="观察者模式" />
+<images src="/designMode/observe2.png"  width="400" title="发布订阅者" />
 
-<images src="/designMode/observe1.png" />
+从上图我们可以很清晰的看到 `发布订阅者` 可以看出下面区别：
 
+- `发布订阅者`中多了一个**调度中心**。
+- `发布订阅者`中事件的发布不会直接通知订阅者，而是通过调度中心来作为中间件来通知订阅者。发布者只关心自己信息的发布。
 
+可以看出`发布订阅者`将 `观察者` 与 `订阅者`进行了解耦。增强了`观察者模式`。那`发布订阅者`到底是不是`观察者模式`我无法确定。但是确定的是，它们有部分区别。
 
 ### 实现
 
+在现实生活中，我们看到过这样的情景：作者写连载小说时，将自己的书拿到出版社来进行发布，然后很多读者看到后很喜欢，就会从出版社订阅该书。当作者更新小说时，就会发给出版社，然后出版社就会通知读者有更新。这是读者就获取到了连载消息。 这里的**出版社**就充当着调度中心得角色。
+
+
 在实现前，根据上面的场景我们可以确定下面这些信息
 
-- 设计一个观察者工具`Observer`
-- 该工具类有一个订阅方法`on`
-- 该工具类有一个发布事件`emit`
-- 该工具类有一个取消订阅的方法`off`
+- 作家类`Writer`, 做家具有连载通知方法 `publish`
+- 出版社`Press`, 出版社会有接收做家书籍得方法`getBook`,订阅方法`on`, 通知读者发布了小说方法`emit`，取消订阅小说得方法`off`
+- 读者类 `Reader`,有个一个接收信息得方法`receiveMsg`
 
 ```js
-class Observer {
+/**
+ * @msg 作家类
+ */
+class Writer{
+  constructor(name,book,press){
+    this.name = name;
+    this.Press = press;
+    this.book = book;
+    press.getBook(book);
+  }
+  publish(msg){ // 发布连载小数
+      this.Press.emit(this.book,msg)
+  }
+}
+/**
+ * @msg 出版社类
+ */
+class Press {
   constructor(){
-    // 事件处理函数集合
+    // 存储书籍
     this.handles = {};
   }
   /**
+   *@msg 接收做家书籍
+   */
+  getBook(bookName){
+    if(!this.handles.hasOwnProperty(bookName)){
+      this.handles[bookName] = [];
+    }
+  }
+  /**
    * @msg 订阅事件
-   * @param {事件名称} eventName
-   * @param {订阅者，可以为函数，也可以是对象，这里为函数} subject
+   * @param {事件名称} bookName
+   * @param {订阅者} subject
    **/ 
-  on(eventName,subject){
+  on(bookName,subject){
     // 判断是否已经存在该事件
-    if(!this.handles.hasOwnProperty(eventName)){
-      this.handles[eventName] = [];
+    if(!this.handles.hasOwnProperty(bookName)){
+      throw new Error("所订书籍不存在");
     }
-
-    if(typeof subject === 'function'){
-      this.handles[eventName].push(subject);
-    }else{
-      throw new Error("该方法第二个参数必须为函数")
-    }
-
-    // 返回订阅者，方便取消订阅
-    return subject;
+    this.handles[bookName].push(subject);
+    return this;
   }
   /**
    * @msg 发布事件
-   * @param {事件名称} eventName
+   * @param {事件名称} bookName
    * @param {通知时的参数} args
    */
-  emit(eventName,...args){
-    const handles = this.handles[eventName];
+  emit(bookName,...args){
+    const handles = this.handles[bookName];
 
     if(handles){
       handles.forEach((item)=>{
-        item(...args);
+        item.receiveMsg(...args);
       })
     }else{
-      throw new Error(`${eventName} 该事件未注册`)
+      throw new Error(`${bookName} 该事件未注册`)
     }
     
     return this;
   }
   /**
    * @msg 删除事件
-   * @param {事件名称} eventName
+   * @param {事件名称} bookName
    * @param {原订阅者} subject
    */
-  off(eventName,subject){
-    if(this.handles.hasOwnProperty(eventName)){
+  off(bookName,subject){
+    if(this.handles.hasOwnProperty(bookName)){
 
       // 遍历移除该subject订阅者
-      this.handles[eventName].forEach((item,index)=>{
+      this.handles[bookName].forEach((item,index)=>{
         if(item === subject){
-          this.handles[eventName].splice(index,1)
+          this.handles[bookName].splice(index,1)
         }
       });
     }else{
-      throw new Error(`${eventName} 该事件未注册`)
+      throw new Error(`${bookName} 该事件未注册`)
     }
   }
 }
 
-//*************** 使用 *********************
-const Ob = new Observer();
-
-// 添加订阅者
-const pubOne = Ob.on("eat",(arg)=>{
-  console.log("订阅者一, 吃",arg)
-});
-const pubTwo = Ob.on("eat",(arg)=>{
-  console.log("订阅者二, 吃",arg)
-});
-
-// 通知
-Ob.emit("eat","banana");
-
-// 删除订阅者一
-Ob.off("eat",pubOne);
-// 通知
-Ob.emit("eat","apple");
+/**
+ * @msg 订阅者
+ */
+class Reader{
+  constructor(name){
+    this.name = name;
+    return this;
+  }
+  receiveMsg(msg){ // 接收信息
+      console.log(`${this.name} 接收到得信息`,msg)
+  }
+}
 ```
 
+下面是使用方式
 
+```java
+//*************** 使用 *********************
+const pre = new Press(); // 创建出版社
+const wirter = new Writer("作者名","bookOne",pre); // 创建作者
 
+// 添加订阅者
+const ReadcerOne = new Reader("读者一");
+const ReaderTwo = new Reader("读者二");
+
+pre.on("bookOne",ReadcerOne);
+pre.on("bookOne",ReaderTwo);
+
+// 作者连载，通知
+/**
+ * 读者一 接收到得信息 连载新小说
+ * 读者二 接收到得信息 连载新小说
+ */
+wirter.publish("连载新小说");
+
+// 删除 bookOne 订阅得 读者一
+pre.off("bookOne",ReadcerOne);
+
+// 作者又连载了，通知
+/**
+ * 读者二 接收到得信息  第二次连载
+ */
+wirter.publish("第二次连载");
+```
 
 
 **参考文献**

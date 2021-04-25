@@ -76,6 +76,7 @@ module.exports = {
       collapsable: true,
       children: [
         "io/",
+        "io/file",
       ]
     },
     {

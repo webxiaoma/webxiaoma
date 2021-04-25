@@ -1,76 +1,121 @@
 module.exports = () =>{
 
+  /**
+   * @msg 作家类
+   */
+  class Writer{
+    constructor(name,book,press){
+      this.name = name;
+      this.Press = press;
+      this.book = book;
+      press.getBook(book);
+    }
+    publish(msg){ // 发布连载小数
+        this.Press.emit(this.book,msg)
+    }
+  }
 
 
   /**
-   * @msg 观察者类
-   * 观察者类中拥有下面方法
-   * 1. 事件处理的函数集合 handles
-   * 2. 订阅事件 on
-   * 3. 发布事件 emit
-   * 4. 删除事件 off
+   * @msg 出版社类
    */
-   
-
-
-   /**
-    * @msg 某宝 被观察者
-    */
-  class Subject {
+   class Press {
     constructor(){
-      // 观察者列表
-      this.observers = [];
+      // 存储书籍
+      this.handles = {};
     }
-
-    add(obs){ // 添加观察者
-       this.observers.push(obs);
+    /**
+     * 
+     */
+    getBook(bookName){
+      if(!this.handles.hasOwnProperty(bookName)){
+        this.handles[bookName] = [];
+      }
     }
-    remove(obs){ // 移除观察者
-      this.observers = this.observers.filter(item=>{
-         if(item !== obs){
-            return item;
-         }
-      })
-    
+    /**
+     * @msg 订阅事件
+     * @param {事件名称} bookName
+     * @param {订阅者} subject
+     **/ 
+    on(bookName,subject){
+      // 判断是否已经存在该事件
+      if(!this.handles.hasOwnProperty(bookName)){
+        throw new Error("所订书籍不存在");
+      }
+      this.handles[bookName].push(subject);
+      return this;
     }
-    notify(msg){ // 通知
-      this.observers.forEach(obs=>{
-        obs.receiveNotice(msg);
-      })
+    /**
+     * @msg 发布事件
+     * @param {事件名称} bookName
+     * @param {通知时的参数} args
+     */
+    emit(bookName,...args){
+      const handles = this.handles[bookName];
+  
+      if(handles){
+        handles.forEach((item)=>{
+          item.receiveMsg(...args);
+        })
+      }else{
+        throw new Error(`${bookName} 该事件未注册`)
+      }
+      
+      return this;
     }
-
+    /**
+     * @msg 删除事件
+     * @param {事件名称} bookName
+     * @param {原订阅者} subject
+     */
+    off(bookName,subject){
+      if(this.handles.hasOwnProperty(bookName)){
+  
+        // 遍历移除该subject订阅者
+        this.handles[bookName].forEach((item,index)=>{
+          if(item === subject){
+            this.handles[bookName].splice(index,1)
+          }
+        });
+      }else{
+        throw new Error(`${bookName} 该事件未注册`)
+      }
+    }
   }
+
+
 
   /**
-   * @msg 客户 观察者
+   * @msg 订阅者
    */
-  class Observer{
-    constructor(name) {
-        this.name = name
+  class Reader{
+    constructor(name){
+      this.name = name;
+      return this;
     }
-
-    receiveNotice(msg) {
-        console.log(`${this.name}收到消息：${msg}`)
+    receiveMsg(msg){ // 接收信息
+        console.log(`${this.name} 接收到得信息`,msg)
     }
   }
-
-
-
-  // 练习
-  const LaoWang = new  Observer("老王");
-  const XiaoMing = new  Observer("小明");
   
+  //*************** 使用 *********************
+  const pre = new Press(); // 创建出版社
+  const wirter = new Writer("作者名","bookOne",pre); // 创建作者
+  
+  // 添加订阅者
+  const ReadcerOne = new Reader("读者一");
+  const ReaderTwo = new Reader("读者二");
+  
+  pre.on("bookOne",ReadcerOne);
+  pre.on("bookOne",ReaderTwo);
+  
+  // 作者连载，通知
+  wirter.publish("连载新小说");
+  
+  // 删除 bookOne 订阅得 读者一
+  pre.off("bookOne",ReadcerOne);
 
-  const Bao = new Subject();
 
-  // 订阅
-  Bao.add(LaoWang);
-  Bao.add(XiaoMing);
-
-  Bao.notify("苹果到了")
-
-  // 移除订阅
-  Bao.remove(LaoWang);
-  Bao.notify("手机到了")
-
+  // 作者又连载了，通知
+  wirter.publish("第二次连载");
 }
