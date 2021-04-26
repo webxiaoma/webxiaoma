@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>IO-字节流操作 | 小马学习网站</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/webxiaoma/manifest.json">
+    <link rel="apple-touch-icon" href="/webxiaoma/img/mxx-152-152.png">
+    <meta name="description" content="本章为小马学习专栏 —— java I/O字节流">
+    <meta name="keywords" content="马新想 小马学习 java inputStream 字节流">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.d62b89fb.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.9c984363.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.21aa0c70.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/46.429184ca.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.12ee6695.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.f1b7e2c3.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.e6e774e1.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.1f1f94eb.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.7789474c.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.8f809169.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.cf6ae949.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.c2c7ae5a.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.71f4e223.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.e256b948.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.33f3d7d8.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.0b778e20.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.3458a9b2.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.aa72b760.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.986a89f1.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.d5997a37.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.37dfdf41.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.36e0dd6e.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.4368565b.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.905e75d5.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.0cae0210.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.79b9a1d1.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.92bb611b.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.9c98acb4.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.7d4273cc.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.2b797f8d.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.ee1bcdc0.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.3f91d083.js"><link rel="prefetch" href="/webxiaoma/assets/js/37.972acf79.js"><link rel="prefetch" href="/webxiaoma/assets/js/38.f36ed668.js"><link rel="prefetch" href="/webxiaoma/assets/js/39.59ddd2c8.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.41586627.js"><link rel="prefetch" href="/webxiaoma/assets/js/40.80cdd7ae.js"><link rel="prefetch" href="/webxiaoma/assets/js/41.59379ce9.js"><link rel="prefetch" href="/webxiaoma/assets/js/42.f06bcbb9.js"><link rel="prefetch" href="/webxiaoma/assets/js/43.71540756.js"><link rel="prefetch" href="/webxiaoma/assets/js/44.bea83c04.js"><link rel="prefetch" href="/webxiaoma/assets/js/45.18757def.js"><link rel="prefetch" href="/webxiaoma/assets/js/47.65190767.js"><link rel="prefetch" href="/webxiaoma/assets/js/48.11c9cd86.js"><link rel="prefetch" href="/webxiaoma/assets/js/49.4b6f0ac4.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.32eec93b.js"><link rel="prefetch" href="/webxiaoma/assets/js/50.ba890596.js"><link rel="prefetch" href="/webxiaoma/assets/js/51.afeee01d.js"><link rel="prefetch" href="/webxiaoma/assets/js/52.4d556dbe.js"><link rel="prefetch" href="/webxiaoma/assets/js/53.c76bd1a5.js"><link rel="prefetch" href="/webxiaoma/assets/js/54.6afc8b04.js"><link rel="prefetch" href="/webxiaoma/assets/js/55.db526a6d.js"><link rel="prefetch" href="/webxiaoma/assets/js/56.eca889a3.js"><link rel="prefetch" href="/webxiaoma/assets/js/57.33c4f66e.js"><link rel="prefetch" href="/webxiaoma/assets/js/58.8cf978f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/59.a3cb53ab.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.9ea4b5c0.js"><link rel="prefetch" href="/webxiaoma/assets/js/60.efe5b9a1.js"><link rel="prefetch" href="/webxiaoma/assets/js/61.3b3e3681.js"><link rel="prefetch" href="/webxiaoma/assets/js/62.3505e21a.js"><link rel="prefetch" href="/webxiaoma/assets/js/63.d92ceb76.js"><link rel="prefetch" href="/webxiaoma/assets/js/64.12b4ec5f.js"><link rel="prefetch" href="/webxiaoma/assets/js/65.25094ac8.js"><link rel="prefetch" href="/webxiaoma/assets/js/66.33071fe9.js"><link rel="prefetch" href="/webxiaoma/assets/js/67.fa4a83b6.js"><link rel="prefetch" href="/webxiaoma/assets/js/68.16934a3a.js"><link rel="prefetch" href="/webxiaoma/assets/js/69.b9cdcd7f.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.95c9e2d1.js"><link rel="prefetch" href="/webxiaoma/assets/js/70.6e6abed6.js"><link rel="prefetch" href="/webxiaoma/assets/js/71.a7f171d6.js"><link rel="prefetch" href="/webxiaoma/assets/js/72.40314370.js"><link rel="prefetch" href="/webxiaoma/assets/js/73.78af300e.js"><link rel="prefetch" href="/webxiaoma/assets/js/74.768f7f0d.js"><link rel="prefetch" href="/webxiaoma/assets/js/75.74c7321e.js"><link rel="prefetch" href="/webxiaoma/assets/js/76.486707cd.js"><link rel="prefetch" href="/webxiaoma/assets/js/77.f3ffb121.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.e52f0b5c.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.fa7113a5.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.d62b89fb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马学习网站" class="logo"> <span class="site-name can-hide">小马学习网站</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link router-link-active">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link router-link-active">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 基础系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 集合</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java IO</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/java/io/" aria-current="page" class="sidebar-link">IO-初识</a></li><li><a href="/webxiaoma/java/io/file.html" class="sidebar-link">IO-File对象</a></li><li><a href="/webxiaoma/java/io/inputStream.html" aria-current="page" class="active sidebar-link">IO-字节流操作</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 数据库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 网络编程</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="io-字节流操作"><a href="#io-字节流操作" class="header-anchor">#</a> IO-字节流操作</h1> <p></p><div class="table-of-contents"><ul><li><a href="#字节流">字节流</a></li><li><a href="#输入流">输入流</a><ul><li><a href="#常见子类">常见子类</a></li><li><a href="#常用方法">常用方法</a></li></ul></li><li><a href="#输出流">输出流</a><ul><li><a href="#常见子类">常见子类</a></li><li><a href="#常用方法">常用方法</a></li></ul></li><li><a href="#文件流">文件流</a></li><li><a href="#字节数组流">字节数组流</a></li><li><a href="#数据流">数据流</a></li><li><a href="#对象流">对象流</a></li></ul></div><p></p> <p>🐴</p> <h2 id="字节流"><a href="#字节流" class="header-anchor">#</a> 字节流</h2> <p>在<code>java</code>中字节流操作使用输入<code>InputStream</code>类与输出流<code>OutputStream</code>类。</p> <p>下面列举了常见得字节输入/输出流子类，以及它们得常用方法：</p> <h2 id="输入流"><a href="#输入流" class="header-anchor">#</a> 输入流</h2> <h3 id="常见子类"><a href="#常见子类" class="header-anchor">#</a> 常见子类</h3> <p>输入流<code>InputStream</code>常见的子类：</p> <ul><li><code>ByteArrayInputStream</code> 类：将字节数组转换为字节输入流，从中读取字节。</li> <li><code>FileInputStream</code> 类：从文件中读取数据。</li> <li><code>PipedInputStream</code> 类：连接到一个<code>PipedOutputStream</code>（管道输出流）。</li> <li><code>SequenceInputStream</code> 类：将多个字节输入流串联成一个字节输入流。</li> <li><code>ObjectInputStream</code> 类：将对象反序列化。</li></ul> <h3 id="常用方法"><a href="#常用方法" class="header-anchor">#</a> 常用方法</h3> <table><thead><tr><th style="text-align:left;">方法</th> <th style="text-align:left;">描述</th></tr></thead> <tbody><tr><td style="text-align:left;"><code>int read()</code></td> <td style="text-align:left;">从输入流中读取一个<code>8</code>位的字节，并把它转换为<code>0~255</code>的整数，最后返回整数。如果返回 -1，则表示已经到了输入流的末尾。为了提高<code>I/O</code>操作的效率，建议尽量使用<code>read()</code>方法的另外两种形式</td></tr> <tr><td style="text-align:left;"><code>int read(byte[] b)</code></td> <td style="text-align:left;">从输入流中读取若干字节，并把它们保存到参数 b 指定的字节数组中。 该方法返回读取的字节数。</td></tr> <tr><td style="text-align:left;"><code>int read(byte[] b, int off, int len)</code></td> <td style="text-align:left;">从输入流中读取若干字节，并把它们保存到参数<code>b</code>指定的字节数组中。其中，<code>off</code>起始下标；<code>len</code>指定读取的字节数。该方法返回实际读取的字节数。</td></tr> <tr><td style="text-align:left;"><code>void close()</code></td> <td style="text-align:left;">关闭输入流</td></tr> <tr><td style="text-align:left;"><code>int available()</code></td> <td style="text-align:left;">返回可以从输入流中读取的字节数</td></tr> <tr><td style="text-align:left;"><code>long skip(long n)</code></td> <td style="text-align:left;">从输入流中跳过参数 n 指定数目的字节。该方法返回跳过的字节数</td></tr> <tr><td style="text-align:left;"><code>void mark(int readLimit)</code></td> <td style="text-align:left;">在输入流的当前位置开始设置标记，参数 readLimit 则指定了最多被设置标记的字</td></tr> <tr><td style="text-align:left;">节数</td> <td style="text-align:left;"></td></tr> <tr><td style="text-align:left;"><code>boolean markSupported()</code></td> <td style="text-align:left;">判断当前输入流是否允许设置标记，是则返回<code>true</code>，否则返回<code>false</code></td></tr> <tr><td style="text-align:left;"><code>void reset()</code></td> <td style="text-align:left;">将输入流的指针返回到设置标记的起始处</td></tr></tbody></table> <h2 id="输出流"><a href="#输出流" class="header-anchor">#</a> 输出流</h2> <h3 id="常见子类-2"><a href="#常见子类-2" class="header-anchor">#</a> 常见子类</h3> <p>输出流<code>OutputStream</code>常见的子类：</p> <ul><li><code>ByteArrayOutputStream</code> 类：向内存缓冲区的字节数组中写数据。</li> <li><code>FileOutputStream</code> 类：向文件中写数据。</li> <li><code>PipedOutputStream</code> 类：连接到一个 <code>PipedlntputStream</code>（管道输入流）。</li> <li><code>ObjectOutputStream</code> 类：将对象序列化。</li></ul> <h3 id="常用方法-2"><a href="#常用方法-2" class="header-anchor">#</a> 常用方法</h3> <table><thead><tr><th style="text-align:left;">方法</th> <th style="text-align:left;">描述</th></tr></thead> <tbody><tr><td style="text-align:left;"><code>void write(int b)</code></td> <td style="text-align:left;">向输出流写入一个字节。这里的参数是<code>int</code>类型，但是它允许使用表达式，而不用强制转换成<code>byte</code>类型。为了提高<code>I/O</code>操作的效率，建议尽量使用<code>write()</code>方法的另外两种形式</td></tr> <tr><td style="text-align:left;"><code>void write(byte[] b)</code></td> <td style="text-align:left;">把参数<code>b</code>指定的字节数组中的所有字节写到输出流中</td></tr> <tr><td style="text-align:left;"><code>void write(byte[] b,int off,int len)</code></td> <td style="text-align:left;">把参数<code>b</code>指定的字节数组中的若干字节写到输出流中。其中，<code>off</code>起始下标，<code>len</code>表示元素个数</td></tr> <tr><td style="text-align:left;"><code>void close()</code></td> <td style="text-align:left;">关闭输出流。</td></tr> <tr><td style="text-align:left;"><code>void flush()</code></td> <td style="text-align:left;">强制将缓冲区中的数据写入输出流，并清空缓冲区</td></tr></tbody></table> <h2 id="文件流"><a href="#文件流" class="header-anchor">#</a> 文件流</h2> <p>文件字节流的操作可以使用<code>InputStream</code>子类<code>FileInputStream</code> 和 <code>OutputStream</code>子类<code>FileOutputStream</code></p> <p>下面使用例子为：使用<code>FileInputStream</code>读取<code>D:/javaText/text.txt</code>文件，并将文件以特点字节进行拆分，在使用<code>FileOutputStream</code>写入多个文件中</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;D:/javaText/text.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> <span class="token class-name">FileSize</span> <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span> <span class="token comment">// 拆分文件长度</span>
+  <span class="token keyword">int</span> av <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">try</span><span class="token punctuation">(</span><span class="token class-name">FileInputStream</span> fis <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      av <span class="token operator">=</span> fis<span class="token punctuation">.</span><span class="token function">available</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 文件总长度</span>
+      b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span>av<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      fis<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">getStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">int</span> fileCount <span class="token operator">=</span>  <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token class-name">Math</span><span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>av<span class="token operator">/</span><span class="token class-name">FileSize</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 所要创建的文件个数</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> fileCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token class-name">String</span> <span class="token class-name">FileName</span> <span class="token operator">=</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;-&quot;</span> <span class="token operator">+</span> f<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+
+      <span class="token class-name">File</span> newF <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>f<span class="token punctuation">.</span><span class="token function">getParent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token class-name">FileName</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> newTxt <span class="token operator">=</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">copyOfRange</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span><span class="token class-name">FileSize</span> <span class="token operator">*</span> i<span class="token punctuation">,</span><span class="token class-name">FileSize</span> <span class="token operator">*</span> <span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">try</span><span class="token punctuation">(</span><span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>newF<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> by <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>newTxt<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 防止乱码</span>
+          fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>by<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+          e<span class="token punctuation">.</span><span class="token function">getStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="字节数组流"><a href="#字节数组流" class="header-anchor">#</a> 字节数组流</h2> <p>字节数组流可以使用字节输入流<code>ByteArrayInputStream</code> 和 字节输出流 <code>ByteArrayOutputStream</code>。 字节数组输入流在内存中创建一个字节数组缓冲区，从输入流读取的数据保存在该字节数组缓冲区中。</p> <p>下面是将大写的<code>A','B','C','D'</code> 转换小写的示例</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">InputStream</span> baIS <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token class-name">OutputStream</span> baOS <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">,</span><span class="token string">'C'</span><span class="token punctuation">,</span><span class="token string">'D'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">try</span><span class="token punctuation">{</span>
+        baIS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span>bytes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        baOS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">int</span> mk <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>mk <span class="token operator">=</span> baIS<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">!=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token class-name">Character</span><span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span>mk<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            baOS<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>baOS<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        baIs<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        baOS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="数据流"><a href="#数据流" class="header-anchor">#</a> 数据流</h2> <p>数据流<code>DataInputStream</code> 和 <code>DataOutputStream</code> 可以向文件中写入<code>布尔值</code>，<code>整数</code>和<code>字符串</code>。 并且还可以读取这些数据。</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span>  <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;D:/test/java/file.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">File</span> fc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;D:/test/java/file.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">try</span><span class="token punctuation">(</span>
+      <span class="token class-name">FileInputStream</span> fi <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">DataInputStream</span> dataInp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataInputStream</span><span class="token punctuation">(</span>fi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">FileOutputStream</span> fic <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>fc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">DataOutputStream</span> dataOut <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataOutputStream</span><span class="token punctuation">(</span>fic<span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token comment">// 写入数据</span>
+      dataOut<span class="token punctuation">.</span><span class="token function">writeBoolean</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 写入布尔值</span>
+      dataOut<span class="token punctuation">.</span><span class="token function">writeInt</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 写入布数字</span>
+      dataOut<span class="token punctuation">.</span><span class="token function">writeUTF</span><span class="token punctuation">(</span><span class="token string">&quot;这是一条数据&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 写入字符串</span>
+
+      <span class="token comment">// 读取数据</span>
+      <span class="token keyword">boolean</span> b<span class="token operator">=</span> dataInp<span class="token punctuation">.</span><span class="token function">readBoolean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">int</span> i <span class="token operator">=</span> dataInp<span class="token punctuation">.</span><span class="token function">readInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">String</span> str <span class="token operator">=</span> dataInp<span class="token punctuation">.</span><span class="token function">readUTF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;读取到布尔值:&quot;</span><span class="token operator">+</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;读取到整数:&quot;</span><span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;读取到字符串:&quot;</span><span class="token operator">+</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="对象流"><a href="#对象流" class="header-anchor">#</a> 对象流</h2> <p>数据流<code>ObjectInputStream</code> 和 <code>ObjectOutputStream</code> 可以向文件中写入一个对象信息。前提是<strong>传输的对象类必须实现了Serializable接口</strong></p> <p><strong>要传输的对象</strong></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">Serializable</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 需要传输的对象数据User</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span>  name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>写入对象</strong></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token class-name">File</span> f <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;D:/test/java/file.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">File</span> fr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;D:/test/java/file.txt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 创建 ObjectInputStream 对象输出流</span>
+<span class="token keyword">try</span><span class="token punctuation">(</span>
+    <span class="token class-name">FileOutputStream</span> fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ObjectOutputStream</span> os <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>fos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">FileInputStream</span> fo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">ObjectInputStream</span> objIS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>fo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// 写入</span>
+    <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    os<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 读取</span>
+    <span class="token class-name">User</span> userRead <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">)</span> objIS<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>userRead<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span> <span class="token class-name">ClassNotFoundException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span> <span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">4/25/2021, 5:38:06 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/java/io/file.html" class="prev">
+        IO-File对象
+      </a></span> <span class="next"><a href="/webxiaoma/java/jdbc/mysql-connect.html">
+        JDBC-MySQL
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>IO-字节流操作</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#字节流" data-v-4100c7a9>字节流</a></li><li class="title" data-v-4100c7a9><a href="#输入流" data-v-4100c7a9>输入流</a></li><li class="subTitle" data-v-4100c7a9><a href="#常见子类" data-v-4100c7a9>常见子类</a></li><li class="subTitle" data-v-4100c7a9><a href="#常用方法" data-v-4100c7a9>常用方法</a></li><li class="title" data-v-4100c7a9><a href="#输出流" data-v-4100c7a9>输出流</a></li><li class="subTitle" data-v-4100c7a9><a href="#常见子类-2" data-v-4100c7a9>常见子类</a></li><li class="subTitle" data-v-4100c7a9><a href="#常用方法-2" data-v-4100c7a9>常用方法</a></li><li class="title" data-v-4100c7a9><a href="#文件流" data-v-4100c7a9>文件流</a></li><li class="title" data-v-4100c7a9><a href="#字节数组流" data-v-4100c7a9>字节数组流</a></li><li class="title" data-v-4100c7a9><a href="#数据流" data-v-4100c7a9>数据流</a></li><li class="title" data-v-4100c7a9><a href="#对象流" data-v-4100c7a9>对象流</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.9c984363.js" defer></script><script src="/webxiaoma/assets/js/2.21aa0c70.js" defer></script><script src="/webxiaoma/assets/js/46.429184ca.js" defer></script>
+  </body>
+</html>
