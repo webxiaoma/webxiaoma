@@ -56,6 +56,7 @@ module.exports = {
         "basics/string",
         "basics/array",
         "basics/error",
+        "basics/generics",
       ]
     },
     {
@@ -160,5 +161,11 @@ module.exports = {
         "grammar/exclamatory",
       ]
     },
+  ],
+
+  
+  /************** 工作 *************/ 
+  "/work/":[
+     ""
   ]
 }

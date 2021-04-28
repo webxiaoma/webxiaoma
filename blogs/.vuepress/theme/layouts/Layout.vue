@@ -89,9 +89,8 @@ export default {
     }
   },
   created(){
-   
-  },
 
+  },
   computed: {
     shouldShowNavbar () {
       const { themeConfig } = this.$site
@@ -150,6 +149,7 @@ export default {
   },
 
   methods: {
+   
     // electron 控制
     openConsole(){
       openConsole()

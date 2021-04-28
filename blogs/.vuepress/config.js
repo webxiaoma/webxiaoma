@@ -2,8 +2,8 @@ const Sidebar = require("./sildbar");
 const baseUrl = "/webxiaoma/";
 
 module.exports = {
-  title:'小马学习网站',
-  description:"小马学习网站",
+  title:'小马过河',
+  description:"小马过河",
   head: [
       ["link", { rel: "icon", href: `/img/manong.jpg` }],
       ["meta", { content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport" }],
@@ -25,6 +25,7 @@ module.exports = {
   dest: "./docs", //输出目录
   serviceWorker: true, //缓存那些已访问过的页面的内容
   themeConfig: {  // 导航
+      password:"Longwen2021",
       logo:'/img/manong.jpg', 
       searchMaxSuggestions: 15, // 搜索设置数量
       nav: [  // 这里修改了，增加了isLogin 是否登录
@@ -85,16 +86,17 @@ module.exports = {
               {text:"Tomcat初识", link:"/tools/tomcat/"},
             ]},
           ]},
-          { text: 'English', items: [
-            {text:"单词用语", items:[
+          { text: 'English',  items: [
+            {text:"单词用语",  items:[
               {text:"电话", link:"/english/word/call"},
               {text:"日常生活", link:"/english/word/daily-life"},
               {text:"动物", link:"/english/word/animal"},
             ]},
-            {text:"英语语法", items:[
+            {text:"英语语法",items:[
               {text:"句子成分", link:"/english/grammar/sentence"},
             ]},
           ]},
+          { text: '工作', link:"/work/", isLogin:true},
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
           //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},

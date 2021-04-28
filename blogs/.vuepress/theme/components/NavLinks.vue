@@ -14,7 +14,7 @@
         :item="item"
       />
       <NavLink
-        v-else
+        v-if="item.type === 'link'"
         :item="item"
       />
     </div>
@@ -30,6 +30,7 @@
       {{ repoLabel }}
       <OutboundLink />
     </a>
+    <div class="nav-item">登录</div>
   </nav>
 </template>
 
@@ -84,11 +85,30 @@ export default {
     },
 
     userLinks () {
-      return (this.nav || []).map(link => {
-        return Object.assign(resolveNavLinkItem(link), {
-          items: (link.items || []).map(resolveNavLinkItem)
+      const navList = (this.nav || []).map(link => {
+
+        this.addLinkItmeIsShow(link);
+        const list = Object.assign(resolveNavLinkItem(link), {
+          items: (link.items || []).map((item)=>{
+             this.addLinkItmeIsShow(item);
+             return resolveNavLinkItem(item)
+          })
         })
+        return list;
       })
+      
+       const filterNav = navList.filter(item=>{
+            if(item.isShow){
+              item.items = item.items.filter(link=>{
+                  if(link.isShow){
+                    return true;
+                  }
+              })
+              return true;
+            }
+        })
+
+        return filterNav;
     },
 
     repoLink () {
@@ -121,6 +141,17 @@ export default {
   },
   created(){
      
+  },
+  methods:{
+    addLinkItmeIsShow(item){
+      let bol = false;
+      if(item.isLogin){
+         bol = this.isLogin;
+      }else{
+         bol = true;
+      }
+      item.isShow = bol;
+    }
   }
 }
 </script>
