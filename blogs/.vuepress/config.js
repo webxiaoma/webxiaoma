@@ -25,6 +25,7 @@ module.exports = {
   dest: "./docs", //输出目录
   serviceWorker: true, //缓存那些已访问过的页面的内容
   themeConfig: {  // 导航
+      user:"webxiaoma",
       password:"Longwen2021",
       logo:'/img/manong.jpg', 
       searchMaxSuggestions: 15, // 搜索设置数量

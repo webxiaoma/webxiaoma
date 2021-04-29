@@ -1,7 +1,16 @@
 import 'element-ui/lib/theme-chalk/index.css';
 import 'element-ui/lib/theme-chalk/display.css';
-import { Row,Col } from 'element-ui';
 import mixin from './utils/mixin';
+
+import { 
+  Row,
+  Col,
+  Avatar,
+  Popover,
+  Form,FormItem,
+  Input,Button,Checkbox,CheckboxGroup,CheckboxButton,
+  Message } from 'element-ui';
+
 
 // 测试代码
 require("./code")();
@@ -12,7 +21,17 @@ export default ({
 }) => {
   Vue.use(Row)
   Vue.use(Col)
+  Vue.use(Avatar)
+  Vue.use(Popover)
+  Vue.use(Form)
+  Vue.use(FormItem)
+  Vue.use(Input)
+  Vue.use(Button)
+  Vue.use(Checkbox)
+  Vue.use(CheckboxGroup)
+  Vue.use(CheckboxButton)
  
+  Vue.prototype.$message = Message;
   Vue.mixin(mixin)
 
 

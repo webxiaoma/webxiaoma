@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar">
+  <aside :class="logining?'sidebar filter':'sidebar'">
     <NavLinks />
 
     <slot name="top" />
@@ -15,17 +15,25 @@
 <script>
 import SidebarLinks from '@theme/components/SidebarLinks.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
+import {mapState} from "vuex";
 
 export default {
   name: 'Sidebar',
 
   components: { SidebarLinks, NavLinks },
 
-  props: ['items']
+  props: ['items'],
+  computed:{
+     ...mapState(["logining"])
+  },
+
 }
 </script>
 
 <style lang="stylus">
+.filter
+  filter blur(10.1px)
+  
 .sidebar
   -webkit-app-region drag
   ul

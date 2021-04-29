@@ -1,6 +1,6 @@
 <template>
   <main
-    class="home"
+    :class="logining?'home filter':'home'"
     :aria-labelledby="data.heroText !== null ? 'main-title' : null"
   >
     <header class="hero">
@@ -63,17 +63,19 @@
 
 <script>
 import NavLink from '@theme/components/NavLink.vue'
+import {mapState} from "vuex";
 
 export default {
   name: 'Home',
 
   components: { NavLink },
-
+  
   computed: {
+    ...mapState(["logining"]),
     data () {
       return this.$page.frontmatter
     },
-
+    
     actionLink () {
       return {
         link: this.data.actionLink,
@@ -85,6 +87,10 @@ export default {
 </script>
 
 <style lang="stylus">
+.filter
+  filter blur(20.1px)
+  
+  
 .home
   padding $navbarHeight 2rem 0
   max-width $homePageWidth

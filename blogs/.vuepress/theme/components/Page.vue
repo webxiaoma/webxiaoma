@@ -1,5 +1,5 @@
 <template>
-  <main class="page">
+  <main  :class="logining?'page filter':'page'">
     <slot name="top" />
     <div class="main">
       <div class="content">
@@ -19,6 +19,7 @@
 import PageEdit from '@theme/components/PageEdit.vue'
 import PageNav from '@theme/components/PageNav.vue'
 import FloatSilder from '@theme/components/FloatSilder.vue'
+import {mapState} from "vuex";
 
 export default {
   components: { PageEdit, PageNav, FloatSilder},
@@ -27,6 +28,9 @@ export default {
     return {
       isShowFloatSilder:false,
     }
+  },
+  computed:{
+     ...mapState(["logining"])
   },
   created(){
     this.checkFolatSilder();
@@ -53,6 +57,9 @@ export default {
 <style lang="stylus">
 @require '../styles/wrapper.styl'
 
+.filter
+  filter blur(10.1px)
+  
 .page
   padding-bottom 0
   display block

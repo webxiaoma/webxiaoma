@@ -89,7 +89,7 @@ export default {
     }
   },
   created(){
-
+     this.checkLogin()
   },
   computed: {
     shouldShowNavbar () {
@@ -226,8 +226,10 @@ export default {
 </script>
 
 <style lang="stylus">
+  
 .ele-class
   .electron-wrapper
+    
     height 24px
     width 100%
     position fixed

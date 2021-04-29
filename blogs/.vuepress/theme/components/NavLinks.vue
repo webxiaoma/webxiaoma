@@ -30,7 +30,7 @@
       {{ repoLabel }}
       <OutboundLink />
     </a>
-    <div class="nav-item">登录</div>
+   
   </nav>
 </template>
 
@@ -38,16 +38,18 @@
 import DropdownLink from '@theme/components/DropdownLink.vue'
 import { resolveNavLinkItem } from '../util'
 import NavLink from '@theme/components/NavLink.vue'
+import {mapState} from "vuex";
 
 export default {
   name: 'NavLinks',
 
   components: {
     NavLink,
-    DropdownLink
+    DropdownLink,
   },
 
   computed: {
+    ...mapState(["isLogin"]),
     userNav () {
       return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
     },
@@ -171,6 +173,7 @@ export default {
     line-height 2rem
     &:first-child
       margin-left 0
+  
   .repo-link
     margin-left 1.5rem
 

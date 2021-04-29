@@ -29,3 +29,4 @@ export const electronInit = (Vue)=>{
      console.log("slef-----:",e)
   }
 }
+
