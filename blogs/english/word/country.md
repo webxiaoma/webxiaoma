@@ -12,57 +12,59 @@ meta:
 
 :horse: 
 
-## 常见单词
+<EnTool />
 
-- `country` <Badge text="/'kʌntri/" /> 国家；故乡 
-- `international` <Badge text="/ˌɪntɚ'næʃnəl/" />  国际的, 国际间进行的
-- `rural` <Badge text="/'rʊrəl/" />  农村的 
-- `province` <Badge text="/'prɑvɪns/" /> 省；领域；职权
-- `city` <Badge text="/'sɪti/" />  城市, 都市, 市
-- `county` <Badge text="/'kaʊnti/" />   郡, 县
-- `village` <Badge text="/'vɪlɪdʒ/" /> 村庄；村民；
-- `native` <Badge text="/'netɪv/" />  adj. 本国的；土著的； n. 本地人；
-- `place` <Badge text="/ples/" />  n. 地方, 场所, 所在地
-- `native place`籍贯
-- `nationality` <Badge text="/ˌnæʃə'næləti/" />  国籍
-- `developed country` <Badge text="/dɪ'vɛləpt/" /> 发达国家
-- `developing country` <Badge text="/dɪ'vɛləpɪŋ/" /> 发展中国家
-- `world` <Badge text="/wɝld/" />  世界；领域；
-- `organization` <Badge text="/ˌɔrɡənə'zeʃən/" />  组织
-- `China` <Badge text="/ˈtʃaɪnə/" />   中国
-- `Japan` <Badge text="/dʒəˈpæn/" />  日本
-- `Egypt` <Badge text="/ˈidʒɪpt/" />  埃及
-- `Italy` <Badge text="/'itəli/" />  意大利
-- `America` <Badge text="/ə'merikə/" />  美国（`the United States = US`）
-- `France` <Badge text="/fræns/" />  法兰西,法国
-- `Britain` <Badge text="/ˈkænədə/" /> 不列颠,英国 (`England = UK`)
-- `Canada` <Badge text="/ˈkænədə/" />  加拿大
-- `Australia` <Badge text="/ɔ'streiljə/" />  澳大利亚
-- `Germany` <Badge text="/'dʒə:məni/" />  德国
-- `Greece` <Badge text="/ɡris/" />  希腊
-- `India` <Badge text="/ˈɪndɪə/" />  印度
-- `Spain` <Badge text="/spen/" /> 西班牙
-- `Sweden` <Badge text="/ˈswidn/" />  瑞典
-- `Holland` <Badge text="/'hɑlənd/" />  荷兰
-- `Arabia` <Badge text="/əˈrebiə/" />  阿拉伯半岛
-- `Russia` <Badge text="/ˈrʌʃə/" />  俄罗斯
-- `Burma` <Badge text="/ˈbɜːrmə/" />   缅甸
-- `Iran` <Badge text="/i'rɑ:n/" />  伊朗
-- `Iraq` <Badge text="/ɪ'rɑk/" />  伊拉克
-- `Kazakstan` <Badge text="/kəˈzɑkˌstɑn/" />  哈萨克斯坦
-- `Pakistan` <Badge text="/ˈpækɪˌstæn/" />  巴基斯坦
-- `Maldives` <Badge text="/'mɔ:ldaivz/" />  马尔代夫
-- `Mexico` <Badge text="/'meksikəu/ " /> 墨西哥
-- `Korea` <Badge text="/kə'riə/" />  韩国；朝鲜 （`North Korea` 朝鲜；北韩）
-- `Israel` <Badge text="/'izreiəl/" />  以色列
-- `Nepal` <Badge text="/ni'pɔ:l/" />  尼泊尔
-- `Cambodia` <Badge text="/kæmˈbodiə/" />  柬埔寨
-- `Thailand` <Badge text="/'tailænd/" />  泰国
+
+## 常见单词
+-  <En read="/'kʌntri/" msg="国家；故乡">country</En>
+-  <En read="/ˌɪntɚ'næʃnəl/" msg="国际的, 国际间进行的">international</En>
+-  <En read="/'rʊrəl/" msg="农村的">rural</En>   
+-  <En read="/'prɑvɪns/" msg="省；领域；职权">province</En> 
+-  <En read="/'sɪti/" msg="城市, 都市, 市">city</En>  
+-  <En read="/'kaʊnti/" msg="郡, 县">county</En>   
+-  <En read="/'vɪlɪdʒ/" msg="村庄；村民；">village</En> 
+-  <En read="/'netɪv/" msg="adj. 本国的；土著的； n. 本地人">native</En>  
+-  <En read="/ples/" msg="n. 地方, 场所, 所在地">place</En>  
+-  <En  msg="籍贯">native place</En>  
+-  <En read="/ˌnæʃə'næləti/" msg="国籍">nationality</En>  
+-  <En read="/dɪ'vɛləpt/" msg="发达国家">developed country</En> 
+-  <En read="/dɪ'vɛləpɪŋ/" msg="发展中国家">developing country</En> 
+-  <En read="/wɝld/" msg="世界；领域；">world</En>  
+-  <En read="/ˌɔrɡənə'zeʃən/" msg="组织">organization</En>  
+-  <En read="/ˈtʃaɪnə/" msg="中国">China</En>   
+-  <En read="/dʒəˈpæn/" msg="日本">Japan</En>  
+-  <En read="/ˈidʒɪpt/" msg="埃及">Egypt</En>  
+-  <En read="/'itəli/" msg="意大利">Italy</En>  
+-  <En read="/ə'merikə/" msg="美国（the United States = US）">America</En>  
+-  <En read="/fræns/" msg="法兰西,法国">France</En>  
+-  <En read="/ˈkænədə/" msg="不列颠,英国 (England = UK)">Britain</En> 
+-  <En read="/ˈkænədə/" msg="加拿大">Canada</En>  
+-  <En read="/ɔ'streiljə/" msg="澳大利亚">Australia</En>  
+-  <En read="/'dʒə:məni/" msg="德国">Germany</En>  
+-  <En read="/ɡris/" msg="希腊">Greece</En>  
+-  <En read="/ˈɪndɪə/" msg="印度">India</En>  
+-  <En read="/spen/" msg="西班牙">Spain</En> 
+-  <En read="/ˈswidn/" msg="瑞典">Sweden</En>  
+-  <En read="/'hɑlənd/" msg="荷兰">Holland</En>  
+-  <En read="/əˈrebiə/" msg="阿拉伯半岛">Arabia</En>  
+-  <En read="/ˈrʌʃə/" msg="俄罗斯">Russia</En>  
+-  <En read="/ˈbɜːrmə/" msg="缅甸">Burma</En>   
+-  <En read="/i'rɑ:n/" msg="伊朗">Iran</En>  
+-  <En read="/ɪ'rɑk/" msg="伊拉克">Iraq</En>  
+-  <En read="/kəˈzɑkˌstɑn/" msg="哈萨克斯坦">Kazakstan</En>  
+-  <En read="/ˈpækɪˌstæn/" msg="巴基斯坦">Pakistan</En>  
+-  <En read="/'mɔ:ldaivz/" msg="马尔代夫">Maldives</En>  
+-  <En read="/'meksikəu/ " msg="墨西哥">Mexico</En> 
+-  <En read="/kə'riə/" msg="韩国；朝鲜 （North Korea 朝鲜；北韩）">Korea</En>  
+-  <En read="/'izreiəl/" msg="以色列">Israel</En>  
+-  <En read="/ni'pɔ:l/" msg="尼泊尔">Nepal</En>  
+-  <En read="/kæmˈbodiə/" msg="柬埔寨">Cambodia</En>  
+-  <En read="/'tailænd/" msg="泰国">Thailand</En>  
+-  <En read="/tred/  /wɔr/" msg="贸易战">trade war</En>  
 
 
 ## 常见短语
-
-- `What's your nationality?` 你是那个国家的？
-- `My hometown is Tangshan, Hebei` 我老家是河北唐山
-- `Which country do you like to travel to?` 你喜欢去那个国家旅游
-- `trade war` <Badge text="/tred/  /wɔr/" />  贸易战
+-  <En :enType="2" msg="你是那个国家的？">What's your nationality?</En>  
+-  <En :enType="2" msg="我老家是河北唐山">My hometown is Tangshan, Hebei</En>  
+-  <En :enType="2" msg="你喜欢去那个国家旅游">Which country do you like to travel to?</En>  
+ 

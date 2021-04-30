@@ -1,7 +1,18 @@
 <!-- 英语 -->
 <template>
   <div class='englishWrapper'>
-     <div @click="wordClick"  :class="showWord?'wordWrapper':'wordWrapper filter'" v-html="wordObj.htmlStr"></div>
+     <el-popover
+        placement="right"
+        width="150"
+        trigger="manual"
+        popper-class="popoverWrapper"
+        v-model="visible">
+        <div class="popoverBtn">
+           <el-button @click="readBtnClick(1)" type="success" size="mini">美音</el-button>
+           <el-button @click="readBtnClick(0)" type="primary" size="mini">英音</el-button>
+        </div>
+        <div @click="wordClick"  slot="reference" :class="showWord?'wordWrapper':'wordWrapper filter'" v-html="wordObj.htmlStr"></div>
+      </el-popover>
      <div @click="showClick('showSoundmark')" :class="showSoundmark?'readWrapper':'readWrapper filter'" v-if="read"><Badge :text="read"></Badge> </div>
      <div @click="showClick('showMeaning')" :class="showMeaning?'':'filter'" v-if="msg">{{msg}}</div>
  </div>
@@ -20,12 +31,11 @@ export default {
          htmlAry:[],
          wordAry:[],
        },
-       readApi:{
-         youDaoUk:"http://dict.youdao.com/dictvoice?type=0&audio=",
-         youDaoUs:"http://dict.youdao.com/dictvoice?type=1&audio=",
-       },
-       video:null,
-       currentReadApi:"",
+       type:0, //读音方式，0为美音，1 为英音 2 为选择
+       readingWord:"",
+       visible:false,
+       currentReadApi:"", // 当前要读的方式
+       popoverCanShow:false, //popover是否可以显示
        showWord:true, // 显示单词
        showSoundmark:true, // 显示音标
        showMeaning:true, // 显示意思
@@ -40,9 +50,9 @@ export default {
        type:String,
        default:""
      },
-     type:{ // 读音方式，1为美音，2 为英音 3 为选择
-       type: Number,
-       default: 1
+     enType:{
+       type: Number, // 英语类型：1：单词 2:句子 3：短语
+       default: 1,
      }
   },
   computed:{
@@ -53,19 +63,17 @@ export default {
        this.showWord = newObj.showWord;
        this.showSoundmark = newObj.showSoundmark;
        this.showMeaning = newObj.showMeaning;
+       this.setReadType();
      }
   },
   created(){
      this.init();
   },
-  mounted(){
-    this.createdVideo();
-  },
   methods: {
     init(){
       const {englishObj} = this;
       this.createdWord();
-      this.setReadType(this.type)
+      this.setReadType()
       
       this.showWord = englishObj.showWord;
       this.showSoundmark = englishObj.showSoundmark;
@@ -73,6 +81,7 @@ export default {
     },
     createdWord(){
       const slotsAry = this.$slots.default;
+      const {enType} = this;
       if(slotsAry){
          const text = slotsAry[0].text;
          const textStr = text.replace(/\s+/g, " ").replace(/(^\s*)|(\s*$)/g, "");
@@ -82,7 +91,6 @@ export default {
          let wordAry = [];
 
          textAry.forEach((item,index)=>{ //
-           console.log(item.split(""))
             let word = item.replace(/\`/g,"");
             let sum = 0;
 
@@ -98,7 +106,16 @@ export default {
               return item;
             })
             let htm = letterAry.join("");
-            let htmStr = `<span class="word" data-id="${index}" data-text="${word}">${htm}</span>`;
+            let className = "";
+            if(enType === 1){ // 1：单词 2:句子 3：短语
+              className = "word";
+            }else if(enType === 2){
+              className = "sentence";
+            }else if(enType === 3){
+              className = "phrase";
+            }
+
+            let htmStr = `<span class="english ${className}" data-id="${index}" data-text="${word}" data-type="${enType}" data-msg="${this.msg}" data-read="${this.read}">${htm}</span>`;
             wordAry.push(word);  
             wordHtmlStr += htmStr;
             wordHtmlAryStr.push(htmStr)
@@ -109,47 +126,55 @@ export default {
             htmlAry:wordHtmlAryStr,
             wordAry:wordAry,
          }
-         console.log(this.wordObj)
-         
       }
     },
-    setReadType(type){ // 设置读取方式
-      if(type === 1){ // 美音
-        this.currentReadApi = this.readApi.youDaoUs;
-      }else  if(type === 2){ // 2 为英音
-        this.currentReadApi = this.readApi.youDaoUk;
+    setReadType(){ // 设置读取方式
+      const {readGroup} = this.englishObj;
+      if(readGroup.length < 2){
+          if(readGroup.indexOf(1) > -1){ // 美音
+             this.type = 1;
+          }else{ // 英音
+             this.type = 0;
+          }
+          this.popoverCanShow = false;
+      }else{
+         this.type = 2;
+         this.popoverCanShow = true;
       }
+
     },
     wordClick(e){
       const {target} = e;
+      const {type,popoverCanShow} = this;
       if (target.nodeName.toLowerCase() === 'span' || target.nodeName.toLowerCase() === 'i' ) {
          // 获取触发事件对象的属性
          const word = target.getAttribute("data-text")
-         this.readWord(word)
+         if(type !== 2){
+           this.readWord(word,type)
+         }else{
+           this.readingWord = word;
+           if(popoverCanShow){
+            this.visible = true;
+           }
+         }
       }
       
       this.showClick("showWord")
     },
-    readWord(word){ // 读
+    readBtnClick(type){
+      const {readingWord} = this;
+      this.readWord(readingWord,type)
+      this.visible = false;
+    },
+    readWord(word,type = 1){ // 读
+      const {readApi} = this;
+      const readUrl = `${readApi}?type=${type}&audio=${word}`
       if(word){
-        this.video.src = `${this.currentReadApi}${word}`;
+        this.video.src = readUrl;
         this.video.play();
       }
     },
-    createdVideo(){
-      try{
-        let video = document.getElementById("video_English");
-        if(!video){
-           video = document.createElement("video");
-           video.id = "video_English";
-           video.style.display = "none"
-           document.body.appendChild(video)
-        }
-        this.video = video;
-      }catch(e){
-
-      }
-    },
+    
     showClick(filed){
      this[filed] = true;
     }
@@ -168,7 +193,7 @@ export default {
     padding 0 4px
     border-radius 2px
     margin-right 4px
-    .word
+    .english
       color #3eaf7c
       margin 0 4px
       font-size 13px
@@ -177,9 +202,14 @@ export default {
         color red
   .readWrapper
     margin-right 6px
-
-
   .filter
     filter blur(6.1px)
+
+
+
+
+.popoverWrapper
+  .popoverBtn
+    display flex
        
 </style>

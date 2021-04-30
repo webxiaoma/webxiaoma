@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>集合-Collection | 小马过河</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/webxiaoma/manifest.json">
+    <link rel="apple-touch-icon" href="/webxiaoma/img/mxx-152-152.png">
+    <meta name="description" content="本章为小马学习专栏—— Java集合 Collection">
+    <meta name="keywords" content="马新想 小马学习 java 集合 Collection">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.1aee8e47.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.caf38850.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.afa8a08f.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/42.88e3f85f.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/4.1dbbd457.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.fb277314.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.0e274bfb.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.4df5b6d2.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.e15c68c7.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.50b0fb96.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.d40f0918.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.d777faf3.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.d08415b7.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.d1754dff.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.f9de47c3.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.ce4921b6.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.0ae033b6.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.41965a22.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.c74fe4f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.074c6835.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.a2b61958.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.d414f70e.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.9c38926c.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.526e92f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.e16a0dbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.2b3785f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.4db35da6.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.13ca31b4.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.10359d6a.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.782b2496.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.0da4c4dd.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.11043cbd.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.fd7d2b5a.js"><link rel="prefetch" href="/webxiaoma/assets/js/37.d6aba03a.js"><link rel="prefetch" href="/webxiaoma/assets/js/38.ad8e60fe.js"><link rel="prefetch" href="/webxiaoma/assets/js/39.c37b1800.js"><link rel="prefetch" href="/webxiaoma/assets/js/40.3447ad1d.js"><link rel="prefetch" href="/webxiaoma/assets/js/41.61b5cadd.js"><link rel="prefetch" href="/webxiaoma/assets/js/43.ac19cd98.js"><link rel="prefetch" href="/webxiaoma/assets/js/44.801e8360.js"><link rel="prefetch" href="/webxiaoma/assets/js/45.308934d0.js"><link rel="prefetch" href="/webxiaoma/assets/js/46.ebbd5348.js"><link rel="prefetch" href="/webxiaoma/assets/js/47.bfeb740c.js"><link rel="prefetch" href="/webxiaoma/assets/js/48.4e30a53c.js"><link rel="prefetch" href="/webxiaoma/assets/js/49.5023ed83.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.d41ab86c.js"><link rel="prefetch" href="/webxiaoma/assets/js/50.5c789fbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/51.f74eda57.js"><link rel="prefetch" href="/webxiaoma/assets/js/52.31e11413.js"><link rel="prefetch" href="/webxiaoma/assets/js/53.a3922461.js"><link rel="prefetch" href="/webxiaoma/assets/js/54.47d1197b.js"><link rel="prefetch" href="/webxiaoma/assets/js/55.f27b4b14.js"><link rel="prefetch" href="/webxiaoma/assets/js/56.a678dd31.js"><link rel="prefetch" href="/webxiaoma/assets/js/57.b5b034cc.js"><link rel="prefetch" href="/webxiaoma/assets/js/58.593a9fef.js"><link rel="prefetch" href="/webxiaoma/assets/js/59.1f3814ef.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.65202320.js"><link rel="prefetch" href="/webxiaoma/assets/js/60.b341f6ac.js"><link rel="prefetch" href="/webxiaoma/assets/js/61.d3945c1e.js"><link rel="prefetch" href="/webxiaoma/assets/js/62.e81ca4ca.js"><link rel="prefetch" href="/webxiaoma/assets/js/63.baa76db0.js"><link rel="prefetch" href="/webxiaoma/assets/js/64.b5630a16.js"><link rel="prefetch" href="/webxiaoma/assets/js/65.7ae1513e.js"><link rel="prefetch" href="/webxiaoma/assets/js/66.003f638a.js"><link rel="prefetch" href="/webxiaoma/assets/js/67.908c9dbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/68.2a8cb4c5.js"><link rel="prefetch" href="/webxiaoma/assets/js/69.3e36c415.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.ccc1e1a8.js"><link rel="prefetch" href="/webxiaoma/assets/js/70.82059511.js"><link rel="prefetch" href="/webxiaoma/assets/js/71.6f60cbcf.js"><link rel="prefetch" href="/webxiaoma/assets/js/72.bdb25015.js"><link rel="prefetch" href="/webxiaoma/assets/js/73.a2af8fba.js"><link rel="prefetch" href="/webxiaoma/assets/js/74.03cf6cb4.js"><link rel="prefetch" href="/webxiaoma/assets/js/75.b6f2a11a.js"><link rel="prefetch" href="/webxiaoma/assets/js/76.530635f7.js"><link rel="prefetch" href="/webxiaoma/assets/js/77.bb50396f.js"><link rel="prefetch" href="/webxiaoma/assets/js/78.dfa0675f.js"><link rel="prefetch" href="/webxiaoma/assets/js/79.72071d2a.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.da4a160f.js"><link rel="prefetch" href="/webxiaoma/assets/js/80.385900b3.js"><link rel="prefetch" href="/webxiaoma/assets/js/81.99998a56.js"><link rel="prefetch" href="/webxiaoma/assets/js/82.cd48ed6e.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.fdbe1bea.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.1aee8e47.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马过河" class="logo"> <span class="site-name can-hide">小马过河</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav> <div class="loginItem"><div class="login" data-v-0028d8de><div class="loginBtn" data-v-0028d8de>登录</div> <!----></div></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 基础系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java 集合</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/java/collection/collection.html" aria-current="page" class="active sidebar-link">集合-Collection</a></li><li><a href="/webxiaoma/java/collection/list.html" class="sidebar-link">集合-List</a></li><li><a href="/webxiaoma/java/collection/set.html" class="sidebar-link">集合-Set</a></li><li><a href="/webxiaoma/java/collection/map.html" class="sidebar-link">集合-Map</a></li><li><a href="/webxiaoma/java/collection/queue.html" class="sidebar-link">集合-Queue</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java IO</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 数据库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 网络编程</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="集合-collection"><a href="#集合-collection" class="header-anchor">#</a> 集合-Collection</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#集合结构">集合结构</a></li><li><a href="#collection接口">Collection接口</a></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>我们在使用<code>java</code>数组时，会发现数组的长度是固定的，初始化后就不能改变，但是实际我们开发时会遇到无法确定数量的数据，这时就会用到集合。 另外集合和数组是有如下区别：</p> <ol><li>数组长度固定，集合长度可变</li> <li>数组可以存储基本数据类型或引用类型，集合只能存储引用类型</li> <li>数组只能存储同一数据类型，集合可以存储不同数据类型（实际也是同一类型，只是类型都是<code>Object</code>类）</li></ol> <h2 id="集合结构"><a href="#集合结构" class="header-anchor">#</a> 集合结构</h2> <p><code>java</code>集合主要分为 <code>Collection</code> 和 <code>Map</code>, 其它的实现类基本都是这俩接口的子类，下边为来自<a href="https://www.runoob.com/java/java-collections.html" target="_blank" rel="noopener noreferrer">菜鸟教程的<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>的结构图</p> <div class="imageWrapper" data-v-a88366f6><div class="image" data-v-a88366f6><img src="/webxiaoma/img/java/collection.gif" alt width="580" data-v-a88366f6></div> <!----> <div class="imgModel" style="display:none;" data-v-a88366f6><img src="/webxiaoma/img/java/collection.gif" class="scaleImg" data-v-a88366f6></div></div> <p>结构图中, <strong>实线</strong>边框的是实现类，如<code>ArrayList</code>，<code>LinkedList</code>，<code>HashMap</code>等，<strong>折线</strong>边框的是抽象类，比如<code>AbstractCollection</code>，<code>AbstractList</code>，<code>AbstractMap</code>等，而<strong>点线</strong>边框的是接口，比如<code>Collection</code>，<code>Iterator</code>，<code>List</code>等</p> <h2 id="collection接口"><a href="#collection接口" class="header-anchor">#</a> Collection接口</h2> <p><code>Collection</code>接口是 <code>List</code>,<code>Set</code> 和 <code>Queue</code>的父类接口，<code>java</code>不提供直接继承<code>Collection</code>的类，只能继承其子接口。<code>Collection</code>接口定义了一些常用的方法，如下：</p> <table><thead><tr><th style="text-align:left;">方法</th> <th style="text-align:left;">说明</th></tr></thead> <tbody><tr><td style="text-align:left;"><code>boolean add(type e)</code></td> <td style="text-align:left;">向集合中添加一个元素，如果集合对象被添加操作改变了，则返回<code>true</code>。 <code>type</code>是元素的数据类型</td></tr> <tr><td style="text-align:left;"><code>boolean addAll(Collection c)</code></td> <td style="text-align:left;">向集合中添加集合 c 中的所有元素，如果集合对象被添加操作改变了，则返回 true。</td></tr> <tr><td style="text-align:left;"><code>void clear()</code></td> <td style="text-align:left;">清除集合中的所有元素，将集合长度变为 0。</td></tr> <tr><td style="text-align:left;"><code>boolean contains(Object o)</code></td> <td style="text-align:left;">判断集合中是否存在指定元素</td></tr> <tr><td style="text-align:left;"><code>boolean containsAll(Collection c)</code></td> <td style="text-align:left;">判断集合中是否包含集合 c 中的所有元素</td></tr> <tr><td style="text-align:left;"><code>boolean isEmpty()</code></td> <td style="text-align:left;">判断集合是否为空</td></tr> <tr><td style="text-align:left;"><code>Iterator&lt;E&gt;iterator()</code></td> <td style="text-align:left;">返回一个<code>Iterator</code>对象，用于遍历集合中的元素</td></tr> <tr><td style="text-align:left;"><code>boolean remove(Object o)</code></td> <td style="text-align:left;">从集合中删除一个指定元素，当集合中包含了一个或多个元素 o 时，该方法只删除第一个符合条件的元素，该方法将返回<code>true</code>。</td></tr> <tr><td style="text-align:left;"><code>boolean removeAll(Collection c)</code></td> <td style="text-align:left;">从集合中删除所有在集合 c 中出现的元素（相当于把调用该方法的集合减去集合 c）。如果该操作改变了调用该方法的集合，则该方法返回<code>true</code>。</td></tr> <tr><td style="text-align:left;"><code>boolean retainAll(Collection c)</code></td> <td style="text-align:left;">从集合中删除集合 c 里不包含的元素（相当于把调用该方法的集合变成该集合和集合 c 的交集），如果该操作改变了调用该方法的集合，则该方法返回 true。</td></tr> <tr><td style="text-align:left;"><code>int size()</code></td> <td style="text-align:left;">返回集合中元素的个数</td></tr> <tr><td style="text-align:left;"><code>Object[] toArray()</code></td> <td style="text-align:left;">把集合转换为一个数组，所有的集合元素变成对应的数组元素。</td></tr></tbody></table> <p><strong>参考文献</strong></p> <ul><li><a href="https://www.runoob.com/java/java-collections.html" target="_blank" rel="noopener noreferrer">Java 集合框架-菜鸟教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="http://c.biancheng.net/view/6824.html" target="_blank" rel="noopener noreferrer">Java集合详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">4/20/2021, 5:36:09 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/java/basics/generics.html" class="prev">
+        Java-泛型
+      </a></span> <span class="next"><a href="/webxiaoma/java/collection/list.html">
+        集合-List
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>集合-Collection</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#集合结构" data-v-4100c7a9>集合结构</a></li><li class="title" data-v-4100c7a9><a href="#collection接口" data-v-4100c7a9>Collection接口</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.caf38850.js" defer></script><script src="/webxiaoma/assets/js/2.afa8a08f.js" defer></script><script src="/webxiaoma/assets/js/42.88e3f85f.js" defer></script><script src="/webxiaoma/assets/js/4.1dbbd457.js" defer></script>
+  </body>
+</html>

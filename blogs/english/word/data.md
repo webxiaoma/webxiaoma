@@ -73,8 +73,6 @@ meta:
 
 --- 
 
-
-
 - <En  msg="元且(1月1日)">New year’s Day</En> 
 - <En  msg="春节">Spring Festival（/'fɛstɪvl/） / Chinese New Year </En> 
 - <En  msg="元宵节">Lantern Festival</En> （`lantern`  灯,灯笼）
@@ -98,13 +96,13 @@ Labor <Badge text="/'lebɚ/" />  n. 劳工；分娩；劳动；工作
 
 ## 常见短语
 
-- <En  msg="今天是星期几">What day is it today</En>
-- <En  msg="今天是星期几">What day is today</En>
-- <En  msg="今天星期一">It's Monday</En>
-- <En  msg="今天星期一">Today is Monday</En>
-- <En  msg="今天几月几日">What's today's date?</En>
-- <En  msg="今天2月14">It's February 14</En>
-- <En  msg="祝你新年快乐">Happy New Year's Day to you</En>
-- <En  msg="今天是每月的第十天">Today is the tenth day of the month</En>
-- <En  msg="每年六月到八月是夏天">It's summer from June to August every year</En>
+- <En  msg="今天是星期几" :enType="2">What day is it today</En>
+- <En  msg="今天是星期几" :enType="2">What day is today</En>
+- <En  msg="今天星期一" :enType="2">It's Monday</En>
+- <En  msg="今天星期一" :enType="2">Today is Monday</En>
+- <En  msg="今天几月几日" :enType="2">What's today's date?</En>
+- <En  msg="今天2月14" :enType="2">It's February 14</En>
+- <En  msg="祝你新年快乐" :enType="2">Happy New Year's Day to you</En>
+- <En  msg="今天是每月的第十天" :enType="2">Today is the tenth day of the month</En>
+- <En  msg="每年六月到八月是夏天" :enType="2">It's summer from June to August every year</En>
 

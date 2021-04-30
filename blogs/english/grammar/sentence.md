@@ -17,78 +17,85 @@ meta:
 
 `（定语）主语（状语）谓语（定语）宾语（状语）`
 
-`(The tail) boy (often) goes (to the big) zoo (on Sunday)`
+
+<En  :enType="2">(The tail) boy (often) goes (to the big) zoo (on Sunday)</En>
+
 
 英语句子成分主要包括：主语、 谓语、 宾语（直接宾语和间接宾语）、 宾语补足语、 表语 、定语、 状语。
-
-
 ## 主语 
 
 主语一般由 **名词**、**代词**、**动名词或不定式短语**、**名词性从句**、**名词短语**、**表示距离地点的副词短语** 来充当。
 
 ### 1. 名词做主语 
 
-`The desk is old. ` 
+<En :enType="2">The desk is old.</En>
+
 
 ### 2. 代词做主语 
 
-`He is a student. ` 
-
+<En :enType="2">He is a student.</En>
 ### 3. 动名词或不定式短语做主语 
 
 动词不可以直接做主语，需要将动词变为**动名词** 或 **不定时短语**
 
 - 动名词做主语时，通常用以表示已知的事实 或 曾经做过的 经历
 
-`Collectiong stamps is one of his hobbies.` 集邮是他的爱好之一 （表示经历）
+<En  msg="集邮是他的爱好之一 （表示经历）"  :enType="2">Collectiong stamps is one of his hobbies.</En>
 
 - 不定式做主语时，通常表示一种意愿、目的或未完成的事
 
-`To go to Japan for a visit is my plan for this year.` 到日本游玩是我今年的计划 （未完成的事）
+<En  msg="到日本游玩是我今年的计划 （未完成的事）"  :enType="2">To go to Japan for a visit is my plan for this year.</En>
+
 
 :::tip 重要
 需要注意的是：不定时或动名词做主语时，往往会形成主语太长（头大脚轻）的现象，我们可以使用 **it** 做形式主语，放在句首，真正主语放到句尾，动名词短语放到句尾时，通常改为不定时短语(有特殊情况)
 :::
 
-- `It is one of his hobbies to collect stamps`
+- <En  msg=""  :enType="2">It is my plan for this year to go to Japan for a visit</En>
+- <En  msg=""  :enType="2">It is one of his hobbies to collect stamps</En>
 
-- `It is my plan for this year to go to Japan for a visit`
+
 
 **这里有一些特例：**
 
 It is no use + 动名词短语
 
-`It is no use crying over split milk.` 覆水难收
+<En  msg="覆水难收"  :enType="2">It is no use crying over split milk.</En>
 
 ### 4. 名词性从句做主语 
 
 名称性从句有三种 `that 从句`、`whether从句`、`疑问词引导的从句`
 
-- 任何一个主语起首的句子前面冠以that，即成that从句
+- 任何一个主语起首的句子前面冠以`that`，即成`that`从句
 
-```js
-He doesn't believe me words 他不相信我说的话
-=
-That he doesn't believe me words
-```
+<En  msg="他不相信我说的话"  :enType="2">He doesn't believe me words</En>
+
+等同于
+
+<En  msg="他不相信我说的话"  :enType="2">That he doesn't believe me words</En>
+
 
 - whether从句 （/'wɛðɚ/）
 
->有be动词时：
+1. 有`be`动词时：
 
-`Whether he is happy` 他是否快乐
+<En  msg="他是否快乐"  :enType="2">Whether he is happy</En>
 
-> 有一般助动词时 (can、will、may should、 ought to (/ɔt/)、  must have、)
 
-`whether he can do it` 他能否做这件事？
+2. 有一般助动词时 (can、will、may should、 ought to (/ɔt/)、  must have、)
 
-> 有 do does did 助动词时，去掉这些助动词，后面动词依据人称和时态变化
+<En  msg="他能否做这件事？"  :enType="2">whether he can do it</En>
 
-`Did he come? ——> Whether he came` 他是否来了？
+3. 有 do does did 助动词时，去掉这些助动词，后面动词依据人称和时态变化
+
+<En  msg="他是否来了？"  :enType="2">Did he come? ——> Whether he came</En>
+
 
 - 疑问词从句 （when what how where why）
 
 `What is he donging? 疑问句 ——> what he is doing 名词性从句` 有be动词时
+
+
 
 `Where can he find it? 疑问句 ——> where he can find it 名词性从句` 有一般助动词时
 

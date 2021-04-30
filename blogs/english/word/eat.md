@@ -12,47 +12,49 @@ meta:
 
 :horse: 
 
+<EnTool />
+
 
 ## 常见单词
 
-- `chopsticks` <Badge text="/'tʃɑp,stɪks/" />  筷子
-- `restaurant ` <Badge text="/'rɛstrɑnt/" /> 饭店, 餐馆
-- `bowl ` <Badge text="/bol/" /> 碗；木球；
-- `dish ` <Badge text="/dɪʃ/" /> 盘；餐具；
-- `pot ` <Badge text="/pɑt/" />  罐；壶；盆
-- `hot pot`  火锅
-- `specialty ` <Badge text="/ˈspɛʃəlti/" /> 特产 专业;专长
-- `bill ` <Badge text="/bɪl/" /> 帐单；
-- `treat ` <Badge text="/trit/" />  款待, 招待
-- `dumplings ` <Badge text="/'dʌmplɪŋ/" /> 汤团,饺子
-- `noodles ` <Badge text="/'nu:dl/" /> 面条，挂面
-- `soup ` <Badge text="/sup/" /> 汤
-- `rice ` <Badge text="/raɪs/" /> 稻；米饭
-- `congee ` <Badge text="/'kɑndʒi/" /> 粥 vi. 告别,鞠躬
-- `steamed ` <Badge text="/sti:md/" /> 蒸熟的
-- `bun ` <Badge text="/bʌn/" />  圆形的小面包或点心
-- `steamed bun` 馒头
-- `bread` <Badge text="/brɛd/" />   面包
-- `enough ` <Badge text="/ɪ'nʌf/" /> 足够地, 充足地
-- `starve ` <Badge text="/stɑrv/" /> 挨饿, 饥饿
-- `cook` <Badge text="/kʊk/" />   做饭，烹调；
-- `book ` <Badge text="/bʊk/" /> 书, 书籍 vt. & vi. 预订
+-   <En read="/'tʃɑp,stɪks/" msg="筷子">chopsticks</En>   
+-   <En read="/'rɛstrɑnt/" msg="饭店, 餐馆">restaurant</En>  
+-   <En read="/bol/" msg=" 碗；木球；">bowl</En> 
+-   <En read="/dɪʃ/" msg="盘；餐具；">dish</En>  
+-   <En read="/pɑt/" msg=" 罐；壶；盆">pot</En>  
+-   <En msg=" 火锅">hot pot</En>  
+-   <En read="/ˈspɛʃəlti/" msg="特产 专业;专长">specialty</En>  
+-   <En read="/bɪl/" msg="帐单；">bill</En>  
+-   <En read="/trit/" msg=" 款待, 招待">treat</En>  
+-   <En read="/'dʌmplɪŋ/" msg="汤团,饺子">dumplings</En>  
+-   <En read="/'nu:dl/" msg="面条，挂面">noodles</En>  
+-   <En read="/sup/" msg="汤">soup</En>  
+-   <En read="/raɪs/" msg="稻；米饭">rice</En>  
+-   <En read="/'kɑndʒi/" msg="粥 vi. 告别,鞠躬">congee</En>  
+-   <En read="/sti:md/" msg="蒸熟的">steamed</En>  
+-   <En read="/bʌn/" msg="圆形的小面包或点心">bun</En>   
+-   <En msg="馒头">steamed bun</En>   
+-  <En read="/brɛd/" msg="面包">bread</En>    
+-   <En read="/ɪ'nʌf/" msg="足够地, 充足地">enough</En>  
+-   <En read="/stɑrv/" msg=" 挨饿, 饥饿">starve</En> 
+-  <En read="/kʊk/" msg="做饭，烹调；">cook</En>    
+-   <En read="/bʊk/" msg="书, 书籍 vt. & vi. 预订">book</En>  
 
 
 ## 常见短语
+-  <En :enType="2" msg="打扰一下，我可以看一下菜单么？">Excuse me, May I have a menu,please? </En>  
+-  <En :enType="2" msg="这家店的招牌菜是什么？"> What is the specialty of the restaurant?</En>  
+-  <En :enType="2" msg="账单多少钱？">What's the bill？ </En>  
+-  <En :enType="2" msg="结账谢谢。">Check, Please！ </En>  
+-  <En :enType="2" msg="我请客。">It's my treat </En>  
+-  <En :enType="2" msg="我请你吃饭。">Let me buy your dinner. </En>  
+-  <En :enType="2" msg="我饿死了！"> I'm starving.</En>  
+-  <En :enType="2" msg="今天晚上吃什么？">What did you have for dinner this evening? </En>  
+-  <En :enType="2" msg=" 你做饭了么？"> Have you done the cooking？</En>  
+-  <En :enType="2" msg="先生你要点点什么？">What can I do for you, sir? </En>  
+-  <En :enType="2" msg="你预定餐桌了么">Have you booked a table? </En>  
+-  <En :enType="2" msg="你想喝点什么？"> Would you like something to drink?</En>  
+-  <En :enType="2" msg="你现在可以点餐么？">Are you ready to order? </En>  
+-  <En :enType="2" msg="是的，可以先给我来一份汤么？"> Yeah. Could I just have the soup to start please.</En>  
 
-- `Excuse me, May I have a menu,please?` 打扰一下，我可以看一下菜单么？
-- `What is the specialty of the restaurant?` 这家店的招牌菜是什么？
-- `What's the bill？` 账单多少钱？
-- `Check, Please！` 结账谢谢。
-- `It's my treat `我请客。
-- `Let me buy your dinner. `我请你吃饭。
-- `I'm starving.` 我饿死了！
-- `What did you have for dinner this evening? `今天晚上吃什么？
-- `Have you done the cooking？` 你做饭了么？
-- `What can I do for you, sir? `先生你要点点什么？
-- `Have you booked a table? `你预定餐桌了么。
-- `Would you like something to drink? `你想喝点什么？
-- `Are you ready to order? `你现在可以点餐么？
-- `Yeah. Could I just have the soup to start please.` 是的，可以先给我来一份汤么？
 
