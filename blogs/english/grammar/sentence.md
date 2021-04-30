@@ -12,6 +12,7 @@ meta:
 
 :horse: 👈
 
+<EnTool :isReadTool="false"/>
 
 **在英语中句子的主要形式如下：**
 
@@ -108,79 +109,79 @@ It is no use + 动名词短语
 
 - 疑问副词
 
-`where to live` 住在哪
+<En  msg="住在哪"  :enType="2">where to live</En>
+<En  msg="是否在试一次"  :enType="2">whether to try again</En>
+<En  msg="如何做那事"  :enType="2">how to do it</En>
 
-`whether to try again` 是否在试一次
 
-`how to do it` 如何做那事
 
 - 疑问代词
 
-`what to do` 做什么
-
-`whome to see`  看谁
-
-`which to buy` 买哪一个
+<En  msg="做什么"  :enType="2">what to do</En>
+<En  msg="看谁"  :enType="2">whome to see</En>
+<En  msg="买哪一个"  :enType="2">which to buy</En>
 
 
-名词性短语做主语
+- 名词性短语做主语
 
-`Where to meet him is not decided（/dɪ'saɪdɪd/） yet` 在哪见他还未决定
+<En  msg="在哪见他还未决定"  :enType="2">Where to meet him is not decided（/dɪ'saɪdɪd/） yet</En>
+
 
 ### 6. 表示距离地点的副词短语 
 
 **from + 地点名称 + to + 地点名词**
 
-`Form Shanghai to Beijing is about 1000 kilometers（/'kɪlə,mitɚ/）.` 从上海到北京大约1000公里，该句同下列句子
+<En  msg="从上海到北京大约1000公里，该句同下列句子"  read="/'kɪlə,mitɚ/" :enType="2">Form Shanghai to Beijing is about 1000 kilometers</En>
+<En  msg=""  :enType="2">It is about 1000 kilometers form Shanghai to Beijing</En>
 
-`It is about 1000 kilometers form Shanghai to Beijing`
 
 ## 谓语 
 
 谓语是用来说明主语 “干什么” 或 “怎么样” 的。谓语或谓语部分里的主要词必须用动词。在运用中，谓语和主语在人称和数的方面应保持一致。
 
-- `I play basketball in the morning` 实义动词play做谓语
 
-- `We can speak French` 情态动词can 和实义动词speak 做谓语
+- <En  msg="实义动词play做谓语"  :enType="2">I play basketball in the morning</En>
+- <En  msg="情态动词can 和实义动词speak 做谓语"  :enType="2">We can speak French</En>
+
 
 ## 宾语 
 
 表示**及物动词**的动作对象或内容，通常位于动词之后或介词后构成介词短语。一般由名称、代词、不定时或相当于名词的词语或短语来充当
 
-- `I want to eat two hamburgers now` 我现在想吃两个汉堡 （to eat 不定式做宾语）
-
-- `She likes skipping` 她喜欢跳绳 （skipping 动名词做宾语）
-
-
+- <En  msg="我现在想吃两个汉堡 （to eat 不定式做宾语）"  :enType="2">I want to eat two hamburgers now</En>
+- <En  msg="她喜欢跳绳 （skipping 动名词做宾语）"  :enType="2">She likes skipping</En>
 
 ## 表语 
 
 表语是用来说明主语的身份、特征、性质或状态的词。常位于系动词之后，由名词、形容词、副词、介词短语或不定时来充当
 
-- `It is a flower` 名称做表语
-- `We ate at work` 介词短语做表语
-- `She is nice` 形容词作表语
-- `Her job is to look after her baby` 不定时作表语
+- <En  msg="名称做表语"  :enType="2">It is a flower</En>
+- <En  msg="介词短语做表语"  :enType="2">We ate at work</En>
+- <En  msg="形容词作表语"  :enType="2">She is nice</En>
+- <En  msg="不定时作表语"  :enType="2">Her job is to look after her baby</En>
+
+
 
 ## 定语 
 
 定语是用来修饰名词或代词的。定语位置很灵活，凡是有名词、代词的地方都可以有定义。 通常 名词、形容词、数次、分词、不定时、介词或定语从句都可以做定语。
 
-- `The boy pupil（/'pjʊpl/ 学生） is in Class Three` 这个男生在3班  （pupil 做定语）
-- `The girl in red is my sister` in red 介词短语做定语修饰 the girl
 
+- <En  msg="这个男生在3班（pupil 做定语）"  read="/'pjʊpl/" :enType="2">The boy pupil（ 学生） is in Class Three</En>
+- <En  msg="in red 介词短语做定语修饰 the girl"  :enType="2">The girl in red is my sister</En>
 
 ## 状语 
 
 状语是用来修饰动词，形式词和副词的句子成分。状语表示动作、行为发生的时间、原因、地点、方式、目的或程度等。一般由副词、不定时、介词短语或相当于副词的词或短语来充当、状语通常位于句末，但有时可以看放在句首或句中。
 
-- `I can jump high` 我跳的高 high副词做状语
-- `Without the idea, I can't finish the work` 没有这个创意，我不可以能完成这份工作。without the idea 介词短语做状语。
+
+- <En  msg="我跳的高 high副词做状语"  :enType="2">I can jump high</En>
+- <En  msg="没有这个创意，我不可以能完成这份工作。without the idea 介词短语做状语。"  :enType="2">Without the idea, I can't finish the work</En>
 
 ## 补语 
 
 补语用来对句子中的某些成分（主语、表语、宾语等）进行补充说明。补语的形式有动词的类别来决定。
 
-- `Tom was made monitor /'mɑnətɚ/` 汤姆被选为班长 （monitor 为主语补语）
-- `I made Tom monitor`  （monitor 为宾语补语）
-- `I am sure to succeed` 我肯定能成功 (to success 作为 sure 表语的补语)
+- <En  msg="汤姆被选为班长 （monitor 为主语补语）"  read="/'mɑnətɚ/" :enType="2">Tom was made monitor</En>
+- <En  msg="（monitor 为宾语补语）"  :enType="2">I made Tom monitor</En>
+- <En  msg="我肯定能成功 (to success 作为 sure 表语的补语)"  :enType="2">I am sure to succeed</En>

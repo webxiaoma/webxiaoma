@@ -12,6 +12,7 @@ meta:
 
 :horse: 👈
 
+<EnTool :isReadTool="false"/>
 
 ## 前言
 
@@ -21,66 +22,77 @@ meta:
 
 **动词原形开头的祈使句一般表示 `请求或命令`**
 
-- `Run!` 跑 （= `You must run now`）
+- <En msg="跑 （= You must run now）" :enType="2">Run!</En>
+- <En msg="别跑(否定形式为)" :enType="2">Don't run!</En> 
+- <En msg="请不要说话" :enType="2">Stop talking, please.</En>
+- <En msg="叫他做这事" :enType="2">Make him do it</En>
+- <En msg="给他发个邮件" :enType="2">Send him an email.</En>
 
-- 否定形式为 `Don't run!` 别跑
-
-- `Stop talking, please.` 请不要说话
-- `Make him do it` 叫他做这事
-- `Send him an email.` 给他发个邮件 
 
 ## Be动词开头的祈使句
 
 **Be动词开头的祈使句一般表示 `建议或肯定`**
 
-- `Be careful!` 小心
-- `Be a good boy!` 做个好男孩
+
+- <En msg="小心" :enType="2">Be careful!</En>
+- <En msg="做个好男孩" :enType="2">Be a good boy!</En>
+
 
 
 ## Let 类型开头的祈使句
 
 **let 类型的祈使句一般表示`建议, 请求`**
 
-- `Let me try again！` 让我在试一次吧!
-- `Let me help you！` 让我来帮你吧！
+
+- <En msg="让我在试一次吧!" :enType="2">Let me try again！</En>
+- <En msg="让我来帮你吧！" :enType="2">Let me help you！</En>
 
 ## 反问祈使句
 
 一般情况下，祈使句的反义疑问句会用`will you`、`would you`、`won't you`、`shall you`。
  
-- `Would you close the door, please?` 请把门关上，好么？
-- `Turn on the TV, will you?` 把电视打开好么？
-- `Tell me the truth, won't you?` 告诉我实话，好吗？
+
+- <En msg="请把门关上，好么？" :enType="2">Would you close the door, please?</En>
+- <En msg="把电视打开好么？" :enType="2">Turn on the TV, will you?</En>
+- <En msg="告诉我实话，好吗？" :enType="2">Tell me the truth, won't you?</En>
+
+
 
 **Let 类型的反问一般由两种**
 
 1. 表示请求一般用`will you`
 
-- `Let me do it for you, will you`
+
+- <En msg="" :enType="2">Let me do it for you, will you</En>
+
 
 2. 表示建议一般用`shall you`
 
-- `Let's go swimming together, shall we?` 让我们一起去游泳，好么？
 
+- <En msg="让我们一起去游泳，好么？" :enType="2">Let's go swimming together, shall we?</En>
 
 ## 其它知识点
 
 1. **一般我们可以在助动词前加`do`，加强强调，翻译为一定，务必**
 
-- `Do be careful.` 务必要小心。
-- `Do come, please!` 请一定要来
+- <En msg="务必要小心。" :enType="2">Do be careful.</En>
+- <En msg="请一定要来" :enType="2">Do come, please!</En>
+
 
 2. **祈使句的否定形式除了`Don't`外，还可以用`Never`**
 
-- `Never try it.` 不要去尝试
-- `Never do that again` 不要再这么做了
+ 
+- <En msg="不要去尝试" :enType="2">Never try it.</En>
+- <En msg="不要再这么做了" :enType="2">Never do that again</En>
+
 
 `let` 祈使句的否定形式可以有下面几种
 
 - `Don't + let + 宾语 + 动词原形 + (其他成分)`
 - `Let + 宾语 + not + 动词原形 + (其他成分)`。
 
+
 3. **祈使句中为了语气委婉，我们可以加please，需要注意的是否定句要加前面**
 
-- `Close the door, please.` 请关上门
-- `Please don’t get angry.` 请不要生气了 
+- <En msg="请关上门" :enType="2">Close the door, please.</En>
+- <En msg="请不要生气了 " :enType="2">Please don’t get angry.</En>
