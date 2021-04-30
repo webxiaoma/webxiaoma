@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Java-字符串 | 小马过河</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/webxiaoma/manifest.json">
+    <link rel="apple-touch-icon" href="/webxiaoma/img/mxx-152-152.png">
+    <meta name="description" content="本文章主要记录java的基本字符串的一些常用方法以及操作。">
+    <meta name="keywordsv" content="java string java字符串 stringBuilder stringBuffer">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.4df85eba.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.1e52e949.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.afa8a08f.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/41.7ff86311.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.fb277314.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.0e274bfb.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.4df5b6d2.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.8e748ae3.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.50b0fb96.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.ce09b2ff.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.76e5796d.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.480800b5.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.32dc6f9e.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.7456e487.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.46eb3cb8.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.8940b1af.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.73c6e359.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.99df9d02.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.7a493f32.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.8c3c4594.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.d70344b9.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.9c38926c.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.526e92f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.49f02dc7.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.2b3785f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.4db35da6.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.c4ebc8f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.10359d6a.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.baa98b8e.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.43185e0d.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.fd7fa66a.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.fd7d2b5a.js"><link rel="prefetch" href="/webxiaoma/assets/js/37.d6aba03a.js"><link rel="prefetch" href="/webxiaoma/assets/js/38.63fdf99c.js"><link rel="prefetch" href="/webxiaoma/assets/js/39.b368f875.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.1dbbd457.js"><link rel="prefetch" href="/webxiaoma/assets/js/40.d03d3904.js"><link rel="prefetch" href="/webxiaoma/assets/js/42.90783e52.js"><link rel="prefetch" href="/webxiaoma/assets/js/43.7cbc2ace.js"><link rel="prefetch" href="/webxiaoma/assets/js/44.eb96a268.js"><link rel="prefetch" href="/webxiaoma/assets/js/45.f422b81e.js"><link rel="prefetch" href="/webxiaoma/assets/js/46.65b48983.js"><link rel="prefetch" href="/webxiaoma/assets/js/47.3543954e.js"><link rel="prefetch" href="/webxiaoma/assets/js/48.4e30a53c.js"><link rel="prefetch" href="/webxiaoma/assets/js/49.5023ed83.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.c3f73608.js"><link rel="prefetch" href="/webxiaoma/assets/js/50.5c789fbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/51.f74eda57.js"><link rel="prefetch" href="/webxiaoma/assets/js/52.c53459ae.js"><link rel="prefetch" href="/webxiaoma/assets/js/53.f04afd32.js"><link rel="prefetch" href="/webxiaoma/assets/js/54.47d1197b.js"><link rel="prefetch" href="/webxiaoma/assets/js/55.f27b4b14.js"><link rel="prefetch" href="/webxiaoma/assets/js/56.a678dd31.js"><link rel="prefetch" href="/webxiaoma/assets/js/57.b5b034cc.js"><link rel="prefetch" href="/webxiaoma/assets/js/58.15fecf88.js"><link rel="prefetch" href="/webxiaoma/assets/js/59.29b62862.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.07ddaf0c.js"><link rel="prefetch" href="/webxiaoma/assets/js/60.b7c04c5c.js"><link rel="prefetch" href="/webxiaoma/assets/js/61.1ea2e4da.js"><link rel="prefetch" href="/webxiaoma/assets/js/62.b7f67d7c.js"><link rel="prefetch" href="/webxiaoma/assets/js/63.fb1c37c0.js"><link rel="prefetch" href="/webxiaoma/assets/js/64.bfa66723.js"><link rel="prefetch" href="/webxiaoma/assets/js/65.dd085ae1.js"><link rel="prefetch" href="/webxiaoma/assets/js/66.9ad2a92c.js"><link rel="prefetch" href="/webxiaoma/assets/js/67.908c9dbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/68.2a8cb4c5.js"><link rel="prefetch" href="/webxiaoma/assets/js/69.83ecb4be.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.faf9004a.js"><link rel="prefetch" href="/webxiaoma/assets/js/70.82059511.js"><link rel="prefetch" href="/webxiaoma/assets/js/71.53fe12ff.js"><link rel="prefetch" href="/webxiaoma/assets/js/72.bdb25015.js"><link rel="prefetch" href="/webxiaoma/assets/js/73.95b587fa.js"><link rel="prefetch" href="/webxiaoma/assets/js/74.03cf6cb4.js"><link rel="prefetch" href="/webxiaoma/assets/js/75.9e83ec60.js"><link rel="prefetch" href="/webxiaoma/assets/js/76.3ab9f046.js"><link rel="prefetch" href="/webxiaoma/assets/js/77.48371124.js"><link rel="prefetch" href="/webxiaoma/assets/js/78.3b6812d8.js"><link rel="prefetch" href="/webxiaoma/assets/js/79.93af1a06.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.da4a160f.js"><link rel="prefetch" href="/webxiaoma/assets/js/80.357be08d.js"><link rel="prefetch" href="/webxiaoma/assets/js/81.747b34dd.js"><link rel="prefetch" href="/webxiaoma/assets/js/82.cd48ed6e.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.fdbe1bea.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.4df85eba.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马过河" class="logo"> <span class="site-name can-hide">小马过河</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav> <div class="loginItem"><div class="login" data-v-0028d8de><div class="loginBtn" data-v-0028d8de>登录</div> <!----></div></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java 基础系列</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/java/basics/know.html" class="sidebar-link">Java-初识</a></li><li><a href="/webxiaoma/java/basics/number.html" class="sidebar-link">Java-数字</a></li><li><a href="/webxiaoma/java/basics/string.html" aria-current="page" class="active sidebar-link">Java-字符串</a></li><li><a href="/webxiaoma/java/basics/array.html" class="sidebar-link">Java-数组</a></li><li><a href="/webxiaoma/java/basics/error.html" class="sidebar-link">Java-异常处理</a></li><li><a href="/webxiaoma/java/basics/generics.html" class="sidebar-link">Java-泛型</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 集合</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java IO</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 数据库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 网络编程</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="java-字符串"><a href="#java-字符串" class="header-anchor">#</a> Java-字符串</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#string类">String类</a><ul><li><a href="#初始化字符串的几种方法">初始化字符串的几种方法</a></li><li><a href="#字符串常用方法">字符串常用方法</a></li></ul></li><li><a href="#stringbuffer类">StringBuffer类</a><ul><li><a href="#创建方式">创建方式</a></li><li><a href="#常见方法">常见方法</a></li></ul></li><li><a href="#stringbuilder-类">StringBuilder 类</a></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>字符串在<code>java</code>中使用比较频繁，常用的字符串形式有 <code>String</code>, <code>StringBuilder</code>, <code>StringBuffer</code></p> <ul><li>操作少量的数据使用 <code>String</code>。</li> <li>单线程操作大量数据使用 <code>StringBuilder</code>。</li> <li>多线程操作大量数据使用 <code>StringBuffer</code>。</li></ul> <h2 id="string类"><a href="#string类" class="header-anchor">#</a> String类</h2> <p><code>Java</code> 中每个双引号定义的字符串都是一个 <code>String</code> 类的对象。此外，还可以通过使用 <code>String</code> 类的构造方法来创建字符串，该类位于 <code>java.lang</code> 包中</p> <h3 id="初始化字符串的几种方法"><a href="#初始化字符串的几种方法" class="header-anchor">#</a> 初始化字符串的几种方法</h3> <ul><li><code>new String()</code> 创建一个空字符串<code>String</code> 对象</li> <li><code>new String(String original)</code> 创建一个指定符串original的字符串<code>String</code> 对象</li> <li><code>new String(char[ ]value)</code> 将字符数组元素全部变为字符串</li> <li><code>new String(char[] value,int offset,int count)</code> 将指定范围的字符数组元素全部变为字符串</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> ary <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'1'</span><span class="token punctuation">,</span><span class="token string">'2'</span><span class="token punctuation">,</span><span class="token string">'3'</span><span class="token punctuation">,</span><span class="token string">'4'</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>ary<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 23</span>
+</code></pre></div><h3 id="字符串常用方法"><a href="#字符串常用方法" class="header-anchor">#</a> 字符串常用方法</h3> <ul><li><code>String concat(String str)</code> 字符串拼接（一般使用加号）</li> <li><code>String replace(String oldChar, String newChar)</code> 替换字符串（第一个参数可以是正则）</li> <li><code>String replaceFirst(String oldChar, String newChar)</code> 替换匹配到的第一个字符串，还有方法<code>replaceAll()</code></li> <li><code>int indexOf(String str)</code> 字符查找 返回字符串首次出现的索引位置</li> <li><code>int lastlndexOf(String str)</code> 字符查找 返回字符串最后一次出现的索引位置</li> <li><code>String substring(int startIndex，int endIndex)</code> 截取字符串,只有<code>startIndex</code>一个参数时，自动从该位置截取到最后，两个参数时，默认不包括<code>endIndex</code></li> <li><code>String toLowerCase()</code>  将字符串中的字母全部转换为小写，非字母不受影响</li> <li><code>String toUpperCase()</code> 将字符串中的字母全部转换为大写，非字母不受影响</li> <li><code>String trim()</code> 去掉字符串中的首尾空格</li> <li><code>String split(String type)</code> 已特定的字符<code>type</code>分割字符串</li> <li><code>blooean equals(String str)</code> 比较字符是否相等(区分大小写,也包含空格)，相等返回<code>ture</code></li> <li><code>blooean equalsIgnoreCase(String str)</code> 比较字符是否相等(不区分大小写)，相等返回<code>ture</code></li> <li><code>int compareTo(String str)</code> 字典顺序比较两个字符串的大小（按照<code>Unicode 值</code>）</li></ul> <p><strong><code>equals()</code> 方法比较字符串对象中的字符。而<code>==</code>运算符比较两个对象引用看它们是否引用相同的实例。</strong></p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">&quot;hello World &quot;</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">&quot; haha&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  hello World haha</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;hello world &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// false</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">equalsIgnoreCase</span><span class="token punctuation">(</span><span class="token string">&quot;hello world &quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  true</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">toLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  hello world</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  HELLO WORLD</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//  el</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ello World</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="stringbuffer类"><a href="#stringbuffer类" class="header-anchor">#</a> StringBuffer类</h2> <p><code>StringBuffer</code> 类是可变字符串类，比<code>String</code>类更高效，创建 <code>StringBuffer</code> 类的对象后可以随意修改字符串的内容。每个 <code>StringBuffer</code> 类的对象都能够存储指定容量的字符串，如果字符串的长度超过了 <code>StringBuffer</code> 类对象的容量，则该对象的容量会自动扩大。</p> <h3 id="创建方式"><a href="#创建方式" class="header-anchor">#</a> 创建方式</h3> <ul><li><code>StringBuffer()</code> 创建一个16个字符容量的字符串缓冲区</li> <li><code>StringBuffer(int length)</code> 创建一个指定字符容量的字符串缓冲区</li> <li><code>StringBuffer(String str)</code> 创建一个指定内容的字符串缓冲区</li></ul> <h3 id="常见方法"><a href="#常见方法" class="header-anchor">#</a> 常见方法</h3> <ul><li><code>StringBuffer append(String str)</code> 向原有 <code>StringBuffer</code> 对象中追加字符串</li> <li><code>StringBuffer insert(int start,String str)</code> 向字符串中插入指定字符串</li> <li><code>StringBuffer deleteCharAt(int index)</code> 移除序列中指定位置的字符</li> <li><code>StringBuffer delete(int start,int end)</code> 移除序列中子字符串的字符（不包含借宿位置end）</li> <li><code>StringBuffer setCharAt(int index, char ch)</code> 在字符串的指定索引位置替换一个字符</li> <li><code>StringBuffer reverse()</code>将字符串序列用其反转的形式取代</li> <li><code>int capacity()</code> 该方法返回字符串的容量大小</li> <li><code>int length()</code> 返回字符串长度</li></ul> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token class-name">StringBuffer</span> strb <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        strb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strb<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// test</span>
+
+        strb<span class="token punctuation">.</span><span class="token function">setCharAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">'A'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strb<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// tAst</span>
+
+        strb<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strb<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// tA</span>
+
+        strb<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">&quot;111&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strb<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// tA111</span>
+
+        strb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">&quot;test test test test&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>strb<span class="token punctuation">.</span><span class="token function">capacity</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 22</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="stringbuilder-类"><a href="#stringbuilder-类" class="header-anchor">#</a> StringBuilder 类</h2> <p><code>StringBuilder 类</code> 和 <code>StringBuffer 类</code> 功能上很相似，区别是：<code>StringBuffer</code> 是线程安全的，而 <code>StringBuilder</code> 则没有实现线程安全功能，所以性能略高。一般优先使用<code>StringBuilder</code> 类</p> <p><strong>StringBuilder的使用方法同 StringBuffer基本一样，这里不在详细解决</strong></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">4/6/2021, 5:43:27 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/java/basics/number.html" class="prev">
+        Java-数字
+      </a></span> <span class="next"><a href="/webxiaoma/java/basics/array.html">
+        Java-数组
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>Java-字符串</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#string类" data-v-4100c7a9>String类</a></li><li class="subTitle" data-v-4100c7a9><a href="#初始化字符串的几种方法" data-v-4100c7a9>初始化字符串的几种方法</a></li><li class="subTitle" data-v-4100c7a9><a href="#字符串常用方法" data-v-4100c7a9>字符串常用方法</a></li><li class="title" data-v-4100c7a9><a href="#stringbuffer类" data-v-4100c7a9>StringBuffer类</a></li><li class="subTitle" data-v-4100c7a9><a href="#创建方式" data-v-4100c7a9>创建方式</a></li><li class="subTitle" data-v-4100c7a9><a href="#常见方法" data-v-4100c7a9>常见方法</a></li><li class="title" data-v-4100c7a9><a href="#stringbuilder-类" data-v-4100c7a9>StringBuilder 类</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.1e52e949.js" defer></script><script src="/webxiaoma/assets/js/2.afa8a08f.js" defer></script><script src="/webxiaoma/assets/js/41.7ff86311.js" defer></script>
+  </body>
+</html>

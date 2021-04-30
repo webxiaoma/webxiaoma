@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS-This (二) | 小马过河</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/webxiaoma/manifest.json">
+    <link rel="apple-touch-icon" href="/webxiaoma/img/mxx-152-152.png">
+    <meta name="description" content="本文讲述js中的this使用。">
+    <meta name="keywords" content="this, js this, es6 this 马新想">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.4df85eba.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.1e52e949.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.afa8a08f.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/74.03cf6cb4.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.fb277314.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.0e274bfb.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.4df5b6d2.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.8e748ae3.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.50b0fb96.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.ce09b2ff.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.76e5796d.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.480800b5.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.32dc6f9e.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.7456e487.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.46eb3cb8.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.8940b1af.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.73c6e359.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.99df9d02.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.7a493f32.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.8c3c4594.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.d70344b9.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.9c38926c.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.526e92f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.49f02dc7.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.2b3785f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.4db35da6.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.c4ebc8f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.10359d6a.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.baa98b8e.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.43185e0d.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.fd7fa66a.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.fd7d2b5a.js"><link rel="prefetch" href="/webxiaoma/assets/js/37.d6aba03a.js"><link rel="prefetch" href="/webxiaoma/assets/js/38.63fdf99c.js"><link rel="prefetch" href="/webxiaoma/assets/js/39.b368f875.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.1dbbd457.js"><link rel="prefetch" href="/webxiaoma/assets/js/40.d03d3904.js"><link rel="prefetch" href="/webxiaoma/assets/js/41.7ff86311.js"><link rel="prefetch" href="/webxiaoma/assets/js/42.90783e52.js"><link rel="prefetch" href="/webxiaoma/assets/js/43.7cbc2ace.js"><link rel="prefetch" href="/webxiaoma/assets/js/44.eb96a268.js"><link rel="prefetch" href="/webxiaoma/assets/js/45.f422b81e.js"><link rel="prefetch" href="/webxiaoma/assets/js/46.65b48983.js"><link rel="prefetch" href="/webxiaoma/assets/js/47.3543954e.js"><link rel="prefetch" href="/webxiaoma/assets/js/48.4e30a53c.js"><link rel="prefetch" href="/webxiaoma/assets/js/49.5023ed83.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.c3f73608.js"><link rel="prefetch" href="/webxiaoma/assets/js/50.5c789fbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/51.f74eda57.js"><link rel="prefetch" href="/webxiaoma/assets/js/52.c53459ae.js"><link rel="prefetch" href="/webxiaoma/assets/js/53.f04afd32.js"><link rel="prefetch" href="/webxiaoma/assets/js/54.47d1197b.js"><link rel="prefetch" href="/webxiaoma/assets/js/55.f27b4b14.js"><link rel="prefetch" href="/webxiaoma/assets/js/56.a678dd31.js"><link rel="prefetch" href="/webxiaoma/assets/js/57.b5b034cc.js"><link rel="prefetch" href="/webxiaoma/assets/js/58.15fecf88.js"><link rel="prefetch" href="/webxiaoma/assets/js/59.29b62862.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.07ddaf0c.js"><link rel="prefetch" href="/webxiaoma/assets/js/60.b7c04c5c.js"><link rel="prefetch" href="/webxiaoma/assets/js/61.1ea2e4da.js"><link rel="prefetch" href="/webxiaoma/assets/js/62.b7f67d7c.js"><link rel="prefetch" href="/webxiaoma/assets/js/63.fb1c37c0.js"><link rel="prefetch" href="/webxiaoma/assets/js/64.bfa66723.js"><link rel="prefetch" href="/webxiaoma/assets/js/65.dd085ae1.js"><link rel="prefetch" href="/webxiaoma/assets/js/66.9ad2a92c.js"><link rel="prefetch" href="/webxiaoma/assets/js/67.908c9dbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/68.2a8cb4c5.js"><link rel="prefetch" href="/webxiaoma/assets/js/69.83ecb4be.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.faf9004a.js"><link rel="prefetch" href="/webxiaoma/assets/js/70.82059511.js"><link rel="prefetch" href="/webxiaoma/assets/js/71.53fe12ff.js"><link rel="prefetch" href="/webxiaoma/assets/js/72.bdb25015.js"><link rel="prefetch" href="/webxiaoma/assets/js/73.95b587fa.js"><link rel="prefetch" href="/webxiaoma/assets/js/75.9e83ec60.js"><link rel="prefetch" href="/webxiaoma/assets/js/76.3ab9f046.js"><link rel="prefetch" href="/webxiaoma/assets/js/77.48371124.js"><link rel="prefetch" href="/webxiaoma/assets/js/78.3b6812d8.js"><link rel="prefetch" href="/webxiaoma/assets/js/79.93af1a06.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.da4a160f.js"><link rel="prefetch" href="/webxiaoma/assets/js/80.357be08d.js"><link rel="prefetch" href="/webxiaoma/assets/js/81.747b34dd.js"><link rel="prefetch" href="/webxiaoma/assets/js/82.cd48ed6e.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.fdbe1bea.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.4df85eba.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马过河" class="logo"> <span class="site-name can-hide">小马过河</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav> <div class="loginItem"><div class="login" data-v-0028d8de><div class="loginBtn" data-v-0028d8de>登录</div> <!----></div></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS+HTML系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS系列</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/web/js/js-bom.html" class="sidebar-link">JS-BOM操作</a></li><li><a href="/webxiaoma/web/js/js-dom.html" class="sidebar-link">JS-DOM操作</a></li><li><a href="/webxiaoma/web/js/js-event.html" class="sidebar-link">JS-事件</a></li><li><a href="/webxiaoma/web/js/js-function.html" class="sidebar-link">JS-函数</a></li><li><a href="/webxiaoma/web/js/js-prototype.html" class="sidebar-link">JS-原型与原型链</a></li><li><a href="/webxiaoma/web/js/js-context.html" class="sidebar-link">JS-执行上下文</a></li><li><a href="/webxiaoma/web/js/js-variable.html" class="sidebar-link">JS-变量对象</a></li><li><a href="/webxiaoma/web/js/js-scope-chain.html" class="sidebar-link">JS-作用域和作用域链</a></li><li><a href="/webxiaoma/web/js/js-this1.html" class="sidebar-link">JS-This（一）</a></li><li><a href="/webxiaoma/web/js/js-this2.html" aria-current="page" class="active sidebar-link">JS-This (二)</a></li><li><a href="/webxiaoma/web/js/js-closure.html" class="sidebar-link">JS-闭包</a></li><li><a href="/webxiaoma/web/js/js-data-type.html" class="sidebar-link">JS-基础类型和引用类型</a></li><li><a href="/webxiaoma/web/js/js-new.html" class="sidebar-link">JS-new操作符</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常见面试题</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="js-this-二"><a href="#js-this-二" class="header-anchor">#</a> JS-This (二)</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#ecmascript-中的数据类型">ECMAScript 中的数据类型</a></li><li><a href="#引用类型-reference">引用类型（Reference）</a><ul><li><a href="#getvalue">GetValue</a></li></ul></li><li><a href="#函数中this的确定">函数中This的确定</a><ul><li><a href="#函数执行中的规范">函数执行中的规范</a></li><li><a href="#实际例子">实际例子</a></li></ul></li><li><a href="#构造函数中的this">构造函数中的This</a></li><li><a href="#改变this指向的方式">改变This指向的方式</a><ul><li><a href="#call-方法">call 方法</a></li><li><a href="#apply-方法">apply 方法</a></li><li><a href="#bind-方法">bind 方法</a></li></ul></li><li><a href="#dom事件中this">DOM事件中This</a></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>在<a href="/web/js/js-this1">上一篇文章</a>中我们从<code>this</code>指向的多种情况来认识了一下<code>this</code>， 这篇文章中我们从<code>ECMAScritp</code> 规范来看看<code>this</code> 是如何确定的。</p> <p>在<code>JavaScript</code>中，<code>this</code>是一直讨论的东西，并且在每个上下文创建时，<code>this</code>就被创建了，另外还有三个重要的属性也会被创建:<a href="/web/js/js-variable">变量对象</a>、<a href="/web/js/js-scope-chain">作用域链</a>。最近抽出了部分时间将<code>JavaScript</code>中<code>this</code>的知识汇总了一下。</p> <p><a href="https://yanhaijing.com/es5/#about" target="_blank" rel="noopener noreferrer">ECMAScript 镜像版规范<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="ecmascript-中的数据类型"><a href="#ecmascript-中的数据类型" class="header-anchor">#</a> ECMAScript 中的数据类型</h2> <p>在<code>js</code>中的数据类型分为语言类型和规范类型：</p> <ul><li><p><strong>语言类型</strong> <code>ECMAScript</code> 语言类型 是 <code>ECMAScript</code> 程序员使用 <code>ECMAScript</code> 语言直接操作的值对应的类型。<code>ECMAScript</code> 语言类型包括 未定义 （Undefined）、 空值 （Null）、 布尔值（Boolean）、 字符串 （String）、 数值 （Number）、 对象 （Object）。</p></li> <li><p><strong>规范类型</strong></p></li></ul> <p>规范类型 是描述 <code>ECMAScript</code> 语言构造与 <code>ECMAScript</code> 语言类型语意的算法所用的元值对应的类型。规范类型包括 引用(Reference) 、 列表(List) 、 完结(Completion) 、 属性描述式(Property Descriptor) 、 属性标示(Property Identifier)、 词法环境（Lexical Environment）、 环境纪录（Environment Record）。规范类型的值是不一定对应 <code>ECMAScript</code> 实现里任何实体的虚拟对象。规范类型可用来描述 <code>ECMAScript</code> 表式运算的中途结果，但是这些值不能存成对象的变量或是 <code>ECMAScript</code> 语言变量的值。</p> <h2 id="引用类型-reference"><a href="#引用类型-reference" class="header-anchor">#</a> 引用类型（Reference）</h2> <div class="custom-block warning"><p class="custom-block-title">注意</p> <p><strong>该引用类型是规范中的数据类型，并不是javascript实际代码中的引用类型（因为我们常说Object是引用类型，这里的<code>Reference</code>并不是指的它）</strong></p> <ul><li><a href="https://www.zhihu.com/question/31911373" target="_blank" rel="noopener noreferrer">ECMAScript 规范中的Reference Specification Type的含义?<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://www.w3.org/html/ig/zh/wiki/ES5/%E7%B1%BB%E5%9E%8B#.E5.BC.95.E7.94.A8.E8.A7.84.E8.8C.83.E7.B1.BB.E5.9E.8B" target="_blank" rel="noopener noreferrer">W3C ES5/类型<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <p>上面说了<code>ECMAScript</code>中的数据类型，其中规范类型中的<a href="https://yanhaijing.com/es5/#80" target="_blank" rel="noopener noreferrer">引用类型<code>Reference</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>和<code>this</code>有这亲密的关系。引用类型<code>Reference</code> 是规范中的类型，在js中并不存在，只是存在于<code>ECMAScript</code>底层。引用类型<code>Reference</code>包含有三个重要的属性:</p> <ul><li>基值（base）：属性所在的环境对象，可以是 <code>undefined</code>, <code>Object</code>,<code>Boolean</code>,<code>String</code>,<code>Number</code>,  <code>environment record</code>中的任意一个，当所处的环境是全局环境(在全局中，或<code>setTimeout</code>或<code>setInterval</code>)，或执行环境中时值为<a href="https://yanhaijing.com/es5/#142" target="_blank" rel="noopener noreferrer">environment record<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li>引用名称（referenced name）：该引用名称，是一个字符串</li> <li>严格引用标志 (strict reference)：是否是严格模式，<code>true</code>为严格模式</li></ul> <p>例如：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// a的引用类型Reference， a处于全局环境</span>
+AReferenceObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  base<span class="token operator">:</span>EnvironmentRecord<span class="token punctuation">,</span> 
+  name<span class="token operator">:</span><span class="token string">'a'</span><span class="token punctuation">,</span>
+  strict<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 第二种基值为EnvironmentRecord情况 </span>
+<span class="token comment">//f执行时处于函数fun的执行环境中</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//函数f的引用类型Reference</span>
+FReferenceObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  base<span class="token operator">:</span>EnvironmentRecord<span class="token punctuation">,</span> 
+  name<span class="token operator">:</span><span class="token string">'f'</span><span class="token punctuation">,</span>
+  strict<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>在例如：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">fun</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// fun对应的Reference是：</span>
+<span class="token keyword">var</span> FunReferenceObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    base<span class="token operator">:</span> obj<span class="token punctuation">,</span>
+    name<span class="token operator">:</span> <span class="token string">'fun'</span><span class="token punctuation">,</span>
+    strict<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>另外引用类型<code>Reference</code>除了拥有三个重要的属性外，还提供了一些方法比如：</p> <ul><li><code>GetBase(V)</code>。 返回引用值 <code>V</code> 的基值, base的值。</li> <li><code>GetReferencedName(V)</code>。 返回引用值 <code>V</code> 的引用名称。</li> <li><code>IsStrictReference(V)</code>。 返回引用值 <code>V</code> 的严格引用。</li> <li><code>HasPrimitiveBase(V)</code>。 如果基值是 <code>Boolean</code>, <code>String</code>, <code>Number</code>，那么返回 <code>true</code>。</li> <li><code>IsPropertyReference(V)</code>。 如果基值是个对象或 <code>HasPrimitiveBase(V)</code> 是 <code>true</code>，那么返回 <code>true</code>；否则返回 <code>false</code>。</li> <li><code>IsUnresolvableReference(V)</code>。 如果基值是 <code>undefined</code> 那么返回 <code>true</code>，否则返回 <code>false</code>。</li></ul> <h3 id="getvalue"><a href="#getvalue" class="header-anchor">#</a> GetValue</h3> <p>另外<code>ECMAScript</code> 还提提供了一个<a href="https://yanhaijing.com/es5/#81" target="_blank" rel="noopener noreferrer">GetValue(v)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 方法，它的作用就是获取<code>Reference</code>中的具体值。<strong>当使用<code>GetValue(v)</code>方法时，返回的是具体值，不在是一个引用类型<code>Reference</code></strong> 例如：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token comment">// a的引用类型Reference</span>
+AReferenceObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  base<span class="token operator">:</span>EnvironmentRecord<span class="token punctuation">,</span> <span class="token comment">// 全局对象</span>
+  name<span class="token operator">:</span><span class="token string">'a'</span><span class="token punctuation">,</span>
+  strict<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token function">GetValue</span><span class="token punctuation">(</span>AReferenceObj<span class="token punctuation">)</span>  <span class="token comment">// 返回值为1 ，1可不再是引用类型</span>
+</code></pre></div> <h2 id="函数中this的确定"><a href="#函数中this的确定" class="header-anchor">#</a> 函数中This的确定</h2> <h3 id="函数执行中的规范"><a href="#函数执行中的规范" class="header-anchor">#</a> 函数执行中的规范</h3> <p>在<code>ECMAScript</code> 规范中，<a href="https://yanhaijing.com/es5/#164" target="_blank" rel="noopener noreferrer">函数的调用<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>解释了<code>this</code>是如何确定的</p> <blockquote><ol><li>令 <code>ref</code> 为解释执行 <code>MemberExpression</code> 的结果</li></ol> <p>...</p> <ol start="6"><li>如果 <code>Type(ref)</code> 为 <code>Reference</code>，那么 如果 <code>IsPropertyReference(ref)</code> 为 <code>true</code>，那么 令 <code>thisValue</code> 为 <code>GetBase(ref)</code>. 否则 , <code>ref</code> 的基值是一个环境记录项 令 <code>thisValue</code> 为调用 <code>GetBase(ref)</code> 的 <code>ImplicitThisValue</code> 具体方法的结果</li> <li>否则 , 假如 <code>Type(ref)</code> 不是 <code>Reference</code>. 令 <code>thisValue</code> 为 <code>undefined</code>.
+返回调用 <code>func</code> 的 [[Call]] 内置方法的结果 , 传入 <code>thisValue</code> 作为 <code>this</code> 值和列表 <code>argList</code> 作为参数列表</li></ol></blockquote> <p>上面函数调用时确定<code>this</code>的值说清楚点就是：</p> <ol><li>将<code>MemberExpression</code>解析后的结果赋值给<code>ref</code> (<a href="https://yanhaijing.com/es5/#161" target="_blank" rel="noopener noreferrer">MemberExpression<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>就是函数调用时括号左边的部分，如：<code>foo</code>()中的<code>MemberExpression</code>为<code>foo</code>)</li> <li>使用<code>Type(ref)</code>判断<code>ref</code>是不是<code>Reference</code>类型，判断时有如下几种情况</li></ol> <ul><li>如果 <code>ref</code> 是 引用类型<code>Reference</code>，并且 基值是否是对象（<code>IsPropertyReference(ref)</code> 是 <code>true</code>), 那么 <code>this</code> 的值为 基值<code>GetBase(ref)</code></li> <li>如果 <code>ref</code> 是 引用类型<code>Reference</code>，并且 <code>base value</code> 值是 <code>Environment Record</code>, 那么<code>this</code>的值为 <code>ImplicitThisValue(ref)</code>（js中为<code>window</code>）</li> <li>如果 <code>ref</code> 不是 引用类型<code>Reference</code>，那么 <code>this</code> 的值为 <code>undefined</code>,(js中严格模式下为<code>undefined</code>,非严格模式下为<code>window</code>,可以通过<code>IsStrictReference(ref)</code>来确定是否是严格模式)</li></ul> <p>上面我们说了函数调用时<a href="https://yanhaijing.com/es5/#161" target="_blank" rel="noopener noreferrer">MemberExpression<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>就是括号左边的，如：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> 
+
+<span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// MemberExpression 为f</span>
+
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">fun</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+obj<span class="token punctuation">.</span><span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// MemberExpression 为obj.fun</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// MemberExpression 为fun()</span>
+
+obj<span class="token punctuation">[</span><span class="token string">'funName'</span><span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// MemberExpression 为obj['funName']</span>
+</code></pre></div><p>第二步我们很重要的就是需要判断<code>ref</code> 是否是引用类型，一般<code>ref</code>是引用类型的情况有两种：</p> <ul><li>函数标示符</li> <li>属性访问器（点<code>.</code>属性访问器或中括号<code>[]</code>属性访问器）</li></ul> <h3 id="实际例子"><a href="#实际例子" class="header-anchor">#</a> 实际例子</h3> <p>下面我们来使用实际列子看看函数调用时<code>this</code>的值是如何确定的</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> foo <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">bar</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+foo<span class="token punctuation">.</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 例子1</span>
+<span class="token punctuation">(</span>foo<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 例子2</span>
+<span class="token punctuation">(</span>foo<span class="token punctuation">.</span>bar <span class="token operator">=</span> foo<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 例子3</span>
+<span class="token punctuation">(</span><span class="token boolean">false</span> <span class="token operator">||</span> foo<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 例子4</span>
+<span class="token punctuation">(</span>foo<span class="token punctuation">.</span>bar<span class="token punctuation">,</span> foo<span class="token punctuation">.</span>bar<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 例子5</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 例子6</span>
+</code></pre></div><ol><li><p><code>foo.bar()</code>在执行时，<code>MemberExpression</code>为<code>foo.bar</code>, 并将<code>MemberExpression</code>赋值给了<code>ref</code>；然后通过<code>Type(ref)</code>判断<code>foo.bar</code>是不是引用类型，因为<code>foo.bar</code>是属性访问器形式，所以<code>foo.bar</code>是引用类型; 然后判断基值是否是对象<code>IsPropertyReference(ref)</code>, <code>foo.bar</code>是对象所以<code>this</code>确定为<code>foo</code>对象(通过<code>GetBase(ref)</code>获取 <code>this = GetBase(ref)</code>)</p></li> <li><p><code>(foo.bar)()</code>在执行时<code>()</code>并没有使用<code>GetValue</code>对<code>MemberExpression</code>进行处理，所以<code>MemberExpression</code>为<code>foo.bar</code>, 接下来的情况和例一就一样了。</p></li> <li><p><code>(foo.bar = foo.bar)()</code>在执行时，在左边括号中<code>foo.bar = foo.bar</code>因为使用了赋值运算<code>=</code>，此时调用了<code>GetValue</code> 方法，将<code>foo.bar</code>最终的值不在是引用类型（上面说了调用<code>GetValue</code>方法返回的是具体值，不在是一个引用类型<code>Reference</code>）, 所以<code>this</code>为<code>undefined</code>，之后还会通过<code>IsStrictReference(V)</code>判断是否在严格模式下，如果不是<code>this</code>为<code>undefined</code>时，<code>this</code>将隐士转换为全局对象<code>window</code> 或 <code>global</code></p></li> <li><p><code>(false || foo.bar)()</code>在执行时，逻辑运算符也会调用<code>GetValue</code> 方法，所以最终<code>this</code>结果和例三一样</p></li> <li><p><code>(foo.bar, foo.bar)()</code>在执行时，逗号运算符也会调用<code>GetValue</code> 方法，所以最终<code>this</code>结果和例三一样</p></li> <li><p><code>fun()</code>在执行时，因为<code>fun</code>是一个标识符所以<code>ref</code>会是引用类型；但是引用类型的基值是<code>EnvironmentRecord</code>，它并不是一个对象，通过<code>IsPropertyReference(ref)</code>判断返回<code>false</code>，此时<code>this</code>值为<code>ImplicitThisValue(ref)</code>,<code>ImplicitThisValue(ref)</code>函数通常会返回<code>undefined</code>（<a href="https://yanhaijing.com/es5/#128" target="_blank" rel="noopener noreferrer">声明式环境<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>,<a href="https://yanhaijing.com/es5/#137" target="_blank" rel="noopener noreferrer">对象式环境<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>）；之后还会通过<code>IsStrictReference(V)</code>判断是否在严格模式下，如果不是<code>this</code>为<code>undefined</code>时，<code>this</code>将隐士转换为全局对象<code>window</code> 或 <code>global</code></p></li></ol> <h2 id="构造函数中的this"><a href="#构造函数中的this" class="header-anchor">#</a> 构造函数中的This</h2> <p>在构造函数中<code>this</code>还是很好确定的，在构造函数中<code>this</code>永远指向通过构造函数创建的对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">people</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">&quot;king&quot;</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">52</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> one <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> two <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">People</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>上面在构造函数中的<code>this</code>会指向通过<code>new</code>创建出来的对象。第一种情况下<code>people</code>中的<code>this</code>指向 <code>one</code>对象，第二种情况下<code>people</code>中的<code>this</code>指向 <code>two</code>对象</p> <div class="custom-block tip"><p class="custom-block-title">tom大叔</p> <p>针对上面的构造函数<code>new</code>运算符调用<code>people</code>函数的内部的<code>[[Construct]]</code> 方法，接着，在对象创建后，调用内部的<code>[[Call]]</code> 方法。 所有相同的函数<code>people</code>都将<code>this</code>的值设置为新创建的对象。</p></div> <h2 id="改变this指向的方式"><a href="#改变this指向的方式" class="header-anchor">#</a> 改变This指向的方式</h2> <p>在<code>js</code>我们可以使用<code>call</code>、<code>apply</code>、<code>bind</code>、方法可以来改变<code>this</code>的指向的。下面我们来看看着几个方法的使用。</p> <h3 id="call-方法"><a href="#call-方法" class="header-anchor">#</a> call 方法</h3> <p><code>call</code>方法可以执行一个函数，并改变一个函数中<code>this</code>的指向,<code>call</code>方法中有多个参数，第一个参数是<code>this</code>指向对象，后面的参数就是调用函数时传入的参数。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;King&quot;</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span><span class="token number">23</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token parameter">age<span class="token punctuation">,</span>sum</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">,</span>sum<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span> <span class="token comment">//King; 50 30</span>
+</code></pre></div><p>我们会发现通过<code>call</code>调用函数<code>fun</code>后，<code>fun</code>函数内部的<code>this</code>指向了对象<code>obj</code>,并且传入了两个参数<code>50 30</code>。</p> <h3 id="apply-方法"><a href="#apply-方法" class="header-anchor">#</a> apply 方法</h3> <p><code>apply</code>方法也是可以执行一个函数，并改变一个函数中<code>this</code>的指向，和<code>call</code>方法不同的是，<code>apply</code>方法的第二个参数传入的是一个数组。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;King&quot;</span><span class="token punctuation">,</span>
+  age<span class="token operator">:</span><span class="token number">23</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token parameter">age<span class="token punctuation">,</span>sum</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>age<span class="token punctuation">,</span>sum<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">//King; 50 30</span>
+</code></pre></div><h3 id="bind-方法"><a href="#bind-方法" class="header-anchor">#</a> bind 方法</h3> <p><code>js</code>中<code>bind</code>方法可以给函数中<code>this</code>绑定一个固定的对象，并返回一个新函数</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;King&quot;</span><span class="token punctuation">,</span>
+    age<span class="token operator">:</span><span class="token number">23</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">&quot;global&quot;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token parameter">age<span class="token punctuation">,</span>sum<span class="token punctuation">,</span>a</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> newFun <span class="token operator">=</span> <span class="token function">fun</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token function">newFun</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//King</span>
+<span class="token function">setTimeout</span><span class="token punctuation">(</span>newFun<span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span> <span class="token comment">// King</span>
+</code></pre></div><p>通过例子我们可以看到，通过<code>bind</code>方法处理后，返回的新函数中的<code>this</code>永远都会指向同一个对象，而不会随着函数的调用方式不同而改变。</p> <h2 id="dom事件中this"><a href="#dom事件中this" class="header-anchor">#</a> DOM事件中This</h2> <p><code>DOM</code>事件中绑定的函数中的<code>this</code>指向触发该事件的<code>DOM</code>元素，这点毋庸置疑。</p> <div class="custom-block danger"><p class="custom-block-title">DOM事件中This</p> <p>关于<code>DOM</code>事件中<code>This</code> 虽然知道指向触发该事件的<code>DOM</code>元素，但是在<code>ECMAScript</code>规范中是如何实现的，我目前不太确定，希望知道的同学可以提供一下帮助。</p></div> <p><strong>参考链接：</strong></p> <ul><li><a href="https://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html" target="_blank" rel="noopener noreferrer">This? Yes,this!<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://github.com/mqyqingfeng/Blog/issues/7" target="_blank" rel="noopener noreferrer">JavaScript深入之从ECMAScript规范解读this<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">4/1/2021, 5:37:13 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/web/js/js-this1.html" class="prev">
+        JS-This（一）
+      </a></span> <span class="next"><a href="/webxiaoma/web/js/js-closure.html">
+        JS-闭包
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>JS-This (二)</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#ecmascript-中的数据类型" data-v-4100c7a9>ECMAScript 中的数据类型</a></li><li class="title" data-v-4100c7a9><a href="#引用类型-reference" data-v-4100c7a9>引用类型（Reference）</a></li><li class="subTitle" data-v-4100c7a9><a href="#getvalue" data-v-4100c7a9>GetValue</a></li><li class="title" data-v-4100c7a9><a href="#函数中this的确定" data-v-4100c7a9>函数中This的确定</a></li><li class="subTitle" data-v-4100c7a9><a href="#函数执行中的规范" data-v-4100c7a9>函数执行中的规范</a></li><li class="subTitle" data-v-4100c7a9><a href="#实际例子" data-v-4100c7a9>实际例子</a></li><li class="title" data-v-4100c7a9><a href="#构造函数中的this" data-v-4100c7a9>构造函数中的This</a></li><li class="title" data-v-4100c7a9><a href="#改变this指向的方式" data-v-4100c7a9>改变This指向的方式</a></li><li class="subTitle" data-v-4100c7a9><a href="#call-方法" data-v-4100c7a9>call 方法</a></li><li class="subTitle" data-v-4100c7a9><a href="#apply-方法" data-v-4100c7a9>apply 方法</a></li><li class="subTitle" data-v-4100c7a9><a href="#bind-方法" data-v-4100c7a9>bind 方法</a></li><li class="title" data-v-4100c7a9><a href="#dom事件中this" data-v-4100c7a9>DOM事件中This</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.1e52e949.js" defer></script><script src="/webxiaoma/assets/js/2.afa8a08f.js" defer></script><script src="/webxiaoma/assets/js/74.03cf6cb4.js" defer></script>
+  </body>
+</html>

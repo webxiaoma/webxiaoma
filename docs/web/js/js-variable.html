@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS-变量对象 | 小马过河</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/webxiaoma/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/webxiaoma/manifest.json">
+    <link rel="apple-touch-icon" href="/webxiaoma/img/mxx-152-152.png">
+    <meta name="description" content="本文讲述JavaScript中的变量对象，并深入探讨js在运行时变量对象的处理以及作用。">
+    <meta name="keywords" content="JavaScript, js变量对象, 变量对象，深入变量对象">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/webxiaoma/assets/css/0.styles.4df85eba.css" as="style"><link rel="preload" href="/webxiaoma/assets/js/app.1e52e949.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/2.afa8a08f.js" as="script"><link rel="preload" href="/webxiaoma/assets/js/76.3ab9f046.js" as="script"><link rel="prefetch" href="/webxiaoma/assets/js/10.fb277314.js"><link rel="prefetch" href="/webxiaoma/assets/js/11.0e274bfb.js"><link rel="prefetch" href="/webxiaoma/assets/js/12.4df5b6d2.js"><link rel="prefetch" href="/webxiaoma/assets/js/13.8e748ae3.js"><link rel="prefetch" href="/webxiaoma/assets/js/14.50b0fb96.js"><link rel="prefetch" href="/webxiaoma/assets/js/15.ce09b2ff.js"><link rel="prefetch" href="/webxiaoma/assets/js/16.76e5796d.js"><link rel="prefetch" href="/webxiaoma/assets/js/17.480800b5.js"><link rel="prefetch" href="/webxiaoma/assets/js/18.32dc6f9e.js"><link rel="prefetch" href="/webxiaoma/assets/js/19.7456e487.js"><link rel="prefetch" href="/webxiaoma/assets/js/20.46eb3cb8.js"><link rel="prefetch" href="/webxiaoma/assets/js/21.8940b1af.js"><link rel="prefetch" href="/webxiaoma/assets/js/22.73c6e359.js"><link rel="prefetch" href="/webxiaoma/assets/js/23.99df9d02.js"><link rel="prefetch" href="/webxiaoma/assets/js/24.7a493f32.js"><link rel="prefetch" href="/webxiaoma/assets/js/25.8c3c4594.js"><link rel="prefetch" href="/webxiaoma/assets/js/26.d70344b9.js"><link rel="prefetch" href="/webxiaoma/assets/js/27.9c38926c.js"><link rel="prefetch" href="/webxiaoma/assets/js/28.526e92f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/29.49f02dc7.js"><link rel="prefetch" href="/webxiaoma/assets/js/3.2b3785f0.js"><link rel="prefetch" href="/webxiaoma/assets/js/30.4db35da6.js"><link rel="prefetch" href="/webxiaoma/assets/js/31.c4ebc8f4.js"><link rel="prefetch" href="/webxiaoma/assets/js/32.10359d6a.js"><link rel="prefetch" href="/webxiaoma/assets/js/33.baa98b8e.js"><link rel="prefetch" href="/webxiaoma/assets/js/34.43185e0d.js"><link rel="prefetch" href="/webxiaoma/assets/js/35.fd7fa66a.js"><link rel="prefetch" href="/webxiaoma/assets/js/36.fd7d2b5a.js"><link rel="prefetch" href="/webxiaoma/assets/js/37.d6aba03a.js"><link rel="prefetch" href="/webxiaoma/assets/js/38.63fdf99c.js"><link rel="prefetch" href="/webxiaoma/assets/js/39.b368f875.js"><link rel="prefetch" href="/webxiaoma/assets/js/4.1dbbd457.js"><link rel="prefetch" href="/webxiaoma/assets/js/40.d03d3904.js"><link rel="prefetch" href="/webxiaoma/assets/js/41.7ff86311.js"><link rel="prefetch" href="/webxiaoma/assets/js/42.90783e52.js"><link rel="prefetch" href="/webxiaoma/assets/js/43.7cbc2ace.js"><link rel="prefetch" href="/webxiaoma/assets/js/44.eb96a268.js"><link rel="prefetch" href="/webxiaoma/assets/js/45.f422b81e.js"><link rel="prefetch" href="/webxiaoma/assets/js/46.65b48983.js"><link rel="prefetch" href="/webxiaoma/assets/js/47.3543954e.js"><link rel="prefetch" href="/webxiaoma/assets/js/48.4e30a53c.js"><link rel="prefetch" href="/webxiaoma/assets/js/49.5023ed83.js"><link rel="prefetch" href="/webxiaoma/assets/js/5.c3f73608.js"><link rel="prefetch" href="/webxiaoma/assets/js/50.5c789fbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/51.f74eda57.js"><link rel="prefetch" href="/webxiaoma/assets/js/52.c53459ae.js"><link rel="prefetch" href="/webxiaoma/assets/js/53.f04afd32.js"><link rel="prefetch" href="/webxiaoma/assets/js/54.47d1197b.js"><link rel="prefetch" href="/webxiaoma/assets/js/55.f27b4b14.js"><link rel="prefetch" href="/webxiaoma/assets/js/56.a678dd31.js"><link rel="prefetch" href="/webxiaoma/assets/js/57.b5b034cc.js"><link rel="prefetch" href="/webxiaoma/assets/js/58.15fecf88.js"><link rel="prefetch" href="/webxiaoma/assets/js/59.29b62862.js"><link rel="prefetch" href="/webxiaoma/assets/js/6.07ddaf0c.js"><link rel="prefetch" href="/webxiaoma/assets/js/60.b7c04c5c.js"><link rel="prefetch" href="/webxiaoma/assets/js/61.1ea2e4da.js"><link rel="prefetch" href="/webxiaoma/assets/js/62.b7f67d7c.js"><link rel="prefetch" href="/webxiaoma/assets/js/63.fb1c37c0.js"><link rel="prefetch" href="/webxiaoma/assets/js/64.bfa66723.js"><link rel="prefetch" href="/webxiaoma/assets/js/65.dd085ae1.js"><link rel="prefetch" href="/webxiaoma/assets/js/66.9ad2a92c.js"><link rel="prefetch" href="/webxiaoma/assets/js/67.908c9dbf.js"><link rel="prefetch" href="/webxiaoma/assets/js/68.2a8cb4c5.js"><link rel="prefetch" href="/webxiaoma/assets/js/69.83ecb4be.js"><link rel="prefetch" href="/webxiaoma/assets/js/7.faf9004a.js"><link rel="prefetch" href="/webxiaoma/assets/js/70.82059511.js"><link rel="prefetch" href="/webxiaoma/assets/js/71.53fe12ff.js"><link rel="prefetch" href="/webxiaoma/assets/js/72.bdb25015.js"><link rel="prefetch" href="/webxiaoma/assets/js/73.95b587fa.js"><link rel="prefetch" href="/webxiaoma/assets/js/74.03cf6cb4.js"><link rel="prefetch" href="/webxiaoma/assets/js/75.9e83ec60.js"><link rel="prefetch" href="/webxiaoma/assets/js/77.48371124.js"><link rel="prefetch" href="/webxiaoma/assets/js/78.3b6812d8.js"><link rel="prefetch" href="/webxiaoma/assets/js/79.93af1a06.js"><link rel="prefetch" href="/webxiaoma/assets/js/8.da4a160f.js"><link rel="prefetch" href="/webxiaoma/assets/js/80.357be08d.js"><link rel="prefetch" href="/webxiaoma/assets/js/81.747b34dd.js"><link rel="prefetch" href="/webxiaoma/assets/js/82.cd48ed6e.js"><link rel="prefetch" href="/webxiaoma/assets/js/9.fdbe1bea.js">
+    <link rel="stylesheet" href="/webxiaoma/assets/css/0.styles.4df85eba.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/webxiaoma/" class="home-link router-link-active"><img src="/webxiaoma/img/manong.jpg" alt="小马过河" class="logo"> <span class="site-name can-hide">小马过河</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav> <div class="loginItem"><div class="login" data-v-0028d8de><div class="loginBtn" data-v-0028d8de>登录</div> <!----></div></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><!----> <a href="/webxiaoma/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/webxiaoma/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webxiaoma/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/tools/tomcat/" class="nav-link">
+  Tomcat初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          单词用语
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/webxiaoma/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/webxiaoma/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS+HTML系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JS系列</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/webxiaoma/web/js/js-bom.html" class="sidebar-link">JS-BOM操作</a></li><li><a href="/webxiaoma/web/js/js-dom.html" class="sidebar-link">JS-DOM操作</a></li><li><a href="/webxiaoma/web/js/js-event.html" class="sidebar-link">JS-事件</a></li><li><a href="/webxiaoma/web/js/js-function.html" class="sidebar-link">JS-函数</a></li><li><a href="/webxiaoma/web/js/js-prototype.html" class="sidebar-link">JS-原型与原型链</a></li><li><a href="/webxiaoma/web/js/js-context.html" class="sidebar-link">JS-执行上下文</a></li><li><a href="/webxiaoma/web/js/js-variable.html" aria-current="page" class="active sidebar-link">JS-变量对象</a></li><li><a href="/webxiaoma/web/js/js-scope-chain.html" class="sidebar-link">JS-作用域和作用域链</a></li><li><a href="/webxiaoma/web/js/js-this1.html" class="sidebar-link">JS-This（一）</a></li><li><a href="/webxiaoma/web/js/js-this2.html" class="sidebar-link">JS-This (二)</a></li><li><a href="/webxiaoma/web/js/js-closure.html" class="sidebar-link">JS-闭包</a></li><li><a href="/webxiaoma/web/js/js-data-type.html" class="sidebar-link">JS-基础类型和引用类型</a></li><li><a href="/webxiaoma/web/js/js-new.html" class="sidebar-link">JS-new操作符</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>常见面试题</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="js-变量对象"><a href="#js-变量对象" class="header-anchor">#</a> JS-变量对象</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#变量对象">变量对象</a><ul><li><a href="#全局上下文变量对象">全局上下文变量对象</a></li><li><a href="#函数上下文中的变量对象">函数上下文中的变量对象</a></li></ul></li><li><a href="#可执行代码执行过程">可执行代码执行过程</a><ul><li><a href="#创建阶段">创建阶段</a></li><li><a href="#执行阶段">执行阶段</a></li></ul></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>我们在<a href="/web/js/js-context">《JS-执行上下文》</a>中已经讨论过<code>执行上下文</code>，并且提到在执行代码执行中，<code>执行上下文</code>会初始化三个很重要的对象(<code>变量对象</code>、<code>作用域链</code>、<code>this</code>)，这里我们讲解其中的一个变量对象。</p> <h2 id="变量对象"><a href="#变量对象" class="header-anchor">#</a> 变量对象</h2> <p><code>变量对象（Variable object）</code>对象作为一个对象，我们可以使用伪代码来表示：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 伪代码</span>
+Vo <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p><code>变量对象（Variable object）</code>作为执行上下文的一个对象属性，也会因为执行上下文的不同，而有所不同。下面我们来看看<code>全局上下文中的变量对象</code>和<code>函数上下文中的变量对象</code>。</p> <h3 id="全局上下文变量对象"><a href="#全局上下文变量对象" class="header-anchor">#</a> 全局上下文变量对象</h3> <p>在说<code>全局上下文中的变量对象</code>对象之前我们先来确定一下<code>全局对象</code>。</p> <div class="custom-block tip"><p class="custom-block-title">全局对象</p> <p>全局对象是预定义的对象，作为<code>JavaScript</code>的全局函数和全局属性的占位符。通过使用全局对象，可以访问所有其他所有预定义的对象(比如<code>Math</code>)、函数(比如<code>parseInt</code>)和属性(比如<code>innerHeight</code>)。全局对象不是任何对象的属性。</p> <p>全局对象(Global object) 是在进入任何执行上下文之前就已经创建了的对象；
+这个对象只存在一份，它的属性在程序中任何地方都可以访问，全局对象的生命周期终止于程序退出那一刻。</p></div> <p>在全局对象中我们可以通过<code>this</code>来引用，并且在<code>DOM</code>中，全局对象有一个<code>window</code>属性也可以应用自身</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">===</span> window<span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre></div><p>除了上面提到的属性，函数等等，全局对象还包含很多的属性、函数。在<code>DOM</code>中还包含大量的<code>DOM</code>的节点信息以及事件。</p> <p>另外在全局中声明的变量或函数，也会自动添加到全局对象上</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>a<span class="token punctuation">)</span>  <span class="token comment">// 1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>f<span class="token punctuation">)</span>  <span class="token comment">// 函数 f</span>
+</code></pre></div><p>在全局中访问全局变量或函数时，我们还可以省略<code>window</code>对象，直接访问<code>console.log(a)</code>。</p> <p><strong>打了这么多字，其实就是想说：全局对象就是全局上下文中的变量对象</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">Vo</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span> <span class="token operator">=</span> global
+</code></pre></div><h3 id="函数上下文中的变量对象"><a href="#函数上下文中的变量对象" class="header-anchor">#</a> 函数上下文中的变量对象</h3> <p>函数上下文中的变量对象和全局上下文中的变量对象有所不同。在函数中通常是用<code>活动对象（activation object）</code> 来表示<code>变量对象（Variable object）</code>，其实他俩是一个东西<code>VO(functionContext) === AO</code>，只不过<code>变量对象（VO）</code>不能直接访问，并且<code>活动对象（activation object）</code> 只有在函数激活（执行）时会产生。其他情况下无法访问<code>活动对象</code>。</p> <p>在进入函数执行上下文时，变量对象会被激活成为活动对象（AO)，在活动对象中为代码的执行做一些初始化，比如变量和函数的提升，初始化<code>arguments</code>属性，并为<code>arguments</code>赋值为<code>Arguments</code>对象。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 伪代码</span>
+<span class="token constant">AO</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span>   <span class="token comment">// 初始化变量</span>
+    <span class="token keyword">function</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment">// 初始化函数声明</span>
+    arguments<span class="token operator">:</span>Arguments <span class="token comment">// 初始化arguments 对象</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="可执行代码执行过程"><a href="#可执行代码执行过程" class="header-anchor">#</a> 可执行代码执行过程</h2> <p>在<code>JavaScript</code>中执行上下文中的代码被分为分两个阶段来执行：</p> <ul><li><code>创建阶段</code>(进入执行上下文阶段)</li> <li><code>执行阶段</code></li></ul> <p>下面我们来看看这两个阶段的执行。</p> <h3 id="创建阶段"><a href="#创建阶段" class="header-anchor">#</a> 创建阶段</h3> <p>进入执行上下文阶段时，为代码的执行做前期准备，不只是准备<code>变量对象</code>，还好建立<code>作用域链</code>、初始化<code>this</code>，这里我们只讲<code>变量对象</code>的处理。在以后的文章中我们会讨论<code>作用域链</code>和<code>this</code>。</p> <ul><li>生成变量对象 （创建<code>arguments</code>, 检索函数声明，检索变量声明）</li> <li>建立作用域链</li> <li>确定<code>this</code>的指向</li></ul> <p>全局环境中，在进入执行上下文时，变量就是全局对象，拥有全局对象的所有属性方法。另外在变量对象中会将<code>var</code>声明的变量（ES6中的<code>let</code>和<code>const</code>不会被提升）存储起来，并赋值为<code>undefined</code>, 并且将函数声明提升(函数表达式作为变量处理)。例如下面这段代码</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> <span class="token function-variable function">cf</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+</code></pre></div><p>在上面代码在执行前，变量对象会是这样：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 伪代码</span>
+<span class="token constant">VO</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    Math<span class="token punctuation">,</span>
+    Window<span class="token operator">:</span>global<span class="token punctuation">,</span>
+    <span class="token operator">...</span> <span class="token comment">// 等等全局属性、函数或对象</span>
+    a<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">// 变量a被提升，并赋值为undefined</span>
+    cf<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">// 函数表达式cf 按变量处理</span>
+    f<span class="token operator">:</span><span class="token operator">&lt;</span>f<span class="token operator">&gt;</span> <span class="token comment">// 函数声明f被提升，并指向函数f</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>这是代码在执行阶段前，执行上下文中变量对象所做的一些前期工作。函数执行上下文中的活动对象和全局执行上下文中的变量对象在代码执行前处理大同小异，只是活动对象中的一些属性不同。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>在上面代码在执行前，活动对象会是这样：</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 伪代码</span>
+<span class="token constant">AO</span><span class="token punctuation">(</span>funContext<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    arguments<span class="token operator">:</span>Arguments<span class="token punctuation">,</span> <span class="token comment">// arguments 对象初始化</span>
+    b<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">// 变量b被提升，并赋值为undefined</span>
+    text<span class="token operator">:</span><span class="token operator">&lt;</span>text<span class="token operator">&gt;</span> <span class="token comment">// 函数声明text被提升，并指向函数text</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>当变量明和函数名称相同时，变量对象会先提升变量，在提升函数声明，如果名称相同就覆盖变量</strong></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// 伪代码</span>
+<span class="token constant">VO</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    f<span class="token operator">:</span><span class="token operator">&lt;</span>f<span class="token operator">&gt;</span> <span class="token comment">// 函数声明f被提升，和变量f同名，覆盖变量值</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="执行阶段"><a href="#执行阶段" class="header-anchor">#</a> 执行阶段</h3> <p>执行代码的前期准备工作完成后，该进入代码的执行阶段了，在这个阶段，主要做了下面这下事：</p> <ul><li>变量赋值</li> <li>函数的引用</li> <li>执行其它代码</li></ul> <p>我们通过下面例子来看看这是变量对象的变化。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token keyword">var</span> <span class="token function-variable function">cf</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+b <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 伪代码</span>
+<span class="token constant">VO</span><span class="token punctuation">(</span>globalContext<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+    Math<span class="token punctuation">,</span>
+    Window<span class="token operator">:</span>global<span class="token punctuation">,</span>
+    <span class="token operator">...</span> <span class="token comment">// 等等全局属性、函数或对象</span>
+    a<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">// 变量a被提升，并赋值为undefined</span>
+    cf<span class="token operator">:</span><span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token comment">// 函数表达式cf 按变量处理</span>
+    f<span class="token operator">:</span><span class="token operator">&lt;</span>f<span class="token operator">&gt;</span> <span class="token comment">// 函数声明f被提升，覆盖同名变量f, 并指向函数f</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上面的代码展示了进入执行上下文阶段时的变量对象。当进入执行阶段后，代码会按触发顺序从上向下去执行可执行代码。</p> <ol><li>当遇到<code>var a = 1</code> 时，变量对象中的<code>a</code>的值将不在是<code>undefined</code>,将会变为<code>1</code>。</li> <li>当运行到<code>var f = true</code> 时,变量对象中的<code>f</code>的值将不在是<code>函数f</code>,将会变为<code>ture</code>。</li> <li>当运行到<code>function f(){}</code> 时,<code>函数f</code>并不会在影响变量对象了。</li> <li>当运行到<code>var cf = function(){}</code> 时,<code>cf</code>的值将不在是<code>undefined</code>,将会指向<code>函数</code>。</li> <li>当运行到<code>b = 2;</code> 时,会为全局对象添加<code>b</code>属性并赋值为<code>2</code>。</li></ol> <p>通过上面的讲解，我们会很清楚为什么会出现下面这种情况：</p> <div class="language-js extra-class"><pre class="language-js"><code>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment">// undefined</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment">// 函数f</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> f <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>  <span class="token comment">// 1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span>  <span class="token comment">// true</span>
+
+<span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>f<span class="token punctuation">)</span><span class="token comment">// true</span>
+</code></pre></div><hr> <p><strong>参考文献</strong></p> <ul><li><a href="https://www.cnblogs.com/TomXu/archive/2012/01/16/2309728.html" target="_blank" rel="noopener noreferrer">变量对象（Variable Object）<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">4/1/2021, 5:37:13 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/webxiaoma/web/js/js-context.html" class="prev">
+        JS-执行上下文
+      </a></span> <span class="next"><a href="/webxiaoma/web/js/js-scope-chain.html">
+        JS-作用域和作用域链
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>JS-变量对象</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#变量对象" data-v-4100c7a9>变量对象</a></li><li class="subTitle" data-v-4100c7a9><a href="#全局上下文变量对象" data-v-4100c7a9>全局上下文变量对象</a></li><li class="subTitle" data-v-4100c7a9><a href="#函数上下文中的变量对象" data-v-4100c7a9>函数上下文中的变量对象</a></li><li class="title" data-v-4100c7a9><a href="#可执行代码执行过程" data-v-4100c7a9>可执行代码执行过程</a></li><li class="subTitle" data-v-4100c7a9><a href="#创建阶段" data-v-4100c7a9>创建阶段</a></li><li class="subTitle" data-v-4100c7a9><a href="#执行阶段" data-v-4100c7a9>执行阶段</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/webxiaoma/assets/js/app.1e52e949.js" defer></script><script src="/webxiaoma/assets/js/2.afa8a08f.js" defer></script><script src="/webxiaoma/assets/js/76.3ab9f046.js" defer></script>
+  </body>
+</html>
