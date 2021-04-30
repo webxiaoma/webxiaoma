@@ -14,6 +14,7 @@ meta:
 
 <EnTool />
 
+
 ## 服装常见单词 😀😀
 
 -  <En read="/'gɑrmənt/" msg="n. 服装，衣着">garments</En>  
@@ -26,9 +27,9 @@ meta:
 -  <En read="/'lɛðɚ/" msg="皮鞋">leather shoes</En>   
 -  <En read="/'snikɚ/" msg="n. 运动鞋；卑鄙者；鬼鬼祟祟做事的人">sneaker</En>   
 - <En read="/dʒɪm/" msg="运动鞋 （gym 室内健身操; 体操）">gym shoes</En>    
-- basketball shoes = basketball boots 篮球鞋
-- <En read="/'slɪpɚ" msg=" n. 拖鞋 vt. 用拖鞋打">slipper</En>   
-- <En read="" msg="马丁靴">Dr Martens</En>     
+- <En  msg="篮球鞋">basketball shoes = basketball boots</En>    
+- <En read="/'slɪpɚ" msg="/ n. 拖鞋 vt. 用拖鞋打">slipper</En>   
+- <En msg="马丁靴">Dr Martens </En>   
 -  <En read="/hild/" msg=" 高跟鞋；(heeled adj. 有后跟的；带手枪的；带着钱的)">high-heeled shoes</En>  
 - <En read="/bʊt/" msg="n. 靴子；汽车行李箱；踢 vt. 使穿靴；引导；踢；解雇">boot</En>    
 - <En read="/'tenis/" msg="网球鞋；">tennis shoes</En>     
@@ -50,13 +51,12 @@ meta:
 -  <En read="/'wɛskət/" msg="n. 马甲,西装背心">waistcoat</En>  
 - <En read="/brɑ/" msg="胸罩">bra</En>    
 -  <En read="/'swɛtɚ/" msg="毛衣,绒衣,厚运动衫">sweater</En>   
-- down jacket 羽绒服
+-  <En read="/'swɛtɚ/" msg="羽绒服">down jacket</En>   
 - <En read="/'polo/" msg="马球衫；球衣">polo shirt</En>    
 - <En read="/'ʌndɚwɛr/" msg="内衣">underwear</En>    
 -  <En read="/'ʌndɚ'pænts/" msg=" n. 内衣裤；衬裤">underpants</En>  
 -  <En read="/ˈwʊlən/" msg="毛裤">woollen underpants</En>    
-- T-back 丁字裤
-
+-  <En read="/ˈwʊlən/" msg="丁字裤">T-back</En>    
 --- 
 
 -  <En read="/bɪˈkini/" msg=" n. 比基尼式游泳衣, 三点式泳装">bikini</En>   
@@ -82,6 +82,7 @@ meta:
 
 
 ## 服装常见短语 😀😀
+
 -  <En :enType="2" msg="这件大衣看起来不错!">This overcoat looks good!</En>  
 -  <En :enType="2" msg="这件白色的羽绒服很适合你">This white down jacket suits you very well</En>  
 -  <En :enType="2" msg="不要忘了穿上你的毛衣">Don't forget put on your sweater, please.</En>  
@@ -90,15 +91,15 @@ meta:
 -  <En :enType="2" msg="不了，我只是随便看看。">No, thanks! I am just browsing. </En>  
 -  <En :enType="2" msg=" 我可以试一下么？">Can I try this on?</En>  
 -  <En :enType="2" msg="可以，试衣间就在那">Sure! The fitting rooms are over there. </En>  
--  <En :enType="2" read="/'fɪɡjɚ/" msg="你需要什么尺码 ">What's your figure ? large/middle/small size</En>  
+-  <En :enType="2" read="/'fɪɡjɚ/" msg="你需要什么尺码 ">What's your figure? large/middle/small size</En>  
 -  <En :enType="2" msg="这件衣服对我来说有点大。">This dress is a little too big for me.</En>  
 -  <En :enType="2" msg="你想要什么颜色的？">What colour do you want?</En>  
 -  <En :enType="2" msg="这件很适合你">It's very nice on you./It's fit you</En>  
 -  <En :enType="2" msg="试衣间在哪？">Where's the fitting room?</En>  
 -  <En :enType="2" msg="太划算了">What a steal!</En>  
 -  <En :enType="2" msg=" 总之，我刚刚花了10美元就买到了">Anyway, I bought this just now for just 10 dollars!</En>  
--  <En :enType="2" msg="这个有新的吗？ (stock库存 股票)">Do you have this in stock /stɑk/?</En>  
--  <En :enType="2" read="/stɪl/ /'rɪpɔf/" msg="我不敢相信这件竟然要3000美元，未免也太坑人了吧？ （rip-off 敲竹杠）">I still  can't believe this costs 3000 dollars, it's a rip-off ?</En>  
+-  <En :enType="2" read="/stɑk/" msg="这个有新的吗？ (stock库存 股票)">Do you have this in stock?</En>  
+-  <En :enType="2" read="/stɪl/ /'rɪpɔf/" msg="我不敢相信这件竟然要3000美元，未免也太坑人了吧？ （rip-off 敲竹杠）">I still  can't believe this costs 3000 dollars, it's a rip-off?</En>  
 -  <En :enType="2" msg="这套西装太贵了，我买不起">This suit is too expensive for me to buy.</En>  
 -  <En :enType="2" msg="你想怎么付钱呢？">How would you like to pay?</En>  
 -  <En :enType="2" msg=" 用现金">I would like to pay by cash.</En>  
