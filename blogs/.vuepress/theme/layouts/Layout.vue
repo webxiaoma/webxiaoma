@@ -1,6 +1,6 @@
 <template>
    <div :class="$root.$ele?'layout-wrapper ele-class':'layout-wrapper'">
-      <div class="electron-wrapper" v-if="$ele">
+      <div class="electron-wrapper" v-if="$ele && isLogin">
          <div class="ele-center">
             <ul class="ele-setting">
               <li @click="openConsole">
@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
 import Home from '@theme/components/Home.vue'
 import Navbar from '@theme/components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
@@ -92,6 +93,7 @@ export default {
      this.checkLogin()
   },
   computed: {
+    ...mapState(["isLogin"]),
     shouldShowNavbar () {
       const { themeConfig } = this.$site
       const { frontmatter } = this.$page
