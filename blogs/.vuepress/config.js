@@ -88,7 +88,10 @@ module.exports = {
             ]},
           ]},
           { text: 'English',  items: [
-            {text:"单词用语",  items:[
+            {text:"英语读音",  items:[
+              {text:"音标", link:"/english/pronunciation/phonogram"},
+            ]},
+            {text:"英语单词",  items:[
               {text:"电话", link:"/english/word/call"},
               {text:"日常生活", link:"/english/word/daily-life"},
               {text:"动物", link:"/english/word/animal"},

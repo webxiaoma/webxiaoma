@@ -23,7 +23,7 @@ meta:
 -  <En read="/'mʌŋki/" msg="猴 淘气鬼, 小淘气, 顽童">monkey</En>   
 -  <En read="/'ɛlɪfənt/" msg="(动物)象">elephant</En>   
 -   <En read="/bɛr/" msg="n. 熊 vi. 结果实；承受 vt. 忍受；具有；支撑">bear</En>  
--   <En read="/dʌk/" msg="n. 鸭子；鸭肉； vi. 闪避；没入水中 vt. 躲避；猛按…入水">duck</En> 
+-   <En read="/dʌk/" msg="n.n 鸭子；鸭肉； vi. 闪避；没入水中 vt. 躲避；猛按…入水">duck</En> 
 -   <En read="/ɡus/" msg="鹅 鹅肉 傻瓜, 笨蛋">goose</En>  
 -  <En read="/fɑks/" msg="n. 狐狸；狡猾的人 vt. 欺骗；使变酸 fox">fox</En>   
 -  <En read="/'pændə/" msg="大熊猫；大猫熊">panda</En>   

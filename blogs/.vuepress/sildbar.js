@@ -135,7 +135,14 @@ module.exports = {
   /************** 英语 *************/ 
   "/english/":[
     {
-      title: '单词系列',
+      title: '英语读音',
+      collapsable: true,
+      children: [
+        "pronunciation/phonogram",
+      ]
+    },
+    {
+      title: '英语单词',
       collapsable: true,
       children: [
         "word/call",
