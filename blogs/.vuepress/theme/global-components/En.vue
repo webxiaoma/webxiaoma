@@ -46,6 +46,10 @@ export default {
        type: String,
        default:""
      },
+     readUrl:{  // 朗读地址
+       type: String,
+       default:""
+     },
      msg:{
        type:String,
        default:""
@@ -168,7 +172,8 @@ export default {
     },
     readWord(word,type = 1){ // 读
       const {readApi} = this;
-      const readUrl = `${readApi}?type=${type}&audio=${word}`
+      const readUrl = this.readUrl?this.readUrl:(`${readApi}?type=${type}&audio=${word}`);
+        console.log(1111111)
       if(word){
         this.video.src = readUrl;
         this.video.play();
