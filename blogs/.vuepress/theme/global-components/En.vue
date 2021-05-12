@@ -119,7 +119,7 @@ export default {
               className = "phrase";
             }
 
-            let htmStr = `<span class="english ${className}" data-id="${index}" data-text="${word}" data-type="${enType}" data-msg="${this.msg}" data-read="${this.read}">${htm}</span>`;
+            let htmStr = `<span class="english ${className}" data-id="${index}" data-text="${word}" data-type="${enType}" data-msg="${this.msg}" data-read="${this.read}" data-readUrl="${this.readUrl}">${htm}</span>`;
             wordAry.push(word);  
             wordHtmlStr += htmStr;
             wordHtmlAryStr.push(htmStr)
@@ -173,7 +173,6 @@ export default {
     readWord(word,type = 1){ // 读
       const {readApi} = this;
       const readUrl = this.readUrl?this.readUrl:(`${readApi}?type=${type}&audio=${word}`);
-        console.log(1111111)
       if(word){
         this.video.src = readUrl;
         this.video.play();
@@ -194,6 +193,7 @@ export default {
   flex-wrap wrap
   margin 8px 0;
   .wordWrapper
+    cursor pointer
     background rgba(219,240,229,0.5)
     padding 0 4px
     border-radius 2px
@@ -206,6 +206,7 @@ export default {
         font-style normal
         color red
   .readWrapper
+    cursor pointer
     margin-right 6px
   .filter
     filter blur(6.1px)

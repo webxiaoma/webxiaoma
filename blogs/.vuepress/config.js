@@ -83,8 +83,11 @@ module.exports = {
             {text:"观察者模式", link:"/designMode/observer"},
           ]},
           { text: '运维/工具', items: [
+            {text:"Maven", items:[
+              {text:"初识", link:"/tools/maven/"},
+            ]},
             {text:"Tomcat", items:[
-              {text:"Tomcat初识", link:"/tools/tomcat/"},
+              {text:"初识", link:"/tools/tomcat/"},
             ]},
           ]},
           { text: 'English',  items: [
@@ -100,7 +103,9 @@ module.exports = {
               {text:"句子成分", link:"/english/grammar/sentence"},
             ]},
           ]},
-          { text: '工作', link:"/work/", isLogin:true},
+          { text: 'Self', items:[
+            {text:"工作", link:"/self/work/"},
+          ], isLogin:true},
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
           //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},

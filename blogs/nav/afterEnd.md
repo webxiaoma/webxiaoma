@@ -36,5 +36,6 @@ sidebarDepth: 2
   <NavCard title="How2j" jumpUrl="https://how2j.cn/" logo="https://how2j.cn/img/site/favicon.ico" des="How2J是Java教程, 内容涵盖J2SE、WEB前端、J2EE、框架技术等全面的Java内容。 基于实例代码和视频讲解的学习方式为Java职业生涯打下坚实的基础" />
   <NavCard title="Java博客" jumpUrl="https://pdai.tech" logo="https://pdai.tech/favicon.ico" des="Java 全栈知识体系" />
   <NavCard title="廖雪峰Java教程" jumpUrl="https://www.liaoxuefeng.com/wiki/1252599548343744" des="一个Java教程" />
+  <NavCard title="动力节点" jumpUrl="http://www.bjpowernode.com/tutorial/" des="一个培训Java网站，含有java相关教程" />
 </NavItem>
 

@@ -57,6 +57,7 @@ module.exports = {
         "basics/array",
         "basics/error",
         "basics/generics",
+        "basics/reflect",
       ]
     },
     {
@@ -124,6 +125,15 @@ module.exports = {
   /************** 运维/工具 *************/ 
   "/tools/":[
     {
+      title: 'Maven系列',
+      collapsable: true,
+      children: [
+        "maven/",
+        "maven/pom",
+        "maven/dependon",
+      ]
+    },
+    {
       title: 'Tomcat系列',
       collapsable: true,
       children: [
@@ -139,6 +149,7 @@ module.exports = {
       collapsable: true,
       children: [
         "pronunciation/phonogram",
+        "pronunciation/phonogram-2",
       ]
     },
     {
@@ -171,8 +182,15 @@ module.exports = {
   ],
 
   
-  /************** 工作 *************/ 
-  "/work/":[
-     ""
+  /************** MYSELF *************/ 
+  "/self/":[
+    {
+      title: '工作',
+      collapsable: true,
+      children: [
+        "work/",
+        "work/partTimeJob",
+      ]
+    },
   ]
 }

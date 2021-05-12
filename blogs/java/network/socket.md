@@ -46,7 +46,7 @@ meta:
 |`void close()`|关闭套接字。|
 |`InetAddress getInetAddress()`|返回此服务器套接字的本地地址。|
 |`int getLocalPort()`|返回此套接字监听的端口。|
-|`SocketAddress getLocalSoclcetAddress()`|返回此套接字绑定的端口地址，如果尚未绑定则返回 null|
+|`SocketAddress getLocalSocketAddress()`|返回此套接字绑定的端口地址，如果尚未绑定则返回 null|
 |`int getReceiveBufferSize()`|获取此 `ServerSocket` 的 `SO_RCVBUF` 选项的值，该值是从 `ServerSocket` 接收的套接字的建议缓冲区大小|
 
 ### 创建服务器
@@ -81,7 +81,7 @@ public class socketTest {
 
 - `Socket()` 无参构造方法。
 - `Socket(InetAddress address,int port)` 创建一个流套接字并将其连接到指定 IP 地址的指定端口号。
-- `Soclcet(InetAddress address,int port,InetAddress localAddress,int localPort)` 创建一个套接字并将其连接到指定远程地址上的指定远程端口。
+- `Socket(InetAddress address,int port,InetAddress localAddress,int localPort)` 创建一个套接字并将其连接到指定远程地址上的指定远程端口。
 - `Socket(String host,int port)` 创建一个流套接字并将其连接到指定主机上的指定端口号。
 - `Socket(String host,int port,InetAddress localAddress,int localPort)` 创建一个套接字并将其连接到指定远程主机上的指定远程端口。
 
