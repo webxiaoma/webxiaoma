@@ -1,18 +1,15 @@
 ---
 meta:
   - name: keywords
-    content: 马新想 小马学习 编程学习 前端 面试 面试题
+    content: 马新想 小马学习 java maven 
   - name: description
-    content: 本章为小马学习专栏—— 前端面试题
+    content: 本章为小马学习专栏——Maven之依赖管理
 ---
-
-
 # Maven-依赖管理
 
 [[toc]]
 
 :horse: 
-
 
 ## 引入依赖
 
@@ -100,22 +97,22 @@ meta:
 
 ```xml
 <repositories>  
-    <repository>  
-        <id>jboss</id>  
-        <name>JBoss Repository</name>  
-        <url>http://repository.jboss.com/maven2/</url>  
-        <releases>  
-           <!-- 表示更新的频率，值有：never, always,interval,daily, daily 为默认值 -->
-            <updatePolicy>daily</updatePolicy>
-            <enabled>true</enabled>  
-            <!-- 表示maven检查和检验文件的策略，warn为默认值 -->
-            <checksumPolicy>warn</checksumPolicy>
-        </releases>  
-        <snapshots>  
-            <enabled>false</enabled>  
-        </snapshots>  
-        <layout>default</layout>  
-    </repository>  
+  <repository>  
+    <id>jboss</id>  
+    <name>JBoss Repository</name>  
+    <url>http://repository.jboss.com/maven2/</url>  
+    <releases>  
+      <!-- 表示更新的频率，值有：never, always,interval,daily, daily 为默认值 -->
+      <updatePolicy>daily</updatePolicy>
+      <enabled>true</enabled>  
+      <!-- 表示maven检查和检验文件的策略，warn为默认值 -->
+      <checksumPolicy>warn</checksumPolicy>
+    </releases>  
+    <snapshots>  
+      <enabled>false</enabled>  
+    </snapshots>  
+    <layout>default</layout>  
+  </repository>  
 </repositories>
 ```
 
@@ -125,17 +122,50 @@ meta:
 
 ```xml
 <servers>  
-        <server>  
-            <id>same with repository id in pom</id>  
-            <username>username</username>  
-            <password>pwd</password>  
-        </server>  
+  <server>  
+    <id>same with repository id in pom</id>  
+    <username>username</username>  
+    <password>pwd</password>  
+  </server>  
 </servers>
 ```
 
 ## 阿里镜像
 
+由于国内访问`Maven`中央仓库较慢，我们有两种方法可以配置**阿里镜像**，
 
+
+1. 我们在`Maven`所安装的根目录`conf/settings.xml`中来配置
+
+```xml
+<mirrors>
+  <mirror>
+    <id>alimaven</id>
+    <mirrorOf>central</mirrorOf>
+    <name>aliyun maven</name>
+    <url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
+  </mirror>
+</mirrors>
+```
+
+2. 第二种方法是我们在`POM`文件中配置
+
+```xml
+<repositories>
+  <repository>
+      <id>maven-ali</id>
+      <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+      <releases>
+          <enabled>true</enabled>
+      </releases>
+      <snapshots>
+          <enabled>true</enabled>
+          <updatePolicy>always</updatePolicy>
+          <checksumPolicy>fail</checksumPolicy>
+      </snapshots>
+  </repository>
+</repositories>
+```
 
 ## 继承
 
@@ -237,13 +267,7 @@ meta:
 
 
 
-
-
-## 聚合
-
-
-
-
+<!-- ## 聚合 -->
 
 
 **参考文献**

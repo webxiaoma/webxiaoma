@@ -1,12 +1,10 @@
 ---
 meta:
   - name: keywords
-    content: 马新想 小马学习 编程学习 前端 面试 面试题
+    content: 马新想 小马学习 java maven 初识
   - name: description
-    content: 本章为小马学习专栏—— 前端面试题
+    content: 本章为小马学习专栏——Maven之初步认识
 ---
-
-
 # Maven-初识
 
 [[toc]]
@@ -53,7 +51,6 @@ maven-project
 - `src/target` 打包输出目录
 - `pom.xml` `maven`的项目配置(描述)文件
 
-
 ## 核心概念
 
 
@@ -78,7 +75,6 @@ maven-project
 |`deploy`部署|部署|拷贝最终的工程包到远程仓库中，以共享给其他开发人员和工程|
 
 
-## IDEA上配置Maven
 
 **参考文献**
 

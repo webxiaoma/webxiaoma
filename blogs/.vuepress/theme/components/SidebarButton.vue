@@ -31,8 +31,8 @@
   left 1rem
   .icon
     display block
-    width 1.25rem
-    height 1.25rem
+    width 2.25rem
+    height 2.25rem
     -webkit-app-region no-drag
 
 @media (max-width: $MQMobile)

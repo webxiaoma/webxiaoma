@@ -1,11 +1,10 @@
 ---
 meta:
   - name: keywords
-    content: 马新想 小马学习 编程学习 前端 面试 面试题
+    content: 马新想 小马学习 tomcat java
   - name: description
-    content: 本章为小马学习专栏—— 前端面试题
+    content: 本章为小马学习专栏——tomcat初步认识
 ---
-
 
 # Tomcat-初识
 
@@ -24,10 +23,3 @@ meta:
 - 解析用户发来的http请求然后访问到你指定的应用系统
 - 返回的页面经过`tomcat`返回给用户
 
-
-## 安装
-
-`Tomcat`的详细安装可以查看下面
-
-- `Window` 版安装教程：[https://www.cnblogs.com/yocichen/p/10478431.html](https://www.cnblogs.com/yocichen/p/10478431.html)
-- `Linux` 版安装教程：[https://www.cnblogs.com/xdp-gacl/p/4097608.html](https://www.cnblogs.com/xdp-gacl/p/4097608.html)

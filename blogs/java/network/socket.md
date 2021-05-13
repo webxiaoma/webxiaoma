@@ -212,7 +212,7 @@ try{
     // 创建 DataInputStream 将 is 写入该流中
     DataInputStream ds = new DataInputStream(is);
 
-    // 使用 readUTF 堆区字符串
+    // 使用 readUTF 读取字符串
     String message = ds.readUTF();
 
     System.out.println("客户端发送过来的数据：" + message);
