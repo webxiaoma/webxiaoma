@@ -129,6 +129,7 @@ module.exports = {
       collapsable: true,
       children: [
         "maven/",
+        "maven/install",
         "maven/pom",
         "maven/dependon",
       ]

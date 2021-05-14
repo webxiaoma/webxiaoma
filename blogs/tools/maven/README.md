@@ -22,10 +22,6 @@ meta:
 - 利用`maven`自身及其插件还可以获得代码检查报告、单元测试覆盖率、实现持续集成等等
 
 
-## 安装
-
-`maven`的安装和环境配置文章有很多，可以查看[Maven 环境配置](https://www.runoob.com/maven/maven-setup.html)
-
 
 ## Maven项目结构
 
