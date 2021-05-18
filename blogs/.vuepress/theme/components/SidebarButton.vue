@@ -23,16 +23,16 @@
 .sidebar-button
   cursor pointer
   display none
-  width 1.25rem
-  height 1.25rem
+  width 2.25rem
+  height 2.25rem
   position absolute
   padding 0.6rem
   top 0.6rem
   left 1rem
   .icon
     display block
-    width 2.25rem
-    height 2.25rem
+    width 1.25rem
+    height 1.25rem
     -webkit-app-region no-drag
 
 @media (max-width: $MQMobile)

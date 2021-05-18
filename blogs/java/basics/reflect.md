@@ -127,7 +127,7 @@ public class Main {
          * 所以在编写时用了try catch 防止编译报错
          */
         try{
-            Test t = new Test("测试类");
+            Test t = new People("小刘");
             Class clst = t.getClass();
             /**
              * 获取字段操作
@@ -140,7 +140,7 @@ public class Main {
             }
             try {
                 System.out.println(name.getType()); // class java.lang.String
-                System.out.println(name.get(t)); // 测试类
+                System.out.println(name.get(t)); // 小刘
                 name.set(t, "修改name");
                 System.out.println(name.get(t)); // 修改name
                 
@@ -218,7 +218,7 @@ public  static  void main(String[] args) throws Exception{
 - `getConstructors()`：获取所有public的Constructor；
 - `getDeclaredConstructors()`：获取所有Constructor。
 
-**如果是访问指定的构造方法，需要根据该构造方法的入口参数的类型来访问。**例如，访问一个入口参数类型依次为 `int` 和 `String` 类型的构造方法，下面的两种方式均可以实现。
+**如果是访问指定的构造方法，需要根据该构造方法的入口参数的类型来访问。** 例如，访问一个入口参数类型依次为 `int` 和 `String` 类型的构造方法，下面的两种方式均可以实现。
 
 ```java
 objectClass.getDeclaredConstructor(int.class,String.class);

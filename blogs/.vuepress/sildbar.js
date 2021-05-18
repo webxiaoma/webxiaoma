@@ -69,6 +69,7 @@ module.exports = {
         "collection/set",
         "collection/map",
         "collection/queue",
+        "collection/iterator",
       ]
     },
     {
