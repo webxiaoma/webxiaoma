@@ -73,6 +73,13 @@ module.exports = {
       ]
     },
     {
+      title: 'Java 线程',
+      collapsable: true,
+      children: [
+        "thread/",
+      ]
+    },
+    {
       title: 'Java IO',
       collapsable: true,
       children: [
@@ -95,6 +102,14 @@ module.exports = {
       children: [
         "network/ip",
         "network/socket",
+      ]
+    },
+    {
+      title: 'Java 常用包',
+      collapsable: true,
+      children: [
+        "jar/",
+        "jar/log4j",
       ]
     },
   ],

@@ -37,7 +37,7 @@ meta:
 
 ### ArrayList使用
 
-先在我们使用`ArrayList`
+现在我们使用`ArrayList`
 
 创建一个学生`Student`类
 
@@ -90,7 +90,7 @@ public static void main(String[] args){
 
 ## LinkedList
 
-`LinkedList`是一种链表结构，该结构的的优点是很方便的向集合中插入或删除元素。当频繁操作集合的删除和插入元素时，使用`LinkedList`效率更高。但是以特点索引访问`LinkedList`集合内的元素时，则速度相对较慢。
+`LinkedList`是一种链表结构，该结构的的优点是很方便的向集合中插入或删除元素。当频繁操作集合的删除和插入元素时，使用`LinkedList`效率更高。但是以特定索引访问`LinkedList`集合内的元素时，则速度相对较慢。
 
 ### 常用方法
 
@@ -158,4 +158,4 @@ public static void main(String[] args){
 <images src="/java/list02.png" />
 
 
-当要通过索引找某个珠子时，就要从这一串中去查找某个珠子。所以丁文会很慢
+当要通过索引找某个珠子时，就要从这一串中去查找某个珠子。所以访问会很慢

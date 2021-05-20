@@ -17,6 +17,7 @@ sidebarDepth: 2
 
 <NavItem>
   <NavCard title="Oracle" jumpUrl="https://www.oracle.com/cn/java/technologies/javase-downloads.html" logo="https://www.oracle.com/asset/web/favicons/favicon-128.png" des="甲骨文公司,是全球最大的企业级软件公司，该网站可以下载java系列软件" />
+  <NavCard title="Maven仓库" jumpUrl="https://search.maven.org/" logo="https://search.maven.org/favicon.ico?v=3" des="Maven中央仓库" />
 </NavItem>
 
 
