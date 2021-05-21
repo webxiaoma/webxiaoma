@@ -105,6 +105,7 @@ module.exports = {
           ]},
           { text: 'Self', items:[
             {text:"工作", link:"/self/work/"},
+            {text:"学习", link:"/self/study/"},
           ], isLogin:true},
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
