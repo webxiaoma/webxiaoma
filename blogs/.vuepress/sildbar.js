@@ -35,6 +35,13 @@ module.exports = {
       ]
     },
     {
+      title: 'Vue系列',
+      collapsable: true,
+      children: [
+          "vue/mvvm",
+      ]
+     },
+    {
       title: '常见面试题',
       collapsable: true,
       children: [
@@ -157,7 +164,7 @@ module.exports = {
         "tomcat/",
       ]
     },
-  ],
+  ], 
 
   /************** 英语 *************/ 
   "/english/":[
@@ -214,6 +221,7 @@ module.exports = {
       collapsable: true,
       children: [
         "study/",
+        "study/code",
       ]
     },
   ]

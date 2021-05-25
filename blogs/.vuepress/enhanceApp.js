@@ -14,7 +14,7 @@ import {
 
 
 // 测试代码
-require("./code")();
+// require("./code")();
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -37,7 +37,6 @@ export default ({
   Vue.prototype.$message = Message;
   Vue.mixin(mixin)
 
-
   // 初始化页面环境
   try{
     import("./utils/index.js").then(utils=>{
@@ -48,3 +47,4 @@ export default ({
     console.log("slef-----:",err)
   }
 }
+
