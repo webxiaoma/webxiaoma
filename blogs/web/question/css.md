@@ -31,17 +31,17 @@ meta:
 
 ## CSS样式继承优先级
 
-`!important` > 内嵌样式 > id选择器 > 类选择器 > 元素选择器 > 通配符选择器 > 浏览器默认样式
+`!important` > 内嵌样式 > 内联样式 > id选择器 > 类选择器 > 元素选择器 > 通配符选择器 > 浏览器默认样式
 
 
 ## CSS样式引入有几种方式
 
-- 行内样式： `<div style="height:100px"></div>`
+- 内联样式： `<div style="height:100px"></div>`
 - 内嵌样式： `<style> .div{height:100px} </style>`
-- 内联样式： `<link  rel="stylesheet" href="../index.css" />`
+- 外联样式： `<link  rel="stylesheet" href="../index.css" />`
 - 导入样式： `@import("./index.css")`
 
-有三种样式：`行内样式` > `内嵌样式`  > `内联样式` > `导入样式`
+有三种样式：`内联样式` > `内嵌样式`  > `外联样式` = `导入样式`
 
 ## link和@import的区别
 
