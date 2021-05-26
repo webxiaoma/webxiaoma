@@ -35,7 +35,7 @@ module.exports = {
       ]
     },
     {
-      title: 'Vue系列',
+      title: 'Vue2.x系列',
       collapsable: true,
       children: [
           "vue/mvvm",

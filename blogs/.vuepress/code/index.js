@@ -105,6 +105,13 @@ class Watcher{
 
 // 解析器Complie
 
+const CompileUtil = {
+   text(){},
+   model(){},
+   updater:{
+     
+   }
+}
 class Complie{
   
   constructor(vm,el){
@@ -136,23 +143,31 @@ class Complie{
   complieEle(el){
      // 获取el 子元素集合
      const childNodesList = el.childNodes;
-     const reg = /\{\{(.*)\}\}/;
+     const reg = /\{\{([^}]+)\}\}/g;
      
      [...childNodesList].forEach(node=>{
         const text = node.textContent;
-        
         // 判断是否符合{{}}指令
-        if(this.isTextNode(node) && reg.test(text)){
+        if(this.isTextNode(node) && reg.test(text)){ // 文本节点
+          console.log(22, reg.test(text))
           console.log(33, reg.exec(text))
            this.compileText(node,reg.exec(text)[1])
+        }else if(this.isElementNode(node)){ // 元素节点
+          
+
+          this.complieElement();
+          // 对子节点进行递归
+          if(node.childNodes && node.childNodes.length){
+            this.complieEle(node)
+          }
         }
-        // 对子节点进行递归
-        if(node.childNodes && node.childNodes.length){
-             this.complieEle(node)
-        }
+        
 
 
      })
+  }
+  complieElement(){
+
   }
 
   // 处理模板 {{}} 数据
@@ -179,6 +194,12 @@ class Complie{
   isTextNode(node){
    return node.nodeType === 3;
   }
+
+  // 判断是否为元素节点
+  isElementNode(node){
+    return node.nodeType === 1;
+   }
+ 
 
 
 }
