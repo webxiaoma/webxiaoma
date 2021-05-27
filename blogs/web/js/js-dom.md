@@ -145,7 +145,7 @@ ele.offsetWidth   // 获取元素的 border+padding+content 宽度
 ele.offsetHeight  // 获取元素的 border+padding+content 高度
 
 ele.offsetLeft  // 获取元素 position/relative 左定位+ margin（左）
-ele.offsetTop   // 获取元素 position/relative 左定位+ margin（上）
+ele.offsetTop   // 获取元素 position/relative 上定位+ margin（上）
 
 ele.clientTop   // 获取元素的border 上边宽度
 ele.clientLeft  // 获取元素的border 左边宽度

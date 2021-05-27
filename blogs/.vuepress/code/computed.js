@@ -1,9 +1,15 @@
 
 // *************************订阅容器Dep (订阅观察者中的调度中心)***********************************
 
+const utils = {
+  targetStack:[], // watch站
+  pushTarget(){},
+  popTarget(){},
+}
 // 实现订阅容器Dep，存储订阅者
 
 class Dep{
+  static target = null;
   constructor(){
     this.subs = []
   }
@@ -17,7 +23,15 @@ class Dep{
       sub.update();
     })
   }
+
+  // computed
+  depend(){
+    if(Dep.target){
+      Dep.target.addDep(this);
+    }
+  }
 }
+
 
 
 // *************************观察者 Observer***********************************
@@ -53,7 +67,8 @@ class Observer{
 
       },
       get(){
-        Dep.target && dep.addSub(Dep.target);
+        // Dep.target && dep.addSub(Dep.target);
+        Dep.target && dep.depend();
         return val;
       }
      
@@ -68,17 +83,41 @@ class Observer{
 
 class Watcher{
 
-  constructor(vm,expr,callback){
+  constructor(vm,expr,callback,computedOptions){
     this.vm = vm;
     this.expr = expr;
     this.callback = callback;
-    this.value = this.getVal();
 
+    this.value = null;
+    this.dep = null;
+
+    if(computedOptions){
+      const {computed,dirty,layz,getter} = computedOptions;
+      this.computed = !!computed; 
+      this.dirty = !!dirty;
+      this.dirty = !!layz;
+      this.getter = getter;
+    }
+
+    if(this.computed){
+      this.dep = new Dep()
+      this.value = undefined;
+    }else{
+      this.value = this.getVal();
+    }
     return this;
   }  
-  
+
   update(){ // 更新函数
-    this.run();
+    if(this.computed){
+       if(this.dep.subs.length === 0){ // 没有订阅者
+         this.dirty = true;
+       }else{
+         
+       }
+    }else{
+      this.run();
+    }
   }
    
   run(){ // 执行
@@ -91,10 +130,21 @@ class Watcher{
   }
   getVal(){
      Dep.target = this;
-
-     // 这里会调用 get 方法，将订阅者添加到 订阅容器中
-     const  value = this.getDataVal();
-     Dep.target = null;
+     let value;
+     const vm = this.vm;
+     try{
+       if(this.computed){
+         // 这里调用计算属性computed 里的get方法（或函数） 
+         value = this.getter.call(vm,vm);
+       }else{
+         // 这里会调用 get 方法，将订阅者添加到 订阅容器中
+         value = this.getDataVal();
+       }
+     }catch(e){
+       // 错误处理
+     }finally{
+      Dep.target = null;
+     }
 
      return value;
   }
@@ -104,6 +154,36 @@ class Watcher{
     return valAry.reduce((prev,next)=>{
        return prev[next]
     },this.vm.$data)
+  }
+
+  // computed 使用到的方法
+  depend(){
+    if(this.dep && Dep.target){
+      this.dep.depend()
+    }
+  }
+
+  evalvate(){
+    // dirty 表示脏数据 
+    // 来控制是否重新求值
+    // 这就是计算属性中的缓存概念
+
+    if(this.diryt){
+      this.value = this.getVal();
+      this.dirty = false;
+    }
+
+    return this.value;
+  }
+
+  addDep(dep){
+    this.dep.addSub(dep);
+
+   // 绕到了 Observer 中，将当前 watcher（可能为ComputedWatcher 也可能为DataWatcher） 
+   // 添加到了
+   // Observer 中的 dep 中
+    dep.addSub(this);
+
   }
 }
 
@@ -116,9 +196,20 @@ const CompileUtil = {
    RegText:/\{\{([^}]+)\}\}/g,
    getVal(vm,expr){
      const valAry = expr.split(".");
-     return valAry.reduce((prev,next)=>{
+      let value = valAry.reduce((prev,next)=>{
         return prev[next]
      },vm.$data)
+
+     console.log(444,vm)
+     console.log(444,expr)
+     console.log(444,vm[expr])
+     console.log(444,"-------------")
+     if(value === undefined && typeof vm[expr] === 'function'){
+     
+     }
+
+
+     return value;
    },
    setVal(vm,expr,val){
     const valAry = expr.split(".");
@@ -132,7 +223,6 @@ const CompileUtil = {
   //处理模板 {{}} 数据
    text(vm,node,exper){ // 编译text
      const val = exper.replace(this.RegText,(...arg)=>{
-
           // 创建观察者
           new Watcher(vm,arg[1],()=>{
               const val = exper.replace(this.RegText,(...arg)=>{
@@ -152,7 +242,6 @@ const CompileUtil = {
    // 处理v-model数据
    model(vm,node,exper){
       const val = this.getVal(vm,exper);
-      
       // 创建订阅者
       new Watcher(vm,exper,()=>{
         this.updater.modelUpdater(node,this.getVal(vm,exper))
@@ -179,8 +268,6 @@ const CompileUtil = {
      }
    }
 }
-
-
 
 // 解析器Complie
 class Complie{
@@ -247,26 +334,6 @@ class Complie{
      return attr.indexOf("v-") === 0;
   }
 
-  // 处理模板 {{}} 数据
-  compileText(node,key){
-     const text = this.vm.$data[key];
-
-     // 初始化视图
-     this.updateView(node,text);
-
-     // 创建订阅者 并绑定回调函数
-     new Watcher(this.vm,key,(value)=>{
-       this.updateView(node,value)
-     })
-  }
-
-  // 更新视图
-  updateView(node,value){
-    console.log(111,node.textContent)
-    // node.textContent = typeof value === 'undefined' ? '' : value;
-  }
- 
-
   // 判断是否为文本节点textNode
   isTextNode(node){
    return node.nodeType === 3;
@@ -285,9 +352,68 @@ class Complie{
 
 
 class Computed{
+  
+  constructor(vm,computed){
+    this.vm = vm;
 
-  init(){
-    
+    this.init(vm,computed);
+  }
+
+  init(vm,computed){
+    // 创建一个watchers 对象 用来存储 watcher 订阅者
+    const watchers = this._computedWatchers = Object.create(null);
+
+    for(const key in computed){
+       const userDef = computed[key];
+       
+       // 设置 getter
+       const getter = typeof userDef === 'function' ? userDef : userDef.get;
+
+       // 为每一个computed 生成一个 watcher 订阅者（computedWatcher）
+       watchers[key] = new Watcher(vm,null,()=>{},{
+         computed: true,
+         dirty: true, // 控制读取值
+         layz: true,
+         getter, 
+       });
+
+       // 判断 computed 中的key 是否与 data 中的key冲突
+       // 如果冲突 报错（这里省略了报错处理）
+       if(!(key in vm)){
+         this.define(key,userDef)
+       }
+    }
+  }
+
+  // 这个主要作用是将 computed 属性添加到 Vue 实例上
+  define(key,userDef){
+     const sharedPropertyDefinition = {
+        enumerable: true,
+        configurable: true
+      };
+
+      // 判断computed 值 是函数 还是 对象
+     if(typeof userDef === 'function'){
+       sharedPropertyDefinition.get = this.createComputedGetter(key);
+     }else{
+      sharedPropertyDefinition.get = this.createComputedGetter(key);;
+      sharedPropertyDefinition.set = userDef.set;
+     }
+
+    // 将属性添加到 Vue 实例上
+     Object.defineProperty(this.vm, key, sharedPropertyDefinition)
+
+  }
+
+  createComputedGetter(key){
+    return ()=>{
+      const watcher = this._computedWatchers && this._computedWatchers[key];
+      if(watcher){
+         watcher.evalvate(); //
+         watcher.depend(); // 将wather 添加到 dep中
+         return watcher.value;
+      }
+    }
   }
 }
 
@@ -315,23 +441,30 @@ class NVue{
     // 初始化数据
     this.initState()
 
-    // 代理数据到vue实例上
-    this.proxyData(this.$data)
-
     // 渲染页面
     this.$el = document.querySelector(this.option.el);
-    new Complie(this,this.$el)
+    new Complie(this,this.$el);
+
   }
 
   // 初始化数据
   initState(){
     this.initData();
+    this.initComputed();
+
   }
 
   // 初始化data数据
   initData(){
     const Obs = new Observer();
     Obs.init(this.$data)
+    // 代理数据到vue实例上
+    this.proxyData(this.$data)
+  }
+
+  // 初始化 Computed数据
+  initComputed(){
+     const computed = new Computed(this,this.option.computed);
   }
   
   /**
