@@ -1,17 +1,13 @@
 
 // *************************订阅容器Dep (订阅观察者中的调度中心)***********************************
 
-const utils = {
-  targetStack:[], // watch站
-  pushTarget(){},
-  popTarget(){},
-}
 // 实现订阅容器Dep，存储订阅者
 
 class Dep{
   static target = null;
   constructor(){
     this.subs = []
+
   }
 
   addSub(sub){ // 添加订阅者
@@ -32,7 +28,19 @@ class Dep{
   }
 }
 
-
+// *************************公共方法*************************
+const Utils = {
+  targetStack:[], // watch站
+  pushTarget(watcher){
+     this.targetStack.push(watcher);
+     Dep.target = watcher;
+  },
+  popTarget(){
+    if(this.targetStack.length > 0)
+     this.targetStack.pop();
+     Dep.target = this.targetStack[this.targetStack.length - 1] || null;
+  },
+}
 
 // *************************观察者 Observer***********************************
 
@@ -61,14 +69,12 @@ class Observer{
       set(newValue){
         // 新值和旧值是否相等
         if(val === newValue) return;
-
         val = newValue;
         dep.notify(); // 通知订阅者，数据有变化
 
       },
       get(){
-        // Dep.target && dep.addSub(Dep.target);
-        Dep.target && dep.depend();
+        dep.depend();
         return val;
       }
      
@@ -83,7 +89,7 @@ class Observer{
 
 class Watcher{
 
-  constructor(vm,expr,callback,computedOptions){
+  constructor(vm,expr,callback,options){
     this.vm = vm;
     this.expr = expr;
     this.callback = callback;
@@ -91,8 +97,8 @@ class Watcher{
     this.value = null;
     this.dep = null;
 
-    if(computedOptions){
-      const {computed,dirty,layz,getter} = computedOptions;
+    if(options){
+      const {computed,dirty,layz,getter} = options;
       this.computed = !!computed; 
       this.dirty = !!dirty;
       this.dirty = !!layz;
@@ -111,9 +117,16 @@ class Watcher{
   update(){ // 更新函数
     if(this.computed){
        if(this.dep.subs.length === 0){ // 没有订阅者
-         this.dirty = true;
+          this.dirty = true;
        }else{
-         
+          // computedWatcher 里的 订阅者
+          const newValue = this.getComputedVal();
+
+          if(newValue !== this.value){
+            this.value = newValue;
+            this.dirty = true;
+            this.dep.notify();
+          }
        }
     }else{
       this.run();
@@ -129,21 +142,21 @@ class Watcher{
     }
   }
   getVal(){
-     Dep.target = this;
+     Utils.pushTarget(this);
      let value;
-     const vm = this.vm;
      try{
        if(this.computed){
          // 这里调用计算属性computed 里的get方法（或函数） 
-         value = this.getter.call(vm,vm);
+         value = this.getComputedVal();
        }else{
          // 这里会调用 get 方法，将订阅者添加到 订阅容器中
          value = this.getDataVal();
+
        }
      }catch(e){
-       // 错误处理
+        // 错误处理
      }finally{
-      Dep.target = null;
+        Utils.popTarget(this);
      }
 
      return value;
@@ -153,13 +166,18 @@ class Watcher{
     const valAry = this.expr.split(".");
     return valAry.reduce((prev,next)=>{
        return prev[next]
-    },this.vm.$data)
+    },this.vm)
   }
-
+  // 获取computed 的值
+  getComputedVal(){
+    if(this.getter){
+      return this.getter.call(this.vm,this.vm);
+    }
+  }
   // computed 使用到的方法
   depend(){
     if(this.dep && Dep.target){
-      this.dep.depend()
+      this.dep.depend(true)
     }
   }
 
@@ -167,23 +185,15 @@ class Watcher{
     // dirty 表示脏数据 
     // 来控制是否重新求值
     // 这就是计算属性中的缓存概念
-
-    if(this.diryt){
+    if(this.dirty){
       this.value = this.getVal();
       this.dirty = false;
     }
-
     return this.value;
   }
 
-  addDep(dep){
-    this.dep.addSub(dep);
-
-   // 绕到了 Observer 中，将当前 watcher（可能为ComputedWatcher 也可能为DataWatcher） 
-   // 添加到了
-   // Observer 中的 dep 中
+  addDep(dep){ // dep 为 Observe 中的订阅器容器dep
     dep.addSub(this);
-
   }
 }
 
@@ -195,21 +205,10 @@ class Watcher{
 const CompileUtil = {
    RegText:/\{\{([^}]+)\}\}/g,
    getVal(vm,expr){
-     const valAry = expr.split(".");
-      let value = valAry.reduce((prev,next)=>{
-        return prev[next]
-     },vm.$data)
-
-     console.log(444,vm)
-     console.log(444,expr)
-     console.log(444,vm[expr])
-     console.log(444,"-------------")
-     if(value === undefined && typeof vm[expr] === 'function'){
-     
-     }
-
-
-     return value;
+      const valAry = expr.split(".");
+      return valAry.reduce((prev,next)=>{
+          return prev[next]
+      },vm)
    },
    setVal(vm,expr,val){
     const valAry = expr.split(".");
@@ -218,12 +217,12 @@ const CompileUtil = {
         prev[next] = val;
       }
       return prev[next]
-    },vm.$data)
+    },vm)
    },
   //处理模板 {{}} 数据
    text(vm,node,exper){ // 编译text
-     const val = exper.replace(this.RegText,(...arg)=>{
-          // 创建观察者
+      const val = exper.replace(this.RegText,(...arg)=>{
+          // 创建订阅者 渲染Watcher renderWatcheer
           new Watcher(vm,arg[1],()=>{
               const val = exper.replace(this.RegText,(...arg)=>{
                 return this.getVal(vm,arg[1]);
@@ -254,6 +253,7 @@ const CompileUtil = {
      
      node.addEventListener("input",(e)=>{
        const value = e.target.value;
+
        this.setVal(vm,exper,value)
        
      })
@@ -383,6 +383,7 @@ class Computed{
          this.define(key,userDef)
        }
     }
+
   }
 
   // 这个主要作用是将 computed 属性添加到 Vue 实例上
@@ -401,7 +402,7 @@ class Computed{
      }
 
     // 将属性添加到 Vue 实例上
-     Object.defineProperty(this.vm, key, sharedPropertyDefinition)
+     Object.defineProperty(this.vm, key, sharedPropertyDefinition);
 
   }
 
@@ -409,8 +410,8 @@ class Computed{
     return ()=>{
       const watcher = this._computedWatchers && this._computedWatchers[key];
       if(watcher){
-         watcher.evalvate(); //
          watcher.depend(); // 将wather 添加到 dep中
+         watcher.evalvate(); //
          return watcher.value;
       }
     }
@@ -464,7 +465,7 @@ class NVue{
 
   // 初始化 Computed数据
   initComputed(){
-     const computed = new Computed(this,this.option.computed);
+     new Computed(this,this.option.computed);
   }
   
   /**

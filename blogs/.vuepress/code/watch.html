@@ -12,14 +12,13 @@
 <body>
     <div id="main">
         <input v-model="a" type="text">
-        <h1>hello {{a}}</h1>
-         <h1>hello {{a}} {{obj.b}}</h1>
+        <h1>hello {{a}} {{obj.b}}</h1>
         <h1>Computed: {{com}}</h1>
     </div>
 </body>
 
 
-<script src="./computed.js"></script>
+<script src="./watch.js"></script>
 
 <script>
     
@@ -28,7 +27,6 @@
     data(){
       return {
         a:"小明",
-        c:121,
         obj:{
           b:"小红",
         }
@@ -36,7 +34,7 @@
     },
     computed:{
       com(){
-        return this.a + " 1111" + this.obj.b;
+        return this.a + " " + this.obj.b;
       }
     }
   })
@@ -44,7 +42,7 @@
   console.log(vueObj)
 
   setTimeout(()=>{
-    vueObj.a = "world"
+    vueObj.obj.b = "1111"
   },2000)
 
 </script>
