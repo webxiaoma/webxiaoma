@@ -38,7 +38,7 @@ export default ({
   Vue.mixin(mixin)
 
   // 初始化页面环境
-  try{
+  try{ 
     import("./utils/index.js").then(utils=>{
         utils.uniappBack(router);
         utils.electronInit(Vue);

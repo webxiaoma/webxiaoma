@@ -42,7 +42,10 @@ sidebarDepth: 2
 <NavItem>
  <NavCard title="腾讯文档" jumpUrl="https://docs.qq.com/" logo="https://docs.idqqimg.com/tim/docs/desktop/favicon.ico" des="腾讯文档,在线编辑,办公文档,协同编辑,多人协作" />
  <NavCard title="Gmail" jumpUrl="https://mail.google.com/" logo="/gmail.ico" des="Google邮箱网页版。" />
+ <NavCard title="亿图" jumpUrl="https://www.edrawmax.cn/online/zh/" logo="https://www.edrawmax.cn/favicon.ico" des="一个绘制结构的的在线工具" />
 </NavItem>
+
+
 
 ## 工具类导航
 

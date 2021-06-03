@@ -18,3 +18,7 @@ meta:
 
 ## 实现
 
+
+
+
+- [vue源码解析之watch原理](https://juejin.cn/post/6877469665539391495)

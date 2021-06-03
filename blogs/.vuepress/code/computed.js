@@ -117,12 +117,12 @@ class Watcher{
   update(){ // 更新函数
     if(this.computed){
        if(this.dep.subs.length === 0){ // 没有订阅者
-          this.dirty = true;
+          this.dirty = true; // 初始化 dirty 为 true
        }else{
           // computedWatcher 里的 订阅者
           const newValue = this.getComputedVal();
 
-          if(newValue !== this.value){
+          if(newValue !== this.value){ // 判断值是否变化
             this.value = newValue;
             this.dirty = true;
             this.dep.notify();

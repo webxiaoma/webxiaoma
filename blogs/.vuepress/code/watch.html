@@ -17,7 +17,6 @@
     </div>
 </body>
 
-
 <script src="./watch.js"></script>
 
 <script>
@@ -35,6 +34,11 @@
     computed:{
       com(){
         return this.a + " " + this.obj.b;
+      } 
+    },
+    watch:{
+      a(newVal,oldVal){
+        console.log(1111,newVal,oldVal)
       }
     }
   })
