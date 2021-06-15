@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-  <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="4">
+  <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="4"  v-if="!isHide">
       <div class='cardWrapper'>
         <a  target="_blank" class="aFlag" @click="jump(jumpUrl)">
           <div class="card" :title="des">
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 const {base} = require("../../config");
 import {urlJump} from '@theme/util/electron';
 
@@ -27,6 +29,9 @@ export default {
   name: 'NavCard',
   components: {},
 
+  computed:{
+     ...mapState(["isLogin"])
+  },
   props:{
     title:{
       type: String,
@@ -44,6 +49,10 @@ export default {
       require: true,
       type: String,
     },
+    login:{
+      type: Boolean,
+      default: false
+    }
   },
 
   data () {
@@ -51,7 +60,8 @@ export default {
        logoUrl:"",
        baseImgUrl:`${base}img/website/`,
        className:"bgColor1",
-       logoWord:""
+       logoWord:"",
+       isHide: false,
     };
   },
 
@@ -69,6 +79,12 @@ export default {
        this.className = `bgColor${index}`;
        this.logoWord = this.title[0];
     }
+ 
+
+    if(this.login && !this.isLogin){
+      this.isHide = true;
+    }
+
 
   },
   methods: {
