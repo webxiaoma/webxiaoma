@@ -2,92 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        
-    </style>
 </head>
+<style>
+   
+</style>
 <body>
-    <div class="divWrap">
-        <div class="content">
-            adafd
-        </div>
+    <div class="main">
+        <button onclick="test()">点击</button>
     </div>
-
-    <script>
-        console.log(this)
-        
-        function a(){
-            console.log(this)
-        }
-        a()
-        var obj = {
-            a:1,
-            f:function(){
-                console.log(this)
-            },
-            fun(){
-                console.log(this)
-            },
-            b:()=>{
-                console.log(this)
-            }
-        }
-
-        obj.f()
-        obj.fun()
-        obj.b()
-
-        var c = obj.f
-
-        c()
-
-       
-        // document.querySelector("divWrap").onClick = function(){
-        //     console.log(this)
-        // }
-
-
-       function func(){
-           this.name = "1111"
-       }
-
-       func.prototype = {
-           constructor:func,
-           name:"2222222",
-           fun:function(){
-               console.log(this.name)
-           }
-       }
-
-       var newFunc = new func()
-       
-       newFunc.fun()
-       func.prototype.fun()
-
-      console.dir(newFunc)
-    
-
-      
-    //   newFunc.fun()
-     
-      
-      var objs = {
-          fun:function(){
-              "use strict"
-              console.log(this); 
-
-              (fu  nction(){
-                  console.log(this)
-              })()
-          }
-      }
-
-      objs.fun()
-
-
-    </script>
 </body>
+
+
+<script>
+    function test(){
+        console.log(111111)
+        var features = "height=500, width=800, top=20%, left=20%, toolbar=no, menubar=no,scrollbars=no,resizable=no, location=no, status=no";
+        var myWindow = window.open("","",features);
+        var htm = "<form></form>";
+        myWindow.document.write(htm);
+
+        console.log(myWindow.document.body)
+        myWindow.close() 
+    }
+   
+
+
+</script>
 </html>

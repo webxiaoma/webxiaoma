@@ -1,22 +1,12 @@
 ---
-sidebarDepth: 2
 meta:
-  - name: keywordsv
-    content: 数据库 MongoDB MySql sql
+  - name: keywords
+    content: 马新想 小马学习 编程学习 前端 面试 面试题
   - name: description
-    content: 本文章主要记录数据库的一些常见网站以及博客。
+    content: 本章为小马学习专栏—— 前端面试题
 ---
 
 
-# 数据库常见文章
+# Java系列
 
-
-## MongoDB 数据库
-
-- [MongoDB 官网](https://www.mongodb.com/)
-- [MongoDB 入门教程](https://www.yiibai.com/mongodb/mongodb_quick_guide.html)
-- [MongoDB 菜鸟教程](http://www.runoob.com/mongodb/mongodb-tutorial.html)
-
-
-## MySql 数据库
 
