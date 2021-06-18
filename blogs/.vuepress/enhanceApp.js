@@ -36,9 +36,6 @@ export default ({
  
   Vue.prototype.$message = Message;
   Vue.mixin(mixin)
-
-  console.log(Vue)
-
   // 初始化页面环境
   try{ 
     import("./utils/index.js").then(utils=>{
