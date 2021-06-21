@@ -13,7 +13,6 @@
     <div id="main">
         <input v-model="a" type="text">
         <h1>hello {{a}} {{obj.b}}</h1>
-        <h1>Computed: {{com}}</h1>
     </div>
 </body>
 
@@ -32,11 +31,6 @@
         }
       }
     },
-    computed:{
-      com(){
-        return this.a + " " + this.obj.b;
-      }
-    }
   })
 
   console.log(vueObj)
