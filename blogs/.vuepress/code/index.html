@@ -20,6 +20,19 @@
 <script src="./index.js"></script>
 
 <script>
+
+
+  let main = document.getElementById("main");
+
+  console.log(main)
+  const fragment = document.createDocumentFragment();
+  let child = main.firstChild;
+  while(child){
+    console.log(child)
+    fragment.appendChild(child);
+    child = main.firstChild;
+  }
+  console.log(fragment)
     
   const vueObj = new NVue({
     el:"#main",

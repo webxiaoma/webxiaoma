@@ -177,7 +177,7 @@ class Dep{
 
 ### 解析器Compile
 
-解析器`Complie`得主要作用就是解析`Vue`模板，连接视图和数据，为订阅者`Watcher`和观察者 `Observer`搭建一个桥梁。
+解析器`Complie`的主要作用就是解析`Vue`模板，连接视图和数据，为订阅者`Watcher`和观察者 `Observer`搭建一个桥梁。
 
 ```js
 class Complie{
@@ -279,11 +279,11 @@ class Complie{
 
 `Compile`初识化时，将遍历`DOM`节点，使用`createDocumentFragment`创建节点碎片。然后我们通过`complieEle`方法递归遍历元素，将元素中得指令，以及`{{}}`进行解析。解析到`Vue`得响应式数据时创建订阅者`Watcher`，并传入响应得更新回调函数。
 
-另外我们将常用得解析方法封装到了`CompileUtil`中，代码入下：
+另外我们将常用得解析方法封装到了`CompileUtil`中，代码如下：
 
 
 ```js
-/ 解析器常用方法
+// 解析器常用方法
 const CompileUtil = {
    RegText:/\{\{([^}]+)\}\}/g,
    getVal(vm,expr){

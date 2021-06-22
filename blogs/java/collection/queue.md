@@ -21,7 +21,7 @@ meta:
 
 在`java`中`Queue`继承自`Collection`接口，并且`Deque`, `LinkedList`, `PriorityQueue`, `BlockingQueue` 等类都实现了它。`Queue`常用来存放等待处理元素的集合，如：`缓冲`，`并发访问`。
 
-下来来自[]()的`Queue`结构图
+下面是`Queue`的结构图
 
 <images src="/java/queue.png" width="100%"/>
 
