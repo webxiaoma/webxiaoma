@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>网络编程-Socket | 小马过河</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/docs/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/docs/manifest.json">
+    <link rel="apple-touch-icon" href="/docs/img/mxx-152-152.png">
+    <meta name="description" content="本章为小马学习专栏——JAVA网络编程Socket连接">
+    <meta name="keywords" content="马新想 小马学习 网络编程 Socket java 套接字">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/docs/assets/css/0.styles.45f8f26a.css" as="style"><link rel="preload" href="/docs/assets/js/app.9f6559f4.js" as="script"><link rel="preload" href="/docs/assets/js/2.ab4f6248.js" as="script"><link rel="preload" href="/docs/assets/js/60.ba5e61bb.js" as="script"><link rel="prefetch" href="/docs/assets/js/10.586b05b4.js"><link rel="prefetch" href="/docs/assets/js/100.883160ff.js"><link rel="prefetch" href="/docs/assets/js/11.28ad280e.js"><link rel="prefetch" href="/docs/assets/js/12.5e108f27.js"><link rel="prefetch" href="/docs/assets/js/13.f76f7367.js"><link rel="prefetch" href="/docs/assets/js/14.696cb074.js"><link rel="prefetch" href="/docs/assets/js/15.a67d32e7.js"><link rel="prefetch" href="/docs/assets/js/16.ab1f0225.js"><link rel="prefetch" href="/docs/assets/js/17.867a6e02.js"><link rel="prefetch" href="/docs/assets/js/18.c1e6aaae.js"><link rel="prefetch" href="/docs/assets/js/19.78506879.js"><link rel="prefetch" href="/docs/assets/js/20.eeef5705.js"><link rel="prefetch" href="/docs/assets/js/21.8d3b292f.js"><link rel="prefetch" href="/docs/assets/js/22.15871bf0.js"><link rel="prefetch" href="/docs/assets/js/23.8acdd701.js"><link rel="prefetch" href="/docs/assets/js/24.ec52b916.js"><link rel="prefetch" href="/docs/assets/js/25.52efda00.js"><link rel="prefetch" href="/docs/assets/js/26.3a9285ef.js"><link rel="prefetch" href="/docs/assets/js/27.845ac90d.js"><link rel="prefetch" href="/docs/assets/js/28.933cc2ac.js"><link rel="prefetch" href="/docs/assets/js/29.02ffe809.js"><link rel="prefetch" href="/docs/assets/js/3.20f61ee0.js"><link rel="prefetch" href="/docs/assets/js/30.75e17904.js"><link rel="prefetch" href="/docs/assets/js/31.60cf465f.js"><link rel="prefetch" href="/docs/assets/js/32.f02183b5.js"><link rel="prefetch" href="/docs/assets/js/33.964fc68b.js"><link rel="prefetch" href="/docs/assets/js/34.eb3b5550.js"><link rel="prefetch" href="/docs/assets/js/35.602fb0b0.js"><link rel="prefetch" href="/docs/assets/js/36.005167ae.js"><link rel="prefetch" href="/docs/assets/js/37.bad29575.js"><link rel="prefetch" href="/docs/assets/js/38.f0fe1f7d.js"><link rel="prefetch" href="/docs/assets/js/39.52854f01.js"><link rel="prefetch" href="/docs/assets/js/4.1694957e.js"><link rel="prefetch" href="/docs/assets/js/40.9cb61cec.js"><link rel="prefetch" href="/docs/assets/js/41.78d187f8.js"><link rel="prefetch" href="/docs/assets/js/42.c0bcb6f9.js"><link rel="prefetch" href="/docs/assets/js/43.4fe36227.js"><link rel="prefetch" href="/docs/assets/js/44.56c90dc7.js"><link rel="prefetch" href="/docs/assets/js/45.446117a0.js"><link rel="prefetch" href="/docs/assets/js/46.187bd8ed.js"><link rel="prefetch" href="/docs/assets/js/47.95ce5341.js"><link rel="prefetch" href="/docs/assets/js/48.68800af6.js"><link rel="prefetch" href="/docs/assets/js/49.9fad902e.js"><link rel="prefetch" href="/docs/assets/js/5.0682504a.js"><link rel="prefetch" href="/docs/assets/js/50.5f149fd4.js"><link rel="prefetch" href="/docs/assets/js/51.887a1d16.js"><link rel="prefetch" href="/docs/assets/js/52.bbc8597c.js"><link rel="prefetch" href="/docs/assets/js/53.593acd98.js"><link rel="prefetch" href="/docs/assets/js/54.50e30a6b.js"><link rel="prefetch" href="/docs/assets/js/55.2769a32b.js"><link rel="prefetch" href="/docs/assets/js/56.1ed6c70c.js"><link rel="prefetch" href="/docs/assets/js/57.be9bd124.js"><link rel="prefetch" href="/docs/assets/js/58.8fa49616.js"><link rel="prefetch" href="/docs/assets/js/59.575d67bd.js"><link rel="prefetch" href="/docs/assets/js/6.7c723d62.js"><link rel="prefetch" href="/docs/assets/js/61.8cc3afa9.js"><link rel="prefetch" href="/docs/assets/js/62.8b1eb75f.js"><link rel="prefetch" href="/docs/assets/js/63.6f2daaa1.js"><link rel="prefetch" href="/docs/assets/js/64.6780b1fb.js"><link rel="prefetch" href="/docs/assets/js/65.4b09b3d3.js"><link rel="prefetch" href="/docs/assets/js/66.a7293d63.js"><link rel="prefetch" href="/docs/assets/js/67.e65fb425.js"><link rel="prefetch" href="/docs/assets/js/68.10ea1213.js"><link rel="prefetch" href="/docs/assets/js/69.dde7b631.js"><link rel="prefetch" href="/docs/assets/js/7.541920c5.js"><link rel="prefetch" href="/docs/assets/js/70.ee9481ed.js"><link rel="prefetch" href="/docs/assets/js/71.ad7139bc.js"><link rel="prefetch" href="/docs/assets/js/72.5849c130.js"><link rel="prefetch" href="/docs/assets/js/73.05bba99e.js"><link rel="prefetch" href="/docs/assets/js/74.7a5a588d.js"><link rel="prefetch" href="/docs/assets/js/75.0ec63061.js"><link rel="prefetch" href="/docs/assets/js/76.e1ebc1c0.js"><link rel="prefetch" href="/docs/assets/js/77.2faca959.js"><link rel="prefetch" href="/docs/assets/js/78.4b61b67a.js"><link rel="prefetch" href="/docs/assets/js/79.f367d6bd.js"><link rel="prefetch" href="/docs/assets/js/8.a50175f7.js"><link rel="prefetch" href="/docs/assets/js/80.4ff7a790.js"><link rel="prefetch" href="/docs/assets/js/81.d958616a.js"><link rel="prefetch" href="/docs/assets/js/82.6636767e.js"><link rel="prefetch" href="/docs/assets/js/83.e774018d.js"><link rel="prefetch" href="/docs/assets/js/84.065c9587.js"><link rel="prefetch" href="/docs/assets/js/85.d817fdf7.js"><link rel="prefetch" href="/docs/assets/js/86.73346b58.js"><link rel="prefetch" href="/docs/assets/js/87.c46e0bb8.js"><link rel="prefetch" href="/docs/assets/js/88.eb4fe249.js"><link rel="prefetch" href="/docs/assets/js/89.82922d71.js"><link rel="prefetch" href="/docs/assets/js/9.dd462c7b.js"><link rel="prefetch" href="/docs/assets/js/90.c299b199.js"><link rel="prefetch" href="/docs/assets/js/91.c91b2462.js"><link rel="prefetch" href="/docs/assets/js/92.4a960d81.js"><link rel="prefetch" href="/docs/assets/js/93.844e24c7.js"><link rel="prefetch" href="/docs/assets/js/94.8b1cd17f.js"><link rel="prefetch" href="/docs/assets/js/95.9b059a70.js"><link rel="prefetch" href="/docs/assets/js/96.990a2ee9.js"><link rel="prefetch" href="/docs/assets/js/97.56276b73.js"><link rel="prefetch" href="/docs/assets/js/98.6a9863cd.js"><link rel="prefetch" href="/docs/assets/js/99.3e17560c.js">
+    <link rel="stylesheet" href="/docs/assets/css/0.styles.45f8f26a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/docs/" class="home-link router-link-active"><img src="/docs/img/manong.jpg" alt="小马过河" class="logo"> <span class="site-name can-hide">小马过河</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><!----> <a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/docs/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/docs/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/docs/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/docs/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/docs/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/docs/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/docs/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/docs/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/docs/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Maven
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/tools/maven/" class="nav-link">
+  初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/tools/tomcat/" class="nav-link">
+  初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          英语读音
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/english/pronunciation/phonogram.html" class="nav-link">
+  音标
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语单词
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/docs/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/docs/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav> <div class="loginItem"><div class="login" data-v-0028d8de><div class="loginBtn" data-v-0028d8de>登录</div> <!----></div></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><!----> <a href="/docs/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/docs/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/docs/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/docs/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/docs/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/docs/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/docs/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/docs/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/docs/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/docs/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/docs/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Maven
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/tools/maven/" class="nav-link">
+  初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/tools/tomcat/" class="nav-link">
+  初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          英语读音
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/english/pronunciation/phonogram.html" class="nav-link">
+  音标
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语单词
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/docs/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/docs/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/docs/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 基础系列</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 集合</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 线程</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java IO</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 数据库</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Java 网络编程</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/java/network/ip.html" class="sidebar-link">网络编程-IP端口操作</a></li><li><a href="/docs/java/network/socket.html" aria-current="page" class="active sidebar-link">网络编程-Socket</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java 常用包</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="网络编程-socket"><a href="#网络编程-socket" class="header-anchor">#</a> 网络编程-Socket</h1> <p></p><div class="table-of-contents"><ul><li><a href="#前言">前言</a></li><li><a href="#serversocket-类">ServerSocket 类</a><ul><li><a href="#常见方法">常见方法</a></li><li><a href="#创建服务器">创建服务器</a></li></ul></li><li><a href="#socket-类">Socket 类</a><ul><li><a href="#常见方法">常见方法</a></li><li><a href="#创建客户端">创建客户端</a></li></ul></li><li><a href="#进行通信">进行通信</a><ul><li><a href="#传输数字">传输数字</a></li><li><a href="#传输字符串">传输字符串</a></li><li><a href="#传输对象数据">传输对象数据</a></li></ul></li></ul></div><p></p> <p>🐴</p> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p><code>Java</code>网络程序是利用<code>Socket</code>（套接字）编写得，其中又分为服务器程序(<code>ServerSocket</code>类)和客户端程序(<code>Socket</code>类)。一般这两者得通信步骤如下：</p> <ol><li>服务端创建一个<code>ServerSocket</code>对象，并在指定端口进行监听，等待客户端发来得连接。</li> <li>客户端创建一个<code>Socket</code>对象，并根据服务端启动得<code>ip</code>和<code>端口</code>,发送一个请求，与服务器进行连接。</li> <li>建立连接后，服务端会在创建一个新得<code>Socket</code>对象，使用该对象与客户端进行通信。</li></ol> <h2 id="serversocket-类"><a href="#serversocket-类" class="header-anchor">#</a> ServerSocket 类</h2> <p><code>ServerSocket</code>类是服务器端，服务器端套接字一次可以与一个套接字连接，多个客户端请求会被放到请求队列中。默认请求得队列大小为<code>50</code>，超出后则被拒绝请求。</p> <p><code>ServerSocket(int port,int backlog,InetAddress address)</code>这是全部参数得构造方法</p> <ul><li><code>port</code>指要绑定得端口</li> <li><code>backlog</code> 侦听 <code>backlog</code>，可省略</li> <li><code>address</code> 要绑定得本地<code>ip</code>,可省略</li></ul> <p><strong>需要注意得是：</strong> 创建<code>ServerSocket</code>可能会抛<code>IOException</code>;</p> <h3 id="常见方法"><a href="#常见方法" class="header-anchor">#</a> 常见方法</h3> <p>常见得<code>ServerSocket</code>类方法如下</p> <table><thead><tr><th style="text-align:left;">方法</th> <th style="text-align:left;">描述</th></tr></thead> <tbody><tr><td style="text-align:left;"><code>Server accept()</code></td> <td style="text-align:left;">监听并接收到此套接字的连接。</td></tr> <tr><td style="text-align:left;"><code>void bind(SocketAddress ads)</code></td> <td style="text-align:left;">将 <code>ServerSocket</code> 绑定到指定地址（IP 地址和端口号）</td></tr> <tr><td style="text-align:left;"><code>void close()</code></td> <td style="text-align:left;">关闭套接字。</td></tr> <tr><td style="text-align:left;"><code>InetAddress getInetAddress()</code></td> <td style="text-align:left;">返回此服务器套接字的本地地址。</td></tr> <tr><td style="text-align:left;"><code>int getLocalPort()</code></td> <td style="text-align:left;">返回此套接字监听的端口。</td></tr> <tr><td style="text-align:left;"><code>SocketAddress getLocalSocketAddress()</code></td> <td style="text-align:left;">返回此套接字绑定的端口地址，如果尚未绑定则返回 null</td></tr> <tr><td style="text-align:left;"><code>int getReceiveBufferSize()</code></td> <td style="text-align:left;">获取此 <code>ServerSocket</code> 的 <code>SO_RCVBUF</code> 选项的值，该值是从 <code>ServerSocket</code> 接收的套接字的建议缓冲区大小</td></tr></tbody></table> <h3 id="创建服务器"><a href="#创建服务器" class="header-anchor">#</a> 创建服务器</h3> <p>我们创建服务器，并使用<code>accept()</code>方法监听客户端发来得请求</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">ServerSocket</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">Socket</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> socketTest <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">try</span><span class="token punctuation">{</span>
+            <span class="token class-name">ServerSocket</span> sSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Socket</span> acp <span class="token operator">=</span> sSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 建立连接</span>
+
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;有连接过来&quot;</span> <span class="token operator">+</span> acp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            sSocket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            acp<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="socket-类"><a href="#socket-类" class="header-anchor">#</a> Socket 类</h2> <p><code>Socket</code>类是客户端的套接字，<code>Socket</code>套接字的构成方法如下：</p> <ul><li><code>Socket()</code> 无参构造方法。</li> <li><code>Socket(InetAddress address,int port)</code> 创建一个流套接字并将其连接到指定 IP 地址的指定端口号。</li> <li><code>Socket(InetAddress address,int port,InetAddress localAddress,int localPort)</code> 创建一个套接字并将其连接到指定远程地址上的指定远程端口。</li> <li><code>Socket(String host,int port)</code> 创建一个流套接字并将其连接到指定主机上的指定端口号。</li> <li><code>Socket(String host,int port,InetAddress localAddress,int localPort)</code> 创建一个套接字并将其连接到指定远程主机上的指定远程端口。</li></ul> <p>参数解释：</p> <ol><li><code>address</code> IP地址</li> <li><code>port</code> 端口</li> <li><code>host</code> 主机</li> <li><code>localAddress</code> 远程主机地址</li> <li><code>localPort</code> 远程端口</li></ol> <p><strong>需要注意得是：</strong> 创建<code>Socket</code>可能会抛<code>IOException</code>;</p> <h3 id="常见方法-2"><a href="#常见方法-2" class="header-anchor">#</a> 常见方法</h3> <p>常见得<code>Socket</code>类方法如下</p> <table><thead><tr><th style="text-align:left;">方法</th> <th style="text-align:left;">描述</th></tr></thead> <tbody><tr><td style="text-align:left;"><code>void bind(SocketAddress bindpoint)</code></td> <td style="text-align:left;">将套接字绑定到本地地址。</td></tr> <tr><td style="text-align:left;"><code>void close()</code></td> <td style="text-align:left;">关闭此套接字。</td></tr> <tr><td style="text-align:left;"><code>void connect(SocketAddress endpoint)</code></td> <td style="text-align:left;">将此套接字连接到服务器。</td></tr> <tr><td style="text-align:left;"><code>InetAddress getInetAddress()</code></td> <td style="text-align:left;">返回套接字的连接地址。</td></tr> <tr><td style="text-align:left;"><code>InetAddress getLocalAddress()</code></td> <td style="text-align:left;">获取套接字绑定的本地地址</td></tr> <tr><td style="text-align:left;"><code>InputStream getInputStream()</code></td> <td style="text-align:left;">返回此套接字的输入流。</td></tr> <tr><td style="text-align:left;"><code>OutputStream getOutputStream()</code></td> <td style="text-align:left;">返回此套接字的输出流</td></tr> <tr><td style="text-align:left;"><code>SocketAddress getLocalSocketAddress()</code></td> <td style="text-align:left;">返回此套接字绑定的端点地址，如果尚未绑定则返回 null。</td></tr> <tr><td style="text-align:left;"><code>SocketAddress getRemoteSocketAddress()</code></td> <td style="text-align:left;">返回此套接字的连接的端点地址，如果尚未连接则返回 null</td></tr> <tr><td style="text-align:left;"><code>int getLoacalPort()</code></td> <td style="text-align:left;">返回此套接字绑定的本地端口。</td></tr> <tr><td style="text-align:left;"><code>intgetPort()</code></td> <td style="text-align:left;">返回此套接字连接的远程端口。</td></tr></tbody></table> <h3 id="创建客户端"><a href="#创建客户端" class="header-anchor">#</a> 创建客户端</h3> <p>上面我们创建了服务器套接字，现在我们创建客户端套接字，并使用<code>connect()</code>方法发送简单的请求</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">IOException</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">Socket</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SocketClient</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">try</span><span class="token punctuation">{</span>
+            <span class="token comment">// 创建客户端套接字</span>
+            <span class="token class-name">Socket</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="进行通信"><a href="#进行通信" class="header-anchor">#</a> 进行通信</h2> <p>服务端和客户端建立连接后，就要进行通信。这里我们会用到输出流<code>OutputStream</code>以及输入流<code>InputStream</code></p> <h3 id="传输数字"><a href="#传输数字" class="header-anchor">#</a> 传输数字</h3> <p>客户端发送数字</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">try</span><span class="token punctuation">{</span>
+    <span class="token class-name">Socket</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 使用输出流</span>
+    <span class="token class-name">OutputStream</span> out <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    out<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 写入数据</span>
+    out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>服务端接收客户端传来的数字</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">try</span><span class="token punctuation">{</span>
+    <span class="token class-name">ServerSocket</span> sSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Socket</span> acp <span class="token operator">=</span> sSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 建立连接</span>
+
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;有连接过来&quot;</span> <span class="token operator">+</span> acp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 获取输入流</span>
+    <span class="token class-name">InputStream</span> is <span class="token operator">=</span> acp<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> message <span class="token operator">=</span> is<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;客户端发送过来的数据：&quot;</span> <span class="token operator">+</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    sSocket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    acp<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="传输字符串"><a href="#传输字符串" class="header-anchor">#</a> 传输字符串</h3> <p>传输字符串，这里我们用到了<code>DataOutputStream</code>流对象和<code>DataInputStream</code>流对象</p> <p>客户端传输字符串</p> <div class="language-java extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br></div><pre class="language-java"><code><span class="token keyword">try</span><span class="token punctuation">{</span>
+    <span class="token class-name">Socket</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">OutputStream</span> out <span class="token operator">=</span> s<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 创建 DataOutputStream 对象</span>
+    <span class="token class-name">DataOutputStream</span> dos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataOutputStream</span><span class="token punctuation">(</span>out<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    dos<span class="token punctuation">.</span><span class="token function">writeUTF</span><span class="token punctuation">(</span><span class="token string">&quot;这是一个字符串&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 使用writeUTF</span>
+
+    out<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    s<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>服务端接收客户端传来的字符串</p> <div class="language-java extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br></div><pre class="language-java"><code><span class="token keyword">try</span><span class="token punctuation">{</span>
+    <span class="token class-name">ServerSocket</span> sSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">Socket</span> acp <span class="token operator">=</span> sSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 建立连接</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;有连接过来&quot;</span> <span class="token operator">+</span> acp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token class-name">InputStream</span> is <span class="token operator">=</span> acp<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 创建 DataInputStream 将 is 写入该流中</span>
+    <span class="token class-name">DataInputStream</span> ds <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataInputStream</span><span class="token punctuation">(</span>is<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// 使用 readUTF 读取字符串</span>
+    <span class="token class-name">String</span> message <span class="token operator">=</span> ds<span class="token punctuation">.</span><span class="token function">readUTF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;客户端发送过来的数据：&quot;</span> <span class="token operator">+</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    sSocket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    acp<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="传输对象数据"><a href="#传输对象数据" class="header-anchor">#</a> 传输对象数据</h3> <p>传输对象数据，这里我们用到了<code>ObjectInputStream</code>流对象和<code>ObjectOutputStream</code>流对象，以及需要使用<code>Serializable</code>序列化</p> <p>比如我们需要传输的对象数据：</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">Serializable</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 需要传输的对象数据User</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token keyword">implements</span> <span class="token class-name">Serializable</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span>  name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>服务端接收对象数据</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">ServerSocket</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">Socket</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">try</span><span class="token punctuation">{</span>
+      <span class="token class-name">ServerSocket</span> sSocket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ServerSocket</span><span class="token punctuation">(</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Socket</span> acp <span class="token operator">=</span> sSocket<span class="token punctuation">.</span><span class="token function">accept</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 建立连接</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;有连接过来&quot;</span> <span class="token operator">+</span> acp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// 创建 ObjectInputStream 对象输入流</span>
+      <span class="token class-name">ObjectInputStream</span>  objInpS <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span>acp<span class="token punctuation">.</span><span class="token function">getInputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">//读取一个对象</span>
+      <span class="token class-name">Object</span> obj <span class="token operator">=</span> objInpS<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">User</span><span class="token punctuation">)</span>obj<span class="token punctuation">;</span> <span class="token comment">// 将对象转换为User 类型</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;客户端发过来的数据&quot;</span> <span class="token operator">+</span> user<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      sSocket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      acp<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      objInpS<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> <span class="token operator">|</span> <span class="token class-name">ClassNotFoundException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>客户端传输对象数据</p> <div class="language-java extra-class"><pre class="language-java"><code><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token operator">*</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>net<span class="token punctuation">.</span></span><span class="token class-name">Socket</span><span class="token punctuation">;</span>
+
+
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">try</span><span class="token punctuation">{</span>
+      <span class="token class-name">Socket</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Socket</span><span class="token punctuation">(</span><span class="token string">&quot;127.0.0.1&quot;</span><span class="token punctuation">,</span><span class="token number">8888</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+       <span class="token comment">// 创建 ObjectInputStream 对象输出流</span>
+      <span class="token class-name">ObjectOutputStream</span> os<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">getOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">User</span> user <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">User</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token comment">// 写入对象数据</span>
+      os<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      os<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      s<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      os<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">5/13/2021, 5:19:36 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/java/network/ip.html" class="prev">
+        网络编程-IP端口操作
+      </a></span> <span class="next"><a href="/docs/java/jar/">
+        Java常用包
+      </a>
+      →
+    </span></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>网络编程-Socket</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#前言" data-v-4100c7a9>前言</a></li><li class="title" data-v-4100c7a9><a href="#serversocket-类" data-v-4100c7a9>ServerSocket 类</a></li><li class="subTitle" data-v-4100c7a9><a href="#常见方法" data-v-4100c7a9>常见方法</a></li><li class="subTitle" data-v-4100c7a9><a href="#创建服务器" data-v-4100c7a9>创建服务器</a></li><li class="title" data-v-4100c7a9><a href="#socket-类" data-v-4100c7a9>Socket 类</a></li><li class="subTitle" data-v-4100c7a9><a href="#常见方法-2" data-v-4100c7a9>常见方法</a></li><li class="subTitle" data-v-4100c7a9><a href="#创建客户端" data-v-4100c7a9>创建客户端</a></li><li class="title" data-v-4100c7a9><a href="#进行通信" data-v-4100c7a9>进行通信</a></li><li class="subTitle" data-v-4100c7a9><a href="#传输数字" data-v-4100c7a9>传输数字</a></li><li class="subTitle" data-v-4100c7a9><a href="#传输字符串" data-v-4100c7a9>传输字符串</a></li><li class="subTitle" data-v-4100c7a9><a href="#传输对象数据" data-v-4100c7a9>传输对象数据</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/docs/assets/js/app.9f6559f4.js" defer></script><script src="/docs/assets/js/2.ab4f6248.js" defer></script><script src="/docs/assets/js/60.ba5e61bb.js" defer></script>
+  </body>
+</html>
