@@ -51,6 +51,8 @@ sidebarDepth: 2
 
 <NavItem>
  <NavCard login title="Panda" jumpUrl="https://www.pantavv.xyz/" logo="https://www.pantavv.xyz/favicon.ico" des="一个稳定的网络加速器。" />
+ <NavCard  title="向日葵" jumpUrl="https://sunlogin.oray.com/" logo="https://sunlogin.oray.com/favicon.ico" des="向日葵远程控制软件是一款免费的集远程控制电脑手机、远程桌面连接、远程开机、远程管理、支持内网穿透的一体化远程控制管理工具软件" />
+ <NavCard  title="NATAPP" jumpUrl="https://natapp.cn/" logo="https://cdn.natapp.cn/assets/favicon.ico?version=20190730" des="一个内网穿透工具" />
  <NavCard  title="视频处理" jumpUrl="https://www.aconvert.com/cn/video/" des="在线转换视频文件 - 将视频文件从一种格式转换为另一种格式，比如AVI到MP4，WEBM到MP4，MOV到MP4，MP4到MKV，WMV到MP4，MP4到GIF等。" />
 </NavItem>
 
