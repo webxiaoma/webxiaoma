@@ -28,7 +28,11 @@ sidebarDepth: 2
   <NavCard title="Tomcat教程" jumpUrl="https://www.w3cschool.cn/tomcat/" logo="https://7n.w3cschool.cn/statics/images/favicon.ico" des="W3CSchool 下的Tomcat系列教程网站" />
 </NavItem>
 
+## SpringBoot
 
+<NavItem>
+  <NavCard title="SpringBoot" jumpUrl="http://c.biancheng.net/view/4615.html" logo="http://c.biancheng.net/favicon.ico?v=1.6.59" des="一个SpringBoot基础教程" />
+</NavItem>
 
 ## 学习网站
 

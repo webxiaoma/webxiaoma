@@ -17,6 +17,8 @@ meta:
 
 `Vue2.x`已经用来好几年了，这里再次温习一下`Vue2.x`的响应式原理。
 
+- 下面全部代码：[访问这里](https://gitee.com/individual_event/blogs-code/tree/master/vue/vue2.x/mvvm)
+
 ## 原理
 
 `Vue2.x`响应式是使用了`Object.defineProperty`劫持数据 + [发布订阅者模式](/designMode/observer.html) 。
@@ -205,7 +207,7 @@ class Complie{
     return fragment;
   }
 
-  // 编译元素
+  // 递归编译元素
   complieEle(el){
      // 获取el 子元素集合
      const childNodesList = el.childNodes;
@@ -217,7 +219,8 @@ class Complie{
         if(this.isTextNode(node) && reg.test(text)){ // 文本节点
           CompileUtil.text(this.vm,node,text);
         }else if(this.isElementNode(node)){ // 元素节点
-          const attrs = node.attributes;
+          // 获取dom节点所有的属性
+          const attrs = node.attributes; 
           Array.from(attrs).forEach(attr=>{
             const attrName = attr.name;
             
@@ -287,6 +290,15 @@ class Complie{
 const CompileUtil = {
    RegText:/\{\{([^}]+)\}\}/g,
    getVal(vm,expr){
+     /**
+      * 得到data中对应的数据,exper 可能为 obj.a.b 形式
+      * 需要拿到data中的数据
+      * {
+      *   obj:{
+      *      a:{b:1}
+      *   }
+      * }
+      */
      const valAry = expr.split(".");
      return valAry.reduce((prev,next)=>{
         return prev[next]
@@ -304,7 +316,7 @@ const CompileUtil = {
   //处理模板 {{}} 数据
    text(vm,node,exper){ // 编译text
      const val = exper.replace(this.RegText,(...arg)=>{
-
+          // arg 为匹配的数据信息数组
           // 创建观察者
           new Watcher(vm,arg[1],()=>{
               const val = exper.replace(this.RegText,(...arg)=>{
@@ -354,12 +366,108 @@ const CompileUtil = {
 ```
 
 
+### Vue构造函数
+
+```js
+class NVue{
+  constructor(option){
+    const {data} =  option;
+    this.option = option;
+    this.$data = typeof data === 'object'?data:data();
+    this.$el = null;
+    this.init()
+
+    return this;
+  }
+  init(){
+
+    // 初始化数据
+    this.initState()
+
+    // 代理数据到vue实例上
+    this.proxyData(this.$data)
+
+    // 渲染页面
+    this.$el = document.querySelector(this.option.el);
+    new Complie(this,this.$el)
+  }
+
+  // 初始化数据
+  initState(){
+    this.initData();
+  }
+
+  // 初始化data数据
+  initData(){
+    const Obs = new Observer();
+    Obs.init(this.$data)
+  }
+  
+  /**
+   *@msg 代理，将数据绑定到Vue实例上 
+   */
+  proxyData(data){
+    Object.keys(data).forEach(key=>{
+      Object.defineProperty(this,key,{
+         enumerable: true, // 可以枚举
+         configurable: true, // 可以设置
+         set(newValue){
+           data[key] = newValue
+         },
+         get(){
+            return data[key] 
+         }
+      })
+    })
+  }
+}
+```
+
+### 使用
 
 
-## 优缺点
+```html
+<body>
+  <div id="main">
+      <input v-model="a" type="text">
+      <h1>hello {{a}} {{obj.b}}</h1>
+  </div>
+</body>
 
+<script src="./index.js"></script>
 
+<script>
+  let main = document.getElementById("main");
+    
+  const vueObj = new NVue({
+    el:"#main",
+    data(){
+      return {
+        a:"小明",
+        obj:{
+          b:"小红",
+        }
+      }
+    },
+  })
 
+  console.log(vueObj)
+  setTimeout(()=>{
+    vueObj.obj.b = "1111"
+  },2000)
+
+</script>
+```
+
+## Vue2.X响应式缺点
+
+`Vue2.x`的响应式主要依赖于`Object.definedProprety`实现的。然而`Object.definedProprety`具有一下弊端
+
+- 不支持`IE8`
+- 无法监听到对象属性的动态添加和删除
+- 无法监听到数组下标和length长度的变化
+
+当然上边问题，`vue2.x` 通过 `$set`方法进行的补充修复
 
 **参考文献**
 

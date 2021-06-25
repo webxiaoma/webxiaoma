@@ -131,8 +131,10 @@ const CompileUtil = {
    },
   //处理模板 {{}} 数据
    text(vm,node,exper){ // 编译text
+    // 参数 exper 类似 hello {{a}} {{obj.b}}  
      const val = exper.replace(this.RegText,(...arg)=>{
-
+          // arg 为匹配的数据信息数组
+          
           // 创建观察者
           new Watcher(vm,arg[1],()=>{
               const val = exper.replace(this.RegText,(...arg)=>{

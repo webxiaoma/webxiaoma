@@ -363,6 +363,7 @@ class Computed{
     // 创建一个watchers 对象 用来存储 watcher 订阅者
     const watchers = this._computedWatchers = Object.create(null);
 
+    // 遍历computed里的属性
     for(const key in computed){
        const userDef = computed[key];
        
@@ -397,8 +398,8 @@ class Computed{
      if(typeof userDef === 'function'){
        sharedPropertyDefinition.get = this.createComputedGetter(key);
      }else{
-      sharedPropertyDefinition.get = this.createComputedGetter(key);;
-      sharedPropertyDefinition.set = userDef.set;
+       sharedPropertyDefinition.get = this.createComputedGetter(key);;
+       sharedPropertyDefinition.set = userDef.set;
      }
 
     // 将属性添加到 Vue 实例上

@@ -39,6 +39,7 @@ module.exports = {
       collapsable: true,
       children: [
           "vue/mvvm",
+          "vue/computed",
       ]
      },
     {
