@@ -42,6 +42,13 @@ module.exports = {
           "vue/computed",
       ]
      },
+     {
+      title: 'Vue3.x系列',
+      collapsable: true,
+      children: [
+          "vue3/init",
+      ]
+     },
     {
       title: '常见面试题',
       collapsable: true,

@@ -79,7 +79,7 @@ meta:
 
 文件字节流的操作可以使用`InputStream`子类`FileInputStream` 和 `OutputStream`子类`FileOutputStream`
 
-下面使用例子为：使用`FileInputStream`读取`D:/javaText/text.txt`文件，并将文件以特点字节进行拆分，在使用`FileOutputStream`写入多个文件中
+下面使用例子为：使用`FileInputStream`读取`D:/javaText/text.txt`文件，并将文件以特定字节进行拆分，在使用`FileOutputStream`写入多个文件中
 
 ```java
 public static void  main(String[] args){

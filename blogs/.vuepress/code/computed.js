@@ -161,7 +161,8 @@ class Watcher{
 
      return value;
   }
-  // 获取data中的值
+  // 获取data或computed中的值，
+  // 此时data和computed的值已经绑定到了vue实例上边了，
   getDataVal(){
     const valAry = this.expr.split(".");
     return valAry.reduce((prev,next)=>{
@@ -171,13 +172,13 @@ class Watcher{
   // 获取computed 的值
   getComputedVal(){
     if(this.getter){
-      return this.getter.call(this.vm,this.vm);
+      return this.getter.call(this.vm);
     }
   }
   // computed 使用到的方法
   depend(){
     if(this.dep && Dep.target){
-      this.dep.depend(true)
+      this.dep.depend()
     }
   }
 
@@ -343,8 +344,6 @@ class Complie{
   isElementNode(node){
     return node.nodeType === 1;
    }
- 
-
 
 }
 

@@ -36,7 +36,15 @@
     },
     computed:{
       com(){
-        return this.a + " 1111" + this.obj.b;
+        return this.b + " 1111" + this.obj.b;
+      },
+      b:{
+        get(){
+          return this.c;
+        },
+        set(val){
+          return this.c = val;
+        }
       }
     }
   })
@@ -44,7 +52,7 @@
   console.log(vueObj)
 
   setTimeout(()=>{
-    vueObj.a = "world"
+    vueObj.b = "world"
   },2000)
 
 </script>

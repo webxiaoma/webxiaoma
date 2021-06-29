@@ -36,6 +36,13 @@ sidebarDepth: 2
 
 </NavItem>
 
+
+## TypeScript导航
+
+<NavItem >
+  <NavCard title="TS" jumpUrl="https://www.tslang.cn/docs/home.html" logo="https://www.tslang.cn/assets/images/icons/favicon.ico" des="TypeScript中文文档" />
+</NavItem>
+
 <!-- --------------------Vue导航----------------------------- -->
 ## Vue导航
 

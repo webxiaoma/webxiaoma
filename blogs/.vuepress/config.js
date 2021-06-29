@@ -47,6 +47,9 @@ module.exports = {
                 {text:"JS-原型与原型链", link:"/web/js/js-prototype"},
                 {text:"JS-执行上下文", link:"/web/js/js-context"},
               ]},
+              {text:"Vue2系列", items:[
+                {text:"Vue响应式", link:"/web/vue/mvvm"},
+              ]},
               {text:"常见面试题", items:[
                 {text:"CSS面试题", link:"/web/question/css"},
                 {text:"Vue2.x面试题", link:"/web/question/vue"},
