@@ -212,9 +212,24 @@ module.exports = {
       ]
     },
   ],
-
-  
-  /************** MYSELF *************/ 
+    /************** MYSELF *************/ 
+    "/study/":[
+      {
+        title: '编程基础知识路线',
+        collapsable: true,
+        children: [
+          "computers/computers",
+          "computers/arithmetic",
+        ]
+      },
+      {
+        title: '前端知识路线',
+        collapsable: true,
+        children: [
+          
+        ]
+      },
+  ],
   "/self/":[
     {
       title: '工作',

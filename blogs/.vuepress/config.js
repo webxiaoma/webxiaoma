@@ -106,9 +106,11 @@ module.exports = {
               {text:"句子成分", link:"/english/grammar/sentence"},
             ]},
           ]},
+          { text: 'Study',  items: [
+            {text:"编程基础", link:"/study/computers/computers"},
+          ], isLogin:true},
           { text: 'Self', items:[
             {text:"工作", link:"/self/work/"},
-            {text:"学习", link:"/self/study/"},
           ], isLogin:true},
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
