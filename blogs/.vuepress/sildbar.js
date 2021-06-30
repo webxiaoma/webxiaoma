@@ -255,13 +255,5 @@ module.exports = {
         "work/partTimeJob",
       ]
     },
-    {
-      title: '学习',
-      collapsable: true,
-      children: [
-        "study/",
-        "study/code",
-      ]
-    },
   ]
 }

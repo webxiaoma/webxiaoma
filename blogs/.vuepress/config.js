@@ -19,7 +19,7 @@ module.exports = {
       ['link', { rel: 'apple-touch-icon', href: '/img/mxx-152-152.png' }],
 
   ], //被注入页面 HTML <head> 额外的标签
-  host: "localhost", //访问路径
+  host: "192.168.124.11", //访问路径 localhost
   port: "5555", //端口
   base:baseUrl, // 部署站点的基础路径
   dest: "./docs", //输出目录
