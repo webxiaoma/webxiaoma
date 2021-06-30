@@ -1,5 +1,5 @@
 const Sidebar = require("./sildbar");
-const baseUrl = "/";
+const baseUrl = "/webxiaoma";
 
 module.exports = {
   title:'小马过河',
