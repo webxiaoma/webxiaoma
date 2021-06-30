@@ -229,6 +229,22 @@ module.exports = {
           
         ]
       },
+      {
+        title: 'Java知识路线',
+        collapsable: true,
+        children: [
+          "java/",
+          "java/maven",
+          "java/spring",
+        ]
+      },
+      {
+        title: '面试题',
+        collapsable: true,
+        children: [
+          "interview/web",
+        ]
+      },
   ],
   "/self/":[
     {

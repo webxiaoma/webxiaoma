@@ -211,7 +211,21 @@ export default {
 
 ### watchEffect监听器
 
+```js
+const count = ref(0)
 
+const stop =  watchEffect(() => console.log(count.value))
+// -> logs 0
+
+setTimeout(() => {
+  count.value++
+  // -> logs 1
+}, 100)
+
+
+// 停止监听
+stop();
+```
 
 
 ## 生命周期

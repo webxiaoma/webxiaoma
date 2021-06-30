@@ -1,9 +1,9 @@
 ---
 meta:
   - name: keywords
-    content: 马新想 小马学习 vue 计算属性 computed
+    content: 马新想 小马学习 
   - name: description
-    content: 本章为小马学习专栏——Vue计算属性computed原理
+    content: 本章为小马学习专栏
 isLogin: true
 ---
 

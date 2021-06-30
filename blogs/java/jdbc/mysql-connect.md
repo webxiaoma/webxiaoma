@@ -202,7 +202,7 @@ String sql = "delete Students where id=1";
 statement.execute(sql);
 ```
 
-使用`execute`查询数据时，提供了一个`ResultSet`方法，来获取结果集，改结果集中常用的方法有：
+使用`execute`查询数据时，提供了一个`ResultSet`方法，来获取结果集，该结果集中常用的方法有：
 
 
 |方法|描述|
