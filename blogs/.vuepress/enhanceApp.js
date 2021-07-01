@@ -37,13 +37,13 @@ export default ({
   Vue.prototype.$message = Message;
   Vue.mixin(mixin)
   // 初始化页面环境
-  // try{ 
-  //   import("./utils/index.js").then(utils=>{
-  //       utils.uniappBack(router);
-  //       utils.electronInit(Vue);
-  //   })
-  // }catch(err){
-  //   console.log("slef-----:",err)
-  // }
+  try{ 
+    import("./utils/index.js").then(utils=>{
+        utils.uniappBack(router);
+        utils.electronInit(Vue);
+    })
+  }catch(err){
+    console.log("slef-----:",err)
+  }
 }
 

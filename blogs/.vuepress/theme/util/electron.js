@@ -6,13 +6,13 @@ let $app
 let shell
 
 
-// try{
-//    $mainWin = window.$electron?window.$electron.remote.getGlobal('$mainWin'):{};
-//    $app = window.$electron?window.$electron.remote.getGlobal('$app'):{};
-//    shell = window.$electron?window.$electron.shell:{};
-// }catch(e){
-//    console.log("slef-----:",e)
-// }
+try{
+   $mainWin = window.$electron?window.$electron.remote.getGlobal('$mainWin'):{};
+   $app = window.$electron?window.$electron.remote.getGlobal('$app'):{};
+   shell = window.$electron?window.$electron.shell:{};
+}catch(e){
+   console.log("slef-----:",e)
+}
 
 
 /**
