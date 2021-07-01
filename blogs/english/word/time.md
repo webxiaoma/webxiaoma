@@ -12,7 +12,9 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
+
 
 
 ## 常见单词
@@ -94,3 +96,7 @@ meta:
 - <En  msg="现在是午饭时间" :enType="2">It's time for breakfast</En>  
 - <En  msg="我尽量十点回来" :enType="2">I'll try to be back ten</En>  
 - <En  msg="闹钟" :enType="2">Alarm Clock</En>  
+
+
+
+</div>

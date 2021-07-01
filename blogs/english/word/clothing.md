@@ -12,6 +12,9 @@ meta:
 
 :horse: 
 
+
+<div>
+
 <EnTool />
 
 
@@ -106,3 +109,6 @@ meta:
 -  <En :enType="2" msg="你们可以使用信用卡么？">Do you take credit cards?</En>  
 -  <En :enType="2" msg="不好意思，我可以退费吗？">Excause me, can I ask for a refund?</En>  
 -  <En :enType="2" msg="这双运动鞋有折扣，打八折！">There's a discount on this sneaker，It's 20% off!</En>  
+
+
+</div>

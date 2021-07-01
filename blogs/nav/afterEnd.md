@@ -13,6 +13,8 @@ sidebarDepth: 2
 # JAVA导航
 
 :horse: 
+
+<div>
 ## JAVA导航
 
 <NavItem>
@@ -44,3 +46,4 @@ sidebarDepth: 2
   <NavCard title="动力节点" jumpUrl="http://www.bjpowernode.com/tutorial/" des="一个培训Java网站，含有java相关教程" />
 </NavItem>
 
+</div>

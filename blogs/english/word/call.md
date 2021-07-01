@@ -12,6 +12,9 @@ meta:
 
 :horse: 
 
+
+<div>
+
 <EnTool />
 
 ## 常见单词
@@ -67,3 +70,8 @@ meta:
 - <En  msg="好吧，我稍后在打。" :enType="2">Alright. I'll try again later.</En> 
 - <En  msg="把电话转接给你。" :enType="2">I'll connect you.</En> 
 - <En  msg="可以给我转1234分机么？" :enType="2">Could I have extension 1234, please?</En> 
+
+
+
+
+</div>

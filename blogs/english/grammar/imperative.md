@@ -12,6 +12,8 @@ meta:
 
 :horse: 👈
 
+<div>
+
 <EnTool :isReadTool="false"/>
 
 ## 前言
@@ -96,3 +98,8 @@ meta:
 
 - <En msg="请关上门" :enType="2">Close the door, please.</En>
 - <En msg="请不要生气了 " :enType="2">Please don’t get angry.</En>
+
+
+
+
+</div>

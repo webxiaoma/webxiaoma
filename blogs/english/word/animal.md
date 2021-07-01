@@ -12,7 +12,10 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
+
+
 
 ## 常见单词
 
@@ -91,3 +94,9 @@ meta:
 -  <En :enType="2" msg="那有一个禁止喂食的标志"> There's a no-feeding sign（/saɪn/） over there.</En>  
 -  <En :enType="2" read="/sil/" msg="你真的被那些海豹迷住了，不是吗？"> You're really attracted by the seals，aren't you？</En>  
 -  <En :enType="2" read="/ə'trækt/" msg="引起的注意(或兴趣等),吸引;引起;激起"> attract</En>  
+
+
+
+
+
+</div>

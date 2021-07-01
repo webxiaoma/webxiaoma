@@ -12,7 +12,10 @@ meta:
 
 :horse: 
 
+
+<div>
 <EnTool />
+
 
 ## 常见单词
 
@@ -156,3 +159,7 @@ meta:
 - <En  msg="随便密" :enType="2">whatever you say!</En> 
 - <En  msg="放松，别紧张" :enType="2">Take it easy.</En> 
 - <En  msg="时间证明一切" :enType="2">Time will tell</En> 
+
+
+
+</div>

@@ -12,7 +12,9 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
+
 
 
 ## 常见单词
@@ -73,3 +75,6 @@ meta:
 - <En  msg="比起葡萄我更喜欢香蕉。" :enType="2">I prefer bananas to grapes </En> 
 - <En  msg="西瓜吃起来非常甜并且解渴" read="/swit/ /kwɛntʃ/ /θɝst/" :enType="2">Watermelon tastes very sweet and quenches thirst. </En>
 - <En  msg="这个芒果坏了，不能吃了" :enType="2">This mango is bad and can't be eaten </En> 
+
+
+</div>

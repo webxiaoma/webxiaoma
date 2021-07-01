@@ -12,6 +12,7 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
 
 ## 日常生活单词 😀😀
@@ -113,3 +114,6 @@ meta:
 -  <En :enType="2" msg="把我的手机递给我，谢谢">Pass me my cell phone, please</En>  
 -  <En :enType="2" msg="帮我把手机冲上电">Help me power /'paʊɚ/ up my cell phone, please</En>  
 -  <En :enType="2" msg="不要在玩手机了">Stop playing with your cell phone, please</En>  
+
+
+</div>

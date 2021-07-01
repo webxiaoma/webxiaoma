@@ -12,6 +12,8 @@ meta:
 
 :horse: 
 
+<div>
+
 <EnTool />
 
 
@@ -68,3 +70,5 @@ meta:
 -  <En :enType="2" msg="我老家是河北唐山">My hometown is Tangshan, Hebei</En>  
 -  <En :enType="2" msg="你喜欢去那个国家旅游">Which country do you like to travel to?</En>  
  
+
+</div>

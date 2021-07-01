@@ -12,7 +12,10 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
+
+
 
 ## 常见单词
 
@@ -106,3 +109,7 @@ Labor <Badge text="/'lebɚ/" />  n. 劳工；分娩；劳动；工作
 - <En  msg="今天是每月的第十天" :enType="2">Today is the tenth day of the month</En>
 - <En  msg="每年六月到八月是夏天" :enType="2">It's summer from June to August every year</En>
 
+
+
+
+</div>

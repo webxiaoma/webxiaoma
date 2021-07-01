@@ -12,6 +12,8 @@ meta:
 
 :horse: 👈
 
+<div>
+
 <EnTool :isReadTool="false"/>
 
 ## 前言
@@ -64,4 +66,4 @@ meta:
 
 
 
-
+</div>

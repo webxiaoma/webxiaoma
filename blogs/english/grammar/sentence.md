@@ -12,6 +12,8 @@ meta:
 
 :horse: 👈
 
+<div>
+
 <EnTool :isReadTool="false"/>
 
 **在英语中句子的主要形式如下：**
@@ -185,3 +187,7 @@ It is no use + 动名词短语
 - <En  msg="汤姆被选为班长 （monitor 为主语补语）"  read="/'mɑnətɚ/" :enType="2">Tom was made monitor</En>
 - <En  msg="（monitor 为宾语补语）"  :enType="2">I made Tom monitor</En>
 - <En  msg="我肯定能成功 (to success 作为 sure 表语的补语)"  :enType="2">I am sure to succeed</En>
+
+
+
+</div>

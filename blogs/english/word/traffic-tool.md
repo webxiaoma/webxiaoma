@@ -12,7 +12,10 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
+
+
 
 ## 常见单词
 
@@ -83,3 +86,7 @@ meta:
 - <En  msg="一直往前走" :enType="2">Straight ahead</En>  
 - <En  msg=" 向左/右转" :enType="2">Turn left/right</En> 
 
+
+
+
+</div>

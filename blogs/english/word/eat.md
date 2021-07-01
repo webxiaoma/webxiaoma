@@ -12,7 +12,10 @@ meta:
 
 :horse: 
 
+<div>
 <EnTool />
+
+
 
 
 ## 常见单词
@@ -58,3 +61,4 @@ meta:
 -  <En :enType="2" msg="是的，可以先给我来一份汤么？"> Yeah. Could I just have the soup to start please.</En>  
 
 
+</div>
