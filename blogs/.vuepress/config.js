@@ -93,19 +93,19 @@ module.exports = {
               {text:"初识", link:"/tools/tomcat/"},
             ]},
           ]},
-          { text: 'English',  items: [
-            {text:"英语读音",  items:[
-              {text:"音标", link:"/english/pronunciation/phonogram"},
-            ]},
-            {text:"英语单词",  items:[
-              {text:"电话", link:"/english/word/call"},
-              {text:"日常生活", link:"/english/word/daily-life"},
-              {text:"动物", link:"/english/word/animal"},
-            ]},
-            {text:"英语语法",items:[
-              {text:"句子成分", link:"/english/grammar/sentence"},
-            ]},
-          ]},
+          // { text: 'English',  items: [
+          //   {text:"英语读音",  items:[
+          //     {text:"音标", link:"/english/pronunciation/phonogram"},
+          //   ]},
+          //   {text:"英语单词",  items:[
+          //     {text:"电话", link:"/english/word/call"},
+          //     {text:"日常生活", link:"/english/word/daily-life"},
+          //     {text:"动物", link:"/english/word/animal"},
+          //   ]},
+          //   {text:"英语语法",items:[
+          //     {text:"句子成分", link:"/english/grammar/sentence"},
+          //   ]},
+          // ]},
           { text: 'Study',  items: [
             {text:"编程基础", link:"/study/computers/computers"},
           ], isLogin:true},

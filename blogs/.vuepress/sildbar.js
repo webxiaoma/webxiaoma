@@ -201,16 +201,16 @@ module.exports = {
         "word/country",
       ]
     },
-    {
-      title: '英语语法',
-      collapsable: true,
-      children: [
-        "grammar/sentence",
-        "grammar/sentence-pattren",
-        "grammar/imperative",
-        "grammar/exclamatory",
-      ]
-    },
+    // {
+    //   title: '英语语法',
+    //   collapsable: true,
+    //   children: [
+    //     "grammar/sentence",
+    //     "grammar/sentence-pattren",
+    //     "grammar/imperative",
+    //     "grammar/exclamatory",
+    //   ]
+    // },
   ],
     /************** MYSELF *************/ 
     "/study/":[

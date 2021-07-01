@@ -84,8 +84,11 @@ export default {
           - (this.$refs.siteName && this.$refs.siteName.offsetWidth || 0)
       }
     }
-    handleLinksWrapWidth()
-    window.addEventListener('resize', handleLinksWrapWidth, false)
+    handleLinksWrapWidth();
+    try{
+      window.addEventListener('resize', handleLinksWrapWidth, false)
+    }catch(err){
+    }
   },
   methods:{
     dbclickTop(){}
