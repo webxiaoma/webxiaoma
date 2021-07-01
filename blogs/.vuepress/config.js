@@ -10,13 +10,13 @@ module.exports = {
       ["script", {src:"https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"}],
 
       // 兼容pwa
-      ['meta', { name: 'theme-color', content: '#ededed' }],
-      ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-      ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-      ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
-      ['meta', { name: 'msapplication-TileImage', content: '/img/mxx-144.png' }],
-      ['link', { rel: 'manifest', href: '/manifest.json' }],
-      ['link', { rel: 'apple-touch-icon', href: '/img/mxx-152-152.png' }],
+      // ['meta', { name: 'theme-color', content: '#ededed' }],
+      // ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+      // ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+      // ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+      // ['meta', { name: 'msapplication-TileImage', content: '/img/mxx-144.png' }],
+      // ['link', { rel: 'manifest', href: '/manifest.json' }],
+      // ['link', { rel: 'apple-touch-icon', href: '/img/mxx-152-152.png' }],
 
   ], //被注入页面 HTML <head> 额外的标签
   host: "localhost", //访问路径 localhost
@@ -145,12 +145,12 @@ module.exports = {
       successText: "复制成功"
       }], // 代码块复制
     ],
-    '@vuepress/pwa': { // pwa
-      serviceWorker: true,
-      updatePopup: { //刷新内容的弹窗
-        message: "这篇文章已经更新", 
-        buttonText: "立即刷新" 
-      }
-    }
+    // '@vuepress/pwa': { // pwa
+    //   serviceWorker: true,
+    //   updatePopup: { //刷新内容的弹窗
+    //     message: "这篇文章已经更新", 
+    //     buttonText: "立即刷新" 
+    //   }
+    // }
 };
 
