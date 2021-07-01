@@ -108,7 +108,7 @@ module.exports = {
           // ]},
           { text: 'Study',  items: [
             {text:"编程基础", link:"/study/computers/computers"},
-          ], isLogin:true},
+          ]},
           // { text: 'Self', items:[
           //   {text:"工作", link:"/self/work/"},
           // ], isLogin:true},
