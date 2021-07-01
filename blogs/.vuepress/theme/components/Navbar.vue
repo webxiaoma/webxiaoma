@@ -33,7 +33,9 @@
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
       <NavLinks class="can-hide" />
       <div class="loginItem">
-       <!-- <Login></Login>-->
+        <ClientOnly>
+         <Login></Login>
+        </ClientOnly>
       </div>
     </div>
   </header>
@@ -44,7 +46,7 @@ import AlgoliaSearchBox from '@AlgoliaSearchBox'
 import SearchBox from '@SearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
-// import Login from '@theme/components/Login.vue'
+import Login from '@theme/components/Login.vue'
 
 export default {
   name: 'Navbar',
@@ -54,7 +56,7 @@ export default {
     NavLinks,
     SearchBox,
     AlgoliaSearchBox,
-    // Login
+    Login
   },
 
   data () {
