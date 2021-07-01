@@ -226,7 +226,8 @@ module.exports = {
         title: '前端知识路线',
         collapsable: true,
         children: [
-          
+          "web/",
+          "web/interview"
         ]
       },
       {
@@ -234,15 +235,6 @@ module.exports = {
         collapsable: true,
         children: [
           "java/",
-          "java/maven",
-          "java/spring",
-        ]
-      },
-      {
-        title: '面试题',
-        collapsable: true,
-        children: [
-          "interview/web",
         ]
       },
   ],

@@ -8,7 +8,7 @@ isLogin: true
 ---
 
 
-# 前端
+# 前端知识汇总
 
 [[toc]]
 
@@ -20,30 +20,38 @@ isLogin: true
 - [一名【合格】前端工程师的自检清单](https://juejin.cn/post/6844903830887366670#heading-18)
 - [冴羽的博客](https://github.com/mqyqingfeng/Blog)
 
-## JavaScript
+## 基础篇
 
 
-### 变量和类型
-
-
-
-### 原型和原型链
-
-
-
-## ECMAScript
-
-### 基础
+### ES6
 
 - [ECMAScript 6 入门](https://es6.ruanyifeng.com/#docs/promise)
 
-### 进阶
+## 进阶篇
 
-- [ES6-promise原理实现](https://juejin.cn/post/6844903831881400333)
+### 概念类
+
+- [概念类 - 一次弄懂Event Loop](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6)
+
+## 深入篇
+
+
+### 原生方法的实现
+
+
+- [ES6 - promise原理实现](https://juejin.cn/post/6844903831881400333)
 
 
 
-## Vue2.x
+## 框架篇
+
+
+
+
+
+
+
+
 
 
 
