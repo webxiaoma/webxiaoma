@@ -89,18 +89,18 @@ export default {
   },
   methods: {
     jump(url){
-       const reg = /^(http|https):\/\/webxiaoma/;
-       if(this.$root.$ele){
-          if(!reg.test(url)){
-            urlJump(url)
-          }
-       }else{
-         try{
-           window.open(url).location;
-         }catch(err){
-           console.log("slef------:",err)
-         }
-       }
+      //  const reg = /^(http|https):\/\/webxiaoma/;
+      //  if(this.$root.$ele){
+      //     if(!reg.test(url)){
+      //       urlJump(url)
+      //     }
+      //  }else{
+      //    try{
+      //      window.open(url).location;
+      //    }catch(err){
+      //      console.log("slef------:",err)
+      //    }
+      //  }
     }
   },
 }
