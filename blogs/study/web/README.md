@@ -25,23 +25,23 @@ isLogin: true
 
 ### ES6
 
-- [ECMAScript 6 入门](https://es6.ruanyifeng.com/#docs/promise)
+- [ECMAScript 6 入门](https://es6.ruanyifeng.com/)
 
 ## 进阶篇
 
-### 概念类
-
-- [概念类 - 微任务、宏任务与Event-Loop](https://www.cnblogs.com/jiasm/p/9482443.html)
-- [概念类 - 一次弄懂Event Loop](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6)
 
 ## 深入篇
 
+### 浏览器原理与概念
+
+- 概念类 - 微任务、宏任务与Event-Loop [文章一](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6) [文章二](https://www.cnblogs.com/jiasm/p/9482443.html)
+ 
 
 ### 原生方法的实现
 
-
-- [ES6 - promise原理实现](https://juejin.cn/post/6844903831881400333)
-
+- ES6 - Promise原理实现 [文章一](https://juejin.cn/post/6844903831881400333)
+- ES6 - Generator原理实现 [文章一](https://blog.csdn.net/weixin_43964148/article/details/107917507)
+- ES6 - Async/Await原理实现 [文章一](https://juejin.cn/post/6844903988584775693) [文章二](https://juejin.cn/post/6844903988584775693)
 
 
 ## 框架篇

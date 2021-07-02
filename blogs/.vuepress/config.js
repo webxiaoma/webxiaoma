@@ -108,7 +108,9 @@ module.exports = {
             ]},
           ]},
           { text: 'Study',  items: [
-            {text:"编程基础", link:"/study/computers/computers"},
+            {text:"计算机基础", link:"/study/computers/"},
+            {text:"前端知识路线", link:"/study/web/"},
+            {text:"Java知识路线", link:"/study/java/"},
           ], isLogin:true},
           { text: 'Self', items:[
             {text:"工作", link:"/self/work/"},

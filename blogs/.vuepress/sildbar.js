@@ -215,7 +215,7 @@ module.exports = {
     /************** MYSELF *************/ 
     "/study/":[
       {
-        title: '编程基础知识路线',
+        title: '计算机基础',
         collapsable: true,
         children: [
           "computers/",
