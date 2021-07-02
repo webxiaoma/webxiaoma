@@ -2,7 +2,7 @@
 <template>
   <div class='login'>
     <div class="loginBtn" v-if="!isLogin" @click="login">登录</div>
-    <div class="logining" v-else>
+    <div class="logining" v-if="isLogin">
        <ClientOnly>
           <el-popover
               placement="bottom"

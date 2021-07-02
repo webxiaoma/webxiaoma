@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    isLogin:false, // 是否登录
+    isLogin:true, // 是否登录
     logining:false, // 正在登录中
     reading:false, // 朗读中
     englishObj:{ // 英语
