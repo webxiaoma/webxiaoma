@@ -1,0 +1,22 @@
+{
+  "name": "小马学习网站s",
+  "short_name": "马新想s",
+  "version": "1.0.0",
+  "description": "一个综合性的学习网站",
+  "manifest_version": 1,
+  "scope":"https://webxiaoma.gitee.io/webxiaoma/",  
+  "theme_color": "#ededed",
+  "display": "fullscreen",
+  "background_color":"#ffffff",
+  "icons": [  
+      {
+          "src": "./img/mxx-48.png",  
+          "type": "image/jpg",  
+          "sizes": "48x48" 
+      },{
+          "src": "./img/mxx-72.png",
+          "type": "image/jpg",
+          "sizes": "72x72"
+      }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "mxx-electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "package:win": "electron-packager . 小马学习 --win --out ./dist/MXX-win --arch=x64 --app-version=1.0.0 --electron-version=10.1.5 --icon=./public/icons/mxx_64.ico",
+    "build:win": "electron-builder --win --x64"
+  },
+  "keywords": [],
+  "author": "webxiaoma",
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "express": "^4.17.1",
+    "log4js": "^6.1.2"
+  },
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^14.2.1",
+    "electron-reloader": "^1.0.1"
+  },
+  "build": {
+    "appId": "MXX-LESSON",
+    "copyright": "webxiaoma版权所有",
+    "productName": "MXX-LESSON",
+    "directories": {
+      "output": "./dist/MXX-WIN-build"
+    },
+    "win": {
+      "icon": "./public/icons/mxx_256.ico",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "小马学习",
+      "installerIcon": "./public/icons/mxx_32.ico",
+      "uninstallerIcon": "./public/icons/mxx_32.ico",
+      "installerHeaderIcon": "./public/icons/mxx_32.ico"
+    }
+  }
+}

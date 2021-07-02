@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   
+</style>
+<body>
+    <div id="main">
+        <input v-model="a" type="text">
+        <h1>hello {{a}}</h1>
+         <h1>hello {{a}} {{obj.b}}</h1>
+        <h1>Computed: {{com}}</h1>
+    </div>
+</body>
+
+
+<script src="./computed.js"></script>
+
+<script>
+    
+  const vueObj = new NVue({
+    el:"#main",
+    data(){
+      return {
+        a:"小明",
+        c:121,
+        obj:{
+          b:"小红",
+        }
+      }
+    },
+    computed:{
+      com(){
+        return this.b + " 1111" + this.obj.b;
+      },
+      b:{
+        get(){
+          return this.c;
+        },
+        set(val){
+          return this.c = val;
+        }
+      }
+    }
+  })
+
+  console.log(vueObj)
+
+  setTimeout(()=>{
+    vueObj.b = "world"
+  },2000)
+
+</script>
+</html>
