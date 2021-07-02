@@ -1,11 +1,11 @@
 const Sidebar = require("./sildbar");
-const baseUrl = "";
+const baseUrl = "/docs";
 
 module.exports = {
   title:'小马过河',
   description:"小马过河",
   head: [
-      ["link", { rel: "icon", href: `/img/manong.jpg` }],
+      ["link", { rel: "icon", href: `${baseUrl}/img/manong.jpg` }],
       ["meta", { content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", name: "viewport" }],
       ["script", {src:"https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"}],
 

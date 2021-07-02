@@ -12,7 +12,7 @@
              <div class="btn" @click="exit">退出</div>
           </div>
           <div class="avatarWrapper"  slot="reference">
-             <el-avatar :size="24" src="/img/manong.jpg" ></el-avatar>
+             <el-avatar :size="24" src="/docs/img/manong.jpg" ></el-avatar>
           </div>
       </el-popover>
     </div>
@@ -21,7 +21,7 @@
          <div class="close"><i class="el-icon-close" @click="close"></i></div>
           <div class="bi-login">
             <div class="bi-login-logo">
-              <img src="/img/manong.jpg" alt />
+              <img src="/docs/img/manong.jpg" alt />
             </div>
             <h2 class="bi-login-text">登录</h2>
             <div class="bi-form">
