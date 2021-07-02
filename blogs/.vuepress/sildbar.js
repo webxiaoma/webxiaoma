@@ -218,8 +218,7 @@ module.exports = {
         title: '编程基础知识路线',
         collapsable: true,
         children: [
-          "computers/computers",
-          "computers/arithmetic",
+          "computers/",
         ]
       },
       {
