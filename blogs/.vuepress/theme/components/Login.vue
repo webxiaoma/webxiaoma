@@ -3,18 +3,20 @@
   <div class='login'>
     <div class="loginBtn" v-if="!isLogin" @click="login">登录</div>
     <div class="logining" v-else>
-      <el-popover
-          placement="bottom"
-          width="100"
-          trigger="click"
-          class="popverWrapper">
-          <div class="listBtn">
-             <div class="btn" @click="exit">退出</div>
-          </div>
-          <div class="avatarWrapper"  slot="reference">
-             <el-avatar :size="24" src="/docs/img/manong.jpg" ></el-avatar>
-          </div>
-      </el-popover>
+       <ClientOnly>
+          <el-popover
+              placement="bottom"
+              width="100"
+              trigger="click"
+              class="popverWrapper">
+              <div class="listBtn">
+                <div class="btn" @click="exit">退出</div>
+              </div>
+              <div class="avatarWrapper"  slot="reference">
+                <el-avatar :size="24" src="/docs/img/manong.jpg" ></el-avatar>
+              </div>
+          </el-popover>
+        </ClientOnly>
     </div>
     <div class="loginModel" v-if="logining">
        <div class="loginCenter">
