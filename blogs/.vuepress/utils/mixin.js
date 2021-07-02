@@ -32,7 +32,6 @@ export default {
     },
     // 检测是否登录
     checkLogin(){
-      console.log(this.$store)
       try{
         const {password} = this.$site.themeConfig;
         const {isLogin} = this.$frontmatter;
@@ -48,7 +47,7 @@ export default {
           }
         } 
       }catch(e){
-         console.log("checklogin",e)
+        //  console.log(e)
       }
     },
     // 获取session
