@@ -14,17 +14,27 @@ meta:
 
 ## 前言
 
+## 计算机基础知识
+
+## 网络协议
+
+### 概念
+
+- 网络协议概念 - 互联网协议 [文章一](https://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html) [文章二](https://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
+
+### HTTP协议
+
+- HTTP协议 - HTTP协议初识 [文章一](http://www.ruanyifeng.com/blog/2016/08/http.html)
 
 ## 数据结构
 
 ### 基础
 
-- [数据结构基础 - 数据结构：八大数据结构分类](https://blog.csdn.net/yeyazhishang/article/details/82353846)
+- 数据结构基础 - 数据结构分类初始 [文章](https://blog.csdn.net/yeyazhishang/article/details/82353846)
 
 ## 算法篇
 
 
 ### 基础
 
-
-- [算法基础篇 - 复杂度(时间 空间)的初识](https://www.cnblogs.com/54chensongxia/p/14012838.html)
+- 算法基础篇 - 复杂的初始 [文章](https://www.cnblogs.com/54chensongxia/p/14012838.html)
