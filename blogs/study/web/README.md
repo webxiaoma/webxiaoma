@@ -26,12 +26,17 @@ isLogin: true
 
 - CSS - BFC块级作用域 [文章一](/web/csshtml/css-bfc) [文章二](/web/csshtml/css-formatContent)
 
-### ES6
+### ECMAScript
 
 - [ECMAScript 6 入门](https://es6.ruanyifeng.com/)
-- ES6 - Proxy [文章一](https://es6.ruanyifeng.com/#docs/proxy)
+- ECMAScript - const/let用法 [文章一](https://es6.ruanyifeng.com/#docs/let)
+- ECMAScript - Generator用法 [文章一](https://es6.ruanyifeng.com/#docs/generator) [文章二](https://es6.ruanyifeng.com/#docs/generator-async)
+- ECMAScript - Promise用法 [文章一](https://es6.ruanyifeng.com/#docs/promise)
+- ECMAScript - Proxy用法 [文章一](https://es6.ruanyifeng.com/#docs/proxy)
+
 
 ## 进阶篇
+
 
 
 ## 深入篇
@@ -43,17 +48,24 @@ isLogin: true
 
 ### 原生方法的实现
 
+- JS - call和apply的实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/11)
+- JS - bind的模拟实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/12)
+- JS - New的模拟实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/13)
+- JS - 防抖实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/22)
+- JS - 节流实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/26)
+
+---
+
 - ES6 - Promise原理实现 [文章一](https://juejin.cn/post/6844903831881400333)
 - ES6 - Generator原理实现 [文章一](https://blog.csdn.net/weixin_43964148/article/details/107917507)
 - ES6 - Async/Await原理实现 [文章一](https://juejin.cn/post/6844903988584775693) [文章二](https://juejin.cn/post/6844903988584775693)
 
 
-## 框架篇
 
+### Vue原理篇
 
-
-
-
+- Vue2 - 响应式原理 [文章一](/web/vue/mvvm.html)
+- Vue2 - computed原理实现 [文章一](/web/vue/computed.html)
 
 
 

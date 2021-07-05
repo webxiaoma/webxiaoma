@@ -1,66 +1,26 @@
-const log = console.log;
 
-const fun = function(){
-
-}
+Function.prototype.call = function(){
+   let thisObj = arguments[0];
 
 
-const p = new Promise((resolve,reject)=>{
-     setTimeout(()=>{
-        resolve(1)
-        resolve(2)
-        reject(2)
-     },1000)
-}).then((data)=>{
-  log("then:",data)
-  return Promise.reject(3);
-}).then((data)=>{
-  log("then2:",data)
-}).catch((err)=>{
-  log("catch:",err)
-}).then((data)=>{
-  log("then3:",data)
-})
+   thisObj.fun = this;
 
-
-
-
-
-
-
-
-
-/**
-
-
-1. 等待 pedding
-2. fullstate 成功 --> then
-3. reject 失败 -- catch
-
-
-created(){
-  this.handleReq().then(res=>{
-   
-  })
-},
-method:{
-   handleReq(){
-     return new Promise((reslove,reject)=>{
-         fecth({
-             url:"/rw",
-             data:{}
-         }).then(res=>{
-            reslove(res)
-         }).catch(err=>{
-             reject(err)
-         })
-     })
+   let argsAry  = [];
+   for(let i = 1,len=arguments.length;i<len;i++){
+      argsAry.push(arguments[i])
    }
-    
+   console.log(`thisObj.fun(${argsAry.join(",")})`)
+   eval(`thisObj.fun(${argsAry.join(",")})`);
 }
 
 
-*/
+var foo = {
+  value: 1
+};
 
-// Object
+function bar(a,b) {
+  console.log(a,b)
+  console.log(this.value);
+}
 
+bar.call(foo,1,2,3,4); // 1
