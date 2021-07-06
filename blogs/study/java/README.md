@@ -19,6 +19,9 @@ isLogin: true
 
 ## 基础
 
+### IDEA编辑器
+
+
 
 ## 进阶篇
 
@@ -35,8 +38,11 @@ isLogin: true
 
 ### Tomcat（Web服务器）
 
-- Tomcat - Apache Tomcat 安装与配置教程 [文章一](https://www.cnblogs.com/lpgit/p/10929507.html)
+- Tomcat - IDEA创建Tomcat项目 [文章一](https://blog.csdn.net/konggu_youlan/article/details/88894348)
+- Tomcat - Apache Tomcat 安装与配置教程 [文章一](https://www.cnblogs.com/Knowledge-has-no-limit/p/7240585.html)
 - Tomcat - Tomcat目录结构 [文章一](http://c.biancheng.net/servlet2/tomcat-directory.html)
+
+
 
 ### JSP
 

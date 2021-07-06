@@ -1,26 +1,73 @@
 
-Function.prototype.call = function(){
-   let thisObj = arguments[0];
 
 
-   thisObj.fun = this;
-
-   let argsAry  = [];
-   for(let i = 1,len=arguments.length;i<len;i++){
-      argsAry.push(arguments[i])
-   }
-   console.log(`thisObj.fun(${argsAry.join(",")})`)
-   eval(`thisObj.fun(${argsAry.join(",")})`);
+function Foo(){
+	getName = function(){
+		console.log(1);					
+  };
+	return this
+}
+			
+function getName(){
+	console.log(5);
 }
 
 
-var foo = {
-  value: 1
-};
+Foo().getName();
 
-function bar(a,b) {
-  console.log(a,b)
-  console.log(this.value);
+
+gobalContext = {
+  OV:{
+
+  },
+  scope:global.OV,
+  this: global.OV
 }
 
-bar.call(foo,1,2,3,4); // 1
+ECStack = [
+  gobalContext
+]
+
+checkscopeContext = {
+  OV:{
+    arguments:{
+      length:0
+    }
+  },
+  scope:[checkscope.OV,global.OV],
+  this: undefined,
+}
+
+
+ECStack = [
+  checkscopeContext,
+  gobalContext
+]
+
+ECStack = [
+  gobalContext
+]
+
+
+fContext = {
+  OV:{
+    arguments:{
+      length:0
+    }
+  },
+  scope:[fContext.OV,checkscope.OV,global.OV],
+  this: undefined,
+}
+
+ECStack = [
+  fContext,
+  gobalContext
+]
+
+ECStack = [
+  gobalContext
+]
+
+
+ECStack = [
+]
