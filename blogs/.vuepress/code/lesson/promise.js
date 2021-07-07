@@ -1,73 +1,23 @@
+var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
 
 
 
-function Foo(){
-	getName = function(){
-		console.log(1);					
-  };
-	return this
-}
-			
-function getName(){
-	console.log(5);
-}
+function fittle(ary){
 
+  let set = new Set(ary.flat(Infinity));
 
-Foo().getName();
-
-
-gobalContext = {
-  OV:{
-
-  },
-  scope:global.OV,
-  this: global.OV
-}
-
-ECStack = [
-  gobalContext
-]
-
-checkscopeContext = {
-  OV:{
-    arguments:{
-      length:0
-    }
-  },
-  scope:[checkscope.OV,global.OV],
-  this: undefined,
+  return [...set].sort(function(a,b){
+    return a-b;
+  })
 }
 
 
-ECStack = [
-  checkscopeContext,
-  gobalContext
-]
 
-ECStack = [
-  gobalContext
-]
+console.log(arr.toString().split(",").sort(function(a,b){
+    return a-b;
+  })
+)
 
 
-fContext = {
-  OV:{
-    arguments:{
-      length:0
-    }
-  },
-  scope:[fContext.OV,checkscope.OV,global.OV],
-  this: undefined,
-}
 
-ECStack = [
-  fContext,
-  gobalContext
-]
-
-ECStack = [
-  gobalContext
-]
-
-
-ECStack = [
-]
+console.log(fittle(arr))

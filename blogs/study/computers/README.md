@@ -8,11 +8,11 @@ meta:
 
 # 计算机基础汇总
 
-[[toc]]
-
 :horse:
 
 ## 前言
+
+- [前端的数据结构与算法系列](https://github.com/sisterAn/JavaScript-Algorithms)
 
 ## 计算机基础知识
 

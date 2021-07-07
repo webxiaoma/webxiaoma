@@ -10,7 +10,6 @@ isLogin: true
 
 # 前端知识汇总
 
-[[toc]]
 
 :horse:
 
@@ -36,20 +35,17 @@ isLogin: true
 ## JavaScript
 
 
-### 基础
+### DOM
 
 
-#### DOM
-
-
-#### BOM
+### BOM
 
 
 
 ### JS
 
 - JS基础 Object - `defineProperty` [文章一](https://segmentfault.com/a/1190000007434923)
-- JS基础 Array - 常用方法汇总 [文章一](https://juejin.cn/post/6862526380404391949)
+- JS基础 Array - 常用方法汇总 [文章一](https://juejin.cn/post/6862526380404391949) [文章二](https://es6.ruanyifeng.com/#docs/array)
 
 
 
@@ -66,6 +62,11 @@ isLogin: true
 - JS深入 - 微任务、宏任务与Event-Loop [文章一](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6) [文章二](https://www.cnblogs.com/jiasm/p/9482443.html)
 
 
+---
+
+- JS深入 - JS的继承方式[文章一](https://www.cnblogs.com/humin/p/4556820.html)
+
+
 ### 原生方法的实现
 
 - JS实现 - call和apply的实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/11)
@@ -75,6 +76,7 @@ isLogin: true
 - JS实现 - 节流实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/26)
 
 
+
 ## ECMAScript
 
 
@@ -82,16 +84,27 @@ isLogin: true
 
 - [ECMAScript 6 入门](https://es6.ruanyifeng.com/)
 - ECMAScript基础 - const/let用法 [文章一](https://es6.ruanyifeng.com/#docs/let)
+- ECMAScript基础 - Set/WeakSet Map/WeakMap [文章一](https://es6.ruanyifeng.com/#docs/set-map#WeakSet)
 - ECMAScript基础 - Generator用法 [文章一](https://es6.ruanyifeng.com/#docs/generator) [文章二](https://es6.ruanyifeng.com/#docs/generator-async)
 - ECMAScript基础 - Promise用法 [文章一](https://es6.ruanyifeng.com/#docs/promise)
 - ECMAScript基础 - Proxy用法 [文章一](https://es6.ruanyifeng.com/#docs/proxy)
-
+- ECMAScript基础 - Class用法 [文章一](https://es6.ruanyifeng.com/#docs/class) [文章二](https://es6.ruanyifeng.com/#docs/class-extends)
 
 ### 原生方法的实现
 
 - ECMAScript实现 - Promise原理实现 [文章一](https://juejin.cn/post/6844903831881400333)
 - ECMAScript实现 - Generator原理实现 [文章一](https://blog.csdn.net/weixin_43964148/article/details/107917507)
 - ECMAScript实现 - Async/Await原理实现 [文章一](https://juejin.cn/post/6844903988584775693) [文章二](https://juejin.cn/post/6844903988584775693)
+
+
+
+
+## 算法
+
+
+### 遍历算法
+
+- JS方法 - 深度优先和广度优先实现一个拷贝函数 [文章一](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/10)
 
 
 
