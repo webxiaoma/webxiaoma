@@ -236,6 +236,13 @@ module.exports = {
           "java/",
         ]
       },
+      {
+        title: '数学知识路线',
+        collapsable: true,
+        children: [
+          "mathematics/",
+        ]
+      },
   ],
   "/self/":[
     {
