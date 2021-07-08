@@ -1,23 +1,30 @@
-var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
-
-
-
-function fittle(ary){
-
-  let set = new Set(ary.flat(Infinity));
-
-  return [...set].sort(function(a,b){
-    return a-b;
-  })
+async function async1() {
+  console.log('async1 start'); // 3  2
+  await async2();
+  console.log('async1 end'); // 5  6
 }
 
+async function async2() {
+  console.log('async2'); // 4  3
+}
+
+console.log('script start');  // 1   1            
 
 
-console.log(arr.toString().split(",").sort(function(a,b){
-    return a-b;
-  })
-)
+setTimeout(function() {
+  console.log('setTimeout'); // 8   8
+}, 0)
 
 
+async1();
 
-console.log(fittle(arr))
+
+new Promise(function(resolve) {
+  console.log('promise1'); // 6   4
+  resolve();
+}).then(function() {
+  console.log('promise2'); // 7   7
+});
+
+
+console.log('script end'); // 2    5

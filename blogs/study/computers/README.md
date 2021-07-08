@@ -30,8 +30,20 @@ meta:
 
 ### 基础
 
-- 数据结构基础 - 数据结构分类初始 [文章](https://blog.csdn.net/yeyazhishang/article/details/82353846)
+- 数据结构基础 - 数据结构分类 [文章](https://blog.csdn.net/yeyazhishang/article/details/82353846)
 
+### 线性结构
+
+- 线性结构 - 数组Array []()
+- 线性结构 - 链表Linked List [链表一](https://zhuanlan.zhihu.com/p/52878334) [链表二](https://zhuanlan.zhihu.com/p/52841915)
+- 线性结构 - 栈Stack []()
+- 线性结构 - 队列Queue []()
+- 线性结构 - 散列表Hash []()
+### 非线性结构  
+
+- 线性结构 - 树Tree []()
+- 线性结构 - 堆Heap []()
+- 线性结构 - 图Graph []()
 ## 算法篇
 
 
