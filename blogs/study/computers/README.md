@@ -13,6 +13,7 @@ meta:
 ## 前言
 
 - [前端的数据结构与算法系列](https://github.com/sisterAn/JavaScript-Algorithms)
+- [JavaScript语言实现经典的数据结构和算法](https://github.com/cunzaizhuyi/ds-algorithm)
 
 ## 计算机基础知识
 
@@ -70,24 +71,43 @@ meta:
 
 - 数据结构 - 队列 Queue
   - [队列](http://c.biancheng.net/view/3352.html)
-- 数据结构 - 队列 - 简单队列
+- 数据结构 - 队列 - 顺序队列
   - [实现-JS](https://blog.csdn.net/yuruixin_china/article/details/77823296?utm_source=blogxgwz0)
 - 数据结构 - 队列 - 循环队列
+  - [循环队列](https://blog.csdn.net/rainchxy/article/details/79860990)
   - [实现-JS](https://juejin.cn/post/6844903717418844168)
 - 数据结构 - 队列 - 优先队列
+  - [优先队列](https://www.sohu.com/a/256022793_478315)
   - [实现-JS](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/05_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E4%BA%94%EF%BC%89%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97.md)
+  - [实现-JS(数组实现)](https://github.com/cunzaizhuyi/ds-algorithm/blob/master/%E9%98%9F%E5%88%97/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0.js)
   - [实现-JS(堆实现)](https://github.com/cunzaizhuyi/ds-algorithm/blob/master/%E9%98%9F%E5%88%97/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/%E5%A0%86%E5%AE%9E%E7%8E%B0.js)
-  - [实现-JS(数实现)](https://github.com/cunzaizhuyi/ds-algorithm/blob/master/%E9%98%9F%E5%88%97/%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0.js)
 - 数据结构 - 队列 - 双端队列
   - [实现-JS](https://blog.csdn.net/zhang1339435196/article/details/101352402)
+
 ---
 
-- 数据结构 - 散列表 Hash []()
+- 数据结构 - 散列表(哈希表) Hash
+  - [散列表(哈希表)](http://data.biancheng.net/view/107.html)
+  - [实现-JS](https://zhuanlan.zhihu.com/p/262496332)
+
 
 ### 非线性数据结构
 
-- 数据结构 - 树 Tree []()
+- 数据结构 - 树Tree
+  - [树](http://data.biancheng.net/view/23.html)
+- 数据结构 - 树 - 二叉树
+  - [二叉树1](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/12_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E4%BA%8C%E5%8F%89%E6%A0%91.md)
+  - [二叉树2](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/13_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.md)
+  - [二叉树-优缺点](https://www.cnblogs.com/yunshaowei/p/6780933.html)
+  - [二叉树常见操作](https://segmentfault.com/a/1190000008850005)
+- 数据结构 - 树 - 红黑树
+  - [红黑树](https://www.jianshu.com/p/e136ec79235c)
+- 数据结构 - 树 - B树
+- 数据结构 - 树 - B+树
+- 数据结构 - 树 - 哈夫曼树
+
 - 数据结构 - 堆 Heap []()
+
 - 数据结构 - 图 Graph []()
 
 
