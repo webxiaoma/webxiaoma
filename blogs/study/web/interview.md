@@ -18,7 +18,7 @@ isLogin: true
 
 - [前端 100 问](https://juejin.cn/post/6844903885488783374)
 - [算法面试题](https://github.com/sisterAn/JavaScript-Algorithms)
-
+- [面试题](https://github.com/mqyqingfeng/frontend-interview-question-and-answer/issues/47)
 ## CSS
 
 
@@ -87,22 +87,21 @@ console.log('script end');
 
 
 ## 原生方法实现题
-
+ 
 
 
 
 ## Vue篇
 
-### Vue
+### Vue2.x
 
-- Vue - []()
+- [Vue2.x常见面试题](/web/question/vue.html)
 
 
 ## 设计模式
 
 
 
-## 算法
 
 ### 请分别用深度优先思想和广度优先思想实现一个拷贝函数？
 
