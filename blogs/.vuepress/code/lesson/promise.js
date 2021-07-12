@@ -1,174 +1,70 @@
-// 节点对象
-class Node {
-  constructor(data) {
-      this.root = this;
-      this.data = data;
-      this.left = null;
-      this.right = null;
-  }
+updateChildren (parentElm, oldCh, newCh) {
+    let oldStartIdx = 0, newStartIdx = 0
+    let oldEndIdx = oldCh.length - 1
+    let oldStartVnode = oldCh[0]
+    let oldEndVnode = oldCh[oldEndIdx]
+    let newEndIdx = newCh.length - 1
+    let newStartVnode = newCh[0]
+    let newEndVnode = newCh[newEndIdx]
+    let oldKeyToIdx
+    let idxInOld
+    let elmToMove
+    let before
+    while (oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx) {
+            if (oldStartVnode == null) {   //对于vnode.key的比较，会把oldVnode = null
+                oldStartVnode = oldCh[++oldStartIdx] 
+            }else if (oldEndVnode == null) {
+                oldEndVnode = oldCh[--oldEndIdx]
+            }else if (newStartVnode == null) {
+                newStartVnode = newCh[++newStartIdx]
+            }else if (newEndVnode == null) {
+                newEndVnode = newCh[--newEndIdx]
+            }else if (sameVnode(oldStartVnode, newStartVnode)) {
+                patchVnode(oldStartVnode, newStartVnode)
+                oldStartVnode = oldCh[++oldStartIdx]
+                newStartVnode = newCh[++newStartIdx]
+            }else if (sameVnode(oldEndVnode, newEndVnode)) {
+                patchVnode(oldEndVnode, newEndVnode)
+                oldEndVnode = oldCh[--oldEndIdx]
+                newEndVnode = newCh[--newEndIdx]
+            }else if (sameVnode(oldStartVnode, newEndVnode)) {
+                patchVnode(oldStartVnode, newEndVnode)
+                api.insertBefore(parentElm, oldStartVnode.el, api.nextSibling(oldEndVnode.el))
+                oldStartVnode = oldCh[++oldStartIdx]
+                newEndVnode = newCh[--newEndIdx]
+            }else if (sameVnode(oldEndVnode, newStartVnode)) {
+                patchVnode(oldEndVnode, newStartVnode)
+                api.insertBefore(parentElm, oldEndVnode.el, oldStartVnode.el)
+                oldEndVnode = oldCh[--oldEndIdx]
+                newStartVnode = newCh[++newStartIdx]
+            }else {
+                // 使用key时的比较
+                if (oldKeyToIdx === undefined) {
+                    oldKeyToIdx = createKeyToOldIdx(oldCh, oldStartIdx, oldEndIdx) // 有key生成index表
+                }
+                idxInOld = oldKeyToIdx[newStartVnode.key]
+                if (!idxInOld) {
+                    api.insertBefore(parentElm, createEle(newStartVnode).el, oldStartVnode.el)
+                    newStartVnode = newCh[++newStartIdx]
+                }
+                else {
+                    elmToMove = oldCh[idxInOld]
+                    if (elmToMove.sel !== newStartVnode.sel) { // 节点选择器
+                        api.insertBefore(parentElm, createEle(newStartVnode).el, oldStartVnode.el)
+                    }else {
+                        patchVnode(elmToMove, newStartVnode)
+                        oldCh[idxInOld] = null
+                        api.insertBefore(parentElm, elmToMove.el, oldStartVnode.el)
+                    }
+                    newStartVnode = newCh[++newStartIdx]
+                }
+            }
+    }
+
+    if (oldStartIdx > oldEndIdx) {
+        before = newCh[newEndIdx + 1] == null ? null : newCh[newEndIdx + 1].el
+        addVnodes(parentElm, before, newCh, newStartIdx, newEndIdx)
+    }else if (newStartIdx > newEndIdx) {
+        removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx)
+    }
 }
-
-// 二叉树
-class BST {
-  constructor() {
-      this.root = null;
-  }
-
-  // 插入节点
-  insert(data) {
-      let newNode = new Node(data);
-      let insertNode = (node, newNode) => {
-          if (newNode.data < node.data) {
-              if (node.left === null) {
-                  node.left = newNode;
-              } else {
-                  insertNode(node.left, newNode);
-              }
-          } else {
-              if (node.right === null) {
-                  node.right = newNode;
-              } else {
-                  insertNode(node.right, newNode)
-              }
-          }
-      };
-
-      if (!this.root) {
-          this.root = newNode;
-      } else {
-          insertNode(this.root, newNode)
-      }
-  }
-
-  /* 中序遍历 =>
-      1.访问左子树(先访问左子树中的左子树，再访问左子树中的右子树)；
-      2.访问根
-      3.访问右子树(先访问右子树中的左子树，再访问右子树中的右子树)
-
-      可以起到排序作用
-  */
-  inOrder() {
-      let backs = [];
-      let inOrderNode = (node, callback) => {
-          if (node !== null) {
-              inOrderNode(node.left, callback);
-              backs.push(callback(node.data));
-              inOrderNode(node.right, callback);
-          }
-      }
-
-      let callback = function(v) {
-          return v
-      }
-      inOrderNode(this.root, callback);
-      return backs
-  }
-
-  // 前序遍历 => 1.访问根节点； 2.访问左子树； 3.访问右子树
-  preOrder() {
-      let backs = [];
-      let preOrderNode = (node, callback) => {
-          if (node !== null) {
-              backs.push(callback(node.data));
-              preOrderNode(node.left, callback);
-              preOrderNode(node.right, callback);
-          }
-      }
-      let callback = function(v) {
-          return v
-      }
-      preOrderNode(this.root, callback);
-      return backs
-  }
-
-  /* 后序遍历 =>
-      1.访问左子树。（先访问左子树中的左子树，再访问左子树中的右子树）
-      2.访问右子树。（先访问右子树中的左子树，再访问右子树中的右子树）
-      3.访问根
-  */
-  postOrder(){
-      let backs = [];
-      const postOrderNode = (node,callback) => {
-          if(node !== null){
-              postOrderNode(node.left,callback);
-              postOrderNode(node.right,callback);
-              backs.push(callback(node.data))
-          }
-      };
-
-      let callback = function(v) {
-          return v
-      }
-      postOrderNode(this.root,callback);
-      return backs
-  }
-
-  // 查找最小值
-  getMin(node) {
-      let minNode = node => {
-          return node ? (node.left ? minNode(node.left) : node) : null
-      }
-
-      return minNode(node || this.root)
-  }
-
-  // 查找最大值
-  getMax(node) {
-      let maxNode = node => {
-          return node ? (node.right ? maxNode(node.right) : node) : null
-      }
-
-      return maxNode(node || this.root)
-  }
-
-  // 查找特定值
-  find(data) {
-      let findNode = (node, data) => {
-          if (node == null) return false
-          if (node.data === data) return node;
-          return findNode((data < node.data) ? node.left : node.right, data);
-      }
-
-      return findNode(this.root, data);
-  }
-
-  // 删除节点
-  // 返回新的二叉树？
-  remove(data) {
-      let removeNode = (node, data) => {
-          if (node === null) return null;
-          if (node.data === data) {
-              if (node.left === null && node.right === null) return null
-              if (node.left === null) return node.right;
-              if (node.right === null) return node.left;
-              if (node.left !== null && node.right !== null) {
-                  let _node = this.getMin(node.right);
-                  node.data = _node.data;
-                  node.right = removeNode(node.right, data);
-                  return node
-              }
-          } else if (data < node.data) {
-              node.left = removeNode(node.left, data);
-              return node;
-          } else {
-              node.right = removeNode(node.right, data);
-              return node;
-          }
-      }
-
-      return removeNode(this.root, data)
-  }
-}
-
-/***********************************/
-// some operation
-let datas = [11,7,5,3,6,9,8,10,20,14,12,25,18];
-let bst = new BST();
-datas.forEach(data => {
-  bst.insert(data)
-})
-
-console.log(bst)
-
-console.log("中序",bst.inOrder())
-// console.log(bst.getMin())

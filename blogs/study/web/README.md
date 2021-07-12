@@ -46,12 +46,14 @@ isLogin: true
 
 - JS基础 Object - `defineProperty` [文章一](https://segmentfault.com/a/1190000007434923)
 - JS基础 Array - 常用方法汇总 [文章一](https://juejin.cn/post/6862526380404391949) [文章二](https://es6.ruanyifeng.com/#docs/array)
-
+- JS基础 - 类型转换 [文章一](https://github.com/mqyqingfeng/Blog/issues/159)[文章二](https://github.com/mqyqingfeng/Blog/issues/164)
 
 
 ### 进阶
 
 - JS深入 - 原型与原型链 [文章一](https://github.com/mqyqingfeng/Blog/issues/2)
+- JS深入 - 创建对象的多种方式[文章一](https://github.com/mqyqingfeng/Blog/issues/15)
+- JS深入 - 继承的多种方式[文章一](https://github.com/mqyqingfeng/Blog/issues/16)
 - JS深入 - 词法作用域和动态作用域 [文章一](https://github.com/mqyqingfeng/Blog/issues/3)
 - JS深入 - 执行上下文栈 [文章一](https://github.com/mqyqingfeng/Blog/issues/4)
 - JS深入 - 变量对象 [文章一](https://github.com/mqyqingfeng/Blog/issues/5)
@@ -61,10 +63,6 @@ isLogin: true
 - JS深入 - 闭包 [文章一](https://github.com/mqyqingfeng/Blog/issues/9)
 - JS深入 - 微任务、宏任务与Event-Loop [文章一](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6) [文章二](https://www.cnblogs.com/jiasm/p/9482443.html)
 
-
----
-
-- JS深入 - JS的继承方式[文章一](https://www.cnblogs.com/humin/p/4556820.html)
 
 
 ### 原生方法的实现
@@ -76,6 +74,10 @@ isLogin: true
 - JS实现 - 节流实现 [文章一](https://github.com/mqyqingfeng/Blog/issues/26)
 
 
+### 常用方法的实现
+
+- [深拷贝](https://github.com/mqyqingfeng/Blog/issues/32)
+- [深度优先和广度优先遍历](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/10)
 
 ## ECMAScript
 
@@ -98,25 +100,18 @@ isLogin: true
 
 
 
-
-## 算法
-
-
-### 遍历算法
-
-- JS方法 - 深度优先和广度优先实现一个拷贝函数 [文章一](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/10)
-
-
-
 ## 框架篇
-
+ 
 
 ### Vue篇
 
+
+- Vue - Diff算法 [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) [文章二](https://github.com/sl1673495/blogs/issues/39)
+
+---
+
 - Vue2 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue2 - computed原理实现 [文章一](/web/vue/computed.html)
-
-
 
 
 
