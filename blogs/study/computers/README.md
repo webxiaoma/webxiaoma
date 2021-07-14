@@ -129,3 +129,19 @@ meta:
 
 ### 常见算法
 
+
+
+## 安全问题
+
+
+### 常见的网络攻击
+
+
+- 前端网络攻击 - XSS跨站脚本攻击 [文章一](https://blog.csdn.net/qq_35393693/article/details/86597707)
+- 前端网络攻击 - SQL注入 [文章一](https://www.cnblogs.com/baizhanshi/p/6002898.html)
+- 前端网络攻击 - CSRF跨站请求伪造 [文章一](https://www.cnblogs.com/hyddd/archive/2009/04/09/1432744.html)
+- 前端网络攻击 - DDoS攻击 []()
+- 前端网络攻击 - 网络劫持攻击 []()
+- 前端网络攻击 - 钓鱼 []()
+- 前端网络攻击 - 控制台注入代码 []()
+- 前端网络攻击 - 点击劫持 []()

@@ -22,6 +22,7 @@ isLogin: true
 
 ## Html
 
+- HTML - HTML5新增新特性，移除的新特性 [文章一](https://blog.csdn.net/z591102/article/details/104776477)
 
 ## CSS
 
@@ -104,14 +105,14 @@ isLogin: true
  
 ### Vue2篇
 
-- Vue基础 - 生命周期 [文章一](https://segmentfault.com/a/1190000011381906/)
+- Vue基础 - 生命周期 [文章一](https://segmentfault.com/a/1190000011381906/) [文章二](https://www.jianshu.com/p/672e967e201c)
 - Vue基础 - 自定义事件 [文章一](https://cn.vuejs.org/v2/guide/components-custom-events.html)
 - Vue基础 - 自定义组件v-model [文章一](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
 - Vue基础 - Slot插槽 [文章一](https://cn.vuejs.org/v2/guide/components-slots.html)
 - Vue基础 - 组件的循环引用 [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8) [文章二](https://www.cnblogs.com/zpxm/p/11060086.html)
 - Vue基础 - 依赖注入 [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5)
 - Vue基础 - 处理边界情况 [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html)
-- Vue基础 - Keep-alive [文章一]()
+- Vue基础 - Keep-alive [文章一](https://cn.vuejs.org/v2/api/#keep-alive)
 - Vue基础 - 混入mixin [文章一](https://cn.vuejs.org/v2/guide/mixins.html)
 - Vue基础 - 自定义指令directive [文章一](https://cn.vuejs.org/v2/guide/custom-directive.html)
 - Vue基础 - 过滤器filter [文章一](https://cn.vuejs.org/v2/guide/filters.html)
@@ -133,4 +134,8 @@ isLogin: true
 
 
 
+
+## 浏览原理与概念
+
+- 浏览器 - 跨域问题 [文章一](https://blog.csdn.net/ysvae/article/details/82121161)
 

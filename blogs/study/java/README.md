@@ -43,9 +43,11 @@ isLogin: true
 ### Servlet容器
 
 - Servlet - Servle初识 [文章一](http://c.biancheng.net/servlet2/what-is-servlet.html)
+- Servlet - 功能 [文章一](https://www.php.cn/java-article-418053.html)
 - Servlet - Servlet容器（Web容器）[文章一](http://c.biancheng.net/servlet2/container.html)
 - Servlet - 创建方式 [文章一](http://c.biancheng.net/servlet2/create.html)
-
+- Servlet - 虚拟路径映射 [文章一](http://c.biancheng.net/servlet2/virtual-path.html)
+- Servlet - 虚拟路径匹配规则 [文章一](http://c.biancheng.net/servlet2/matching-rules.html)
 
 ### Tomcat（Web服务器）
 

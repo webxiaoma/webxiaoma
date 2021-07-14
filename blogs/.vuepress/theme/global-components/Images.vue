@@ -20,7 +20,7 @@ export default {
   data () {
     return {
       imgUrl:"",
-      baseImgUrl:`${base}img`,
+      baseImgUrl:`${base}/img`,
       scaleImgUrl:"",
       showMdel:false,
     };
