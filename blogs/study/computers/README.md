@@ -97,7 +97,7 @@ meta:
   - [树](http://data.biancheng.net/view/23.html)
 - 数据结构 - 树 - 二叉树
   - [二叉树1](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/12_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89%E4%BA%8C%E5%8F%89%E6%A0%91.md)
-  - [二叉树2](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/13_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.md)
+  - [二叉树2](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/13_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6 %9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E5%8D%81%E4%B8%89%EF%BC%89%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.md)
   - [二叉树-优缺点](https://www.cnblogs.com/yunshaowei/p/6780933.html)
   - [二叉树常见操作](https://segmentfault.com/a/1190000008850005)
 - 数据结构 - 树 - 红黑树
