@@ -17,16 +17,17 @@ meta:
 
 ## 计算机基础知识
 
-## 网络协议
 
-### 概念
+- 计算网络知识 - 互联网协议
+  - [互联网协议一](https://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html) 
+  - [互联网协议二](https://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
+- 计算网络知识 - DNS
 
-- 网络协议概念 - 互联网协议 [文章一](https://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html) [文章二](https://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
 
-### HTTP协议
+- 计算网络知识 - 浏览器如何访问的网页 [文章一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
 
-- HTTP协议 - HTTP协议初识 [文章一](http://www.ruanyifeng.com/blog/2016/08/http.html)
-
+- 计算网络知识 - HTTP - HTTP协议初识 [文章一](http://www.ruanyifeng.com/blog/2016/08/http.html)
+- 计算网络知识 - HTTP - HSTS [文章一](https://zhuanlan.zhihu.com/p/130946490)
 
 
 
