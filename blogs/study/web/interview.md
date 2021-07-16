@@ -5,10 +5,11 @@ meta:
   - name: description
     content: 本章为小马学习专栏
 isLogin: true
+sidebarDepth: 1
 ---
 
 
-# 前端面试题
+# 面试题
 
 
 :horse:
@@ -19,6 +20,8 @@ isLogin: true
 - [前端 100 问](https://juejin.cn/post/6844903885488783374)
 - [算法面试题](https://github.com/sisterAn/JavaScript-Algorithms)
 - [面试题](https://github.com/mqyqingfeng/frontend-interview-question-and-answer/issues/47)
+- [大前端面试宝典 - 图解前端](https://lucifer.ren/fe-interview/#/?id=%e4%b8%bb%e9%a2%98)
+
 ## CSS
 
 

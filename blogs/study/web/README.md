@@ -122,14 +122,17 @@ isLogin: true
 
 ---
 
-- Vue深入 - EventBus原理 [文章一]()
+- Vue - Vuex - 学习 [官方文档](https://vuex.vuejs.org/zh/)
+- Vue - Router - 学习 [官方文档](https://router.vuejs.org/zh/)
+---
+
 - Vue深入 - Diff算法 [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) [文章二](https://github.com/sl1673495/blogs/issues/39)
 - Vue深入 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue深入 - computed原理实现 [文章一](/web/vue/computed.html)
 
 ---
 
-- Vue深入 - Vuex - 实现原理
+- Vue深入 - Vuex - 实现原理 [文章一](https://blog.csdn.net/chenqiuge1984/article/details/80129368)
 - Vue深入 - VueRouter - 实现原理
 
 
@@ -138,4 +141,4 @@ isLogin: true
 ## 浏览原理与概念
 
 - 浏览器 - 跨域问题 [文章一](https://blog.csdn.net/ysvae/article/details/82121161)
-
+- 浏览器 - 缓存 [文章一](https://juejin.cn/post/6888875643266662414)

@@ -48,7 +48,8 @@ isLogin: true
 - Servlet - 创建方式 [文章一](http://c.biancheng.net/servlet2/create.html)
 - Servlet - 虚拟路径映射 [文章一](http://c.biancheng.net/servlet2/virtual-path.html)
 - Servlet - 虚拟路径匹配规则 [文章一](http://c.biancheng.net/servlet2/matching-rules.html)
-
+- Servlet - 生命周期 [文章一](http://c.biancheng.net/servlet2/life-cycle.html)
+- Servlet - ServletConfig []()
 ### Tomcat（Web服务器）
 
 - Tomcat - 初识 [文章一](https://news.west.cn/27725.html)
