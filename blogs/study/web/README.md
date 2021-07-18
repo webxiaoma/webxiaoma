@@ -5,6 +5,7 @@ meta:
   - name: description
     content: 本章为小马学习专栏
 isLogin: true
+sidebarDepth: 1
 ---
 
 
@@ -48,6 +49,7 @@ isLogin: true
 - JS基础 Object - `defineProperty` [文章一](https://segmentfault.com/a/1190000007434923)
 - JS基础 Array - 常用方法汇总 [文章一](https://juejin.cn/post/6862526380404391949) [文章二](https://es6.ruanyifeng.com/#docs/array)
 - JS基础 - 类型转换 [文章一](https://github.com/mqyqingfeng/Blog/issues/159)[文章二](https://github.com/mqyqingfeng/Blog/issues/164)
+
 
 
 ### 进阶
@@ -122,20 +124,25 @@ isLogin: true
 
 ---
 
-- Vue深入 - EventBus原理 [文章一]()
+- Vue - Vuex - 学习 [官方文档](https://vuex.vuejs.org/zh/)
+- Vue - Router - 学习 [官方文档](https://router.vuejs.org/zh/)
+---
+
 - Vue深入 - Diff算法 [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) [文章二](https://github.com/sl1673495/blogs/issues/39)
 - Vue深入 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue深入 - computed原理实现 [文章一](/web/vue/computed.html)
 
 ---
 
-- Vue深入 - Vuex - 实现原理
+- Vue深入 - Vuex - 实现原理 [文章一](https://blog.csdn.net/chenqiuge1984/article/details/80129368)
 - Vue深入 - VueRouter - 实现原理
 
+### Lodash
 
+- [lodash中文文档](https://www.lodashjs.com/docs/lodash.chunk)
 
 
 ## 浏览原理与概念
 
 - 浏览器 - 跨域问题 [文章一](https://blog.csdn.net/ysvae/article/details/82121161)
-
+- 浏览器 - 缓存 [文章一](https://juejin.cn/post/6888875643266662414)

@@ -33,6 +33,8 @@ sidebarDepth: 2
 
 <NavItem  title="优秀插件">
   <NavCard title="FlyJs" jumpUrl="https://wendux.github.io/dist/#/doc/flyio/readme" logo="https://wendux.github.io/dist/static/doc/flyio/fly.png" des="一个支持所有JavaScript运行环境的基于Promise的、支持请求转发、强大的http请求库。可以让您在多个端上尽可能大限度的实现代码复用。" />
+  <NavCard title="Lodash" jumpUrl="https://www.lodashjs.com/docs/lodash.chunk" logo="https://www.lodashjs.com/img/favicon.ico" des="一个JS函数库" />
+
 </NavItem>
 
 <NavItem  title="优秀文章">
@@ -122,11 +124,10 @@ sidebarDepth: 2
 ## 工具类导航
 
 <NavItem>
- <NavCard title="阿里图标" jumpUrl="https://www.zhihu.com/" logo="alishiliang.png" des="Iconfont-国内功能很强大且图标内容很丰富的矢量图标库,提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造,设计和前端开发的便捷工具" />
- <NavCard title="VScode" jumpUrl="https://code.visualstudio.com/" logo="https://code.visualstudio.com/apple-touch-icon.png" des="Visual Studio Code是Microsoft在2015年4月30日Build开发者大会上正式宣布一个运行于 Mac OS X、Windows和 Linux 之上的，针对于编写现代Web和云应用的跨平台源代码编辑器" />
- <NavCard title="ESLint" jumpUrl="https://cn.eslint.org/" logo="https://cn.eslint.org/img/favicon.512x512.png" des="ESLint是一个JavaScript代码自动格式化，检测的工具" />
- 
+  <NavCard title="阿里图标" jumpUrl="https://www.zhihu.com/" logo="alishiliang.png" des="Iconfont-国内功能很强大且图标内容很丰富的矢量图标库,提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造,设计和前端开发的便捷工具" />
+  <NavCard title="VScode" jumpUrl="https://code.visualstudio.com/" logo="https://code.visualstudio.com/apple-touch-icon.png" des="Visual Studio Code是Microsoft在2015年4月30日Build开发者大会上正式宣布一个运行于 Mac OS X、Windows和 Linux 之上的，针对于编写现代Web和云应用的跨平台源代码编辑器" />
+  <NavCard title="ESLint" jumpUrl="https://cn.eslint.org/" logo="https://cn.eslint.org/img/favicon.512x512.png" des="ESLint是一个JavaScript代码自动格式化，检测的工具" />
+  
 </NavItem>
-
 
 </div>

@@ -29,14 +29,23 @@ isLogin: true
 
 ## Maven
 
-
+- Maven - 安装 [win安装](https://blog.csdn.net/weixin_43811057/article/details/108235117)
 ###  IDEA编辑器
 
-- IDEA - 集成Java环境 [文章一](https://www.jb51.net/article/173091.htm)
-- IDEA - 创建Maven项目 [文章一](https://www.cnblogs.com/qinxu/p/9648429.html)
-- IDEA - 创建Web项目 [文章一](https://blog.csdn.net/konggu_youlan/article/details/88894348)
-- IDEA - 创建Maven + Web项目(Tomcat)  [文章一](https://www.cnblogs.com/luyanjie/p/9656589.html)
+- IDEA环境 - 集成Java环境 [文章一](https://www.jb51.net/article/173091.htm)
+- IDEA环境 - 创建Maven项目 [文章一](https://www.cnblogs.com/qinxu/p/9648429.html)
+- IDEA环境 - 创建Web项目 [文章一](https://blog.csdn.net/konggu_youlan/article/details/88894348)
+- IDEA环境 - 创建Maven + Web项目(Tomcat)  [文章一](https://www.cnblogs.com/luyanjie/p/9656589.html)
 
+---
+
+- IDEA配置 - Facets和Artifacts配置 [文章一](https://www.cnblogs.com/poilk/p/6529347.html)
+
+
+
+---
+
+- IDEA问题 - 控制台解决中文乱码 [文章一](https://www.cnblogs.com/votory/p/12283176.html)
 ## JavaWeb篇
 
 
@@ -48,6 +57,10 @@ isLogin: true
 - Servlet - 创建方式 [文章一](http://c.biancheng.net/servlet2/create.html)
 - Servlet - 虚拟路径映射 [文章一](http://c.biancheng.net/servlet2/virtual-path.html)
 - Servlet - 虚拟路径匹配规则 [文章一](http://c.biancheng.net/servlet2/matching-rules.html)
+- Servlet - @WebServlet注解 [文章一](http://c.biancheng.net/servlet2/webservlet.html)
+- Servlet - 生命周期 [文章一](http://c.biancheng.net/servlet2/life-cycle.html)
+- Servlet - ServletConfig [文章一](http://c.biancheng.net/servlet2/servletconfig.html)
+
 
 ### Tomcat（Web服务器）
 
