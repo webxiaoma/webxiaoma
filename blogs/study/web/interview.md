@@ -126,10 +126,11 @@ console.log('script end');
 - Vue - vue递归组件实现 [答案一](https://blog.csdn.net/weixin_41819731/article/details/105470035)
 - Vue - vue是如何检测倒数组变化的 [答案一](https://zhuanlan.zhihu.com/p/173963853)
 - Vue - vue中父组件可以监听子组件生命周期么（hook） [答案一](https://www.tensweets.com/article/5e032df8362e5434baf63394)
+
 ---
 
 - Vue - $router和$route的区别 [答案一](https://www.cnblogs.com/xzybk/p/12535615.html)
-- Vue - VueRouter的几个模式区别 [答案一](https://www.cnblogs.com/ceceliahappycoding/p/10552620.html)
+- Vue - VueRouter的几个模式区别 [答案一](https://segmentfault.com/a/1190000039692879?utm_source=tag-newest)
 - Vue - vuex是什么，什么时候使用 [答案一](https://www.cnblogs.com/kaicy/p/14722736.html)
 
 --- 
@@ -140,6 +141,13 @@ console.log('script end');
 - Vue - Diff算法原理 
   - [答案一](https://www.cnblogs.com/wind-lanyan/p/9061684.html)
   - [答案二](https://github.com/sl1673495/blogs/issues/39)
+- Vue - vuex的实现原理 [答案一](https://juejin.cn/post/6877067579672756237#heading-0)
+- Vue - vueRouter的实现原理 
+  - [答案一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
+
+
+
+
 <!-- - Vue -  [答案一]()
 - Vue -  [答案一]()
 - Vue -  [答案一]()

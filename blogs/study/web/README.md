@@ -107,11 +107,15 @@ sidebarDepth: 1
  
 ### Vue2篇
 
-- Vue基础 - 生命周期 [文章一](https://segmentfault.com/a/1190000011381906/) [文章二](https://www.jianshu.com/p/672e967e201c)
+- Vue基础 - 生命周期 
+  - [文章一](https://segmentfault.com/a/1190000011381906/) 
+  - [文章二](https://www.jianshu.com/p/672e967e201c)
 - Vue基础 - 自定义事件 [文章一](https://cn.vuejs.org/v2/guide/components-custom-events.html)
 - Vue基础 - 自定义组件v-model [文章一](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BB%84%E4%BB%B6%E7%9A%84-v-model)
 - Vue基础 - Slot插槽 [文章一](https://cn.vuejs.org/v2/guide/components-slots.html)
-- Vue基础 - 组件的循环引用 [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8) [文章二](https://www.cnblogs.com/zpxm/p/11060086.html)
+- Vue基础 - 组件的循环引用 
+  - [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8) 
+  - [文章二](https://www.cnblogs.com/zpxm/p/11060086.html)
 - Vue基础 - 依赖注入 [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5)
 - Vue基础 - 处理边界情况 [文章一](https://cn.vuejs.org/v2/guide/components-edge-cases.html)
 - Vue基础 - Keep-alive [文章一](https://cn.vuejs.org/v2/api/#keep-alive)
@@ -126,16 +130,23 @@ sidebarDepth: 1
 
 - Vue - Vuex - 学习 [官方文档](https://vuex.vuejs.org/zh/)
 - Vue - Router - 学习 [官方文档](https://router.vuejs.org/zh/)
+
 ---
 
-- Vue深入 - Diff算法 [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) [文章二](https://github.com/sl1673495/blogs/issues/39)
+- Vue深入 - Diff算法 
+  - [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) 
+  - [文章二](https://github.com/sl1673495/blogs/issues/39)
 - Vue深入 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue深入 - computed原理实现 [文章一](/web/vue/computed.html)
 
 ---
 
-- Vue深入 - Vuex - 实现原理 [文章一](https://blog.csdn.net/chenqiuge1984/article/details/80129368)
-- Vue深入 - VueRouter - 实现原理
+- Vue深入 - Vuex3.x - 实现原理 
+  - [文章一](https://juejin.cn/post/6877067579672756237#heading-0)
+  - [文章二](https://juejin.cn/post/6905713109168553997#heading-10)
+  - [文章三](https://juejin.cn/post/6844903599764406286)
+  - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
+- Vue深入 - VueRouter - 实现原理 [文章一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
 
 ### Lodash
 
