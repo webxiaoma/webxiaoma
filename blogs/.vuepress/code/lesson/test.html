@@ -8,6 +8,56 @@
 </head>
 <body>
   
-  <script src="./promise.js"></script>
+  <script>
+  let resultObj = {
+    S:[],
+    XL:[]
+  }
+
+  let specList = [
+    ["red","yellow"],
+    ["XL","S"],
+    ["a1","a2"],
+    ["b1","b2"],
+  ]
+
+  function test(specList){
+    let resultList = [];
+    
+    specList.forEach((item,index)=>{
+      let ary = [];
+      item.forEach((str)=>{
+        if(index === 0){
+          resultList.push(str);
+        }else{
+          resultList.forEach(ele=>{
+              ary.push(
+                `${ele}-${str}`
+              )
+          })
+        }
+      })
+      if(index !== 0){
+        resultList = ary;
+      }
+    
+    })
+
+    
+    resultList.forEach(item=>{
+      const flag = item.split("-")[1];
+      resultObj[flag].push(item);
+    })
+
+    resultList = Object.values(resultObj).flat()
+
+    console.log(resultList)
+
+  }
+
+
+
+  test(specList)
+  </script>
 </body>
 </html>
