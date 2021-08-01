@@ -89,7 +89,7 @@ try{
 ```
 
 
-### thorws
+### throws
 
 在方法中我们遇到异常可以不在当前方法中进行处理，而是将异常抛出
 
@@ -112,7 +112,7 @@ public class ErrorTest {
 ```
 :::tip 提示
 
-`thorws` 和 `throw` 不同
+`throws` 和 `throw` 不同
 
 - `throws`出现在方法声明上，而`throw`常出现在方法体内。
 - `throws`表示异常的兼容处理，异常并不一定发生，而`throw`表示的是表示抛出异常，一定发生了某个异常
@@ -164,7 +164,7 @@ public static void method() throws FileNotFoundException,ArithmeticException{
 
 `java`中自定义异常类一般继承自`Exception`类或`RuntimeException`，自定义的异常类名称我们习惯以`Exception`结尾。
 
-- 继承`Exception`类的自定义异常类是一个编译器异常，如果方法内部使用`thorw`抛出了异常，则必须要处理
+- 继承`Exception`类的自定义异常类是一个编译器异常，如果方法内部使用`throw`抛出了异常，则必须要处理
 - 继承`RuntimeException`类的自定义异常类是一个运行其异常，可以不处理，交给虚拟机处理。
 
 

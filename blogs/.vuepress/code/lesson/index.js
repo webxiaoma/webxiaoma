@@ -27,6 +27,15 @@ const industry_list = [
     },
 ]
 
+    let mode = options.mode || 'hash'   // 不选择模式会默认使用hash模式
+    this.fallback = mode === 'history' && !supportsPushState && options.fallback !== false
+    if (this.fallback) {
+      mode = 'hash'
+    }
+    if (!inBrowser) {         // 非浏览器环境默认nodejs环境
+      mode = 'abstract'
+    }
+    this.mode = mode
 
 
 let newArr = []

@@ -29,7 +29,11 @@ sidebarDepth: 1
   - [互联网协议二](https://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
 - 计算网络知识 - DNS [文章一](https://blog.csdn.net/jiayu5100687/article/details/81985968)
 - 计算网络知识 - 浏览器如何访问的网页 [文章一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
+
+---
+
 - 计算网络知识 - HTTP - HTTP协议初识 [文章一](http://www.ruanyifeng.com/blog/2016/08/http.html)
+- 计算网络知识 - HTTP - HTTP整体认识 [文章一](https://blog.csdn.net/csdnsevenn/article/details/104765065)
 - 计算网络知识 - HTTP - HSTS [文章一](https://zhuanlan.zhihu.com/p/130946490)
 
 ## 计算机硬件知识
