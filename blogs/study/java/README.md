@@ -64,7 +64,6 @@ isLogin: true
 - Servlet - 会话技术Session [文章一](http://c.biancheng.net/servlet2/session.html)
 
 
-
 ### Tomcat（Web服务器）
 
 - Tomcat - 初识 [文章一](https://news.west.cn/27725.html)
@@ -78,7 +77,7 @@ isLogin: true
 
 ### JSP
 
-- JSP - 语法 [文章一]()
+- JSP - 语法 [文章一](https://www.runoob.com/jsp/jsp-syntax.html)
 
 ## spring篇
 
