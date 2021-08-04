@@ -14,12 +14,11 @@ sidebarDepth: 1
 
 :horse:
 
-
 ## 前言
 
 - [一名【合格】前端工程师的自检清单](https://juejin.cn/post/6844903830887366670#heading-18)
 - [冴羽的博客](https://github.com/mqyqingfeng/Blog)
-
+- [精品博客](https://www.daozhao.com/10121.html)
 
 ## Html
 
@@ -27,6 +26,9 @@ sidebarDepth: 1
 
 ## CSS
 
+- CSS - BFC了解 [文章一](/web/csshtml/css-bfc.html)
+- CSS - 格式化上下文 [文章一](/web/csshtml/css-formatContent.html)
+- CSS - 基线 [文章一](https://www.jianshu.com/p/59f31a1704de)
 ### 基础
 
 ### 深入
@@ -147,6 +149,13 @@ sidebarDepth: 1
   - [文章三](https://juejin.cn/post/6844903599764406286)
   - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
 - Vue深入 - VueRouter - 实现原理 [文章一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
+
+
+### Vue3篇
+
+Vue - [vue3官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
+
+
 
 ### Lodash
 

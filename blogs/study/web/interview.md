@@ -11,9 +11,7 @@ sidebarDepth: 1
 
 # 面试题
 
-
 :horse:
-
 
 ## 临时
 
@@ -22,25 +20,91 @@ sidebarDepth: 1
 - [面试题](https://github.com/mqyqingfeng/frontend-interview-question-and-answer/issues/47)
 - [大前端面试宝典 - 图解前端](https://lucifer.ren/fe-interview/#/?id=%e4%b8%bb%e9%a2%98)
 
-## CSS
-
 
 ## HTML
 
+- HTML - W3C有那些规范 [答案一](https://www.w3cschool.cn/xuexiw3c/xuexiw3c-standards.html)
+- HTML - 什么是HTML 5？ [答案一](https://blog.csdn.net/sujin_/article/details/78520888)
+- HTML - `<!DOCTYPE html>`的作用 [答案一](https://www.cnblogs.com/HDWdemo/p/12005120.html)
+- HTML - HTML和XHTML的区别 [答案一](https://www.cnblogs.com/wyhlightstar/p/6212722.html)
+- HTML - Html5有那些新特性 [答案一](https://www.cnblogs.com/vicky1018/p/7705223.html)
+- HTML - 谈谈src和href的区别 [答案一](https://www.jianshu.com/p/dadbb8f8a952)
+- HTML - HTML新增的语义化标签及其作用 [答案一](https://www.cnblogs.com/keyng/p/12920313.html?ivk_sa=1024320u)
+- HTML - 在 HTML 中如何做 SEO 优化 [答案一](https://blog.csdn.net/qq_40633789/article/details/104982216)
+
+
+## CSS
+
+- CSS - css3新增那些特性 [答案一](https://blog.csdn.net/weixin_44475093/article/details/115683764)
+- CSS - BFC是什么 [答案一](/web/csshtml/css-bfc.html)
+- CSS - 格式化上下文都有那些 [答案一](/web/csshtml/css-formatContent.html)
+- CSS - position都有那些属性(6种) 
+  - [答案一](https://www.cnblogs.com/dark-duck/p/14288292.html)
+  - [sticky描述](https://www.cnblogs.com/yuzhongyu/p/10517755.html)
+- CSS - `dispaly:none` 和 `visiblility:hidden`区别[答案一](https://www.jb51.net/web/73987.html)
+- CSS - 清除浮动的几种方式 [答案一](https://www.cnblogs.com/wangyan0926/p/12348698.html)
+- CSS - display有那些属性 [答案一](https://www.w3school.com.cn/cssref/pr_class_display.asp)
+- CSS - img图片下方为啥会出现空白，怎么解决 [答案一](https://blog.csdn.net/lw001x/article/details/105380501)
+- CSS - 常的css单位px,em,rem,vh,vw,vmin,vmax区别[答案一](https://blog.csdn.net/jyy_12/article/details/42557241)
+- CSS - link和@import的区别 [答案一](https://www.cnblogs.com/passkey/p/10141553.html)
+- CSS - css的盒模型(标准盒模型和IE盒模型区别) [答案一](https://zhuanlan.zhihu.com/p/110617108)
+- CSS - 实现上下左右居中[答案一](https://blog.csdn.net/qq_36658051/article/details/81985024)
+- CSS - css选择器以及优先级 [答案一](https://www.cnblogs.com/zxjwlh/p/6213239.html)
+- CSS - css为啥要初始化样式 [答案一](https://www.cnblogs.com/xiaonian8/p/14035342.html)
+- CSS - style标签写在body后与body前有什么区别？ [答案一](https://blog.csdn.net/qq_44721831/article/details/102528073)
+- CSS - css伪元素都有那些 [答案一](https://www.gxlcms.com/qianduan-376996.html)
+- CSS - 使用css实现三角形 [答案一](https://www.cnblogs.com/chengxs/p/7242647.html)
+- CSS - 为什么第一个子元素设置margin-top父元素会跟着移动 [答案一](https://blog.csdn.net/longgeaisisi/article/details/82814914)
+- CSS - css中`var()` 和 `:root`的作用 [答案一](https://blog.csdn.net/qq_37595946/article/details/84531311)
+- CSS - css中的`calc()`作用[答案一](https://segmentfault.com/a/1190000019392639)
+
+
+---
+
+- CSS - css浏览器前缀有那些 [答案一](https://www.cnblogs.com/tinyphp/p/4736211.html)
+- CSS - css hack是什么，你都知道那些[答案一](https://blog.csdn.net/freshlover/article/details/12132801)
+---
+
+
+- CSS - 移动端实现 1px [答案一](https://zhuanlan.zhihu.com/p/34931318)
+- CSS - 移动端有那些css兼容性问题 
+  - [答案一](https://www.cnblogs.com/xiaomaotao/p/11378615.html)
+  - [答案二](https://www.cnblogs.com/wangpenghui522/p/5398137.html)
+
+
+## 浏览器
+
+- 浏览器 - 浏览器渲染原理及流程（以及优化） [答案一](https://www.jianshu.com/p/e6252dc9be32)
+- 浏览器 - localstorage sessionstorage cookie 区别大小限制 [答案](https://www.cnblogs.com/candy-xia/p/11561542.html)
+- 浏览器 - 浏览器输入URL发生了什么 [答案一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
 ## JavaScript
 
-### ['1', '2', '3'].map(parseInt) what & why ? 
 
-- [查看](https://blog.csdn.net/weixin_44135121/article/details/88050214)
+### 问答题
 
-### 什么是防抖和节流？有什么区别？如何实现？
+- JS - call和apply 的区别 [答案一](https://www.cnblogs.com/amujoe/p/11091268.html)
+- JS - `Array.prototype.slice.call`原理 [答案一](https://blog.csdn.net/warhin/article/details/50922314)
+- JS - 数组去重都有那些方法 [答案一](https://www.jb51.net/article/118657.htm)
 
-- [查看](https://blog.csdn.net/zuorishu/article/details/93630578)
+### 结果输出题
+
+
+- JS - `[] == ![]`的结果 [答案一](https://blog.csdn.net/magic_xiang/article/details/83686224)
+- JS - `0.1+0.2 != 0.3`的结果 [答案一](https://blog.csdn.net/cc_chengzi/article/details/80812826)
+### 编程题
+
+- ['1', '2', '3'].map(parseInt) what & why ? 
+  - [答案](https://blog.csdn.net/weixin_44135121/article/details/88050214)
+
+---
+
+- 什么是防抖和节流？有什么区别？如何实现？
+  - [答案](https://blog.csdn.net/zuorishu/article/details/93630578)
 
 
 ### 异步笔试题
 
-下面代码运行结果 
+- 下面代码运行结果 [答案](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7) 
 
 ```js
 async function async1() {
@@ -65,32 +129,24 @@ new Promise(function(resolve) {
 console.log('script end');
 ```
 
-- [查看](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/7)
 
 
-## ES6
+### ES6
 
-### ES5/ES6 的继承除了写法以外还有什么区别？
-
-- [查看](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
-
-
-### promise实现原理以及其它面试题
-
-- [ES6 - promise实现原理](https://juejin.cn/post/6844903831881400333)
-- [ES6 - promise的all和race实现原理](https://juejin.cn/post/6844903831881400333#heading-9)
-- [ES6 - promise如何中止链式调用问题](https://juejin.cn/post/6844903831881400333#heading-7)
-- [ES6 - Promise.resolve()与new Promise(r => r(v))的不同之处](https://segmentfault.com/a/1190000020980101)
+- ES5/ES6 的继承除了写法以外还有什么区别？[答案](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
+- promise实现原理以及其它面试题
+  - [ES6 - promise实现原理](https://juejin.cn/post/6844903831881400333)
+  - [ES6 - promise的all和race实现原理](https://juejin.cn/post/6844903831881400333#heading-9)
+  - [ES6 - promise如何中止链式调用问题](https://juejin.cn/post/6844903831881400333#heading-7)
+  - [ES6 - Promise.resolve()与new Promise(r => r(v))的不同之处](https://segmentfault.com/a/1190000020980101)
 
 
+### 算法题
 
+-  请分别用深度优先思想和广度优先思想实现一个拷贝函数？
+  - [文章一](https://developer.51cto.com/art/202004/614590.htm)
+  - [文章二](https://blog.csdn.net/guoqiankunmiss/article/details/108132552)
 
-## 概念问题
-
-
-
-## 原生方法实现题
- 
 
 
 ## Vue篇
@@ -150,25 +206,17 @@ console.log('script end');
 
 
 
-<!-- - Vue -  [答案一]()
-- Vue -  [答案一]()
-- Vue -  [答案一]()
-- Vue -  [答案一]() -->
+## 微信小程序
 
 
-
+## 网络协议
 
 ## 设计模式
 
 
 
 
-### 请分别用深度优先思想和广度优先思想实现一个拷贝函数？
-
-- [文章一](https://developer.51cto.com/art/202004/614590.htm)
-- [文章二](https://blog.csdn.net/guoqiankunmiss/article/details/108132552)
-
-### 扁平化数组（手写）
+-  扁平化数组（手写）
 
 已知如下数组：
 
