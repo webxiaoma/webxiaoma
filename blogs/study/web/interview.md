@@ -85,12 +85,25 @@ sidebarDepth: 1
 - JS - call和apply 的区别 [答案一](https://www.cnblogs.com/amujoe/p/11091268.html)
 - JS - `Array.prototype.slice.call`原理 [答案一](https://blog.csdn.net/warhin/article/details/50922314)
 - JS - 数组去重都有那些方法 [答案一](https://www.jb51.net/article/118657.htm)
-
+- JS - 冒泡和捕获区别 [答案一](https://www.jb51.net/article/42492.htm)
+- JS - js的继承几种继承方式 [答案一](https://www.cnblogs.com/ranyonsue/p/11201730.html)
+- JS - js的事件委托是什么 [答案一](https://www.cnblogs.com/soyxiaobi/p/9498357.html)
+- JS - js强制类型转换方法和隐式类型转换 [答案一](https://www.cnblogs.com/-zimu/p/7524675.html)
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
+- JS - [答案一]()
 ### 结果输出题
 
 
 - JS - `[] == ![]`的结果 [答案一](https://blog.csdn.net/magic_xiang/article/details/83686224)
 - JS - `0.1+0.2 != 0.3`的结果 [答案一](https://blog.csdn.net/cc_chengzi/article/details/80812826)
+
 ### 编程题
 
 - ['1', '2', '3'].map(parseInt) what & why ? 
