@@ -19,7 +19,7 @@ sidebarDepth: 1
 - [算法面试题](https://github.com/sisterAn/JavaScript-Algorithms)
 - [面试题](https://github.com/mqyqingfeng/frontend-interview-question-and-answer/issues/47)
 - [大前端面试宝典 - 图解前端](https://lucifer.ren/fe-interview/#/?id=%e4%b8%bb%e9%a2%98)
-
+- [高频面试题](https://github.com/febobo/web-interview)
 
 ## HTML
 
@@ -72,11 +72,7 @@ sidebarDepth: 1
   - [答案二](https://www.cnblogs.com/wangpenghui522/p/5398137.html)
 
 
-## 浏览器
 
-- 浏览器 - 浏览器渲染原理及流程（以及优化） [答案一](https://www.jianshu.com/p/e6252dc9be32)
-- 浏览器 - localstorage sessionstorage cookie 区别大小限制 [答案](https://www.cnblogs.com/candy-xia/p/11561542.html)
-- 浏览器 - 浏览器输入URL发生了什么 [答案一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
 ## JavaScript
 
 
@@ -206,6 +202,7 @@ console.log('script end');
 
 --- 
 
+
 - Vue - vue组件渲染过程 [答案一](https://segmentfault.com/a/1190000022054221)
 - Vue - Vue双向绑定原理 [答案一](https://webxiaoma-ten.vercel.app/web/vue/mvvm.html)
 - Vue - Vue-Computed实现原理 [答案一](https://webxiaoma-ten.vercel.app/web/vue/computed.html)
@@ -216,27 +213,34 @@ console.log('script end');
 - Vue - vueRouter的实现原理 
   - [答案一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
 
+### Vue3.x
+
+- Vue3 - vue3解决了vue2的那些问题 
+  - [答案一](https://blog.csdn.net/weixin_46837985/article/details/105852706)
+  - [答案二](https://www.jianshu.com/p/7c5393d327a7)
+- Vue3 - 响应式API有哪些 [答案一](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive)
+- Vue3 - 组合式API的生命周期 [答案一](https://v3.cn.vuejs.org/api/composition-api.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
 
+---
+
+- Vue3 - 响应式原理 [答案一](https://zhuanlan.zhihu.com/p/356672086)
+
+
+
+## 浏览器
+
+- 浏览器 - 浏览器渲染原理及流程（以及优化） [答案一](https://www.jianshu.com/p/e6252dc9be32)
+- 浏览器 - localstorage sessionstorage cookie 区别大小限制 [答案](https://www.cnblogs.com/candy-xia/p/11561542.html)
+- 浏览器 - 浏览器输入URL发生了什么 [答案一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
+
+## 网络协议
+
+- 网络协议 - HTTP - 描述一下HTTPS通信过程 
+  - [答案一](https://www.jianshu.com/p/f6b34381beac)
+- 网络协议 - HTTP - http缓存机制 [答案一](https://www.cnblogs.com/ranyonsue/p/8918908.html) 
+## 设计模式
 
 ## 微信小程序
 
 
-## 网络协议
-
-## 设计模式
-
-
-
-
--  扁平化数组（手写）
-
-已知如下数组：
-
-```js
-var arr = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
-```
-
-编写一个程序将数组扁平化去并除其中重复部分数据，最终得到一个升序且不重复的数组
-
-- []()

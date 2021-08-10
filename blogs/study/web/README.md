@@ -140,21 +140,22 @@ sidebarDepth: 1
   - [文章二](https://github.com/sl1673495/blogs/issues/39)
 - Vue深入 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue深入 - computed原理实现 [文章一](/web/vue/computed.html)
+- Vue深入 - VueRouter - 实现原理 [文章一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
 
 ---
 
-- Vue深入 - Vuex3.x - 实现原理 
-  - [文章一](https://juejin.cn/post/6877067579672756237#heading-0)
-  - [文章二](https://juejin.cn/post/6905713109168553997#heading-10)
-  - [文章三](https://juejin.cn/post/6844903599764406286)
-  - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
-- Vue深入 - VueRouter - 实现原理 [文章一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
 
 
 ### Vue3篇
 
-Vue - [vue3官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
-
+- Vue3 - [vue3官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
+- Vue3 - [VueRouter官方文档](https://next.router.vuejs.org/zh/introduction.html)
+- Vue3 - 实现原理 
+  - [文章一](https://juejin.cn/post/6877067579672756237#heading-0)
+  - [文章二](https://juejin.cn/post/6905713109168553997#heading-10)
+  - [文章三](https://juejin.cn/post/6844903599764406286)
+  - [文章四](https://zhuanlan.zhihu.com/p/356672086)
+  - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
 
 
 ### Lodash
