@@ -145,17 +145,22 @@ sidebarDepth: 1
 ---
 
 
-
 ### Vue3篇
 
 - Vue3 - [vue3官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
 - Vue3 - [VueRouter官方文档](https://next.router.vuejs.org/zh/introduction.html)
+- Vue3 - [Vuex4官方文档](https://next.vuex.vuejs.org/zh/index.html)
+
+
+--- 
+
 - Vue3 - 实现原理 
   - [文章一](https://juejin.cn/post/6877067579672756237#heading-0)
   - [文章二](https://juejin.cn/post/6905713109168553997#heading-10)
   - [文章三](https://juejin.cn/post/6844903599764406286)
   - [文章四](https://zhuanlan.zhihu.com/p/356672086)
   - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
+
 
 
 ### Lodash

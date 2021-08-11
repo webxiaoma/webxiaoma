@@ -202,7 +202,6 @@ console.log('script end');
 
 --- 
 
-
 - Vue - vue组件渲染过程 [答案一](https://segmentfault.com/a/1190000022054221)
 - Vue - Vue双向绑定原理 [答案一](https://webxiaoma-ten.vercel.app/web/vue/mvvm.html)
 - Vue - Vue-Computed实现原理 [答案一](https://webxiaoma-ten.vercel.app/web/vue/computed.html)
@@ -218,14 +217,14 @@ console.log('script end');
 - Vue3 - vue3解决了vue2的那些问题 
   - [答案一](https://blog.csdn.net/weixin_46837985/article/details/105852706)
   - [答案二](https://www.jianshu.com/p/7c5393d327a7)
+  - [答案三](https://github.com/febobo/web-interview/issues/45)
+- Vue3 - vue3的性能提示主要是通过哪方面体现的 [答案一](https://github.com/febobo/web-interview/issues/46)
 - Vue3 - 响应式API有哪些 [答案一](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive)
 - Vue3 - 组合式API的生命周期 [答案一](https://v3.cn.vuejs.org/api/composition-api.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
-
 
 ---
 
 - Vue3 - 响应式原理 [答案一](https://zhuanlan.zhihu.com/p/356672086)
-
 
 
 ## 浏览器
@@ -239,7 +238,11 @@ console.log('script end');
 - 网络协议 - HTTP - 描述一下HTTPS通信过程 
   - [答案一](https://www.jianshu.com/p/f6b34381beac)
 - 网络协议 - HTTP - http缓存机制 [答案一](https://www.cnblogs.com/ranyonsue/p/8918908.html) 
+
 ## 设计模式
+
+
+
 
 ## 微信小程序
 
