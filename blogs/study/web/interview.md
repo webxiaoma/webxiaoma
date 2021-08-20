@@ -219,13 +219,13 @@ console.log('script end');
   - [答案二](https://www.jianshu.com/p/7c5393d327a7)
   - [答案三](https://github.com/febobo/web-interview/issues/45)
 - Vue3 - vue3的性能提示主要是通过哪方面体现的 [答案一](https://github.com/febobo/web-interview/issues/46)
+- Vue3 - Proxy 比 defineProperty的优势有那些？ [答案一](https://github.com/febobo/web-interview/issues/47)
 - Vue3 - 响应式API有哪些 [答案一](https://v3.cn.vuejs.org/api/basic-reactivity.html#reactive)
 - Vue3 - 组合式API的生命周期 [答案一](https://v3.cn.vuejs.org/api/composition-api.html#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90)
 
 ---
 
 - Vue3 - 响应式原理 [答案一](https://zhuanlan.zhihu.com/p/356672086)
-
 
 ## 浏览器
 
