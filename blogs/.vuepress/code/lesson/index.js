@@ -1,106 +1,56 @@
-const targetMap = new WeakMap();
-let activeEffect = null; //   新增，是否需要添加effect的标志
-
-
-//   新增
-// 为了用统一的方式，把eff添加到对应的dep中，顺便还执行了一遍设置了初始值
-// 这样以后，只有我们手动调用effect那次才会保存dep，用trigger触发的get就不会再保存一遍了
-function effect(eff) {
-  activeEffect = eff;
-  activeEffect();
-  activeEffect = null;
-}
-//
-
-function track(target, key) {
-  if (activeEffect) {
-    let depsMap = targetMap.get(target);
-    if (!depsMap) {
-      targetMap.set(target, (depsMap = new Map()));
-    }
-    let dep = depsMap.get(key);
-    if (!dep) {
-      depsMap.set(key, (dep = new Set()));
-    }
-    dep.add(activeEffect); //   修改，有直接添加effect改为了添加activeEffect
+//   定义栈的类
+class Stack {
+  constructor() {
+    this.stack = [];
+  }
+  push(item) {
+    return this.stack.push(item);
+  }
+  pop() {
+    return this.stack.pop();
+  }
+  // 查询栈顶的元素
+  peek() {
+    return this.stack[this.getSize() - 1];
+  }
+  //返回栈的长度
+  getSize() {
+    return this.stack.length;
+  }
+  // 栈的非空判断
+  isEmpty() {
+    return this.getSize() === 0;
   }
 }
-
-
-function trigger(target, key) {
-  const depsMap = targetMap.get(target);
-  if (!depsMap) {
-    return;
-  }
-  let dep = depsMap.get(key);
-  if (dep) {
-    dep.forEach((effect) => {
-      effect();
-    });
-  }
-}
-
-
-// 新增  
-/**
- * @description: 例用Proxy和Reflect实现自动响应式
- * @param {Object} target 要响应的对象
- * @return {Proxy} 返回要响应对象的代理
- */
-function reactive(target) {
-  const handlers = {
-    get(target, key, receiver) {
-      let result = Reflect.get(target, key, receiver);
-      // 在访问这个target对象的key键之前，先把effect保存下
-      track(target, key);
-      return result;
-    },
-    set(target, key, value, receiver) {
-      let oldValue = target[key];
-      // 下面两步的顺序不能颠倒，很关键
-      // 这一步其实就已经赋值成功了
-      let result = Reflect.set(target, key, value, receiver);
-      // 到这里再执行get时获取的是新设的值
-      if (result && oldValue != value) {
-        // 如果把这个target对象的key键的值改了，就得执行一遍对应的effect
-        trigger(target, key);
-      }
-      return result;
-    },
+function testIsValid(str) {
+  // 以左右括号来建立一个对象，key为左括号，value为右括号
+  var Map = {
+    "{": "}",
+    "(": ")",
+    "[": "]",
   };
-  return new Proxy(target, handlers);
+  //实例化一个栈
+  const myStack = new Stack();
+  //遍历str字符串
+  for (let v of str) {
+    debugger
+    if (Map[v]) {
+      myStack.push(v); //是左括号，入栈
+    } else if (Object.values(Map).includes(v)) {
+      // 右括号  将当前的元素和栈顶的第一个元素进行匹配
+      let last = myStack.pop();
+      if (v !== Map[last]) return false;
+    } else {
+    //这里排除的是空字符的情况，如果不是左右括号而是其他的空字符串或者非法字符的话，将终止本次循环，执行下一次循环
+      continue;
+    }
+  }
+  //遍历完成之后要保证栈内要为空
+  return myStack.getSize() === 0;
 }
-
-function ref(raw) {
-  const r = {
-    get value() {
-      // 在get之前，先保存到targetMap中
-      track(r, 'value');
-      return raw;
-    },
-    set value(newVal) {
-      raw = newVal;
-      // set了之后，触发effect更新
-      trigger(r, 'value');
-    },
-  };
-  return r;
-}
-
-let o = ref(1);
-o.value = 2;
-console.log(o)
-
-// //  
-// let product = reactive({ price: 5, quantity: 2 });
-// let total = 0;
-
-// effect(()=>{
-//   total = product.price + product.quantity;
-// })
-
-// console.log(total)
-// product.price = 10;
-
-// console.log(total)
-
+// console.log(testIsValid("()")); //true
+// console.log(testIsValid("([ ) ]")); //false
+// console.log(testIsValid("([{ )]")); //false
+// console.log(testIsValid("()[ ]{}")); //true
+// console.log(testIsValid(" { ]")); //false
+console.log(testIsValid("{ [ ] }")); //true

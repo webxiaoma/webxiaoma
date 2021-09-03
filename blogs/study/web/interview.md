@@ -8,7 +8,6 @@ isLogin: true
 sidebarDepth: 1
 ---
 
-
 # 面试题
 
 :horse:
@@ -138,8 +137,6 @@ new Promise(function(resolve) {
 console.log('script end');
 ```
 
-
-
 ### ES6
 
 - ES5/ES6 的继承除了写法以外还有什么区别？[答案](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/20)
@@ -149,13 +146,11 @@ console.log('script end');
   - [ES6 - promise如何中止链式调用问题](https://juejin.cn/post/6844903831881400333#heading-7)
   - [ES6 - Promise.resolve()与new Promise(r => r(v))的不同之处](https://segmentfault.com/a/1190000020980101)
 
-
 ### 算法题
 
 -  请分别用深度优先思想和广度优先思想实现一个拷贝函数？
   - [文章一](https://developer.51cto.com/art/202004/614590.htm)
   - [文章二](https://blog.csdn.net/guoqiankunmiss/article/details/108132552)
-
 
 
 ## Vue篇
@@ -165,7 +160,7 @@ console.log('script end');
 - Vue - 对MVVM的理解 [答案一](https://www.jianshu.com/p/e1ef29c0d826)
 - Vue - 谈谈你对SPA的理解，以及优缺点 [答案一](https://www.jianshu.com/p/a4c071dab40a)
 - Vue - vue的优缺点 [答案一](https://github.com/haizlin/fe-interview/issues/224)
-- Vue - vue的生命周期已经该周期的一些操作 [答案一](https://www.jianshu.com/p/672e967e201c)
+- Vue - vue的生命周期以及该周期的一些操作 [答案一](https://www.jianshu.com/p/672e967e201c)
 - Vue - vue子父组件渲染顺序（生命周期顺序） 
   - [答案一](https://blog.csdn.net/sd19871122/article/details/106060791)
   - [答案二](https://www.cnblogs.com/thinheader/p/9462125.html)
@@ -173,7 +168,7 @@ console.log('script end');
 - Vue - 绑定class的几种方式（三种） [答案一](https://www.jb51.net/article/202786.htm)
 - Vue - vue有那些指令 [答案一](https://blog.csdn.net/weixin_45757427/article/details/104468978)
 - Vue - v-on可以监听多个方法么 [答案一](https://blog.csdn.net/weixin_40013817/article/details/103069487)
-- Vue - vue自定义指令 [答案一](https://cn.vues.org/v2/guide/custom-directive.html)
+- Vue - vue自定义指令 [答案一](https://cn.vuejs.org/v2/guide/custom-directive.html)
 - Vue - $refs的作用 [答案一](https://www.cnblogs.com/theblogs/p/10742137.html)
 - Vue - vue中v-for和v-if避免同时使用，如何化解 [答案一](https://blog.csdn.net/yzhean/article/details/109990975)
 - Vue - vue中组件的数据传递 [答案一](https://segmentfault.com/a/1190000019208626)
@@ -247,3 +242,4 @@ console.log('script end');
 ## 微信小程序
 
 
+- 小程序 - H5如何跳转小程序 [答案一](https://blog.csdn.net/weixin_43343835/article/details/109165114)
