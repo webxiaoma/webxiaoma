@@ -104,8 +104,7 @@ sidebarDepth: 1
 - ECMAScript实现 - Async/Await原理实现 [文章一](https://juejin.cn/post/6844903988584775693) [文章二](https://juejin.cn/post/6844903988584775693)
 
 
-
-## 框架篇
+## Vue篇
  
 ### Vue2篇
 
@@ -144,13 +143,11 @@ sidebarDepth: 1
 
 ---
 
-
 ### Vue3篇
 
 - Vue3 - [vue3官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
 - Vue3 - [VueRouter官方文档](https://next.router.vuejs.org/zh/introduction.html)
 - Vue3 - [Vuex4官方文档](https://next.vuex.vuejs.org/zh/index.html)
-
 
 --- 
 
@@ -163,10 +160,42 @@ sidebarDepth: 1
 
 
 
-### Lodash
+## React篇
+
+- [React 官方网站](https://react.docschina.org/)
+- [React Router 中文文档](http://react-guide.github.io/react-router-cn/docs/Introduction.html)
+- [Redux 中文文档](https://www.cntofu.com/book/4/index.html)
+
+--- 
+
+### React基础
+
+- React - 基础 - 生命周期 
+  - [生命周期图](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+  - [生命周期文章](https://www.cnblogs.com/qianxiaox/p/13712353.html)
+- React - 基础 - 受控组件和非受控组件 
+  - [受控组件](https://react.docschina.org/docs/forms.html)
+  - [非受控组件](https://react.docschina.org/docs/uncontrolled-components.html)
+  - [区别](https://zhuanlan.zhihu.com/p/299333361)
+- React - 基础 - Context [文章](https://react.docschina.org/docs/context.html)
+- React - 基础 - 高阶组件 [文章](https://react.docschina.org/docs/higher-order-components.html)
+- React - 基础 - Hook [文章](https://react.docschina.org/docs/hooks-intro.html)
+
+---
+
+- Redux - 三大原则 [文章](https://www.cntofu.com/book/4/docs/introduction/ThreePrinciples.md)
+- Redux - Action [文章](https://www.cntofu.com/book/4/docs/basics/Actions.md)
+
+
+### React深入
+
+- React - 深入 - 原理 [文章](https://blog.csdn.net/gg_18826075157/article/details/107117510)
+
+
+
+## Lodash
 
 - [lodash中文文档](https://www.lodashjs.com/docs/lodash.chunk)
-
 
 
 ## 浏览原理与概念
@@ -192,8 +221,11 @@ sidebarDepth: 1
 
 
 
-
-
 ## 图形
 
 - [图扑](https://www.hightopo.com/index.html)
+
+
+## 项目
+
+
