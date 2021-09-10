@@ -168,7 +168,7 @@ sidebarDepth: 1
 
 --- 
 
-### React基础
+### React
 
 - React - 基础 - 生命周期 
   - [生命周期图](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
@@ -183,17 +183,25 @@ sidebarDepth: 1
 
 ---
 
-- Redux - 三大原则 [文章](https://www.cntofu.com/book/4/docs/introduction/ThreePrinciples.md)
-- Redux - Action [文章](https://www.cntofu.com/book/4/docs/basics/Actions.md)
-
-
-### React深入
-
+- React - 深入 - Diff算法 [文章](https://zhuanlan.zhihu.com/p/20346379)
 - React - 深入 - 原理 [文章](https://blog.csdn.net/gg_18826075157/article/details/107117510)
 
+### Redux
+
+- Redux - 三大原则 [文章](https://www.cntofu.com/book/4/docs/introduction/ThreePrinciples.md)
+- Redux - Action [文章](https://www.cntofu.com/book/4/docs/basics/Actions.md)
+- Redux - middleware [文章](https://www.cntofu.com/book/4/docs/advanced/Middleware.md)
+- Redux - middleware - [redux-thunk](https://github.com/reduxjs/redux-thunk)
+- Redux - middleware - [redux-saga](https://github.com/redux-saga/redux-saga)
+
+### MobX
+
+- [中文文档](https://cn.mobx.js.org/intro/overview.html)
 
 
 ## Lodash
+
+简单、可扩展的状态管理
 
 - [lodash中文文档](https://www.lodashjs.com/docs/lodash.chunk)
 
@@ -218,6 +226,22 @@ sidebarDepth: 1
 
 
 ---
+
+### Git
+
+- git - commit使用规范流程
+  - [规范一](https://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
+  - [规范二](https://www.jianshu.com/p/201bd81e7dc9?utm_source=oschina-app)
+
+
+### npm
+
+- [Npm - 文档](https://docs.npmjs.com/)
+
+---
+
+- npm - package.json 说明
+  - [npm package.json属性详解](https://www.cnblogs.com/tzyy/p/5193811.html)
 
 
 
