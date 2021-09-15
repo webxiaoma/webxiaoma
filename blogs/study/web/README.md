@@ -67,8 +67,7 @@ sidebarDepth: 1
 - JS深入 - 执行上下文 [文章一](https://github.com/mqyqingfeng/Blog/issues/8)
 - JS深入 - 闭包 [文章一](https://github.com/mqyqingfeng/Blog/issues/9)
 - JS深入 - 微任务、宏任务与Event-Loop [文章一](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6) [文章二](https://www.cnblogs.com/jiasm/p/9482443.html)
-
-
+- JS深入 - requestAnimationFrame 属于宏任务？[文章一](https://github.com/ginobilee/blog/issues/6)
 
 ### 原生方法的实现
 
@@ -134,9 +133,9 @@ sidebarDepth: 1
 
 ---
 
-- Vue深入 - Diff算法 
-  - [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) 
-  - [文章二](https://github.com/sl1673495/blogs/issues/39)
+- Vue深入 - Diff算法 [文章一](https://segmentfault.com/a/1190000008782928)
+- Vue深入 - 关于Key [文章一](https://github.com/sl1673495/blogs/issues/39)
+- Vue深入 - 组件级别的响应 [文章一](https://juejin.cn/post/6844904113432444942#heading-7)
 - Vue深入 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue深入 - computed原理实现 [文章一](/web/vue/computed.html)
 - Vue深入 - VueRouter - 实现原理 [文章一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
@@ -157,7 +156,6 @@ sidebarDepth: 1
   - [文章三](https://juejin.cn/post/6844903599764406286)
   - [文章四](https://zhuanlan.zhihu.com/p/356672086)
   - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
-
 
 
 ## React篇
@@ -183,7 +181,9 @@ sidebarDepth: 1
 
 ---
 
-- React - 深入 - Diff算法 [文章](https://zhuanlan.zhihu.com/p/20346379)
+- React - 深入 - Diff算法 
+  - [文章一](https://zhuanlan.zhihu.com/p/140489744)
+  - [文章二](https://zhuanlan.zhihu.com/p/20346379)
 - React - 深入 - 原理 [文章](https://blog.csdn.net/gg_18826075157/article/details/107117510)
 
 ### Redux
@@ -208,6 +208,7 @@ sidebarDepth: 1
 
 ## 浏览原理与概念
 
+- 浏览器 - 浏览器输入URL发生了什么 [文章一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
 - 浏览器 - 跨域问题 [文章一](https://blog.csdn.net/ysvae/article/details/82121161)
 - 浏览器 - 缓存 [文章一](https://juejin.cn/post/6888875643266662414)
 
@@ -244,6 +245,17 @@ sidebarDepth: 1
   - [npm package.json属性详解](https://www.cnblogs.com/tzyy/p/5193811.html)
 
 
+### 命令工具
+
+- 命令工具 - NodeJs命令工具开发 [文章](https://www.cnblogs.com/wodewo/p/14709999.html)
+- 命令工具 - Commander命令行工具 [地址](https://github.com/tj/commander.js)
+- 命令工具 - inquirer交互试命令工具 [地址](https://github.com/SBoudrias/Inquirer.js)
+- 命令工具 -  增加颜色 
+  - [chalk](https://github.com/chalk/chalk)
+  - [terminal-kit](https://github.com/cronvel/terminal-kit#readme)
+
+
+
 
 ## 图形
 
@@ -253,3 +265,14 @@ sidebarDepth: 1
 ## 项目
 
 
+## NodeJS
+
+
+
+## 移动端
+
+- [Flutter 系列文章](https://github.com/chinabrant/flutter_study)
+
+### 常用插件
+
+ - 文件操作插件 - [fs-extra](https://github.com/jprichardson/node-fs-extra)

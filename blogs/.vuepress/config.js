@@ -111,6 +111,7 @@ module.exports = {
             {text:"计算机基础", link:"/study/computers/"},
             {text:"前端知识路线", link:"/study/web/"},
             {text:"Java知识路线", link:"/study/java/"},
+            {text:"工作效率", link:"/standard/web/"},
           ], isLogin:true},
           { text: 'Self', items:[
             {text:"工作", link:"/self/work/"},

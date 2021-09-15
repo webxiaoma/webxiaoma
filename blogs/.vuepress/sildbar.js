@@ -237,12 +237,20 @@ module.exports = {
         ]
       },
       {
-        title: '数学知识路线',
+        title: '工作效率',
         collapsable: true,
         children: [
-          "mathematics/",
+          "standard/web",
+          "standard/vscode",
         ]
       },
+      // {
+      //   title: '数学知识路线',
+      //   collapsable: true,
+      //   children: [
+      //     "mathematics/",
+      //   ]
+      // },
   ],
   "/self/":[
     {
