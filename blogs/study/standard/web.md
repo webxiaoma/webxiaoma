@@ -32,7 +32,7 @@ sidebarDepth: 1
 
 5. **公共文件命名**使用大驼峰法 如： `MyComponent` 文件
 
-6. **页面命名**使用小驼峰或`-`分隔， 如：`myHome`，`my-home`
+6. **页面命名**使用小驼峰或`-`分隔， 如：`myHome`，`my-home`, 推荐使用`my-home`类型
 
 
 ## JavaScript书写规范
@@ -179,6 +179,9 @@ if (time < 20) return false;
 
 ## 项目版本管理规范
 
+
+### 版本号
+
 一般会使用`Git`来进行项目的版本管理。对于项目的版本号目前规定如下：
 
 - 关于版本格式：`主版本号`.`次版本号`.`修订号` （如：`1.0.0`）
@@ -187,8 +190,18 @@ if (time < 20) return false;
 2. 次版本号：当你做了向下兼容的功能性新增，比如新增部分功能
 3. 修订号：当你做了向下兼容的问题修正，比如修复部分bug
 
+另外项目版本也会分为测试版和稳定版两种
+
+1. `Alpha` 测试版(一般为内部测试版)，如 `1.0.0-Alpha.1`
+2. `Beta` 测试版(一般为公布测试版)，如 `1.0.0-Beta.1`
+3. `Stable` 稳定版， 如 `1.x-stable`
+
+
+### 分支
 
 当项目进行版本更新时，使用`git`的`tag`功能进行标记。
+
+`Git`分支管理合并方法可以简单查看[这里](http://www.ruanyifeng.com/blog/2012/07/git.html)
 
 项目仓库一般分为下面几个分支
 
@@ -200,14 +213,92 @@ if (time < 20) return false;
 
 分支开发完成后，在进行分支合并时，需要提交`commit`信息，关于`commit`提交规范请继续往下阅读
 
-`Git`分支管理合并方法可以简单查看[这里](http://www.ruanyifeng.com/blog/2012/07/git.html)
 
 ## Git Commit规范
 
+### 提交格式
+
+关于`Git Commi`t规范可以看[这篇文章](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+
+每次提交`Commit` 都包括三个部分：
+
+```js
+<type>(scope): <subject>
+// 空行
+<body>
+// 空行
+<footer>
+```
+
+1. 头部上的三个字段：`type`（必需）、`scope`（可选）和 `subject`（必需）。
+
+**type**标识一般选择下面
+
+- `feat` 新增功能
+- `fix` 修复`bug`
+- `docs` 修改文档
+- `style` 修改样式(格式)，不会影响代码的运行
+- `refactor` 重构项目
+- `perf` 优化项目，如提升性能，体验
+- `build` 打包
+- `test` 增加测试功能
+- `chore` 构建工具或辅助开发工具变动
+- `revert` 回滚到版本
+- `merge` 代码合并
 
 
+**scope**是可选的，是关于本次`commit`所影响的范围。（根据自身项目而定）常见的值如：
+
+- `all` 影响整个项目
+- `image` 影响项目图片或icon
+- `anchor` 影响某个锚点（如解决的指定的某个`Issues`）
 
 
+**subject** 是描述`commit`的简短信息, 一般不超过50个字，尽可能的简洁，如果该`commit`是针对某个`issues`的，我们可以在后面加上`issues`编号如`#111`，来可以快速定位到具体`issues`
+
+
+2. 关于`body`部分（可省略），主要是对本次`commit`的详细描述，可以省略
+
+
+3. 关于`footer`部分（可省略）,在`footer`部分我们可以关闭对应的`Issues`。如 `Closes #111` 或关闭多个 `Closes #111, #222`
+
+下面是一个`commit` 提交的示例：
+
+```js
+fix(all): 修复登录问题(#321)
+
+修复不能登录的问题
+1. 防止登录重复提交
+2. 登录密码加密
+```
+
+
+### 合并多余Commit
+
+当我们在自己的分支提交了大量的`commit`后，想要合并到主分支上时，不想带有这些没有价值的`commit`, 我们可以使用`git rebase`命令
+
+- `git rebase`命令使用 [访问这里](https://www.cnblogs.com/zhaoyingjie/p/10259715.html)
+
+### 搭建
+
+#### Commitizen工具
+
+`Commitizen`工具可以检测提交的`commit`信息是否规范
+
+[Commitizen 官网](https://commitlint.js.org/)
+
+### lint-staged工具
+
+`lint-staged`能够让`lint`只检测暂存区的文件，提升检测速度
+
+- [相关使用文章](https://www.cnblogs.com/jiaoshou/p/12250278.html)
+#### husky 工具
+
+- [husky 文档](https://typicode.github.io/husky/#/)
+- [githooks 钩子](https://git-scm.com/docs/githooks)
+
+
+**需要注意的是：** `husky`在`v6`版本后做了重大的升级，该升级需要的`npm`版本要在`7.x`以上。相应的差异请看[这篇文章](https://blog.csdn.net/MrWeb/article/details/119878688), 
 
 
 
