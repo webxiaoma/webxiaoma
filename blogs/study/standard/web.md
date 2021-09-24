@@ -245,6 +245,7 @@ if (time < 20) return false;
 - `chore` 构建工具或辅助开发工具变动
 - `revert` 回滚到版本
 - `merge` 代码合并
+- `api` 修改接口
 
 
 **scope**是可选的，是关于本次`commit`所影响的范围。（根据自身项目而定）常见的值如：
@@ -281,13 +282,21 @@ fix(all): 修复登录问题(#321)
 
 ### 搭建
 
+- [相关文章](https://juejin.cn/post/6962056746328129567#heading-5)
 #### Commitizen工具
 
-`Commitizen`工具可以检测提交的`commit`信息是否规范
+`Commitizen`是一个可以检测提交的`commit`信息是否规范工具
 
 [Commitizen 官网](https://commitlint.js.org/)
 
-### lint-staged工具
+
+#### Commitizen工具
+
+- [Commitizen github仓库](https://github.com/commitizen/cz-cli)
+
+`Commitizen`是一个格式化`commit message`的工具。
+
+#### lint-staged工具
 
 `lint-staged`能够让`lint`只检测暂存区的文件，提升检测速度
 
@@ -299,7 +308,6 @@ fix(all): 修复登录问题(#321)
 
 
 **需要注意的是：** `husky`在`v6`版本后做了重大的升级，该升级需要的`npm`版本要在`7.x`以上。相应的差异请看[这篇文章](https://blog.csdn.net/MrWeb/article/details/119878688), 
-
 
 
 

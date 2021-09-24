@@ -202,6 +202,12 @@ sidebarDepth: 1
 - [中文文档](https://cn.mobx.js.org/intro/overview.html)
 
 
+
+<el-divider>项目构建</el-divider>
+
+ - umi - 插件化的企业级前端应用框架 [官网](https://umijs.org/zh-CN)
+
+
 ## Lodash
 
 简单、可扩展的状态管理
@@ -217,17 +223,18 @@ sidebarDepth: 1
 
 ## 构架工具
 
+<el-divider>临时</el-divider>
 
+- [手把手教你结合commitizen 搭建属于自己的项目git commit 校验工具](https://segmentfault.com/a/1190000016776838)
 ### Webpack
 
 - webpack - [官网](https://webpack.docschina.org/)
 
----
+<el-divider>构建流程</el-divider>
 
 - webpack - 基础 - 入口 
   - [文章一](https://webpack.docschina.org/concepts/entry-points/)
   - [文章二](https://webpack.docschina.org/configuration/entry-context/)
-
 
 ---
 
@@ -242,6 +249,9 @@ sidebarDepth: 1
   - [规范一](https://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
   - [规范二](https://www.jianshu.com/p/201bd81e7dc9?utm_source=oschina-app)
 
+<el-divider>Git插件</el-divider>
+
+- [simple-git](https://github.com/steveukx/git-js) 一个可以在`node`中操作`git`的轻量级接口
 
 ### npm
 
@@ -261,6 +271,11 @@ sidebarDepth: 1
 - 命令工具 -  增加颜色 
   - [chalk](https://github.com/chalk/chalk)
   - [terminal-kit](https://github.com/cronvel/terminal-kit#readme)
+
+
+### 格式化工具
+
+
 
 
 

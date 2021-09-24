@@ -9,7 +9,7 @@ import {
   Popover,
   Form,FormItem,
   Input,Button,Checkbox,CheckboxGroup,CheckboxButton,
-  Message,
+  Message,Divider,
   Table, TableColumn} from 'element-ui';
 
 
@@ -33,6 +33,7 @@ export default ({
   Vue.use(CheckboxButton)
   Vue.use(Table)
   Vue.use(TableColumn)
+  Vue.use(Divider)
  
   Vue.prototype.$message = Message;
   Vue.mixin(mixin)
