@@ -276,10 +276,13 @@ sidebarDepth: 1
 ### 格式化工具
 
 
-
-
-
-
+- ESLint - 中文文档 [官网](https://cn.eslint.org/)
+- ESLint - parser解析器 
+  - [ESLint 的 parser 是个什么东西](https://zhuanlan.zhihu.com/p/295291463)
+- ESLint - extends 
+  - [ESLint的extends](https://www.cnblogs.com/codexlx/p/14468888.html)
+- SELint - parserOptions 
+  - []()
 ## 图形
 
 - [图扑](https://www.hightopo.com/index.html)

@@ -242,6 +242,7 @@ module.exports = {
         children: [
           "standard/web",
           "standard/vscode",
+          "standard/web-flow",
         ]
       },
       // {
