@@ -273,16 +273,20 @@ sidebarDepth: 1
   - [terminal-kit](https://github.com/cronvel/terminal-kit#readme)
 
 
-### 格式化工具
+### 规范工具
 
 
 - ESLint - 中文文档 [官网](https://cn.eslint.org/)
-- ESLint - parser解析器 
-  - [ESLint 的 parser 是个什么东西](https://zhuanlan.zhihu.com/p/295291463)
-- ESLint - extends 
-  - [ESLint的extends](https://www.cnblogs.com/codexlx/p/14468888.html)
-- SELint - parserOptions 
-  - []()
+- ESLint - 配置文件详解 [文章](https://www.cnblogs.com/Free-Thinker/p/10737456.html)
+- ESLint - parser解析器 [文章](https://zhuanlan.zhihu.com/p/295291463)
+- ESLint - parserOptions [文章](https://cn.eslint.org/docs/user-guide/configuring#specifying-parser-options)
+- ESLint - extends [文章](https://www.cnblogs.com/codexlx/p/14468888.html)
+
+
+---
+
+- Prettier - 格式化工具 [GitHub](https://github.com/prettier/prettier)
+
 ## 图形
 
 - [图扑](https://www.hightopo.com/index.html)
