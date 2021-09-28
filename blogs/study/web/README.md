@@ -24,7 +24,7 @@ sidebarDepth: 1
 
 - HTML - HTML5新增新特性，移除的新特性 [文章一](https://blog.csdn.net/z591102/article/details/104776477)
 
-## CSS
+## CSS 
 
 - CSS - BFC了解 [文章一](/web/csshtml/css-bfc.html)
 - CSS - 格式化上下文 [文章一](/web/csshtml/css-formatContent.html)
@@ -67,8 +67,7 @@ sidebarDepth: 1
 - JS深入 - 执行上下文 [文章一](https://github.com/mqyqingfeng/Blog/issues/8)
 - JS深入 - 闭包 [文章一](https://github.com/mqyqingfeng/Blog/issues/9)
 - JS深入 - 微任务、宏任务与Event-Loop [文章一](https://juejin.cn/post/6844903764202094606?utm_source=gold_browser_extension#heading-6) [文章二](https://www.cnblogs.com/jiasm/p/9482443.html)
-
-
+- JS深入 - requestAnimationFrame 属于宏任务？[文章一](https://github.com/ginobilee/blog/issues/6)
 
 ### 原生方法的实现
 
@@ -104,8 +103,7 @@ sidebarDepth: 1
 - ECMAScript实现 - Async/Await原理实现 [文章一](https://juejin.cn/post/6844903988584775693) [文章二](https://juejin.cn/post/6844903988584775693)
 
 
-
-## 框架篇
+## Vue篇
  
 ### Vue2篇
 
@@ -135,22 +133,20 @@ sidebarDepth: 1
 
 ---
 
-- Vue深入 - Diff算法 
-  - [文章一](https://www.cnblogs.com/wind-lanyan/p/9061684.html) 
-  - [文章二](https://github.com/sl1673495/blogs/issues/39)
+- Vue深入 - Diff算法 [文章一](https://segmentfault.com/a/1190000008782928)
+- Vue深入 - 关于Key [文章一](https://github.com/sl1673495/blogs/issues/39)
+- Vue深入 - 组件级别的响应 [文章一](https://juejin.cn/post/6844904113432444942#heading-7)
 - Vue深入 - 响应式原理 [文章一](/web/vue/mvvm.html)
 - Vue深入 - computed原理实现 [文章一](/web/vue/computed.html)
 - Vue深入 - VueRouter - 实现原理 [文章一](https://www.cnblogs.com/tiedaweishao/p/9144531.html)
 
 ---
 
-
 ### Vue3篇
 
 - Vue3 - [vue3官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
 - Vue3 - [VueRouter官方文档](https://next.router.vuejs.org/zh/introduction.html)
 - Vue3 - [Vuex4官方文档](https://next.vuex.vuejs.org/zh/index.html)
-
 
 --- 
 
@@ -162,19 +158,151 @@ sidebarDepth: 1
   - [视频一](https://www.bilibili.com/video/BV12k4y1C7mq?from=search&seid=11379991424824883216)
 
 
-### Lodash
+## React篇
+
+- [React 官方网站](https://react.docschina.org/)
+- [React Router 中文文档](http://react-guide.github.io/react-router-cn/docs/Introduction.html)
+- [Redux 中文文档](https://www.cntofu.com/book/4/index.html)
+
+--- 
+
+### React
+
+- React - 基础 - 生命周期 
+  - [生命周期图](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+  - [生命周期文章](https://www.cnblogs.com/qianxiaox/p/13712353.html)
+- React - 基础 - 受控组件和非受控组件 
+  - [受控组件](https://react.docschina.org/docs/forms.html)
+  - [非受控组件](https://react.docschina.org/docs/uncontrolled-components.html)
+  - [区别](https://zhuanlan.zhihu.com/p/299333361)
+- React - 基础 - Context [文章](https://react.docschina.org/docs/context.html)
+- React - 基础 - 高阶组件 [文章](https://react.docschina.org/docs/higher-order-components.html)
+- React - 基础 - Hook [文章](https://react.docschina.org/docs/hooks-intro.html)
+
+---
+
+- React - 深入 - Diff算法 
+  - [文章一](https://zhuanlan.zhihu.com/p/140489744)
+  - [文章二](https://zhuanlan.zhihu.com/p/20346379)
+- React - 深入 - 原理 [文章](https://blog.csdn.net/gg_18826075157/article/details/107117510)
+
+--- 
+
+- React - 插件 - [aHooks](https://ahooks.js.org/zh-CN)
+### Redux
+
+- Redux - 三大原则 [文章](https://www.cntofu.com/book/4/docs/introduction/ThreePrinciples.md)
+- Redux - Action [文章](https://www.cntofu.com/book/4/docs/basics/Actions.md)
+- Redux - middleware [文章](https://www.cntofu.com/book/4/docs/advanced/Middleware.md)
+- Redux - middleware - [redux-thunk](https://github.com/reduxjs/redux-thunk)
+- Redux - middleware - [redux-saga](https://github.com/redux-saga/redux-saga)
+
+### MobX
+
+- [中文文档](https://cn.mobx.js.org/intro/overview.html)
+
+
+
+<el-divider>项目构建</el-divider>
+
+ - umi - 插件化的企业级前端应用框架 [官网](https://umijs.org/zh-CN)
+
+
+## Lodash
+
+简单、可扩展的状态管理
 
 - [lodash中文文档](https://www.lodashjs.com/docs/lodash.chunk)
 
 
 ## 浏览原理与概念
 
+- 浏览器 - 浏览器输入URL发生了什么 [文章一](https://www.cnblogs.com/jin-zhe/p/11586327.html)
 - 浏览器 - 跨域问题 [文章一](https://blog.csdn.net/ysvae/article/details/82121161)
 - 浏览器 - 缓存 [文章一](https://juejin.cn/post/6888875643266662414) 
 
+## 构架工具
+
+<el-divider>临时</el-divider>
+
+- [手把手教你结合commitizen 搭建属于自己的项目git commit 校验工具](https://segmentfault.com/a/1190000016776838)
+### Webpack
+
+- webpack - [官网](https://webpack.docschina.org/)
+
+<el-divider>构建流程</el-divider>
+
+- webpack - 基础 - 入口 
+  - [文章一](https://webpack.docschina.org/concepts/entry-points/)
+  - [文章二](https://webpack.docschina.org/configuration/entry-context/)
+
+---
+
+### Gulp
+
+- [Gulp官方文档](https://www.gulpjs.com.cn/)
+
+
+### Git
+
+- git - commit使用规范流程
+  - [规范一](https://www.ruanyifeng.com/blog/2015/08/git-use-process.html)
+  - [规范二](https://www.jianshu.com/p/201bd81e7dc9?utm_source=oschina-app)
+
+<el-divider>Git插件</el-divider>
+
+- [simple-git](https://github.com/steveukx/git-js) 一个可以在`node`中操作`git`的轻量级接口
+
+### npm
+
+- [Npm - 文档](https://docs.npmjs.com/)
+
+---
+
+- npm - package.json 说明
+  - [npm package.json属性详解](https://www.cnblogs.com/tzyy/p/5193811.html)
+
+
+### 命令工具
+
+- 命令工具 - NodeJs命令工具开发 [文章](https://www.cnblogs.com/wodewo/p/14709999.html)
+- 命令工具 - Commander命令行工具 [地址](https://github.com/tj/commander.js)
+- 命令工具 - inquirer交互试命令工具 [地址](https://github.com/SBoudrias/Inquirer.js)
+- 命令工具 -  增加颜色 
+  - [chalk](https://github.com/chalk/chalk)
+  - [terminal-kit](https://github.com/cronvel/terminal-kit#readme)
+
+
+### 规范工具
+
+
+- ESLint - 中文文档 [官网](https://cn.eslint.org/)
+- ESLint - 配置文件详解 [文章](https://www.cnblogs.com/Free-Thinker/p/10737456.html)
+- ESLint - parser解析器 [文章](https://zhuanlan.zhihu.com/p/295291463)
+- ESLint - parserOptions [文章](https://cn.eslint.org/docs/user-guide/configuring#specifying-parser-options)
+- ESLint - extends [文章](https://www.cnblogs.com/codexlx/p/14468888.html)
+
+
+---
+
+- Prettier - 格式化工具 [GitHub](https://github.com/prettier/prettier)
 
 ## 图形
 
 - [图扑](https://www.hightopo.com/index.html)
-- [ThreeJs 中文网](http://www.webgl3d.cn/)
+
+## 项目
+
+
+## NodeJS
+
+
+
+## 移动端
+
+- [Flutter 系列文章](https://github.com/chinabrant/flutter_study)
+
+### 常用插件
+
+ - 文件操作插件 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 

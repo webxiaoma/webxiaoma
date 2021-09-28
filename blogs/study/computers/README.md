@@ -40,16 +40,18 @@ sidebarDepth: 1
 
 ## 数据结构
 
+- [临时-数据算法](https://github.com/cunzaizhuyi/js-leetcode)
 ### 基础
 
 - 数据结构基础 - 数据结构分类 [文章](https://blog.csdn.net/yeyazhishang/article/details/82353846)
 
-
-### 线性数据结构
+### 数组
 
 - 数据结构 - 数组 Array [文章一](https://blog.csdn.net/mingyunxiaohai/article/details/85758347)
 
 ---
+
+### 链表
 
 - 数据结构 - 链表(Linked List) 
   - [链表(上)](https://zhuanlan.zhihu.com/p/52878334) 
@@ -68,13 +70,17 @@ sidebarDepth: 1
 
 --- 
 
-- 数据结构 - 栈 Stack 
+### 栈Stack
+
+- 数据结构 - 栈 Stack (FILO先进后出 fast in last out)
   - [栈](http://c.biancheng.net/view/3349.html)
   - [实现-JS](https://github.com/XPoet/js-data-structures-and-algorithms/blob/master/assets/doc/03_JavaScript%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89%E6%A0%88.md)
   - [应用-进制转换JS](https://www.cnblogs.com/ar13/p/8000718.html)
   - [应用-括号匹配检验JS](https://blog.csdn.net/MrDeng_web2018/article/details/108426604)
   - [应用-迷宫求解JS](https://www.pianshen.com/article/8711220159/)
 ---
+
+### 队列Queue
 
 - 数据结构 - 队列 Queue
   - [队列](http://c.biancheng.net/view/3352.html)
@@ -93,12 +99,15 @@ sidebarDepth: 1
 
 ---
 
+### 散列表
+
 - 数据结构 - 散列表(哈希表) Hash
   - [散列表(哈希表)](http://data.biancheng.net/view/107.html)
   - [实现-JS](https://zhuanlan.zhihu.com/p/262496332)
 
 
-### 非线性数据结构
+
+### 树Tree
 
 - 数据结构 - 树Tree
   - [树](http://data.biancheng.net/view/23.html)
@@ -113,7 +122,11 @@ sidebarDepth: 1
 - 数据结构 - 树 - B+树
 - 数据结构 - 树 - 哈夫曼树
 
+### 堆Heap 
+
 - 数据结构 - 堆 Heap []()
+
+### 图Graph 
 
 - 数据结构 - 图 Graph []()
 
