@@ -16,7 +16,7 @@
     "log4js": "^6.1.2"
   },
   "devDependencies": {
-    "electron": "^10.1.5",
+    "electron": "^11.5.0",
     "electron-builder": "^22.9.1",
     "electron-packager": "^14.2.1",
     "electron-reloader": "^1.0.1"
