@@ -226,6 +226,7 @@ module.exports = {
         collapsable: true,
         children: [
           "web/",
+          "web/web-frame",
           "web/interview"
         ]
       },

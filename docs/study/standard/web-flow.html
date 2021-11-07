@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>项目构建 | 小马过河</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/img/manong.jpg">
+    <script src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/img/mxx-152-152.png">
+    <meta name="description" content="本章为小马学习专栏">
+    <meta name="keywords" content="马新想 小马学习">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="theme-color" content="#ededed">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="/img/mxx-144.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.da7a249e.css" as="style"><link rel="preload" href="/assets/js/app.2956047c.js" as="script"><link rel="preload" href="/assets/js/2.7a3e1fbe.js" as="script"><link rel="preload" href="/assets/js/73.2599ef4e.js" as="script"><link rel="prefetch" href="/assets/js/10.586b05b4.js"><link rel="prefetch" href="/assets/js/100.ca67934d.js"><link rel="prefetch" href="/assets/js/101.5d266dd8.js"><link rel="prefetch" href="/assets/js/102.94e526e5.js"><link rel="prefetch" href="/assets/js/103.8edcd486.js"><link rel="prefetch" href="/assets/js/104.5d2cb58f.js"><link rel="prefetch" href="/assets/js/105.bff9198a.js"><link rel="prefetch" href="/assets/js/106.7478f62e.js"><link rel="prefetch" href="/assets/js/107.ac463ade.js"><link rel="prefetch" href="/assets/js/108.352a5442.js"><link rel="prefetch" href="/assets/js/109.9497faf1.js"><link rel="prefetch" href="/assets/js/11.28ad280e.js"><link rel="prefetch" href="/assets/js/110.f05c7dd8.js"><link rel="prefetch" href="/assets/js/12.5e108f27.js"><link rel="prefetch" href="/assets/js/13.f76f7367.js"><link rel="prefetch" href="/assets/js/14.aa551bd3.js"><link rel="prefetch" href="/assets/js/15.cde668fb.js"><link rel="prefetch" href="/assets/js/16.ab1f0225.js"><link rel="prefetch" href="/assets/js/17.21f8d3d2.js"><link rel="prefetch" href="/assets/js/18.c1e6aaae.js"><link rel="prefetch" href="/assets/js/19.78506879.js"><link rel="prefetch" href="/assets/js/20.eeef5705.js"><link rel="prefetch" href="/assets/js/21.3621a104.js"><link rel="prefetch" href="/assets/js/22.4d4d8a8b.js"><link rel="prefetch" href="/assets/js/23.90990d2d.js"><link rel="prefetch" href="/assets/js/24.8f1d9af3.js"><link rel="prefetch" href="/assets/js/25.52efda00.js"><link rel="prefetch" href="/assets/js/26.1ec8a30a.js"><link rel="prefetch" href="/assets/js/27.21f0144a.js"><link rel="prefetch" href="/assets/js/28.9196e456.js"><link rel="prefetch" href="/assets/js/29.f9b35bfd.js"><link rel="prefetch" href="/assets/js/3.78e77b53.js"><link rel="prefetch" href="/assets/js/30.32a2d715.js"><link rel="prefetch" href="/assets/js/31.6f715760.js"><link rel="prefetch" href="/assets/js/32.3e5a19c7.js"><link rel="prefetch" href="/assets/js/33.e243c83f.js"><link rel="prefetch" href="/assets/js/34.b9eea2fb.js"><link rel="prefetch" href="/assets/js/35.e263f3e4.js"><link rel="prefetch" href="/assets/js/36.dc2b2cc1.js"><link rel="prefetch" href="/assets/js/37.d41816e6.js"><link rel="prefetch" href="/assets/js/38.411b60cc.js"><link rel="prefetch" href="/assets/js/39.958b9f5f.js"><link rel="prefetch" href="/assets/js/4.70036c1a.js"><link rel="prefetch" href="/assets/js/40.04356e47.js"><link rel="prefetch" href="/assets/js/41.629ee0ba.js"><link rel="prefetch" href="/assets/js/42.c0bcb6f9.js"><link rel="prefetch" href="/assets/js/43.85703854.js"><link rel="prefetch" href="/assets/js/44.87c0d0ff.js"><link rel="prefetch" href="/assets/js/45.54dc6b5b.js"><link rel="prefetch" href="/assets/js/46.dea710f5.js"><link rel="prefetch" href="/assets/js/47.f34ad0d0.js"><link rel="prefetch" href="/assets/js/48.15f53959.js"><link rel="prefetch" href="/assets/js/49.44959860.js"><link rel="prefetch" href="/assets/js/5.36e1c77f.js"><link rel="prefetch" href="/assets/js/50.5d678fce.js"><link rel="prefetch" href="/assets/js/51.f18e062a.js"><link rel="prefetch" href="/assets/js/52.0a8b0351.js"><link rel="prefetch" href="/assets/js/53.5fa214b9.js"><link rel="prefetch" href="/assets/js/54.951da8d9.js"><link rel="prefetch" href="/assets/js/55.6cb09791.js"><link rel="prefetch" href="/assets/js/56.b0cbef6f.js"><link rel="prefetch" href="/assets/js/57.981dcbf5.js"><link rel="prefetch" href="/assets/js/58.8fa49616.js"><link rel="prefetch" href="/assets/js/59.887afb61.js"><link rel="prefetch" href="/assets/js/6.23d3df93.js"><link rel="prefetch" href="/assets/js/60.7c930612.js"><link rel="prefetch" href="/assets/js/61.f8e744af.js"><link rel="prefetch" href="/assets/js/62.0ed73857.js"><link rel="prefetch" href="/assets/js/63.3977317b.js"><link rel="prefetch" href="/assets/js/64.f8151ad0.js"><link rel="prefetch" href="/assets/js/65.74b83502.js"><link rel="prefetch" href="/assets/js/66.1c08642c.js"><link rel="prefetch" href="/assets/js/67.b9ffb3ce.js"><link rel="prefetch" href="/assets/js/68.678b4b30.js"><link rel="prefetch" href="/assets/js/69.85e917c6.js"><link rel="prefetch" href="/assets/js/7.6a5f8525.js"><link rel="prefetch" href="/assets/js/70.c3684db8.js"><link rel="prefetch" href="/assets/js/71.03ec4172.js"><link rel="prefetch" href="/assets/js/72.72dfea2f.js"><link rel="prefetch" href="/assets/js/74.ae7112db.js"><link rel="prefetch" href="/assets/js/75.f5736f1f.js"><link rel="prefetch" href="/assets/js/76.e0c45e92.js"><link rel="prefetch" href="/assets/js/77.949fcdba.js"><link rel="prefetch" href="/assets/js/78.320d16f8.js"><link rel="prefetch" href="/assets/js/79.aa848bac.js"><link rel="prefetch" href="/assets/js/8.b815d812.js"><link rel="prefetch" href="/assets/js/80.6375d53c.js"><link rel="prefetch" href="/assets/js/81.1e96df9d.js"><link rel="prefetch" href="/assets/js/82.e3abd939.js"><link rel="prefetch" href="/assets/js/83.8e99b49c.js"><link rel="prefetch" href="/assets/js/84.91dfcad0.js"><link rel="prefetch" href="/assets/js/85.8ce4f9c1.js"><link rel="prefetch" href="/assets/js/86.48e8d4c1.js"><link rel="prefetch" href="/assets/js/87.445d7350.js"><link rel="prefetch" href="/assets/js/88.90b8d388.js"><link rel="prefetch" href="/assets/js/89.57a3528b.js"><link rel="prefetch" href="/assets/js/9.6104542a.js"><link rel="prefetch" href="/assets/js/90.803fac0b.js"><link rel="prefetch" href="/assets/js/91.d7569f08.js"><link rel="prefetch" href="/assets/js/92.116d2327.js"><link rel="prefetch" href="/assets/js/93.229c9323.js"><link rel="prefetch" href="/assets/js/94.c2d8289c.js"><link rel="prefetch" href="/assets/js/95.f4233069.js"><link rel="prefetch" href="/assets/js/96.b6ff538c.js"><link rel="prefetch" href="/assets/js/97.642704e0.js"><link rel="prefetch" href="/assets/js/98.6114306a.js"><link rel="prefetch" href="/assets/js/99.a17e09e8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.da7a249e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="layout-wrapper"><!----> <div class="theme-container"><header class="navbar ele-navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/manong.jpg" alt="小马过河" class="logo"> <span class="site-name can-hide">小马过河</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><!----> <a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue2系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/vue/mvvm.html" class="nav-link">
+  Vue响应式
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Maven
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tools/maven/" class="nav-link">
+  初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tools/tomcat/" class="nav-link">
+  初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          英语读音
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/english/pronunciation/phonogram.html" class="nav-link">
+  音标
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语单词
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Study" class="dropdown-title"><span class="title">Study</span> <span class="arrow down"></span></button> <button type="button" aria-label="Study" class="mobile-dropdown-title"><span class="title">Study</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/computers/" class="nav-link">
+  计算机基础
+</a></li><li class="dropdown-item"><!----> <a href="/study/web/" class="nav-link">
+  前端知识路线
+</a></li><li class="dropdown-item"><!----> <a href="/study/java/" class="nav-link">
+  Java知识路线
+</a></li><li class="dropdown-item"><!----> <a href="/study/standard/web.html" class="nav-link">
+  工作效率
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Self" class="dropdown-title"><span class="title">Self</span> <span class="arrow down"></span></button> <button type="button" aria-label="Self" class="mobile-dropdown-title"><span class="title">Self</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/self/work/" class="nav-link">
+  工作
+</a></li></ul></div> <!----></div> <!----></nav> <div class="loginItem"><!----></div></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><!----> <a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="导航" class="dropdown-title"><span class="title">导航</span> <span class="arrow down"></span></button> <button type="button" aria-label="导航" class="mobile-dropdown-title"><span class="title">导航</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/nav/nav.html" class="nav-link">
+  常用站点
+</a></li><li class="dropdown-item"><!----> <a href="/nav/web.html" class="nav-link">
+  前端站点
+</a></li><li class="dropdown-item"><!----> <a href="/nav/afterEnd.html" class="nav-link">
+  后端站点
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          CSS+HTML系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/csshtml/css-formatContent.html" class="nav-link">
+  CSS格式化上下文
+</a></li><li class="dropdown-subitem"><a href="/web/csshtml/css-bfc.html" class="nav-link">
+  CSS的BFC
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JS系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/js/js-prototype.html" class="nav-link">
+  JS-原型与原型链
+</a></li><li class="dropdown-subitem"><a href="/web/js/js-context.html" class="nav-link">
+  JS-执行上下文
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Vue2系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/vue/mvvm.html" class="nav-link">
+  Vue响应式
+</a></li></ul></li><li class="dropdown-item"><h4>
+          常见面试题
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/web/question/css.html" class="nav-link">
+  CSS面试题
+</a></li><li class="dropdown-subitem"><a href="/web/question/vue.html" class="nav-link">
+  Vue2.x面试题
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Java" class="dropdown-title"><span class="title">Java</span> <span class="arrow down"></span></button> <button type="button" aria-label="Java" class="mobile-dropdown-title"><span class="title">Java</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          基础系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/basics/know.html" class="nav-link">
+  Java初识
+</a></li><li class="dropdown-subitem"><a href="/java/basics/number.html" class="nav-link">
+  Java数字
+</a></li><li class="dropdown-subitem"><a href="/java/basics/string.html" class="nav-link">
+  Java字符串
+</a></li></ul></li><li class="dropdown-item"><h4>
+          集合
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/collection/collection.html" class="nav-link">
+  Collection集合
+</a></li><li class="dropdown-subitem"><a href="/java/collection/list.html" class="nav-link">
+  List集合
+</a></li></ul></li><li class="dropdown-item"><h4>
+          IO操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/io/" class="nav-link">
+  IO初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          网络编程
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/network/ip.html" class="nav-link">
+  IP操作
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JDBC操作
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/java/jdbc/mysql-connect.html" class="nav-link">
+  MySQL操作
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="数据库" class="dropdown-title"><span class="title">数据库</span> <span class="arrow down"></span></button> <button type="button" aria-label="数据库" class="mobile-dropdown-title"><span class="title">数据库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          MySQL系列
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/database/mysql/init.html" class="nav-link">
+  常用语法
+</a></li><li class="dropdown-subitem"><a href="/database/mysql/data-type.html" class="nav-link">
+  数据类型
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="设计模式" class="dropdown-title"><span class="title">设计模式</span> <span class="arrow down"></span></button> <button type="button" aria-label="设计模式" class="mobile-dropdown-title"><span class="title">设计模式</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/designMode/observer.html" class="nav-link">
+  观察者模式
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="运维/工具" class="dropdown-title"><span class="title">运维/工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="运维/工具" class="mobile-dropdown-title"><span class="title">运维/工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          Maven
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tools/maven/" class="nav-link">
+  初识
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Tomcat
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/tools/tomcat/" class="nav-link">
+  初识
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="English" class="dropdown-title"><span class="title">English</span> <span class="arrow down"></span></button> <button type="button" aria-label="English" class="mobile-dropdown-title"><span class="title">English</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          英语读音
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/english/pronunciation/phonogram.html" class="nav-link">
+  音标
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语单词
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/english/word/call.html" class="nav-link">
+  电话
+</a></li><li class="dropdown-subitem"><a href="/english/word/daily-life.html" class="nav-link">
+  日常生活
+</a></li><li class="dropdown-subitem"><a href="/english/word/animal.html" class="nav-link">
+  动物
+</a></li></ul></li><li class="dropdown-item"><h4>
+          英语语法
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/english/grammar/sentence.html" class="nav-link">
+  句子成分
+</a></li></ul></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Study" class="dropdown-title"><span class="title">Study</span> <span class="arrow down"></span></button> <button type="button" aria-label="Study" class="mobile-dropdown-title"><span class="title">Study</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/study/computers/" class="nav-link">
+  计算机基础
+</a></li><li class="dropdown-item"><!----> <a href="/study/web/" class="nav-link">
+  前端知识路线
+</a></li><li class="dropdown-item"><!----> <a href="/study/java/" class="nav-link">
+  Java知识路线
+</a></li><li class="dropdown-item"><!----> <a href="/study/standard/web.html" class="nav-link">
+  工作效率
+</a></li></ul></div> <!----></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Self" class="dropdown-title"><span class="title">Self</span> <span class="arrow down"></span></button> <button type="button" aria-label="Self" class="mobile-dropdown-title"><span class="title">Self</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/self/work/" class="nav-link">
+  工作
+</a></li></ul></div> <!----></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>计算机基础</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>前端知识路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Java知识路线</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>工作效率</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/standard/web.html" class="sidebar-link">前端规范</a></li><li><a href="/study/standard/vscode.html" class="sidebar-link">Vsocde编辑器</a></li><li><a href="/study/standard/web-flow.html" aria-current="page" class="active sidebar-link">项目构建</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#使用eslint-7-32-0" class="sidebar-link">使用ESLint（7.32.0）</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#格式化代码" class="sidebar-link">格式化代码</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#style样式规则" class="sidebar-link">style样式规则</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#使用git-commit-规范" class="sidebar-link">使用Git commit 规范</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#使用typescript" class="sidebar-link">使用Typescript</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#使用文档" class="sidebar-link">使用文档</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#皮肤配置" class="sidebar-link">皮肤配置</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#权限管理" class="sidebar-link">权限管理</a></li><li class="sidebar-sub-header"><a href="/study/standard/web-flow.html#优化项目" class="sidebar-link">优化项目</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="main"><div class="content"><div class="theme-default-content content__default"><h1 id="项目构建"><a href="#项目构建" class="header-anchor">#</a> 项目构建</h1> <p>🐴</p> <h2 id="使用eslint-7-32-0"><a href="#使用eslint-7-32-0" class="header-anchor">#</a> 使用ESLint（7.32.0）</h2> <ul><li><a href="https://cn.eslint.org/" target="_blank" rel="noopener noreferrer">ESLint 中文网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h3 id="安装eslint"><a href="#安装eslint" class="header-anchor">#</a> 安装ESLint</h3> <div class="language-js extra-class"><pre class="language-js"><code>npm i eslint <span class="token operator">-</span>g
+
+<span class="token comment">//or</span>
+
+yarn add eslint
+</code></pre></div><h3 id="配置eslint"><a href="#配置eslint" class="header-anchor">#</a> 配置ESLint</h3> <p>配置<code>eslint</code>我们可以在根目录创建<code>.eslintrc.js</code>配置文件, 关于<code>eslint</code>的配置可以<a href="https://cn.eslint.org/docs/user-guide/configuring" target="_blank" rel="noopener noreferrer">查看这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .eslintrc.js 配置文件</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'eslint:recommended'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 默认规则</span>
+  parser<span class="token operator">:</span> <span class="token string">'@babel/eslint-parser'</span><span class="token punctuation">,</span> <span class="token comment">// 解析器</span>
+  parserOptions<span class="token operator">:</span><span class="token punctuation">{</span>
+    sourceType<span class="token operator">:</span> <span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token comment">// 启用module</span>
+    babelOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  env<span class="token operator">:</span> <span class="token punctuation">{</span>
+    browser<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    node<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    es6<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> 
+    mocha<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  globals<span class="token operator">:</span> <span class="token punctuation">{</span>
+    history<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    location<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    sessionStorage<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    localStorage<span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token comment">//... 一些规则</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>1. 关于<code>extends</code></strong></p> <p><code>extends</code>主要作用是继承第三方的<code>eslint</code>规则，常见的第三方规则如下：</p> <ul><li><a href="https://cn.eslint.org/docs/rules/" target="_blank" rel="noopener noreferrer">eslint:recommended<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>官方推荐的</li> <li><a href="https://github.com/prettier/eslint-config-prettier/" target="_blank" rel="noopener noreferrer">eslint-config-prettier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> prettier规则主要目的是覆盖其它规则</li> <li><a href="https://www.npmjs.com/package/eslint-plugin-react" target="_blank" rel="noopener noreferrer">eslint-plugin-react<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> react的eslint规则</li> <li><a href="https://www.npmjs.com/package/@typescript-eslint/eslint-plugin" target="_blank" rel="noopener noreferrer">@typescript-eslint/eslint-plugin<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> TS的eslint规则</li></ul> <p><strong>2. 关于<code>parser</code>解析器</strong></p> <p><code>ESLint</code>默认使用<code>Espree</code>作为其解析器,除此之外可以使用下面解析器：</p> <ul><li><a href="https://www.npmjs.com/package/@babel/eslint-parser" target="_blank" rel="noopener noreferrer">@babel/eslint-parser<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> babel解析器</li> <li><a href="https://www.npmjs.com/package/@typescript-eslint/parser" target="_blank" rel="noopener noreferrer">@typescript-eslint/parser<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> TS解析器</li></ul> <p><strong>3. 关于<code>parserOptionss</code>解析器配置（选项）</strong></p> <p><a href="https://cn.eslint.org/docs/user-guide/configuring#specifying-parser-options" target="_blank" rel="noopener noreferrer">parserOptionss<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>可以设置解析器的选项，常见的选项如下：</p> <div class="language-js extra-class"><pre class="language-js"><code>parserOptionss <span class="token operator">=</span> <span class="token punctuation">{</span>
+  sourceType<span class="token operator">:</span> <span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token comment">//设置ECMAScript 模块 </span>
+  ecmaFeatures<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token comment">// 设置额外的语言特性</span>
+  babelOptions<span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// babel的一些配置</span>
+    presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">//babel的一些预设 https://www.babeljs.cn/docs/babel-preset-env</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">// babel的一些插件</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>4. 关于<code>plugins</code>插件</strong></p> <p><code>plugins</code>主要是扩展<code>eslint</code>的规则，常见的插件如：</p> <ul><li><a href="https://www.npmjs.com/package/eslint-plugin-react" target="_blank" rel="noopener noreferrer">eslint-plugin-react<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 扩展了一些关于react语法规则</li> <li><a href="">eslint-plugin-react-hooks</a></li> <li><a href="https://www.npmjs.com/package/eslint-plugin-import" target="_blank" rel="noopener noreferrer">eslint-plugin-import<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 检测文件路径和导入名称拼写错误的问题。</li> <li><a href="https://www.npmjs.com/package/eslint-config-prettier" target="_blank" rel="noopener noreferrer">eslint-config-prettier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 该插件主要是关闭了一些与可能与<code>Prettier</code>冲突的规则</li></ul> <p><strong>5. 关于<code>env</code></strong></p> <p>定义项目环境, 可用的环境<a href="https://cn.eslint.org/docs/user-guide/configuring#specifying-parser-options" target="_blank" rel="noopener noreferrer">可以访问这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><strong>6. 关于<code>globals</code></strong></p> <p>定义全局变量，防止使用未定义的变量时报错。</p> <p><strong>7. 关于<code>rules</code></strong></p> <p>设定<code>eslint</code>检测规则</p> <ul><li><code>off</code> 或 <code>0</code> - 关闭规则</li> <li><code>warn</code> 或 <code>1</code> - 开启规则，使用警告级别的错误：warn (不会导致程序退出)</li> <li><code>error</code> 或 <code>2</code> - 开启规则，使用错误级别的错误：error (当被触发的时候，程序会退出)</li></ul> <p><strong>8. 关于<code>settings</code></strong></p> <p><a href="http://eslint.cn/docs/user-guide/configuring#adding-shared-settings" target="_blank" rel="noopener noreferrer">settings<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>该配置主要向被执行的规则中注入<code>settings</code>中的变量。 当然并不是每个规则插件都使用了它，看具体规则的编写了。<a href="https://github.com/import-js/eslint-plugin-import" target="_blank" rel="noopener noreferrer">eslint-plugin-import<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>插件就使用了<code>settings</code>配置，如</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .eslintrc.js 配置文件</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span><span class="token punctuation">{</span>
+  settings<span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token string">'import/resolver'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      node<span class="token operator">:</span> <span class="token punctuation">{</span>
+          extensions<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.jsx'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      alias<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'@'</span><span class="token operator">:</span> <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'src'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="eslint检测react"><a href="#eslint检测react" class="header-anchor">#</a> ESLint检测React</h3> <p>在<code>React</code>中使用<code>ESLint</code>我们需要安装一些插件</p> <ul><li><code>eslint-plugin-react</code></li> <li><code>eslint-plugin-react-hooks</code></li></ul> <p>然后做一下配置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .eslintrc.js 配置文件</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'eslint:recommended'</span><span class="token punctuation">,</span><span class="token string">'plugin:react/recommended'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 添加react规则</span>
+  parser<span class="token operator">:</span> <span class="token string">'@babel/eslint-parser'</span><span class="token punctuation">,</span> <span class="token comment">// 解析器</span>
+  parserOptions<span class="token operator">:</span><span class="token punctuation">{</span>
+    sourceType<span class="token operator">:</span> <span class="token string">'module'</span><span class="token punctuation">,</span> 
+    babelOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'react'</span><span class="token punctuation">,</span><span class="token string">'react-hooks'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 增加react</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token comment">//... 一些规则</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="eslint检测vue"><a href="#eslint检测vue" class="header-anchor">#</a> ESLint检测Vue</h3> <p>在<code>Vue</code>中使用<code>ESLint</code>我们需要安装一些插件和解析器</p> <ul><li><code>eslint-plugin-vue</code> <a href="https://github.com/vuejs/eslint-plugin-vue" target="_blank" rel="noopener noreferrer">插件<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><code>vue-eslint-parser</code> <a href="https://www.npmjs.com/package/vue-eslint-parser" target="_blank" rel="noopener noreferrer">解析器<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <p>然后做一下配置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// .eslintrc.js 配置文件</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'eslint:recommended'</span><span class="token punctuation">,</span><span class="token string">'plugin:vue/recommended'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 添加vue规则</span>
+  parser<span class="token operator">:</span> <span class="token string">'@babel/eslint-parser'</span><span class="token punctuation">,</span> <span class="token comment">// 使用vue解析器</span>
+  parserOptions<span class="token operator">:</span><span class="token punctuation">{</span>
+    sourceType<span class="token operator">:</span> <span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token comment">// 启用module</span>
+    babelOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">,</span><span class="token string">'@babel/preset-react'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'react'</span><span class="token punctuation">,</span><span class="token string">'react-hooks'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token comment">//... 一些规则</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="eslint检测typescript"><a href="#eslint检测typescript" class="header-anchor">#</a> ESLint检测TypeScript</h3> <p>在<code>React</code>中使用<code>TypeScript</code>我们需要安装一些插件和解析器</p> <ul><li><code>@typescript-eslint/parser</code> 解析器</li> <li><code>@typescript-eslint/eslint-plugin</code> 插件</li></ul> <p>然后做一下配置</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 下面是在react中引入ts</span>
+<span class="token comment">// .eslintrc.js 配置文件</span>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span> 
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'eslint:recommended'</span><span class="token punctuation">,</span><span class="token string">'plugin:@typescript-eslint/recommended'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 添加typescript规则</span>
+  parser<span class="token operator">:</span> <span class="token string">'@typescript-eslint/parser'</span><span class="token punctuation">,</span> <span class="token comment">// 使用typescript解析器</span>
+  parserOptions<span class="token operator">:</span><span class="token punctuation">{</span>
+    sourceType<span class="token operator">:</span> <span class="token string">'module'</span><span class="token punctuation">,</span> <span class="token comment">// 启用module</span>
+    babelOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+      presets<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'@babel/preset-env'</span><span class="token punctuation">,</span><span class="token string">'@babel/preset-react'</span><span class="token punctuation">,</span> <span class="token string">'@babel/preset-typescript'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">[</span><span class="token string">'@babel/plugin-proposal-decorators'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> legacy<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token string">'@babel/plugin-proposal-class-properties'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> loose<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'react'</span><span class="token punctuation">,</span><span class="token string">'react-hooks'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  settings<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">//支持从TypeScript文件导入JavaScript文件中的模块</span>
+      <span class="token string">'import/resolver'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          node<span class="token operator">:</span> <span class="token punctuation">{</span>
+              extensions<span class="token operator">:</span> isTsProject <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.jsx'</span><span class="token punctuation">,</span> <span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.tsx'</span><span class="token punctuation">,</span> <span class="token string">'.d.ts'</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.js'</span><span class="token punctuation">,</span> <span class="token string">'.jsx'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// ts 解析的文件</span>
+      <span class="token string">'import/parsers'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string">'@typescript-eslint/parser'</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'.ts'</span><span class="token punctuation">,</span> <span class="token string">'.tsx'</span><span class="token punctuation">,</span> <span class="token string">'.d.ts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+     <span class="token comment">//... 一些规则</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="忽略eslint"><a href="#忽略eslint" class="header-anchor">#</a> 忽略ESLint</h3> <ul><li>在目录添加 <code>.eslintignore</code>文件来时<code>eslint</code>忽略某些文件的检测如：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>node_modules
+</code></pre></div><ul><li>通过注释 ，如下：</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/* eslint-disable */</span>
+
+<span class="token comment">// 在文件顶端添加 /* eslint-disable */ 将忽略整个文件</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/* eslint-disable */</span>
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">/* eslint-enable */</span>
+
+<span class="token comment">// 将忽略 var a = 1;</span>
+</code></pre></div><h2 id="格式化代码"><a href="#格式化代码" class="header-anchor">#</a> 格式化代码</h2> <ul><li><a href="https://prettier.io/docs/en/index.html" target="_blank" rel="noopener noreferrer">prettier格式化代码<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><code>VScode</code>格式化代码</li></ul> <h3 id="prettier格式化"><a href="#prettier格式化" class="header-anchor">#</a> prettier格式化</h3> <h4 id="基本使用"><a href="#基本使用" class="header-anchor">#</a> 基本使用</h4> <p>首先安装<code>prettier</code></p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">--</span>save<span class="token operator">-</span>dev <span class="token operator">--</span>save<span class="token operator">-</span>exact prettier
+<span class="token comment">//or</span>
+yarn add prettier <span class="token operator">--</span>dev <span class="token operator">--</span>exact
+</code></pre></div><p>然后我们可以在根目录创建<code>.prettierrc.js</code>配置文件。如：</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  printWidth<span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span><span class="token comment">// 一行最多 100 字符</span>
+  useTabs<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 不使用缩进符，而使用空格</span>
+  tabWidth<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 使用 2 个空格缩进</span>
+  tabSize<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  semi<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 行尾需要有分号</span>
+  singleQuote<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 使用单引号</span>
+  quoteProps<span class="token operator">:</span> <span class="token string">'as-needed'</span><span class="token punctuation">,</span><span class="token comment">// 对象的 key 仅在必要时用引号</span>
+  jsxSingleQuote<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">// jsx 不使用单引号，而使用双引号</span>
+  trailingComma<span class="token operator">:</span> <span class="token string">'es5'</span><span class="token punctuation">,</span><span class="token comment">// 末尾不需要逗号 'es5'  none</span>
+  bracketSpacing<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 大括号内的首尾需要空格</span>
+  jsxBracketSameLine<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">// jsx 标签的反尖括号需要换行</span>
+  arrowParens<span class="token operator">:</span> <span class="token string">'always'</span><span class="token punctuation">,</span> <span class="token comment">// 箭头函数，只有一个参数的时候，也需要括号</span>
+  rangeStart<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span><span class="token comment">// 每个文件格式化的范围是文件的全部内容</span>
+  rangeEnd<span class="token operator">:</span> <span class="token number">Infinity</span><span class="token punctuation">,</span>
+  requirePragma<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token comment">// 不需要写文件开头的 @prettier</span>
+  insertPragma<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 不需要自动在文件开头插入 @prettier</span>
+  proseWrap<span class="token operator">:</span> <span class="token string">'preserve'</span><span class="token punctuation">,</span><span class="token comment">// 使用默认的折行标准</span>
+  htmlWhitespaceSensitivity<span class="token operator">:</span> <span class="token string">'css'</span><span class="token punctuation">,</span><span class="token comment">// 根据显示样式决定 html 要不要折行</span>
+  endOfLine<span class="token operator">:</span> <span class="token string">'lf'</span><span class="token punctuation">,</span><span class="token comment">// 换行符使用 lf 结尾是 \n \r \n\r auto</span>
+  overrides<span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// 设置解析器配置项</span>
+      <span class="token punctuation">{</span>
+         <span class="token comment">// 以json解析器格式 .prettierrc 文件</span>
+          files<span class="token operator">:</span> <span class="token string">'.prettierrc'</span><span class="token punctuation">,</span> 
+          options<span class="token operator">:</span> <span class="token punctuation">{</span>
+              parser<span class="token operator">:</span> <span class="token string">'json'</span><span class="token punctuation">,</span> 
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+          files<span class="token operator">:</span> <span class="token string">'document.ejs'</span><span class="token punctuation">,</span>
+          options<span class="token operator">:</span> <span class="token punctuation">{</span>
+              parser<span class="token operator">:</span> <span class="token string">'html'</span><span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后我们可以使用命令执行格式化</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token comment">// package.json文件</span>
+<span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span><span class="token punctuation">{</span>
+    <span class="token property">&quot;prettier&quot;</span><span class="token operator">:</span> <span class="token string">&quot;prettier -c --write \&quot;src/**/*\&quot;&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>然后执行 <code>npm run prettier</code></p> <h4 id="和eslint一起使用"><a href="#和eslint一起使用" class="header-anchor">#</a> 和ESLint一起使用</h4> <p><code>ESLint</code>和<code>prettier</code>关系可以<a href="https://zhuanlan.zhihu.com/p/80574300" target="_blank" rel="noopener noreferrer">查看这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>和<code>ESLint</code>使用需要安装<code>prettier</code>的<code>eslint</code>插件</p> <ul><li><code>eslint-config-prettier</code></li> <li><code>eslint-plugin-prettier</code></li></ul> <p><code>eslint-config-prettier</code>的作用是可以关掉所有和 Prettier 冲突的 ESLint 的配置
+<code>eslint-plugin-prettier</code>的作用就是把<code>Prettier</code>推荐的格式问题的配置以<code>ESLint rules</code>的方式写入，使其报错的来源依旧是<code>ESLint</code></p> <p><code>yarn add --dev eslint-config-prettier eslint-plugin-prettier</code></p> <p>然后再<code>.eslintrc.js</code>中引入</p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'prettier'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;prettier&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>      
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>        
+      <span class="token string">&quot;prettier/prettier&quot;</span><span class="token operator">:</span> <span class="token string">&quot;error&quot;</span>      
+  <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 上面的配置可以合并成一个</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">&quot;extends&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;plugin:prettier/recommended&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="vscode根据eslint格式化"><a href="#vscode根据eslint格式化" class="header-anchor">#</a> VScode根据eslint格式化</h3> <p>使用<code>VScode</code>保存时格式化代码，我们需要安装一些插件</p> <ul><li><code>eslint</code></li></ul> <p>然后我们可以再<code>VScode</code>配置文件<code>settings.json</code>进行配置。</p> <p>如下：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;editor.codeActionsOnSave&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token comment">// 编辑器自动保存</span>
+    <span class="token property">&quot;source.fixAll.eslint&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;eslint.autoFixOnSave&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 以eslint规则进行格式化</span>
+  <span class="token property">&quot;eslint.packageManager&quot;</span><span class="token operator">:</span> <span class="token string">&quot;yarn&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;eslint.validate&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token comment">// 格式的文件</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;vue&quot;</span><span class="token punctuation">,</span>   <span class="token comment">// 检测vue文件</span>
+      <span class="token property">&quot;autoFix&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>   <span class="token comment">//  为vue文件开启保存自动修复的功能</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;html&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;autoFix&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;jsx&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;autoFix&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;language&quot;</span><span class="token operator">:</span> <span class="token string">&quot;javascript&quot;</span><span class="token punctuation">,</span> <span class="token comment">//  用eslint的规则检测js文件</span>
+      <span class="token property">&quot;autoFix&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">}</span>
+</code></pre></div><p>配置好后，当我们保存时，<code>VScode</code>编辑器会根据我们<code>eslint</code>的配置进行部分格式化</p> <h4 id="忽略格式化"><a href="#忽略格式化" class="header-anchor">#</a> 忽略格式化</h4> <p>对于不需要格式化的文件添加到<code>.prettierignore</code>中进行忽略，或在文件中使用<code>/* prettier-ignore */</code>注释进行忽略</p> <h4 id="git提交格式化"><a href="#git提交格式化" class="header-anchor">#</a> git提交格式化</h4> <h2 id="style样式规则"><a href="#style样式规则" class="header-anchor">#</a> style样式规则</h2> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <p>定义样式规则可以使<a href="http://stylelint.docschina.org/" target="_blank" rel="noopener noreferrer">StyleLint<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p><code>StyleLint</code>的常用规则<a href="http://stylelint.docschina.org/user-guide/rules/" target="_blank" rel="noopener noreferrer">再这里<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>首先我们安装<code>stylelint</code></p> <div class="language-js extra-class"><pre class="language-js"><code>npm install <span class="token operator">-</span>d <span class="token operator">-</span>save<span class="token operator">-</span>dev stylelint
+
+npm install stylelint<span class="token operator">-</span>config<span class="token operator">-</span>standard stylelint<span class="token operator">-</span>order <span class="token operator">--</span>save<span class="token operator">-</span>dev
+</code></pre></div><ul><li><code>stylelint</code>是运行工具</li> <li><code>stylelint-config-standard</code> 是stylelint的推荐配置</li> <li><code>stylelint-order</code> 是CSS属性排序插件(先写定位，再写盒模型，再写内容区样式，最后写 CSS3 相关属性)</li></ul> <h3 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h3> <p>然后我们创建配置文件<code>.stylelintrc.js</code></p> <div class="language-js extra-class"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token keyword">extends</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">&quot;stylelint-config-standard&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 这是官方推荐的方式</span>
+  rules<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;at-rule-empty-line-before&quot;</span><span class="token operator">:</span> <span class="token string">&quot;always&quot;</span><span class="token operator">|</span><span class="token string">&quot;never&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;at-rule-name-case&quot;</span><span class="token operator">:</span> <span class="token string">&quot;lower&quot;</span><span class="token operator">|</span><span class="token string">&quot;upper&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;block-no-empty&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  ignoreFiles<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'**/*.js'</span><span class="token punctuation">,</span> <span class="token string">'**/*.jsx'</span><span class="token punctuation">,</span> <span class="token string">'**/*.tsx'</span><span class="token punctuation">,</span> <span class="token string">'**/*.ts'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><ul><li><code>plugins</code>配置项，可以为<code>stylelint</code>扩展插件，如：<a href="https://github.com/kristerkari/stylelint-declaration-block-no-ignored-properties" target="_blank" rel="noopener noreferrer">stylelint-declaration-block-no-ignored-properties<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 该插件禁止由于同一规则中的另一个属性值而被忽略的属性值（如<code>a { display: inline; width: 100px; }</code>）;</li> <li><code>extends</code>继承，可以继承一些规则，如： <a href="https://github.com/pascalduez/stylelint-config-css-modules" target="_blank" rel="noopener noreferrer">stylelint-config-css-modules<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>接受css模块语法；  <a href="https://github.com/prettier/stylelint-config-prettier" target="_blank" rel="noopener noreferrer">stylelint-config-prettier<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>关闭所有不必要或可能与Prettier冲突的规则。</li> <li><code>rules</code> 配置股则</li> <li><code>ignoreFiles</code> 忽略检测的文件</li></ul> <h3 id="运行"><a href="#运行" class="header-anchor">#</a> 运行</h3> <p>配置完成后我们可以再<code>package.json</code>中添加执行配置</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;scripts&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;lint:style&quot;</span><span class="token operator">:</span> <span class="token string">&quot;stylelint --fix \&quot;src/**/*.less\&quot; --syntax less&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="使用git-commit-规范"><a href="#使用git-commit-规范" class="header-anchor">#</a> 使用Git commit 规范</h2> <h2 id="使用typescript"><a href="#使用typescript" class="header-anchor">#</a> 使用Typescript</h2> <h2 id="使用文档"><a href="#使用文档" class="header-anchor">#</a> 使用文档</h2> <h2 id="皮肤配置"><a href="#皮肤配置" class="header-anchor">#</a> 皮肤配置</h2> <h2 id="权限管理"><a href="#权限管理" class="header-anchor">#</a> 权限管理</h2> <h2 id="优化项目"><a href="#优化项目" class="header-anchor">#</a> 优化项目</h2></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最近更新时间:</span> <span class="time">9/27/2021, 5:20:16 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/standard/vscode.html" class="prev">
+        Vsocde编辑器
+      </a></span> <!----></p></div></div> <div class="floatSilder hidden-sm-and-down"><div class="floatSilderWrapper" data-v-4100c7a9><div class="topTitle" data-v-4100c7a9>项目构建</div> <div class="contentNav" data-v-4100c7a9><ul class="nav" data-v-4100c7a9><li class="title" data-v-4100c7a9><a href="#使用eslint-7-32-0" data-v-4100c7a9>使用ESLint（7.32.0）</a></li><li class="subTitle" data-v-4100c7a9><a href="#安装eslint" data-v-4100c7a9>安装ESLint</a></li><li class="subTitle" data-v-4100c7a9><a href="#配置eslint" data-v-4100c7a9>配置ESLint</a></li><li class="subTitle" data-v-4100c7a9><a href="#eslint检测react" data-v-4100c7a9>ESLint检测React</a></li><li class="subTitle" data-v-4100c7a9><a href="#eslint检测vue" data-v-4100c7a9>ESLint检测Vue</a></li><li class="subTitle" data-v-4100c7a9><a href="#eslint检测typescript" data-v-4100c7a9>ESLint检测TypeScript</a></li><li class="subTitle" data-v-4100c7a9><a href="#忽略eslint" data-v-4100c7a9>忽略ESLint</a></li><li class="title" data-v-4100c7a9><a href="#格式化代码" data-v-4100c7a9>格式化代码</a></li><li class="subTitle" data-v-4100c7a9><a href="#prettier格式化" data-v-4100c7a9>prettier格式化</a></li><li class="subTitle" data-v-4100c7a9><a href="#vscode根据eslint格式化" data-v-4100c7a9>VScode根据eslint格式化</a></li><li class="title" data-v-4100c7a9><a href="#style样式规则" data-v-4100c7a9>style样式规则</a></li><li class="subTitle" data-v-4100c7a9><a href="#安装" data-v-4100c7a9>安装</a></li><li class="subTitle" data-v-4100c7a9><a href="#配置" data-v-4100c7a9>配置</a></li><li class="subTitle" data-v-4100c7a9><a href="#运行" data-v-4100c7a9>运行</a></li><li class="title" data-v-4100c7a9><a href="#使用git-commit-规范" data-v-4100c7a9>使用Git commit 规范</a></li><li class="title" data-v-4100c7a9><a href="#使用typescript" data-v-4100c7a9>使用Typescript</a></li><li class="title" data-v-4100c7a9><a href="#使用文档" data-v-4100c7a9>使用文档</a></li><li class="title" data-v-4100c7a9><a href="#皮肤配置" data-v-4100c7a9>皮肤配置</a></li><li class="title" data-v-4100c7a9><a href="#权限管理" data-v-4100c7a9>权限管理</a></li><li class="title" data-v-4100c7a9><a href="#优化项目" data-v-4100c7a9>优化项目</a></li></ul></div></div></div></div> </main></div></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.2956047c.js" defer></script><script src="/assets/js/2.7a3e1fbe.js" defer></script><script src="/assets/js/73.2599ef4e.js" defer></script>
+  </body>
+</html>
