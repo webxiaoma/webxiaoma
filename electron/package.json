@@ -13,7 +13,7 @@
   "dependencies": {
     "core-js": "^3.3.2",
     "express": "^4.17.1",
-    "log4js": "^6.1.2"
+    "log4js": "^6.4.0"
   },
   "devDependencies": {
     "electron": "^10.1.5",
