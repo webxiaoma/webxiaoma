@@ -1,5 +1,8 @@
 <!-- 英语 -->
 <template>
+<div class="englishInline">
+
+
   <div class='englishWrapper'>
      <el-popover
         placement="right"
@@ -15,6 +18,7 @@
       </el-popover>
      <div @click="showClick('showSoundmark')" :class="showSoundmark?'readWrapper':'readWrapper filter'" v-if="read"><Badge :text="read"></Badge> </div>
      <div @click="showClick('showMeaning')" :class="showMeaning?'':'filter'" v-if="msg">{{msg}}</div>
+ </div>
  </div>
 </template>
 
@@ -188,6 +192,9 @@ export default {
 </script>
 
 <style  lang='stylus'>
+.englishInline
+  display: inline-block
+
 .englishWrapper
   display flex
   flex-wrap wrap

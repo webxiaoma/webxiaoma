@@ -84,15 +84,7 @@ sidebarDepth: 1
 - JS - js的继承几种继承方式 [答案一](https://www.cnblogs.com/ranyonsue/p/11201730.html)
 - JS - js的事件委托是什么 [答案一](https://www.cnblogs.com/soyxiaobi/p/9498357.html)
 - JS - js强制类型转换方法和隐式类型转换 [答案一](https://www.cnblogs.com/-zimu/p/7524675.html)
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
-- JS - [答案一]()
+
 ### 结果输出题
 
 

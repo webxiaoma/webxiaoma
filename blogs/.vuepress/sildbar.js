@@ -226,8 +226,18 @@ module.exports = {
         collapsable: true,
         children: [
           "web/",
-          "web/web-frame",
+          "web/framework",
+          "web/react",
+          "web/vue",
           "web/interview"
+        ]
+      },
+      {
+        title: '低代码',
+        collapsable: true,
+        children: [
+          "lowCode/",
+      
         ]
       },
       {
@@ -246,22 +256,23 @@ module.exports = {
           "standard/web-flow",
         ]
       },
-      // {
-      //   title: '数学知识路线',
-      //   collapsable: true,
-      //   children: [
-      //     "mathematics/",
-      //   ]
-      // },
+      {
+        title: '金融业务',
+        collapsable: true,
+        children: [
+          "financial/",
+        ]
+      },
   ],
-  "/self/":[
-    {
-      title: '工作',
-      collapsable: true,
-      children: [
-        "work/",
-        "work/partTimeJob",
-      ]
-    },
-  ]
+  // TODO： 暂时不用
+  // "/self/":[
+  //   {
+  //     title: '工作',
+  //     collapsable: true,
+  //     children: [
+  //       "work/",
+  //       "work/partTimeJob",
+  //     ]
+  //   },
+  // ]
 }

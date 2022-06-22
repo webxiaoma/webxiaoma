@@ -1,4 +1,5 @@
 import  store from '../theme/store';
+import sha256 from 'crypto-js/sha256';
 
 export default {
   store,
@@ -32,12 +33,13 @@ export default {
     // 检测是否登录
     checkLogin(){
       try{
-        const {password} = this.$site.themeConfig;
         const {isLogin} = this.$frontmatter;
         const session = this.getSession();
-        
-        const newPassword = password.replace(/\d+/g,"123");
-        if(session.password && (newPassword === session.password)){
+
+        const getUserMsg = this.getUserMsg();
+        const token = sha256(getUserMsg.password+getUserMsg.user).toString();
+      
+        if(session && session === token){
           this.$store.dispatch("isLogin",true)
         }else{
           this.$store.dispatch("isLogin",false)
@@ -51,25 +53,13 @@ export default {
     },
     // 获取session
     getSession(){
-      try{
-          const session = localStorage.WEBXIAOMA_SESSION;
-          if(session){
-            const obj = JSON.parse(unescape(session));
-            obj.password = obj.password.replace(/\d+/g,"123")
-            return obj;
-          }else{
-            return {};
-          }
-      }catch(e){}
+        const session = localStorage.WEBXIAOMA_SESSION;
+        return session;
     },
    // 设置session
     setSession(obj){
       try{
-        const objStr = JSON.stringify({
-          password:obj.password,
-          user:obj.user
-        })
-        localStorage.WEBXIAOMA_SESSION = escape(objStr)
+        localStorage.WEBXIAOMA_SESSION = sha256(obj.password+obj.user).toString()
       }catch(e){}
     },
     //清除seesion

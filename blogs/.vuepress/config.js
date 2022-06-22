@@ -27,7 +27,7 @@ module.exports = {
   serviceWorker: true, //缓存那些已访问过的页面的内容
   themeConfig: {  // 导航
       user:"webxiaoma",
-      password:"Longwen2021",
+      password:"webxiaoma",
       logo:'/img/manong.jpg', 
       searchMaxSuggestions: 15, // 搜索设置数量
       nav: [  // 这里修改了，增加了isLogin 是否登录
@@ -112,10 +112,9 @@ module.exports = {
             {text:"前端知识路线", link:"/study/web/"},
             {text:"Java知识路线", link:"/study/java/"},
             {text:"工作效率", link:"/study/standard/web"},
+            {text:"金融业务", link:"/study/financial/"},
           ], isLogin:true},
-          { text: 'Self', items:[
-            {text:"工作", link:"/self/work/"},
-          ], isLogin:true},
+          
           // { text: '算法', items: [
           //   {text:"常见算法", items:[
           //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},
