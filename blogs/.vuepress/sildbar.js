@@ -222,18 +222,34 @@ module.exports = {
         ]
       },
       {
+        title: '运维相关',
+        collapsable: true,
+        children: [
+          "operation/",
+          'operation/nginx'
+        ]
+      },
+      {
+        title: '数据库相关',
+        collapsable: true,
+        children: [
+          "database/",
+        ]
+      },
+      {
         title: '前端知识路线',
         collapsable: true,
         children: [
           "web/",
           "web/framework",
+          "web/test",
           "web/react",
           "web/vue",
           "web/interview"
         ]
       },
       {
-        title: '低代码',
+        title: '低代码相关',
         collapsable: true,
         children: [
           "lowCode/",
@@ -245,6 +261,13 @@ module.exports = {
         collapsable: true,
         children: [
           "java/",
+        ]
+      },
+      {
+        title: '3D技术相关',
+        collapsable: true,
+        children: [
+          "3d-technology/",
         ]
       },
       {

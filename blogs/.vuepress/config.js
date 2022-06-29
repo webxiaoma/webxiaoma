@@ -109,10 +109,13 @@ module.exports = {
           ]},
           { text: 'Study',  items: [
             {text:"计算机基础", link:"/study/computers/"},
+            {text:"运维相关", link:"/study/operation/"},
+            {text:"数据库相关", link:"/study/database/"},
             {text:"前端知识路线", link:"/study/web/"},
             {text:"Java知识路线", link:"/study/java/"},
+            {text:"3D技术", link:"/study/java/"},
             {text:"工作效率", link:"/study/standard/web"},
-            {text:"金融业务", link:"/study/financial/"},
+            {text:"金融业务", link:"/study/3d-technology/"},
           ], isLogin:true},
           
           // { text: '算法', items: [
