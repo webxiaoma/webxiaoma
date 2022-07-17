@@ -245,6 +245,7 @@ module.exports = {
           "web/test",
           "web/react",
           "web/vue",
+          "web/css",
           "web/interview"
         ]
       },
@@ -253,7 +254,6 @@ module.exports = {
         collapsable: true,
         children: [
           "lowCode/",
-      
         ]
       },
       {
