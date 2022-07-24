@@ -17,6 +17,12 @@ isLogin: true
 
 ## Vsocde
 
+### 常用插件
+
+
+### Vscode格式化代
+
+配置[EditorCOnfig](https://editorconfig.org/)，在`vscode`中安装：`EditroConfig for Vscode` 插件
 
 
 
