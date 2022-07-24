@@ -229,7 +229,8 @@ module.exports = {
           "web/framework",
           "web/react",
           "web/vue",
-          "web/interview"
+          "web/canvas",
+          "web/interview",
         ]
       },
       {
@@ -245,6 +246,14 @@ module.exports = {
         collapsable: true,
         children: [
           "java/",
+        ]
+      },
+      {
+        title: '运维知识',
+        collapsable: true,
+        children: [
+          "maintenance/linux",
+          "maintenance/nginx",
         ]
       },
       {

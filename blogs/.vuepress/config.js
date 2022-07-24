@@ -1,7 +1,6 @@
 const Sidebar = require("./sildbar");
 const baseUrl = "";
 
-
 module.exports = {
   title:'小马过河',
   description:"小马过河",
@@ -111,6 +110,7 @@ module.exports = {
             {text:"计算机基础", link:"/study/computers/"},
             {text:"前端知识路线", link:"/study/web/"},
             {text:"Java知识路线", link:"/study/java/"},
+            {text:"运维知识", link:"/study/maintenance/linux"},
             {text:"工作效率", link:"/study/standard/web"},
             {text:"金融业务", link:"/study/financial/"},
           ], isLogin:true},
