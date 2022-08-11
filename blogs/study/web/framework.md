@@ -25,6 +25,7 @@ isLogin: true
 ## 微服务
 
 - [qiankun](https://qiankun.umijs.org/zh): 微前端解决方案（阿里）
+- [MicroApp](https://qiankun.umijs.org/zh): 微前端解决方案（京东）
 
 
 ## 流程处理
