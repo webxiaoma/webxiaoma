@@ -1,5 +1,5 @@
 const Sidebar = require("./sildbar");
-const baseUrl = "/docs";
+const baseUrl = "";
 
 module.exports = {
   title:'小马过河',
