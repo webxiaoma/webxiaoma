@@ -6,6 +6,9 @@ module.exports = {
     "web",
     "afterEnd",
   ],
+  '/chatgpt/':[
+    'tools'
+  ],
   "/web/":[
     {
       title: 'CSS+HTML系列',

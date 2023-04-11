@@ -1,113 +1,115 @@
 <!--  -->
 <template>
-  <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="4"  v-if="!isHide">
-      <div class='cardWrapper'>
-        <a  target="_blank" class="aFlag" @click="jump(jumpUrl)">
-          <div class="card" :title="des">
-              <div class="cardTop">
-                <div class="cardLogo">
-                  <div :class="['logoFont',className]"  v-if="!logoUrl">{{logoWord}}</div>
-                  <img :src="logoUrl" class="img" v-if="logoUrl">
-                </div>
-                <div class="cardTitle">{{title}}</div>
+  <el-col :xs="12" :sm="12" :md="8" :lg="6" :xl="4" v-if="!isHide">
+    <div class="cardWrapper">
+      <a target="_blank" class="aFlag" @click="jump(jumpUrl)">
+        <div class="card" :title="des">
+          <div class="cardTop">
+            <div class="cardLogo">
+              <div :class="['logoFont', className]" v-if="!logoUrl">
+                {{ logoWord }}
               </div>
-              <div class="cardDescription">{{des}}</div>
+              <el-image
+                v-if="logoUrl"
+                style="height: 100%"
+                :src="logoUrl"
+                fit="cover"
+              ></el-image>
+            </div>
+            <div class="cardTitle">{{ title }}</div>
           </div>
-        </a>
-      </div>
+          <div class="cardDescription">{{ des }}</div>
+        </div>
+      </a>
+    </div>
   </el-col>
 </template>
 
 <script>
-import {mapState} from "vuex";
+import { mapState } from "vuex";
 
-const {base} = require("../../config");
-import {urlJump} from '@theme/util/electron';
-
+const { base } = require("../../config");
+import { urlJump } from "@theme/util/electron";
 
 export default {
-  name: 'NavCard',
+  name: "NavCard",
   components: {},
 
-  computed:{
-     ...mapState(["isLogin"])
+  computed: {
+    ...mapState(["isLogin"]),
   },
-  props:{
-    title:{
+  props: {
+    title: {
       type: String,
-      default: "未知"
+      default: "未知",
     },
-    logo:{
+    logo: {
       type: String,
-      default: ""
+      default: "",
     },
-    des:{
+    des: {
       type: String,
-      default: "暂无描述"
+      default: "暂无描述",
     },
-    jumpUrl:{
+    jumpUrl: {
       require: true,
       type: String,
     },
-    login:{
+    login: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  data () {
+  data() {
     return {
-       logoUrl:"",
-       baseImgUrl:`${base}img/website/`,
-       className:"bgColor1",
-       logoWord:"",
-       isHide: false,
+      logoUrl: "",
+      baseImgUrl: `${base}img/website/`,
+      className: "bgColor1",
+      logoWord: "",
+      isHide: false,
     };
   },
 
-  created(){
+  created() {
     const reg = /^(http|https):/;
 
-    if(this.logo){
-      if(reg.test(this.logo)){
-          this.logoUrl = this.logo;
-      }else{
-          this.logoUrl = `${this.baseImgUrl}${this.logo}`;
-      }    
-    }else{
-       var index = Math.ceil(Math.random() * 5);
-       this.className = `bgColor${index}`;
-       this.logoWord = this.title[0];
+    if (this.logo) {
+      if (reg.test(this.logo)) {
+        this.logoUrl = this.logo;
+      } else {
+        this.logoUrl = `${this.baseImgUrl}${this.logo}`;
+      }
+    } else {
+      var index = Math.ceil(Math.random() * 5);
+      this.className = `bgColor${index}`;
+      this.logoWord = this.title[0];
     }
- 
 
-    if(this.login && !this.isLogin){
+    if (this.login && !this.isLogin) {
       this.isHide = true;
     }
-
-
   },
   methods: {
-    jump(url){
-       const reg = /^(http|https):\/\/webxiaoma/;
-       if(this.$root.$ele){
-          if(!reg.test(url)){
-            urlJump(url)
-          }
-       }else{
-         try{
-           window.open(url).location;
-         }catch(err){
-           console.log("slef------:",err)
-         }
-       }
-    }
+    jump(url) {
+      const reg = /^(http|https):\/\/webxiaoma/;
+      if (this.$root.$ele) {
+        if (!reg.test(url)) {
+          urlJump(url);
+        }
+      } else {
+        try {
+          window.open(url).location;
+        } catch (err) {
+          console.log("slef------:", err);
+        }
+      }
+    },
   },
-}
-
+};
 </script>
 
-<style scoped lang='stylus'>
+<style scoped lang="stylus">
 .cardWrapper
   width 100%
   margin 10px 0
@@ -157,7 +159,7 @@ export default {
         background #9b59b6
       .cardLogo
         height 100%
-        .img 
+        .img
           height 44px
           width auto
       .cardTitle
@@ -183,9 +185,8 @@ export default {
       .cardTop
         padding 0 2px
         .cardLogo
-          .img 
+          .img
             height 42px
         .cardTitle
           font-size 16px
-        
 </style>

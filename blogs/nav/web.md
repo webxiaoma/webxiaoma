@@ -8,7 +8,7 @@ meta:
 floatSilder: false
 sidebarDepth: 2
 ---
-# 前端导航
+# 前端
 
 :horse: 
 
@@ -19,26 +19,17 @@ sidebarDepth: 2
 
 <NavItem title="官方导航">
   <NavCard title="CanIUse" jumpUrl="https://caniuse.com/ciu/index" logo="https://caniuse.com/img/favicon-128.png" des="一个HTML CSS 兼容性查询网站" />
-  <NavCard title="Less" jumpUrl="http://lesscss.cn/" logo="http://s.nodejs.cn/less/img/logo.png" des="Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性。Less 可以运行在 Node 或浏览器端。" />
+  <NavCard title="Less" jumpUrl="http://lesscss.cn/" logo="https://less.bootcss.com/public/ico/favicon.ico" des="Less 是一门 CSS 预处理语言，它扩展了 CSS 语言，增加了变量、Mixin、函数等特性。Less 可以运行在 Node 或浏览器端。" />
   <NavCard title="Sass" jumpUrl="https://www.sass.hk/" logo="https://www.sass.hk/favicon.ico" des="Sass(Scss)是稳定和强大的专业级CSS扩展语言" />
 </NavItem>
 
 <!-- ------------------------------------------------- -->
-## JavaScript导航
+## JavaScript库
 
-<NavItem  title="基础学习">
-  <NavCard title="ES6" jumpUrl="https://es6.ruanyifeng.com/" logo="es6.png" des="ES6是JavaScript 语言的一代版本，该网站为阮一峰老师的 《ECMAScript 6 入门教程》" />
-  <NavCard title="Babel" jumpUrl="https://babel.docschina.org/docs/en/babel-core/" logo="https://babel.docschina.org/img/favicon.png" des="Babel 是一个工具链，主要用于在旧的浏览器或环境中将 ECMAScript 2015+ 代码转换为向后兼容版本的 JavaScript 代码" />
-</NavItem>
-
-<NavItem  title="优秀插件">
+<NavItem  >
+<NavCard title="ES6" jumpUrl="https://es6.ruanyifeng.com/" logo="es6.png" des="ES6是JavaScript 语言的一代版本，该网站为阮一峰老师的 《ECMAScript 6 入门教程》" />
   <NavCard title="FlyJs" jumpUrl="https://wendux.github.io/dist/#/doc/flyio/readme" logo="https://wendux.github.io/dist/static/doc/flyio/fly.png" des="一个支持所有JavaScript运行环境的基于Promise的、支持请求转发、强大的http请求库。可以让您在多个端上尽可能大限度的实现代码复用。" />
   <NavCard title="Lodash" jumpUrl="https://www.lodashjs.com/docs/lodash.chunk" logo="https://www.lodashjs.com/img/favicon.ico" des="一个JS函数库" />
-
-</NavItem>
-
-<NavItem  title="优秀文章">
-  <NavCard title="浩麟的博客" jumpUrl="https://wuhaolin.cn/" logo="https://github.com/fluidicon.png" des="一个好博客文章" />
 
 </NavItem>
 
@@ -91,10 +82,14 @@ sidebarDepth: 2
 </NavItem>
 
 <!-- ------------------------------------------------- -->
-## Webpack导航
+## 构建类导航
 
 <NavItem>
   <NavCard title="Webpack" jumpUrl="https://webpack.docschina.org/" logo="https://webpack.docschina.org/icon-square-small.85ba630cf0c5f29ae3e3.svg" des="webpack 是一个模块打包器。它的主要目标是将 JavaScript 文件打包在一起,打包后的文件用于在浏览器中使用" />
+  <NavCard title="Babel" jumpUrl="https://babel.docschina.org/docs/en/babel-core/" logo="https://babel.docschina.org/img/favicon.png" des="Babel 是一个工具链，主要用于在旧的浏览器或环境中将 ECMAScript 2015+ 代码转换为向后兼容版本的 JavaScript 代码" />
+  <NavCard title="ESLint" jumpUrl="https://cn.eslint.org/" logo="https://zh-hans.eslint.org/favicon.ico" des="ESLint是一个JavaScript代码自动格式化，检测的工具" />
+
+
 </NavItem>
 
 <!-- ------------------------------------------------- -->
@@ -117,7 +112,7 @@ sidebarDepth: 2
 ## Electron导航
 
 <NavItem>
-  <NavCard title="Electron" jumpUrl="https://www.electronjs.org/" logo="https://www.electronjs.org/images/favicon.b7a59262df48d6563400baf5671da548.ico" des="Electron 是一使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序" />
+  <NavCard title="Electron" jumpUrl="https://www.electronjs.org/" logo="https://www.electronjs.org/assets/img/favicon.ico" des="Electron是一使用JavaScript，HTML和CSS构建跨平台的桌面应用程序" />
 </NavItem>
 
 
@@ -126,8 +121,14 @@ sidebarDepth: 2
 <NavItem>
   <NavCard title="阿里图标" jumpUrl="https://www.zhihu.com/" logo="alishiliang.png" des="Iconfont-国内功能很强大且图标内容很丰富的矢量图标库,提供矢量图标下载、在线存储、格式转换等功能。阿里巴巴体验团队倾力打造,设计和前端开发的便捷工具" />
   <NavCard title="VScode" jumpUrl="https://code.visualstudio.com/" logo="https://code.visualstudio.com/apple-touch-icon.png" des="Visual Studio Code是Microsoft在2015年4月30日Build开发者大会上正式宣布一个运行于 Mac OS X、Windows和 Linux 之上的，针对于编写现代Web和云应用的跨平台源代码编辑器" />
-  <NavCard title="ESLint" jumpUrl="https://cn.eslint.org/" logo="https://cn.eslint.org/img/favicon.512x512.png" des="ESLint是一个JavaScript代码自动格式化，检测的工具" />
   
+</NavItem>
+
+## 优秀文章
+
+<NavItem>
+  <NavCard title="浩麟的博客" jumpUrl="https://wuhaolin.cn/"  des="一个好博客文章" />
+
 </NavItem>
 
 </div>

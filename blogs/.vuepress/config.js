@@ -1,5 +1,5 @@
 const Sidebar = require("./sildbar");
-const baseUrl = "/webxiaoma";
+const baseUrl = "/webxiaoma/";
 
 module.exports = {
   title:'小马过河',
@@ -35,6 +35,9 @@ module.exports = {
               {text:"常用站点", link:"/nav/nav"},
               {text:"前端站点", link:"/nav/web"},
               {text:"后端站点", link:"/nav/afterEnd"},
+          ]},
+          { text: 'Chatgpt', items:[
+              {text:"常用工具", link:"/chatgpt/tools"},
           ]},
           { 
             text: '前端',

@@ -10,7 +10,7 @@ import {
   Form,FormItem,
   Input,Button,Checkbox,CheckboxGroup,CheckboxButton,
   Message,Divider,
-  Table, TableColumn} from 'element-ui';
+  Table, TableColumn,Image} from 'element-ui';
 
 
 // 测试代码
@@ -34,6 +34,7 @@ export default ({
   Vue.use(Table)
   Vue.use(TableColumn)
   Vue.use(Divider)
+  Vue.use(Image)
  
   Vue.prototype.$message = Message;
   Vue.mixin(mixin)

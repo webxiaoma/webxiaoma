@@ -11,12 +11,9 @@ sidebarDepth: 2
 
 # 站点导航
 
-:horse: 
-
-
-<div>
 
 ## 常用搜索
+
 
 <NavItem>
  <NavCard title="百度" jumpUrl="https://www.baidu.com/" logo="baidu.png" des="百度 - 全球最大的中文搜索引擎 " />
@@ -26,7 +23,7 @@ sidebarDepth: 2
 </NavItem>
 
 
-## 常用网站
+## 博客文章导航
 
 <NavItem>
  <NavCard title="知乎" jumpUrl="https://www.zhihu.com/" logo="zhihu.png" des="中文互联网高质量的问答社区和创作者聚集的原创内容平台" />
@@ -40,7 +37,7 @@ sidebarDepth: 2
 </NavItem>
 
 
-## 办公类导航
+## 办公导航
 
 
 <NavItem>
