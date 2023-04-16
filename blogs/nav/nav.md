@@ -94,7 +94,9 @@ sidebarDepth: 2
 ## 金融导航
 
 <NavItem>
- <NavCard login title="币安" jumpUrl="https://www.binancezh.co/" logo="https://public.bnbstatic.com/static/images/common/favicon.ico" des="一个区块链资产交易平台" />
+ <NavCard  title="国家统计局" jumpUrl="http://www.stats.gov.cn/" des="国家统计局" />
+  <NavCard  title="中国人民银行" jumpUrl="http://www.pbc.gov.cn/" logo="http://www.pbc.gov.cn//rmyh/uiFramework/commonResource/image/logo.ico" des="中国人民银行" />
+ <NavCard login title="币安" jumpUrl="https://www.binance.com/zh-CN" logo="https://public.bnbstatic.com/static/images/common/favicon.ico" des="一个区块链资产交易平台" />
  <NavCard title="QKL123" jumpUrl="https://www.qkl123.com/" logo="https://www.qkl123.com/favicon.ico" des="QKL123（区块链123）是集区块链网址导航、数字货币行情、区块链数据于一体的综合型数据服务商，为行业研究、项目评级、投资分析提供决策参考与高级分析工具。" />
 </NavItem>
 

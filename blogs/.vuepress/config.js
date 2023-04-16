@@ -39,6 +39,9 @@ module.exports = {
           { text: 'Chatgpt', items:[
               {text:"常用工具", link:"/chatgpt/tools"},
           ]},
+          { text: '金融', items:[
+            {text:"金融系列", link:"/financial/"},
+        ]},
           { 
             text: '前端',
             items: [
