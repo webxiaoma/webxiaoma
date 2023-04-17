@@ -36,65 +36,16 @@ module.exports = {
               {text:"前端站点", link:"/nav/web"},
               {text:"后端站点", link:"/nav/afterEnd"},
           ]},
+          { text: '开发相关', items:[
+            {text:"前端", link:"/web/"},
+            {text:"Java", link:"/java/"},
+            {text:"Python", link:"/python/"},
+            {text:"数据库", link:"/database/"},
+            {text:"算法", link:"/algorithm/"},
+            {text:"运维/开发工具", link:"/tools/"},
+        ]},
           { text: 'Chatgpt', items:[
               {text:"常用工具", link:"/chatgpt/tools"},
-          ]},
-          { 
-            text: '前端',
-            items: [
-              {text:"CSS+HTML系列", items:[
-                {text:"CSS格式化上下文", link:"/web/csshtml/css-formatContent"},
-                {text:"CSS的BFC", link:"/web/csshtml/css-bfc"},
-              ]},
-              {text:"JS系列", items:[
-                {text:"JS-原型与原型链", link:"/web/js/js-prototype"},
-                {text:"JS-执行上下文", link:"/web/js/js-context"},
-              ]},
-              {text:"Vue2系列", items:[
-                {text:"Vue响应式", link:"/web/vue/mvvm"},
-              ]},
-              {text:"常见面试题", items:[
-                {text:"CSS面试题", link:"/web/question/css"},
-                {text:"Vue2.x面试题", link:"/web/question/vue"},
-              ]},
-            ]
-          },
-          { text: 'Java', items: [
-            {text:"基础系列", items:[
-              {text:"Java初识", link:"/java/basics/know"},
-              {text:"Java数字", link:"/java/basics/number"},
-              {text:"Java字符串", link:"/java/basics/string"},
-            ]},
-            {text:"集合", items:[
-              {text:"Collection集合", link:"/java/collection/collection"},
-              {text:"List集合", link:"/java/collection/list"},
-            ]},
-            {text:"IO操作", items:[
-              {text:"IO初识", link:"/java/io/"},
-            ]},
-            {text:"网络编程", items:[
-              {text:"IP操作", link:"/java/network/ip"},
-            ]},
-            {text:"JDBC操作", items:[
-              {text:"MySQL操作", link:"/java/jdbc/mysql-connect"},
-            ]},
-          ]},
-          { text: '数据库', items: [
-            {text:"MySQL系列", items:[
-              {text:"常用语法", link:"/database/mysql/init"},
-              {text:"数据类型", link:"/database/mysql/data-type"},
-            ]},
-          ]},
-          { text: '设计模式', items: [
-            {text:"观察者模式", link:"/designMode/observer"},
-          ]},
-          { text: '运维/工具', items: [
-            {text:"Maven", items:[
-              {text:"初识", link:"/tools/maven/"},
-            ]},
-            {text:"Tomcat", items:[
-              {text:"初识", link:"/tools/tomcat/"},
-            ]},
           ]},
           { text: 'English',  items: [
             {text:"英语读音",  items:[

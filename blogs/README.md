@@ -1,8 +1,6 @@
 ---
 pageClass: home-class
-
 home: true
-heroImage: /img/mxx.jpg
 
 meta:
   - name: keywords

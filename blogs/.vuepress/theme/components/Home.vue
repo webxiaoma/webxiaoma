@@ -6,8 +6,8 @@
     <header class="hero">
       <img
         class="logo"
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
+        v-if="$site.themeConfig.logo"
+        :src="$withBase($site.themeConfig.logo)"
         :alt="data.heroAlt || 'hero'"
       >
 
@@ -81,8 +81,8 @@ export default {
         link: this.data.actionLink,
         text: this.data.actionText
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

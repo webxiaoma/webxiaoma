@@ -6,10 +6,14 @@ module.exports = {
     "web",
     "afterEnd",
   ],
-  '/chatgpt/':[
+  "/chatgpt/":[
     'tools'
   ],
+  "/python/":[
+    ""
+  ],
   "/web/":[
+    "",
     {
       title: 'CSS+HTML系列',
       collapsable: true,
@@ -65,6 +69,7 @@ module.exports = {
 
   /**************Java*************/ 
   "/java/":[
+    "",
     {
       title: 'Java 基础系列',
       collapsable: true,
@@ -134,6 +139,7 @@ module.exports = {
 
   /************** 数据库 database*************/ 
   "/database/":[
+    "",
     {
       title: 'MySQL系列',
       collapsable: true,
@@ -152,12 +158,13 @@ module.exports = {
 
   /************** 算法 *************/ 
   "/algorithm/":[
+    "",
     "bubble-sort", //冒泡排序
   ],
 
-
   /************** 运维/工具 *************/ 
   "/tools/":[
+    "",
     {
       title: 'Maven系列',
       collapsable: true,
