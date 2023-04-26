@@ -47,6 +47,13 @@ module.exports = {
           { text: 'Chatgpt', items:[
               {text:"常用工具", link:"/chatgpt/tools"},
           ]},
+          { text: '金融', items:[
+            {text:"金融系列", link:"/financial/"},
+        ]},
+          { text: '设计模式', items: [
+            {text:"观察者模式", link:"/designMode/observer"},
+          ]},
+        
           { text: 'English',  items: [
             {text:"英语读音",  items:[
               {text:"音标", link:"/english/pronunciation/phonogram"},
@@ -68,12 +75,6 @@ module.exports = {
             {text:"工作效率", link:"/study/standard/web"},
             {text:"金融业务", link:"/study/financial/"},
           ], isLogin:true},
-          
-          // { text: '算法', items: [
-          //   {text:"常见算法", items:[
-          //     {text:"冒泡排序", link:"/algorithm/bubble-sort"},
-          //   ]},
-          // ]},
       ],
       sidebar: Sidebar,
       sidebarDepth: false,// 侧边栏最大层级 最大只能为2

@@ -183,7 +183,24 @@ module.exports = {
       ]
     },
   ], 
-
+    /************** 金融 *************/ 
+ "/financial/":[
+  '',
+  {
+    title: '社会经济',
+    collapsable: true,
+    children: [
+      "society/basics",
+    ]
+  },
+    {
+      title: '私募股权',
+      collapsable: true,
+      children: [
+        "private-equity/term",
+      ]
+    },
+  ],
   /************** 英语 *************/ 
   "/english/":[
     {
