@@ -10,7 +10,23 @@ module.exports = {
     'tools'
   ],
   "/python/":[
-    ""
+    "",
+    {
+      title: '基础知识',
+      collapsable: true,
+      children: [
+        "base/package-tools",
+        "base/tools",
+      ]
+    },
+    {
+      title: '功能开发',
+      collapsable: true,
+      children: [
+        "development/reptile",
+      ]
+    },
+
   ],
   "/web/":[
     "",
