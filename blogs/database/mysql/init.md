@@ -14,6 +14,8 @@ meta:
 :horse: 
 
 
+- [Mysql语法](https://www.w3schools.cn/mysql/mysql_insert.asp)
+
 **数据库版本：`8.0.17`**
 
 ## 系统操作
