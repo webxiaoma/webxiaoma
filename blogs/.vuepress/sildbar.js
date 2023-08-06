@@ -50,7 +50,7 @@ module.exports = {
       ]
      },
     {
-      title: '常见面试题',
+      title: '常见知识点',
       collapsable: true,
       children: [
           "question/",

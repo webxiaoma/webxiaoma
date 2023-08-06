@@ -17,17 +17,18 @@
 
 
 <script>
-    function test(){
-        console.log(111111)
-        var features = "height=500, width=800, top=20%, left=20%, toolbar=no, menubar=no,scrollbars=no,resizable=no, location=no, status=no";
-        var myWindow = window.open("","",features);
-        var htm = "<form></form>";
-        myWindow.document.write(htm);
 
-        console.log(myWindow.document.body)
-        myWindow.close() 
-    }
-   
+// 静态作用域
+function foo() {
+    console.log(a);
+}
+function der() {
+    var a = 3;
+    console.dir(foo)
+    foo();
+}
+var a = 2;
+der();  // js中打印的是 3
 
 
 </script>
