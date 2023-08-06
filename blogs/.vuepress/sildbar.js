@@ -73,7 +73,7 @@ module.exports = {
       ]
      },
     {
-      title: '常见面试题',
+      title: '常见知识点',
       collapsable: true,
       children: [
           "question/",
@@ -273,23 +273,38 @@ module.exports = {
         ]
       },
       {
+        title: '运维相关',
+        collapsable: true,
+        children: [
+          "operation/",
+          'operation/nginx'
+        ]
+      },
+      {
+        title: '数据库相关',
+        collapsable: true,
+        children: [
+          "database/",
+        ]
+      },
+      {
         title: '前端知识路线',
         collapsable: true,
         children: [
           "web/",
           "web/framework",
+          "web/test",
           "web/react",
           "web/vue",
-          "web/canvas",
-          "web/interview",
+          "web/css",
+          "web/interview"
         ]
       },
       {
-        title: '低代码',
+        title: '低代码相关',
         collapsable: true,
         children: [
           "lowCode/",
-      
         ]
       },
       {
@@ -305,6 +320,13 @@ module.exports = {
         children: [
           "maintenance/linux",
           "maintenance/nginx",
+        ],
+      },
+      {
+        title: '3D技术相关',
+        collapsable: true,
+        children: [
+          "3d-technology/",
         ]
       },
       {

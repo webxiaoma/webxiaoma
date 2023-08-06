@@ -52,14 +52,18 @@ isLogin: true
 ## 表格单处理
 
 - [Luckysheet](https://github.com/mengshukeji/Luckysheet): Excel电子表格
+- [SpreadJS](https://www.grapecity.com.cn/developer/spreadjs): Excel插件（收费版）
 
 
 ## 栅格化
 
  <el-divider content-position="left">React</el-divider>
 
-- [react-data-grid](https://github.com/adazzle/react-data-grid): (**React**) 栅格化布局
+- [react-data-grid](https://github.com/adazzle/react-data-grid):  栅格化布局
 
+ <el-divider content-position="left">Vue</el-divider>
+
+- [vue-grid-layout](https://github.com/jbaysolutions/vue-grid-layout): 栅格化布局
 
 ## 仓库管理
 
@@ -108,6 +112,13 @@ isLogin: true
 
 - [vue-drag-resize](https://github.com/kirillmurashov/vue-drag-resize)
 
+- [vuedraggable](https://github.com/SortableJS/Vue.Draggable)
+
 ## 时间日期
 
 - [FullCalendar](https://fullcalendar.io/) 一个强大的日历插件
+
+
+## Http 连接
+
+- [reconnecting-websocket]()

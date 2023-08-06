@@ -6,7 +6,7 @@ meta:
     content: 本章为小马学习 —— CSS常见得面试题
 ---
 
-# CSS 常见面试题
+# CSS 常见只知识点
 
 [[toc]]
 
