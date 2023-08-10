@@ -6,7 +6,7 @@ meta:
     content: 本章为小马学习——Vue常见得面试题
 ---
 
-# Vue2.x常见面试题
+# Vue2.x常见知识点
 
 [[toc]]
 
