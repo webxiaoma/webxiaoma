@@ -13,8 +13,8 @@ meta:
 
 :horse: 
 
-
 - [Mysql语法](https://www.w3schools.cn/mysql/mysql_insert.asp)
+- [菜鸟教程-Mysql语法](https://www.runoob.com/sql/sql-syntax.html)
 
 **数据库版本：`8.0.17`**
 

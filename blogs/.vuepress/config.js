@@ -38,6 +38,7 @@ module.exports = {
           ]},
           { text: '开发相关', items:[
             {text:"前端", link:"/web/"},
+            {text:"node", link:"/node/"},
             {text:"Java", link:"/java/"},
             {text:"Python", link:"/python/"},
             {text:"数据库", link:"/database/"},
