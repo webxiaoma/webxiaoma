@@ -6,7 +6,7 @@ module.exports = {
     "web",
     "afterEnd",
   ],
-  "/chatgpt/":[
+  "/ai/":[
     'tools'
   ],
   "/python/":[
